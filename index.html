@@ -2,108 +2,104 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>PHOTOBOOTH RAICES DEL ALMA</title>
+<title>Raices Photobooth</title>
 <style>
     body {
-        font-family: sans-serif;
+        font-family: Arial, sans-serif;
         text-align: center;
-        background: #f4f4f4;
-        padding: 20px;
-    }
-    input[type="file"] {
-        margin: 10px 0;
+        background-color: #f0f0f0;
     }
     canvas {
         border: 1px solid #ccc;
         margin-top: 20px;
         background: white;
     }
-    button {
-        margin-top: 15px;
-        padding: 10px 15px;
-        font-size: 16px;
-        cursor: pointer;
+    input[type=file] {
+        margin: 10px;
     }
 </style>
 </head>
 <body>
 
-<h1>Generador de Tiras - HiTi P322W</h1>
-<p>Sube tus 6 fotos, se ajustarán automáticamente a la plantilla.</p>
+<h1>Generador de Tiras con Marco</h1>
+<p>Sube 3 fotos para crear una tira</p>
 
 <input type="file" id="fileInput" multiple accept="image/*">
 <br>
-<button id="generateBtn">Generar Imagen Final</button>
+<button onclick="descargar()">Descargar Imagen Final</button>
 <br>
-<canvas id="canvas" width="1844" height="1240"></canvas>
-<br>
-<a id="downloadLink" style="display:none;" download="tiras_final.png">Descargar Imagen</a>
+<canvas id="canvas" width="1200" height="1800"></canvas>
 
 <script>
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
-const fileInput = document.getElementById("fileInput");
-const generateBtn = document.getElementById("generateBtn");
-const downloadLink = document.getElementById("downloadLink");
 
-let fotos = [];
-let plantilla = new Image();
-plantilla.src = "marco.png"; // Debes tenerla en la misma carpeta
+const marco = new Image();
+marco.src = "marco.png"; // asegúrate que esté en la misma carpeta
 
-// Posiciones y tamaño de cada ranura (x, y, ancho, alto)
-const posiciones = [
-    // Izquierda
-    {x: 90, y: 50, w: 500, h: 330},
-    {x: 90, y: 430, w: 500, h: 330},
-    {x: 90, y: 810, w: 500, h: 330},
-    // Derecha
-    {x: 1250, y: 50, w: 500, h: 330},
-    {x: 1250, y: 430, w: 500, h: 330},
-    {x: 1250, y: 810, w: 500, h: 330}
-];
+let imagenes = [];
 
-fileInput.addEventListener("change", (e) => {
-    fotos = [];
-    const files = Array.from(e.target.files).slice(0, 6);
-    files.forEach(file => {
-        const reader = new FileReader();
-        reader.onload = (evt) => {
-            let img = new Image();
-            img.onload = () => {
-                fotos.push(img);
-            };
-            img.src = evt.target.result;
-        };
-        reader.readAsDataURL(file);
-    });
-});
-
-generateBtn.addEventListener("click", () => {
-    if (fotos.length < 6) {
-        alert("Debes subir 6 imágenes.");
-        return;
-    }
+// Cargar marco y limpiar canvas al inicio
+marco.onload = () => {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.drawImage(marco, 0, 0, canvas.width, canvas.height);
+};
 
-    // Dibujar las fotos ajustadas
-    fotos.forEach((foto, i) => {
-        let pos = posiciones[i];
-        let escala = Math.max(pos.w / foto.width, pos.h / foto.height);
-        let nuevoAncho = foto.width * escala;
-        let nuevoAlto = foto.height * escala;
-        let offsetX = pos.x - (nuevoAncho - pos.w) / 2;
-        let offsetY = pos.y - (nuevoAlto - pos.h) / 2;
-        ctx.drawImage(foto, offsetX, offsetY, nuevoAncho, nuevoAlto);
+// Manejo de imágenes subidas
+document.getElementById("fileInput").addEventListener("change", function(e) {
+    const archivos = Array.from(e.target.files).slice(0, 3); // solo 3 fotos
+    imagenes = [];
+    
+    let cargadas = 0;
+    archivos.forEach((archivo, i) => {
+        const lector = new FileReader();
+        lector.onload = function(ev) {
+            const img = new Image();
+            img.onload = function() {
+                imagenes[i] = img;
+                cargadas++;
+                if (cargadas === archivos.length) {
+                    dibujarTodo();
+                }
+            };
+            img.src = ev.target.result;
+        };
+        lector.readAsDataURL(archivo);
     });
-
-    // Dibujar la plantilla encima
-    ctx.drawImage(plantilla, 0, 0, canvas.width, canvas.height);
-
-    // Habilitar descarga
-    downloadLink.href = canvas.toDataURL("image/png");
-    downloadLink.style.display = "inline-block";
 });
+
+function dibujarTodo() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.drawImage(marco, 0, 0, canvas.width, canvas.height); // marco al fondo
+    
+    const areaUtilY = 650; // margen desde arriba donde inicia la zona útil
+    const areaUtilAlto = 500;
+    const anchoFoto = 1200 / 3;
+    const altoFoto = areaUtilAlto;
+    
+    imagenes.forEach((img, index) => {
+        const x = index * anchoFoto;
+        const y = areaUtilY;
+        
+        // Calcular escala para ajustar foto
+        const escala = Math.max(anchoFoto / img.width, altoFoto / img.height);
+        const nuevoAncho = img.width * escala;
+        const nuevoAlto = img.height * escala;
+        const offsetX = x + (anchoFoto - nuevoAncho) / 2;
+        const offsetY = y + (altoFoto - nuevoAlto) / 2;
+        
+        ctx.drawImage(img, offsetX, offsetY, nuevoAncho, nuevoAlto);
+    });
+}
+
+function descargar() {
+    const enlace = document.createElement("a");
+    enlace.download = "tira-final.png";
+    enlace.href = canvas.toDataURL("image/png");
+    enlace.click();
+}
 </script>
 
 </body>
 </html>
+
