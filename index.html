@@ -2,104 +2,128 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Raices Photobooth</title>
+<title>Fotomontaje con Marco</title>
 <style>
-    body {
-        font-family: Arial, sans-serif;
-        text-align: center;
-        background-color: #f0f0f0;
-    }
-    canvas {
-        border: 1px solid #ccc;
-        margin-top: 20px;
-        background: white;
-    }
-    input[type=file] {
-        margin: 10px;
-    }
+  body {
+    font-family: sans-serif;
+    text-align: center;
+    background: #f0f0f0;
+  }
+  canvas {
+    background: #ccc;
+    cursor: grab;
+  }
+  .controls {
+    margin: 10px;
+  }
+  input[type=file] {
+    margin: 5px;
+  }
 </style>
 </head>
 <body>
 
-<h1>Generador de Tiras con Marco</h1>
-<p>Sube 3 fotos para crear una tira</p>
-
-<input type="file" id="fileInput" multiple accept="image/*">
-<br>
-<button onclick="descargar()">Descargar Imagen Final</button>
-<br>
-<canvas id="canvas" width="1200" height="1800"></canvas>
+<h1>Fotomontaje con Marco</h1>
+<div class="controls">
+  <input type="file" id="fileInput" multiple accept="image/*">
+  <button id="downloadBtn">Descargar</button>
+</div>
+<canvas id="canvas"></canvas>
 
 <script>
+const marcoSrc = "marco.png"; // reemplazar por la ruta correcta en tu repo
+const maxFotos = 6;
+
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 
-const marco = new Image();
-marco.src = "marco.png"; // asegúrate que esté en la misma carpeta
+let marcoImg = new Image();
+let fotos = [];
+let arrastrando = null;
+let offsetX = 0, offsetY = 0;
 
-let imagenes = [];
-
-// Cargar marco y limpiar canvas al inicio
-marco.onload = () => {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.drawImage(marco, 0, 0, canvas.width, canvas.height);
+marcoImg.onload = () => {
+  canvas.width = marcoImg.width;
+  canvas.height = marcoImg.height;
+  dibujar();
 };
+marcoImg.src = marcoSrc;
 
-// Manejo de imágenes subidas
-document.getElementById("fileInput").addEventListener("change", function(e) {
-    const archivos = Array.from(e.target.files).slice(0, 3); // solo 3 fotos
-    imagenes = [];
-    
-    let cargadas = 0;
-    archivos.forEach((archivo, i) => {
-        const lector = new FileReader();
-        lector.onload = function(ev) {
-            const img = new Image();
-            img.onload = function() {
-                imagenes[i] = img;
-                cargadas++;
-                if (cargadas === archivos.length) {
-                    dibujarTodo();
-                }
-            };
-            img.src = ev.target.result;
-        };
-        lector.readAsDataURL(archivo);
-    });
+document.getElementById("fileInput").addEventListener("change", e => {
+  const archivos = Array.from(e.target.files).slice(0, maxFotos);
+  archivos.forEach(file => {
+    const img = new Image();
+    img.onload = () => {
+      fotos.push({
+        img: img,
+        x: canvas.width/2 - img.width/4,
+        y: canvas.height/2 - img.height/4,
+        w: img.width/2,
+        h: img.height/2
+      });
+      dibujar();
+    };
+    img.src = URL.createObjectURL(file);
+  });
 });
 
-function dibujarTodo() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.drawImage(marco, 0, 0, canvas.width, canvas.height); // marco al fondo
-    
-    const areaUtilY = 650; // margen desde arriba donde inicia la zona útil
-    const areaUtilAlto = 500;
-    const anchoFoto = 1200 / 3;
-    const altoFoto = areaUtilAlto;
-    
-    imagenes.forEach((img, index) => {
-        const x = index * anchoFoto;
-        const y = areaUtilY;
-        
-        // Calcular escala para ajustar foto
-        const escala = Math.max(anchoFoto / img.width, altoFoto / img.height);
-        const nuevoAncho = img.width * escala;
-        const nuevoAlto = img.height * escala;
-        const offsetX = x + (anchoFoto - nuevoAncho) / 2;
-        const offsetY = y + (altoFoto - nuevoAlto) / 2;
-        
-        ctx.drawImage(img, offsetX, offsetY, nuevoAncho, nuevoAlto);
-    });
+canvas.addEventListener("mousedown", e => {
+  const mouse = getMouse(e);
+  for (let i = fotos.length - 1; i >= 0; i--) {
+    let f = fotos[i];
+    if (mouse.x >= f.x && mouse.x <= f.x+f.w && mouse.y >= f.y && mouse.y <= f.y+f.h) {
+      arrastrando = f;
+      offsetX = mouse.x - f.x;
+      offsetY = mouse.y - f.y;
+      canvas.style.cursor = "grabbing";
+      break;
+    }
+  }
+});
+
+canvas.addEventListener("mousemove", e => {
+  if (!arrastrando) return;
+  const mouse = getMouse(e);
+  arrastrando.x = mouse.x - offsetX;
+  arrastrando.y = mouse.y - offsetY;
+  dibujar();
+});
+
+canvas.addEventListener("mouseup", () => {
+  arrastrando = null;
+  canvas.style.cursor = "grab";
+});
+
+canvas.addEventListener("wheel", e => {
+  if (!arrastrando) return;
+  e.preventDefault();
+  const scale = e.deltaY < 0 ? 1.05 : 0.95;
+  arrastrando.w *= scale;
+  arrastrando.h *= scale;
+  dibujar();
+});
+
+function getMouse(e) {
+  const rect = canvas.getBoundingClientRect();
+  return {
+    x: (e.clientX - rect.left) * (canvas.width / rect.width),
+    y: (e.clientY - rect.top) * (canvas.height / rect.height)
+  };
 }
 
-function descargar() {
-    const enlace = document.createElement("a");
-    enlace.download = "tira-final.png";
-    enlace.href = canvas.toDataURL("image/png");
-    enlace.click();
+function dibujar() {
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  ctx.drawImage(marcoImg, 0, 0, canvas.width, canvas.height); // fondo
+  fotos.forEach(f => ctx.drawImage(f.img, f.x, f.y, f.w, f.h));
 }
+
+document.getElementById("downloadBtn").addEventListener("click", () => {
+  const enlace = document.createElement("a");
+  enlace.download = "fotomontaje.png";
+  enlace.href = canvas.toDataURL("image/png");
+  enlace.click();
+});
 </script>
 
 </body>
 </html>
-
