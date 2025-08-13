@@ -32,7 +32,7 @@
     // Tamaño fijo de cada foto (NO cambia al mover posiciones)
     // Modifica estos dos si quieres fotos más grandes/pequeñas.
     const ANCHO_FOTO = 500;   // p.ej. 500
-    const ALTO_FOTO  = 399;   // p.ej. 399
+    const ALTO_FOTO  = 400;   // p.ej. 399
 
     // Layout por variables (dos columnas de 3 fotos):
     // Márgenes laterales y separaciones. Ajusta para mover posiciones sin tocar el tamaño.
@@ -45,12 +45,12 @@
     // y cambia USE_MANUAL_POSITIONS a true. Cada objeto es la esquina sup-izq del cuadro de la foto.
     const USE_MANUAL_POSITIONS = false;
     const POSICIONES_MANUALES = [
-      {x: 100, y: 200},  // Foto 1 (col izq fila 1)
-      {x: 100, y: 200 + ALTO_FOTO + 40}, // Foto 2
-      {x: 100, y: 200 + (ALTO_FOTO + 40) * 2}, // Foto 3
-      {x: 600, y: 200},  // Foto 4 (col der fila 1)
-      {x: 600, y: 200 + ALTO_FOTO + 40}, // Foto 5
-      {x: 600, y: 200 + (ALTO_FOTO + 40) * 2}  // Foto 6
+    {x: 120, y: 100}, // Izquierda arriba
+    {x: 120, y: 300}, // Izquierda medio
+    {x: 120, y: 500}, // Izquierda abajo
+    {x: 760, y: 100}, // Derecha arriba
+    {x: 760, y: 300}, // Derecha medio
+    {x: 760, y: 500}  // Derecha abajo
     ];
     // =========================
 
