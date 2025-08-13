@@ -66,8 +66,8 @@
         }
 
         function dibujarFotos() {
-            const anchoFoto = canvas.width / 2;
-            const altoFoto = canvas.height / 3;
+            const anchoFoto = canvas.width / 2 * 0.9;
+            const altoFoto = canvas.height / 3 * 0.9;
 
             imagenes.forEach((img, i) => {
                 const x = (i < 3) ? 0 : anchoFoto;
