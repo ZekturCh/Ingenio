@@ -1,100 +1,95 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tira de fotos con marco</title>
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        text-align: center;
-        background: #f0f0f0;
-    }
-    canvas {
-        border: 1px solid #ccc;
-        background: white;
-    }
-    .controls {
-        margin: 10px 0;
-    }
-</style>
+    <meta charset="UTF-8">
+    <title>Generador de Tira de Fotos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+        canvas {
+            border: 1px solid #ccc;
+            background: white;
+        }
+    </style>
 </head>
 <body>
+    <h1>Generador de Tira de Fotos</h1>
+    <input type="file" id="fileInput" accept="image/*" multiple><br><br>
+    <button onclick="generarTira()">Generar Tira</button>
+    <button onclick="descargarTira()">Descargar</button>
+    <br><br>
+    <canvas id="canvas" width="1200" height="1800"></canvas>
 
-<h2>Sube tus fotos</h2>
-<input type="file" id="fileInput" multiple accept="image/*"><br>
-<button onclick="generarTira()">Generar Tira</button>
-<br><br>
-<canvas id="canvasFinal" width="1200" height="1800"></canvas>
+    <script>
+        let imagenes = [];
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
 
-<script>
-let images = [];
-let marco = new Image();
-marco.src = 'marco.png'; // Asegúrate de que marco.png esté en el mismo repositorio
+        function generarTira() {
+            const archivos = document.getElementById('fileInput').files;
+            if (archivos.length < 6) {
+                alert('Selecciona al menos 6 fotos.');
+                return;
+            }
 
-document.getElementById('fileInput').addEventListener('change', function(e) {
-    images = [];
-    let files = e.target.files;
-    if (files.length > 6) {
-        alert("Por favor sube máximo 6 imágenes.");
-        return;
-    }
-    for (let i = 0; i < files.length; i++) {
-        let reader = new FileReader();
-        reader.onload = function(event) {
-            let img = new Image();
-            img.onload = function() {
-                images.push(img);
+            imagenes = [];
+            let cargadas = 0;
+
+            // Cargar marco primero
+            const marco = new Image();
+            marco.src = 'marco.png';
+            marco.onload = () => {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                ctx.drawImage(marco, 0, 0, canvas.width, canvas.height);
+
+                for (let i = 0; i < 6; i++) {
+                    const reader = new FileReader();
+                    reader.onload = (e) => {
+                        const img = new Image();
+                        img.src = e.target.result;
+                        img.onload = () => {
+                            imagenes[i] = img;
+                            cargadas++;
+                            if (cargadas === 6) {
+                                dibujarFotos();
+                            }
+                        };
+                    };
+                    reader.readAsDataURL(archivos[i]);
+                }
             };
-            img.src = event.target.result;
-        };
-        reader.readAsDataURL(files[i]);
-    }
-});
-
-function generarTira() {
-    if (images.length !== 6) {
-        alert("Debes subir exactamente 6 imágenes para llenar la tira.");
-        return;
-    }
-
-    let canvas = document.getElementById('canvasFinal');
-    let ctx = canvas.getContext('2d');
-
-    // Fondo blanco
-    ctx.fillStyle = "white";
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-    // Dibuja las fotos
-    let fotoAncho = 600;
-    let fotoAlto = 500; 
-    let xPos = [0, 600]; // Izquierda, derecha
-    let yPos = [0, 500, 1000]; // Arriba a abajo
-
-    let index = 0;
-    for (let col = 0; col < 2; col++) {
-        for (let fila = 0; fila < 3; fila++) {
-            let img = images[index];
-            let scale = Math.max(fotoAncho / img.width, fotoAlto / img.height);
-            let newWidth = img.width * scale;
-            let newHeight = img.height * scale;
-            let offsetX = xPos[col] + (fotoAncho - newWidth) / 2;
-            let offsetY = yPos[fila] + (fotoAlto - newHeight) / 2;
-            ctx.drawImage(img, offsetX, offsetY, newWidth, newHeight);
-            index++;
         }
-    }
 
-    // Dibuja marco
-    ctx.drawImage(marco, 0, 0, canvas.width, canvas.height);
+        function dibujarFotos() {
+            const anchoFoto = canvas.width / 2;
+            const altoFoto = canvas.height / 3;
 
-    // Descargar
-    let link = document.createElement('a');
-    link.download = 'tira_final.png';
-    link.href = canvas.toDataURL();
-    link.click();
-}
-</script>
+            imagenes.forEach((img, i) => {
+                const x = (i < 3) ? 0 : anchoFoto;
+                const y = (i % 3) * altoFoto;
 
+                // Calcular recorte proporcional
+                const escala = Math.max(anchoFoto / img.width, altoFoto / img.height);
+                const nuevoAncho = img.width * escala;
+                const nuevoAlto = img.height * escala;
+                const offsetX = (anchoFoto - nuevoAncho) / 2;
+                const offsetY = (altoFoto - nuevoAlto) / 2;
+
+                ctx.drawImage(img, x + offsetX, y + offsetY, nuevoAncho, nuevoAlto);
+            });
+        }
+
+        function descargarTira() {
+            const enlace = document.createElement('a');
+            enlace.download = 'tira_fotos.png';
+            enlace.href = canvas.toDataURL('image/png');
+            enlace.click();
+        }
+    </script>
 </body>
 </html>
