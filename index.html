@@ -81,20 +81,33 @@
             };
         }
 
-        function dibujarFotos() {
+        
+                function dibujarFotos() {
+            const margenLateral = 60; // margen desde los costados
+            const margenVertical = 40; // margen desde arriba y entre fotos
+            const escalaFotos = 0.8; // 80% del tamaño original calculado
+        
+            // Calcular ancho y alto base de cada foto
+            const anchoFoto = (canvas.width / 2 - margenLateral * 2) * escalaFotos;
+            const altoFoto = (canvas.height / 3 - margenVertical * 2) * escalaFotos;
+        
             imagenes.forEach((img, i) => {
-                const pos = posiciones[i];
-
-                // Escalar proporcionalmente para llenar ancho/alto definido
+                const columna = i < 3 ? 0 : 1;
+                const fila = i % 3;
+        
+                const x = margenLateral + columna * (canvas.width / 2);
+                const y = margenVertical + fila * (canvas.height / 3);
+        
+                // Calcular recorte proporcional
                 const escala = Math.max(anchoFoto / img.width, altoFoto / img.height);
                 const nuevoAncho = img.width * escala;
                 const nuevoAlto = img.height * escala;
-
+        
                 // Centrar la imagen dentro del espacio asignado
-                const offsetX = pos.x + (anchoFoto - nuevoAncho) / 2;
-                const offsetY = pos.y + (altoFoto - nuevoAlto) / 2;
-
-                ctx.drawImage(img, offsetX, offsetY, nuevoAncho, nuevoAlto);
+                const offsetX = (anchoFoto - nuevoAncho) / 2;
+                const offsetY = (altoFoto - nuevoAlto) / 2;
+        
+                ctx.drawImage(img, x + offsetX, y + offsetY, nuevoAncho, nuevoAlto);
             });
         }
 
