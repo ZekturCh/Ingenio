@@ -1,125 +1,190 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>Generador de Tira de Fotos</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background: #f0f0f0;
-            margin: 0;
-            padding: 20px;
-        }
-        canvas {
-            border: 1px solid #ccc;
-            background: white;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <title>Generador de Tira de Fotos</title>
+  <style>
+    body { font-family: Arial, sans-serif; text-align: center; background: #f0f0f0; margin: 0; padding: 20px; }
+    canvas { border: 1px solid #ccc; background: #fff; max-width: 95vw; height: auto; }
+    .row { margin: 10px 0; }
+  </style>
 </head>
 <body>
-    <h1>Generador de Tira de Fotos</h1>
-    <input type="file" id="fileInput" accept="image/*" multiple><br><br>
-    <button onclick="generarTira()">Generar Tira</button>
-    <button onclick="descargarTira()">Descargar</button>
+  <h1>Generador de Tira de Fotos</h1>
 
-    <br><br>
-    <canvas id="canvas" width="1200" height="1800"></canvas>
+  <div class="row">
+    <input type="file" id="fileInput" accept="image/*" multiple>
+  </div>
+  <div class="row">
+    <button id="btnGenerar">Generar Tira</button>
+    <button id="btnDescargar">Descargar</button>
+  </div>
 
-    <script>
-        let imagenes = [];
-        const canvas = document.getElementById('canvas');
-        const ctx = canvas.getContext('2d');
+  <canvas id="canvas" width="1200" height="1800"></canvas>
 
-        // Configuración de tamaño de fotos
-        const anchoFoto = 350; // ancho de cada foto
-        const altoFoto = 450;  // alto de cada foto
+  <script>
+    // =========================
+    // ======= CONFIG ==========
+    // Tamaño del lienzo final (debe coincidir con tu marco.png)
+    const CANVAS_W = 1200;
+    const CANVAS_H = 1800;
 
-        // Configuración de posiciones (x, y) de cada foto
-        // Aquí puedes mover cada imagen cambiando los valores
-        const posiciones = [
-            {x: 100, y: 150}, // Foto 1
-            {x: 100, y: 400}, // Foto 2
-            {x: 100, y: 600}, // Foto 3
-            {x: 750, y: 150}, // Foto 4
-            {x: 750, y: 400}, // Foto 5
-            {x: 750, y: 600}  // Foto 6
-        ];
+    // Tamaño fijo de cada foto (NO cambia al mover posiciones)
+    // Modifica estos dos si quieres fotos más grandes/pequeñas.
+    const ANCHO_FOTO = 500;   // p.ej. 500
+    const ALTO_FOTO  = 399;   // p.ej. 399
 
-        function generarTira() {
-            const archivos = document.getElementById('fileInput').files;
-            if (archivos.length < 6) {
-                alert('Selecciona al menos 6 fotos.');
-                return;
-            }
+    // Layout por variables (dos columnas de 3 fotos):
+    // Márgenes laterales y separaciones. Ajusta para mover posiciones sin tocar el tamaño.
+    const MARGEN_EXTERNO_X     = 100; // borde izquierdo y derecho externos
+    const ESPACIO_COLUMNAS_X   = 0;   // separación entre columnas (entre izquierda y derecha)
+    const TOP_Y                = 200; // margen superior del primer renglón
+    const ESPACIO_FILAS_Y      = 40;  // separación vertical entre fotos
 
-            imagenes = [];
-            let cargadas = 0;
+    // Si prefieres definir posiciones manuales exactas, descomenta el arreglo de abajo
+    // y cambia USE_MANUAL_POSITIONS a true. Cada objeto es la esquina sup-izq del cuadro de la foto.
+    const USE_MANUAL_POSITIONS = false;
+    const POSICIONES_MANUALES = [
+      {x: 100, y: 200},  // Foto 1 (col izq fila 1)
+      {x: 100, y: 200 + ALTO_FOTO + 40}, // Foto 2
+      {x: 100, y: 200 + (ALTO_FOTO + 40) * 2}, // Foto 3
+      {x: 600, y: 200},  // Foto 4 (col der fila 1)
+      {x: 600, y: 200 + ALTO_FOTO + 40}, // Foto 5
+      {x: 600, y: 200 + (ALTO_FOTO + 40) * 2}  // Foto 6
+    ];
+    // =========================
 
-            // Cargar marco primero
-            const marco = new Image();
-            marco.src = 'marco.png';
-            marco.onload = () => {
-                ctx.clearRect(0, 0, canvas.width, canvas.height);
-                ctx.drawImage(marco, 0, 0, canvas.width, canvas.height);
+    const canvas = document.getElementById('canvas');
+    const ctx = canvas.getContext('2d');
+    canvas.width = CANVAS_W;
+    canvas.height = CANVAS_H;
 
-                for (let i = 0; i < 6; i++) {
-                    const reader = new FileReader();
-                    reader.onload = (e) => {
-                        const img = new Image();
-                        img.src = e.target.result;
-                        img.onload = () => {
-                            imagenes[i] = img;
-                            cargadas++;
-                            if (cargadas === 6) {
-                                dibujarFotos();
-                            }
-                        };
-                    };
-                    reader.readAsDataURL(archivos[i]);
-                }
+    const marco = new Image();
+    marco.src = 'marco.png'; // debe estar junto al HTML
+
+    let imagenes = []; // Image objects (hasta 6)
+
+    document.getElementById('btnGenerar').addEventListener('click', generarTira);
+    document.getElementById('btnDescargar').addEventListener('click', descargarTira);
+
+    function generarTira() {
+      const files = Array.from(document.getElementById('fileInput').files).slice(0, 6);
+      if (files.length < 6) {
+        alert('Selecciona exactamente 6 fotos.');
+        return;
+      }
+
+      imagenes = [];
+      let cargadas = 0;
+
+      // Primero limpiamos y dibujamos el marco (FONDO)
+      marco.onload = () => {
+        // Cargamos imágenes del usuario
+        files.forEach((f, i) => {
+          const reader = new FileReader();
+          reader.onload = e => {
+            const img = new Image();
+            img.onload = () => {
+              imagenes[i] = img;
+              cargadas++;
+              if (cargadas === 6) {
+                render();
+              }
             };
-        }
+            img.src = e.target.result;
+          };
+          reader.readAsDataURL(f);
+        });
+      };
 
-        
-                function dibujarFotos() {
-                        const margenExterno = 80; // margen lateral exterior
-                        const margenEntreColumnas = 50; // espacio entre las dos columnas
-                        const margenVertical = 5; // espacio arriba y entre fotos
-                        const escalaFotos = 0.8; // 80% del tamaño disponible
-                    
-                        const anchoDisponible = (canvas.width - (margenExterno * 2) - margenEntreColumnas) / 2;
-                        const altoDisponible = canvas.height / 3 - margenVertical * 2;
-                    
-                        const anchoFoto = anchoDisponible * escalaFotos;
-                        const altoFoto = altoDisponible * escalaFotos;
-                    
-                        imagenes.forEach((img, i) => {
-                            const columna = i < 3 ? 0 : 1;
-                            const fila = i % 3;
-                    
-                            const x = margenExterno + columna * (anchoDisponible + margenEntreColumnas);
-                            const y = margenVertical + fila * (canvas.height / 3);
-                    
-                            // Escalar la imagen proporcionalmente
-                            const escala = Math.max(anchoFoto / img.width, altoFoto / img.height);
-                            const nuevoAncho = img.width * escala;
-                            const nuevoAlto = img.height * escala;
-                    
-                            // Centrar dentro del espacio asignado
-                            const offsetX = (anchoDisponible - nuevoAncho) / 2;
-                            const offsetY = (altoDisponible - nuevoAlto) / 2;
-                    
-                            ctx.drawImage(img, x + offsetX, y + offsetY, nuevoAncho, nuevoAlto);
-                        });
-        }
+      // Si el marco ya está cacheado
+      if (marco.complete) {
+        files.forEach((f, i) => {
+          const reader = new FileReader();
+          reader.onload = e => {
+            const img = new Image();
+            img.onload = () => {
+              imagenes[i] = img;
+              if (imagenes.filter(Boolean).length === 6) render();
+            };
+            img.src = e.target.result;
+          };
+          reader.readAsDataURL(f);
+        });
+      }
+    }
 
-        function descargarTira() {
-            const enlace = document.createElement('a');
-            enlace.download = 'tira_fotos.png';
-            enlace.href = canvas.toDataURL('image/png');
-            enlace.click();
-        }
-    </script>
+    // Dibuja todo: marco de fondo + fotos en posiciones calculadas
+    function render() {
+      // Fondo blanco (opcional)
+      ctx.fillStyle = '#fff';
+      ctx.fillRect(0, 0, CANVAS_W, CANVAS_H);
+
+      // Marco atrás
+      ctx.drawImage(marco, 0, 0, CANVAS_W, CANVAS_H);
+
+      // Posiciones a usar
+      const posiciones = USE_MANUAL_POSITIONS ? POSICIONES_MANUALES : calcPosicionesAuto();
+
+      // Dibuja 6 fotos usando "cover" (recorte proporcional centrado)
+      for (let i = 0; i < 6; i++) {
+        const pos = posiciones[i];
+        drawImageCover(ctx, imagenes[i], pos.x, pos.y, ANCHO_FOTO, ALTO_FOTO);
+      }
+    }
+
+    // Calcula posiciones automáticas 3x2 con márgenes/espaciados definidos arriba
+    function calcPosicionesAuto() {
+      const posiciones = [];
+      const xIzq = MARGEN_EXTERNO_X;
+      const xDer = MARGEN_EXTERNO_X + ANCHO_FOTO + ESPACIO_COLUMNAS_X;
+
+      const y1 = TOP_Y;
+      const y2 = TOP_Y + ALTO_FOTO + ESPACIO_FILAS_Y;
+      const y3 = TOP_Y + (ALTO_FOTO + ESPACIO_FILAS_Y) * 2;
+
+      // izquierda
+      posiciones.push({ x: xIzq, y: y1 });
+      posiciones.push({ x: xIzq, y: y2 });
+      posiciones.push({ x: xIzq, y: y3 });
+      // derecha
+      posiciones.push({ x: xDer, y: y1 });
+      posiciones.push({ x: xDer, y: y2 });
+      posiciones.push({ x: xDer, y: y3 });
+
+      return posiciones;
+    }
+
+    // Dibuja una imagen recortada al estilo "cover" dentro del rectángulo destino
+    function drawImageCover(ctx, img, dx, dy, dW, dH) {
+      const sW = img.width;
+      const sH = img.height;
+      const srcAR = sW / sH;
+      const dstAR = dW / dH;
+
+      let sx, sy, sw, sh;
+      if (srcAR > dstAR) {
+        // Imagen más ancha: recortar ancho
+        sh = sH;
+        sw = sh * dstAR;
+        sx = (sW - sw) / 2;
+        sy = 0;
+      } else {
+        // Imagen más alta: recortar alto
+        sw = sW;
+        sh = sw / dstAR;
+        sx = 0;
+        sy = (sH - sh) / 2;
+      }
+      ctx.drawImage(img, sx, sy, sw, sh, dx, dy, dW, dH);
+    }
+
+    function descargarTira() {
+      const a = document.createElement('a');
+      a.download = 'tira_fotos.png';
+      a.href = canvas.toDataURL('image/png');
+      a.click();
+    }
+  </script>
 </body>
 </html>
