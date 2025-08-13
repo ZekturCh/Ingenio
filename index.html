@@ -22,6 +22,7 @@
     <input type="file" id="fileInput" accept="image/*" multiple><br><br>
     <button onclick="generarTira()">Generar Tira</button>
     <button onclick="descargarTira()">Descargar</button>
+
     <br><br>
     <canvas id="canvas" width="1200" height="1800"></canvas>
 
@@ -29,6 +30,21 @@
         let imagenes = [];
         const canvas = document.getElementById('canvas');
         const ctx = canvas.getContext('2d');
+
+        // Configuración de tamaño de fotos
+        const anchoFoto = 350; // ancho de cada foto
+        const altoFoto = 450;  // alto de cada foto
+
+        // Configuración de posiciones (x, y) de cada foto
+        // Aquí puedes mover cada imagen cambiando los valores
+        const posiciones = [
+            {x: 100, y: 150}, // Foto 1
+            {x: 100, y: 650}, // Foto 2
+            {x: 100, y: 1150}, // Foto 3
+            {x: 750, y: 150}, // Foto 4
+            {x: 750, y: 650}, // Foto 5
+            {x: 750, y: 1150}  // Foto 6
+        ];
 
         function generarTira() {
             const archivos = document.getElementById('fileInput').files;
@@ -66,21 +82,19 @@
         }
 
         function dibujarFotos() {
-            const anchoFoto = canvas.width / 2 * 0.2;
-            const altoFoto = canvas.height / 3 * 0.2;
-
             imagenes.forEach((img, i) => {
-                const x = (i < 3) ? 0 : anchoFoto;
-                const y = (i % 3) * altoFoto;
+                const pos = posiciones[i];
 
-                // Calcular recorte proporcional
+                // Escalar proporcionalmente para llenar ancho/alto definido
                 const escala = Math.max(anchoFoto / img.width, altoFoto / img.height);
                 const nuevoAncho = img.width * escala;
                 const nuevoAlto = img.height * escala;
-                const offsetX = (anchoFoto - nuevoAncho) / 2 + 50;
-                const offsetY = (altoFoto - nuevoAlto) / 2 + 100;
 
-                ctx.drawImage(img, x + offsetX, y + offsetY, nuevoAncho, nuevoAlto);
+                // Centrar la imagen dentro del espacio asignado
+                const offsetX = pos.x + (anchoFoto - nuevoAncho) / 2;
+                const offsetY = pos.y + (altoFoto - nuevoAlto) / 2;
+
+                ctx.drawImage(img, offsetX, offsetY, nuevoAncho, nuevoAlto);
             });
         }
 
