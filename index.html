@@ -39,11 +39,11 @@
         // Aquí puedes mover cada imagen cambiando los valores
         const posiciones = [
             {x: 100, y: 150}, // Foto 1
-            {x: 100, y: 650}, // Foto 2
-            {x: 100, y: 1150}, // Foto 3
+            {x: 100, y: 600}, // Foto 2
+            {x: 100, y: 1050}, // Foto 3
             {x: 750, y: 150}, // Foto 4
-            {x: 750, y: 650}, // Foto 5
-            {x: 750, y: 1150}  // Foto 6
+            {x: 750, y: 600}, // Foto 5
+            {x: 750, y: 1050}  // Foto 6
         ];
 
         function generarTira() {
@@ -85,7 +85,7 @@
                 function dibujarFotos() {
                         const margenExterno = 40; // margen lateral exterior
                         const margenEntreColumnas = 80; // espacio entre las dos columnas
-                        const margenVertical = 40; // espacio arriba y entre fotos
+                        const margenVertical = 20; // espacio arriba y entre fotos
                         const escalaFotos = 0.8; // 80% del tamaño disponible
                     
                         const anchoDisponible = (canvas.width - (margenExterno * 2) - margenEntreColumnas) / 2;
