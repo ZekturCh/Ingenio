@@ -77,8 +77,8 @@
                 const escala = Math.max(anchoFoto / img.width, altoFoto / img.height);
                 const nuevoAncho = img.width * escala;
                 const nuevoAlto = img.height * escala;
-                const offsetX = (anchoFoto - nuevoAncho) / 2 * 0.7;
-                const offsetY = (altoFoto - nuevoAlto) / 2 * 0.7;
+                const offsetX = (anchoFoto - nuevoAncho) / 2 + 50;
+                const offsetY = (altoFoto - nuevoAlto) / 2 + 100;
 
                 ctx.drawImage(img, x + offsetX, y + offsetY, nuevoAncho, nuevoAlto);
             });
