@@ -2,120 +2,126 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Generador de Tira con Marco</title>
+    <title>Tira con Marco y Recorte</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             text-align: center;
-            background: #eee;
+            background: #f0f0f0;
         }
         canvas {
             border: 1px solid #ccc;
-            background: white;
+            margin-top: 20px;
+        }
+        .input-group {
+            margin: 10px;
         }
     </style>
+    <!-- Cropper.js -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.css" rel="stylesheet">
 </head>
 <body>
-    <h2>Generador de Tira con Marco</h2>
-    <input type="file" id="fileInput" accept="image/*" multiple>
-    <br><br>
-    <button onclick="generar()">Generar</button>
-    <button onclick="descargar()">Descargar</button>
-    <br><br>
-    <canvas id="canvas" width="1200" height="1800"></canvas>
 
-    <script>
-        const canvas = document.getElementById("canvas");
-        const ctx = canvas.getContext("2d");
+<h2>Generar tira con recorte y marco</h2>
 
-        const marco = new Image();
-        marco.src = "marco.png"; // Debe estar en la misma carpeta del HTML
+<div id="inputs"></div>
+<button onclick="generarTira()">Generar Tira</button>
+<br>
+<canvas id="tiraCanvas" width="1200" height="1800"></canvas>
+<br>
+<a id="descargar" download="tira.png">Descargar Imagen</a>
 
-        let fotos = [];
+<!-- Librería Cropper.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.js"></script>
+<script>
+const totalFotos = 6;
+const cropInstances = [];
+const imagesData = [];
 
-        document.getElementById("fileInput").addEventListener("change", function (e) {
-            fotos = [];
-            const files = Array.from(e.target.files).slice(0, 6); // Solo 6 fotos
-            files.forEach(file => {
-                const img = new Image();
-                img.src = URL.createObjectURL(file);
-                fotos.push(img);
-            });
-        });
+window.onload = () => {
+    const inputsDiv = document.getElementById("inputs");
+    for (let i = 0; i < totalFotos; i++) {
+        const input = document.createElement("input");
+        input.type = "file";
+        input.accept = "image/*";
+        input.className = "input-group";
+        input.onchange = (e) => prepararCropper(e, i);
+        inputsDiv.appendChild(input);
+    }
+};
 
-        function generar() {
-            if (fotos.length === 0) {
-                alert("Sube primero tus fotos (máximo 6).");
-                return;
+function prepararCropper(e, index) {
+    const file = e.target.files[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = (event) => {
+        const image = document.createElement("img");
+        image.src = event.target.result;
+        image.style.maxWidth = "100%";
+
+        const cropWindow = window.open("", "_blank", "width=600,height=600");
+        cropWindow.document.write(`
+            <html>
+            <head>
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.css">
+            </head>
+            <body style="margin:0">
+                <img id="image" src="${image.src}">
+                <button id="cropBtn">Recortar</button>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.js"></script>
+                <script>
+                    const imageEl = document.getElementById('image');
+                    const cropper = new Cropper(imageEl, {
+                        aspectRatio: 500 / 399, 
+                        viewMode: 1
+                    });
+                    document.getElementById('cropBtn').onclick = () => {
+                        const canvas = cropper.getCroppedCanvas({ width: 500, height: 399 });
+                        window.opener.imagesData[${index}] = canvas;
+                        window.close();
+                    };
+                <\/script>
+            </body>
+            </html>
+        `);
+    };
+    reader.readAsDataURL(file);
+}
+
+function generarTira() {
+    const canvas = document.getElementById("tiraCanvas");
+    const ctx = canvas.getContext("2d");
+
+    const marco = new Image();
+    marco.src = "marco.png"; // Debe estar en el mismo repo
+    marco.onload = () => {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        // Dibujar marco al fondo
+        ctx.drawImage(marco, 0, 0, canvas.width, canvas.height);
+
+        // Posiciones para 2 columnas
+        const posiciones = [
+            {x: 100, y: 100},   // F1
+            {x: 100, y: 550},   // F2
+            {x: 100, y: 1000},  // F3
+            {x: 650, y: 100},   // F4
+            {x: 650, y: 550},   // F5
+            {x: 650, y: 1000}   // F6
+        ];
+
+        for (let i = 0; i < totalFotos; i++) {
+            if (imagesData[i]) {
+                ctx.drawImage(imagesData[i], posiciones[i].x, posiciones[i].y, 500, 399);
             }
-
-            marco.onload = () => {
-                dibujar();
-            };
-
-            if (marco.complete) {
-                dibujar();
-            }
         }
 
-        function dibujar() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-            // Fondo con el marco
-            ctx.drawImage(marco, 0, 0, canvas.width, canvas.height);
-
-            // Configuración de grilla para 6 fotos (2 filas x 3 columnas)
-            const cols = 3;
-            const rows = 2;
-            const fotoAncho = 1200 / cols;
-            const fotoAlto = 500; // área útil para fotos
-            const margenY = 400; // posición inicial Y para la primera fila
-            const espacioVertical = 550; // distancia entre filas
-
-            fotos.forEach((img, i) => {
-                img.onload = () => colocarFoto(img, i, cols, fotoAncho, fotoAlto, margenY, espacioVertical);
-                if (img.complete) {
-                    colocarFoto(img, i, cols, fotoAncho, fotoAlto, margenY, espacioVertical);
-                }
-            });
-        }
-
-        function colocarFoto(img, index, cols, ancho, alto, margenY, espacioVertical) {
-            const col = index % cols;
-            const row = Math.floor(index / cols);
-            const x = col * ancho;
-            const y = margenY + row * espacioVertical;
-
-            // Recorte proporcional
-            const ratioImg = img.width / img.height;
-            const ratioCaja = ancho / alto;
-            let sx, sy, sw, sh;
-
-            if (ratioImg > ratioCaja) {
-                // Imagen más ancha que la caja
-                sh = img.height;
-                sw = sh * ratioCaja;
-                sx = (img.width - sw) / 2;
-                sy = 0;
-            } else {
-                // Imagen más alta que la caja
-                sw = img.width;
-                sh = sw / ratioCaja;
-                sx = 0;
-                sy = (img.height - sh) / 2;
-            }
-
-            ctx.drawImage(img, sx, sy, sw, sh, x, y, ancho, alto);
-        }
-
-        function descargar() {
-            const enlace = document.createElement("a");
-            enlace.download = "tira.png";
-            enlace.href = canvas.toDataURL("image/png");
-            enlace.click();
-        }
-    </script>
+        // Actualizar enlace de descarga
+        document.getElementById("descargar").href = canvas.toDataURL("image/png");
+    };
+}
+</script>
 </body>
 </html>
 
