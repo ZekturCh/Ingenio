@@ -29,17 +29,17 @@
     const CANVAS_W = 1200;
     const CANVAS_H = 1800;
 
-    // Tamaño fijo de cada foto (NO cambia al mover posiciones)
-    // Modifica estos dos si quieres fotos más grandes/pequeñas.
-    const ANCHO_FOTO = 500;   // p.ej. 500
-    const ALTO_FOTO  = 350;   // p.ej. 399
-
-    // Layout por variables (dos columnas de 3 fotos):
-    // Márgenes laterales y separaciones. Ajusta para mover posiciones sin tocar el tamaño.
-    const MARGEN_EXTERNO_X     = 100; // borde izquierdo y derecho externos
-    const ESPACIO_COLUMNAS_X   = 150;   // separación entre columnas (entre izquierda y derecha)
-    const TOP_Y                = 120; // margen superior del primer renglón
-    const ESPACIO_FILAS_Y      = 40;  // separación vertical entre fotos
+    // Escala fotos al 80% aprox.
+    const ANCHO_FOTO = 400;   // antes 500
+    const ALTO_FOTO  = 280;   // antes 350
+    
+    // Márgenes laterales equilibrados
+    const MARGEN_EXTERNO_X   = 150; // más centrado
+    const ESPACIO_COLUMNAS_X = 200; // más espacio entre columnas
+    
+    // Margen superior más pequeño (sube las fotos)
+    const TOP_Y = 80;         // antes 120
+    const ESPACIO_FILAS_Y = 40;
 
     // Si prefieres definir posiciones manuales exactas, descomenta el arreglo de abajo
     // y cambia USE_MANUAL_POSITIONS a true. Cada objeto es la esquina sup-izq del cuadro de la foto.
