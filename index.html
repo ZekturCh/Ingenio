@@ -129,7 +129,7 @@
       a.click();
     }
 
-    function descargarBlob(canvas) {
+    function descargarBlob() {
     canvas.toBlob(function(blob) {
         const url = URL.createObjectURL(blob);
         const a = document.createElement('a');
@@ -140,6 +140,7 @@
         document.body.removeChild(a);
         URL.revokeObjectURL(url);
     }, 'image/png');
+
 }
   </script>
 </body>
