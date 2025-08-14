@@ -19,27 +19,65 @@
     <button id="btnGenerar">Generar Tira</button>
     <button id="btnDescargar">Descargar</button>
   </div>
+  <div style="margin-bottom:20px;">
+  <label>Margen izquierdo/derecho: <input type="range" id="margenX" min="0" max="300" value="150"></label>
+  <span id="margenXVal">150</span><br>
 
+  <label>Espacio entre columnas: <input type="range" id="espacioCols" min="0" max="200" value="10"></label>
+  <span id="espacioColsVal">10</span><br>
+
+  <label>Margen superior: <input type="range" id="topY" min="0" max="500" value="80"></label>
+  <span id="topYVal">80</span><br>
+
+  <label>Espacio entre filas: <input type="range" id="espacioFilas" min="0" max="200" value="40"></label>
+  <span id="espacioFilasVal">40</span><br>
+
+  <label>Ancho fotos: <input type="range" id="anchoFoto" min="100" max="800" value="500"></label>
+  <span id="anchoFotoVal">500</span><br>
+
+  <label>Alto fotos: <input type="range" id="altoFoto" min="100" max="800" value="350"></label>
+  <span id="altoFotoVal">350</span>
+</div>
   <canvas id="canvas" width="1200" height="1800"></canvas>
 
   <script>
+// Variables iniciales (pueden cambiar con sliders)
+let MARGEN_EXTERNO_X   = 150;
+let ESPACIO_COLUMNAS_X = 10;
+let TOP_Y              = 80;
+let ESPACIO_FILAS_Y    = 40;
+let ANCHO_FOTO         = 500;
+let ALTO_FOTO          = 350;
+
+// Vincular sliders con variables y redibujar
+function bindControls() {
+  const controls = [
+    { id: 'margenX',      var: 'MARGEN_EXTERNO_X', span: 'margenXVal' },
+    { id: 'espacioCols',  var: 'ESPACIO_COLUMNAS_X', span: 'espacioColsVal' },
+    { id: 'topY',         var: 'TOP_Y', span: 'topYVal' },
+    { id: 'espacioFilas', var: 'ESPACIO_FILAS_Y', span: 'espacioFilasVal' },
+    { id: 'anchoFoto',    var: 'ANCHO_FOTO', span: 'anchoFotoVal' },
+    { id: 'altoFoto',     var: 'ALTO_FOTO', span: 'altoFotoVal' },
+  ];
+
+  controls.forEach(c => {
+    const slider = document.getElementById(c.id);
+    const span   = document.getElementById(c.span);
+    slider.addEventListener('input', () => {
+      window[c.var] = parseInt(slider.value);
+      span.textContent = slider.value;
+      if (imagenes.length === 6) render(); // Redibujar si ya hay fotos cargadas
+    });
+  });
+}
+
+// Llamar esta función cuando cargue la página
+bindControls();
     // =========================
     // ======= CONFIG ==========
     // Tamaño del lienzo final (debe coincidir con tu marco.png)
     const CANVAS_W = 1200;
     const CANVAS_H = 1800;
-
-    // Escala fotos al 80% aprox.
-    const ANCHO_FOTO = 500;   // antes 500
-    const ALTO_FOTO  = 350;   // antes 350
-    
-    // Márgenes laterales equilibrados
-    const MARGEN_EXTERNO_X   = 150; // más centrado
-    const ESPACIO_COLUMNAS_X = 10; // más espacio entre columnas
-    
-    // Margen superior más pequeño (sube las fotos)
-    const TOP_Y = 80;         // antes 120
-    const ESPACIO_FILAS_Y = 40;
 
     // Si prefieres definir posiciones manuales exactas, descomenta el arreglo de abajo
     // y cambia USE_MANUAL_POSITIONS a true. Cada objeto es la esquina sup-izq del cuadro de la foto.
