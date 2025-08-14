@@ -52,7 +52,7 @@
     let imagenes = []; // Array para guardar las imágenes cargadas
 
     document.getElementById('btnGenerar').addEventListener('click', generarTira);
-    document.getElementById('btnDescargar').addEventListener('click', descargarTira);
+    document.getElementById('btnDescargar').addEventListener('click', descargarBlob);
 
     function generarTira() {
       const files = Array.from(document.getElementById('fileInput').files).slice(0, 6);
@@ -128,6 +128,19 @@
       a.href = canvas.toDataURL('image/png');
       a.click();
     }
+
+    function descargarBlob(canvas) {
+    canvas.toBlob(function(blob) {
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'foto.png';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+    }, 'image/png');
+}
   </script>
 </body>
 </html>
