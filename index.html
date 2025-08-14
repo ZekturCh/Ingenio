@@ -1,228 +1,122 @@
 <!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <title>Generador de Tira de Fotos</title>
-  <style>
-    body { font-family: Arial, sans-serif; text-align: center; background: #f0f0f0; margin: 0; padding: 20px; }
-    canvas { border: 1px solid #ccc; background: #fff; max-width: 95vw; height: auto; }
-    .row { margin: 10px 0; }
-  </style>
+<meta charset="UTF-8">
+<title>Control en vivo de posiciones</title>
+<style>
+  body { background: #eee; text-align: center; font-family: Arial; }
+  canvas { border: 1px solid #ccc; display: block; margin: 20px auto; background: white; }
+  .controls { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 10px; }
+  .control-box { background: #fff; padding: 10px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
+  label { font-size: 12px; display: block; }
+</style>
 </head>
 <body>
-  <h1>Generador de Tira de Fotos</h1>
 
-  <div class="row">
-    <input type="file" id="fileInput" accept="image/*" multiple>
+<h2>Editor en vivo de posiciones</h2>
+<canvas id="miCanvas" width="1000" height="800"></canvas>
+
+<div class="controls">
+  <div class="control-box">
+    <strong>Global</strong>
+    <label>Offset X: <input type="range" id="globalX" min="-500" max="500" value="0"> <span id="valGlobalX">0</span></label>
+    <label>Offset Y: <input type="range" id="globalY" min="-500" max="500" value="0"> <span id="valGlobalY">0</span></label>
   </div>
-  <div class="row">
-    <button id="btnGenerar">Generar Tira</button>
-    <button id="btnDescargar">Descargar</button>
-  </div>
-  <div style="margin-bottom:20px;">
-  <label>Margen izquierdo/derecho: <input type="range" id="margenX" min="0" max="300" value="150"></label>
-  <span id="margenXVal">150</span><br>
-
-  <label>Espacio entre columnas: <input type="range" id="espacioCols" min="0" max="200" value="10"></label>
-  <span id="espacioColsVal">10</span><br>
-
-  <label>Margen superior: <input type="range" id="topY" min="0" max="500" value="80"></label>
-  <span id="topYVal">80</span><br>
-
-  <label>Espacio entre filas: <input type="range" id="espacioFilas" min="0" max="200" value="40"></label>
-  <span id="espacioFilasVal">40</span><br>
-
-  <label>Ancho fotos: <input type="range" id="anchoFoto" min="100" max="800" value="500"></label>
-  <span id="anchoFotoVal">500</span><br>
-
-  <label>Alto fotos: <input type="range" id="altoFoto" min="100" max="800" value="350"></label>
-  <span id="altoFotoVal">350</span>
 </div>
-  <canvas id="canvas" width="1200" height="1800"></canvas>
 
-  <script>
-// Variables iniciales (pueden cambiar con sliders)
-let MARGEN_EXTERNO_X   = 150;
-let ESPACIO_COLUMNAS_X = 10;
-let TOP_Y              = 80;
-let ESPACIO_FILAS_Y    = 40;
-let ANCHO_FOTO         = 500;
-let ALTO_FOTO          = 350;
+<div class="controls" id="fotoControls"></div>
 
-// Vincular sliders con variables y redibujar
-function bindControls() {
-  const controls = [
-    { id: 'margenX',      var: 'MARGEN_EXTERNO_X', span: 'margenXVal' },
-    { id: 'espacioCols',  var: 'ESPACIO_COLUMNAS_X', span: 'espacioColsVal' },
-    { id: 'topY',         var: 'TOP_Y', span: 'topYVal' },
-    { id: 'espacioFilas', var: 'ESPACIO_FILAS_Y', span: 'espacioFilasVal' },
-    { id: 'anchoFoto',    var: 'ANCHO_FOTO', span: 'anchoFotoVal' },
-    { id: 'altoFoto',     var: 'ALTO_FOTO', span: 'altoFotoVal' },
-  ];
+<script>
+const canvas = document.getElementById("miCanvas");
+const ctx = canvas.getContext("2d");
 
-  controls.forEach(c => {
-    const slider = document.getElementById(c.id);
-    const span   = document.getElementById(c.span);
-    slider.addEventListener('input', () => {
-      window[c.var] = parseInt(slider.value);
-      span.textContent = slider.value;
-      if (imagenes.length === 6) render(); // Redibujar si ya hay fotos cargadas
-    });
+// Lista de imágenes
+const imagenesSrc = [
+  "foto1.jpg", "foto2.jpg", "foto3.jpg",
+  "foto4.jpg", "foto5.jpg", "foto6.jpg"
+];
+
+// Posiciones iniciales
+let posiciones = [
+  {x: 100, y: 150},
+  {x: 100, y: 350},
+  {x: 100, y: 550},
+  {x: 700, y: 150},
+  {x: 700, y: 350},
+  {x: 700, y: 550}
+];
+
+// Escala de las imágenes
+const escala = 0.8;
+
+// Offset global
+let offsetX = 0;
+let offsetY = 0;
+
+let imagenes = [];
+let cargadas = 0;
+
+// Cargar imágenes
+imagenesSrc.forEach((src, i) => {
+  const img = new Image();
+  img.src = src;
+  img.onload = () => {
+    imagenes[i] = img;
+    cargadas++;
+    if (cargadas === imagenesSrc.length) dibujar();
+  };
+});
+
+// Crear controles individuales
+const contenedor = document.getElementById("fotoControls");
+posiciones.forEach((pos, i) => {
+  const div = document.createElement("div");
+  div.className = "control-box";
+  div.innerHTML = `
+    <strong>Foto ${i+1}</strong>
+    <label>X: <input type="range" min="0" max="900" value="${pos.x}" data-i="${i}" data-axis="x">
+      <span id="valX${i}">${pos.x}</span></label>
+    <label>Y: <input type="range" min="0" max="700" value="${pos.y}" data-i="${i}" data-axis="y">
+      <span id="valY${i}">${pos.y}</span></label>
+  `;
+  contenedor.appendChild(div);
+});
+
+// Escuchar sliders globales
+document.getElementById("globalX").addEventListener("input", e => {
+  offsetX = parseInt(e.target.value);
+  document.getElementById("valGlobalX").textContent = offsetX;
+  dibujar();
+});
+document.getElementById("globalY").addEventListener("input", e => {
+  offsetY = parseInt(e.target.value);
+  document.getElementById("valGlobalY").textContent = offsetY;
+  dibujar();
+});
+
+// Escuchar sliders individuales
+contenedor.addEventListener("input", e => {
+  if (e.target.tagName === "INPUT") {
+    let i = parseInt(e.target.dataset.i);
+    let axis = e.target.dataset.axis;
+    posiciones[i][axis] = parseInt(e.target.value);
+    document.getElementById(`val${axis.toUpperCase()}${i}`).textContent = posiciones[i][axis];
+    dibujar();
+  }
+});
+
+function dibujar() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  posiciones.forEach((pos, i) => {
+    if (imagenes[i]) {
+      let nuevoAncho = imagenes[i].width * escala;
+      let nuevoAlto = imagenes[i].height * escala;
+      ctx.drawImage(imagenes[i], pos.x + offsetX, pos.y + offsetY, nuevoAncho, nuevoAlto);
+    }
   });
 }
+</script>
 
-// Llamar esta función cuando cargue la página
-bindControls();
-    // =========================
-    // ======= CONFIG ==========
-    // Tamaño del lienzo final (debe coincidir con tu marco.png)
-    const CANVAS_W = 1200;
-    const CANVAS_H = 1800;
-
-    // Si prefieres definir posiciones manuales exactas, descomenta el arreglo de abajo
-    // y cambia USE_MANUAL_POSITIONS a true. Cada objeto es la esquina sup-izq del cuadro de la foto.
-    const USE_MANUAL_POSITIONS = false;
-    const POSICIONES_MANUALES = [
-    {x: 100, y: 200}, // Izquierda arriba
-    {x: 100, y: 400}, // Izquierda medio
-    {x: 100, y: 600}, // Izquierda abajo
-    {x: 800, y: 200}, // Derecha arriba
-    {x: 800, y: 400}, // Derecha medio
-    {x: 800, y: 600}  // Derecha abajo
-    ];
-    // =========================
-
-    const canvas = document.getElementById('canvas');
-    const ctx = canvas.getContext('2d');
-    canvas.width = CANVAS_W;
-    canvas.height = CANVAS_H;
-
-    const marco = new Image();
-    marco.src = 'marco.png'; // debe estar junto al HTML
-
-    let imagenes = []; // Image objects (hasta 6)
-
-    document.getElementById('btnGenerar').addEventListener('click', generarTira);
-    document.getElementById('btnDescargar').addEventListener('click', descargarTira);
-
-    function generarTira() {
-      const files = Array.from(document.getElementById('fileInput').files).slice(0, 6);
-      if (files.length < 6) {
-        alert('Selecciona exactamente 6 fotos.');
-        return;
-      }
-
-      imagenes = [];
-      let cargadas = 0;
-
-      // Primero limpiamos y dibujamos el marco (FONDO)
-      marco.onload = () => {
-        // Cargamos imágenes del usuario
-        files.forEach((f, i) => {
-          const reader = new FileReader();
-          reader.onload = e => {
-            const img = new Image();
-            img.onload = () => {
-              imagenes[i] = img;
-              cargadas++;
-              if (cargadas === 6) {
-                render();
-              }
-            };
-            img.src = e.target.result;
-          };
-          reader.readAsDataURL(f);
-        });
-      };
-
-      // Si el marco ya está cacheado
-      if (marco.complete) {
-        files.forEach((f, i) => {
-          const reader = new FileReader();
-          reader.onload = e => {
-            const img = new Image();
-            img.onload = () => {
-              imagenes[i] = img;
-              if (imagenes.filter(Boolean).length === 6) render();
-            };
-            img.src = e.target.result;
-          };
-          reader.readAsDataURL(f);
-        });
-      }
-    }
-
-    // Dibuja todo: marco de fondo + fotos en posiciones calculadas
-    function render() {
-      // Fondo blanco (opcional)
-      ctx.fillStyle = '#fff';
-      ctx.fillRect(0, 0, CANVAS_W, CANVAS_H);
-
-      // Marco atrás
-      ctx.drawImage(marco, 0, 0, CANVAS_W, CANVAS_H);
-
-      // Posiciones a usar
-      const posiciones = USE_MANUAL_POSITIONS ? POSICIONES_MANUALES : calcPosicionesAuto();
-
-      // Dibuja 6 fotos usando "cover" (recorte proporcional centrado)
-      for (let i = 0; i < 6; i++) {
-        const pos = posiciones[i];
-        drawImageCover(ctx, imagenes[i], pos.x, pos.y, ANCHO_FOTO, ALTO_FOTO);
-      }
-    }
-
-    // Calcula posiciones automáticas 3x2 con márgenes/espaciados definidos arriba
-    function calcPosicionesAuto() {
-      const posiciones = [];
-      const xIzq = MARGEN_EXTERNO_X;
-      const xDer = MARGEN_EXTERNO_X + ANCHO_FOTO + ESPACIO_COLUMNAS_X;
-
-      const y1 = TOP_Y;
-      const y2 = TOP_Y + ALTO_FOTO + ESPACIO_FILAS_Y;
-      const y3 = TOP_Y + (ALTO_FOTO + ESPACIO_FILAS_Y) * 2;
-
-      // izquierda
-      posiciones.push({ x: xIzq, y: y1 });
-      posiciones.push({ x: xIzq, y: y2 });
-      posiciones.push({ x: xIzq, y: y3 });
-      // derecha
-      posiciones.push({ x: xDer, y: y1 });
-      posiciones.push({ x: xDer, y: y2 });
-      posiciones.push({ x: xDer, y: y3 });
-
-      return posiciones;
-    }
-
-    // Dibuja una imagen recortada al estilo "cover" dentro del rectángulo destino
-    function drawImageCover(ctx, img, dx, dy, dW, dH) {
-      const sW = img.width;
-      const sH = img.height;
-      const srcAR = sW / sH;
-      const dstAR = dW / dH;
-
-      let sx, sy, sw, sh;
-      if (srcAR > dstAR) {
-        // Imagen más ancha: recortar ancho
-        sh = sH;
-        sw = sh * dstAR;
-        sx = (sW - sw) / 2;
-        sy = 0;
-      } else {
-        // Imagen más alta: recortar alto
-        sw = sW;
-        sh = sw / dstAR;
-        sx = 0;
-        sy = (sH - sh) / 2;
-      }
-      ctx.drawImage(img, sx, sy, sw, sh, dx, dy, dW, dH);
-    }
-
-    function descargarTira() {
-      const a = document.createElement('a');
-      a.download = 'tira_fotos.png';
-      a.href = canvas.toDataURL('image/png');
-      a.click();
-    }
-  </script>
 </body>
 </html>
+
