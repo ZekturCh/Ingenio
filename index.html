@@ -29,12 +29,12 @@
 
     // Posiciones fijas para las fotos
     const POSICIONES_MANUALES = [
-      {x: 50, y: 200}, // Izquierda arriba
-      {x: 50, y: 600}, // Izquierda medio
-      {x: 50, y: 1000}, // Izquierda abajo
-      {x: 650, y: 200}, // Derecha arriba
-      {x: 650, y: 600}, // Derecha medio
-      {x: 650, y: 1000}  // Derecha abajo
+      {x: 50, y: 200}, 
+      {x: 50, y: 600},
+      {x: 50, y: 1000},
+      {x: 650, y: 200},
+      {x: 650, y: 600},
+      {x: 650, y: 1000}
     ];
 
     // Tamaño fijo de cada foto
@@ -46,10 +46,14 @@
     canvas.width = CANVAS_W;
     canvas.height = CANVAS_H;
 
+    // Imágenes fijas
     const marco = new Image();
-    marco.src = 'marci.png'; // El marco debe estar en la misma carpeta que el HTML
+    marco.src = 'marci.png';
 
-    let imagenes = []; // Array para guardar las imágenes cargadas
+    const sobre = new Image();
+    sobre.src = 'sobre.png'; // Imagen que quieres encima de todo
+
+    let imagenes = [];
 
     document.getElementById('btnGenerar').addEventListener('click', generarTira);
     document.getElementById('btnDescargar').addEventListener('click', descargarBlob);
@@ -91,16 +95,18 @@
       // Marco
       ctx.drawImage(marco, 0, 0, CANVAS_W, CANVAS_H);
 
-      // Dibujar las imágenes en posiciones fijas
+      // Dibujar fotos
       for (let i = 0; i < 6; i++) {
         const pos = POSICIONES_MANUALES[i];
         if (imagenes[i]) {
           drawImageCover(ctx, imagenes[i], pos.x, pos.y, ANCHO_FOTO, ALTO_FOTO);
         }
       }
+
+      // Dibujar la imagen "sobre" encima de todo
+      ctx.drawImage(sobre, 0, 0, CANVAS_W, CANVAS_H);
     }
 
-    // Función para recortar la imagen estilo "cover"
     function drawImageCover(ctx, img, dx, dy, dW, dH) {
       const sW = img.width;
       const sH = img.height;
@@ -122,27 +128,19 @@
       ctx.drawImage(img, sx, sy, sw, sh, dx, dy, dW, dH);
     }
 
-    function descargarTira() {
-      const a = document.createElement('a');
-      a.download = 'tira_fotos.png';
-      a.href = canvas.toDataURL('image/png');
-      a.click();
-    }
-
     function descargarBlob() {
-    canvas.toBlob(function(blob) {
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = 'foto.png';
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
-        URL.revokeObjectURL(url);
-    }, 'image/png');
-
-}
-  </script>
+      canvas.toBlob(function(blob) {
+          const url = URL.createObjectURL(blob);
+          const a = document.createElement('a');
+          a.href = url;
+          a.download = 'foto.png';
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+          URL.revokeObjectURL(url);
+      }, 'image/png');
+    }
+</script>
 </body>
 </html>
 
