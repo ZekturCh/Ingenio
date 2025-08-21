@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Generador de Tira de Fotos</title>
+  <style>
+    body { font-family: Arial, sans-serif; text-align: center; background: #f0f0f0; margin: 0; padding: 20px; }
+    canvas { border: 1px solid #ccc; background: #fff; max-width: 95vw; height: auto; }
+    .row { margin: 10px 0; }
+  </style>
+</head>
+<body>
+  <h1>Generador de Tira de Fotos</h1>
+
+  <div class="row">
+    <input type="file" id="fileInput" accept="image/*" multiple>
+  </div>
+  <div class="row">
+    <button id="btnGenerar">Generar Tira</button>
+    <button id="btnDescargar">Descargar</button>
+  </div>
+
+  <canvas id="canvas" width="1200" height="1800"></canvas>
+
+  <script>
+    // Tamaño del lienzo
+    const CANVAS_W = 1200;
+    const CANVAS_H = 1800;
+
+    // Posiciones fijas para las fotos
+    const POSICIONES_MANUALES = [
+      {x: 50, y: 260}, 
+      {x: 50, y: 650},
+      {x: 50, y: 1000},
+      {x: 650, y: 260},
+      {x: 650, y: 650},
+      {x: 650, y: 1020}
+    ];
+
+    // Tamaño fijo de cada foto
+    const ANCHO_FOTO = 500;
+    const ALTO_FOTO = 360;
+
+    const canvas = document.getElementById('canvas');
+    const ctx = canvas.getContext('2d');
+    canvas.width = CANVAS_W;
+    canvas.height = CANVAS_H;
+
+    // Imágenes fijas
+    const marco = new Image();
+    marco.src = 'fondo.png';
+
+    const sobre = new Image();
+    sobre.src = 'over.png'; // Imagen que quieres encima de todo
+
+    let imagenes = [];
+
+    document.getElementById('btnGenerar').addEventListener('click', generarTira);
+    document.getElementById('btnDescargar').addEventListener('click', descargarBlob);
+
+    function generarTira() {
+      const files = Array.from(document.getElementById('fileInput').files).slice(0, 6);
+      if (files.length < 6) {
+        alert('Selecciona exactamente 6 fotos.');
+        return;
+      }
+
+      imagenes = [];
+      let cargadas = 0;
+
+      files.forEach((f, i) => {
+        const reader = new FileReader();
+        reader.onload = e => {
+          const img = new Image();
+          img.onload = () => {
+            imagenes[i] = img;
+            cargadas++;
+            if (cargadas === 6) {
+              render();
+            }
+          };
+          img.src = e.target.result;
+        };
+        reader.readAsDataURL(f);
+      });
+    }
+
+    function render() {
+      ctx.clearRect(0, 0, CANVAS_W, CANVAS_H);
+
+      // Fondo blanco
+      ctx.fillStyle = '#fff';
+      ctx.fillRect(0, 0, CANVAS_W, CANVAS_H);
+
+      // Marco
+      ctx.drawImage(marco, 0, 0, CANVAS_W, CANVAS_H);
+
+      // Dibujar fotos
+      for (let i = 0; i < 6; i++) {
+        const pos = POSICIONES_MANUALES[i];
+        if (imagenes[i]) {
+          drawImageCover(ctx, imagenes[i], pos.x, pos.y, ANCHO_FOTO, ALTO_FOTO);
+        }
+      }
+
+      // Dibujar la imagen "sobre" encima de todo
+      ctx.drawImage(sobre, 0, 0, CANVAS_W, CANVAS_H);
+    }
+
+    function drawImageCover(ctx, img, dx, dy, dW, dH) {
+      const sW = img.width;
+      const sH = img.height;
+      const srcAR = sW / sH;
+      const dstAR = dW / dH;
+
+      let sx, sy, sw, sh;
+      if (srcAR > dstAR) {
+        sh = sH;
+        sw = sh * dstAR;
+        sx = (sW - sw) / 2;
+        sy = 0;
+      } else {
+        sw = sW;
+        sh = sw / dstAR;
+        sx = 0;
+        sy = (sH - sh) / 2;
+      }
+      ctx.drawImage(img, sx, sy, sw, sh, dx, dy, dW, dH);
+    }
+
+    function descargarBlob() {
+      canvas.toBlob(function(blob) {
+          const url = URL.createObjectURL(blob);
+          const a = document.createElement('a');
+          a.href = url;
+          a.download = 'foto.png';
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+          URL.revokeObjectURL(url);
+      }, 'image/png');
+    }
+</script>
+</body>
+</html>
