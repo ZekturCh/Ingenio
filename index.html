@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <title>Generador de Tira de Fotos Mejorado</title>
+  <title>Generador de Tira de Fotos con Fondos Predefinidos</title>
   <style>
     * {
       box-sizing: border-box;
@@ -21,7 +21,7 @@
     }
     
     .container {
-      max-width: 1200px;
+      max-width: 1100px;
       margin: 0 auto;
       background: rgba(255, 255, 255, 0.95);
       border-radius: 15px;
@@ -35,15 +35,6 @@
       font-size: 2.2rem;
     }
     
-    h2 {
-      margin: 25px 0 15px;
-      color: #3498db;
-      font-size: 1.5rem;
-      text-align: left;
-      padding-bottom: 8px;
-      border-bottom: 2px solid #eee;
-    }
-    
     .description {
       margin-bottom: 25px;
       color: #555;
@@ -53,24 +44,12 @@
       line-height: 1.6;
     }
     
-    .upload-section {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-      margin-bottom: 25px;
-    }
-    
-    @media (max-width: 768px) {
-      .upload-section {
-        grid-template-columns: 1fr;
-      }
-    }
-    
     .upload-container {
       background: #f8f9fa;
       border: 2px dashed #6c757d;
       border-radius: 10px;
-      padding: 20px;
+      padding: 25px;
+      margin-bottom: 20px;
       transition: all 0.3s;
     }
     
@@ -79,16 +58,11 @@
       border-color: #4e73df;
     }
     
-    .upload-container h3 {
-      margin-bottom: 15px;
-      color: #2c3e50;
-    }
-    
     .controls {
       display: flex;
       justify-content: center;
       gap: 15px;
-      margin: 25px 0;
+      margin: 20px 0;
       flex-wrap: wrap;
     }
     
@@ -137,7 +111,7 @@
       background: #fff;
       border-radius: 10px;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-      padding: 15px;
+      padding: 10px;
     }
     
     canvas {
@@ -151,31 +125,26 @@
     
     .print-tips {
       margin-top: 25px;
-      padding: 20px;
+      padding: 15px;
       background: #f8f9fa;
       border-radius: 10px;
       text-align: left;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
     }
     
     .print-tips h3 {
-      margin-bottom: 15px;
+      margin-bottom: 10px;
       color: #2c3e50;
-      text-align: center;
     }
     
     .print-tips ul {
       padding-left: 20px;
-      columns: 2;
-    }
-    
-    @media (max-width: 600px) {
-      .print-tips ul {
-        columns: 1;
-      }
     }
     
     .print-tips li {
-      margin-bottom: 10px;
+      margin-bottom: 8px;
       line-height: 1.5;
     }
     
@@ -184,7 +153,7 @@
       flex-wrap: wrap;
       justify-content: center;
       gap: 10px;
-      margin: 15px 0;
+      margin: 20px 0;
     }
     
     .thumbnail {
@@ -204,7 +173,7 @@
       cursor: pointer;
       font-weight: 600;
       transition: all 0.3s;
-      margin: 10px 0;
+      margin-bottom: 15px;
     }
     
     .file-input-label:hover {
@@ -215,19 +184,21 @@
       display: none;
     }
     
-    .image-preview {
-      max-width: 200px;
-      max-height: 150px;
-      margin: 15px auto;
-      border: 2px solid #ddd;
-      border-radius: 8px;
-      overflow: hidden;
+    .status-container {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin: 15px 0;
+      flex-wrap: wrap;
     }
     
-    .image-preview img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
+    .status-item {
+      display: flex;
+      align-items: center;
+      background: #f8f9fa;
+      padding: 10px 15px;
+      border-radius: 50px;
+      font-size: 14px;
     }
     
     .status-indicator {
@@ -242,11 +213,11 @@
       background: #1cc88a;
     }
     
-    .status-pending {
+    .status-loading {
       background: #f6c23e;
     }
     
-    .status-missing {
+    .status-error {
       background: #e74a3b;
     }
     
@@ -267,41 +238,29 @@
   <div class="container">
     <h1>Generador de Tira de Fotos para Hiti P322W</h1>
     
-    <p class="description">Sube 6 fotos, una imagen de fondo y una superposición para crear una tira de fotos optimizada para tu impresora Hiti P322W.</p>
+    <p class="description">Sube 6 fotos para crear una tira de fotos optimizada para tu impresora Hiti P322W. El sistema cargará automáticamente los fondos predefinidos.</p>
     
-    <div class="upload-section">
-      <div class="upload-container">
-        <h3>Fotos para la tira <span id="statusFotos"><span class="status-indicator status-pending"></span>0/6</span></h3>
-        <label for="fileInputFotos" class="file-input-label">Seleccionar Fotos</label>
-        <input type="file" id="fileInputFotos" accept="image/*" multiple>
-        
-        <div class="thumbnail-container" id="thumbnailContainer">
-          <!-- Las miniaturas se mostrarán aquí -->
-        </div>
-      </div>
+    <div class="upload-container">
+      <label for="fileInput" class="file-input-label">Seleccionar 6 Fotos</label>
+      <input type="file" id="fileInput" accept="image/*" multiple>
       
-      <div class="upload-container">
-        <h3>Imágenes de fondo y superposición</h3>
-        
-        <div style="margin-bottom: 20px;">
-          <h4><span id="statusFondo"><span class="status-indicator status-pending"></span>Fondo</span></h4>
-          <label for="fileInputFondo" class="file-input-label">Seleccionar Fondo</label>
-          <input type="file" id="fileInputFondo" accept="image/*">
-          <div class="image-preview">
-            <img id="previewFondo" src="" alt="Vista previa del fondo">
-          </div>
-          <p><small>Si no seleccionas fondo, se usará uno predeterminado</small></p>
-        </div>
-        
-        <div>
-          <h4><span id="statusSobre"><span class="status-indicator status-pending"></span>Superposición</span></h4>
-          <label for="fileInputSobre" class="file-input-label">Seleccionar Superposición</label>
-          <input type="file" id="fileInputSobre" accept="image/*">
-          <div class="image-preview">
-            <img id="previewSobre" src="" alt="Vista previa de la superposición">
-          </div>
-          <p><small>Si no seleccionas superposición, se usará una predeterminada</small></p>
-        </div>
+      <div class="thumbnail-container" id="thumbnailContainer">
+        <!-- Las miniaturas se mostrarán aquí -->
+      </div>
+    </div>
+
+    <div class="status-container">
+      <div class="status-item">
+        <span class="status-indicator" id="statusFondoIndicator"></span>
+        <span id="statusFondoText">Fondo: Cargando...</span>
+      </div>
+      <div class="status-item">
+        <span class="status-indicator" id="statusSobreIndicator"></span>
+        <span id="statusSobreText">Superposición: Cargando...</span>
+      </div>
+      <div class="status-item">
+        <span class="status-indicator" id="statusFotosIndicator"></span>
+        <span id="statusFotosText">Fotos: 0/6</span>
       </div>
     </div>
     
@@ -311,7 +270,7 @@
     </div>
     
     <div class="canvas-container">
-      <canvas id="canvas" width="1181" height="1772"></canvas>
+      <canvas id="canvas" width="1000" height="1800"></canvas>
     </div>
     
     <div class="print-tips">
@@ -323,33 +282,32 @@
         <li>Desactiva cualquier opción de "Ajustar a página"</li>
         <li>Verifica que la orientación sea vertical</li>
         <li>Utiliza la máxima calidad de impresión disponible</li>
-        <li>Para mejores resultados, usa imágenes de 1181x1772 píxeles</li>
       </ul>
     </div>
 
     <div class="printer-settings">
       <h3>Configuración específica para Hiti P322W</h3>
-      <p>Esta plantilla está optimizada para evitar el recorte de bordes en tu impresora. Hemos ajustado el área de impresión para que coincida con las especificaciones de la Hiti P322W.</p>
+      <p>Esta plantilla está optimizada a 1000x1800 píxeles para evitar el recorte del lado izquierdo en tu impresora. Las imágenes de fondo y superposición se cargan automáticamente desde la carpeta de la aplicación.</p>
     </div>
   </div>
 
   <script>
-    // Tamaño del lienzo
-    const CANVAS_W = 1181;
-    const CANVAS_H = 1772;
+    // Tamaño del lienzo ajustado para Hiti P322W
+    const CANVAS_W = 1000;
+    const CANVAS_H = 1800;
 
-    // Posiciones fijas para las fotos (ligeramente ajustadas para la Hiti P322W)
+    // Posiciones fijas para las fotos (ajustadas para el nuevo tamaño)
     const POSICIONES_MANUALES = [
-      {x: 60, y: 320},   // Ajustadas para evitar bordes recortados
-      {x: 60, y: 710},
-      {x: 60, y: 1100},
-      {x: 640, y: 320},  // Ajustadas para evitar bordes recortados
-      {x: 640, y: 710},
-      {x: 640, y: 1100}
+      {x: 40, y: 315}, 
+      {x: 40, y: 695},
+      {x: 40, y: 1075},
+      {x: 520, y: 315},
+      {x: 520, y: 695},
+      {x: 520, y: 1075}
     ];
 
-    // Tamaño fijo de cada foto (ligeramente reducido para la Hiti P322W)
-    const ANCHO_FOTO = 480;
+    // Tamaño fijo de cada foto (ajustado para el nuevo tamaño)
+    const ANCHO_FOTO = 430;
     const ALTO_FOTO = 350;
 
     const canvas = document.getElementById('canvas');
@@ -361,44 +319,61 @@
     let imagenes = [];
     let imagenFondo = null;
     let imagenSobre = null;
-    let imagenesCargadas = 0;
 
     // Referencias a elementos UI
-    const fileInputFotos = document.getElementById('fileInputFotos');
-    const fileInputFondo = document.getElementById('fileInputFondo');
-    const fileInputSobre = document.getElementById('fileInputSobre');
+    const fileInput = document.getElementById('fileInput');
     const btnGenerar = document.getElementById('btnGenerar');
     const btnDescargar = document.getElementById('btnDescargar');
     const thumbnailContainer = document.getElementById('thumbnailContainer');
-    const previewFondo = document.getElementById('previewFondo');
-    const previewSobre = document.getElementById('previewSobre');
-    const statusFotos = document.getElementById('statusFotos');
-    const statusFondo = document.getElementById('statusFondo');
-    const statusSobre = document.getElementById('statusSobre');
+    const statusFondoIndicator = document.getElementById('statusFondoIndicator');
+    const statusFondoText = document.getElementById('statusFondoText');
+    const statusSobreIndicator = document.getElementById('statusSobreIndicator');
+    const statusSobreText = document.getElementById('statusSobreText');
+    const statusFotosIndicator = document.getElementById('statusFotosIndicator');
+    const statusFotosText = document.getElementById('statusFotosText');
 
-    // Cargar imágenes predeterminadas
-    function cargarImagenesPredeterminadas() {
-      // Crear fondo predeterminado (transparente)
-      const fondoDefault = new Image();
-      fondoDefault.onload = function() {
-        imagenFondo = fondoDefault;
-        statusFondo.innerHTML = '<span class="status-indicator status-loaded"></span>Fondo (Predeterminado)';
+    // Cargar imágenes de fondo y superposición automáticamente
+    function cargarImagenesAutomaticas() {
+      // Cargar fondo
+      imagenFondo = new Image();
+      imagenFondo.onload = function() {
+        statusFondoIndicator.className = 'status-indicator status-loaded';
+        statusFondoText.textContent = 'Fondo: Cargado';
+        console.log('Fondo cargado correctamente');
       };
-      // Fondo transparente en lugar del marco azul
-      fondoDefault.src = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="1181" height="1772"><rect width="100%" height="100%" fill="white"/></svg>';
+      imagenFondo.onerror = function() {
+        statusFondoIndicator.className = 'status-indicator status-error';
+        statusFondoText.textContent = 'Fondo: Error al cargar';
+        console.error('Error al cargar el fondo. Asegúrate de que fondo2.png está en la misma carpeta.');
+        
+        // Crear un fondo blanco como respaldo
+        ctx.fillStyle = '#fff';
+        ctx.fillRect(0, 0, CANVAS_W, CANVAS_H);
+      };
+      imagenFondo.crossOrigin = "anonymous";
+      imagenFondo.src = 'fondo2.png';
 
-      // Crear superposición predeterminada (transparente)
-      const sobreDefault = new Image();
-      sobreDefault.onload = function() {
-        imagenSobre = sobreDefault;
-        statusSobre.innerHTML = '<span class="status-indicator status-loaded"></span>Superposición (Predeterminada)';
+      // Cargar superposición
+      imagenSobre = new Image();
+      imagenSobre.onload = function() {
+        statusSobreIndicator.className = 'status-indicator status-loaded';
+        statusSobreText.textContent = 'Superposición: Cargada';
+        console.log('Superposición cargada correctamente');
       };
-      // Superposición transparente en lugar del texto
-      sobreDefault.src = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="1181" height="1772"><rect width="100%" height="100%" fill="none"/></svg>';
+      imagenSobre.onerror = function() {
+        statusSobreIndicator.className = 'status-indicator status-error';
+        statusSobreText.textContent = 'Superposición: Error al cargar';
+        console.error('Error al cargar la superposición. Asegúrate de que over.png está en la misma carpeta.');
+      };
+      imagenSobre.crossOrigin = "anonymous";
+      imagenSobre.src = 'over.png';
+
+      // Dibujar vista inicial
+      dibujarVistaInicial();
     }
 
-    // Dibujar vista previa inicial
-    function dibujarVistaPrevia() {
+    // Dibujar vista inicial
+    function dibujarVistaInicial() {
       // Fondo blanco
       ctx.fillStyle = '#fff';
       ctx.fillRect(0, 0, CANVAS_W, CANVAS_H);
@@ -411,20 +386,19 @@
       
       // Dibujar texto de ejemplo
       ctx.fillStyle = '#333';
-      ctx.font = '30px Arial';
+      ctx.font = '26px Arial';
       ctx.textAlign = 'center';
-      ctx.fillText('Tira de Fotos - Vista previa', CANVAS_W / 2, 150);
-      ctx.font = '20px Arial';
-      ctx.fillText('Tus fotos aparecerán en los recuadros azules', CANVAS_W / 2, 200);
-      ctx.fillText('Carga un fondo y una superposición para personalizar', CANVAS_W / 2, 240);
+      ctx.fillText('Generador de Tira de Fotos', CANVAS_W / 2, 150);
+      ctx.font = '18px Arial';
+      ctx.fillText('Selecciona 6 fotos para comenzar', CANVAS_W / 2, 190);
+      ctx.fillText('Las imágenes de fondo se cargan automáticamente', CANVAS_W / 2, 225);
     }
 
-    // Inicializar con vista previa
-    cargarImagenesPredeterminadas();
-    dibujarVistaPrevia();
+    // Inicializar
+    cargarImagenesAutomaticas();
 
-    // Manejar la selección de archivos de fotos
-    fileInputFotos.addEventListener('change', function(e) {
+    // Manejar la selección de archivos
+    fileInput.addEventListener('change', function(e) {
       const files = Array.from(e.target.files);
       thumbnailContainer.innerHTML = '';
       
@@ -434,10 +408,11 @@
       
       // Actualizar estado
       const loadedCount = Math.min(files.length, 6);
-      statusFotos.innerHTML = `<span class="status-indicator ${loadedCount > 0 ? 'status-loaded' : 'status-pending'}"></span>${loadedCount}/6`;
+      statusFotosIndicator.className = `status-indicator ${loadedCount > 0 ? 'status-loaded' : 'status-loading'}`;
+      statusFotosText.textContent = `Fotos: ${loadedCount}/6`;
       
       // Habilitar/deshabilitar botones según la selección
-      btnGenerar.disabled = files.length === 0;
+      btnGenerar.disabled = files.length < 6;
       
       // Mostrar miniaturas
       files.slice(0, 6).forEach(file => {
@@ -452,64 +427,18 @@
       });
     });
 
-    // Manejar la selección de fondo
-    fileInputFondo.addEventListener('change', function(e) {
-      if (e.target.files.length === 0) return;
-      
-      const file = e.target.files[0];
-      const reader = new FileReader();
-      
-      reader.onload = function(e) {
-        // Actualizar vista previa
-        previewFondo.src = e.target.result;
-        
-        // Cargar imagen para el canvas
-        const img = new Image();
-        img.onload = function() {
-          imagenFondo = img;
-          statusFondo.innerHTML = '<span class="status-indicator status-loaded"></span>Fondo (Cargado)';
-        };
-        img.src = e.target.result;
-      };
-      
-      reader.readAsDataURL(file);
-    });
-
-    // Manejar la selección de superposición
-    fileInputSobre.addEventListener('change', function(e) {
-      if (e.target.files.length === 0) return;
-      
-      const file = e.target.files[0];
-      const reader = new FileReader();
-      
-      reader.onload = function(e) {
-        // Actualizar vista previa
-        previewSobre.src = e.target.result;
-        
-        // Cargar imagen para el canvas
-        const img = new Image();
-        img.onload = function() {
-          imagenSobre = img;
-          statusSobre.innerHTML = '<span class="status-indicator status-loaded"></span>Superposición (Cargada)';
-        };
-        img.src = e.target.result;
-      };
-      
-      reader.readAsDataURL(file);
-    });
-
     // Generar la tira de fotos
     btnGenerar.addEventListener('click', generarTira);
 
     function generarTira() {
-      const files = Array.from(fileInputFotos.files).slice(0, 6);
+      const files = Array.from(fileInput.files).slice(0, 6);
       if (files.length < 6) {
         alert('Por favor, selecciona exactamente 6 fotos.');
         return;
       }
 
       imagenes = [];
-      imagenesCargadas = 0;
+      let imagenesCargadas = 0;
 
       files.forEach((file, i) => {
         const reader = new FileReader();
@@ -534,8 +463,8 @@
       // Limpiar el canvas
       ctx.clearRect(0, 0, CANVAS_W, CANVAS_H);
       
-      // Dibujar fondo (blanco por defecto o imagen cargada)
-      if (imagenFondo) {
+      // Dibujar fondo (imagen cargada o blanco por defecto)
+      if (imagenFondo && imagenFondo.complete && imagenFondo.naturalHeight !== 0) {
         ctx.drawImage(imagenFondo, 0, 0, CANVAS_W, CANVAS_H);
       } else {
         ctx.fillStyle = '#fff';
@@ -551,7 +480,7 @@
       }
       
       // Dibujar superposición si está cargada
-      if (imagenSobre) {
+      if (imagenSobre && imagenSobre.complete && imagenSobre.naturalHeight !== 0) {
         ctx.drawImage(imagenSobre, 0, 0, CANVAS_W, CANVAS_H);
       }
     }
@@ -588,7 +517,7 @@
       tempCanvas.height = CANVAS_H;
       
       // Dibujar el fondo
-      if (imagenFondo) {
+      if (imagenFondo && imagenFondo.complete && imagenFondo.naturalHeight !== 0) {
         tempCtx.drawImage(imagenFondo, 0, 0, CANVAS_W, CANVAS_H);
       } else {
         tempCtx.fillStyle = '#fff';
@@ -622,7 +551,7 @@
       }
       
       // Dibujar la superposición
-      if (imagenSobre) {
+      if (imagenSobre && imagenSobre.complete && imagenSobre.naturalHeight !== 0) {
         tempCtx.drawImage(imagenSobre, 0, 0, CANVAS_W, CANVAS_H);
       }
       
