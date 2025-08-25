@@ -23,9 +23,9 @@
     .container {
       max-width: 1200px;
       margin: 0 auto;
-      background: rgba(255, 255, 255, 0.9);
+      background: rgba(255, 255, 255, 0.95);
       border-radius: 15px;
-      padding: 20px;
+      padding: 25px;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     }
     
@@ -33,6 +33,15 @@
       margin-bottom: 20px;
       color: #2c3e50;
       font-size: 2.2rem;
+    }
+    
+    h2 {
+      margin: 25px 0 15px;
+      color: #3498db;
+      font-size: 1.5rem;
+      text-align: left;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #eee;
     }
     
     .description {
@@ -44,12 +53,24 @@
       line-height: 1.6;
     }
     
+    .upload-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-bottom: 25px;
+    }
+    
+    @media (max-width: 768px) {
+      .upload-section {
+        grid-template-columns: 1fr;
+      }
+    }
+    
     .upload-container {
       background: #f8f9fa;
       border: 2px dashed #6c757d;
       border-radius: 10px;
-      padding: 25px;
-      margin-bottom: 20px;
+      padding: 20px;
       transition: all 0.3s;
     }
     
@@ -58,11 +79,16 @@
       border-color: #4e73df;
     }
     
+    .upload-container h3 {
+      margin-bottom: 15px;
+      color: #2c3e50;
+    }
+    
     .controls {
       display: flex;
       justify-content: center;
       gap: 15px;
-      margin: 20px 0;
+      margin: 25px 0;
       flex-wrap: wrap;
     }
     
@@ -111,7 +137,7 @@
       background: #fff;
       border-radius: 10px;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-      padding: 10px;
+      padding: 15px;
     }
     
     canvas {
@@ -119,30 +145,37 @@
       margin: 0 auto;
       background: #fff;
       border: 1px solid #ddd;
+      max-width: 100%;
+      height: auto;
     }
     
     .print-tips {
       margin-top: 25px;
-      padding: 15px;
+      padding: 20px;
       background: #f8f9fa;
       border-radius: 10px;
       text-align: left;
-      max-width: 800px;
-      margin-left: auto;
-      margin-right: auto;
     }
     
     .print-tips h3 {
-      margin-bottom: 10px;
+      margin-bottom: 15px;
       color: #2c3e50;
+      text-align: center;
     }
     
     .print-tips ul {
       padding-left: 20px;
+      columns: 2;
+    }
+    
+    @media (max-width: 600px) {
+      .print-tips ul {
+        columns: 1;
+      }
     }
     
     .print-tips li {
-      margin-bottom: 8px;
+      margin-bottom: 10px;
       line-height: 1.5;
     }
     
@@ -151,7 +184,7 @@
       flex-wrap: wrap;
       justify-content: center;
       gap: 10px;
-      margin: 20px 0;
+      margin: 15px 0;
     }
     
     .thumbnail {
@@ -171,7 +204,7 @@
       cursor: pointer;
       font-weight: 600;
       transition: all 0.3s;
-      margin-bottom: 15px;
+      margin: 10px 0;
     }
     
     .file-input-label:hover {
@@ -182,34 +215,93 @@
       display: none;
     }
     
-    @media (max-width: 768px) {
-      .container {
-        padding: 15px;
-      }
-      
-      h1 {
-        font-size: 1.8rem;
-      }
-      
-      button {
-        padding: 10px 20px;
-        font-size: 0.9rem;
-      }
+    .image-preview {
+      max-width: 200px;
+      max-height: 150px;
+      margin: 15px auto;
+      border: 2px solid #ddd;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    
+    .image-preview img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+    
+    .status-indicator {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      margin-right: 8px;
+    }
+    
+    .status-loaded {
+      background: #1cc88a;
+    }
+    
+    .status-pending {
+      background: #f6c23e;
+    }
+    
+    .status-missing {
+      background: #e74a3b;
+    }
+    
+    .printer-settings {
+      background: #e8f4fd;
+      border-radius: 10px;
+      padding: 15px;
+      margin-top: 20px;
+    }
+    
+    .printer-settings h3 {
+      color: #2c3e50;
+      margin-bottom: 10px;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>Generador de Tira de Fotos Mejorado</h1>
+    <h1>Generador de Tira de Fotos para Hiti P322W</h1>
     
-    <p class="description">Sube 6 fotos para crear una tira de fotos perfecta para imprimir. Las imágenes se ajustarán automáticamente al formato correcto.</p>
+    <p class="description">Sube 6 fotos, una imagen de fondo y una superposición para crear una tira de fotos optimizada para tu impresora Hiti P322W.</p>
     
-    <div class="upload-container">
-      <label for="fileInput" class="file-input-label">Seleccionar Fotos</label>
-      <input type="file" id="fileInput" accept="image/*" multiple>
+    <div class="upload-section">
+      <div class="upload-container">
+        <h3>Fotos para la tira <span id="statusFotos"><span class="status-indicator status-pending"></span>0/6</span></h3>
+        <label for="fileInputFotos" class="file-input-label">Seleccionar Fotos</label>
+        <input type="file" id="fileInputFotos" accept="image/*" multiple>
+        
+        <div class="thumbnail-container" id="thumbnailContainer">
+          <!-- Las miniaturas se mostrarán aquí -->
+        </div>
+      </div>
       
-      <div class="thumbnail-container" id="thumbnailContainer">
-        <!-- Las miniaturas se mostrarán aquí -->
+      <div class="upload-container">
+        <h3>Imágenes de fondo y superposición</h3>
+        
+        <div style="margin-bottom: 20px;">
+          <h4><span id="statusFondo"><span class="status-indicator status-pending"></span>Fondo</span></h4>
+          <label for="fileInputFondo" class="file-input-label">Seleccionar Fondo</label>
+          <input type="file" id="fileInputFondo" accept="image/*">
+          <div class="image-preview">
+            <img id="previewFondo" src="" alt="Vista previa del fondo">
+          </div>
+          <p><small>Si no seleccionas fondo, se usará uno predeterminado</small></p>
+        </div>
+        
+        <div>
+          <h4><span id="statusSobre"><span class="status-indicator status-pending"></span>Superposición</span></h4>
+          <label for="fileInputSobre" class="file-input-label">Seleccionar Superposición</label>
+          <input type="file" id="fileInputSobre" accept="image/*">
+          <div class="image-preview">
+            <img id="previewSobre" src="" alt="Vista previa de la superposición">
+          </div>
+          <p><small>Si no seleccionas superposición, se usará una predeterminada</small></p>
+        </div>
       </div>
     </div>
     
@@ -223,14 +315,21 @@
     </div>
     
     <div class="print-tips">
-      <h3>Consejos para una impresión perfecta:</h3>
+      <h3>Consejos para imprimir en tu Hiti P322W:</h3>
       <ul>
-        <li>Imprime en papel fotográfico para obtener los mejores resultados</li>
-        <li>Asegúrate de que la configuración de impresión esté al 100% (sin escalado)</li>
-        <li>Utiliza la opción "Ajustar a página" si la impresión no coincide perfectamente</li>
-        <li>Verifica que la orientación de impresión sea vertical</li>
-        <li>Si es posible, utiliza una impresora a color de alta calidad</li>
+        <li>Usa papel fotográfico de calidad para obtener los mejores resultados</li>
+        <li>Configura la impresora con los márgenes al mínimo</li>
+        <li>Selecciona "Escala real" o "Tamaño real" en opciones de impresión</li>
+        <li>Desactiva cualquier opción de "Ajustar a página"</li>
+        <li>Verifica que la orientación sea vertical</li>
+        <li>Utiliza la máxima calidad de impresión disponible</li>
+        <li>Para mejores resultados, usa imágenes de 1181x1772 píxeles</li>
       </ul>
+    </div>
+
+    <div class="printer-settings">
+      <h3>Configuración específica para Hiti P322W</h3>
+      <p>Esta plantilla está optimizada para evitar el recorte de bordes en tu impresora. Hemos ajustado el área de impresión para que coincida con las especificaciones de la Hiti P322W.</p>
     </div>
   </div>
 
@@ -239,34 +338,62 @@
     const CANVAS_W = 1181;
     const CANVAS_H = 1772;
 
-    // Posiciones fijas para las fotos
+    // Posiciones fijas para las fotos (ligeramente ajustadas para la Hiti P322W)
     const POSICIONES_MANUALES = [
-      {x: 50, y: 310}, 
-      {x: 50, y: 700},
-      {x: 50, y: 1090},
-      {x: 650, y: 310},
-      {x: 650, y: 700},
-      {x: 650, y: 1090}
+      {x: 60, y: 320},   // Ajustadas para evitar bordes recortados
+      {x: 60, y: 710},
+      {x: 60, y: 1100},
+      {x: 640, y: 320},  // Ajustadas para evitar bordes recortados
+      {x: 640, y: 710},
+      {x: 640, y: 1100}
     ];
 
-    // Tamaño fijo de cada foto
-    const ANCHO_FOTO = 500;
-    const ALTO_FOTO = 360;
+    // Tamaño fijo de cada foto (ligeramente reducido para la Hiti P322W)
+    const ANCHO_FOTO = 480;
+    const ALTO_FOTO = 350;
 
     const canvas = document.getElementById('canvas');
     const ctx = canvas.getContext('2d');
     canvas.width = CANVAS_W;
     canvas.height = CANVAS_H;
 
-    // Imágenes de fondo (simuladas con colores ya que no tenemos las imágenes reales)
+    // Imágenes
     let imagenes = [];
+    let imagenFondo = null;
+    let imagenSobre = null;
     let imagenesCargadas = 0;
 
     // Referencias a elementos UI
-    const fileInput = document.getElementById('fileInput');
+    const fileInputFotos = document.getElementById('fileInputFotos');
+    const fileInputFondo = document.getElementById('fileInputFondo');
+    const fileInputSobre = document.getElementById('fileInputSobre');
     const btnGenerar = document.getElementById('btnGenerar');
     const btnDescargar = document.getElementById('btnDescargar');
     const thumbnailContainer = document.getElementById('thumbnailContainer');
+    const previewFondo = document.getElementById('previewFondo');
+    const previewSobre = document.getElementById('previewSobre');
+    const statusFotos = document.getElementById('statusFotos');
+    const statusFondo = document.getElementById('statusFondo');
+    const statusSobre = document.getElementById('statusSobre');
+
+    // Cargar imágenes predeterminadas
+    function cargarImagenesPredeterminadas() {
+      // Crear fondo predeterminado
+      const fondoDefault = new Image();
+      fondoDefault.onload = function() {
+        imagenFondo = fondoDefault;
+        statusFondo.innerHTML = '<span class="status-indicator status-loaded"></span>Fondo (Predeterminado)';
+      };
+      fondoDefault.src = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="1181" height="1772"><rect width="100%" height="100%" fill="white"/><rect x="20" y="20" width="1141" height="1732" fill="none" stroke="%234e73df" stroke-width="15"/></svg>';
+
+      // Crear superposición predeterminada
+      const sobreDefault = new Image();
+      sobreDefault.onload = function() {
+        imagenSobre = sobreDefault;
+        statusSobre.innerHTML = '<span class="status-indicator status-loaded"></span>Superposición (Predeterminada)';
+      };
+      sobreDefault.src = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="1181" height="1772"><rect width="100%" height="100%" fill="none"/><text x="590" y="150" font-family="Arial" font-size="30" text-anchor="middle" fill="%23333">Tira de Fotos</text><text x="590" y="200" font-family="Arial" font-size="20" text-anchor="middle" fill="%23333">Generado con Hiti P322W</text></svg>';
+    }
 
     // Dibujar fondos simulados
     function dibujarFondosSimulados() {
@@ -292,19 +419,25 @@
       ctx.fillText('Tira de Fotos - Ejemplo de diseño', CANVAS_W / 2, 150);
       ctx.font = '20px Arial';
       ctx.fillText('Tus fotos aparecerán en los recuadros azules', CANVAS_W / 2, 200);
+      ctx.fillText('Carga un fondo y una superposición para personalizar', CANVAS_W / 2, 240);
     }
 
     // Inicializar con fondos simulados
+    cargarImagenesPredeterminadas();
     dibujarFondosSimulados();
 
-    // Manejar la selección de archivos
-    fileInput.addEventListener('change', function(e) {
+    // Manejar la selección de archivos de fotos
+    fileInputFotos.addEventListener('change', function(e) {
       const files = Array.from(e.target.files);
       thumbnailContainer.innerHTML = '';
       
       if (files.length > 6) {
         alert('Solo puedes seleccionar hasta 6 fotos. Se usarán las primeras 6.');
       }
+      
+      // Actualizar estado
+      const loadedCount = Math.min(files.length, 6);
+      statusFotos.innerHTML = `<span class="status-indicator ${loadedCount > 0 ? 'status-loaded' : 'status-pending'}"></span>${loadedCount}/6`;
       
       // Habilitar/deshabilitar botones según la selección
       btnGenerar.disabled = files.length === 0;
@@ -322,11 +455,57 @@
       });
     });
 
+    // Manejar la selección de fondo
+    fileInputFondo.addEventListener('change', function(e) {
+      if (e.target.files.length === 0) return;
+      
+      const file = e.target.files[0];
+      const reader = new FileReader();
+      
+      reader.onload = function(e) {
+        // Actualizar vista previa
+        previewFondo.src = e.target.result;
+        
+        // Cargar imagen para el canvas
+        const img = new Image();
+        img.onload = function() {
+          imagenFondo = img;
+          statusFondo.innerHTML = '<span class="status-indicator status-loaded"></span>Fondo (Cargado)';
+        };
+        img.src = e.target.result;
+      };
+      
+      reader.readAsDataURL(file);
+    });
+
+    // Manejar la selección de superposición
+    fileInputSobre.addEventListener('change', function(e) {
+      if (e.target.files.length === 0) return;
+      
+      const file = e.target.files[0];
+      const reader = new FileReader();
+      
+      reader.onload = function(e) {
+        // Actualizar vista previa
+        previewSobre.src = e.target.result;
+        
+        // Cargar imagen para el canvas
+        const img = new Image();
+        img.onload = function() {
+          imagenSobre = img;
+          statusSobre.innerHTML = '<span class="status-indicator status-loaded"></span>Superposición (Cargada)';
+        };
+        img.src = e.target.result;
+      };
+      
+      reader.readAsDataURL(file);
+    });
+
     // Generar la tira de fotos
     btnGenerar.addEventListener('click', generarTira);
 
     function generarTira() {
-      const files = Array.from(fileInput.files).slice(0, 6);
+      const files = Array.from(fileInputFotos.files).slice(0, 6);
       if (files.length < 6) {
         alert('Por favor, selecciona exactamente 6 fotos.');
         return;
@@ -358,14 +537,13 @@
       // Limpiar el canvas
       ctx.clearRect(0, 0, CANVAS_W, CANVAS_H);
       
-      // Dibujar fondo blanco
-      ctx.fillStyle = '#fff';
-      ctx.fillRect(0, 0, CANVAS_W, CANVAS_H);
-      
-      // Dibujar marco simulado
-      ctx.strokeStyle = '#4e73df';
-      ctx.lineWidth = 15;
-      ctx.strokeRect(20, 20, CANVAS_W - 40, CANVAS_H - 40);
+      // Dibujar fondo (blanco por defecto o imagen cargada)
+      if (imagenFondo) {
+        ctx.drawImage(imagenFondo, 0, 0, CANVAS_W, CANVAS_H);
+      } else {
+        ctx.fillStyle = '#fff';
+        ctx.fillRect(0, 0, CANVAS_W, CANVAS_H);
+      }
       
       // Dibujar fotos
       for (let i = 0; i < 6; i++) {
@@ -375,24 +553,10 @@
         }
       }
       
-      // Dibujar superposición simulado
-      ctx.fillStyle = 'rgba(255, 255, 255, 0.7)';
-      ctx.fillRect(0, 0, CANVAS_W, CANVAS_H);
-      
-      // Dibujar número en cada foto
-      ctx.fillStyle = 'rgba(78, 115, 223, 0.8)';
-      ctx.font = 'bold 24px Arial';
-      ctx.textAlign = 'center';
-      ctx.textBaseline = 'middle';
-      
-      POSICIONES_MANUALES.forEach((pos, i) => {
-        ctx.beginPath();
-        ctx.arc(pos.x + ANCHO_FOTO - 30, pos.y + 30, 20, 0, Math.PI * 2);
-        ctx.fill();
-        ctx.fillStyle = 'white';
-        ctx.fillText((i + 1).toString(), pos.x + ANCHO_FOTO - 30, pos.y + 30);
-        ctx.fillStyle = 'rgba(78, 115, 223, 0.8)';
-      });
+      // Dibujar superposición si está cargada
+      if (imagenSobre) {
+        ctx.drawImage(imagenSobre, 0, 0, CANVAS_W, CANVAS_H);
+      }
     }
 
     function drawImageCover(ctx, img, dx, dy, dW, dH) {
@@ -424,7 +588,7 @@
         const url = URL.createObjectURL(blob);
         const a = document.createElement('a');
         a.href = url;
-        a.download = 'tira-de-fotos.png';
+        a.download = 'tira-de-fotos-hiti-p322w.png';
         document.body.appendChild(a);
         a.click();
         document.body.removeChild(a);
