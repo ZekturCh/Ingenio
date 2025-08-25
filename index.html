@@ -288,7 +288,7 @@
           <label for="fileInputFondo" class="file-input-label">Seleccionar Fondo</label>
           <input type="file" id="fileInputFondo" accept="image/*">
           <div class="image-preview">
-            <img id="previewFondo" src="fondo2.png" alt="Vista previa del fondo">
+            <img id="previewFondo" src="" alt="Vista previa del fondo">
           </div>
           <p><small>Si no seleccionas fondo, se usará uno predeterminado</small></p>
         </div>
@@ -298,7 +298,7 @@
           <label for="fileInputSobre" class="file-input-label">Seleccionar Superposición</label>
           <input type="file" id="fileInputSobre" accept="image/*">
           <div class="image-preview">
-            <img id="previewSobre" src="over.png" alt="Vista previa de la superposición">
+            <img id="previewSobre" src="" alt="Vista previa de la superposición">
           </div>
           <p><small>Si no seleccionas superposición, se usará una predeterminada</small></p>
         </div>
@@ -378,35 +378,32 @@
 
     // Cargar imágenes predeterminadas
     function cargarImagenesPredeterminadas() {
-      // Crear fondo predeterminado
+      // Crear fondo predeterminado (transparente)
       const fondoDefault = new Image();
       fondoDefault.onload = function() {
         imagenFondo = fondoDefault;
         statusFondo.innerHTML = '<span class="status-indicator status-loaded"></span>Fondo (Predeterminado)';
       };
-      fondoDefault.src = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="1181" height="1772"><rect width="100%" height="100%" fill="white"/><rect x="20" y="20" width="1141" height="1732" fill="none" stroke="%234e73df" stroke-width="15"/></svg>';
+      // Fondo transparente en lugar del marco azul
+      fondoDefault.src = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="1181" height="1772"><rect width="100%" height="100%" fill="white"/></svg>';
 
-      // Crear superposición predeterminada
+      // Crear superposición predeterminada (transparente)
       const sobreDefault = new Image();
       sobreDefault.onload = function() {
         imagenSobre = sobreDefault;
         statusSobre.innerHTML = '<span class="status-indicator status-loaded"></span>Superposición (Predeterminada)';
       };
-      sobreDefault.src = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="1181" height="1772"><rect width="100%" height="100%" fill="none"/><text x="590" y="150" font-family="Arial" font-size="30" text-anchor="middle" fill="%23333">Tira de Fotos</text><text x="590" y="200" font-family="Arial" font-size="20" text-anchor="middle" fill="%23333">Generado con Hiti P322W</text></svg>';
+      // Superposición transparente en lugar del texto
+      sobreDefault.src = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="1181" height="1772"><rect width="100%" height="100%" fill="none"/></svg>';
     }
 
-    // Dibujar fondos simulados
-    function dibujarFondosSimulados() {
+    // Dibujar vista previa inicial
+    function dibujarVistaPrevia() {
       // Fondo blanco
       ctx.fillStyle = '#fff';
       ctx.fillRect(0, 0, CANVAS_W, CANVAS_H);
       
-      // Dibujar un marco simulado
-      ctx.strokeStyle = '#4e73df';
-      ctx.lineWidth = 15;
-      ctx.strokeRect(20, 20, CANVAS_W - 40, CANVAS_H - 40);
-      
-      // Dibujar áreas para fotos
+      // Dibujar áreas para fotos (solo para visualización)
       ctx.fillStyle = 'rgba(78, 115, 223, 0.05)';
       POSICIONES_MANUALES.forEach(pos => {
         ctx.fillRect(pos.x, pos.y, ANCHO_FOTO, ALTO_FOTO);
@@ -416,15 +413,15 @@
       ctx.fillStyle = '#333';
       ctx.font = '30px Arial';
       ctx.textAlign = 'center';
-      ctx.fillText('Tira de Fotos - Ejemplo de diseño', CANVAS_W / 2, 150);
+      ctx.fillText('Tira de Fotos - Vista previa', CANVAS_W / 2, 150);
       ctx.font = '20px Arial';
       ctx.fillText('Tus fotos aparecerán en los recuadros azules', CANVAS_W / 2, 200);
       ctx.fillText('Carga un fondo y una superposición para personalizar', CANVAS_W / 2, 240);
     }
 
-    // Inicializar con fondos simulados
+    // Inicializar con vista previa
     cargarImagenesPredeterminadas();
-    dibujarFondosSimulados();
+    dibujarVistaPrevia();
 
     // Manejar la selección de archivos de fotos
     fileInputFotos.addEventListener('change', function(e) {
@@ -584,11 +581,57 @@
     btnDescargar.addEventListener('click', descargarBlob);
 
     function descargarBlob() {
-      canvas.toBlob(function(blob) {
+      // Crear un canvas temporal para la descarga
+      const tempCanvas = document.createElement('canvas');
+      const tempCtx = tempCanvas.getContext('2d');
+      tempCanvas.width = CANVAS_W;
+      tempCanvas.height = CANVAS_H;
+      
+      // Dibujar el fondo
+      if (imagenFondo) {
+        tempCtx.drawImage(imagenFondo, 0, 0, CANVAS_W, CANVAS_H);
+      } else {
+        tempCtx.fillStyle = '#fff';
+        tempCtx.fillRect(0, 0, CANVAS_W, CANVAS_H);
+      }
+      
+      // Dibujar las fotos
+      for (let i = 0; i < 6; i++) {
+        const pos = POSICIONES_MANUALES[i];
+        if (imagenes[i]) {
+          const img = imagenes[i];
+          const sW = img.width;
+          const sH = img.height;
+          const srcAR = sW / sH;
+          const dstAR = ANCHO_FOTO / ALTO_FOTO;
+
+          let sx, sy, sw, sh;
+          if (srcAR > dstAR) {
+            sh = sH;
+            sw = sh * dstAR;
+            sx = (sW - sw) / 2;
+            sy = 0;
+          } else {
+            sw = sW;
+            sh = sw / dstAR;
+            sx = 0;
+            sy = (sH - sh) / 2;
+          }
+          tempCtx.drawImage(img, sx, sy, sw, sh, pos.x, pos.y, ANCHO_FOTO, ALTO_FOTO);
+        }
+      }
+      
+      // Dibujar la superposición
+      if (imagenSobre) {
+        tempCtx.drawImage(imagenSobre, 0, 0, CANVAS_W, CANVAS_H);
+      }
+      
+      // Descargar
+      tempCanvas.toBlob(function(blob) {
         const url = URL.createObjectURL(blob);
         const a = document.createElement('a');
         a.href = url;
-        a.download = 'tira-de-fotos-hiti-p322w.png';
+        a.download = 'tira-de-fotos.png';
         document.body.appendChild(a);
         a.click();
         document.body.removeChild(a);
