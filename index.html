@@ -31,7 +31,7 @@
     
     .container {
       width: 100%;
-      max-width: 600px;
+      max-width: 500px;
       background: rgba(255, 255, 255, 0.95);
       border-radius: 20px;
       padding: 20px;
@@ -42,7 +42,7 @@
     h1 {
       margin-bottom: 15px;
       color: #2c3e50;
-      font-size: 1.8rem;
+      font-size: 1.7rem;
       font-weight: 700;
     }
     
@@ -50,7 +50,7 @@
       margin-bottom: 20px;
       color: #555;
       line-height: 1.5;
-      font-size: 1rem;
+      font-size: 0.95rem;
     }
     
     .upload-container {
@@ -69,7 +69,7 @@
     
     .file-input-label {
       display: inline-block;
-      padding: 16px 30px;
+      padding: 14px 28px;
       background: #4e73df;
       color: white;
       border-radius: 50px;
@@ -77,7 +77,7 @@
       font-weight: 600;
       transition: all 0.3s;
       margin: 10px 0;
-      font-size: 1.1rem;
+      font-size: 1rem;
     }
     
     .file-input-label:active {
@@ -93,23 +93,23 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 10px;
-      margin: 20px 0;
+      gap: 8px;
+      margin: 15px 0;
     }
     
     .thumbnail {
-      width: 70px;
-      height: 70px;
+      width: 60px;
+      height: 60px;
       object-fit: cover;
-      border-radius: 12px;
+      border-radius: 10px;
       border: 2px solid #ddd;
     }
     
     .status-container {
       display: flex;
       flex-direction: column;
-      gap: 12px;
-      margin: 20px 0;
+      gap: 10px;
+      margin: 15px 0;
       align-items: center;
     }
     
@@ -117,18 +117,18 @@
       display: flex;
       align-items: center;
       background: #f8f9fa;
-      padding: 12px 20px;
+      padding: 10px 18px;
       border-radius: 50px;
-      font-size: 14px;
+      font-size: 13px;
       width: fit-content;
     }
     
     .status-indicator {
       display: inline-block;
-      width: 14px;
-      height: 14px;
+      width: 12px;
+      height: 12px;
       border-radius: 50%;
-      margin-right: 10px;
+      margin-right: 8px;
     }
     
     .status-loaded {
@@ -146,27 +146,27 @@
     .controls {
       display: flex;
       justify-content: center;
-      gap: 15px;
-      margin: 25px 0;
+      gap: 12px;
+      margin: 20px 0;
       flex-wrap: wrap;
     }
     
     button {
-      padding: 16px 32px;
+      padding: 14px 28px;
       background: #4e73df;
       color: white;
       border: none;
       border-radius: 50px;
       cursor: pointer;
-      font-size: 1.1rem;
+      font-size: 1rem;
       font-weight: 600;
       transition: all 0.3s;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
     }
     
     button:active {
       transform: scale(0.96);
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
     }
     
     button:disabled {
@@ -185,13 +185,13 @@
     }
     
     .canvas-container {
-      margin: 20px auto;
+      margin: 15px auto;
       width: 100%;
       overflow: auto;
       background: #fff;
-      border-radius: 16px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-      padding: 15px;
+      border-radius: 14px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      padding: 12px;
     }
     
     canvas {
@@ -204,37 +204,38 @@
     }
     
     .instructions {
-      margin-top: 25px;
-      padding: 20px;
+      margin-top: 20px;
+      padding: 18px;
       background: #f8f9fa;
-      border-radius: 16px;
+      border-radius: 14px;
       text-align: left;
-      font-size: 0.95rem;
+      font-size: 0.9rem;
     }
     
     .instructions h3 {
-      margin-bottom: 12px;
+      margin-bottom: 10px;
       color: #2c3e50;
       text-align: center;
+      font-size: 1.1rem;
     }
     
     .instructions ol {
-      padding-left: 20px;
+      padding-left: 18px;
     }
     
     .instructions li {
-      margin-bottom: 10px;
-      line-height: 1.5;
+      margin-bottom: 8px;
+      line-height: 1.4;
     }
     
     .ios-tip {
       display: none;
       background: #e8f4fd;
       border-radius: 12px;
-      padding: 15px;
-      margin-top: 15px;
+      padding: 12px;
+      margin-top: 12px;
       text-align: center;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
     }
     
     /* Detección de iOS */
@@ -251,17 +252,21 @@
       }
       
       h1 {
-        font-size: 1.6rem;
+        font-size: 1.5rem;
       }
       
       .file-input-label, button {
-        padding: 14px 25px;
-        font-size: 1rem;
+        padding: 12px 24px;
+        font-size: 0.95rem;
       }
       
       .thumbnail {
-        width: 60px;
-        height: 60px;
+        width: 55px;
+        height: 55px;
+      }
+      
+      .instructions {
+        padding: 15px;
       }
     }
   </style>
@@ -302,7 +307,7 @@
     </div>
     
     <div class="canvas-container">
-      <canvas id="canvas" width="1000" height="1800"></canvas>
+      <canvas id="canvas" width="900" height="1400"></canvas>
     </div>
     
     <div class="ios-tip">
@@ -321,23 +326,23 @@
   </div>
 
   <script>
-    // Tamaño del lienzo ajustado para Hiti P322W
-    const CANVAS_W = 1000;
-    const CANVAS_H = 1800;
+    // Tamaño del lienzo ajustado a 900x1400
+    const CANVAS_W = 900;
+    const CANVAS_H = 1400;
 
-    // Posiciones fijas para las fotos (ajustadas para el nuevo tamaño)
+    // Posiciones fijas para las fotos (ajustadas para el nuevo tamaño 900x1400)
     const POSICIONES_MANUALES = [
-      {x: 40, y: 315}, 
-      {x: 40, y: 695},
-      {x: 40, y: 1075},
-      {x: 520, y: 315},
-      {x: 520, y: 695},
-      {x: 520, y: 1075}
+      {x: 35, y: 245}, 
+      {x: 35, y: 540},
+      {x: 35, y: 835},
+      {x: 470, y: 245},
+      {x: 470, y: 540},
+      {x: 470, y: 835}
     ];
 
     // Tamaño fijo de cada foto (ajustado para el nuevo tamaño)
-    const ANCHO_FOTO = 430;
-    const ALTO_FOTO = 350;
+    const ANCHO_FOTO = 380;
+    const ALTO_FOTO = 275;
 
     const canvas = document.getElementById('canvas');
     const ctx = canvas.getContext('2d');
@@ -382,6 +387,23 @@
         statusFondoIndicator.className = 'status-indicator status-loaded';
         statusFondoText.textContent = 'Fondo: Cargado';
         console.log('Fondo cargado correctamente');
+        
+        // Redimensionar fondo para que encaje en 900x1400
+        const tempCanvas = document.createElement('canvas');
+        const tempCtx = tempCanvas.getContext('2d');
+        tempCanvas.width = CANVAS_W;
+        tempCanvas.height = CANVAS_H;
+        
+        // Dibujar fondo redimensionado
+        tempCtx.drawImage(imagenFondo, 0, 0, CANVAS_W, CANVAS_H);
+        
+        // Crear nueva imagen con el tamaño correcto
+        const resizedFondo = new Image();
+        resizedFondo.onload = function() {
+          imagenFondo = resizedFondo;
+          dibujarVistaInicial();
+        };
+        resizedFondo.src = tempCanvas.toDataURL('image/png');
       };
       imagenFondo.onerror = function() {
         statusFondoIndicator.className = 'status-indicator status-error';
@@ -389,8 +411,7 @@
         console.error('Error al cargar el fondo. Asegúrate de que fondo2.png está en la misma carpeta.');
         
         // Crear un fondo blanco como respaldo
-        ctx.fillStyle = '#fff';
-        ctx.fillRect(0, 0, CANVAS_W, CANVAS_H);
+        dibujarVistaInicial();
       };
       imagenFondo.crossOrigin = "anonymous";
       imagenFondo.src = 'fondo2.png';
@@ -401,6 +422,22 @@
         statusSobreIndicator.className = 'status-indicator status-loaded';
         statusSobreText.textContent = 'Superposición: Cargada';
         console.log('Superposición cargada correctamente');
+        
+        // Redimensionar superposición para que encaje en 900x1400
+        const tempCanvas = document.createElement('canvas');
+        const tempCtx = tempCanvas.getContext('2d');
+        tempCanvas.width = CANVAS_W;
+        tempCanvas.height = CANVAS_H;
+        
+        // Dibujar superposición redimensionada
+        tempCtx.drawImage(imagenSobre, 0, 0, CANVAS_W, CANVAS_H);
+        
+        // Crear nueva imagen con el tamaño correcto
+        const resizedSobre = new Image();
+        resizedSobre.onload = function() {
+          imagenSobre = resizedSobre;
+        };
+        resizedSobre.src = tempCanvas.toDataURL('image/png');
       };
       imagenSobre.onerror = function() {
         statusSobreIndicator.className = 'status-indicator status-error';
@@ -409,9 +446,6 @@
       };
       imagenSobre.crossOrigin = "anonymous";
       imagenSobre.src = 'over.png';
-
-      // Dibujar vista inicial
-      dibujarVistaInicial();
     }
 
     // Dibujar vista inicial
@@ -428,11 +462,11 @@
       
       // Dibujar texto de ejemplo
       ctx.fillStyle = '#333';
-      ctx.font = '26px Arial';
+      ctx.font = '22px Arial';
       ctx.textAlign = 'center';
-      ctx.fillText('Generador de Tira de Fotos', CANVAS_W / 2, 150);
-      ctx.font = '18px Arial';
-      ctx.fillText('Selecciona 6 fotos para comenzar', CANVAS_W / 2, 190);
+      ctx.fillText('Generador de Tira de Fotos', CANVAS_W / 2, 120);
+      ctx.font = '16px Arial';
+      ctx.fillText('Selecciona 6 fotos para comenzar', CANVAS_W / 2, 150);
     }
 
     // Inicializar
@@ -605,8 +639,9 @@
         const imgElement = document.createElement('img');
         imgElement.src = dataURL;
         imgElement.style.maxWidth = '100%';
-        imgElement.style.marginTop = '20px';
-        imgElement.style.borderRadius = '10px';
+        imgElement.style.marginTop = '15px';
+        imgElement.style.borderRadius = '8px';
+        imgElement.style.boxShadow = '0 2px 10px rgba(0,0,0,0.2)';
         
         // Reemplazar el canvas con la imagen
         const canvasContainer = document.querySelector('.canvas-container');
