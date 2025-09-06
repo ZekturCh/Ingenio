@@ -29,17 +29,17 @@
 
     // Posiciones fijas para las fotos
     const POSICIONES_MANUALES = [
-      {x: 50, y: 150}, 
-      {x: 50, y: 450},
-      {x: 50, y: 750},
-      {x: 475, y: 150},
-      {x: 475, y: 450},
-      {x: 475, y: 750}
+      {x: 80, y: 220}, 
+      {x: 80, y: 550},
+      {x: 80, y: 1020},
+      {x: 550, y: 220},
+      {x: 550, y: 550},
+      {x: 550, y: 1020}
     ];
 
     // Tamaño fijo de cada foto
-    const ANCHO_FOTO = 400;
-    const ALTO_FOTO = 250;
+    const ANCHO_FOTO = 500;
+    const ALTO_FOTO = 350;
 
     const canvas = document.getElementById('canvas');
     const ctx = canvas.getContext('2d');
@@ -48,10 +48,10 @@
 
     // Imágenes fijas
     const marco = new Image();
-    marco.src = 'marco.png';
+    marco.src = 'FondoRA.png';
 
     const sobre = new Image();
-    sobre.src = 'sobre.png'; // Imagen que quieres encima de todo
+    sobre.src = 'coverRA.png'; // Imagen que quieres encima de todo
 
     let imagenes = [];
 
