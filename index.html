@@ -54,7 +54,9 @@
     <button id="btnDescargar">Descargar</button>
   </div>
 
-  <canvas id="canvas" width="1200" height="1800"></canvas>
+<canvas id="canvas" width="1200" height="1800"></canvas>
+<img id="resultado" style="display:none; max-width:95vw;" alt="Resultado">
+
 
   <script>
     // Tamaño del lienzo
@@ -174,6 +176,30 @@
           URL.revokeObjectURL(url);
       }, 'image/png');
     }
+
+    function render() {
+  ctx.clearRect(0, 0, CANVAS_W, CANVAS_H);
+  ctx.fillStyle = '#fff';
+  ctx.fillRect(0, 0, CANVAS_W, CANVAS_H);
+
+  ctx.drawImage(marco, 0, 0, CANVAS_W, CANVAS_H);
+
+  for (let i = 0; i < 6; i++) {
+    const pos = POSICIONES_MANUALES[i];
+    if (imagenes[i]) {
+      drawImageCover(ctx, imagenes[i], pos.x, pos.y, ANCHO_FOTO, ALTO_FOTO);
+    }
+  }
+
+  ctx.drawImage(sobre, 0, 0, CANVAS_W, CANVAS_H);
+
+  // --- Aquí conviertes el canvas en imagen ---
+  const imgResultado = document.getElementById("resultado");
+  imgResultado.src = canvas.toDataURL("image/png");
+  imgResultado.style.display = "block";   // la mostramos
+  canvas.style.display = "none";          // ocultamos el canvas
+}
+
 </script>
 </body>
 </html>
