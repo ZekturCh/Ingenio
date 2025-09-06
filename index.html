@@ -2,11 +2,41 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <title>Generador de Tira de Fotos</title>
+  <title>INGENIO</title>
   <style>
-    body { font-family: Arial, sans-serif; text-align: center; background: #f0f0f0; margin: 0; padding: 20px; }
-    canvas { border: 1px solid #ccc; background: #fff; max-width: 95vw; height: auto; }
-    .row { margin: 10px 0; }
+    body { 
+      font-family: Arial, sans-serif; 
+      text-align: center; 
+      background: #f0f0f0; 
+      margin: 0; 
+      padding: 20px; 
+    }
+    canvas { 
+      border: 1px solid #ccc; 
+      background: #fff; 
+      max-width: 95vw; 
+      height: auto; 
+    }
+    .row { 
+      margin: 10px 0; 
+    }
+
+    /* 🎨 Estilos para botones */
+    button {
+      background-color: #4fc3f7;   /* celeste */
+      color: #000;                /* letras negras */
+      font-weight: bold;          /* negrita */
+      font-size: 18px;            /* más grande */
+      padding: 12px 25px;         /* espacio interno */
+      border: none;               /* sin borde */
+      border-radius: 8px;         /* esquinas redondeadas */
+      cursor: pointer;            /* manito al pasar */
+      transition: all 0.2s ease;  /* animación suave */
+    }
+    button:hover {
+      background-color: #29b6f6;  /* celeste más intenso al pasar */
+      transform: scale(1.05);     /* ligero zoom */
+    }
   </style>
 </head>
 <body>
