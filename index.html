@@ -1,219 +1,200 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <title>INGENIO</title>
+  <meta charset="UTF-8">
+  <title>Galería Simple</title>
   <style>
-    body { 
-      font-family: Arial, sans-serif; 
-      text-align: center; 
-      background: #f0f0f0; 
-      margin: 0; 
-      padding: 20px; 
-    }
-    canvas { 
-      border: 1px solid #ccc; 
-      background: #fff; 
-      max-width: 95vw; 
-      height: auto; 
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: url("fondo.webp") no-repeat center center fixed;
+      background-size: cover;
     }
 
-    input[type="file"] {
-  font-size: 1.5rem;   /* letras más grandes */
-  padding: 15px;       /* más área clickeable */
-  border-radius: 12px; /* esquinas redondeadas */
-  background-color: #4FC3F7;
-  color: black;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-
-
-    .row { 
-      margin: 10px 0; 
+    header {
+      text-align: center;
+      padding: 20px;
     }
 
-    .row { margin: 20px 0; }
+    header .grande {
+      width: 80%;
+      max-width: 1000px;
+      margin-bottom: 15px;
+    }
 
-    /* Estilo botones */
-    button {
-      background-color: #4FC3F7;  /* Celeste */
-      color: black;
-      font-weight: bold;
+    header .pequenas {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    header .pequenas img {
+      width: 200px;
+      height: auto;
+    }
+
+    .galeria {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .bandeja {
+      background: rgba(255, 255, 0, 0.3); /* amarillo con 30% opacidad */
+      border: 4px solid red;
+      padding: 10px;
+      text-align: center;
+      width: 620px; /* un poco más que 600px */
+    }
+
+    .bandeja img {
+      width: 600px;
+      height: 1800px;
+      object-fit: cover;
+      display: block;
+      margin: 0 auto 10px;
+    }
+
+    .bandeja button {
+      background: red;
+      color: white;
+      padding: 10px 20px;
       border: none;
-      border-radius: 12px;
+      font-size: 16px;
+      font-weight: bold;
       cursor: pointer;
-
-      /* 3 veces más grandes */
-      font-size: 2rem;  
-      padding: 20px 40px;  
-      margin: 10px;
+      border-radius: 4px;
     }
-    button:hover {
-      background-color: #29b6f6;  /* celeste más intenso al pasar */
-      transform: scale(1.05);     /* ligero zoom */
+
+    .bandeja button:hover {
+      background: darkred;
     }
   </style>
 </head>
 <body>
-  <h1>Generador de Tira de Fotos</h1>
 
-  <div class="row">
-    <input type="file" id="fileInput" accept="image/*" multiple>
-  </div>
-  <div class="row">
-    <button id="btnGenerar">Generar Tira</button>
-    <button id="btnDescargar">Descargar</button>
-  </div>
+  <header>
+    <img src="header-grande.png" alt="Imagen grande" class="grande">
+    <div class="pequenas">
+      <img src="header-peq1.webp" alt="Imagen pequeña 1">
+      <img src="header-peq2.webp" alt="Imagen pequeña 2">
+    </div>
+  </header>
 
-<canvas id="canvas" width="1200" height="1800"></canvas>
-<img id="resultado" style="display:none; max-width:95vw;" alt="Resultado">
-
+  <section class="galeria">
+    <!-- 25 bandejas -->
+    <div class="bandeja">
+      <img src="g1.jpg" alt="g1">
+      <button onclick="descargar('g1.jpg')">Descargar</button>
+    </div>
+    <div class="bandeja">
+      <img src="g2.jpg" alt="g2">
+      <button onclick="descargar('g2.jpg')">Descargar</button>
+    </div>
+    <div class="bandeja">
+      <img src="g3.jpg" alt="g3">
+      <button onclick="descargar('g3.jpg')">Descargar</button>
+    </div>
+    <div class="bandeja">
+      <img src="g4.jpg" alt="g4">
+      <button onclick="descargar('g4.jpg')">Descargar</button>
+    </div>
+    <div class="bandeja">
+      <img src="g5.jpg" alt="g5">
+      <button onclick="descargar('g5.jpg')">Descargar</button>
+    </div>
+    <div class="bandeja">
+      <img src="g6.jpg" alt="g6">
+      <button onclick="descargar('g6.jpg')">Descargar</button>
+    </div>
+    <div class="bandeja">
+      <img src="g7.jpg" alt="g7">
+      <button onclick="descargar('g7.jpg')">Descargar</button>
+    </div>
+    <div class="bandeja">
+      <img src="g8.jpg" alt="g8">
+      <button onclick="descargar('g8.jpg')">Descargar</button>
+    </div>
+    <div class="bandeja">
+      <img src="g9.jpg" alt="g9">
+      <button onclick="descargar('g9.jpg')">Descargar</button>
+    </div>
+    <div class="bandeja">
+      <img src="g10.jpg" alt="g10">
+      <button onclick="descargar('g10.jpg')">Descargar</button>
+    </div>
+    <div class="bandeja">
+      <img src="g11.jpg" alt="g11">
+      <button onclick="descargar('g11.jpg')">Descargar</button>
+    </div>
+    <div class="bandeja">
+      <img src="g12.jpg" alt="g12">
+      <button onclick="descargar('g12.jpg')">Descargar</button>
+    </div>
+    <div class="bandeja">
+      <img src="g13.jpg" alt="g13">
+      <button onclick="descargar('g13.jpg')">Descargar</button>
+    </div>
+    <div class="bandeja">
+      <img src="g14.jpg" alt="g14">
+      <button onclick="descargar('g14.jpg')">Descargar</button>
+    </div>
+    <div class="bandeja">
+      <img src="g15.jpg" alt="g15">
+      <button onclick="descargar('g15.jpg')">Descargar</button>
+    </div>
+    <div class="bandeja">
+      <img src="g16.jpg" alt="g16">
+      <button onclick="descargar('g16.jpg')">Descargar</button>
+    </div>
+    <div class="bandeja">
+      <img src="g17.jpg" alt="g17">
+      <button onclick="descargar('g17.jpg')">Descargar</button>
+    </div>
+    <div class="bandeja">
+      <img src="g18.jpg" alt="g18">
+      <button onclick="descargar('g18.jpg')">Descargar</button>
+    </div>
+    <div class="bandeja">
+      <img src="g19.jpg" alt="g19">
+      <button onclick="descargar('g19.jpg')">Descargar</button>
+    </div>
+    <div class="bandeja">
+      <img src="g20.jpg" alt="g20">
+      <button onclick="descargar('g20.jpg')">Descargar</button>
+    </div>
+    <div class="bandeja">
+      <img src="g21.jpg" alt="g21">
+      <button onclick="descargar('g21.jpg')">Descargar</button>
+    </div>
+    <div class="bandeja">
+      <img src="g22.jpg" alt="g22">
+      <button onclick="descargar('g22.jpg')">Descargar</button>
+    </div>
+    <div class="bandeja">
+      <img src="g23.jpg" alt="g23">
+      <button onclick="descargar('g23.jpg')">Descargar</button>
+    </div>
+    <div class="bandeja">
+      <img src="g24.jpg" alt="g24">
+      <button onclick="descargar('g24.jpg')">Descargar</button>
+    </div>
+    <div class="bandeja">
+      <img src="g25.jpg" alt="g25">
+      <button onclick="descargar('g25.jpg')">Descargar</button>
+    </div>
+  </section>
 
   <script>
-    // Tamaño del lienzo
-    const CANVAS_W = 1200;
-    const CANVAS_H = 1800;
-
-    // Posiciones fijas para las fotos
-    const POSICIONES_MANUALES = [
-      {x: 80, y: 290}, 
-      {x: 80, y: 650},
-      {x: 80, y: 1010},
-      {x: 650, y: 290},
-      {x: 650, y: 650},
-      {x: 650, y: 1010}
-    ];
-
-    // Tamaño fijo de cada foto
-    const ANCHO_FOTO = 500;
-    const ALTO_FOTO = 350;
-
-    const canvas = document.getElementById('canvas');
-    const ctx = canvas.getContext('2d');
-    canvas.width = CANVAS_W;
-    canvas.height = CANVAS_H;
-
-    // Imágenes fijas
-    const marco = new Image();
-    marco.src = 'FONDOFRA.png';
-
-    const sobre = new Image();
-    sobre.src = 'coverRA.png'; // Imagen que quieres encima de todo
-
-    let imagenes = [];
-
-    document.getElementById('btnGenerar').addEventListener('click', generarTira);
-    document.getElementById('btnDescargar').addEventListener('click', descargarBlob);
-
-    function generarTira() {
-      const files = Array.from(document.getElementById('fileInput').files).slice(0, 6);
-      if (files.length < 6) {
-        alert('Selecciona exactamente 6 fotos.');
-        return;
-      }
-
-      imagenes = [];
-      let cargadas = 0;
-
-      files.forEach((f, i) => {
-        const reader = new FileReader();
-        reader.onload = e => {
-          const img = new Image();
-          img.onload = () => {
-            imagenes[i] = img;
-            cargadas++;
-            if (cargadas === 6) {
-              render();
-            }
-          };
-          img.src = e.target.result;
-        };
-        reader.readAsDataURL(f);
-      });
+    function descargar(img) {
+      const link = document.createElement("a");
+      link.href = img;
+      link.download = img;
+      link.click();
     }
+  </script>
 
-    function render() {
-      ctx.clearRect(0, 0, CANVAS_W, CANVAS_H);
-
-      // Fondo blanco
-      ctx.fillStyle = '#fff';
-      ctx.fillRect(0, 0, CANVAS_W, CANVAS_H);
-
-      // Marco
-      ctx.drawImage(marco, 0, 0, CANVAS_W, CANVAS_H);
-
-      // Dibujar fotos
-      for (let i = 0; i < 6; i++) {
-        const pos = POSICIONES_MANUALES[i];
-        if (imagenes[i]) {
-          drawImageCover(ctx, imagenes[i], pos.x, pos.y, ANCHO_FOTO, ALTO_FOTO);
-        }
-      }
-
-      // Dibujar la imagen "sobre" encima de todo
-      ctx.drawImage(sobre, 0, 0, CANVAS_W, CANVAS_H);
-    }
-
-    function drawImageCover(ctx, img, dx, dy, dW, dH) {
-      const sW = img.width;
-      const sH = img.height;
-      const srcAR = sW / sH;
-      const dstAR = dW / dH;
-
-      let sx, sy, sw, sh;
-      if (srcAR > dstAR) {
-        sh = sH;
-        sw = sh * dstAR;
-        sx = (sW - sw) / 2;
-        sy = 0;
-      } else {
-        sw = sW;
-        sh = sw / dstAR;
-        sx = 0;
-        sy = (sH - sh) / 2;
-      }
-      ctx.drawImage(img, sx, sy, sw, sh, dx, dy, dW, dH);
-    }
-
-    function descargarBlob() {
-      canvas.toBlob(function(blob) {
-          const url = URL.createObjectURL(blob);
-          const a = document.createElement('a');
-          a.href = url;
-          a.download = 'foto.png';
-          document.body.appendChild(a);
-          a.click();
-          document.body.removeChild(a);
-          URL.revokeObjectURL(url);
-      }, 'image/png');
-    }
-
-    function render() {
-  ctx.clearRect(0, 0, CANVAS_W, CANVAS_H);
-  ctx.fillStyle = '#fff';
-  ctx.fillRect(0, 0, CANVAS_W, CANVAS_H);
-
-  ctx.drawImage(marco, 0, 0, CANVAS_W, CANVAS_H);
-
-  for (let i = 0; i < 6; i++) {
-    const pos = POSICIONES_MANUALES[i];
-    if (imagenes[i]) {
-      drawImageCover(ctx, imagenes[i], pos.x, pos.y, ANCHO_FOTO, ALTO_FOTO);
-    }
-  }
-
-  ctx.drawImage(sobre, 0, 0, CANVAS_W, CANVAS_H);
-
-  // --- Aquí conviertes el canvas en imagen ---
-  const imgResultado = document.getElementById("resultado");
-  imgResultado.src = canvas.toDataURL("image/png");
-  imgResultado.style.display = "block";   // la mostramos
-  canvas.style.display = "none";          // ocultamos el canvas
-}
-
-</script>
 </body>
 </html>
-
