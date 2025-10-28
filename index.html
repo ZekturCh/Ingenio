@@ -50,12 +50,12 @@
     }
 
     .bandeja img {
-      width: 600px;
-      height: 1800px;
-      object-fit: cover;
-      display: block;
-      margin: 0 auto 10px;
-    }
+  width: 600px;
+  height: 1800px;
+  object-fit: cover;
+  object-position: left; /* usa left o right */
+  overflow: hidden;
+}
 
     .bandeja button {
       background: red;
@@ -159,11 +159,24 @@
   </section>
 
   <script>
-    function descargar(img) {
-      const link = document.createElement("a");
-      link.href = img;
-      link.download = img;
-      link.click();
+    function descargar(img) {const img = new Image();
+  img.crossOrigin = "anonymous";
+  img.onload = () => {
+    const canvas = document.createElement("canvas");
+    canvas.width = 600;
+    canvas.height = 1800;
+
+    const ctx = canvas.getContext("2d");
+    const sx = lado === 'right' ? 600 : 0; // qué mitad tomar
+
+    ctx.drawImage(img, sx, 0, 600, 1800, 0, 0, 600, 1800);
+
+    const link = document.createElement("a");
+    link.href = canvas.toDataURL("image/png");
+    link.download = imgSrc.replace('.png','-mitad.png');
+    link.click();
+  };
+  img.src = imgSrc;
     }
   </script>
 
