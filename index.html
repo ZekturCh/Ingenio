@@ -84,7 +84,7 @@
   </header>
 
   <section class="galeria">
-    <h1>Sábado 25</h1>
+    <h1>Sábado 25</h1> <br>
     <!-- 25 bandejas -->
     <div class="bandeja">
       <img src="g1.png" alt="g1">
@@ -124,8 +124,8 @@
 <div class="bandeja"> <img src="g17.png" alt="g17"> <button onclick="descargar('g17.png')">Descargar</button> </div>
 <div class="bandeja"> <img src="g18.png" alt="g18"> <button onclick="descargar('g18.png')">Descargar</button> </div>
 <div class="bandeja"> <img src="g19.png" alt="g19"> <button onclick="descargar('g19.png')">Descargar</button> </div>
-
-    <h1>Domingo 26</h1>
+<br>
+    <h1>Domingo 26</h1><br>
 <!-- 2g1 a 2g28 -->
 <div class="bandeja"> <img src="2g1.png" alt="2g1"> <button onclick="descargar('2g1.png')">Descargar</button> </div>
 <div class="bandeja"> <img src="2g2.png" alt="2g2"> <button onclick="descargar('2g2.png')">Descargar</button> </div>
@@ -159,25 +159,25 @@
   </section>
 
   <script>
-    function descargar(img) {const img = new Image();
+    function descargar(src, lado = 'left') {
+  const img = new Image();
   img.crossOrigin = "anonymous";
   img.onload = () => {
     const canvas = document.createElement("canvas");
     canvas.width = 600;
     canvas.height = 1800;
-
     const ctx = canvas.getContext("2d");
-    const sx = lado === 'right' ? 600 : 0; // qué mitad tomar
 
+    const sx = (lado === 'right') ? 600 : 0; // origen x según lado
     ctx.drawImage(img, sx, 0, 600, 1800, 0, 0, 600, 1800);
 
     const link = document.createElement("a");
+    link.download = `mitad-${src}`;
     link.href = canvas.toDataURL("image/png");
-    link.download = imgSrc.replace('.png','-mitad.png');
     link.click();
   };
-  img.src = imgSrc;
-    }
+  img.src = src;
+}
   </script>
 
 </body>
