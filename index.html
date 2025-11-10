@@ -49,12 +49,13 @@
   width: 620px; /* un poco más que 600px */ 
 }
     
-    .bandeja img { width: 500px;
-                  height: 1800px;
-                  object-fit: cover;
-                  object-position: left; /* usa left o right */ 
-                  overflow: hidden;
-                 }
+  .bandeja img {
+  width: 600px;           /* lo que se mostrará */
+  height: 1800px;
+  object-fit: cover;
+  object-position: calc(40px) center; /* desplaza el recorte hacia la derecha */
+  overflow: hidden;
+}
     
     .bandeja button {
       background: red;
