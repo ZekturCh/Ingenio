@@ -41,20 +41,21 @@
       padding: 20px;
     }
 
-    .bandeja {
-      background: rgba(255, 255, 0, 0.3); /* amarillo con 30% opacidad */
-      border: 4px solid red;
-      padding: 10px;
-      text-align: center;
-      width: 620px; /* un poco más que 600px */
-    }
-
-    .bandeja img {
+.bandeja {
   width: 600px;
   height: 1800px;
-  object-fit: cover;
-  object-position: left; /* usa left o right */
   overflow: hidden;
+  border: 4px solid red;
+  padding: 0;
+  background: rgba(255, 255, 0, 0.3);
+  text-align: center;
+}
+
+.bandeja img {
+  width: 650px; /* un poco más ancha */
+  height: 1800px;
+  object-fit: cover;
+  transform: translateX(-25px); /* recorta 25px del lado izquierdo */
 }
 
     .bandeja button {
