@@ -349,12 +349,15 @@ function attachUsersListener() {
 
 async function persistDoc(localKey, record) {
   saveState();
-  if (!firebaseState.enabled || !record?.id) return;
+  if (!firebaseState.enabled) return true;
+  if (!record?.id) return false;
   try {
     await setDoc(doc(firebaseState.db, remoteCollections[localKey], record.id), record, { merge: true });
+    return true;
   } catch (error) {
     console.warn("No se pudo guardar en Firestore.", error);
-    showToast("Guardado local. Revisa Firebase/Auth para sincronizar.");
+    showToast("Firebase rechazó el guardado. Revisa reglas de Firestore.");
+    return false;
   }
 }
 
@@ -371,16 +374,18 @@ async function deleteRemoteDoc(localKey, recordId) {
 
 async function persistMany(localKey, records) {
   saveState();
-  if (!firebaseState.enabled || !records.length) return;
+  if (!firebaseState.enabled || !records.length) return true;
   try {
     const batch = writeBatch(firebaseState.db);
     records.forEach((record) => {
       batch.set(doc(firebaseState.db, remoteCollections[localKey], record.id), record, { merge: true });
     });
     await batch.commit();
+    return true;
   } catch (error) {
     console.warn("No se pudo guardar lote en Firestore.", error);
-    showToast("Importado local. Revisa Firebase/Auth para sincronizar.");
+    showToast("Firebase rechazó el guardado. Revisa reglas de Firestore.");
+    return false;
   }
 }
 
@@ -910,25 +915,27 @@ async function createOrder(event) {
     items: structuredClone(draftOrderItems),
   };
 
+  const movements = order.items.map((item) => ({
+    id: uid("mov"),
+    type: "Salida",
+    orderId: order.id,
+    itemName: item.name,
+    quantity: item.quantity,
+    date: todayISO(),
+    note: order.notes,
+  }));
+
+  const orderSaved = await persistDoc("orders", order);
+  const movementsSaved = orderSaved ? await persistMany("movements", movements) : false;
+  if (!orderSaved || !movementsSaved) return;
+
   state.orders.push(order);
-  order.items.forEach((item) => {
-    state.movements.push({
-      id: uid("mov"),
-      type: "Salida",
-      orderId: order.id,
-      itemName: item.name,
-      quantity: item.quantity,
-      date: todayISO(),
-      note: order.notes,
-    });
-  });
+  state.movements.push(...movements);
 
   draftOrderItems = [];
   els.orderForm.reset();
   setDefaultDates();
   saveState();
-  await persistDoc("orders", order);
-  await persistMany("movements", state.movements.filter((movement) => movement.orderId === order.id));
   await logActivity("Creo pedido", "orders", order.id, getClient(order.clientId)?.name || order.id, {
     items: order.items.map((item) => `${item.name} x${item.quantity}`),
     amount: order.amount,
@@ -966,6 +973,9 @@ async function createInventoryItem(event) {
     updatedByName: currentActor().name,
     updatedAt: todayISO(),
   };
+  const saved = await persistDoc("inventory", item);
+  if (!saved) return;
+
   const index = state.inventory.findIndex((entry) => entry.id === item.id);
   if (index >= 0) state.inventory[index] = item;
   else state.inventory.push(item);
@@ -973,7 +983,6 @@ async function createInventoryItem(event) {
   els.itemRecordId.value = "";
   els.itemSubmitLabel.textContent = "Crear item";
   els.cancelItemEdit.classList.add("is-hidden");
-  await persistDoc("inventory", item);
   await logActivity(recordId ? "Edito inventario" : "Creo inventario", "inventoryItems", item.id, item.name, {
     quantity: item.quantity,
     category: item.category,
@@ -1008,6 +1017,9 @@ async function createClient(event) {
     updatedByName: currentActor().name,
     updatedAt: todayISO(),
   };
+  const saved = await persistDoc("clients", client);
+  if (!saved) return;
+
   const index = state.clients.findIndex((entry) => entry.id === client.id);
   if (index >= 0) state.clients[index] = client;
   else state.clients.push(client);
@@ -1015,7 +1027,6 @@ async function createClient(event) {
   els.clientRecordId.value = "";
   els.clientSubmitLabel.textContent = "Crear cliente";
   els.cancelClientEdit.classList.add("is-hidden");
-  await persistDoc("clients", client);
   await logActivity(recordId ? "Edito cliente" : "Creo cliente", "clients", client.id, client.name, {
     phone: client.phone,
     email: client.email,
