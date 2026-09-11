@@ -248,13 +248,12 @@ async function loadCurrentUserProfile() {
 
 async function ensureCurrentUserProfile(exists) {
   if (!firebaseState.enabled || !firebaseState.uid) return;
-  if (!exists && firebaseState.uid !== ADMIN_UID) return;
   const profile = {
     id: firebaseState.uid,
     displayName: firebaseState.profile?.displayName || firebaseState.user?.displayName || firebaseState.user?.email || "Usuario",
     email: firebaseState.user?.email || "",
     role: firebaseState.uid === ADMIN_UID ? "admin" : firebaseState.profile?.role || "staff",
-    active: firebaseState.uid === ADMIN_UID ? true : firebaseState.profile?.active === true,
+    active: firebaseState.uid === ADMIN_UID ? true : firebaseState.profile?.active !== false,
     lastLoginAt: new Date().toISOString(),
     updatedAt: todayISO(),
     createdAt: firebaseState.profile?.createdAt || todayISO(),
@@ -262,6 +261,14 @@ async function ensureCurrentUserProfile(exists) {
 
   try {
     await setDoc(doc(firebaseState.db, "users", firebaseState.uid), profile, { merge: true });
+    firebaseState.profile = profile;
+    firebaseState.role = profile.role;
+    firebaseState.active = profile.active === true;
+    const roleText = firebaseState.role || "staff";
+    els.storageMode.textContent = `Firestore · ${roleText} · ${firebaseState.uid.slice(0, 8)}`;
+    if (els.profileSummary) {
+      els.profileSummary.textContent = `${firebaseState.user?.email || "Sin correo"} · ${roleText}`;
+    }
     if (!exists) state.users.push(profile);
   } catch (error) {
     console.warn("No se pudo guardar perfil de usuario actual.", error);
@@ -933,11 +940,15 @@ async function createOrder(event) {
 
 async function createInventoryItem(event) {
   event.preventDefault();
-  if (!isAdmin()) {
-    showToast("Solo admin puede modificar inventario.");
+  const recordId = els.itemRecordId.value;
+  if (recordId && !isAdmin()) {
+    showToast("Solo admin puede editar inventario existente.");
     return;
   }
-  const recordId = els.itemRecordId.value;
+  if (!recordId && !firebaseState.active) {
+    showToast("Tu usuario no está activo. Pide aprobación al admin.");
+    return;
+  }
   const previous = state.inventory.find((entry) => entry.id === recordId);
   const item = {
     id: recordId || uid("inv"),
@@ -973,11 +984,15 @@ async function createInventoryItem(event) {
 
 async function createClient(event) {
   event.preventDefault();
-  if (!isAdmin()) {
-    showToast("Solo admin puede crear o editar clientes.");
+  const recordId = els.clientRecordId.value;
+  if (recordId && !isAdmin()) {
+    showToast("Solo admin puede editar clientes existentes.");
     return;
   }
-  const recordId = els.clientRecordId.value;
+  if (!recordId && !firebaseState.active) {
+    showToast("Tu usuario no está activo. Pide aprobación al admin.");
+    return;
+  }
   const previous = state.clients.find((entry) => entry.id === recordId);
   const client = {
     id: recordId || uid("cli"),
