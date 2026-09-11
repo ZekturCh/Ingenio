@@ -6,10 +6,6 @@ service cloud.firestore {
       return request.auth != null;
     }
 
-    function isMainAdmin() {
-      return signedIn() && request.auth.token.email == 'admin@ingenio.com';
-    }
-
     function userDoc() {
       return get(/databases/$(database)/documents/users/$(request.auth.uid));
     }
@@ -23,13 +19,8 @@ service cloud.firestore {
 
     function canRead() {
       return signedIn()
-        && (
-          isMainAdmin()
-          || (
-            exists(/databases/$(database)/documents/users/$(request.auth.uid))
-            && userDoc().data.active == true
-          )
-        );
+        && exists(/databases/$(database)/documents/users/$(request.auth.uid))
+        && userDoc().data.active == true;
     }
 
     function canCreateWork() {
@@ -37,7 +28,7 @@ service cloud.firestore {
     }
 
     function canAdmin() {
-      return isMainAdmin();
+      return hasRole(['admin']);
     }
 
     match /users/{userId} {

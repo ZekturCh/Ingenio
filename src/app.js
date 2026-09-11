@@ -19,8 +19,6 @@ import {
 } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
 
 const STORAGE_KEY = "trajes-os-v1";
-const ADMIN_EMAIL = "admin@ingenio.com";
-
 const firebaseConfig = {
   apiKey: "AIzaSyDAYmwu9GD0R0BlL_6tUqOpUgByNci_Bhg",
   authDomain: "ingenioespectaculos.firebaseapp.com",
@@ -305,15 +303,14 @@ async function loadCurrentUserProfile() {
   try {
     const profile = await getDoc(doc(firebaseState.db, "users", firebaseState.uid));
     const data = profile.exists() ? profile.data() : null;
-    const isAdminEmail = firebaseState.user?.email?.toLowerCase() === ADMIN_EMAIL;
     firebaseState.profile = data || {
       displayName: firebaseState.user?.displayName || "Usuario",
       email: firebaseState.user?.email || "",
-      role: isAdminEmail ? "admin" : "staff",
+      role: "staff",
       active: true,
     };
-    firebaseState.role = isAdminEmail ? "admin" : firebaseState.profile.role || "staff";
-    firebaseState.active = isAdminEmail ? true : firebaseState.profile.active === true;
+    firebaseState.role = firebaseState.profile.role || "staff";
+    firebaseState.active = firebaseState.profile.active === true;
     const shortUid = firebaseState.uid.slice(0, 8);
     const roleText = firebaseState.active && firebaseState.role ? firebaseState.role : "sin rol";
     els.storageMode.textContent = `Firestore · ${roleText} · ${shortUid}`;
@@ -338,13 +335,12 @@ async function loadCurrentUserProfile() {
 
 async function ensureCurrentUserProfile(exists) {
   if (!firebaseState.enabled || !firebaseState.uid) return;
-  const isAdminEmail = firebaseState.user?.email?.toLowerCase() === ADMIN_EMAIL;
   const profile = {
     id: firebaseState.uid,
     displayName: firebaseState.profile?.displayName || firebaseState.user?.displayName || firebaseState.user?.email || "Usuario",
     email: firebaseState.user?.email || "",
-    role: isAdminEmail ? "admin" : firebaseState.profile?.role || "staff",
-    active: isAdminEmail ? true : firebaseState.profile?.active === true,
+    role: firebaseState.profile?.role || "staff",
+    active: firebaseState.profile?.active === true,
     lastLoginAt: new Date().toISOString(),
     updatedAt: todayISO(),
     createdAt: firebaseState.profile?.createdAt || todayISO(),
@@ -359,7 +355,7 @@ async function ensureCurrentUserProfile(exists) {
 }
 
 function isAdmin() {
-  return firebaseState.enabled && firebaseState.active && firebaseState.user?.email?.toLowerCase() === ADMIN_EMAIL;
+  return firebaseState.enabled && firebaseState.active && firebaseState.role === "admin";
 }
 
 function isSuperAdmin() {
