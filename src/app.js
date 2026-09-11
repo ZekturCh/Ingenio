@@ -11,7 +11,6 @@ import {
   deleteDoc,
   doc,
   getDoc,
-  getDocs,
   getFirestore,
   onSnapshot,
   setDoc,
@@ -22,7 +21,7 @@ import {
   httpsCallable,
 } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-functions.js";
 
-const STORAGE_KEY = "trajes-os-v1";
+const STORAGE_KEY = "trajes-os-v2";
 const ADMIN_UID = "kXOgLCRPC0VhkqQltsgO1feNPLO2";
 const firebaseConfig = {
   apiKey: "AIzaSyDAYmwu9GD0R0BlL_6tUqOpUgByNci_Bhg",
@@ -65,104 +64,10 @@ const addDays = (days) => {
 const uid = (prefix) => `${prefix}_${Date.now().toString(36)}_${Math.random().toString(36).slice(2, 8)}`;
 
 const seedData = {
-  clients: [
-    {
-      id: "cli_demo_1",
-      name: "Eventos Nova",
-      phone: "+57 300 111 2233",
-      email: "operaciones@nova.com",
-      idNumber: "901222333",
-      notes: "Cliente corporativo. Suele pedir para activaciones BTL.",
-      createdAt: todayISO(),
-    },
-    {
-      id: "cli_demo_2",
-      name: "Laura Méndez",
-      phone: "+57 311 555 4411",
-      email: "laura@email.com",
-      idNumber: "52.000.111",
-      notes: "Prefiere recoger en bodega.",
-      createdAt: todayISO(),
-    },
-  ],
-  inventory: [
-    {
-      id: "inv_demo_1",
-      name: "Traje Robot LED",
-      category: "Traje completo",
-      quantity: 3,
-      size: "Adulto",
-      location: "Rack 1",
-      checklist: ["Cabeza", "Cuerpo", "Guantes", "Botas", "Bateria", "Cargador"],
-      notes: "Revisar carga antes de entregar.",
-      createdAt: todayISO(),
-    },
-    {
-      id: "inv_demo_2",
-      name: "Cabeza Dino",
-      category: "Cabeza",
-      quantity: 2,
-      size: "Unica",
-      location: "Estante C",
-      checklist: ["Cabeza", "Bolsa protectora"],
-      notes: "Solo cabeza, no incluye cuerpo.",
-      createdAt: todayISO(),
-    },
-    {
-      id: "inv_demo_3",
-      name: "Botas negras personaje",
-      category: "Calzado",
-      quantity: 5,
-      size: "40-43",
-      location: "Caja calzado",
-      checklist: ["Par izquierdo", "Par derecho"],
-      notes: "Limpiar suela al regreso.",
-      createdAt: todayISO(),
-    },
-  ],
-  orders: [
-    {
-      id: "ord_demo_1",
-      clientId: "cli_demo_1",
-      startDate: todayISO(),
-      endDate: addDays(2),
-      owner: "Juan",
-      amount: 450000,
-      paid: true,
-      status: "Activo",
-      notes: "Entrega para activacion de marca.",
-      createdAt: todayISO(),
-      returnedAt: null,
-      returnNotes: "",
-      items: [
-        {
-          inventoryId: "inv_demo_1",
-          name: "Traje Robot LED",
-          category: "Traje completo",
-          quantity: 1,
-          checklist: [
-            { name: "Cabeza", returned: false },
-            { name: "Cuerpo", returned: false },
-            { name: "Guantes", returned: false },
-            { name: "Botas", returned: false },
-            { name: "Bateria", returned: false },
-            { name: "Cargador", returned: false },
-          ],
-        },
-      ],
-    },
-  ],
-  movements: [
-    {
-      id: "mov_demo_1",
-      type: "Salida",
-      orderId: "ord_demo_1",
-      itemName: "Traje Robot LED",
-      quantity: 1,
-      date: todayISO(),
-      note: "Pedido demo creado",
-    },
-  ],
+  clients: [],
+  inventory: [],
+  orders: [],
+  movements: [],
   users: [],
   activityLogs: [],
 };
@@ -388,12 +293,7 @@ function updateAdminVisibility() {
 }
 
 async function seedFirestoreIfEmpty() {
-  if (!firebaseState.enabled || !isAdmin()) return;
-  const clientSnapshot = await getDocs(collection(firebaseState.db, remoteCollections.clients));
-  const inventorySnapshot = await getDocs(collection(firebaseState.db, remoteCollections.inventory));
-  if (!clientSnapshot.empty || !inventorySnapshot.empty) return;
-
-  await replaceRemoteWithSeed();
+  return;
 }
 
 function attachRemoteListeners() {
@@ -558,21 +458,7 @@ async function logLoginOnce() {
 }
 
 async function replaceRemoteWithSeed() {
-  if (!firebaseState.enabled) return;
-  const batch = writeBatch(firebaseState.db);
-
-  for (const remoteName of Object.values(remoteCollections)) {
-    const snapshot = await getDocs(collection(firebaseState.db, remoteName));
-    snapshot.forEach((entry) => batch.delete(entry.ref));
-  }
-
-  Object.entries(remoteCollections).forEach(([localKey, remoteName]) => {
-    seedData[localKey].forEach((record) => {
-      batch.set(doc(firebaseState.db, remoteName, record.id), record);
-    });
-  });
-
-  await batch.commit();
+  return;
 }
 
 function formatMoney(value) {
@@ -1476,21 +1362,18 @@ async function logout() {
 
 async function resetDemo() {
   if (!isAdmin()) {
-    showToast("Solo admin puede reiniciar datos.");
+    showToast("Solo admin puede limpiar caché local.");
     return;
   }
-  if (!confirm("Esto reinicia los datos demo en este navegador. ¿Continuar?")) return;
+  if (!confirm("Esto limpia la caché local de este navegador. No toca Firestore. ¿Continuar?")) return;
   state = structuredClone(seedData);
   draftOrderItems = [];
+  localStorage.removeItem("trajes-os-v1");
+  localStorage.removeItem(STORAGE_KEY);
   saveState();
-  try {
-    await replaceRemoteWithSeed();
-  } catch (error) {
-    console.warn("No se pudo reiniciar Firestore.", error);
-  }
   setDefaultDates();
   renderAll();
-  showToast("Datos demo restaurados.");
+  showToast("Caché local limpia.");
 }
 
 function setDefaultDates() {
