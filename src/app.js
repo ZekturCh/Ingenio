@@ -28,6 +28,7 @@ const remoteCollections = {
   inventory: "inventoryItems",
   orders: "orders",
   movements: "inventoryMovements",
+  activityLogs: "activityLogs",
 };
 
 const firebaseState = {
@@ -37,6 +38,7 @@ const firebaseState = {
   uid: null,
   role: null,
   active: false,
+  profile: null,
   unsubscribe: [],
   usersUnsubscribe: null,
 };
@@ -150,6 +152,7 @@ const seedData = {
     },
   ],
   users: [],
+  activityLogs: [],
 };
 
 let state = loadState();
@@ -185,6 +188,9 @@ const els = {
   itemLocation: document.querySelector("#itemLocation"),
   itemChecklist: document.querySelector("#itemChecklist"),
   itemNotes: document.querySelector("#itemNotes"),
+  itemRecordId: document.querySelector("#itemRecordId"),
+  itemSubmitLabel: document.querySelector("#itemSubmitLabel"),
+  cancelItemEdit: document.querySelector("#cancelItemEdit"),
   inventoryGrid: document.querySelector("#inventoryGrid"),
   inventorySearch: document.querySelector("#inventorySearch"),
   clientForm: document.querySelector("#clientForm"),
@@ -193,6 +199,9 @@ const els = {
   clientEmail: document.querySelector("#clientEmail"),
   clientIdNumber: document.querySelector("#clientIdNumber"),
   clientNotes: document.querySelector("#clientNotes"),
+  clientRecordId: document.querySelector("#clientRecordId"),
+  clientSubmitLabel: document.querySelector("#clientSubmitLabel"),
+  cancelClientEdit: document.querySelector("#cancelClientEdit"),
   clientList: document.querySelector("#clientList"),
   clientSearch: document.querySelector("#clientSearch"),
   userForm: document.querySelector("#userForm"),
@@ -205,6 +214,9 @@ const els = {
   userSearch: document.querySelector("#userSearch"),
   currentAuthUid: document.querySelector("#currentAuthUid"),
   sessionAuthUid: document.querySelector("#sessionAuthUid"),
+  auditSearch: document.querySelector("#auditSearch"),
+  auditList: document.querySelector("#auditList"),
+  supervisionOrders: document.querySelector("#supervisionOrders"),
   clientsCsv: document.querySelector("#clientsCsv"),
   inventoryCsv: document.querySelector("#inventoryCsv"),
   importClients: document.querySelector("#importClients"),
@@ -232,6 +244,7 @@ function loadState() {
       orders: parsed.orders || [],
       movements: parsed.movements || [],
       users: parsed.users || [],
+      activityLogs: parsed.activityLogs || [],
     };
   } catch {
     return structuredClone(seedData);
@@ -270,6 +283,7 @@ async function loadCurrentUserProfile() {
   try {
     const profile = await getDoc(doc(firebaseState.db, "users", firebaseState.uid));
     const data = profile.exists() ? profile.data() : null;
+    firebaseState.profile = data;
     firebaseState.role = data?.role || null;
     firebaseState.active = data?.active === true;
     const shortUid = firebaseState.uid.slice(0, 8);
@@ -280,6 +294,7 @@ async function loadCurrentUserProfile() {
   } catch (error) {
     firebaseState.role = null;
     firebaseState.active = false;
+    firebaseState.profile = null;
     els.storageMode.textContent = `Firestore · sin rol · ${firebaseState.uid.slice(0, 8)}`;
     if (els.currentAuthUid) els.currentAuthUid.textContent = firebaseState.uid;
     if (els.sessionAuthUid) els.sessionAuthUid.textContent = firebaseState.uid;
@@ -288,16 +303,25 @@ async function loadCurrentUserProfile() {
 }
 
 function isAdmin() {
-  return firebaseState.enabled && firebaseState.active && firebaseState.role === "admin";
+  return firebaseState.enabled && firebaseState.active && ["admin", "superadmin"].includes(firebaseState.role);
+}
+
+function isSuperAdmin() {
+  return firebaseState.enabled && firebaseState.active && firebaseState.role === "superadmin";
 }
 
 function updateAdminVisibility() {
   document.querySelectorAll("[data-admin-only]").forEach((element) => {
     element.classList.toggle("is-hidden", !isAdmin());
   });
+  document.querySelectorAll("[data-superadmin-only]").forEach((element) => {
+    element.classList.toggle("is-hidden", !isSuperAdmin());
+  });
 
-  const activeAdminView = document.querySelector(".view.active[data-admin-only]");
-  if (activeAdminView && !isAdmin()) {
+  const activeAdminView = document.querySelector(".view.active[data-admin-only], .view.active[data-superadmin-only]");
+  const blockedAdmin = activeAdminView?.hasAttribute("data-admin-only") && !isAdmin();
+  const blockedSuperAdmin = activeAdminView?.hasAttribute("data-superadmin-only") && !isSuperAdmin();
+  if (blockedAdmin || blockedSuperAdmin) {
     document.querySelector('[data-view="dashboard"]').click();
   }
 }
@@ -313,6 +337,7 @@ async function seedFirestoreIfEmpty() {
 
 function attachRemoteListeners() {
   Object.entries(remoteCollections).forEach(([localKey, remoteName]) => {
+    if (localKey === "activityLogs" && !isSuperAdmin()) return;
     const unsubscribe = onSnapshot(
       collection(firebaseState.db, remoteName),
       (snapshot) => {
@@ -362,6 +387,17 @@ async function persistDoc(localKey, record) {
   } catch (error) {
     console.warn("No se pudo guardar en Firestore.", error);
     showToast("Guardado local. Revisa Firebase/Auth para sincronizar.");
+  }
+}
+
+async function deleteRemoteDoc(localKey, recordId) {
+  saveState();
+  if (!firebaseState.enabled || !recordId) return;
+  try {
+    await deleteDoc(doc(firebaseState.db, remoteCollections[localKey], recordId));
+  } catch (error) {
+    console.warn("No se pudo eliminar en Firestore.", error);
+    showToast("Eliminado local. Revisa Firebase/Auth para sincronizar.");
   }
 }
 
@@ -423,6 +459,34 @@ async function deleteUserProfile(uid) {
   showToast("Usuario eliminado del acceso a la app.");
 }
 
+function currentActor() {
+  const profile = state.users.find((user) => user.id === firebaseState.uid);
+  return {
+    uid: firebaseState.uid || "local",
+    name: profile?.displayName || profile?.email || firebaseState.profile?.displayName || firebaseState.profile?.email || firebaseState.uid || "Usuario local",
+    role: firebaseState.role || "local",
+  };
+}
+
+async function logActivity(action, entityType, entityId, label, details = {}) {
+  const actor = currentActor();
+  const log = {
+    id: uid("log"),
+    action,
+    entityType,
+    entityId,
+    label,
+    details,
+    actorUid: actor.uid,
+    actorName: actor.name,
+    actorRole: actor.role,
+    createdAt: new Date().toISOString(),
+  };
+  state.activityLogs.unshift(log);
+  await persistDoc("activityLogs", log);
+  renderAudit();
+}
+
 async function replaceRemoteWithSeed() {
   if (!firebaseState.enabled) return;
   const batch = writeBatch(firebaseState.db);
@@ -471,6 +535,7 @@ function availableQty(item) {
 
 function orderState(order) {
   if (order.status === "Devuelto") return "Devuelto";
+  if (order.status === "Cancelado") return "Cancelado";
   return order.endDate < todayISO() ? "Vencido" : "Activo";
 }
 
@@ -490,6 +555,8 @@ function renderAll() {
   renderInventory();
   renderClients();
   renderUsers();
+  renderAudit();
+  renderSupervisionOrders();
   updateAdminVisibility();
   if (window.lucide) window.lucide.createIcons();
 }
@@ -615,12 +682,12 @@ function renderOrdersTable() {
             <td>
               <div class="row-actions">
                 ${
-                  order.status !== "Devuelto"
+                  order.status === "Activo"
                     ? `<button class="mini-button" data-return-order="${order.id}">Devolver</button>`
                     : `<button class="mini-button" disabled>Cerrado</button>`
                 }
                 <button class="mini-button" data-toggle-paid="${order.id}">${order.paid ? "Marcar pendiente" : "Marcar pago"}</button>
-                <button class="mini-button" data-cancel-order="${order.id}">Cancelar</button>
+                ${order.status === "Activo" ? `<button class="mini-button" data-cancel-order="${order.id}">Cancelar</button>` : ""}
               </div>
             </td>
           </tr>
@@ -662,6 +729,10 @@ function renderInventory() {
                 <div class="stock-bar"><span style="width:${percent}%"></span></div>
                 <strong>${percent}%</strong>
               </div>
+              <div class="row-actions">
+                <button class="mini-button" data-edit-inventory="${escapeHtml(item.id)}">Editar</button>
+                <button class="mini-button" data-delete-inventory="${escapeHtml(item.id)}">Eliminar</button>
+              </div>
             </article>
           `;
         })
@@ -692,6 +763,10 @@ function renderClients() {
                 <span>${escapeHtml(client.phone || "Sin telefono")}</span>
                 <span>${escapeHtml(client.email || "Sin correo")}</span>
                 <span>${escapeHtml(client.notes || "Sin notas")}</span>
+              </div>
+              <div class="row-actions">
+                <button class="mini-button" data-edit-client="${escapeHtml(client.id)}">Editar</button>
+                <button class="mini-button" data-delete-client="${escapeHtml(client.id)}">Eliminar</button>
               </div>
             </article>
           `;
@@ -739,6 +814,78 @@ function renderUsers() {
         `)
         .join("")
     : `<div class="empty">No hay usuarios con ese filtro.</div>`;
+}
+
+function renderAudit() {
+  if (!els.auditList) return;
+  updateAdminVisibility();
+  if (!isSuperAdmin()) {
+    els.auditList.innerHTML = `<div class="empty">Solo super admin puede ver la auditoria.</div>`;
+    return;
+  }
+
+  const term = els.auditSearch.value.trim().toLowerCase();
+  const logs = state.activityLogs
+    .filter((log) => [log.action, log.entityType, log.label, log.actorName, log.actorRole].join(" ").toLowerCase().includes(term))
+    .sort((a, b) => String(b.createdAt).localeCompare(String(a.createdAt)))
+    .slice(0, 80);
+
+  els.auditList.innerHTML = logs.length
+    ? logs
+        .map((log) => `
+          <article class="client-row">
+            <div class="panel-heading">
+              <div>
+                <h3>${escapeHtml(log.action)} · ${escapeHtml(log.label || log.entityId)}</h3>
+                <span class="muted">${escapeHtml(log.entityType)} · ${new Date(log.createdAt).toLocaleString("es-CO")}</span>
+              </div>
+              <span class="tag">${escapeHtml(log.actorRole || "rol")}</span>
+            </div>
+            <div class="client-meta">
+              <span>Usuario: ${escapeHtml(log.actorName || log.actorUid)}</span>
+              <span>ID: ${escapeHtml(log.entityId || "")}</span>
+              <span>${escapeHtml(JSON.stringify(log.details || {}))}</span>
+            </div>
+          </article>
+        `)
+        .join("")
+    : `<div class="empty">Aun no hay actividad registrada.</div>`;
+}
+
+function renderSupervisionOrders() {
+  if (!els.supervisionOrders) return;
+  if (!isSuperAdmin()) {
+    els.supervisionOrders.innerHTML = `<div class="empty">Solo super admin puede ver el resumen operativo.</div>`;
+    return;
+  }
+
+  const watched = state.orders
+    .map((order) => ({ ...order, client: getClient(order.clientId), computedStatus: orderState(order) }))
+    .filter((order) => order.computedStatus === "Vencido" || (order.status === "Devuelto" && Number(order.amount || 0) > 0 && !order.paid) || order.status === "Activo")
+    .sort((a, b) => String(b.createdAt).localeCompare(String(a.createdAt)));
+
+  els.supervisionOrders.innerHTML = watched.length
+    ? watched
+        .map((order) => {
+          const unpaidReturned = order.status === "Devuelto" && Number(order.amount || 0) > 0 && !order.paid;
+          return `
+            <article class="order-card">
+              <div class="panel-heading">
+                <div>
+                  <h3>${escapeHtml(order.client?.name || "Cliente eliminado")}</h3>
+                  <p class="muted">${order.startDate} → ${order.endDate} · ${escapeHtml(order.createdByName || order.owner || "Sin usuario")}</p>
+                </div>
+                <span class="tag ${order.computedStatus === "Vencido" || unpaidReturned ? "danger" : "ok"}">${unpaidReturned ? "Devuelto sin pago" : order.computedStatus}</span>
+              </div>
+              <div class="chips">
+                ${order.items.map((item) => `<span class="chip">${escapeHtml(item.name)} x${item.quantity}</span>`).join("")}
+              </div>
+              <p class="muted">${formatMoney(order.amount)} · ${order.paid ? "Pagado" : "Pago pendiente"}</p>
+            </article>
+          `;
+        })
+        .join("")
+    : `<div class="empty">No hay pedidos criticos ahora.</div>`;
 }
 
 function addDraftItem() {
@@ -789,6 +936,8 @@ async function createOrder(event) {
     status: "Activo",
     notes: els.orderNotes.value.trim(),
     createdAt: todayISO(),
+    createdBy: currentActor().uid,
+    createdByName: currentActor().name,
     returnedAt: null,
     returnNotes: "",
     items: structuredClone(draftOrderItems),
@@ -813,14 +962,21 @@ async function createOrder(event) {
   saveState();
   await persistDoc("orders", order);
   await persistMany("movements", state.movements.filter((movement) => movement.orderId === order.id));
+  await logActivity("Creo pedido", "orders", order.id, getClient(order.clientId)?.name || order.id, {
+    items: order.items.map((item) => `${item.name} x${item.quantity}`),
+    amount: order.amount,
+    paid: order.paid,
+  });
   renderAll();
   showToast("Pedido guardado y stock comprometido.");
 }
 
 async function createInventoryItem(event) {
   event.preventDefault();
+  const recordId = els.itemRecordId.value;
+  const previous = state.inventory.find((entry) => entry.id === recordId);
   const item = {
-    id: uid("inv"),
+    id: recordId || uid("inv"),
     name: els.itemName.value.trim(),
     category: els.itemCategory.value,
     quantity: Math.max(1, Number(els.itemQty.value || 1)),
@@ -828,31 +984,133 @@ async function createInventoryItem(event) {
     location: els.itemLocation.value.trim(),
     checklist: splitChecklist(els.itemChecklist.value),
     notes: els.itemNotes.value.trim(),
-    createdAt: todayISO(),
+    createdAt: previous?.createdAt || todayISO(),
+    updatedAt: todayISO(),
   };
-  state.inventory.push(item);
+  const index = state.inventory.findIndex((entry) => entry.id === item.id);
+  if (index >= 0) state.inventory[index] = item;
+  else state.inventory.push(item);
   els.inventoryForm.reset();
+  els.itemRecordId.value = "";
+  els.itemSubmitLabel.textContent = "Crear item";
+  els.cancelItemEdit.classList.add("is-hidden");
   await persistDoc("inventory", item);
+  await logActivity(recordId ? "Edito inventario" : "Creo inventario", "inventoryItems", item.id, item.name, {
+    quantity: item.quantity,
+    category: item.category,
+  });
   renderAll();
-  showToast("Item creado en inventario.");
+  showToast(recordId ? "Item actualizado." : "Item creado en inventario.");
 }
 
 async function createClient(event) {
   event.preventDefault();
+  const recordId = els.clientRecordId.value;
+  const previous = state.clients.find((entry) => entry.id === recordId);
   const client = {
-    id: uid("cli"),
+    id: recordId || uid("cli"),
     name: els.clientName.value.trim(),
     phone: els.clientPhone.value.trim(),
     email: els.clientEmail.value.trim(),
     idNumber: els.clientIdNumber.value.trim(),
     notes: els.clientNotes.value.trim(),
-    createdAt: todayISO(),
+    createdAt: previous?.createdAt || todayISO(),
+    updatedAt: todayISO(),
   };
-  state.clients.push(client);
+  const index = state.clients.findIndex((entry) => entry.id === client.id);
+  if (index >= 0) state.clients[index] = client;
+  else state.clients.push(client);
   els.clientForm.reset();
+  els.clientRecordId.value = "";
+  els.clientSubmitLabel.textContent = "Crear cliente";
+  els.cancelClientEdit.classList.add("is-hidden");
   await persistDoc("clients", client);
+  await logActivity(recordId ? "Edito cliente" : "Creo cliente", "clients", client.id, client.name, {
+    phone: client.phone,
+    email: client.email,
+  });
   renderAll();
-  showToast("Cliente creado.");
+  showToast(recordId ? "Cliente actualizado." : "Cliente creado.");
+}
+
+function editClient(clientId) {
+  const client = state.clients.find((entry) => entry.id === clientId);
+  if (!client) return;
+  els.clientRecordId.value = client.id;
+  els.clientName.value = client.name || "";
+  els.clientPhone.value = client.phone || "";
+  els.clientEmail.value = client.email || "";
+  els.clientIdNumber.value = client.idNumber || "";
+  els.clientNotes.value = client.notes || "";
+  els.clientSubmitLabel.textContent = "Guardar cambios";
+  els.cancelClientEdit.classList.remove("is-hidden");
+  document.querySelector('[data-view="clients"]').click();
+  els.clientName.focus();
+}
+
+function cancelClientEdit() {
+  els.clientForm.reset();
+  els.clientRecordId.value = "";
+  els.clientSubmitLabel.textContent = "Crear cliente";
+  els.cancelClientEdit.classList.add("is-hidden");
+}
+
+async function deleteClient(clientId) {
+  const client = state.clients.find((entry) => entry.id === clientId);
+  if (!client) return;
+  const hasActiveOrders = activeOrders().some((order) => order.clientId === clientId);
+  if (hasActiveOrders) {
+    showToast("No puedes eliminar un cliente con pedidos activos.");
+    return;
+  }
+  if (!confirm(`¿Eliminar cliente ${client.name}?`)) return;
+  state.clients = state.clients.filter((entry) => entry.id !== clientId);
+  await deleteRemoteDoc("clients", clientId);
+  await logActivity("Elimino cliente", "clients", clientId, client.name, {});
+  renderAll();
+  showToast("Cliente eliminado.");
+}
+
+function editInventoryItem(itemId) {
+  const item = state.inventory.find((entry) => entry.id === itemId);
+  if (!item) return;
+  els.itemRecordId.value = item.id;
+  els.itemName.value = item.name || "";
+  els.itemCategory.value = item.category || "Vestuario";
+  els.itemQty.value = item.quantity || 1;
+  els.itemSize.value = item.size || "";
+  els.itemLocation.value = item.location || "";
+  els.itemChecklist.value = (item.checklist || []).join("\n");
+  els.itemNotes.value = item.notes || "";
+  els.itemSubmitLabel.textContent = "Guardar cambios";
+  els.cancelItemEdit.classList.remove("is-hidden");
+  document.querySelector('[data-view="inventory"]').click();
+  els.itemName.focus();
+}
+
+function cancelInventoryEdit() {
+  els.inventoryForm.reset();
+  els.itemRecordId.value = "";
+  els.itemSubmitLabel.textContent = "Crear item";
+  els.cancelItemEdit.classList.add("is-hidden");
+}
+
+async function deleteInventoryItem(itemId) {
+  const item = state.inventory.find((entry) => entry.id === itemId);
+  if (!item) return;
+  if (committedQty(itemId) > 0) {
+    showToast("No puedes eliminar un item que esta alquilado o activo.");
+    return;
+  }
+  if (!confirm(`¿Eliminar item ${item.name}?`)) return;
+  state.inventory = state.inventory.filter((entry) => entry.id !== itemId);
+  await deleteRemoteDoc("inventory", itemId);
+  await logActivity("Elimino inventario", "inventoryItems", itemId, item.name, {
+    category: item.category,
+    quantity: item.quantity,
+  });
+  renderAll();
+  showToast("Item eliminado.");
 }
 
 function openReturnDialog(orderId) {
@@ -898,6 +1156,8 @@ async function closeReturn(event) {
   order.status = "Devuelto";
   order.returnedAt = todayISO();
   order.returnNotes = els.returnNotes.value.trim();
+  order.returnedBy = currentActor().uid;
+  order.returnedByName = currentActor().name;
 
   order.items.forEach((item) => {
     const missing = item.checklist.filter((piece) => !piece.returned).map((piece) => piece.name);
@@ -917,6 +1177,11 @@ async function closeReturn(event) {
   saveState();
   await persistDoc("orders", order);
   await persistMany("movements", state.movements.filter((movement) => movement.orderId === order.id));
+  await logActivity("Cerro devolucion", "orders", order.id, getClient(order.clientId)?.name || order.id, {
+    returnedAt: order.returnedAt,
+    paid: order.paid,
+    missing: order.items.flatMap((item) => item.checklist.filter((piece) => !piece.returned).map((piece) => `${item.name}: ${piece.name}`)),
+  });
   renderAll();
   showToast("Devolucion cerrada. El stock quedo liberado.");
 }
@@ -952,6 +1217,11 @@ async function importClients() {
     created.push(client);
   });
   await persistMany("clients", created);
+  if (created.length) {
+    await logActivity("Importo clientes", "clients", "bulk", `${created.length} clientes`, {
+      count: created.length,
+    });
+  }
   renderAll();
   showToast(`${created.length} cliente(s) importado(s).`);
 }
@@ -976,19 +1246,25 @@ async function importInventory() {
     created.push(item);
   });
   await persistMany("inventory", created);
+  if (created.length) {
+    await logActivity("Importo inventario", "inventoryItems", "bulk", `${created.length} items`, {
+      count: created.length,
+    });
+  }
   renderAll();
   showToast(`${created.length} item(s) importado(s).`);
 }
 
 async function createUserProfile(event) {
   event.preventDefault();
+  const previous = state.users.find((user) => user.id === els.userUid.value.trim());
   const profile = {
     id: els.userUid.value.trim(),
     displayName: els.userName.value.trim(),
     email: els.userEmail.value.trim(),
     role: els.userRole.value,
     active: els.userActive.checked,
-    createdAt: todayISO(),
+    createdAt: previous?.createdAt || todayISO(),
   };
 
   if (!profile.id) {
@@ -998,6 +1274,10 @@ async function createUserProfile(event) {
 
   const saved = await persistUserProfile(profile);
   if (!saved) return;
+  await logActivity("Guardo usuario", "users", profile.id, profile.displayName || profile.email || profile.id, {
+    role: profile.role,
+    active: profile.active,
+  });
 
   els.userForm.reset();
   els.userActive.checked = true;
@@ -1064,13 +1344,16 @@ function bindEvents() {
   els.addOrderItem.addEventListener("click", addDraftItem);
   els.orderForm.addEventListener("submit", createOrder);
   els.inventoryForm.addEventListener("submit", createInventoryItem);
+  els.cancelItemEdit.addEventListener("click", cancelInventoryEdit);
   els.clientForm.addEventListener("submit", createClient);
+  els.cancelClientEdit.addEventListener("click", cancelClientEdit);
   els.orderSearch.addEventListener("input", renderOrdersTable);
   els.orderStatusFilter.addEventListener("change", renderOrdersTable);
   els.inventorySearch.addEventListener("input", renderInventory);
   els.clientSearch.addEventListener("input", renderClients);
   els.userSearch.addEventListener("input", renderUsers);
   els.userForm.addEventListener("submit", createUserProfile);
+  els.auditSearch.addEventListener("input", renderAudit);
   els.importClients.addEventListener("click", importClients);
   els.importInventory.addEventListener("click", importInventory);
   els.exportJson.addEventListener("click", exportJson);
@@ -1098,6 +1381,10 @@ function bindEvents() {
       if (order) {
         order.paid = !order.paid;
         await persistDoc("orders", order);
+        await logActivity(order.paid ? "Marco pago" : "Marco pago pendiente", "orders", order.id, getClient(order.clientId)?.name || order.id, {
+          amount: order.amount,
+          paid: order.paid,
+        });
         renderAll();
         showToast(order.paid ? "Pago marcado como recibido." : "Pago marcado como pendiente.");
       }
@@ -1109,10 +1396,39 @@ function bindEvents() {
       const order = state.orders.find((entry) => entry.id === cancelOrder.dataset.cancelOrder);
       if (order && order.status !== "Devuelto" && confirm("¿Cancelar este pedido y liberar inventario?")) {
         order.status = "Cancelado";
+        order.cancelledBy = currentActor().uid;
+        order.cancelledByName = currentActor().name;
         await persistDoc("orders", order);
+        await logActivity("Cancelo pedido", "orders", order.id, getClient(order.clientId)?.name || order.id, {
+          items: order.items.map((item) => `${item.name} x${item.quantity}`),
+        });
         renderAll();
         showToast("Pedido cancelado.");
       }
+      return;
+    }
+
+    const editClientButton = event.target.closest("[data-edit-client]");
+    if (editClientButton) {
+      editClient(editClientButton.dataset.editClient);
+      return;
+    }
+
+    const deleteClientButton = event.target.closest("[data-delete-client]");
+    if (deleteClientButton) {
+      await deleteClient(deleteClientButton.dataset.deleteClient);
+      return;
+    }
+
+    const editInventoryButton = event.target.closest("[data-edit-inventory]");
+    if (editInventoryButton) {
+      editInventoryItem(editInventoryButton.dataset.editInventory);
+      return;
+    }
+
+    const deleteInventoryButton = event.target.closest("[data-delete-inventory]");
+    if (deleteInventoryButton) {
+      await deleteInventoryItem(deleteInventoryButton.dataset.deleteInventory);
       return;
     }
 
@@ -1132,7 +1448,9 @@ function bindEvents() {
     const deleteUser = event.target.closest("[data-delete-user]");
     if (deleteUser) {
       if (confirm("Esto elimina el perfil de acceso en Firestore. La cuenta Auth real se elimina desde Firebase Console o Cloud Function. ¿Continuar?")) {
+        const deleted = state.users.find((entry) => entry.id === deleteUser.dataset.deleteUser);
         await deleteUserProfile(deleteUser.dataset.deleteUser);
+        await logActivity("Elimino usuario", "users", deleteUser.dataset.deleteUser, deleted?.displayName || deleted?.email || deleteUser.dataset.deleteUser, {});
       }
     }
   });

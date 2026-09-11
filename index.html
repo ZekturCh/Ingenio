@@ -48,6 +48,10 @@
             <i data-lucide="shield-check"></i>
             Usuarios
           </button>
+          <button class="nav-item is-hidden" data-view="supervision" data-superadmin-only>
+            <i data-lucide="activity"></i>
+            Supervisión
+          </button>
           <button class="nav-item" data-view="imports">
             <i data-lucide="table-properties"></i>
             Carga rapida
@@ -168,6 +172,7 @@
                   <option value="Activo">Activos</option>
                   <option value="Devuelto">Devueltos</option>
                   <option value="Vencido">Vencidos</option>
+                  <option value="Cancelado">Cancelados</option>
                 </select>
               </div>
             </div>
@@ -200,6 +205,7 @@
                 </div>
               </div>
               <form id="inventoryForm" class="form-grid compact">
+                <input id="itemRecordId" type="hidden" />
                 <label class="full-span">
                   Nombre
                   <input id="itemName" required placeholder="Traje Mickey, cabeza robot, botas negras..." />
@@ -238,7 +244,11 @@
                 <div class="form-actions full-span">
                   <button type="submit" class="primary-button">
                     <i data-lucide="package-plus"></i>
-                    Crear item
+                    <span id="itemSubmitLabel">Crear item</span>
+                  </button>
+                  <button type="button" class="secondary-button is-hidden" id="cancelItemEdit">
+                    <i data-lucide="x"></i>
+                    Cancelar edición
                   </button>
                 </div>
               </form>
@@ -267,6 +277,7 @@
                 </div>
               </div>
               <form id="clientForm" class="form-grid compact">
+                <input id="clientRecordId" type="hidden" />
                 <label class="full-span">
                   Nombre
                   <input id="clientName" required placeholder="Nombre o empresa" />
@@ -290,7 +301,11 @@
                 <div class="form-actions full-span">
                   <button type="submit" class="primary-button">
                     <i data-lucide="user-plus"></i>
-                    Crear cliente
+                    <span id="clientSubmitLabel">Crear cliente</span>
+                  </button>
+                  <button type="button" class="secondary-button is-hidden" id="cancelClientEdit">
+                    <i data-lucide="x"></i>
+                    Cancelar edición
                   </button>
                 </div>
               </form>
@@ -371,6 +386,7 @@ Traje Astronauta,Traje completo,2,Adulto,Rack 4,Casco;Overol;Guantes;Botas,Revis
                 <label>
                   Rol
                   <select id="userRole">
+                    <option value="superadmin">Super admin</option>
                     <option value="admin">Admin</option>
                     <option value="bodega">Bodega</option>
                     <option value="ventas">Ventas</option>
@@ -407,6 +423,31 @@ Traje Astronauta,Traje completo,2,Adulto,Rack 4,Casco;Overol;Guantes;Botas,Revis
           </div>
         </section>
 
+        <section class="view is-hidden" id="supervision" data-superadmin-only>
+          <div class="workspace-grid clients-layout">
+            <section class="panel">
+              <div class="panel-heading">
+                <div>
+                  <p class="eyebrow">Super admin</p>
+                  <h2>Pedidos críticos</h2>
+                </div>
+              </div>
+              <div class="stack-list" id="supervisionOrders"></div>
+            </section>
+
+            <section class="panel">
+              <div class="panel-heading">
+                <div>
+                  <p class="eyebrow">Auditoría</p>
+                  <h2>Cambios recientes</h2>
+                </div>
+                <input id="auditSearch" type="search" placeholder="Buscar usuario, acción o dato" />
+              </div>
+              <div class="client-list" id="auditList"></div>
+            </section>
+          </div>
+        </section>
+
         <section class="view" id="firebase">
           <div class="panel">
             <div class="panel-heading">
@@ -432,7 +473,7 @@ Traje Astronauta,Traje completo,2,Adulto,Rack 4,Casco;Overol;Guantes;Botas,Revis
               </div>
               <div>
                 <h3>Colecciones base</h3>
-                <code>users, clients, inventoryItems, orders, inventoryMovements, settings</code>
+                <code>users, clients, inventoryItems, orders, inventoryMovements, activityLogs, settings</code>
               </div>
               <div>
                 <h3>UID de esta sesion</h3>

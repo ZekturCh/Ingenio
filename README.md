@@ -5,10 +5,11 @@ MVP web para administrar alquiler de trajes, clientes, inventario con checklist 
 ## Que incluye
 
 - Panel operativo con pedidos activos, disponibilidad, pagos pendientes y vencidos.
-- Creacion de clientes.
-- Creacion de inventario con categoria, cantidad, talla, ubicacion y checklist.
+- CRUD de clientes.
+- CRUD de inventario con categoria, cantidad, talla, ubicacion y checklist.
 - Creacion de pedidos con varios items y copia de checklist por salida.
 - Cierre de devolucion revisando piezas entregadas.
+- Auditoria de cambios para super admin.
 - Importacion rapida desde CSV pegado desde Excel.
 - Exportacion de respaldo JSON.
 - Firebase conectado al proyecto `ingenioespectaculos`.
@@ -35,12 +36,20 @@ La app inicializa Firebase con el proyecto `ingenioespectaculos` y usa:
 - `inventoryMovements`
 - `users`
 - `settings`
+- `activityLogs`
 
 El codigo intenta iniciar sesion anonima para sincronizar. Si Firestore/Auth todavia no estan activos o las reglas bloquean el acceso, la app sigue funcionando con respaldo local en el navegador.
 
 ## Usuarios y roles
 
-Hay un apartado `Usuarios` visible solo para perfiles con rol `admin`.
+Hay un apartado `Usuarios` visible solo para perfiles con rol `admin` o `superadmin`.
+
+Hay un apartado `Supervisión` visible solo para `superadmin`. Permite ver:
+
+- Cambios recientes: quien creo, edito o elimino usuarios, clientes, inventario y pedidos.
+- Pedidos activos.
+- Pedidos vencidos.
+- Pedidos devueltos pero con pago pendiente.
 
 Importante: ese apartado administra perfiles de acceso en Firestore (`users/{uid}`), no crea la cuenta real de Firebase Auth. Para crear o borrar cuentas reales usa Firebase Console > Authentication, o agrega despues una Cloud Function con Admin SDK.
 
@@ -73,13 +82,14 @@ Ejemplo de documento en `users/{uid}`:
 {
   "displayName": "Admin",
   "email": "admin@ingenio.com",
-  "role": "admin",
+  "role": "superadmin",
   "active": true
 }
 ```
 
 Roles permitidos:
 
+- `superadmin`: todo, incluyendo auditoria y supervision.
 - `admin`: todo.
 - `bodega`: clientes, inventario, pedidos y movimientos.
 - `ventas`: clientes, pedidos e inventario.

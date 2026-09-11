@@ -8,7 +8,7 @@ Este modelo separa catalogo, pedidos y movimientos para que puedas auditar salid
 {
   displayName: "Juan",
   email: "juan@empresa.com",
-  role: "admin", // admin, bodega, ventas, lectura
+  role: "superadmin", // superadmin, admin, bodega, ventas, lectura
   active: true,
   createdAt: Timestamp
 }
@@ -93,10 +93,30 @@ Este modelo separa catalogo, pedidos y movimientos para que puedas auditar salid
 }
 ```
 
+## activityLogs
+
+```js
+{
+  action: "Creo pedido",
+  entityType: "orders",
+  entityId: "orders/{id}",
+  label: "Eventos Nova",
+  details: {
+    amount: 450000,
+    paid: true
+  },
+  actorUid: "users/{id}",
+  actorName: "Juan",
+  actorRole: "ventas",
+  createdAt: "2026-09-11T12:00:00.000Z"
+}
+```
+
 ## Reglas importantes
 
 - No borres pedidos cerrados; usa `status`.
 - El pedido debe guardar copia de la checklist tal como salio.
 - La disponibilidad se calcula con inventario total menos pedidos activos.
 - Los movimientos son auditoria: cada salida, ingreso, faltante o ajuste debe quedar registrado.
+- `activityLogs` guarda quien creo, edito o elimino registros importantes. Solo `superadmin` deberia leerlo.
 - Para eventos futuros, agrega una coleccion `events` y permisos por rol cuando el flujo este claro.

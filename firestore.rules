@@ -18,15 +18,19 @@ service cloud.firestore {
     }
 
     function canRead() {
-      return hasRole(['admin', 'bodega', 'ventas', 'lectura']);
+      return hasRole(['superadmin', 'admin', 'bodega', 'ventas', 'lectura']);
     }
 
     function canWrite() {
-      return hasRole(['admin', 'bodega', 'ventas']);
+      return hasRole(['superadmin', 'admin', 'bodega', 'ventas']);
     }
 
     function canAdmin() {
-      return hasRole(['admin']);
+      return hasRole(['superadmin', 'admin']);
+    }
+
+    function canSuperAdmin() {
+      return hasRole(['superadmin']);
     }
 
     match /users/{userId} {
@@ -58,6 +62,12 @@ service cloud.firestore {
       allow read: if canRead();
       allow create: if canWrite();
       allow update, delete: if canAdmin();
+    }
+
+    match /activityLogs/{logId} {
+      allow read: if canSuperAdmin();
+      allow create: if canWrite();
+      allow update, delete: if canSuperAdmin();
     }
 
     match /settings/{settingId} {
