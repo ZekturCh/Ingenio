@@ -52,13 +52,13 @@
             <i data-lucide="activity"></i>
             Supervisión
           </button>
-          <button class="nav-item" data-view="imports">
+          <button class="nav-item is-hidden" data-view="imports" data-admin-only>
             <i data-lucide="table-properties"></i>
             Carga rapida
           </button>
-          <button class="nav-item" data-view="firebase">
-            <i data-lucide="cloud"></i>
-            Firebase
+          <button class="nav-item" data-view="profile">
+            <i data-lucide="user-round-cog"></i>
+            Perfil
           </button>
         </nav>
 
@@ -75,11 +75,14 @@
             <h1>Control de alquileres, piezas y devoluciones</h1>
           </div>
           <div class="topbar-actions">
-            <button class="icon-button" id="exportJson" title="Exportar respaldo JSON" aria-label="Exportar respaldo JSON">
+            <button class="icon-button is-hidden" id="exportJson" title="Exportar respaldo JSON" aria-label="Exportar respaldo JSON" data-admin-only>
               <i data-lucide="download"></i>
             </button>
-            <button class="icon-button danger" id="resetDemo" title="Reiniciar datos demo" aria-label="Reiniciar datos demo">
+            <button class="icon-button danger is-hidden" id="resetDemo" title="Reiniciar datos demo" aria-label="Reiniciar datos demo" data-admin-only>
               <i data-lucide="rotate-ccw"></i>
+            </button>
+            <button class="icon-button" id="logoutButton" title="Cerrar sesión" aria-label="Cerrar sesión">
+              <i data-lucide="log-out"></i>
             </button>
           </div>
         </header>
@@ -146,7 +149,7 @@
               </form>
             </section>
 
-            <section class="panel">
+            <section class="panel is-hidden" data-admin-only>
               <div class="panel-heading">
                 <div>
                   <p class="eyebrow">Hoy</p>
@@ -269,7 +272,7 @@
 
         <section class="view" id="clients">
           <div class="workspace-grid clients-layout">
-            <section class="panel">
+            <section class="panel is-hidden" data-admin-only>
               <div class="panel-heading">
                 <div>
                   <p class="eyebrow">Base de datos</p>
@@ -386,11 +389,7 @@ Traje Astronauta,Traje completo,2,Adulto,Rack 4,Casco;Overol;Guantes;Botas,Revis
                 <label>
                   Rol
                   <select id="userRole">
-                    <option value="superadmin">Super admin</option>
-                    <option value="admin">Admin</option>
-                    <option value="bodega">Bodega</option>
-                    <option value="ventas">Ventas</option>
-                    <option value="lectura">Lectura</option>
+                    <option value="staff">Operador</option>
                   </select>
                 </label>
                 <label class="check-row">
@@ -428,7 +427,7 @@ Traje Astronauta,Traje completo,2,Adulto,Rack 4,Casco;Overol;Guantes;Botas,Revis
             <section class="panel">
               <div class="panel-heading">
                 <div>
-                  <p class="eyebrow">Super admin</p>
+                  <p class="eyebrow">Admin</p>
                   <h2>Pedidos críticos</h2>
                 </div>
               </div>
@@ -448,37 +447,49 @@ Traje Astronauta,Traje completo,2,Adulto,Rack 4,Casco;Overol;Guantes;Botas,Revis
           </div>
         </section>
 
-        <section class="view" id="firebase">
+        <section class="view" id="profile">
           <div class="panel">
             <div class="panel-heading">
               <div>
-                <p class="eyebrow">Siguiente paso</p>
-                <h2>Preparado para GitHub + Firebase</h2>
+                <p class="eyebrow">Cuenta</p>
+                <h2>Mi perfil</h2>
               </div>
             </div>
             <div class="firebase-grid">
               <div>
-                <h3>Ahora funciona local</h3>
-                <p>
-                  Esta version guarda datos en el navegador para que puedas probar flujos sin instalar nada.
-                  Sirve como MVP funcional y como maqueta viva antes de conectar Firestore.
-                </p>
-              </div>
-              <div>
-                <h3>Firebase recomendado</h3>
-                <p>
-                  Firebase Auth para usuarios, Firestore para clientes/inventario/pedidos, Storage para fotos y
-                  Hosting para publicar. La estructura sugerida ya queda documentada en el repositorio.
-                </p>
-              </div>
-              <div>
-                <h3>Colecciones base</h3>
-                <code>users, clients, inventoryItems, orders, inventoryMovements, activityLogs, settings</code>
-              </div>
-              <div>
-                <h3>UID de esta sesion</h3>
-                <p>Usalo para crear el primer admin en Firestore si aun no puedes entrar a Usuarios.</p>
+                <h3>Sesión actual</h3>
+                <p id="profileSummary">Cargando perfil...</p>
                 <code id="sessionAuthUid">Conectando...</code>
+              </div>
+              <div>
+                <h3>Actualizar correo</h3>
+                <form id="emailForm" class="form-grid compact">
+                  <label class="full-span">
+                    Nuevo correo
+                    <input id="profileEmail" type="email" placeholder="correo@dominio.com" />
+                  </label>
+                  <div class="form-actions full-span">
+                    <button class="primary-button" type="submit">
+                      <i data-lucide="mail"></i>
+                      Guardar correo
+                    </button>
+                  </div>
+                </form>
+              </div>
+              <div>
+                <h3>Cambiar contraseña</h3>
+                <form id="passwordForm" class="form-grid compact">
+                  <label class="full-span">
+                    Nueva contraseña
+                    <input id="profilePassword" type="password" minlength="6" placeholder="Mínimo 6 caracteres" />
+                  </label>
+                  <div class="form-actions full-span">
+                    <button class="primary-button" type="submit">
+                      <i data-lucide="key-round"></i>
+                      Cambiar contraseña
+                    </button>
+                  </div>
+                </form>
               </div>
             </div>
           </div>

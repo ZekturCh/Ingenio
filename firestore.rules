@@ -6,6 +6,10 @@ service cloud.firestore {
       return request.auth != null;
     }
 
+    function isMainAdmin() {
+      return signedIn() && request.auth.token.email == 'admin@ingenio.com';
+    }
+
     function userDoc() {
       return get(/databases/$(database)/documents/users/$(request.auth.uid));
     }
@@ -18,56 +22,73 @@ service cloud.firestore {
     }
 
     function canRead() {
-      return hasRole(['superadmin', 'admin', 'bodega', 'ventas', 'lectura']);
+      return signedIn()
+        && (
+          isMainAdmin()
+          || (
+            exists(/databases/$(database)/documents/users/$(request.auth.uid))
+            && userDoc().data.active == true
+          )
+        );
     }
 
-    function canWrite() {
-      return hasRole(['superadmin', 'admin', 'bodega', 'ventas']);
+    function canCreateWork() {
+      return canRead();
     }
 
     function canAdmin() {
-      return hasRole(['superadmin', 'admin']);
-    }
-
-    function canSuperAdmin() {
-      return hasRole(['superadmin']);
+      return isMainAdmin();
     }
 
     match /users/{userId} {
       allow read: if signedIn() && (request.auth.uid == userId || canAdmin());
-      allow create: if canAdmin();
-      allow update: if canAdmin();
+      allow create: if canAdmin()
+        || (
+          signedIn()
+          && request.auth.uid == userId
+          && request.resource.data.role == 'staff'
+          && request.resource.data.active == true
+        );
+      allow update: if canAdmin()
+        || (
+          signedIn()
+          && request.auth.uid == userId
+          && resource.data.role == request.resource.data.role
+          && resource.data.active == request.resource.data.active
+        );
       allow delete: if canAdmin();
     }
 
     match /clients/{clientId} {
       allow read: if canRead();
-      allow create, update: if canWrite();
+      allow create: if canAdmin();
+      allow update: if canAdmin();
       allow delete: if canAdmin();
     }
 
     match /inventoryItems/{itemId} {
       allow read: if canRead();
-      allow create, update: if canWrite();
+      allow create, update: if canAdmin();
       allow delete: if canAdmin();
     }
 
     match /orders/{orderId} {
       allow read: if canRead();
-      allow create, update: if canWrite();
+      allow create: if canCreateWork();
+      allow update: if canAdmin();
       allow delete: if canAdmin();
     }
 
     match /inventoryMovements/{movementId} {
       allow read: if canRead();
-      allow create: if canWrite();
+      allow create: if canCreateWork();
       allow update, delete: if canAdmin();
     }
 
     match /activityLogs/{logId} {
-      allow read: if canSuperAdmin();
-      allow create: if canWrite();
-      allow update, delete: if canSuperAdmin();
+      allow read: if canAdmin();
+      allow create: if canCreateWork();
+      allow update, delete: if canAdmin();
     }
 
     match /settings/{settingId} {

@@ -5,13 +5,11 @@ MVP web para administrar alquiler de trajes, clientes, inventario con checklist 
 ## Que incluye
 
 - Panel operativo con pedidos activos, disponibilidad, pagos pendientes y vencidos.
-- CRUD de clientes.
-- CRUD de inventario con categoria, cantidad, talla, ubicacion y checklist.
-- Creacion de pedidos con varios items y copia de checklist por salida.
-- Cierre de devolucion revisando piezas entregadas.
-- Auditoria de cambios para super admin.
-- Importacion rapida desde CSV pegado desde Excel.
-- Exportacion de respaldo JSON.
+- Login con Firebase Auth Email/Password.
+- Admin principal por correo `admin@ingenio.com`.
+- Admin: usuarios, clientes, inventario, pedidos existentes, pagos, devoluciones, importaciones y auditoria.
+- Operadores: crear pedidos y editar su propio correo/contrasena.
+- Auditoria de cambios: ingresos, pedidos, inventario, clientes, usuarios, pagos, cancelaciones y devoluciones.
 - Firebase conectado al proyecto `ingenioespectaculos`.
 - Reglas de Firestore listas para produccion y pruebas.
 
@@ -38,32 +36,32 @@ La app inicializa Firebase con el proyecto `ingenioespectaculos` y usa:
 - `settings`
 - `activityLogs`
 
-El codigo intenta iniciar sesion anonima para sincronizar. Si Firestore/Auth todavia no estan activos o las reglas bloquean el acceso, la app sigue funcionando con respaldo local en el navegador.
+La app exige login en `login.html`. Si no hay sesion activa, `index.html` redirige al login.
 
 ## Usuarios y roles
 
-Hay un apartado `Usuarios` visible solo para perfiles con rol `admin` o `superadmin`.
+Hay un apartado `Usuarios` visible solo para `admin@ingenio.com`.
 
-Hay un apartado `Supervisión` visible solo para `superadmin`. Permite ver:
+Hay un apartado `Supervisión` visible solo para `admin@ingenio.com`. Permite ver:
 
 - Cambios recientes: quien creo, edito o elimino usuarios, clientes, inventario y pedidos.
 - Pedidos activos.
 - Pedidos vencidos.
 - Pedidos devueltos pero con pago pendiente.
 
-Importante: ese apartado administra perfiles de acceso en Firestore (`users/{uid}`), no crea la cuenta real de Firebase Auth. Para crear o borrar cuentas reales usa Firebase Console > Authentication, o agrega despues una Cloud Function con Admin SDK.
+Importante: ese apartado administra perfiles de acceso en Firestore (`users/{uid}`). Las cuentas reales se crean en Firebase Console > Authentication.
 
 Flujo recomendado:
 
-1. Abre la app y ve a `Firebase`.
-2. Copia el `UID de esta sesion`.
-3. En Firestore crea manualmente el documento `users/{uid}` para el primer admin.
-4. Recarga la app; ahora aparecera `Usuarios`.
-5. Desde `Usuarios`, crea o edita otros perfiles pegando su UID y asignando rol.
+1. Activa Email/Password en Firebase Authentication.
+2. Crea la cuenta `admin@ingenio.com`.
+3. Entra por `login.html`.
+4. Crea cuentas Auth para operadores en Firebase Console.
+5. En `Usuarios`, crea o edita perfiles pegando el UID del operador.
 
 Eliminar acceso desde la app borra el documento `users/{uid}`. La cuenta Auth queda viva hasta borrarla en Firebase Console.
 
-En esta etapa la app usa inicio anonimo persistente por navegador. Para usuarios con correo/contrasena hay que cambiar el login a Email/Password y, si quieres crear o borrar cuentas Auth desde la app, agregar una Cloud Function con Admin SDK.
+El admin real se reconoce por correo. No hardcodees contrasenas en el codigo.
 
 Para pruebas rapidas sin roles, puedes desplegar temporalmente `firestore-dev.rules` cambiando `firebase.json`:
 
@@ -74,7 +72,7 @@ Para pruebas rapidas sin roles, puedes desplegar temporalmente `firestore-dev.ru
 }
 ```
 
-Para datos reales usa `firestore.rules`. Esa version exige usuarios con rol en la coleccion `users`.
+Para datos reales usa `firestore.rules`. Esa version exige usuario autenticado y limita escritura segun rol.
 
 Ejemplo de documento en `users/{uid}`:
 
@@ -82,18 +80,15 @@ Ejemplo de documento en `users/{uid}`:
 {
   "displayName": "Admin",
   "email": "admin@ingenio.com",
-  "role": "superadmin",
+  "role": "admin",
   "active": true
 }
 ```
 
 Roles permitidos:
 
-- `superadmin`: todo, incluyendo auditoria y supervision.
-- `admin`: todo.
-- `bodega`: clientes, inventario, pedidos y movimientos.
-- `ventas`: clientes, pedidos e inventario.
-- `lectura`: solo lectura.
+- `admin`: reservado para `admin@ingenio.com`.
+- `staff`: operador normal. Puede crear pedidos y editar su propio perfil.
 
 ## Subir cambios a GitHub
 

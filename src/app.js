@@ -1,5 +1,11 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
-import { getAuth, signInAnonymously } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
+import {
+  getAuth,
+  onAuthStateChanged,
+  signOut,
+  updateEmail,
+  updatePassword,
+} from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
 import {
   collection,
   deleteDoc,
@@ -13,6 +19,7 @@ import {
 } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
 
 const STORAGE_KEY = "trajes-os-v1";
+const ADMIN_EMAIL = "admin@ingenio.com";
 
 const firebaseConfig = {
   apiKey: "AIzaSyDAYmwu9GD0R0BlL_6tUqOpUgByNci_Bhg",
@@ -33,6 +40,7 @@ const remoteCollections = {
 
 const firebaseState = {
   auth: null,
+  user: null,
   db: null,
   enabled: false,
   uid: null,
@@ -223,6 +231,12 @@ const els = {
   importInventory: document.querySelector("#importInventory"),
   exportJson: document.querySelector("#exportJson"),
   resetDemo: document.querySelector("#resetDemo"),
+  logoutButton: document.querySelector("#logoutButton"),
+  profileSummary: document.querySelector("#profileSummary"),
+  emailForm: document.querySelector("#emailForm"),
+  profileEmail: document.querySelector("#profileEmail"),
+  passwordForm: document.querySelector("#passwordForm"),
+  profilePassword: document.querySelector("#profilePassword"),
   storageMode: document.querySelector("#storageMode"),
   returnDialog: document.querySelector("#returnDialog"),
   returnForm: document.querySelector("#returnForm"),
@@ -261,16 +275,24 @@ async function initFirebase() {
     firebaseState.auth = getAuth(app);
     firebaseState.db = getFirestore(app);
 
-    const credential = await signInAnonymously(firebaseState.auth);
-    firebaseState.uid = credential.user.uid;
-    firebaseState.enabled = true;
-    await loadCurrentUserProfile();
-    updateAdminVisibility();
-    renderUsers();
+    onAuthStateChanged(firebaseState.auth, async (user) => {
+      if (!user) {
+        window.location.href = "login.html";
+        return;
+      }
 
-    await seedFirestoreIfEmpty();
-    attachRemoteListeners();
-    attachUsersListener();
+      firebaseState.user = user;
+      firebaseState.uid = user.uid;
+      firebaseState.enabled = true;
+      await loadCurrentUserProfile();
+      updateAdminVisibility();
+      renderAll();
+
+      await seedFirestoreIfEmpty();
+      attachRemoteListeners();
+      attachUsersListener();
+      await logLoginOnce();
+    });
   } catch (error) {
     firebaseState.enabled = false;
     els.storageMode.textContent = "Datos locales activos";
@@ -283,14 +305,25 @@ async function loadCurrentUserProfile() {
   try {
     const profile = await getDoc(doc(firebaseState.db, "users", firebaseState.uid));
     const data = profile.exists() ? profile.data() : null;
-    firebaseState.profile = data;
-    firebaseState.role = data?.role || null;
-    firebaseState.active = data?.active === true;
+    const isAdminEmail = firebaseState.user?.email?.toLowerCase() === ADMIN_EMAIL;
+    firebaseState.profile = data || {
+      displayName: firebaseState.user?.displayName || "Usuario",
+      email: firebaseState.user?.email || "",
+      role: isAdminEmail ? "admin" : "staff",
+      active: true,
+    };
+    firebaseState.role = isAdminEmail ? "admin" : firebaseState.profile.role || "staff";
+    firebaseState.active = isAdminEmail ? true : firebaseState.profile.active === true;
     const shortUid = firebaseState.uid.slice(0, 8);
     const roleText = firebaseState.active && firebaseState.role ? firebaseState.role : "sin rol";
     els.storageMode.textContent = `Firestore · ${roleText} · ${shortUid}`;
     if (els.currentAuthUid) els.currentAuthUid.textContent = firebaseState.uid;
     if (els.sessionAuthUid) els.sessionAuthUid.textContent = firebaseState.uid;
+    if (els.profileSummary) {
+      els.profileSummary.textContent = `${firebaseState.user?.email || "Sin correo"} · ${roleText}`;
+    }
+    if (els.profileEmail) els.profileEmail.value = firebaseState.user?.email || "";
+    await ensureCurrentUserProfile(profile.exists());
   } catch (error) {
     firebaseState.role = null;
     firebaseState.active = false;
@@ -298,16 +331,39 @@ async function loadCurrentUserProfile() {
     els.storageMode.textContent = `Firestore · sin rol · ${firebaseState.uid.slice(0, 8)}`;
     if (els.currentAuthUid) els.currentAuthUid.textContent = firebaseState.uid;
     if (els.sessionAuthUid) els.sessionAuthUid.textContent = firebaseState.uid;
+    if (els.profileSummary) els.profileSummary.textContent = `${firebaseState.user?.email || "Sin correo"} · sin rol`;
     console.warn("No se pudo leer el perfil del usuario actual.", error);
   }
 }
 
+async function ensureCurrentUserProfile(exists) {
+  if (!firebaseState.enabled || !firebaseState.uid) return;
+  const isAdminEmail = firebaseState.user?.email?.toLowerCase() === ADMIN_EMAIL;
+  const profile = {
+    id: firebaseState.uid,
+    displayName: firebaseState.profile?.displayName || firebaseState.user?.displayName || firebaseState.user?.email || "Usuario",
+    email: firebaseState.user?.email || "",
+    role: isAdminEmail ? "admin" : firebaseState.profile?.role || "staff",
+    active: isAdminEmail ? true : firebaseState.profile?.active === true,
+    lastLoginAt: new Date().toISOString(),
+    updatedAt: todayISO(),
+    createdAt: firebaseState.profile?.createdAt || todayISO(),
+  };
+
+  try {
+    await setDoc(doc(firebaseState.db, "users", firebaseState.uid), profile, { merge: true });
+    if (!exists) state.users.push(profile);
+  } catch (error) {
+    console.warn("No se pudo guardar perfil de usuario actual.", error);
+  }
+}
+
 function isAdmin() {
-  return firebaseState.enabled && firebaseState.active && ["admin", "superadmin"].includes(firebaseState.role);
+  return firebaseState.enabled && firebaseState.active && firebaseState.user?.email?.toLowerCase() === ADMIN_EMAIL;
 }
 
 function isSuperAdmin() {
-  return firebaseState.enabled && firebaseState.active && firebaseState.role === "superadmin";
+  return isAdmin();
 }
 
 function updateAdminVisibility() {
@@ -327,7 +383,7 @@ function updateAdminVisibility() {
 }
 
 async function seedFirestoreIfEmpty() {
-  if (!firebaseState.enabled) return;
+  if (!firebaseState.enabled || !isAdmin()) return;
   const clientSnapshot = await getDocs(collection(firebaseState.db, remoteCollections.clients));
   const inventorySnapshot = await getDocs(collection(firebaseState.db, remoteCollections.inventory));
   if (!clientSnapshot.empty || !inventorySnapshot.empty) return;
@@ -485,6 +541,15 @@ async function logActivity(action, entityType, entityId, label, details = {}) {
   state.activityLogs.unshift(log);
   await persistDoc("activityLogs", log);
   renderAudit();
+}
+
+async function logLoginOnce() {
+  const key = `trajes-login-log-${firebaseState.uid}`;
+  if (sessionStorage.getItem(key)) return;
+  sessionStorage.setItem(key, "1");
+  await logActivity("Inicio sesion", "users", firebaseState.uid, firebaseState.user?.email || firebaseState.uid, {
+    email: firebaseState.user?.email || "",
+  });
 }
 
 async function replaceRemoteWithSeed() {
@@ -673,7 +738,7 @@ function renderOrdersTable() {
     ? rows
         .map((order) => `
           <tr>
-            <td><strong>${order.id.replace("ord_", "#")}</strong><br><span class="muted">${escapeHtml(order.owner || "Sin responsable")}</span></td>
+            <td><strong>${order.id.replace("ord_", "#")}</strong><br><span class="muted">Creado por: ${escapeHtml(order.createdByName || order.owner || "Sin usuario")}</span></td>
             <td>${escapeHtml(order.client?.name || "Cliente eliminado")}<br><span class="muted">${escapeHtml(order.client?.phone || "")}</span></td>
             <td>${order.startDate}<br><span class="muted">${order.endDate}</span></td>
             <td>${order.items.map((item) => `${escapeHtml(item.name)} x${item.quantity}`).join("<br>")}</td>
@@ -681,13 +746,10 @@ function renderOrdersTable() {
             <td><span class="tag ${order.computedStatus === "Vencido" ? "danger" : order.computedStatus === "Devuelto" ? "" : "ok"}">${order.computedStatus}</span></td>
             <td>
               <div class="row-actions">
-                ${
-                  order.status === "Activo"
-                    ? `<button class="mini-button" data-return-order="${order.id}">Devolver</button>`
-                    : `<button class="mini-button" disabled>Cerrado</button>`
-                }
-                <button class="mini-button" data-toggle-paid="${order.id}">${order.paid ? "Marcar pendiente" : "Marcar pago"}</button>
-                ${order.status === "Activo" ? `<button class="mini-button" data-cancel-order="${order.id}">Cancelar</button>` : ""}
+                ${isAdmin() && order.status === "Activo" ? `<button class="mini-button" data-return-order="${order.id}">Devolver</button>` : ""}
+                ${isAdmin() ? `<button class="mini-button" data-toggle-paid="${order.id}">${order.paid ? "Marcar pendiente" : "Marcar pago"}</button>` : ""}
+                ${isAdmin() && order.status === "Activo" ? `<button class="mini-button" data-cancel-order="${order.id}">Cancelar</button>` : ""}
+                ${!isAdmin() ? `<span class="muted">Sin acciones</span>` : ""}
               </div>
             </td>
           </tr>
@@ -720,6 +782,7 @@ function renderInventory() {
               <div class="inventory-meta">
                 <span>Talla: ${escapeHtml(item.size || "No aplica")}</span>
                 <span>Ubicacion: ${escapeHtml(item.location || "Sin ubicacion")}</span>
+                <span>Agregado por: ${escapeHtml(item.createdByName || "Sin usuario")}</span>
                 <span>${escapeHtml(item.notes || "Sin notas")}</span>
               </div>
               <div class="chips">
@@ -729,7 +792,7 @@ function renderInventory() {
                 <div class="stock-bar"><span style="width:${percent}%"></span></div>
                 <strong>${percent}%</strong>
               </div>
-              <div class="row-actions">
+              <div class="row-actions ${isAdmin() ? "" : "is-hidden"}">
                 <button class="mini-button" data-edit-inventory="${escapeHtml(item.id)}">Editar</button>
                 <button class="mini-button" data-delete-inventory="${escapeHtml(item.id)}">Eliminar</button>
               </div>
@@ -762,9 +825,10 @@ function renderClients() {
               <div class="client-meta">
                 <span>${escapeHtml(client.phone || "Sin telefono")}</span>
                 <span>${escapeHtml(client.email || "Sin correo")}</span>
+                <span>Agregado por: ${escapeHtml(client.createdByName || "Sin usuario")}</span>
                 <span>${escapeHtml(client.notes || "Sin notas")}</span>
               </div>
-              <div class="row-actions">
+              <div class="row-actions ${isAdmin() ? "" : "is-hidden"}">
                 <button class="mini-button" data-edit-client="${escapeHtml(client.id)}">Editar</button>
                 <button class="mini-button" data-delete-client="${escapeHtml(client.id)}">Eliminar</button>
               </div>
@@ -805,6 +869,7 @@ function renderUsers() {
             <div class="client-meta">
               <span>UID: ${escapeHtml(user.id)}</span>
               <span>Rol: ${escapeHtml(user.role || "sin rol")}</span>
+              <span>Último ingreso: ${user.lastLoginAt ? new Date(user.lastLoginAt).toLocaleString("es-CO") : "Sin registro"}</span>
             </div>
             <div class="row-actions">
               <button class="mini-button" data-edit-user="${escapeHtml(user.id)}">Editar</button>
@@ -920,6 +985,10 @@ function addDraftItem() {
 
 async function createOrder(event) {
   event.preventDefault();
+  if (!firebaseState.active) {
+    showToast("Tu usuario no está activo. Pide aprobación al admin.");
+    return;
+  }
   if (!draftOrderItems.length) {
     showToast("Agrega al menos un item al pedido.");
     return;
@@ -973,6 +1042,10 @@ async function createOrder(event) {
 
 async function createInventoryItem(event) {
   event.preventDefault();
+  if (!isAdmin()) {
+    showToast("Solo admin puede modificar inventario.");
+    return;
+  }
   const recordId = els.itemRecordId.value;
   const previous = state.inventory.find((entry) => entry.id === recordId);
   const item = {
@@ -985,6 +1058,10 @@ async function createInventoryItem(event) {
     checklist: splitChecklist(els.itemChecklist.value),
     notes: els.itemNotes.value.trim(),
     createdAt: previous?.createdAt || todayISO(),
+    createdBy: previous?.createdBy || currentActor().uid,
+    createdByName: previous?.createdByName || currentActor().name,
+    updatedBy: currentActor().uid,
+    updatedByName: currentActor().name,
     updatedAt: todayISO(),
   };
   const index = state.inventory.findIndex((entry) => entry.id === item.id);
@@ -1005,6 +1082,10 @@ async function createInventoryItem(event) {
 
 async function createClient(event) {
   event.preventDefault();
+  if (!isAdmin()) {
+    showToast("Solo admin puede crear o editar clientes.");
+    return;
+  }
   const recordId = els.clientRecordId.value;
   const previous = state.clients.find((entry) => entry.id === recordId);
   const client = {
@@ -1015,6 +1096,10 @@ async function createClient(event) {
     idNumber: els.clientIdNumber.value.trim(),
     notes: els.clientNotes.value.trim(),
     createdAt: previous?.createdAt || todayISO(),
+    createdBy: previous?.createdBy || currentActor().uid,
+    createdByName: previous?.createdByName || currentActor().name,
+    updatedBy: currentActor().uid,
+    updatedByName: currentActor().name,
     updatedAt: todayISO(),
   };
   const index = state.clients.findIndex((entry) => entry.id === client.id);
@@ -1034,6 +1119,7 @@ async function createClient(event) {
 }
 
 function editClient(clientId) {
+  if (!isAdmin()) return;
   const client = state.clients.find((entry) => entry.id === clientId);
   if (!client) return;
   els.clientRecordId.value = client.id;
@@ -1056,6 +1142,10 @@ function cancelClientEdit() {
 }
 
 async function deleteClient(clientId) {
+  if (!isAdmin()) {
+    showToast("Solo admin puede eliminar clientes.");
+    return;
+  }
   const client = state.clients.find((entry) => entry.id === clientId);
   if (!client) return;
   const hasActiveOrders = activeOrders().some((order) => order.clientId === clientId);
@@ -1072,6 +1162,7 @@ async function deleteClient(clientId) {
 }
 
 function editInventoryItem(itemId) {
+  if (!isAdmin()) return;
   const item = state.inventory.find((entry) => entry.id === itemId);
   if (!item) return;
   els.itemRecordId.value = item.id;
@@ -1096,6 +1187,10 @@ function cancelInventoryEdit() {
 }
 
 async function deleteInventoryItem(itemId) {
+  if (!isAdmin()) {
+    showToast("Solo admin puede eliminar inventario.");
+    return;
+  }
   const item = state.inventory.find((entry) => entry.id === itemId);
   if (!item) return;
   if (committedQty(itemId) > 0) {
@@ -1145,6 +1240,10 @@ function openReturnDialog(orderId) {
 
 async function closeReturn(event) {
   event.preventDefault();
+  if (!isAdmin()) {
+    showToast("Solo admin puede cerrar devoluciones.");
+    return;
+  }
   const order = state.orders.find((entry) => entry.id === currentReturnOrderId);
   if (!order) return;
 
@@ -1200,6 +1299,10 @@ function parseCsv(text) {
 }
 
 async function importClients() {
+  if (!isAdmin()) {
+    showToast("Solo admin puede importar clientes.");
+    return;
+  }
   const records = parseCsv(els.clientsCsv.value);
   const created = [];
   records.forEach((record) => {
@@ -1211,6 +1314,8 @@ async function importClients() {
       email: record.correo || "",
       idNumber: record.documento || "",
       notes: record.notas || "",
+      createdBy: currentActor().uid,
+      createdByName: currentActor().name,
       createdAt: todayISO(),
     };
     state.clients.push(client);
@@ -1227,6 +1332,10 @@ async function importClients() {
 }
 
 async function importInventory() {
+  if (!isAdmin()) {
+    showToast("Solo admin puede importar inventario.");
+    return;
+  }
   const records = parseCsv(els.inventoryCsv.value);
   const created = [];
   records.forEach((record) => {
@@ -1240,6 +1349,8 @@ async function importInventory() {
       location: record.ubicacion || "",
       checklist: splitChecklist(record.checklist),
       notes: record.notas || "",
+      createdBy: currentActor().uid,
+      createdByName: currentActor().name,
       createdAt: todayISO(),
     };
     state.inventory.push(item);
@@ -1295,7 +1406,47 @@ function exportJson() {
   URL.revokeObjectURL(url);
 }
 
+async function updateProfileEmail(event) {
+  event.preventDefault();
+  const nextEmail = els.profileEmail.value.trim();
+  if (!nextEmail || !firebaseState.user) return;
+  try {
+    await updateEmail(firebaseState.user, nextEmail);
+    firebaseState.user = firebaseState.auth.currentUser;
+    await ensureCurrentUserProfile(true);
+    await logActivity("Cambio correo propio", "users", firebaseState.uid, nextEmail, {});
+    showToast("Correo actualizado.");
+  } catch (error) {
+    console.warn("No se pudo actualizar correo.", error);
+    showToast("No se pudo cambiar el correo. Vuelve a iniciar sesion e intenta otra vez.");
+  }
+}
+
+async function updateProfilePassword(event) {
+  event.preventDefault();
+  const nextPassword = els.profilePassword.value;
+  if (!nextPassword || !firebaseState.user) return;
+  try {
+    await updatePassword(firebaseState.user, nextPassword);
+    els.passwordForm.reset();
+    await logActivity("Cambio contraseña propia", "users", firebaseState.uid, firebaseState.user.email || firebaseState.uid, {});
+    showToast("Contraseña actualizada.");
+  } catch (error) {
+    console.warn("No se pudo actualizar contraseña.", error);
+    showToast("No se pudo cambiar la contraseña. Vuelve a iniciar sesion e intenta otra vez.");
+  }
+}
+
+async function logout() {
+  await signOut(firebaseState.auth);
+  window.location.href = "login.html";
+}
+
 async function resetDemo() {
+  if (!isAdmin()) {
+    showToast("Solo admin puede reiniciar datos.");
+    return;
+  }
   if (!confirm("Esto reinicia los datos demo en este navegador. ¿Continuar?")) return;
   state = structuredClone(seedData);
   draftOrderItems = [];
@@ -1358,6 +1509,9 @@ function bindEvents() {
   els.importInventory.addEventListener("click", importInventory);
   els.exportJson.addEventListener("click", exportJson);
   els.resetDemo.addEventListener("click", resetDemo);
+  els.logoutButton.addEventListener("click", logout);
+  els.emailForm.addEventListener("submit", updateProfileEmail);
+  els.passwordForm.addEventListener("submit", updateProfilePassword);
   els.returnForm.addEventListener("submit", closeReturn);
   els.cancelReturn.addEventListener("click", () => els.returnDialog.close());
 
@@ -1371,12 +1525,20 @@ function bindEvents() {
 
     const returnOrder = event.target.closest("[data-return-order]");
     if (returnOrder) {
+      if (!isAdmin()) {
+        showToast("Solo admin puede modificar pedidos creados.");
+        return;
+      }
       openReturnDialog(returnOrder.dataset.returnOrder);
       return;
     }
 
     const togglePaid = event.target.closest("[data-toggle-paid]");
     if (togglePaid) {
+      if (!isAdmin()) {
+        showToast("Solo admin puede modificar pagos.");
+        return;
+      }
       const order = state.orders.find((entry) => entry.id === togglePaid.dataset.togglePaid);
       if (order) {
         order.paid = !order.paid;
@@ -1393,6 +1555,10 @@ function bindEvents() {
 
     const cancelOrder = event.target.closest("[data-cancel-order]");
     if (cancelOrder) {
+      if (!isAdmin()) {
+        showToast("Solo admin puede cancelar pedidos.");
+        return;
+      }
       const order = state.orders.find((entry) => entry.id === cancelOrder.dataset.cancelOrder);
       if (order && order.status !== "Devuelto" && confirm("¿Cancelar este pedido y liberar inventario?")) {
         order.status = "Cancelado";
@@ -1439,7 +1605,7 @@ function bindEvents() {
         els.userUid.value = user.id;
         els.userName.value = user.displayName || "";
         els.userEmail.value = user.email || "";
-        els.userRole.value = user.role || "lectura";
+        els.userRole.value = user.role || "staff";
         els.userActive.checked = user.active === true;
       }
       return;

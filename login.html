@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Ingreso seguro a Trajes OS." />
+    <title>Ingresar | Trajes OS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="src/styles.css" />
+  </head>
+  <body class="login-body">
+    <main class="login-shell">
+      <section class="login-panel">
+        <div class="brand">
+          <div class="brand-mark">T</div>
+          <div>
+            <strong>Trajes OS</strong>
+            <span>Ingreso operativo</span>
+          </div>
+        </div>
+        <p class="eyebrow">Ingenio Espectáculos</p>
+        <h1>Acceso a alquileres e inventario</h1>
+        <form id="loginForm" class="login-form">
+          <label>
+            Correo
+            <input id="loginEmail" type="email" autocomplete="email" required placeholder="correo@ingenio.com" />
+          </label>
+          <label>
+            Contraseña
+            <input id="loginPassword" type="password" autocomplete="current-password" required placeholder="Tu contraseña" />
+          </label>
+          <button class="primary-button" type="submit">
+            <i data-lucide="log-in"></i>
+            Entrar
+          </button>
+        </form>
+        <p class="login-error" id="loginError" role="alert"></p>
+      </section>
+    </main>
+
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <script type="module" src="src/login.js"></script>
+  </body>
+</html>

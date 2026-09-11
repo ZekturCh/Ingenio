@@ -8,8 +8,9 @@ Este modelo separa catalogo, pedidos y movimientos para que puedas auditar salid
 {
   displayName: "Juan",
   email: "juan@empresa.com",
-  role: "superadmin", // superadmin, admin, bodega, ventas, lectura
+  role: "staff", // admin solo para admin@ingenio.com, staff para operadores
   active: true,
+  lastLoginAt: Timestamp,
   createdAt: Timestamp
 }
 ```
@@ -107,7 +108,7 @@ Este modelo separa catalogo, pedidos y movimientos para que puedas auditar salid
   },
   actorUid: "users/{id}",
   actorName: "Juan",
-  actorRole: "ventas",
+  actorRole: "staff",
   createdAt: "2026-09-11T12:00:00.000Z"
 }
 ```
@@ -118,5 +119,5 @@ Este modelo separa catalogo, pedidos y movimientos para que puedas auditar salid
 - El pedido debe guardar copia de la checklist tal como salio.
 - La disponibilidad se calcula con inventario total menos pedidos activos.
 - Los movimientos son auditoria: cada salida, ingreso, faltante o ajuste debe quedar registrado.
-- `activityLogs` guarda quien creo, edito o elimino registros importantes. Solo `superadmin` deberia leerlo.
+- `activityLogs` guarda quien inicio sesion, creo pedidos, edito o elimino registros importantes. Solo `admin@ingenio.com` deberia leerlo.
 - Para eventos futuros, agrega una coleccion `events` y permisos por rol cuando el flujo este claro.
