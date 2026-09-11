@@ -228,14 +228,6 @@
                   Cantidad
                   <input id="itemQty" type="number" min="1" value="1" required />
                 </label>
-                <label>
-                  Talla / medida
-                  <input id="itemSize" placeholder="M, L, 42, adulto..." />
-                </label>
-                <label>
-                  Ubicacion
-                  <input id="itemLocation" placeholder="Bodega A, rack 2..." />
-                </label>
                 <label class="full-span">
                   Checklist incluido
                   <textarea id="itemChecklist" rows="4" placeholder="Cabeza&#10;Cuerpo&#10;Guantes&#10;Zapatos"></textarea>
@@ -289,14 +281,6 @@
                   Telefono
                   <input id="clientPhone" placeholder="+57..." />
                 </label>
-                <label>
-                  Correo
-                  <input id="clientEmail" type="email" placeholder="correo@dominio.com" />
-                </label>
-                <label class="full-span">
-                  Documento / NIT
-                  <input id="clientIdNumber" placeholder="Opcional" />
-                </label>
                 <label class="full-span">
                   Notas
                   <textarea id="clientNotes" rows="3" placeholder="Direccion, condiciones, referencias, etc."></textarea>
@@ -336,9 +320,9 @@
                   <h2>Importar clientes</h2>
                 </div>
               </div>
-              <p class="helper-text">Pega CSV con columnas: nombre, telefono, correo, documento, notas.</p>
-              <textarea id="clientsCsv" class="csv-box" rows="10">nombre,telefono,correo,documento,notas
-Eventos Nova,+573001112233,operaciones@nova.com,901222333,Cliente corporativo</textarea>
+              <p class="helper-text">Pega CSV con columnas: nombre, telefono, notas.</p>
+              <textarea id="clientsCsv" class="csv-box" rows="10">nombre,telefono,notas
+Eventos Nova,+573001112233,Cliente corporativo</textarea>
               <button class="primary-button" id="importClients">
                 <i data-lucide="upload"></i>
                 Importar clientes
@@ -352,9 +336,9 @@ Eventos Nova,+573001112233,operaciones@nova.com,901222333,Cliente corporativo</t
                   <h2>Importar inventario</h2>
                 </div>
               </div>
-              <p class="helper-text">Pega CSV con columnas: nombre, categoria, cantidad, talla, ubicacion, checklist, notas. En checklist usa piezas separadas por punto y coma.</p>
-              <textarea id="inventoryCsv" class="csv-box" rows="10">nombre,categoria,cantidad,talla,ubicacion,checklist,notas
-Traje Astronauta,Traje completo,2,Adulto,Rack 4,Casco;Overol;Guantes;Botas,Revisar visor antes de salida</textarea>
+              <p class="helper-text">Pega CSV con columnas: nombre, categoria, cantidad, checklist, notas. En checklist usa piezas separadas por punto y coma.</p>
+              <textarea id="inventoryCsv" class="csv-box" rows="10">nombre,categoria,cantidad,checklist,notas
+Traje Astronauta,Traje completo,2,Casco;Overol;Guantes;Botas,Revisar visor antes de salida</textarea>
               <button class="primary-button" id="importInventory">
                 <i data-lucide="upload"></i>
                 Importar inventario

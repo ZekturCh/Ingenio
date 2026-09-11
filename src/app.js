@@ -101,8 +101,6 @@ const els = {
   itemName: document.querySelector("#itemName"),
   itemCategory: document.querySelector("#itemCategory"),
   itemQty: document.querySelector("#itemQty"),
-  itemSize: document.querySelector("#itemSize"),
-  itemLocation: document.querySelector("#itemLocation"),
   itemChecklist: document.querySelector("#itemChecklist"),
   itemNotes: document.querySelector("#itemNotes"),
   itemRecordId: document.querySelector("#itemRecordId"),
@@ -113,8 +111,6 @@ const els = {
   clientForm: document.querySelector("#clientForm"),
   clientName: document.querySelector("#clientName"),
   clientPhone: document.querySelector("#clientPhone"),
-  clientEmail: document.querySelector("#clientEmail"),
-  clientIdNumber: document.querySelector("#clientIdNumber"),
   clientNotes: document.querySelector("#clientNotes"),
   clientRecordId: document.querySelector("#clientRecordId"),
   clientSubmitLabel: document.querySelector("#clientSubmitLabel"),
@@ -664,7 +660,7 @@ function renderOrdersTable() {
 function renderInventory() {
   const term = els.inventorySearch.value.trim().toLowerCase();
   const filtered = state.inventory.filter((item) => {
-    return [item.name, item.category, item.location, item.size].join(" ").toLowerCase().includes(term);
+    return [item.name, item.category, item.notes, (item.checklist || []).join(" ")].join(" ").toLowerCase().includes(term);
   });
 
   els.inventoryGrid.innerHTML = filtered.length
@@ -683,13 +679,11 @@ function renderInventory() {
                 <span class="tag ${statusClass}">${available}/${item.quantity}</span>
               </div>
               <div class="inventory-meta">
-                <span>Talla: ${escapeHtml(item.size || "No aplica")}</span>
-                <span>Ubicacion: ${escapeHtml(item.location || "Sin ubicacion")}</span>
                 <span>Agregado por: ${escapeHtml(item.createdByName || "Sin usuario")}</span>
                 <span>${escapeHtml(item.notes || "Sin notas")}</span>
               </div>
               <div class="chips">
-                ${item.checklist.map((piece) => `<span class="chip">${escapeHtml(piece)}</span>`).join("") || `<span class="chip">Sin checklist</span>`}
+                ${(item.checklist || []).map((piece) => `<span class="chip">${escapeHtml(piece)}</span>`).join("") || `<span class="chip">Sin checklist</span>`}
               </div>
               <div class="stock-line">
                 <div class="stock-bar"><span style="width:${percent}%"></span></div>
@@ -709,7 +703,7 @@ function renderInventory() {
 function renderClients() {
   const term = els.clientSearch.value.trim().toLowerCase();
   const filtered = state.clients.filter((client) => {
-    return [client.name, client.phone, client.email, client.idNumber].join(" ").toLowerCase().includes(term);
+    return [client.name, client.phone, client.notes].join(" ").toLowerCase().includes(term);
   });
 
   els.clientList.innerHTML = filtered.length
@@ -721,13 +715,11 @@ function renderClients() {
               <div class="panel-heading">
                 <div>
                   <h3>${escapeHtml(client.name)}</h3>
-                  <span class="muted">${escapeHtml(client.idNumber || "Sin documento")}</span>
                 </div>
                 <span class="tag">${orderCount} pedido(s)</span>
               </div>
               <div class="client-meta">
                 <span>${escapeHtml(client.phone || "Sin telefono")}</span>
-                <span>${escapeHtml(client.email || "Sin correo")}</span>
                 <span>Agregado por: ${escapeHtml(client.createdByName || "Sin usuario")}</span>
                 <span>${escapeHtml(client.notes || "Sin notas")}</span>
               </div>
@@ -962,8 +954,6 @@ async function createInventoryItem(event) {
     name: els.itemName.value.trim(),
     category: els.itemCategory.value,
     quantity: Math.max(1, Number(els.itemQty.value || 1)),
-    size: els.itemSize.value.trim(),
-    location: els.itemLocation.value.trim(),
     checklist: splitChecklist(els.itemChecklist.value),
     notes: els.itemNotes.value.trim(),
     createdAt: previous?.createdAt || todayISO(),
@@ -1007,8 +997,6 @@ async function createClient(event) {
     id: recordId || uid("cli"),
     name: els.clientName.value.trim(),
     phone: els.clientPhone.value.trim(),
-    email: els.clientEmail.value.trim(),
-    idNumber: els.clientIdNumber.value.trim(),
     notes: els.clientNotes.value.trim(),
     createdAt: previous?.createdAt || todayISO(),
     createdBy: previous?.createdBy || currentActor().uid,
@@ -1029,7 +1017,6 @@ async function createClient(event) {
   els.cancelClientEdit.classList.add("is-hidden");
   await logActivity(recordId ? "Edito cliente" : "Creo cliente", "clients", client.id, client.name, {
     phone: client.phone,
-    email: client.email,
   });
   renderAll();
   showToast(recordId ? "Cliente actualizado." : "Cliente creado.");
@@ -1042,8 +1029,6 @@ function editClient(clientId) {
   els.clientRecordId.value = client.id;
   els.clientName.value = client.name || "";
   els.clientPhone.value = client.phone || "";
-  els.clientEmail.value = client.email || "";
-  els.clientIdNumber.value = client.idNumber || "";
   els.clientNotes.value = client.notes || "";
   els.clientSubmitLabel.textContent = "Guardar cambios";
   els.cancelClientEdit.classList.remove("is-hidden");
@@ -1086,8 +1071,6 @@ function editInventoryItem(itemId) {
   els.itemName.value = item.name || "";
   els.itemCategory.value = item.category || "Vestuario";
   els.itemQty.value = item.quantity || 1;
-  els.itemSize.value = item.size || "";
-  els.itemLocation.value = item.location || "";
   els.itemChecklist.value = (item.checklist || []).join("\n");
   els.itemNotes.value = item.notes || "";
   els.itemSubmitLabel.textContent = "Guardar cambios";
@@ -1228,8 +1211,6 @@ async function importClients() {
       id: uid("cli"),
       name: record.nombre,
       phone: record.telefono || "",
-      email: record.correo || "",
-      idNumber: record.documento || "",
       notes: record.notas || "",
       createdBy: currentActor().uid,
       createdByName: currentActor().name,
@@ -1262,8 +1243,6 @@ async function importInventory() {
       name: record.nombre,
       category: record.categoria || "Vestuario",
       quantity: Math.max(1, Number(record.cantidad || 1)),
-      size: record.talla || "",
-      location: record.ubicacion || "",
       checklist: splitChecklist(record.checklist),
       notes: record.notas || "",
       createdBy: currentActor().uid,
