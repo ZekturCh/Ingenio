@@ -44,6 +44,10 @@
             <i data-lucide="users"></i>
             Clientes
           </button>
+          <button class="nav-item is-hidden" data-view="users" data-admin-only>
+            <i data-lucide="shield-check"></i>
+            Usuarios
+          </button>
           <button class="nav-item" data-view="imports">
             <i data-lucide="table-properties"></i>
             Carga rapida
@@ -341,6 +345,68 @@ Traje Astronauta,Traje completo,2,Adulto,Rack 4,Casco;Overol;Guantes;Botas,Revis
           </div>
         </section>
 
+        <section class="view is-hidden" id="users" data-admin-only>
+          <div class="workspace-grid clients-layout">
+            <section class="panel">
+              <div class="panel-heading">
+                <div>
+                  <p class="eyebrow">Solo admin</p>
+                  <h2>Perfil de acceso</h2>
+                </div>
+              </div>
+              <p class="helper-text">Crea primero la cuenta en Firebase Auth, copia su UID y asignale rol aqui.</p>
+              <form id="userForm" class="form-grid compact">
+                <label class="full-span">
+                  UID Firebase Auth
+                  <input id="userUid" required placeholder="Pega aqui el UID del usuario" />
+                </label>
+                <label class="full-span">
+                  Nombre
+                  <input id="userName" placeholder="Nombre visible" />
+                </label>
+                <label class="full-span">
+                  Correo
+                  <input id="userEmail" type="email" placeholder="correo@dominio.com" />
+                </label>
+                <label>
+                  Rol
+                  <select id="userRole">
+                    <option value="admin">Admin</option>
+                    <option value="bodega">Bodega</option>
+                    <option value="ventas">Ventas</option>
+                    <option value="lectura">Lectura</option>
+                  </select>
+                </label>
+                <label class="check-row">
+                  <input id="userActive" type="checkbox" checked />
+                  <span>Usuario activo</span>
+                </label>
+                <div class="form-actions full-span">
+                  <button type="submit" class="primary-button">
+                    <i data-lucide="user-cog"></i>
+                    Guardar usuario
+                  </button>
+                </div>
+              </form>
+              <div class="auth-note">
+                <span>UID de esta sesion</span>
+                <code id="currentAuthUid">Sin conexion</code>
+              </div>
+            </section>
+
+            <section class="panel">
+              <div class="panel-heading">
+                <div>
+                  <p class="eyebrow">Permisos</p>
+                  <h2>Usuarios</h2>
+                </div>
+                <input id="userSearch" type="search" placeholder="Buscar usuario o rol" />
+              </div>
+              <div class="client-list" id="userList"></div>
+            </section>
+          </div>
+        </section>
+
         <section class="view" id="firebase">
           <div class="panel">
             <div class="panel-heading">
@@ -367,6 +433,11 @@ Traje Astronauta,Traje completo,2,Adulto,Rack 4,Casco;Overol;Guantes;Botas,Revis
               <div>
                 <h3>Colecciones base</h3>
                 <code>users, clients, inventoryItems, orders, inventoryMovements, settings</code>
+              </div>
+              <div>
+                <h3>UID de esta sesion</h3>
+                <p>Usalo para crear el primer admin en Firestore si aun no puedes entrar a Usuarios.</p>
+                <code id="sessionAuthUid">Conectando...</code>
               </div>
             </div>
           </div>

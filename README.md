@@ -38,6 +38,24 @@ La app inicializa Firebase con el proyecto `ingenioespectaculos` y usa:
 
 El codigo intenta iniciar sesion anonima para sincronizar. Si Firestore/Auth todavia no estan activos o las reglas bloquean el acceso, la app sigue funcionando con respaldo local en el navegador.
 
+## Usuarios y roles
+
+Hay un apartado `Usuarios` visible solo para perfiles con rol `admin`.
+
+Importante: ese apartado administra perfiles de acceso en Firestore (`users/{uid}`), no crea la cuenta real de Firebase Auth. Para crear o borrar cuentas reales usa Firebase Console > Authentication, o agrega despues una Cloud Function con Admin SDK.
+
+Flujo recomendado:
+
+1. Abre la app y ve a `Firebase`.
+2. Copia el `UID de esta sesion`.
+3. En Firestore crea manualmente el documento `users/{uid}` para el primer admin.
+4. Recarga la app; ahora aparecera `Usuarios`.
+5. Desde `Usuarios`, crea o edita otros perfiles pegando su UID y asignando rol.
+
+Eliminar acceso desde la app borra el documento `users/{uid}`. La cuenta Auth queda viva hasta borrarla en Firebase Console.
+
+En esta etapa la app usa inicio anonimo persistente por navegador. Para usuarios con correo/contrasena hay que cambiar el login a Email/Password y, si quieres crear o borrar cuentas Auth desde la app, agregar una Cloud Function con Admin SDK.
+
 Para pruebas rapidas sin roles, puedes desplegar temporalmente `firestore-dev.rules` cambiando `firebase.json`:
 
 ```json

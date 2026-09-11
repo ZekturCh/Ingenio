@@ -226,6 +226,10 @@ button {
   display: none;
 }
 
+.is-hidden {
+  display: none !important;
+}
+
 .view.active {
   display: block;
 }
@@ -599,6 +603,18 @@ code {
   border: 1px solid rgba(112, 243, 182, 0.24);
   border-radius: 14px;
   background: rgba(112, 243, 182, 0.07);
+}
+
+.auth-note {
+  display: grid;
+  gap: 8px;
+  margin-top: 18px;
+}
+
+.auth-note span {
+  color: var(--muted);
+  font-size: 0.86rem;
+  font-weight: 800;
 }
 
 .return-dialog {

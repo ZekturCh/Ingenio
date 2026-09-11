@@ -2,7 +2,9 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/12.19.0/fireba
 import { getAuth, signInAnonymously } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
 import {
   collection,
+  deleteDoc,
   doc,
+  getDoc,
   getDocs,
   getFirestore,
   onSnapshot,
@@ -29,9 +31,14 @@ const remoteCollections = {
 };
 
 const firebaseState = {
+  auth: null,
   db: null,
   enabled: false,
+  uid: null,
+  role: null,
+  active: false,
   unsubscribe: [],
+  usersUnsubscribe: null,
 };
 
 const todayISO = () => new Date().toISOString().slice(0, 10);
@@ -142,6 +149,7 @@ const seedData = {
       note: "Pedido demo creado",
     },
   ],
+  users: [],
 };
 
 let state = loadState();
@@ -187,6 +195,16 @@ const els = {
   clientNotes: document.querySelector("#clientNotes"),
   clientList: document.querySelector("#clientList"),
   clientSearch: document.querySelector("#clientSearch"),
+  userForm: document.querySelector("#userForm"),
+  userUid: document.querySelector("#userUid"),
+  userName: document.querySelector("#userName"),
+  userEmail: document.querySelector("#userEmail"),
+  userRole: document.querySelector("#userRole"),
+  userActive: document.querySelector("#userActive"),
+  userList: document.querySelector("#userList"),
+  userSearch: document.querySelector("#userSearch"),
+  currentAuthUid: document.querySelector("#currentAuthUid"),
+  sessionAuthUid: document.querySelector("#sessionAuthUid"),
   clientsCsv: document.querySelector("#clientsCsv"),
   inventoryCsv: document.querySelector("#inventoryCsv"),
   importClients: document.querySelector("#importClients"),
@@ -213,6 +231,7 @@ function loadState() {
       inventory: parsed.inventory || [],
       orders: parsed.orders || [],
       movements: parsed.movements || [],
+      users: parsed.users || [],
     };
   } catch {
     return structuredClone(seedData);
@@ -226,19 +245,60 @@ function saveState() {
 async function initFirebase() {
   try {
     const app = initializeApp(firebaseConfig);
-    const auth = getAuth(app);
+    firebaseState.auth = getAuth(app);
     firebaseState.db = getFirestore(app);
 
-    await signInAnonymously(auth);
+    const credential = await signInAnonymously(firebaseState.auth);
+    firebaseState.uid = credential.user.uid;
     firebaseState.enabled = true;
-    els.storageMode.textContent = "Firestore sincronizado";
+    await loadCurrentUserProfile();
+    updateAdminVisibility();
+    renderUsers();
 
     await seedFirestoreIfEmpty();
     attachRemoteListeners();
+    attachUsersListener();
   } catch (error) {
     firebaseState.enabled = false;
     els.storageMode.textContent = "Datos locales activos";
     console.warn("Firebase no disponible, usando localStorage.", error);
+  }
+}
+
+async function loadCurrentUserProfile() {
+  if (!firebaseState.enabled || !firebaseState.uid) return;
+  try {
+    const profile = await getDoc(doc(firebaseState.db, "users", firebaseState.uid));
+    const data = profile.exists() ? profile.data() : null;
+    firebaseState.role = data?.role || null;
+    firebaseState.active = data?.active === true;
+    const shortUid = firebaseState.uid.slice(0, 8);
+    const roleText = firebaseState.active && firebaseState.role ? firebaseState.role : "sin rol";
+    els.storageMode.textContent = `Firestore · ${roleText} · ${shortUid}`;
+    if (els.currentAuthUid) els.currentAuthUid.textContent = firebaseState.uid;
+    if (els.sessionAuthUid) els.sessionAuthUid.textContent = firebaseState.uid;
+  } catch (error) {
+    firebaseState.role = null;
+    firebaseState.active = false;
+    els.storageMode.textContent = `Firestore · sin rol · ${firebaseState.uid.slice(0, 8)}`;
+    if (els.currentAuthUid) els.currentAuthUid.textContent = firebaseState.uid;
+    if (els.sessionAuthUid) els.sessionAuthUid.textContent = firebaseState.uid;
+    console.warn("No se pudo leer el perfil del usuario actual.", error);
+  }
+}
+
+function isAdmin() {
+  return firebaseState.enabled && firebaseState.active && firebaseState.role === "admin";
+}
+
+function updateAdminVisibility() {
+  document.querySelectorAll("[data-admin-only]").forEach((element) => {
+    element.classList.toggle("is-hidden", !isAdmin());
+  });
+
+  const activeAdminView = document.querySelector(".view.active[data-admin-only]");
+  if (activeAdminView && !isAdmin()) {
+    document.querySelector('[data-view="dashboard"]').click();
   }
 }
 
@@ -253,13 +313,45 @@ async function seedFirestoreIfEmpty() {
 
 function attachRemoteListeners() {
   Object.entries(remoteCollections).forEach(([localKey, remoteName]) => {
-    const unsubscribe = onSnapshot(collection(firebaseState.db, remoteName), (snapshot) => {
-      state[localKey] = snapshot.docs.map((entry) => ({ id: entry.id, ...entry.data() }));
-      saveState();
-      renderAll();
-    });
+    const unsubscribe = onSnapshot(
+      collection(firebaseState.db, remoteName),
+      (snapshot) => {
+        state[localKey] = snapshot.docs.map((entry) => ({ id: entry.id, ...entry.data() }));
+        saveState();
+        renderAll();
+      },
+      (error) => {
+        console.warn(`No se pudo escuchar ${remoteName}.`, error);
+      },
+    );
     firebaseState.unsubscribe.push(unsubscribe);
   });
+}
+
+function attachUsersListener() {
+  if (firebaseState.usersUnsubscribe) {
+    firebaseState.usersUnsubscribe();
+    firebaseState.usersUnsubscribe = null;
+  }
+
+  if (!isAdmin()) {
+    state.users = [];
+    renderUsers();
+    return;
+  }
+
+  firebaseState.usersUnsubscribe = onSnapshot(
+    collection(firebaseState.db, "users"),
+    (snapshot) => {
+      state.users = snapshot.docs.map((entry) => ({ id: entry.id, ...entry.data() }));
+      saveState();
+      renderUsers();
+    },
+    (error) => {
+      console.warn("No se pudo escuchar users.", error);
+      showToast("No tienes permisos para gestionar usuarios.");
+    },
+  );
 }
 
 async function persistDoc(localKey, record) {
@@ -286,6 +378,49 @@ async function persistMany(localKey, records) {
     console.warn("No se pudo guardar lote en Firestore.", error);
     showToast("Importado local. Revisa Firebase/Auth para sincronizar.");
   }
+}
+
+async function persistUserProfile(profile) {
+  if (!isAdmin()) {
+    showToast("Solo admin puede gestionar usuarios.");
+    return false;
+  }
+
+  const record = {
+    ...profile,
+    updatedAt: todayISO(),
+  };
+
+  try {
+    await setDoc(doc(firebaseState.db, "users", record.id), record, { merge: true });
+    const index = state.users.findIndex((user) => user.id === record.id);
+    if (index >= 0) state.users[index] = { ...state.users[index], ...record };
+    else state.users.push(record);
+    saveState();
+    return true;
+  } catch (error) {
+    console.warn("No se pudo guardar el usuario.", error);
+    showToast("No se pudo guardar el usuario.");
+    return false;
+  }
+}
+
+async function deleteUserProfile(uid) {
+  if (!isAdmin()) {
+    showToast("Solo admin puede eliminar usuarios.");
+    return;
+  }
+
+  if (uid === firebaseState.uid) {
+    showToast("No elimines tu propio perfil desde la app.");
+    return;
+  }
+
+  await deleteDoc(doc(firebaseState.db, "users", uid));
+  state.users = state.users.filter((user) => user.id !== uid);
+  saveState();
+  renderUsers();
+  showToast("Usuario eliminado del acceso a la app.");
 }
 
 async function replaceRemoteWithSeed() {
@@ -354,6 +489,8 @@ function renderAll() {
   renderOrdersTable();
   renderInventory();
   renderClients();
+  renderUsers();
+  updateAdminVisibility();
   if (window.lucide) window.lucide.createIcons();
 }
 
@@ -561,6 +698,47 @@ function renderClients() {
         })
         .join("")
     : `<div class="empty">No se encontraron clientes.</div>`;
+}
+
+function renderUsers() {
+  if (!els.userList) return;
+  updateAdminVisibility();
+  if (els.currentAuthUid && firebaseState.uid) els.currentAuthUid.textContent = firebaseState.uid;
+  if (els.sessionAuthUid && firebaseState.uid) els.sessionAuthUid.textContent = firebaseState.uid;
+
+  if (!isAdmin()) {
+    els.userList.innerHTML = `<div class="empty">Solo un administrador activo puede ver y gestionar usuarios.</div>`;
+    return;
+  }
+
+  const term = els.userSearch.value.trim().toLowerCase();
+  const filtered = state.users.filter((user) => {
+    return [user.id, user.displayName, user.email, user.role].join(" ").toLowerCase().includes(term);
+  });
+
+  els.userList.innerHTML = filtered.length
+    ? filtered
+        .map((user) => `
+          <article class="client-row">
+            <div class="panel-heading">
+              <div>
+                <h3>${escapeHtml(user.displayName || "Sin nombre")}</h3>
+                <span class="muted">${escapeHtml(user.email || user.id)}</span>
+              </div>
+              <span class="tag ${user.active ? "ok" : "warn"}">${user.active ? user.role : "inactivo"}</span>
+            </div>
+            <div class="client-meta">
+              <span>UID: ${escapeHtml(user.id)}</span>
+              <span>Rol: ${escapeHtml(user.role || "sin rol")}</span>
+            </div>
+            <div class="row-actions">
+              <button class="mini-button" data-edit-user="${escapeHtml(user.id)}">Editar</button>
+              <button class="mini-button" data-delete-user="${escapeHtml(user.id)}">Eliminar acceso</button>
+            </div>
+          </article>
+        `)
+        .join("")
+    : `<div class="empty">No hay usuarios con ese filtro.</div>`;
 }
 
 function addDraftItem() {
@@ -802,6 +980,31 @@ async function importInventory() {
   showToast(`${created.length} item(s) importado(s).`);
 }
 
+async function createUserProfile(event) {
+  event.preventDefault();
+  const profile = {
+    id: els.userUid.value.trim(),
+    displayName: els.userName.value.trim(),
+    email: els.userEmail.value.trim(),
+    role: els.userRole.value,
+    active: els.userActive.checked,
+    createdAt: todayISO(),
+  };
+
+  if (!profile.id) {
+    showToast("Pega el UID de Firebase Auth.");
+    return;
+  }
+
+  const saved = await persistUserProfile(profile);
+  if (!saved) return;
+
+  els.userForm.reset();
+  els.userActive.checked = true;
+  renderUsers();
+  showToast("Perfil de usuario guardado.");
+}
+
 function exportJson() {
   const blob = new Blob([JSON.stringify(state, null, 2)], { type: "application/json" });
   const url = URL.createObjectURL(blob);
@@ -866,6 +1069,8 @@ function bindEvents() {
   els.orderStatusFilter.addEventListener("change", renderOrdersTable);
   els.inventorySearch.addEventListener("input", renderInventory);
   els.clientSearch.addEventListener("input", renderClients);
+  els.userSearch.addEventListener("input", renderUsers);
+  els.userForm.addEventListener("submit", createUserProfile);
   els.importClients.addEventListener("click", importClients);
   els.importInventory.addEventListener("click", importInventory);
   els.exportJson.addEventListener("click", exportJson);
@@ -873,7 +1078,7 @@ function bindEvents() {
   els.returnForm.addEventListener("submit", closeReturn);
   els.cancelReturn.addEventListener("click", () => els.returnDialog.close());
 
-  document.addEventListener("click", (event) => {
+  document.addEventListener("click", async (event) => {
     const removeDraft = event.target.closest("[data-remove-draft]");
     if (removeDraft) {
       draftOrderItems.splice(Number(removeDraft.dataset.removeDraft), 1);
@@ -907,6 +1112,27 @@ function bindEvents() {
         await persistDoc("orders", order);
         renderAll();
         showToast("Pedido cancelado.");
+      }
+      return;
+    }
+
+    const editUser = event.target.closest("[data-edit-user]");
+    if (editUser) {
+      const user = state.users.find((entry) => entry.id === editUser.dataset.editUser);
+      if (user) {
+        els.userUid.value = user.id;
+        els.userName.value = user.displayName || "";
+        els.userEmail.value = user.email || "";
+        els.userRole.value = user.role || "lectura";
+        els.userActive.checked = user.active === true;
+      }
+      return;
+    }
+
+    const deleteUser = event.target.closest("[data-delete-user]");
+    if (deleteUser) {
+      if (confirm("Esto elimina el perfil de acceso en Firestore. La cuenta Auth real se elimina desde Firebase Console o Cloud Function. ¿Continuar?")) {
+        await deleteUserProfile(deleteUser.dataset.deleteUser);
       }
     }
   });
