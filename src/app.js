@@ -275,6 +275,14 @@ function isAdmin() {
   return firebaseState.enabled && (firebaseState.uid === ADMIN_UID || (firebaseState.active && firebaseState.role === "admin"));
 }
 
+function isSupervisor() {
+  return firebaseState.enabled && firebaseState.active && firebaseState.role === "supervisor";
+}
+
+function canManageOrders() {
+  return isAdmin() || isSupervisor();
+}
+
 function isSuperAdmin() {
   return isAdmin();
 }
@@ -645,10 +653,10 @@ function renderOrdersTable() {
             <td><span class="tag ${order.computedStatus === "Vencido" ? "danger" : order.computedStatus === "Devuelto" ? "" : "ok"}">${order.computedStatus}</span></td>
             <td>
               <div class="row-actions">
-                ${isAdmin() && order.status === "Activo" ? `<button class="mini-button" data-return-order="${order.id}">Devolver</button>` : ""}
-                ${isAdmin() ? `<button class="mini-button" data-toggle-paid="${order.id}">${order.paid ? "Marcar pendiente" : "Marcar pago"}</button>` : ""}
-                ${isAdmin() && order.status === "Activo" ? `<button class="mini-button" data-cancel-order="${order.id}">Cancelar</button>` : ""}
-                ${!isAdmin() ? `<span class="muted">Sin acciones</span>` : ""}
+                ${canManageOrders() && order.status === "Activo" ? `<button class="mini-button" data-return-order="${order.id}">Devolver</button>` : ""}
+                ${canManageOrders() ? `<button class="mini-button" data-toggle-paid="${order.id}">${order.paid ? "Marcar pendiente" : "Marcar pago"}</button>` : ""}
+                ${canManageOrders() && order.status === "Activo" ? `<button class="mini-button" data-cancel-order="${order.id}">Cancelar</button>` : ""}
+                ${!canManageOrders() ? `<span class="muted">Sin acciones</span>` : ""}
               </div>
             </td>
           </tr>
@@ -1140,8 +1148,8 @@ function openReturnDialog(orderId) {
 
 async function closeReturn(event) {
   event.preventDefault();
-  if (!isAdmin()) {
-    showToast("Solo admin puede cerrar devoluciones.");
+  if (!canManageOrders()) {
+    showToast("Solo supervisor o admin puede cerrar devoluciones.");
     return;
   }
   const order = state.orders.find((entry) => entry.id === currentReturnOrderId);
@@ -1158,9 +1166,9 @@ async function closeReturn(event) {
   order.returnedBy = currentActor().uid;
   order.returnedByName = currentActor().name;
 
-  order.items.forEach((item) => {
+  const movements = order.items.map((item) => {
     const missing = item.checklist.filter((piece) => !piece.returned).map((piece) => piece.name);
-    state.movements.push({
+    return {
       id: uid("mov"),
       type: missing.length ? "Ingreso parcial" : "Ingreso",
       orderId: order.id,
@@ -1168,14 +1176,17 @@ async function closeReturn(event) {
       quantity: item.quantity,
       date: todayISO(),
       note: missing.length ? `Faltantes: ${missing.join(", ")}` : order.returnNotes,
-    });
+    };
   });
 
+  const orderSaved = await persistDoc("orders", order);
+  const movementsSaved = orderSaved ? await persistMany("movements", movements) : false;
+  if (!orderSaved || !movementsSaved) return;
+
+  state.movements.push(...movements);
   currentReturnOrderId = null;
   els.returnDialog.close();
   saveState();
-  await persistDoc("orders", order);
-  await persistMany("movements", state.movements.filter((movement) => movement.orderId === order.id));
   await logActivity("Cerro devolucion", "orders", order.id, getClient(order.clientId)?.name || order.id, {
     returnedAt: order.returnedAt,
     paid: order.paid,
@@ -1445,8 +1456,8 @@ function bindEvents() {
 
     const returnOrder = event.target.closest("[data-return-order]");
     if (returnOrder) {
-      if (!isAdmin()) {
-        showToast("Solo admin puede modificar pedidos creados.");
+      if (!canManageOrders()) {
+        showToast("Solo supervisor o admin puede modificar pedidos.");
         return;
       }
       openReturnDialog(returnOrder.dataset.returnOrder);
@@ -1455,8 +1466,8 @@ function bindEvents() {
 
     const togglePaid = event.target.closest("[data-toggle-paid]");
     if (togglePaid) {
-      if (!isAdmin()) {
-        showToast("Solo admin puede modificar pagos.");
+      if (!canManageOrders()) {
+        showToast("Solo supervisor o admin puede modificar pagos.");
         return;
       }
       const order = state.orders.find((entry) => entry.id === togglePaid.dataset.togglePaid);
@@ -1475,8 +1486,8 @@ function bindEvents() {
 
     const cancelOrder = event.target.closest("[data-cancel-order]");
     if (cancelOrder) {
-      if (!isAdmin()) {
-        showToast("Solo admin puede cancelar pedidos.");
+      if (!canManageOrders()) {
+        showToast("Solo supervisor o admin puede cancelar pedidos.");
         return;
       }
       const order = state.orders.find((entry) => entry.id === cancelOrder.dataset.cancelOrder);

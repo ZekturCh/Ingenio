@@ -38,6 +38,25 @@ service cloud.firestore {
       return isBootstrapAdmin() || hasRole(['admin']);
     }
 
+    function canManageOrders() {
+      return canAdmin() || hasRole(['supervisor']);
+    }
+
+    function canSupervisorUpdateOrder() {
+      return hasRole(['supervisor'])
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly([
+          'paid',
+          'status',
+          'returnedAt',
+          'returnNotes',
+          'returnedBy',
+          'returnedByName',
+          'items',
+          'cancelledBy',
+          'cancelledByName'
+        ]);
+    }
+
     match /users/{userId} {
       allow read: if signedIn() && (request.auth.uid == userId || canAdmin());
       allow create: if canAdmin()
@@ -74,7 +93,7 @@ service cloud.firestore {
     match /orders/{orderId} {
       allow read: if canRead();
       allow create: if canCreateWork();
-      allow update: if canAdmin();
+      allow update: if canAdmin() || canSupervisorUpdateOrder();
       allow delete: if canAdmin();
     }
 

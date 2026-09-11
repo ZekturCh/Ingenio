@@ -23,7 +23,8 @@ exports.createAuthUser = onCall(async (request) => {
   const email = String(request.data?.email || "").trim();
   const password = String(request.data?.password || "");
   const displayName = String(request.data?.displayName || "").trim();
-  const role = request.data?.role === "admin" ? "admin" : "staff";
+  const requestedRole = String(request.data?.role || "staff");
+  const role = requestedRole === "supervisor" ? "supervisor" : "staff";
   const active = request.data?.active !== false;
 
   if (!email || password.length < 6) {
