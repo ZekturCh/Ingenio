@@ -1,165 +1,408 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <title>Raíces del Alma 23 de octubre</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: url("fondo.webp") no-repeat center center fixed;
-      background-size: cover;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Plataforma para administrar alquiler de trajes, clientes, inventario, checklist de piezas, salidas, devoluciones y pagos."
+    />
+    <title>Trajes OS | Alquiler e inventario</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="src/styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Navegacion principal">
+        <div class="brand">
+          <div class="brand-mark">T</div>
+          <div>
+            <strong>Trajes OS</strong>
+            <span>Alquiler e inventario</span>
+          </div>
+        </div>
 
-    header {
-      text-align: center;
-      padding: 20px;
-    }
+        <nav class="nav-list" aria-label="Secciones">
+          <button class="nav-item active" data-view="dashboard">
+            <i data-lucide="layout-dashboard"></i>
+            Panel
+          </button>
+          <button class="nav-item" data-view="orders">
+            <i data-lucide="clipboard-list"></i>
+            Pedidos
+          </button>
+          <button class="nav-item" data-view="inventory">
+            <i data-lucide="boxes"></i>
+            Inventario
+          </button>
+          <button class="nav-item" data-view="clients">
+            <i data-lucide="users"></i>
+            Clientes
+          </button>
+          <button class="nav-item" data-view="imports">
+            <i data-lucide="table-properties"></i>
+            Carga rapida
+          </button>
+          <button class="nav-item" data-view="firebase">
+            <i data-lucide="cloud"></i>
+            Firebase
+          </button>
+        </nav>
 
-    header .grande {
-      width: 80%;
-      max-width: 500px;
-      margin-bottom: 15px;
-    }
+        <div class="sidebar-footer">
+          <span class="sync-dot"></span>
+          <span id="storageMode">Datos locales activos</span>
+        </div>
+      </aside>
 
-    header .pequenas {
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-    }
+      <main class="main-content">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">Operacion diaria</p>
+            <h1>Control de alquileres, piezas y devoluciones</h1>
+          </div>
+          <div class="topbar-actions">
+            <button class="icon-button" id="exportJson" title="Exportar respaldo JSON" aria-label="Exportar respaldo JSON">
+              <i data-lucide="download"></i>
+            </button>
+            <button class="icon-button danger" id="resetDemo" title="Reiniciar datos demo" aria-label="Reiniciar datos demo">
+              <i data-lucide="rotate-ccw"></i>
+            </button>
+          </div>
+        </header>
 
-    header .pequenas img {
-      width: 400px;
-      height: auto;
-    }
+        <section class="view active" id="dashboard">
+          <div class="metrics-grid" id="metricsGrid"></div>
 
-    .galeria {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-      padding: 20px;
-    }
+          <div class="workspace-grid">
+            <section class="panel primary-panel">
+              <div class="panel-heading">
+                <div>
+                  <p class="eyebrow">Registrar salida</p>
+                  <h2>Nuevo pedido</h2>
+                </div>
+                <span class="status-pill" id="availabilityPill">Listo</span>
+              </div>
+              <form id="orderForm" class="form-grid">
+                <label>
+                  Cliente
+                  <select id="orderClient" required></select>
+                </label>
+                <label>
+                  Fecha salida
+                  <input id="orderStart" type="date" required />
+                </label>
+                <label>
+                  Fecha devolucion
+                  <input id="orderEnd" type="date" required />
+                </label>
+                <label>
+                  Entregado por
+                  <input id="orderOwner" type="text" placeholder="Nombre del responsable" />
+                </label>
+                <label>
+                  Monto
+                  <input id="orderAmount" type="number" min="0" step="1000" placeholder="Opcional" />
+                </label>
+                <label class="check-row">
+                  <input id="orderPaid" type="checkbox" />
+                  <span>Pago recibido</span>
+                </label>
+                <label class="full-span">
+                  Item para agregar
+                  <div class="inline-add">
+                    <select id="orderInventory"></select>
+                    <input id="orderQty" type="number" min="1" value="1" aria-label="Cantidad" />
+                    <button type="button" class="secondary-button" id="addOrderItem">
+                      <i data-lucide="plus"></i>
+                      Agregar
+                    </button>
+                  </div>
+                </label>
+                <div class="full-span order-builder" id="orderBuilder"></div>
+                <label class="full-span">
+                  Observaciones
+                  <textarea id="orderNotes" rows="3" placeholder="Condiciones, tallas, piezas especiales, direccion, etc."></textarea>
+                </label>
+                <div class="form-actions full-span">
+                  <button type="submit" class="primary-button">
+                    <i data-lucide="send"></i>
+                    Guardar pedido
+                  </button>
+                </div>
+              </form>
+            </section>
 
-.bandeja {
-  background: rgba(255, 255, 0, 0.3); /* amarillo con 30% opacidad */ 
-  border: 4px solid red;
-  padding: 10px;
-  text-align: center; 
-  width: 620px; /* un poco más que 600px */ 
-}
-  .bandeja img {
-  width: 600px;           
-  height: 1800px;
-  object-fit: cover;
-  object-position: calc(-1px) center; /* desplaza 30px hacia la derecha */
-  overflow: hidden;
-}
-    
-    .bandeja button {
-      background: red;
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      font-size: 16px;
-      font-weight: bold;
-      cursor: pointer;
-      border-radius: 4px;
-    }
+            <section class="panel">
+              <div class="panel-heading">
+                <div>
+                  <p class="eyebrow">Hoy</p>
+                  <h2>Pedidos activos</h2>
+                </div>
+              </div>
+              <div class="stack-list" id="activeOrders"></div>
+            </section>
+          </div>
+        </section>
 
-    .bandeja button:hover {
-      background: darkred;
-    }
-  </style>
-</head>
-<body>
+        <section class="view" id="orders">
+          <div class="panel">
+            <div class="panel-heading">
+              <div>
+                <p class="eyebrow">Seguimiento</p>
+                <h2>Pedidos</h2>
+              </div>
+              <div class="filter-row">
+                <input id="orderSearch" type="search" placeholder="Buscar cliente, item o estado" />
+                <select id="orderStatusFilter">
+                  <option value="all">Todos</option>
+                  <option value="Activo">Activos</option>
+                  <option value="Devuelto">Devueltos</option>
+                  <option value="Vencido">Vencidos</option>
+                </select>
+              </div>
+            </div>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Pedido</th>
+                    <th>Cliente</th>
+                    <th>Fechas</th>
+                    <th>Items</th>
+                    <th>Pago</th>
+                    <th>Estado</th>
+                    <th>Acciones</th>
+                  </tr>
+                </thead>
+                <tbody id="ordersTable"></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
 
-  <header>
-    <img src="header-grande.png" alt="Imagen grande" class="grande">
-  </header>
+        <section class="view" id="inventory">
+          <div class="workspace-grid inventory-layout">
+            <section class="panel">
+              <div class="panel-heading">
+                <div>
+                  <p class="eyebrow">Catalogo</p>
+                  <h2>Nuevo item</h2>
+                </div>
+              </div>
+              <form id="inventoryForm" class="form-grid compact">
+                <label class="full-span">
+                  Nombre
+                  <input id="itemName" required placeholder="Traje Mickey, cabeza robot, botas negras..." />
+                </label>
+                <label>
+                  Categoria
+                  <select id="itemCategory">
+                    <option>Traje completo</option>
+                    <option>Cabeza</option>
+                    <option>Calzado</option>
+                    <option>Accesorio</option>
+                    <option>Vestuario</option>
+                    <option>Equipo evento</option>
+                  </select>
+                </label>
+                <label>
+                  Cantidad
+                  <input id="itemQty" type="number" min="1" value="1" required />
+                </label>
+                <label>
+                  Talla / medida
+                  <input id="itemSize" placeholder="M, L, 42, adulto..." />
+                </label>
+                <label>
+                  Ubicacion
+                  <input id="itemLocation" placeholder="Bodega A, rack 2..." />
+                </label>
+                <label class="full-span">
+                  Checklist incluido
+                  <textarea id="itemChecklist" rows="4" placeholder="Cabeza&#10;Cuerpo&#10;Guantes&#10;Zapatos"></textarea>
+                </label>
+                <label class="full-span">
+                  Notas
+                  <textarea id="itemNotes" rows="2" placeholder="Estado, observaciones o recomendaciones"></textarea>
+                </label>
+                <div class="form-actions full-span">
+                  <button type="submit" class="primary-button">
+                    <i data-lucide="package-plus"></i>
+                    Crear item
+                  </button>
+                </div>
+              </form>
+            </section>
 
-  <section class="galeria">
-    <!-- 25 bandejas -->
-   
-    <div class="bandeja"><img src="fotos/g1.png" alt="g1"><button onclick="descargar('fotos/g1.png')">Descargar</button></div>
-    <div class="bandeja"><img src="fotos/g5.png" alt="g5"><button onclick="descargar('fotos/g5.png')">Descargar</button></div>
-    <div class="bandeja"><img src="fotos/g6.png" alt="g6"><button onclick="descargar('fotos/g6.png')">Descargar</button></div>
-    <div class="bandeja"><img src="fotos/g7.png" alt="g7"><button onclick="descargar('fotos/g7.png')">Descargar</button></div>
-    <div class="bandeja"><img src="fotos/g8.png" alt="g8"><button onclick="descargar('fotos/g8.png')">Descargar</button></div>
-    <div class="bandeja"><img src="fotos/g9.png" alt="g9"><button onclick="descargar('fotos/g9.png')">Descargar</button></div>
-    <div class="bandeja"><img src="fotos/g10.png" alt="g10"><button onclick="descargar('fotos/g10.png')">Descargar</button></div>
-    <div class="bandeja"><img src="fotos/g11.png" alt="g11"><button onclick="descargar('fotos/g11.png')">Descargar</button></div>
-    <div class="bandeja"><img src="fotos/g13.png" alt="g13"><button onclick="descargar('fotos/g13.png')">Descargar</button></div>
-    <div class="bandeja"><img src="fotos/g14.png" alt="g14"><button onclick="descargar('fotos/g14.png')">Descargar</button></div>
-    <div class="bandeja"><img src="fotos/g15.png" alt="g15"><button onclick="descargar('fotos/g15.png')">Descargar</button></div>
-    <div class="bandeja"><img src="fotos/g16.png" alt="g16"><button onclick="descargar('fotos/g16.png')">Descargar</button></div>
-<div class="bandeja"><img src="fotos/g17.png" alt="g17"><button onclick="descargar('fotos/g17.png')">Descargar</button></div>
-<div class="bandeja"><img src="fotos/g18.png" alt="g18"><button onclick="descargar('fotos/g18.png')">Descargar</button></div>
-<div class="bandeja"><img src="fotos/g19.png" alt="g19"><button onclick="descargar('fotos/g19.png')">Descargar</button></div>
-<div class="bandeja"><img src="fotos/g20.png" alt="g20"><button onclick="descargar('fotos/g20.png')">Descargar</button></div>
+            <section class="panel">
+              <div class="panel-heading">
+                <div>
+                  <p class="eyebrow">Disponibilidad</p>
+                  <h2>Inventario</h2>
+                </div>
+                <input id="inventorySearch" type="search" placeholder="Buscar item o categoria" />
+              </div>
+              <div class="inventory-grid" id="inventoryGrid"></div>
+            </section>
+          </div>
+        </section>
 
-<div class="bandeja"><img src="fotos/g21.png" alt="g21"><button onclick="descargar('fotos/g21.png')">Descargar</button></div>
-<div class="bandeja"><img src="fotos/g26.png" alt="g26"><button onclick="descargar('fotos/g26.png')">Descargar</button></div>
-<div class="bandeja"><img src="fotos/g27.png" alt="g27"><button onclick="descargar('fotos/g27.png')">Descargar</button></div>
-<div class="bandeja"><img src="fotos/g28.png" alt="g28"><button onclick="descargar('fotos/g28.png')">Descargar</button></div>
-<div class="bandeja"><img src="fotos/g29.png" alt="g29"><button onclick="descargar('fotos/g29.png')">Descargar</button></div>
-<div class="bandeja"><img src="fotos/g30.png" alt="g30"><button onclick="descargar('fotos/g30.png')">Descargar</button></div>
+        <section class="view" id="clients">
+          <div class="workspace-grid clients-layout">
+            <section class="panel">
+              <div class="panel-heading">
+                <div>
+                  <p class="eyebrow">Base de datos</p>
+                  <h2>Nuevo cliente</h2>
+                </div>
+              </div>
+              <form id="clientForm" class="form-grid compact">
+                <label class="full-span">
+                  Nombre
+                  <input id="clientName" required placeholder="Nombre o empresa" />
+                </label>
+                <label>
+                  Telefono
+                  <input id="clientPhone" placeholder="+57..." />
+                </label>
+                <label>
+                  Correo
+                  <input id="clientEmail" type="email" placeholder="correo@dominio.com" />
+                </label>
+                <label class="full-span">
+                  Documento / NIT
+                  <input id="clientIdNumber" placeholder="Opcional" />
+                </label>
+                <label class="full-span">
+                  Notas
+                  <textarea id="clientNotes" rows="3" placeholder="Direccion, condiciones, referencias, etc."></textarea>
+                </label>
+                <div class="form-actions full-span">
+                  <button type="submit" class="primary-button">
+                    <i data-lucide="user-plus"></i>
+                    Crear cliente
+                  </button>
+                </div>
+              </form>
+            </section>
 
-<div class="bandeja"><img src="fotos/g31.png" alt="g31"><button onclick="descargar('fotos/g31.png')">Descargar</button></div>
-<div class="bandeja"><img src="fotos/g32.png" alt="g32"><button onclick="descargar('fotos/g32.png')">Descargar</button></div>
-<div class="bandeja"><img src="fotos/g33.png" alt="g33"><button onclick="descargar('fotos/g33.png')">Descargar</button></div>
-<div class="bandeja"><img src="fotos/g34.png" alt="g34"><button onclick="descargar('fotos/g34.png')">Descargar</button></div>
-<div class="bandeja"><img src="fotos/g35.png" alt="g35"><button onclick="descargar('fotos/g35.png')">Descargar</button></div>
+            <section class="panel">
+              <div class="panel-heading">
+                <div>
+                  <p class="eyebrow">Clientes</p>
+                  <h2>Directorio</h2>
+                </div>
+                <input id="clientSearch" type="search" placeholder="Buscar cliente" />
+              </div>
+              <div class="client-list" id="clientList"></div>
+            </section>
+          </div>
+        </section>
 
-<div class="bandeja"><img src="fotos/g36.png" alt="g36"><button onclick="descargar('fotos/g36.png')">Descargar</button></div>
-<div class="bandeja"><img src="fotos/g37.png" alt="g37"><button onclick="descargar('fotos/g37.png')">Descargar</button></div>
-<div class="bandeja"><img src="fotos/g38.png" alt="g38"><button onclick="descargar('fotos/g38.png')">Descargar</button></div>
-<div class="bandeja"><img src="fotos/g39.png" alt="g39"><button onclick="descargar('fotos/g39.png')">Descargar</button></div>
-<div class="bandeja"><img src="fotos/g40.png" alt="g40"><button onclick="descargar('fotos/g40.png')">Descargar</button></div>
+        <section class="view" id="imports">
+          <div class="workspace-grid import-layout">
+            <section class="panel">
+              <div class="panel-heading">
+                <div>
+                  <p class="eyebrow">Excel / CSV</p>
+                  <h2>Importar clientes</h2>
+                </div>
+              </div>
+              <p class="helper-text">Pega CSV con columnas: nombre, telefono, correo, documento, notas.</p>
+              <textarea id="clientsCsv" class="csv-box" rows="10">nombre,telefono,correo,documento,notas
+Eventos Nova,+573001112233,operaciones@nova.com,901222333,Cliente corporativo</textarea>
+              <button class="primary-button" id="importClients">
+                <i data-lucide="upload"></i>
+                Importar clientes
+              </button>
+            </section>
 
-<div class="bandeja"><img src="fotos/g41.png" alt="g41"><button onclick="descargar('fotos/g41.png')">Descargar</button></div>
-<div class="bandeja"><img src="fotos/g42.png" alt="g42"><button onclick="descargar('fotos/g42.png')">Descargar</button></div>
-<div class="bandeja"><img src="fotos/g43.png" alt="g43"><button onclick="descargar('fotos/g43.png')">Descargar</button></div>
-<div class="bandeja"><img src="fotos/g44.png" alt="g44"><button onclick="descargar('fotos/g44.png')">Descargar</button></div>
-<div class="bandeja"><img src="fotos/g45.png" alt="g45"><button onclick="descargar('fotos/g45.png')">Descargar</button></div>
+            <section class="panel">
+              <div class="panel-heading">
+                <div>
+                  <p class="eyebrow">Excel / CSV</p>
+                  <h2>Importar inventario</h2>
+                </div>
+              </div>
+              <p class="helper-text">Pega CSV con columnas: nombre, categoria, cantidad, talla, ubicacion, checklist, notas. En checklist usa piezas separadas por punto y coma.</p>
+              <textarea id="inventoryCsv" class="csv-box" rows="10">nombre,categoria,cantidad,talla,ubicacion,checklist,notas
+Traje Astronauta,Traje completo,2,Adulto,Rack 4,Casco;Overol;Guantes;Botas,Revisar visor antes de salida</textarea>
+              <button class="primary-button" id="importInventory">
+                <i data-lucide="upload"></i>
+                Importar inventario
+              </button>
+            </section>
+          </div>
+        </section>
 
-<div class="bandeja"><img src="fotos/g46.png" alt="g46"><button onclick="descargar('fotos/g46.png')">Descargar</button></div>
-<div class="bandeja"><img src="fotos/g47.png" alt="g47"><button onclick="descargar('fotos/g47.png')">Descargar</button></div>
-<div class="bandeja"><img src="fotos/g48.png" alt="g48"><button onclick="descargar('fotos/g48.png')">Descargar</button></div>
-<div class="bandeja"><img src="fotos/g49.png" alt="g49"><button onclick="descargar('fotos/g49.png')">Descargar</button></div>
-<div class="bandeja"><img src="fotos/g50.png" alt="g50"><button onclick="descargar('fotos/g50.png')">Descargar</button></div>
+        <section class="view" id="firebase">
+          <div class="panel">
+            <div class="panel-heading">
+              <div>
+                <p class="eyebrow">Siguiente paso</p>
+                <h2>Preparado para GitHub + Firebase</h2>
+              </div>
+            </div>
+            <div class="firebase-grid">
+              <div>
+                <h3>Ahora funciona local</h3>
+                <p>
+                  Esta version guarda datos en el navegador para que puedas probar flujos sin instalar nada.
+                  Sirve como MVP funcional y como maqueta viva antes de conectar Firestore.
+                </p>
+              </div>
+              <div>
+                <h3>Firebase recomendado</h3>
+                <p>
+                  Firebase Auth para usuarios, Firestore para clientes/inventario/pedidos, Storage para fotos y
+                  Hosting para publicar. La estructura sugerida ya queda documentada en el repositorio.
+                </p>
+              </div>
+              <div>
+                <h3>Colecciones base</h3>
+                <code>users, clients, inventoryItems, orders, inventoryMovements, settings</code>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
 
-<div class="bandeja"><img src="fotos/g51.png" alt="g51"><button onclick="descargar('fotos/g51.png')">Descargar</button></div>
-<div class="bandeja"><img src="fotos/g51.png" alt="g52"><button onclick="descargar('fotos/g52.png')">Descargar</button></div>
-<div class="bandeja"><img src="fotos/g51.png" alt="g53"><button onclick="descargar('fotos/g53.png')">Descargar</button></div>
-<div class="bandeja"><img src="fotos/g51.png" alt="g54"><button onclick="descargar('fotos/g54.png')">Descargar</button></div>
-    
+    <dialog id="returnDialog" class="return-dialog">
+      <form method="dialog" id="returnForm">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">Devolucion</p>
+            <h2>Revisar piezas</h2>
+          </div>
+          <button class="icon-button" value="cancel" aria-label="Cerrar">
+            <i data-lucide="x"></i>
+          </button>
+        </div>
+        <div id="returnChecklist" class="return-checklist"></div>
+        <label>
+          Notas de devolucion
+          <textarea id="returnNotes" rows="3" placeholder="Piezas faltantes, dano, lavado, mantenimiento..."></textarea>
+        </label>
+        <div class="form-actions">
+          <button class="secondary-button" value="cancel" type="button" id="cancelReturn">Cancelar</button>
+          <button class="primary-button" value="confirm" type="submit">
+            <i data-lucide="check"></i>
+            Cerrar devolucion
+          </button>
+        </div>
+      </form>
+    </dialog>
 
-    <!-- FIN -->
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-  </section>
-
-  <script>
-    function descargar(src, lado = 'left') {
-  const img = new Image();
-  img.crossOrigin = "anonymous";
-  img.onload = () => {
-    const canvas = document.createElement("canvas");
-    canvas.width = 600;
-    canvas.height = 1800;
-    const ctx = canvas.getContext("2d");
-
-    const sx = (lado === 'right') ? 600 : 0; // origen x según lado
-    ctx.drawImage(img, sx, 0, 600, 1800, 0, 0, 600, 1800);
-
-    const link = document.createElement("a");
-    link.download = `mitad-${src}`;
-    link.href = canvas.toDataURL("image/png");
-    link.click();
-  };
-  img.src = src;
-}
-  </script>
-
-</body>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <script type="module" src="src/app.js"></script>
+  </body>
 </html>

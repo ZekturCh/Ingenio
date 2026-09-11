@@ -1,0 +1,13 @@
+{
+  "name": "trajes-os",
+  "version": "0.1.0",
+  "private": true,
+  "description": "MVP web para administrar alquiler de trajes, inventario, clientes, pedidos y devoluciones.",
+  "scripts": {
+    "start": "npx serve .",
+    "deploy": "firebase deploy --only hosting"
+  },
+  "devDependencies": {
+    "serve": "^14.2.4"
+  }
+}

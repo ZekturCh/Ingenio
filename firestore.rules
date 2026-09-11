@@ -1,0 +1,72 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() {
+      return request.auth != null;
+    }
+
+    function userDoc() {
+      return get(/databases/$(database)/documents/users/$(request.auth.uid));
+    }
+
+    function hasRole(roles) {
+      return signedIn()
+        && exists(/databases/$(database)/documents/users/$(request.auth.uid))
+        && userDoc().data.active == true
+        && userDoc().data.role in roles;
+    }
+
+    function canRead() {
+      return hasRole(['admin', 'bodega', 'ventas', 'lectura']);
+    }
+
+    function canWrite() {
+      return hasRole(['admin', 'bodega', 'ventas']);
+    }
+
+    function canAdmin() {
+      return hasRole(['admin']);
+    }
+
+    match /users/{userId} {
+      allow read: if signedIn() && (request.auth.uid == userId || canAdmin());
+      allow create: if canAdmin();
+      allow update: if canAdmin();
+      allow delete: if canAdmin();
+    }
+
+    match /clients/{clientId} {
+      allow read: if canRead();
+      allow create, update: if canWrite();
+      allow delete: if canAdmin();
+    }
+
+    match /inventoryItems/{itemId} {
+      allow read: if canRead();
+      allow create, update: if canWrite();
+      allow delete: if canAdmin();
+    }
+
+    match /orders/{orderId} {
+      allow read: if canRead();
+      allow create, update: if canWrite();
+      allow delete: if canAdmin();
+    }
+
+    match /inventoryMovements/{movementId} {
+      allow read: if canRead();
+      allow create: if canWrite();
+      allow update, delete: if canAdmin();
+    }
+
+    match /settings/{settingId} {
+      allow read: if canRead();
+      allow write: if canAdmin();
+    }
+
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
