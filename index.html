@@ -372,11 +372,11 @@ Traje Astronauta,Traje completo,2,Adulto,Rack 4,Casco;Overol;Guantes;Botas,Revis
                   <h2>Perfil de acceso</h2>
                 </div>
               </div>
-              <p class="helper-text">Crea primero la cuenta en Firebase Auth, copia su UID y asignale rol aqui.</p>
+              <p class="helper-text">Crea una cuenta nueva con correo y contraseña, o pega un UID existente para actualizar acceso.</p>
               <form id="userForm" class="form-grid compact">
                 <label class="full-span">
                   UID Firebase Auth
-                  <input id="userUid" required placeholder="Pega aqui el UID del usuario" />
+                  <input id="userUid" placeholder="Opcional al crear, requerido al editar" />
                 </label>
                 <label class="full-span">
                   Nombre
@@ -385,6 +385,10 @@ Traje Astronauta,Traje completo,2,Adulto,Rack 4,Casco;Overol;Guantes;Botas,Revis
                 <label class="full-span">
                   Correo
                   <input id="userEmail" type="email" placeholder="correo@dominio.com" />
+                </label>
+                <label class="full-span">
+                  Contraseña inicial
+                  <input id="userPassword" type="password" minlength="6" placeholder="Solo para crear cuenta nueva" />
                 </label>
                 <label>
                   Rol

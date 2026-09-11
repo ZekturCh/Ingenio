@@ -8,6 +8,7 @@ MVP web para administrar alquiler de trajes, clientes, inventario con checklist 
 - Login con Firebase Auth Email/Password.
 - Admin persistente por UID en `users/{uid}`.
 - Admin: usuarios, clientes, inventario, pedidos existentes, pagos, devoluciones, importaciones y auditoria.
+- Cloud Functions para crear y eliminar cuentas reales de Firebase Auth desde la app.
 - Operadores: crear pedidos y editar su propio correo/contrasena.
 - Auditoria de cambios: ingresos, pedidos, inventario, clientes, usuarios, pagos, cancelaciones y devoluciones.
 - Firebase conectado al proyecto `ingenioespectaculos`.
@@ -49,14 +50,14 @@ Hay un apartado `Supervisión` visible solo para usuarios con `role: "admin"` en
 - Pedidos vencidos.
 - Pedidos devueltos pero con pago pendiente.
 
-Importante: ese apartado administra perfiles de acceso en Firestore (`users/{uid}`). Las cuentas reales se crean en Firebase Console > Authentication.
+Importante: crear/eliminar cuentas reales desde la app requiere desplegar Cloud Functions. Sin Functions, el panel puede administrar perfiles, pero Auth se gestiona desde Firebase Console.
 
 Flujo recomendado:
 
 1. Activa Email/Password en Firebase Authentication.
 2. Crea la cuenta `admin@ingenio.com`.
 3. Copia el UID de esa cuenta en Firebase Authentication.
-4. En Firestore crea el documento `users/{UID}` con `role: "admin"` y `active: true`.
+4. En Firestore crea el documento `users/{UID}` con `role: "admin"` y `active: true`. El UID admin fijo tambien esta permitido en reglas para bootstrap.
 5. Entra por `login.html`.
 6. Crea cuentas Auth para operadores en Firebase Console.
 7. En `Usuarios`, crea o edita perfiles pegando el UID del operador.
@@ -118,7 +119,7 @@ firebase use ingenioespectaculos
 3. Publica hosting y reglas:
 
 ```bash
-firebase deploy --only hosting,firestore
+firebase deploy --only hosting,firestore,functions
 ```
 
 ## Estado de datos

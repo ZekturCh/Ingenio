@@ -17,8 +17,13 @@ import {
   setDoc,
   writeBatch,
 } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
+import {
+  getFunctions,
+  httpsCallable,
+} from "https://www.gstatic.com/firebasejs/12.19.0/firebase-functions.js";
 
 const STORAGE_KEY = "trajes-os-v1";
+const ADMIN_UID = "kXOgLCRPC0VhkqQltsgO1feNPLO2";
 const firebaseConfig = {
   apiKey: "AIzaSyDAYmwu9GD0R0BlL_6tUqOpUgByNci_Bhg",
   authDomain: "ingenioespectaculos.firebaseapp.com",
@@ -40,6 +45,7 @@ const firebaseState = {
   auth: null,
   user: null,
   db: null,
+  functions: null,
   enabled: false,
   uid: null,
   role: null,
@@ -214,6 +220,7 @@ const els = {
   userUid: document.querySelector("#userUid"),
   userName: document.querySelector("#userName"),
   userEmail: document.querySelector("#userEmail"),
+  userPassword: document.querySelector("#userPassword"),
   userRole: document.querySelector("#userRole"),
   userActive: document.querySelector("#userActive"),
   userList: document.querySelector("#userList"),
@@ -272,6 +279,7 @@ async function initFirebase() {
     const app = initializeApp(firebaseConfig);
     firebaseState.auth = getAuth(app);
     firebaseState.db = getFirestore(app);
+    firebaseState.functions = getFunctions(app);
 
     onAuthStateChanged(firebaseState.auth, async (user) => {
       if (!user) {
@@ -306,8 +314,8 @@ async function loadCurrentUserProfile() {
     firebaseState.profile = data || {
       displayName: firebaseState.user?.displayName || "Usuario",
       email: firebaseState.user?.email || "",
-      role: "staff",
-      active: true,
+      role: firebaseState.uid === ADMIN_UID ? "admin" : "staff",
+      active: firebaseState.uid === ADMIN_UID,
     };
     firebaseState.role = firebaseState.profile.role || "staff";
     firebaseState.active = firebaseState.profile.active === true;
@@ -335,12 +343,13 @@ async function loadCurrentUserProfile() {
 
 async function ensureCurrentUserProfile(exists) {
   if (!firebaseState.enabled || !firebaseState.uid) return;
+  if (!exists && firebaseState.uid !== ADMIN_UID) return;
   const profile = {
     id: firebaseState.uid,
     displayName: firebaseState.profile?.displayName || firebaseState.user?.displayName || firebaseState.user?.email || "Usuario",
     email: firebaseState.user?.email || "",
-    role: firebaseState.profile?.role || "staff",
-    active: firebaseState.profile?.active === true,
+    role: firebaseState.uid === ADMIN_UID ? "admin" : firebaseState.profile?.role || "staff",
+    active: firebaseState.uid === ADMIN_UID ? true : firebaseState.profile?.active === true,
     lastLoginAt: new Date().toISOString(),
     updatedAt: todayISO(),
     createdAt: firebaseState.profile?.createdAt || todayISO(),
@@ -355,7 +364,7 @@ async function ensureCurrentUserProfile(exists) {
 }
 
 function isAdmin() {
-  return firebaseState.enabled && firebaseState.active && firebaseState.role === "admin";
+  return firebaseState.enabled && (firebaseState.uid === ADMIN_UID || (firebaseState.active && firebaseState.role === "admin"));
 }
 
 function isSuperAdmin() {
@@ -869,7 +878,7 @@ function renderUsers() {
             </div>
             <div class="row-actions">
               <button class="mini-button" data-edit-user="${escapeHtml(user.id)}">Editar</button>
-              <button class="mini-button" data-delete-user="${escapeHtml(user.id)}">Eliminar acceso</button>
+              <button class="mini-button" data-delete-user="${escapeHtml(user.id)}">Eliminar cuenta</button>
             </div>
           </article>
         `)
@@ -1364,20 +1373,47 @@ async function importInventory() {
 
 async function createUserProfile(event) {
   event.preventDefault();
-  const previous = state.users.find((user) => user.id === els.userUid.value.trim());
+  if (!isAdmin()) {
+    showToast("Solo admin puede crear usuarios.");
+    return;
+  }
+
+  let targetUid = els.userUid.value.trim();
+  const password = els.userPassword.value;
+
+  if (!targetUid) {
+    if (!els.userEmail.value.trim() || !password) {
+      showToast("Para crear cuenta nueva escribe correo y contraseña inicial.");
+      return;
+    }
+
+    try {
+      const createAuthUser = httpsCallable(firebaseState.functions, "createAuthUser");
+      const result = await createAuthUser({
+        email: els.userEmail.value.trim(),
+        password,
+        displayName: els.userName.value.trim(),
+        role: els.userRole.value,
+        active: els.userActive.checked,
+      });
+      targetUid = result.data.uid;
+      els.userUid.value = targetUid;
+    } catch (error) {
+      console.warn("No se pudo crear cuenta Auth.", error);
+      showToast("No se pudo crear cuenta Auth. Despliega Cloud Functions primero.");
+      return;
+    }
+  }
+
+  const previous = state.users.find((user) => user.id === targetUid);
   const profile = {
-    id: els.userUid.value.trim(),
+    id: targetUid,
     displayName: els.userName.value.trim(),
     email: els.userEmail.value.trim(),
     role: els.userRole.value,
     active: els.userActive.checked,
     createdAt: previous?.createdAt || todayISO(),
   };
-
-  if (!profile.id) {
-    showToast("Pega el UID de Firebase Auth.");
-    return;
-  }
 
   const saved = await persistUserProfile(profile);
   if (!saved) return;
@@ -1609,9 +1645,19 @@ function bindEvents() {
 
     const deleteUser = event.target.closest("[data-delete-user]");
     if (deleteUser) {
-      if (confirm("Esto elimina el perfil de acceso en Firestore. La cuenta Auth real se elimina desde Firebase Console o Cloud Function. ¿Continuar?")) {
+      if (confirm("Esto elimina la cuenta Auth y el perfil de acceso. ¿Continuar?")) {
         const deleted = state.users.find((entry) => entry.id === deleteUser.dataset.deleteUser);
-        await deleteUserProfile(deleteUser.dataset.deleteUser);
+        try {
+          const deleteAuthUser = httpsCallable(firebaseState.functions, "deleteAuthUser");
+          await deleteAuthUser({ uid: deleteUser.dataset.deleteUser });
+          state.users = state.users.filter((user) => user.id !== deleteUser.dataset.deleteUser);
+          saveState();
+          renderUsers();
+          showToast("Cuenta eliminada.");
+        } catch (error) {
+          console.warn("No se pudo eliminar cuenta Auth.", error);
+          await deleteUserProfile(deleteUser.dataset.deleteUser);
+        }
         await logActivity("Elimino usuario", "users", deleteUser.dataset.deleteUser, deleted?.displayName || deleted?.email || deleteUser.dataset.deleteUser, {});
       }
     }

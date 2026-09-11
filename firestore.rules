@@ -6,6 +6,10 @@ service cloud.firestore {
       return request.auth != null;
     }
 
+    function isBootstrapAdmin() {
+      return signedIn() && request.auth.uid == 'kXOgLCRPC0VhkqQltsgO1feNPLO2';
+    }
+
     function userDoc() {
       return get(/databases/$(database)/documents/users/$(request.auth.uid));
     }
@@ -18,9 +22,12 @@ service cloud.firestore {
     }
 
     function canRead() {
-      return signedIn()
-        && exists(/databases/$(database)/documents/users/$(request.auth.uid))
-        && userDoc().data.active == true;
+      return isBootstrapAdmin()
+        || (
+          signedIn()
+          && exists(/databases/$(database)/documents/users/$(request.auth.uid))
+          && userDoc().data.active == true
+        );
     }
 
     function canCreateWork() {
@@ -28,18 +35,12 @@ service cloud.firestore {
     }
 
     function canAdmin() {
-      return hasRole(['admin']);
+      return isBootstrapAdmin() || hasRole(['admin']);
     }
 
     match /users/{userId} {
       allow read: if signedIn() && (request.auth.uid == userId || canAdmin());
-      allow create: if canAdmin()
-        || (
-          signedIn()
-          && request.auth.uid == userId
-          && request.resource.data.role == 'staff'
-          && request.resource.data.active == true
-        );
+      allow create: if canAdmin();
       allow update: if canAdmin()
         || (
           signedIn()
