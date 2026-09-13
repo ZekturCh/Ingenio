@@ -60,6 +60,18 @@ const addDays = (days) => {
   date.setDate(date.getDate() + days);
   return date.toISOString().slice(0, 10);
 };
+const addDaysToISO = (isoDate, days) => {
+  const date = new Date(`${isoDate}T00:00:00`);
+  date.setDate(date.getDate() + days);
+  return date.toISOString().slice(0, 10);
+};
+const currentWeekRange = () => {
+  const date = new Date();
+  const day = date.getDay() || 7;
+  date.setDate(date.getDate() - day + 1);
+  const start = date.toISOString().slice(0, 10);
+  return { start, end: addDaysToISO(start, 6) };
+};
 
 const uid = (prefix) => `${prefix}_${Date.now().toString(36)}_${Math.random().toString(36).slice(2, 8)}`;
 
@@ -83,18 +95,28 @@ const els = {
   activeOrders: document.querySelector("#activeOrders"),
   orderForm: document.querySelector("#orderForm"),
   orderClient: document.querySelector("#orderClient"),
+  newClientFields: document.querySelector("#newClientFields"),
+  orderNewClientName: document.querySelector("#orderNewClientName"),
+  orderNewClientPhone: document.querySelector("#orderNewClientPhone"),
+  orderNewClientNotes: document.querySelector("#orderNewClientNotes"),
   orderStart: document.querySelector("#orderStart"),
   orderEnd: document.querySelector("#orderEnd"),
   orderOwner: document.querySelector("#orderOwner"),
   orderAmount: document.querySelector("#orderAmount"),
   orderPaid: document.querySelector("#orderPaid"),
   orderInventory: document.querySelector("#orderInventory"),
+  newItemFields: document.querySelector("#newItemFields"),
+  orderNewItemName: document.querySelector("#orderNewItemName"),
+  orderNewItemCategory: document.querySelector("#orderNewItemCategory"),
+  orderNewItemStock: document.querySelector("#orderNewItemStock"),
+  orderNewItemChecklist: document.querySelector("#orderNewItemChecklist"),
+  orderNewItemNotes: document.querySelector("#orderNewItemNotes"),
   orderQty: document.querySelector("#orderQty"),
   orderNotes: document.querySelector("#orderNotes"),
   addOrderItem: document.querySelector("#addOrderItem"),
   orderBuilder: document.querySelector("#orderBuilder"),
   availabilityPill: document.querySelector("#availabilityPill"),
-  ordersTable: document.querySelector("#ordersTable"),
+  eventsBoard: document.querySelector("#eventsBoard"),
   orderSearch: document.querySelector("#orderSearch"),
   orderStatusFilter: document.querySelector("#orderStatusFilter"),
   inventoryForm: document.querySelector("#inventoryForm"),
@@ -534,9 +556,15 @@ function renderAll() {
 }
 
 function renderSelects() {
+  const selectedClient = els.orderClient.value;
+  const selectedInventory = els.orderInventory.value;
   els.orderClient.innerHTML = state.clients
     .map((client) => `<option value="${client.id}">${escapeHtml(client.name)}</option>`)
     .join("");
+  els.orderClient.insertAdjacentHTML("afterbegin", `<option value="__new_client__">+ Crear cliente nuevo</option>`);
+  if (selectedClient && [...els.orderClient.options].some((option) => option.value === selectedClient)) {
+    els.orderClient.value = selectedClient;
+  }
 
   els.orderInventory.innerHTML = state.inventory
     .map((item) => {
@@ -544,6 +572,16 @@ function renderSelects() {
       return `<option value="${item.id}" ${available === 0 ? "disabled" : ""}>${escapeHtml(item.name)} · disp. ${available}</option>`;
     })
     .join("");
+  els.orderInventory.insertAdjacentHTML("afterbegin", `<option value="__new_item__">+ Crear item nuevo</option>`);
+  if (selectedInventory && [...els.orderInventory.options].some((option) => option.value === selectedInventory)) {
+    els.orderInventory.value = selectedInventory;
+  }
+  updateManualOrderFields();
+}
+
+function updateManualOrderFields() {
+  els.newClientFields?.classList.toggle("is-hidden", els.orderClient.value !== "__new_client__");
+  els.newItemFields?.classList.toggle("is-hidden", els.orderInventory.value !== "__new_item__");
 }
 
 function renderMetrics() {
@@ -553,9 +591,9 @@ function renderMetrics() {
   const availableUnits = state.inventory.reduce((sum, item) => sum + availableQty(item), 0);
 
   const metrics = [
-    ["Pedidos activos", active.length, "En alquiler o reservados"],
+    ["Eventos activos", active.length, "En alquiler o reservados"],
     ["Unidades disponibles", availableUnits, "Stock libre ahora"],
-    ["Pagos pendientes", unpaid, "Pedidos con monto sin pago"],
+    ["Pagos pendientes", unpaid, "Eventos con monto sin pago"],
     ["Devoluciones vencidas", overdue, "Revisar hoy"],
   ];
 
@@ -572,7 +610,7 @@ function renderMetrics() {
 
 function renderOrderBuilder() {
   if (!draftOrderItems.length) {
-    els.orderBuilder.innerHTML = `<div class="builder-empty">Agrega uno o varios items para formar el pedido. Cada item copia su checklist para revisar la devolucion despues.</div>`;
+    els.orderBuilder.innerHTML = `<div class="builder-empty">Agrega uno o varios items para formar el evento. Cada item copia su checklist para revisar la devolucion despues.</div>`;
     els.availabilityPill.textContent = "Listo";
     els.availabilityPill.className = "status-pill ok";
     return;
@@ -584,6 +622,7 @@ function renderOrderBuilder() {
         <div>
           <h4>${escapeHtml(item.name)} <span class="muted">x${item.quantity}</span></h4>
           <div class="chips">
+            ${item.isNewInventory ? `<span class="chip">Nuevo inventario</span>` : ""}
             ${item.checklist.map((piece) => `<span class="chip">${escapeHtml(piece.name)}</span>`).join("") || `<span class="chip">Sin checklist</span>`}
           </div>
         </div>
@@ -598,7 +637,7 @@ function renderOrderBuilder() {
 function renderActiveOrders() {
   const active = activeOrders().slice(0, 6);
   if (!active.length) {
-    els.activeOrders.innerHTML = `<div class="empty">No hay pedidos activos. La agenda esta limpia.</div>`;
+    els.activeOrders.innerHTML = `<div class="empty">No hay eventos activos. La agenda esta limpia.</div>`;
     return;
   }
 
@@ -627,6 +666,7 @@ function renderActiveOrders() {
 function renderOrdersTable() {
   const term = els.orderSearch.value.trim().toLowerCase();
   const filter = els.orderStatusFilter.value;
+  const week = currentWeekRange();
   const rows = state.orders
     .map((order) => ({ ...order, computedStatus: orderState(order), client: getClient(order.clientId) }))
     .filter((order) => filter === "all" || order.computedStatus === filter)
@@ -638,31 +678,104 @@ function renderOrdersTable() {
         order.items.map((item) => item.name).join(" "),
       ].join(" ").toLowerCase();
       return searchable.includes(term);
-    })
-    .sort((a, b) => b.createdAt.localeCompare(a.createdAt));
+    });
 
-  els.ordersTable.innerHTML = rows.length
-    ? rows
-        .map((order) => `
-          <tr>
-            <td><strong>${order.id.replace("ord_", "#")}</strong><br><span class="muted">Creado por: ${escapeHtml(order.createdByName || order.owner || "Sin usuario")}</span></td>
-            <td>${escapeHtml(order.client?.name || "Cliente eliminado")}<br><span class="muted">${escapeHtml(order.client?.phone || "")}</span></td>
-            <td>${order.startDate}<br><span class="muted">${order.endDate}</span></td>
-            <td>${order.items.map((item) => `${escapeHtml(item.name)} x${item.quantity}`).join("<br>")}</td>
-            <td>${formatMoney(order.amount)}<br><span class="tag ${order.paid ? "ok" : "warn"}">${order.paid ? "Pagado" : "Pendiente"}</span></td>
-            <td><span class="tag ${order.computedStatus === "Vencido" ? "danger" : order.computedStatus === "Devuelto" ? "" : "ok"}">${order.computedStatus}</span></td>
-            <td>
-              <div class="row-actions">
-                ${canManageOrders() && order.status === "Activo" ? `<button class="mini-button" data-return-order="${order.id}">Devolver</button>` : ""}
-                ${canManageOrders() ? `<button class="mini-button" data-toggle-paid="${order.id}">${order.paid ? "Marcar pendiente" : "Marcar pago"}</button>` : ""}
-                ${canManageOrders() && order.status === "Activo" ? `<button class="mini-button" data-cancel-order="${order.id}">Cancelar</button>` : ""}
-                ${!canManageOrders() ? `<span class="muted">Sin acciones</span>` : ""}
-              </div>
-            </td>
-          </tr>
-        `)
-        .join("")
-    : `<tr><td colspan="7" class="muted">No hay pedidos con ese filtro.</td></tr>`;
+  const thisWeek = rows
+    .filter((order) => order.startDate <= week.end && order.endDate >= week.start)
+    .sort((a, b) => String(a.startDate).localeCompare(String(b.startDate)));
+  const future = rows
+    .filter((order) => order.startDate > week.end)
+    .sort((a, b) => String(a.startDate).localeCompare(String(b.startDate)));
+  const past = rows
+    .filter((order) => order.endDate < week.start)
+    .sort((a, b) => {
+      const priority = eventPriority(a) - eventPriority(b);
+      return priority || String(a.endDate).localeCompare(String(b.endDate));
+    });
+
+  els.eventsBoard.innerHTML = `
+    ${renderEventSection("Esta semana", `${week.start} al ${week.end}`, thisWeek)}
+    ${renderEventSection("Futuros", "Eventos programados despues de esta semana", future)}
+    ${renderEventSection("Registro de eventos pasados", "Prioridad: falta pagar y devolver, falta devolver, falta pagar, supervisados", past)}
+  `;
+}
+
+function eventPriority(order) {
+  const notReturned = order.status === "Activo";
+  const unpaid = Number(order.amount || 0) > 0 && !order.paid;
+  if (notReturned && unpaid) return 0;
+  if (notReturned) return 1;
+  if (unpaid) return 2;
+  return 3;
+}
+
+function eventPriorityLabel(order) {
+  const priority = eventPriority(order);
+  return ["Falta pago y devolucion", "Falta devolucion", "Falta pago", "Supervisado"][priority] || "Supervisado";
+}
+
+function renderEventSection(title, hint, orders) {
+  return `
+    <section class="event-section">
+      <div class="panel-heading">
+        <div>
+          <h3>${escapeHtml(title)}</h3>
+          <p class="muted">${escapeHtml(hint)}</p>
+        </div>
+        <span class="tag">${orders.length}</span>
+      </div>
+      <div class="event-list">
+        ${
+          orders.length
+            ? orders.map(renderEventCard).join("")
+            : `<div class="empty">No hay eventos en esta seccion.</div>`
+        }
+      </div>
+    </section>
+  `;
+}
+
+function renderEventCard(order) {
+  const statusClass = order.computedStatus === "Vencido" ? "danger" : order.computedStatus === "Devuelto" ? "" : "ok";
+  const unpaid = Number(order.amount || 0) > 0 && !order.paid;
+  const missingPieces = order.status === "Devuelto"
+    ? (order.items || []).flatMap((item) => (item.checklist || []).filter((piece) => piece.returned === false).map((piece) => `${item.name}: ${piece.name}`))
+    : [];
+  return `
+    <article class="event-card">
+      <div class="panel-heading">
+        <div>
+          <h3>${escapeHtml(order.client?.name || "Cliente eliminado")}</h3>
+          <p class="muted">${order.startDate} → ${order.endDate} · Creado por: ${escapeHtml(order.createdByName || order.owner || "Sin usuario")}</p>
+        </div>
+        <div class="event-tags">
+          <span class="tag ${statusClass}">${order.computedStatus}</span>
+          <span class="tag ${unpaid ? "warn" : "ok"}">${order.paid ? "Pagado" : "Pago pendiente"}</span>
+        </div>
+      </div>
+      <div class="event-card-grid">
+        <div>
+          <span class="muted">Items</span>
+          <div class="chips">${(order.items || []).map((item) => `<span class="chip">${escapeHtml(item.name)} x${item.quantity}</span>`).join("")}</div>
+        </div>
+        <div>
+          <span class="muted">Monto</span>
+          <strong>${formatMoney(order.amount)}</strong>
+        </div>
+        <div>
+          <span class="muted">Revision</span>
+          <strong>${escapeHtml(eventPriorityLabel(order))}</strong>
+        </div>
+      </div>
+      ${missingPieces.length ? `<p class="muted">Faltantes registrados: ${escapeHtml(missingPieces.join(", "))}</p>` : ""}
+      <div class="row-actions">
+        ${canManageOrders() && order.status === "Activo" ? `<button class="mini-button" data-return-order="${order.id}">Devolver</button>` : ""}
+        ${canManageOrders() ? `<button class="mini-button" data-toggle-paid="${order.id}">${order.paid ? "Marcar pendiente" : "Marcar pago"}</button>` : ""}
+        ${canManageOrders() && order.status === "Activo" ? `<button class="mini-button" data-cancel-order="${order.id}">Cancelar</button>` : ""}
+        ${!canManageOrders() ? `<span class="muted">Sin acciones</span>` : ""}
+      </div>
+    </article>
+  `;
 }
 
 function renderInventory() {
@@ -724,7 +837,7 @@ function renderClients() {
                 <div>
                   <h3>${escapeHtml(client.name)}</h3>
                 </div>
-                <span class="tag">${orderCount} pedido(s)</span>
+                <span class="tag">${orderCount} evento(s)</span>
               </div>
               <div class="client-meta">
                 <span>${escapeHtml(client.phone || "Sin telefono")}</span>
@@ -853,15 +966,61 @@ function renderSupervisionOrders() {
           `;
         })
         .join("")
-    : `<div class="empty">No hay pedidos criticos ahora.</div>`;
+    : `<div class="empty">No hay eventos criticos ahora.</div>`;
 }
 
 function addDraftItem() {
   const inventoryId = els.orderInventory.value;
+  const qty = Math.max(1, Number(els.orderQty.value || 1));
+
+  if (inventoryId === "__new_item__") {
+    const name = els.orderNewItemName.value.trim();
+    const stock = Math.max(1, Number(els.orderNewItemStock.value || qty));
+    if (!name) {
+      showToast("Escribe el nombre del item nuevo.");
+      els.orderNewItemName.focus();
+      return;
+    }
+    if (qty > stock) {
+      showToast("La cantidad del evento no puede superar el stock total del item nuevo.");
+      return;
+    }
+
+    const inventoryRecord = {
+      id: uid("inv"),
+      name,
+      category: els.orderNewItemCategory.value,
+      quantity: stock,
+      checklist: splitChecklist(els.orderNewItemChecklist.value),
+      notes: els.orderNewItemNotes.value.trim(),
+      createdAt: todayISO(),
+      createdBy: currentActor().uid,
+      createdByName: currentActor().name,
+      updatedBy: currentActor().uid,
+      updatedByName: currentActor().name,
+      updatedAt: todayISO(),
+    };
+
+    draftOrderItems.push({
+      inventoryId: inventoryRecord.id,
+      name: inventoryRecord.name,
+      category: inventoryRecord.category,
+      quantity: qty,
+      checklist: inventoryRecord.checklist.map((piece) => ({ name: piece, returned: false })),
+      isNewInventory: true,
+      inventoryRecord,
+    });
+    els.orderNewItemName.value = "";
+    els.orderNewItemStock.value = "1";
+    els.orderNewItemChecklist.value = "";
+    els.orderNewItemNotes.value = "";
+    renderAll();
+    return;
+  }
+
   const item = state.inventory.find((entry) => entry.id === inventoryId);
   if (!item) return;
 
-  const qty = Math.max(1, Number(els.orderQty.value || 1));
   if (qty > availableQty(item)) {
     showToast(`No hay suficiente disponibilidad de ${item.name}.`);
     return;
@@ -893,13 +1052,54 @@ async function createOrder(event) {
     return;
   }
   if (!draftOrderItems.length) {
-    showToast("Agrega al menos un item al pedido.");
+    showToast("Agrega al menos un item al evento.");
     return;
   }
 
+  let clientId = els.orderClient.value;
+  let clientName = getClient(clientId)?.name || "";
+  if (clientId === "__new_client__") {
+    clientName = els.orderNewClientName.value.trim();
+    if (!clientName) {
+      showToast("Escribe el nombre del cliente nuevo.");
+      els.orderNewClientName.focus();
+      return;
+    }
+    const client = {
+      id: uid("cli"),
+      name: clientName,
+      phone: els.orderNewClientPhone.value.trim(),
+      notes: els.orderNewClientNotes.value.trim(),
+      createdAt: todayISO(),
+      createdBy: currentActor().uid,
+      createdByName: currentActor().name,
+      updatedBy: currentActor().uid,
+      updatedByName: currentActor().name,
+      updatedAt: todayISO(),
+    };
+    const clientSaved = await persistDoc("clients", client);
+    if (!clientSaved) return;
+    state.clients.push(client);
+    clientId = client.id;
+    await logActivity("Creo cliente", "clients", client.id, client.name, { source: "evento" });
+  }
+
+  const newInventoryItems = draftOrderItems
+    .filter((item) => item.isNewInventory && item.inventoryRecord)
+    .map((item) => item.inventoryRecord);
+  if (newInventoryItems.length) {
+    const inventorySaved = await persistMany("inventory", newInventoryItems);
+    if (!inventorySaved) return;
+    state.inventory.push(...newInventoryItems);
+    await logActivity("Creo inventario", "inventoryItems", "bulk", `${newInventoryItems.length} item(s) desde evento`, {
+      items: newInventoryItems.map((item) => item.name),
+    });
+  }
+
+  const orderItems = draftOrderItems.map(({ inventoryRecord, isNewInventory, ...item }) => item);
   const order = {
     id: uid("ord"),
-    clientId: els.orderClient.value,
+    clientId,
     startDate: els.orderStart.value,
     endDate: els.orderEnd.value,
     owner: els.orderOwner.value.trim(),
@@ -912,7 +1112,7 @@ async function createOrder(event) {
     createdByName: currentActor().name,
     returnedAt: null,
     returnNotes: "",
-    items: structuredClone(draftOrderItems),
+    items: structuredClone(orderItems),
   };
 
   const movements = order.items.map((item) => ({
@@ -936,13 +1136,13 @@ async function createOrder(event) {
   els.orderForm.reset();
   setDefaultDates();
   saveState();
-  await logActivity("Creo pedido", "orders", order.id, getClient(order.clientId)?.name || order.id, {
+  await logActivity("Creo evento", "orders", order.id, clientName || getClient(order.clientId)?.name || order.id, {
     items: order.items.map((item) => `${item.name} x${item.quantity}`),
     amount: order.amount,
     paid: order.paid,
   });
   renderAll();
-  showToast("Pedido guardado y stock comprometido.");
+  showToast("Evento guardado y stock comprometido.");
 }
 
 async function createInventoryItem(event) {
@@ -1060,7 +1260,7 @@ async function deleteClient(clientId) {
   if (!client) return;
   const hasActiveOrders = activeOrders().some((order) => order.clientId === clientId);
   if (hasActiveOrders) {
-    showToast("No puedes eliminar un cliente con pedidos activos.");
+    showToast("No puedes eliminar un cliente con eventos activos.");
     return;
   }
   if (!confirm(`¿Eliminar cliente ${client.name}?`)) return;
@@ -1424,6 +1624,8 @@ function bindEvents() {
   });
 
   els.addOrderItem.addEventListener("click", addDraftItem);
+  els.orderClient.addEventListener("change", updateManualOrderFields);
+  els.orderInventory.addEventListener("change", updateManualOrderFields);
   els.orderForm.addEventListener("submit", createOrder);
   els.inventoryForm.addEventListener("submit", createInventoryItem);
   els.cancelItemEdit.addEventListener("click", cancelInventoryEdit);
@@ -1457,7 +1659,7 @@ function bindEvents() {
     const returnOrder = event.target.closest("[data-return-order]");
     if (returnOrder) {
       if (!canManageOrders()) {
-        showToast("Solo supervisor o admin puede modificar pedidos.");
+        showToast("Solo supervisor o admin puede modificar eventos.");
         return;
       }
       openReturnDialog(returnOrder.dataset.returnOrder);
@@ -1487,20 +1689,20 @@ function bindEvents() {
     const cancelOrder = event.target.closest("[data-cancel-order]");
     if (cancelOrder) {
       if (!canManageOrders()) {
-        showToast("Solo supervisor o admin puede cancelar pedidos.");
+        showToast("Solo supervisor o admin puede cancelar eventos.");
         return;
       }
       const order = state.orders.find((entry) => entry.id === cancelOrder.dataset.cancelOrder);
-      if (order && order.status !== "Devuelto" && confirm("¿Cancelar este pedido y liberar inventario?")) {
+      if (order && order.status !== "Devuelto" && confirm("¿Cancelar este evento y liberar inventario?")) {
         order.status = "Cancelado";
         order.cancelledBy = currentActor().uid;
         order.cancelledByName = currentActor().name;
         await persistDoc("orders", order);
-        await logActivity("Cancelo pedido", "orders", order.id, getClient(order.clientId)?.name || order.id, {
+        await logActivity("Cancelo evento", "orders", order.id, getClient(order.clientId)?.name || order.id, {
           items: order.items.map((item) => `${item.name} x${item.quantity}`),
         });
         renderAll();
-        showToast("Pedido cancelado.");
+        showToast("Evento cancelado.");
       }
       return;
     }

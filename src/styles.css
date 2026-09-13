@@ -444,7 +444,9 @@ textarea:focus {
 }
 
 .inline-add {
+  display: flex;
   align-items: stretch;
+  gap: 10px;
 }
 
 .inline-add select {
@@ -453,6 +455,16 @@ textarea:focus {
 
 .inline-add input {
   width: 84px;
+}
+
+.manual-fields {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  padding: 14px;
+  border: 1px solid rgba(90, 247, 255, 0.2);
+  border-radius: 16px;
+  background: rgba(90, 247, 255, 0.045);
 }
 
 .primary-button {
@@ -587,6 +599,45 @@ td {
 
 .inventory-grid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.events-board,
+.event-list {
+  display: grid;
+  gap: 14px;
+}
+
+.event-section {
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.event-card {
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.055);
+}
+
+.event-tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.event-card-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(120px, 0.5fr) minmax(150px, 0.8fr);
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.event-card-grid > div {
+  display: grid;
+  gap: 6px;
 }
 
 .inventory-meta,
@@ -746,7 +797,8 @@ code {
   .inventory-layout,
   .clients-layout,
   .import-layout,
-  .firebase-grid {
+  .firebase-grid,
+  .event-card-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
@@ -779,7 +831,9 @@ code {
   .firebase-grid,
   .form-grid,
   .form-grid.compact,
-  .inventory-grid {
+  .inventory-grid,
+  .manual-fields,
+  .event-card-grid {
     grid-template-columns: 1fr;
   }
 

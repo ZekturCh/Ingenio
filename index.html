@@ -30,11 +30,11 @@
         <nav class="nav-list" aria-label="Secciones">
           <button class="nav-item active" data-view="dashboard">
             <i data-lucide="layout-dashboard"></i>
-            Panel
+            CREAR EVENTO
           </button>
           <button class="nav-item" data-view="orders">
             <i data-lucide="clipboard-list"></i>
-            Pedidos
+            EVENTOS
           </button>
           <button class="nav-item" data-view="inventory">
             <i data-lucide="boxes"></i>
@@ -94,16 +94,30 @@
             <section class="panel primary-panel">
               <div class="panel-heading">
                 <div>
-                  <p class="eyebrow">Registrar salida</p>
-                  <h2>Nuevo pedido</h2>
+                  <p class="eyebrow">Registrar evento</p>
+                  <h2>Nuevo evento</h2>
                 </div>
                 <span class="status-pill" id="availabilityPill">Listo</span>
               </div>
               <form id="orderForm" class="form-grid">
-                <label>
+                <label class="full-span">
                   Cliente
                   <select id="orderClient" required></select>
                 </label>
+                <div class="manual-fields full-span is-hidden" id="newClientFields">
+                  <label>
+                    Cliente nuevo
+                    <input id="orderNewClientName" type="text" placeholder="Nombre o empresa" />
+                  </label>
+                  <label>
+                    Telefono
+                    <input id="orderNewClientPhone" type="text" placeholder="+57..." />
+                  </label>
+                  <label class="full-span">
+                    Notas del cliente
+                    <textarea id="orderNewClientNotes" rows="2" placeholder="Direccion, condiciones o referencias"></textarea>
+                  </label>
+                </div>
                 <label>
                   Fecha salida
                   <input id="orderStart" type="date" required />
@@ -135,6 +149,35 @@
                     </button>
                   </div>
                 </label>
+                <div class="manual-fields full-span is-hidden" id="newItemFields">
+                  <label>
+                    Item nuevo
+                    <input id="orderNewItemName" type="text" placeholder="Traje, cabeza, accesorio..." />
+                  </label>
+                  <label>
+                    Categoria
+                    <select id="orderNewItemCategory">
+                      <option>Traje completo</option>
+                      <option>Cabeza</option>
+                      <option>Calzado</option>
+                      <option>Accesorio</option>
+                      <option>Vestuario</option>
+                      <option>Equipo evento</option>
+                    </select>
+                  </label>
+                  <label>
+                    Stock total
+                    <input id="orderNewItemStock" type="number" min="1" value="1" />
+                  </label>
+                  <label class="full-span">
+                    Checklist incluido
+                    <textarea id="orderNewItemChecklist" rows="3" placeholder="Cabeza&#10;Cuerpo&#10;Guantes"></textarea>
+                  </label>
+                  <label class="full-span">
+                    Notas del item
+                    <textarea id="orderNewItemNotes" rows="2" placeholder="Estado u observaciones"></textarea>
+                  </label>
+                </div>
                 <div class="full-span order-builder" id="orderBuilder"></div>
                 <label class="full-span">
                   Observaciones
@@ -143,7 +186,7 @@
                 <div class="form-actions full-span">
                   <button type="submit" class="primary-button">
                     <i data-lucide="send"></i>
-                    Guardar pedido
+                    Guardar evento
                   </button>
                 </div>
               </form>
@@ -153,7 +196,7 @@
               <div class="panel-heading">
                 <div>
                   <p class="eyebrow">Hoy</p>
-                  <h2>Pedidos activos</h2>
+                  <h2>Eventos activos</h2>
                 </div>
               </div>
               <div class="stack-list" id="activeOrders"></div>
@@ -166,7 +209,7 @@
             <div class="panel-heading">
               <div>
                 <p class="eyebrow">Seguimiento</p>
-                <h2>Pedidos</h2>
+                <h2>Eventos</h2>
               </div>
               <div class="filter-row">
                 <input id="orderSearch" type="search" placeholder="Buscar cliente, item o estado" />
@@ -179,22 +222,7 @@
                 </select>
               </div>
             </div>
-            <div class="table-wrap">
-              <table>
-                <thead>
-                  <tr>
-                    <th>Pedido</th>
-                    <th>Cliente</th>
-                    <th>Fechas</th>
-                    <th>Items</th>
-                    <th>Pago</th>
-                    <th>Estado</th>
-                    <th>Acciones</th>
-                  </tr>
-                </thead>
-                <tbody id="ordersTable"></tbody>
-              </table>
-            </div>
+            <div class="events-board" id="eventsBoard"></div>
           </div>
         </section>
 
@@ -417,7 +445,7 @@ Traje Astronauta,Traje completo,2,Casco;Overol;Guantes;Botas,Revisar visor antes
               <div class="panel-heading">
                 <div>
                   <p class="eyebrow">Admin</p>
-                  <h2>Pedidos críticos</h2>
+                  <h2>Eventos críticos</h2>
                 </div>
               </div>
               <div class="stack-list" id="supervisionOrders"></div>
