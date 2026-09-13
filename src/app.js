@@ -94,11 +94,20 @@ const els = {
   metricsGrid: document.querySelector("#metricsGrid"),
   activeOrders: document.querySelector("#activeOrders"),
   orderForm: document.querySelector("#orderForm"),
+  orderPartyModes: document.querySelectorAll('input[name="orderPartyMode"]'),
+  clientSelectorField: document.querySelector("#clientSelectorField"),
+  clientCoordinatorField: document.querySelector("#clientCoordinatorField"),
+  orderClientCoordinator: document.querySelector("#orderClientCoordinator"),
   orderClient: document.querySelector("#orderClient"),
   newClientFields: document.querySelector("#newClientFields"),
   orderNewClientName: document.querySelector("#orderNewClientName"),
   orderNewClientPhone: document.querySelector("#orderNewClientPhone"),
   orderNewClientNotes: document.querySelector("#orderNewClientNotes"),
+  contactFields: document.querySelector("#contactFields"),
+  orderContactName: document.querySelector("#orderContactName"),
+  orderContactPhone: document.querySelector("#orderContactPhone"),
+  orderContactReason: document.querySelector("#orderContactReason"),
+  orderContactNotes: document.querySelector("#orderContactNotes"),
   orderStart: document.querySelector("#orderStart"),
   orderEnd: document.querySelector("#orderEnd"),
   orderOwner: document.querySelector("#orderOwner"),
@@ -513,6 +522,36 @@ function getClient(clientId) {
   return state.clients.find((client) => client.id === clientId);
 }
 
+function orderPartyMode() {
+  return document.querySelector('input[name="orderPartyMode"]:checked')?.value || "client";
+}
+
+function getOrderParty(order) {
+  if (order.partyType === "contact") {
+    return {
+      name: order.contact?.name || "Contacto sin nombre",
+      phone: order.contact?.phone || "",
+      label: order.contact?.reason || "Contacto",
+      notes: order.contact?.notes || "",
+      isContact: true,
+    };
+  }
+
+  const client = getClient(order.clientId);
+  return {
+    name: client?.name || "Cliente eliminado",
+    phone: client?.phone || "",
+    label: "Cliente",
+    coordinatorName: order.coordinatorName || "",
+    notes: client?.notes || "",
+    isContact: false,
+  };
+}
+
+function orderLabel(order) {
+  return getOrderParty(order).name || order.id;
+}
+
 function activeOrders() {
   return state.orders.filter((order) => order.status !== "Devuelto" && order.status !== "Cancelado");
 }
@@ -580,7 +619,11 @@ function renderSelects() {
 }
 
 function updateManualOrderFields() {
-  els.newClientFields?.classList.toggle("is-hidden", els.orderClient.value !== "__new_client__");
+  const isContact = orderPartyMode() === "contact";
+  els.clientSelectorField?.classList.toggle("is-hidden", isContact);
+  els.clientCoordinatorField?.classList.toggle("is-hidden", isContact);
+  els.contactFields?.classList.toggle("is-hidden", !isContact);
+  els.newClientFields?.classList.toggle("is-hidden", isContact || els.orderClient.value !== "__new_client__");
   els.newItemFields?.classList.toggle("is-hidden", els.orderInventory.value !== "__new_item__");
 }
 
@@ -643,18 +686,19 @@ function renderActiveOrders() {
 
   els.activeOrders.innerHTML = active
     .map((order) => {
-      const client = getClient(order.clientId);
+      const party = getOrderParty(order);
       const status = orderState(order);
       return `
         <article class="order-card">
           <div class="panel-heading">
             <div>
-              <h3>${escapeHtml(client?.name || "Cliente eliminado")}</h3>
-              <p class="muted">${order.startDate} → ${order.endDate}</p>
+              <h3>${escapeHtml(party.name)}</h3>
+              <p class="muted">${escapeHtml(party.label)} · ${order.startDate} → ${order.endDate}</p>
             </div>
             <span class="tag ${status === "Vencido" ? "danger" : "ok"}">${status}</span>
           </div>
           <div class="chips">
+            ${party.coordinatorName ? `<span class="chip">Coord. ${escapeHtml(party.coordinatorName)}</span>` : ""}
             ${order.items.map((item) => `<span class="chip">${escapeHtml(item.name)} x${item.quantity}</span>`).join("")}
           </div>
         </article>
@@ -668,12 +712,15 @@ function renderOrdersTable() {
   const filter = els.orderStatusFilter.value;
   const week = currentWeekRange();
   const rows = state.orders
-    .map((order) => ({ ...order, computedStatus: orderState(order), client: getClient(order.clientId) }))
+    .map((order) => ({ ...order, computedStatus: orderState(order), party: getOrderParty(order) }))
     .filter((order) => filter === "all" || order.computedStatus === filter)
     .filter((order) => {
       const searchable = [
         order.id,
-        order.client?.name,
+        order.party?.name,
+        order.party?.phone,
+        order.party?.label,
+        order.party?.coordinatorName,
         order.computedStatus,
         order.items.map((item) => item.name).join(" "),
       ].join(" ").toLowerCase();
@@ -745,12 +792,13 @@ function renderEventCard(order) {
     <article class="event-card">
       <div class="panel-heading">
         <div>
-          <h3>${escapeHtml(order.client?.name || "Cliente eliminado")}</h3>
-          <p class="muted">${order.startDate} → ${order.endDate} · Creado por: ${escapeHtml(order.createdByName || order.owner || "Sin usuario")}</p>
+          <h3>${escapeHtml(order.party?.name || "Sin contacto")}</h3>
+          <p class="muted">${escapeHtml(order.party?.label || "Cliente")} · ${order.startDate} → ${order.endDate} · Creado por: ${escapeHtml(order.createdByName || order.owner || "Sin usuario")}</p>
         </div>
         <div class="event-tags">
           <span class="tag ${statusClass}">${order.computedStatus}</span>
           <span class="tag ${unpaid ? "warn" : "ok"}">${order.paid ? "Pagado" : "Pago pendiente"}</span>
+          ${order.party?.coordinatorName ? `<span class="tag">Coord. ${escapeHtml(order.party.coordinatorName)}</span>` : ""}
         </div>
       </div>
       <div class="event-card-grid">
@@ -941,7 +989,7 @@ function renderSupervisionOrders() {
   }
 
   const watched = state.orders
-    .map((order) => ({ ...order, client: getClient(order.clientId), computedStatus: orderState(order) }))
+    .map((order) => ({ ...order, party: getOrderParty(order), computedStatus: orderState(order) }))
     .filter((order) => order.computedStatus === "Vencido" || (order.status === "Devuelto" && Number(order.amount || 0) > 0 && !order.paid) || order.status === "Activo")
     .sort((a, b) => String(b.createdAt).localeCompare(String(a.createdAt)));
 
@@ -953,8 +1001,8 @@ function renderSupervisionOrders() {
             <article class="order-card">
               <div class="panel-heading">
                 <div>
-                  <h3>${escapeHtml(order.client?.name || "Cliente eliminado")}</h3>
-                  <p class="muted">${order.startDate} → ${order.endDate} · ${escapeHtml(order.createdByName || order.owner || "Sin usuario")}</p>
+                  <h3>${escapeHtml(order.party?.name || "Sin contacto")}</h3>
+                  <p class="muted">${escapeHtml(order.party?.label || "Cliente")} · ${order.startDate} → ${order.endDate} · ${escapeHtml(order.createdByName || order.owner || "Sin usuario")}</p>
                 </div>
                 <span class="tag ${order.computedStatus === "Vencido" || unpaidReturned ? "danger" : "ok"}">${unpaidReturned ? "Devuelto sin pago" : order.computedStatus}</span>
               </div>
@@ -1056,9 +1104,27 @@ async function createOrder(event) {
     return;
   }
 
-  let clientId = els.orderClient.value;
-  let clientName = getClient(clientId)?.name || "";
-  if (clientId === "__new_client__") {
+  const partyMode = orderPartyMode();
+  let clientId = partyMode === "client" ? els.orderClient.value : "";
+  let clientName = partyMode === "client" ? getClient(clientId)?.name || "" : els.orderContactName.value.trim();
+  let contact = null;
+  let coordinatorName = "";
+
+  if (partyMode === "contact") {
+    if (!clientName) {
+      showToast("Escribe el nombre del contacto.");
+      els.orderContactName.focus();
+      return;
+    }
+    contact = {
+      name: clientName,
+      phone: els.orderContactPhone.value.trim(),
+      reason: els.orderContactReason.value,
+      notes: els.orderContactNotes.value.trim(),
+    };
+  }
+
+  if (partyMode === "client" && clientId === "__new_client__") {
     clientName = els.orderNewClientName.value.trim();
     if (!clientName) {
       showToast("Escribe el nombre del cliente nuevo.");
@@ -1083,6 +1149,9 @@ async function createOrder(event) {
     clientId = client.id;
     await logActivity("Creo cliente", "clients", client.id, client.name, { source: "evento" });
   }
+  if (partyMode === "client") {
+    coordinatorName = els.orderClientCoordinator.value.trim();
+  }
 
   const newInventoryItems = draftOrderItems
     .filter((item) => item.isNewInventory && item.inventoryRecord)
@@ -1099,7 +1168,10 @@ async function createOrder(event) {
   const orderItems = draftOrderItems.map(({ inventoryRecord, isNewInventory, ...item }) => item);
   const order = {
     id: uid("ord"),
-    clientId,
+    partyType: partyMode,
+    clientId: partyMode === "client" ? clientId : "",
+    contact,
+    coordinatorName,
     startDate: els.orderStart.value,
     endDate: els.orderEnd.value,
     owner: els.orderOwner.value.trim(),
@@ -1136,7 +1208,7 @@ async function createOrder(event) {
   els.orderForm.reset();
   setDefaultDates();
   saveState();
-  await logActivity("Creo evento", "orders", order.id, clientName || getClient(order.clientId)?.name || order.id, {
+  await logActivity("Creo evento", "orders", order.id, clientName || orderLabel(order), {
     items: order.items.map((item) => `${item.name} x${item.quantity}`),
     amount: order.amount,
     paid: order.paid,
@@ -1387,7 +1459,7 @@ async function closeReturn(event) {
   currentReturnOrderId = null;
   els.returnDialog.close();
   saveState();
-  await logActivity("Cerro devolucion", "orders", order.id, getClient(order.clientId)?.name || order.id, {
+  await logActivity("Cerro devolucion", "orders", order.id, orderLabel(order), {
     returnedAt: order.returnedAt,
     paid: order.paid,
     missing: order.items.flatMap((item) => item.checklist.filter((piece) => !piece.returned).map((piece) => `${item.name}: ${piece.name}`)),
@@ -1624,6 +1696,7 @@ function bindEvents() {
   });
 
   els.addOrderItem.addEventListener("click", addDraftItem);
+  els.orderPartyModes.forEach((input) => input.addEventListener("change", updateManualOrderFields));
   els.orderClient.addEventListener("change", updateManualOrderFields);
   els.orderInventory.addEventListener("change", updateManualOrderFields);
   els.orderForm.addEventListener("submit", createOrder);
@@ -1676,7 +1749,7 @@ function bindEvents() {
       if (order) {
         order.paid = !order.paid;
         await persistDoc("orders", order);
-        await logActivity(order.paid ? "Marco pago" : "Marco pago pendiente", "orders", order.id, getClient(order.clientId)?.name || order.id, {
+        await logActivity(order.paid ? "Marco pago" : "Marco pago pendiente", "orders", order.id, orderLabel(order), {
           amount: order.amount,
           paid: order.paid,
         });
@@ -1698,7 +1771,7 @@ function bindEvents() {
         order.cancelledBy = currentActor().uid;
         order.cancelledByName = currentActor().name;
         await persistDoc("orders", order);
-        await logActivity("Cancelo evento", "orders", order.id, getClient(order.clientId)?.name || order.id, {
+        await logActivity("Cancelo evento", "orders", order.id, orderLabel(order), {
           items: order.items.map((item) => `${item.name} x${item.quantity}`),
         });
         renderAll();

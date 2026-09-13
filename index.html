@@ -100,9 +100,23 @@
                 <span class="status-pill" id="availabilityPill">Listo</span>
               </div>
               <form id="orderForm" class="form-grid">
-                <label class="full-span">
+                <div class="mode-toggle full-span" role="group" aria-label="Tipo de responsable">
+                  <label>
+                    <input type="radio" name="orderPartyMode" value="client" checked />
+                    Cliente
+                  </label>
+                  <label>
+                    <input type="radio" name="orderPartyMode" value="contact" />
+                    Contacto
+                  </label>
+                </div>
+                <label class="full-span" id="clientSelectorField">
                   Cliente
                   <select id="orderClient" required></select>
+                </label>
+                <label class="full-span" id="clientCoordinatorField">
+                  Coordinador encargado
+                  <input id="orderClientCoordinator" type="text" placeholder="Nombre del coordinador" />
                 </label>
                 <div class="manual-fields full-span is-hidden" id="newClientFields">
                   <label>
@@ -116,6 +130,30 @@
                   <label class="full-span">
                     Notas del cliente
                     <textarea id="orderNewClientNotes" rows="2" placeholder="Direccion, condiciones o referencias"></textarea>
+                  </label>
+                </div>
+                <div class="manual-fields full-span is-hidden" id="contactFields">
+                  <label>
+                    Contacto
+                    <input id="orderContactName" type="text" placeholder="Persona o responsable" />
+                  </label>
+                  <label>
+                    Telefono
+                    <input id="orderContactPhone" type="text" placeholder="+57..." />
+                  </label>
+                  <label>
+                    Motivo
+                    <select id="orderContactReason">
+                      <option value="Servicio show">Servicio show</option>
+                      <option value="Hora loca">Hora loca</option>
+                      <option value="Reparacion">Reparacion</option>
+                      <option value="Coordinacion">Coordinacion</option>
+                      <option value="Otro">Otro</option>
+                    </select>
+                  </label>
+                  <label class="full-span">
+                    Notas del contacto
+                    <textarea id="orderContactNotes" rows="2" placeholder="Lugar, coordinacion, reparacion o detalle del servicio"></textarea>
                   </label>
                 </div>
                 <label>
