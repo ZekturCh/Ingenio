@@ -493,6 +493,23 @@ textarea:focus {
   background: rgba(90, 247, 255, 0.045);
 }
 
+.compact-heading {
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.coordinator-box,
+.coordinator-list {
+  display: grid;
+  gap: 10px;
+}
+
+.coordinator-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 8px;
+}
+
 .primary-button {
   min-width: 150px;
   padding: 0 16px;
@@ -865,6 +882,10 @@ code {
 
   .inline-add input {
     width: 100%;
+  }
+
+  .coordinator-row {
+    grid-template-columns: 1fr;
   }
 
   .topbar h1 {

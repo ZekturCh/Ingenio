@@ -96,18 +96,17 @@ const els = {
   orderForm: document.querySelector("#orderForm"),
   orderPartyModes: document.querySelectorAll('input[name="orderPartyMode"]'),
   clientSelectorField: document.querySelector("#clientSelectorField"),
-  clientCoordinatorField: document.querySelector("#clientCoordinatorField"),
-  orderClientCoordinator: document.querySelector("#orderClientCoordinator"),
   orderClient: document.querySelector("#orderClient"),
   newClientFields: document.querySelector("#newClientFields"),
   orderNewClientName: document.querySelector("#orderNewClientName"),
   orderNewClientPhone: document.querySelector("#orderNewClientPhone"),
   orderNewClientNotes: document.querySelector("#orderNewClientNotes"),
-  contactFields: document.querySelector("#contactFields"),
-  orderContactName: document.querySelector("#orderContactName"),
-  orderContactPhone: document.querySelector("#orderContactPhone"),
-  orderContactReason: document.querySelector("#orderContactReason"),
-  orderContactNotes: document.querySelector("#orderContactNotes"),
+  spectacleFields: document.querySelector("#spectacleFields"),
+  orderSpectacleName: document.querySelector("#orderSpectacleName"),
+  orderSpectaclePhone: document.querySelector("#orderSpectaclePhone"),
+  orderSpectacleNotes: document.querySelector("#orderSpectacleNotes"),
+  coordinatorList: document.querySelector("#coordinatorList"),
+  addCoordinator: document.querySelector("#addCoordinator"),
   orderStart: document.querySelector("#orderStart"),
   orderEnd: document.querySelector("#orderEnd"),
   orderOwner: document.querySelector("#orderOwner"),
@@ -523,10 +522,21 @@ function getClient(clientId) {
 }
 
 function orderPartyMode() {
-  return document.querySelector('input[name="orderPartyMode"]:checked')?.value || "client";
+  return document.querySelector('input[name="orderPartyMode"]:checked')?.value || "spectacle";
 }
 
 function getOrderParty(order) {
+  if (order.partyType === "spectacle") {
+    return {
+      name: order.spectacle?.name || "Espectaculo sin nombre",
+      phone: order.spectacle?.phone || "",
+      label: "Espectaculo",
+      notes: order.spectacle?.notes || "",
+      coordinators: order.spectacle?.coordinators || [],
+      isSpectacle: true,
+    };
+  }
+
   if (order.partyType === "contact") {
     return {
       name: order.contact?.name || "Contacto sin nombre",
@@ -539,10 +549,9 @@ function getOrderParty(order) {
 
   const client = getClient(order.clientId);
   return {
-    name: client?.name || "Cliente eliminado",
+    name: client?.name || "Contacto eliminado",
     phone: client?.phone || "",
-    label: "Cliente",
-    coordinatorName: order.coordinatorName || "",
+    label: "Servicio",
     notes: client?.notes || "",
     isContact: false,
   };
@@ -600,7 +609,7 @@ function renderSelects() {
   els.orderClient.innerHTML = state.clients
     .map((client) => `<option value="${client.id}">${escapeHtml(client.name)}</option>`)
     .join("");
-  els.orderClient.insertAdjacentHTML("afterbegin", `<option value="__new_client__">+ Crear cliente nuevo</option>`);
+  els.orderClient.insertAdjacentHTML("afterbegin", `<option value="__new_client__">+ Crear contacto nuevo</option>`);
   if (selectedClient && [...els.orderClient.options].some((option) => option.value === selectedClient)) {
     els.orderClient.value = selectedClient;
   }
@@ -619,12 +628,31 @@ function renderSelects() {
 }
 
 function updateManualOrderFields() {
-  const isContact = orderPartyMode() === "contact";
-  els.clientSelectorField?.classList.toggle("is-hidden", isContact);
-  els.clientCoordinatorField?.classList.toggle("is-hidden", isContact);
-  els.contactFields?.classList.toggle("is-hidden", !isContact);
-  els.newClientFields?.classList.toggle("is-hidden", isContact || els.orderClient.value !== "__new_client__");
+  const isSpectacle = orderPartyMode() === "spectacle";
+  els.clientSelectorField?.classList.toggle("is-hidden", isSpectacle);
+  els.spectacleFields?.classList.toggle("is-hidden", !isSpectacle);
+  els.newClientFields?.classList.toggle("is-hidden", isSpectacle || els.orderClient.value !== "__new_client__");
   els.newItemFields?.classList.toggle("is-hidden", els.orderInventory.value !== "__new_item__");
+}
+
+function addCoordinatorInput() {
+  const row = document.createElement("div");
+  row.className = "coordinator-row";
+  row.innerHTML = `
+    <input class="coordinator-input" type="text" placeholder="Nombre del coordinador" />
+    <button type="button" class="mini-button" data-remove-coordinator>Quitar</button>
+  `;
+  els.coordinatorList.appendChild(row);
+}
+
+function getCoordinatorNames() {
+  return [...els.coordinatorList.querySelectorAll(".coordinator-input")]
+    .map((input) => input.value.trim())
+    .filter(Boolean);
+}
+
+function resetCoordinatorInputs() {
+  els.coordinatorList.innerHTML = `<input class="coordinator-input" type="text" placeholder="Nombre del coordinador" />`;
 }
 
 function renderMetrics() {
@@ -698,7 +726,7 @@ function renderActiveOrders() {
             <span class="tag ${status === "Vencido" ? "danger" : "ok"}">${status}</span>
           </div>
           <div class="chips">
-            ${party.coordinatorName ? `<span class="chip">Coord. ${escapeHtml(party.coordinatorName)}</span>` : ""}
+            ${(party.coordinators || []).map((name) => `<span class="chip">Coord. ${escapeHtml(name)}</span>`).join("")}
             ${order.items.map((item) => `<span class="chip">${escapeHtml(item.name)} x${item.quantity}</span>`).join("")}
           </div>
         </article>
@@ -720,7 +748,7 @@ function renderOrdersTable() {
         order.party?.name,
         order.party?.phone,
         order.party?.label,
-        order.party?.coordinatorName,
+        (order.party?.coordinators || []).join(" "),
         order.computedStatus,
         order.items.map((item) => item.name).join(" "),
       ].join(" ").toLowerCase();
@@ -793,12 +821,12 @@ function renderEventCard(order) {
       <div class="panel-heading">
         <div>
           <h3>${escapeHtml(order.party?.name || "Sin contacto")}</h3>
-          <p class="muted">${escapeHtml(order.party?.label || "Cliente")} · ${order.startDate} → ${order.endDate} · Creado por: ${escapeHtml(order.createdByName || order.owner || "Sin usuario")}</p>
+          <p class="muted">${escapeHtml(order.party?.label || "Servicio")} · ${order.startDate} → ${order.endDate} · Creado por: ${escapeHtml(order.createdByName || order.owner || "Sin usuario")}</p>
         </div>
         <div class="event-tags">
           <span class="tag ${statusClass}">${order.computedStatus}</span>
           <span class="tag ${unpaid ? "warn" : "ok"}">${order.paid ? "Pagado" : "Pago pendiente"}</span>
-          ${order.party?.coordinatorName ? `<span class="tag">Coord. ${escapeHtml(order.party.coordinatorName)}</span>` : ""}
+          ${(order.party?.coordinators || []).map((name) => `<span class="tag">Coord. ${escapeHtml(name)}</span>`).join("")}
         </div>
       </div>
       <div class="event-card-grid">
@@ -1002,7 +1030,7 @@ function renderSupervisionOrders() {
               <div class="panel-heading">
                 <div>
                   <h3>${escapeHtml(order.party?.name || "Sin contacto")}</h3>
-                  <p class="muted">${escapeHtml(order.party?.label || "Cliente")} · ${order.startDate} → ${order.endDate} · ${escapeHtml(order.createdByName || order.owner || "Sin usuario")}</p>
+                  <p class="muted">${escapeHtml(order.party?.label || "Servicio")} · ${order.startDate} → ${order.endDate} · ${escapeHtml(order.createdByName || order.owner || "Sin usuario")}</p>
                 </div>
                 <span class="tag ${order.computedStatus === "Vencido" || unpaidReturned ? "danger" : "ok"}">${unpaidReturned ? "Devuelto sin pago" : order.computedStatus}</span>
               </div>
@@ -1105,35 +1133,34 @@ async function createOrder(event) {
   }
 
   const partyMode = orderPartyMode();
-  let clientId = partyMode === "client" ? els.orderClient.value : "";
-  let clientName = partyMode === "client" ? getClient(clientId)?.name || "" : els.orderContactName.value.trim();
-  let contact = null;
-  let coordinatorName = "";
+  let clientId = partyMode === "service" ? els.orderClient.value : "";
+  let partyName = partyMode === "service" ? getClient(clientId)?.name || "" : els.orderSpectacleName.value.trim();
+  let spectacle = null;
 
-  if (partyMode === "contact") {
-    if (!clientName) {
-      showToast("Escribe el nombre del contacto.");
-      els.orderContactName.focus();
+  if (partyMode === "spectacle") {
+    if (!partyName) {
+      showToast("Escribe el nombre del evento.");
+      els.orderSpectacleName.focus();
       return;
     }
-    contact = {
-      name: clientName,
-      phone: els.orderContactPhone.value.trim(),
-      reason: els.orderContactReason.value,
-      notes: els.orderContactNotes.value.trim(),
+    spectacle = {
+      name: partyName,
+      phone: els.orderSpectaclePhone.value.trim(),
+      coordinators: getCoordinatorNames(),
+      notes: els.orderSpectacleNotes.value.trim(),
     };
   }
 
-  if (partyMode === "client" && clientId === "__new_client__") {
-    clientName = els.orderNewClientName.value.trim();
-    if (!clientName) {
-      showToast("Escribe el nombre del cliente nuevo.");
+  if (partyMode === "service" && clientId === "__new_client__") {
+    partyName = els.orderNewClientName.value.trim();
+    if (!partyName) {
+      showToast("Escribe el nombre del contacto nuevo.");
       els.orderNewClientName.focus();
       return;
     }
     const client = {
       id: uid("cli"),
-      name: clientName,
+      name: partyName,
       phone: els.orderNewClientPhone.value.trim(),
       notes: els.orderNewClientNotes.value.trim(),
       createdAt: todayISO(),
@@ -1147,10 +1174,7 @@ async function createOrder(event) {
     if (!clientSaved) return;
     state.clients.push(client);
     clientId = client.id;
-    await logActivity("Creo cliente", "clients", client.id, client.name, { source: "evento" });
-  }
-  if (partyMode === "client") {
-    coordinatorName = els.orderClientCoordinator.value.trim();
+    await logActivity("Creo contacto", "clients", client.id, client.name, { source: "servicio" });
   }
 
   const newInventoryItems = draftOrderItems
@@ -1169,9 +1193,8 @@ async function createOrder(event) {
   const order = {
     id: uid("ord"),
     partyType: partyMode,
-    clientId: partyMode === "client" ? clientId : "",
-    contact,
-    coordinatorName,
+    clientId: partyMode === "service" ? clientId : "",
+    spectacle,
     startDate: els.orderStart.value,
     endDate: els.orderEnd.value,
     owner: els.orderOwner.value.trim(),
@@ -1206,9 +1229,10 @@ async function createOrder(event) {
 
   draftOrderItems = [];
   els.orderForm.reset();
+  resetCoordinatorInputs();
   setDefaultDates();
   saveState();
-  await logActivity("Creo evento", "orders", order.id, clientName || orderLabel(order), {
+  await logActivity("Creo evento", "orders", order.id, partyName || orderLabel(order), {
     items: order.items.map((item) => `${item.name} x${item.quantity}`),
     amount: order.amount,
     paid: order.paid,
@@ -1696,6 +1720,7 @@ function bindEvents() {
   });
 
   els.addOrderItem.addEventListener("click", addDraftItem);
+  els.addCoordinator.addEventListener("click", addCoordinatorInput);
   els.orderPartyModes.forEach((input) => input.addEventListener("change", updateManualOrderFields));
   els.orderClient.addEventListener("change", updateManualOrderFields);
   els.orderInventory.addEventListener("change", updateManualOrderFields);
@@ -1726,6 +1751,12 @@ function bindEvents() {
     if (removeDraft) {
       draftOrderItems.splice(Number(removeDraft.dataset.removeDraft), 1);
       renderAll();
+      return;
+    }
+
+    const removeCoordinator = event.target.closest("[data-remove-coordinator]");
+    if (removeCoordinator) {
+      removeCoordinator.closest(".coordinator-row")?.remove();
       return;
     }
 
