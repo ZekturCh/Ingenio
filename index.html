@@ -110,8 +110,8 @@
                     Servicio
                   </label>
                 </div>
-                <label class="full-span" id="clientSelectorField">
-                  Contacto de servicio
+                <label class="full-span is-hidden" id="clientSelectorField">
+                  Cliente / contacto de servicio
                   <select id="orderClient" required></select>
                 </label>
                 <div class="manual-fields full-span is-hidden" id="newClientFields">
@@ -142,7 +142,7 @@
                       <div>
                         <span class="muted">Coordinadores</span>
                       </div>
-                      <button type="button" class="mini-button" id="addCoordinator">Agregar coordinador</button>
+                      <button type="button" class="mini-button icon-mini" id="addCoordinator" title="Agregar coordinador" aria-label="Agregar coordinador">+</button>
                     </div>
                     <div class="coordinator-list" id="coordinatorList">
                       <input class="coordinator-input" type="text" placeholder="Nombre del coordinador" />
@@ -153,23 +153,27 @@
                     <textarea id="orderSpectacleNotes" rows="2" placeholder="Lugar, coordinacion o detalle del show"></textarea>
                   </label>
                 </div>
-                <label>
-                  Fecha salida
+                <label id="orderStartField">
+                  <span id="orderStartText">Fecha del evento</span>
                   <input id="orderStart" type="date" required />
                 </label>
-                <label>
+                <label id="spectacleTimeField" data-spectacle-only>
+                  Hora del espectaculo
+                  <input id="orderSpectacleTime" type="time" />
+                </label>
+                <label id="orderEndField" class="is-hidden" data-service-only>
                   Fecha devolucion
                   <input id="orderEnd" type="date" required />
                 </label>
-                <label>
+                <label id="orderOwnerField" class="is-hidden" data-service-only>
                   Entregado por
                   <input id="orderOwner" type="text" placeholder="Nombre del responsable" />
                 </label>
-                <label>
+                <label id="orderAmountField" class="is-hidden" data-service-only>
                   Monto
                   <input id="orderAmount" type="number" min="0" max="7000" step="0.01" inputmode="decimal" placeholder="Opcional" />
                 </label>
-                <label class="check-row">
+                <label class="check-row is-hidden" id="orderPaidField" data-service-only>
                   <input id="orderPaid" type="checkbox" />
                   <span>Pago recibido</span>
                 </label>

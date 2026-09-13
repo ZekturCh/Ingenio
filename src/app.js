@@ -95,6 +95,8 @@ const els = {
   activeOrders: document.querySelector("#activeOrders"),
   orderForm: document.querySelector("#orderForm"),
   orderPartyModes: document.querySelectorAll('input[name="orderPartyMode"]'),
+  serviceOnlyFields: document.querySelectorAll("[data-service-only]"),
+  spectacleOnlyFields: document.querySelectorAll("[data-spectacle-only]"),
   clientSelectorField: document.querySelector("#clientSelectorField"),
   orderClient: document.querySelector("#orderClient"),
   newClientFields: document.querySelector("#newClientFields"),
@@ -104,9 +106,11 @@ const els = {
   spectacleFields: document.querySelector("#spectacleFields"),
   orderSpectacleName: document.querySelector("#orderSpectacleName"),
   orderSpectaclePhone: document.querySelector("#orderSpectaclePhone"),
+  orderSpectacleTime: document.querySelector("#orderSpectacleTime"),
   orderSpectacleNotes: document.querySelector("#orderSpectacleNotes"),
   coordinatorList: document.querySelector("#coordinatorList"),
   addCoordinator: document.querySelector("#addCoordinator"),
+  orderStartText: document.querySelector("#orderStartText"),
   orderStart: document.querySelector("#orderStart"),
   orderEnd: document.querySelector("#orderEnd"),
   orderOwner: document.querySelector("#orderOwner"),
@@ -512,7 +516,7 @@ function formatMoney(value) {
   if (!amount) return "Sin monto";
   return new Intl.NumberFormat("es-CO", {
     style: "currency",
-    currency: "COP",
+    currency: "PEN",
     maximumFractionDigits: 0,
   }).format(amount);
 }
@@ -555,6 +559,13 @@ function getOrderParty(order) {
     notes: client?.notes || "",
     isContact: false,
   };
+}
+
+function orderDateLabel(order) {
+  if (order.partyType === "spectacle") {
+    return [order.startDate, order.spectacle?.time].filter(Boolean).join(" · ");
+  }
+  return `${order.startDate} → ${order.endDate}`;
 }
 
 function orderLabel(order) {
@@ -631,6 +642,10 @@ function updateManualOrderFields() {
   const isSpectacle = orderPartyMode() === "spectacle";
   els.clientSelectorField?.classList.toggle("is-hidden", isSpectacle);
   els.spectacleFields?.classList.toggle("is-hidden", !isSpectacle);
+  els.serviceOnlyFields.forEach((field) => field.classList.toggle("is-hidden", isSpectacle));
+  els.spectacleOnlyFields.forEach((field) => field.classList.toggle("is-hidden", !isSpectacle));
+  if (els.orderStartText) els.orderStartText.textContent = isSpectacle ? "Fecha del evento" : "Fecha entrega";
+  if (isSpectacle && els.orderEnd && els.orderStart) els.orderEnd.value = els.orderStart.value;
   els.newClientFields?.classList.toggle("is-hidden", isSpectacle || els.orderClient.value !== "__new_client__");
   els.newItemFields?.classList.toggle("is-hidden", els.orderInventory.value !== "__new_item__");
 }
@@ -721,7 +736,7 @@ function renderActiveOrders() {
           <div class="panel-heading">
             <div>
               <h3>${escapeHtml(party.name)}</h3>
-              <p class="muted">${escapeHtml(party.label)} · ${order.startDate} → ${order.endDate}</p>
+              <p class="muted">${escapeHtml(party.label)} · ${escapeHtml(orderDateLabel(order))}</p>
             </div>
             <span class="tag ${status === "Vencido" ? "danger" : "ok"}">${status}</span>
           </div>
@@ -821,7 +836,7 @@ function renderEventCard(order) {
       <div class="panel-heading">
         <div>
           <h3>${escapeHtml(order.party?.name || "Sin contacto")}</h3>
-          <p class="muted">${escapeHtml(order.party?.label || "Servicio")} · ${order.startDate} → ${order.endDate} · Creado por: ${escapeHtml(order.createdByName || order.owner || "Sin usuario")}</p>
+          <p class="muted">${escapeHtml(order.party?.label || "Servicio")} · ${escapeHtml(orderDateLabel(order))} · Creado por: ${escapeHtml(order.createdByName || order.owner || "Sin usuario")}</p>
         </div>
         <div class="event-tags">
           <span class="tag ${statusClass}">${order.computedStatus}</span>
@@ -1030,7 +1045,7 @@ function renderSupervisionOrders() {
               <div class="panel-heading">
                 <div>
                   <h3>${escapeHtml(order.party?.name || "Sin contacto")}</h3>
-                  <p class="muted">${escapeHtml(order.party?.label || "Servicio")} · ${order.startDate} → ${order.endDate} · ${escapeHtml(order.createdByName || order.owner || "Sin usuario")}</p>
+                  <p class="muted">${escapeHtml(order.party?.label || "Servicio")} · ${escapeHtml(orderDateLabel(order))} · ${escapeHtml(order.createdByName || order.owner || "Sin usuario")}</p>
                 </div>
                 <span class="tag ${order.computedStatus === "Vencido" || unpaidReturned ? "danger" : "ok"}">${unpaidReturned ? "Devuelto sin pago" : order.computedStatus}</span>
               </div>
@@ -1133,22 +1148,49 @@ async function createOrder(event) {
   }
 
   const partyMode = orderPartyMode();
+  const isSpectacle = partyMode === "spectacle";
   let clientId = partyMode === "service" ? els.orderClient.value : "";
   let partyName = partyMode === "service" ? getClient(clientId)?.name || "" : els.orderSpectacleName.value.trim();
   let spectacle = null;
 
-  if (partyMode === "spectacle") {
+  if (isSpectacle) {
     if (!partyName) {
       showToast("Escribe el nombre del evento.");
       els.orderSpectacleName.focus();
       return;
     }
+    const spectaclePhone = els.orderSpectaclePhone.value.trim();
+    if (!spectaclePhone) {
+      showToast("Escribe el telefono de contacto del evento.");
+      els.orderSpectaclePhone.focus();
+      return;
+    }
+    const spectacleTime = els.orderSpectacleTime.value;
+    if (!spectacleTime) {
+      showToast("Selecciona la hora del espectaculo.");
+      els.orderSpectacleTime.focus();
+      return;
+    }
+    const coordinators = getCoordinatorNames();
+    if (!coordinators.length) {
+      showToast("Agrega al menos un coordinador.");
+      els.coordinatorList.querySelector(".coordinator-input")?.focus();
+      return;
+    }
     spectacle = {
       name: partyName,
-      phone: els.orderSpectaclePhone.value.trim(),
-      coordinators: getCoordinatorNames(),
+      phone: spectaclePhone,
+      time: spectacleTime,
+      coordinators,
       notes: els.orderSpectacleNotes.value.trim(),
     };
+  }
+
+  const owner = isSpectacle ? "" : els.orderOwner.value.trim();
+  if (!isSpectacle && !owner) {
+    showToast("Escribe quien entrega al cliente.");
+    els.orderOwner.focus();
+    return;
   }
 
   if (partyMode === "service" && clientId === "__new_client__") {
@@ -1190,16 +1232,17 @@ async function createOrder(event) {
   }
 
   const orderItems = draftOrderItems.map(({ inventoryRecord, isNewInventory, ...item }) => item);
+  const startDate = els.orderStart.value;
   const order = {
     id: uid("ord"),
     partyType: partyMode,
-    clientId: partyMode === "service" ? clientId : "",
+    clientId: isSpectacle ? "" : clientId,
     spectacle,
-    startDate: els.orderStart.value,
-    endDate: els.orderEnd.value,
-    owner: els.orderOwner.value.trim(),
-    amount: Number(els.orderAmount.value || 0),
-    paid: els.orderPaid.checked,
+    startDate,
+    endDate: isSpectacle ? startDate : els.orderEnd.value,
+    owner,
+    amount: isSpectacle ? 0 : Number(els.orderAmount.value || 0),
+    paid: isSpectacle ? false : els.orderPaid.checked,
     status: "Activo",
     notes: els.orderNotes.value.trim(),
     createdAt: todayISO(),
@@ -1722,6 +1765,7 @@ function bindEvents() {
   els.addOrderItem.addEventListener("click", addDraftItem);
   els.addCoordinator.addEventListener("click", addCoordinatorInput);
   els.orderPartyModes.forEach((input) => input.addEventListener("change", updateManualOrderFields));
+  els.orderStart.addEventListener("change", updateManualOrderFields);
   els.orderClient.addEventListener("change", updateManualOrderFields);
   els.orderInventory.addEventListener("change", updateManualOrderFields);
   els.orderForm.addEventListener("submit", createOrder);
