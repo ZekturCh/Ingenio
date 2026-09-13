@@ -22,6 +22,8 @@ import {
 } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-functions.js";
 
 const STORAGE_KEY = "trajes-os-v2";
+const LOG_EXPORT_STORAGE_KEY = "trajes-os-last-log-export-count";
+const LOG_EXPORT_THRESHOLD = 1000;
 const ADMIN_UID = "kXOgLCRPC0VhkqQltsgO1feNPLO2";
 const firebaseConfig = {
   apiKey: "AIzaSyDAYmwu9GD0R0BlL_6tUqOpUgByNci_Bhg",
@@ -87,6 +89,8 @@ const seedData = {
 let state = loadState();
 let draftOrderItems = [];
 let currentReturnOrderId = null;
+let lastExportedLogCount = Number(localStorage.getItem(LOG_EXPORT_STORAGE_KEY) || 0);
+let logThresholdToastShown = false;
 
 const els = {
   navItems: document.querySelectorAll(".nav-item"),
@@ -164,6 +168,11 @@ const els = {
   sessionAuthUid: document.querySelector("#sessionAuthUid"),
   auditSearch: document.querySelector("#auditSearch"),
   auditList: document.querySelector("#auditList"),
+  logMaintenanceStatus: document.querySelector("#logMaintenanceStatus"),
+  logMaintenanceHint: document.querySelector("#logMaintenanceHint"),
+  logMaintenanceBox: document.querySelector("#logMaintenanceBox"),
+  exportLogsCsv: document.querySelector("#exportLogsCsv"),
+  clearActivityLogs: document.querySelector("#clearActivityLogs"),
   supervisionOrders: document.querySelector("#supervisionOrders"),
   clientsCsv: document.querySelector("#clientsCsv"),
   inventoryCsv: document.querySelector("#inventoryCsv"),
@@ -410,6 +419,25 @@ async function deleteRemoteDoc(localKey, recordId) {
   }
 }
 
+async function deleteRemoteDocs(localKey, recordIds) {
+  saveState();
+  if (!firebaseState.enabled || !recordIds.length) return true;
+  try {
+    for (let index = 0; index < recordIds.length; index += 450) {
+      const batch = writeBatch(firebaseState.db);
+      recordIds.slice(index, index + 450).forEach((recordId) => {
+        batch.delete(doc(firebaseState.db, remoteCollections[localKey], recordId));
+      });
+      await batch.commit();
+    }
+    return true;
+  } catch (error) {
+    console.warn("No se pudieron limpiar documentos en Firestore.", error);
+    showToast("Firebase rechazó la limpieza. Revisa reglas de Firestore.");
+    return false;
+  }
+}
+
 async function persistMany(localKey, records) {
   saveState();
   if (!firebaseState.enabled || !records.length) return true;
@@ -608,6 +636,7 @@ function renderAll() {
   renderInventory();
   renderClients();
   renderUsers();
+  renderLogMaintenance();
   renderAudit();
   renderSupervisionOrders();
   updateAdminVisibility();
@@ -986,6 +1015,27 @@ function renderUsers() {
         `)
         .join("")
     : `<div class="empty">No hay usuarios con ese filtro.</div>`;
+}
+
+function renderLogMaintenance() {
+  if (!els.logMaintenanceStatus || !els.logMaintenanceHint) return;
+  if (!isSuperAdmin()) return;
+
+  const count = state.activityLogs.length;
+  const thresholdReached = count >= LOG_EXPORT_THRESHOLD;
+  const exportIsFresh = count > 0 && lastExportedLogCount >= count;
+
+  els.logMaintenanceStatus.textContent = `${count}/${LOG_EXPORT_THRESHOLD} logs`;
+  els.logMaintenanceStatus.className = `status-pill ${thresholdReached ? "warn" : "ok"}`;
+  els.logMaintenanceBox?.classList.toggle("needs-maintenance", thresholdReached);
+  els.logMaintenanceHint.textContent = thresholdReached
+    ? "La auditoría ya llegó al límite recomendado. Exporta el archivo antes de limpiar para mantener respaldo."
+    : "Los logs se usan para auditoría de usuarios y cambios. Al llegar al límite recomendado, exporta y limpia para mantener la app ligera.";
+  if (els.clearActivityLogs) els.clearActivityLogs.disabled = !exportIsFresh;
+  if (thresholdReached && !logThresholdToastShown) {
+    logThresholdToastShown = true;
+    showToast("Auditoría llena: exporta logs y limpia cuando puedas.");
+  }
 }
 
 function renderAudit() {
@@ -1679,6 +1729,82 @@ function exportJson() {
   URL.revokeObjectURL(url);
 }
 
+function csvCell(value) {
+  return `"${String(value ?? "").replaceAll('"', '""')}"`;
+}
+
+function downloadBlob(blob, filename) {
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement("a");
+  link.href = url;
+  link.download = filename;
+  link.click();
+  URL.revokeObjectURL(url);
+}
+
+function exportLogsCsv() {
+  if (!isSuperAdmin()) {
+    showToast("Solo admin puede exportar logs.");
+    return;
+  }
+  if (!state.activityLogs.length) {
+    showToast("No hay logs para exportar.");
+    return;
+  }
+
+  const headers = ["Fecha", "Accion", "Coleccion", "Documento", "Etiqueta", "Usuario", "Rol", "UID", "Detalles", "Log ID"];
+  const rows = state.activityLogs
+    .slice()
+    .sort((a, b) => String(a.createdAt).localeCompare(String(b.createdAt)))
+    .map((log) => [
+      log.createdAt || "",
+      log.action || "",
+      log.entityType || "",
+      log.entityId || "",
+      log.label || "",
+      log.actorName || "",
+      log.actorRole || "",
+      log.actorUid || "",
+      JSON.stringify(log.details || {}),
+      log.id || "",
+    ]);
+
+  const csv = [headers, ...rows].map((row) => row.map(csvCell).join(";")).join("\r\n");
+  const blob = new Blob([`\ufeff${csv}`], { type: "text/csv;charset=utf-8" });
+  downloadBlob(blob, `ingenio-auditoria-${todayISO()}.csv`);
+  lastExportedLogCount = state.activityLogs.length;
+  localStorage.setItem(LOG_EXPORT_STORAGE_KEY, String(lastExportedLogCount));
+  renderLogMaintenance();
+  showToast("Auditoría exportada. Ya puedes limpiar logs si deseas.");
+}
+
+async function clearActivityLogs() {
+  if (!isSuperAdmin()) {
+    showToast("Solo admin puede limpiar logs.");
+    return;
+  }
+  if (!state.activityLogs.length) {
+    showToast("No hay logs para limpiar.");
+    return;
+  }
+  if (lastExportedLogCount < state.activityLogs.length) {
+    showToast("Exporta los logs antes de limpiar.");
+    return;
+  }
+  if (!confirm("Esto eliminará los logs de auditoría guardados. Asegúrate de conservar el archivo exportado. ¿Continuar?")) return;
+
+  const ids = state.activityLogs.map((log) => log.id).filter(Boolean);
+  const clearedRemote = await deleteRemoteDocs("activityLogs", ids);
+  if (!clearedRemote) return;
+
+  state.activityLogs = [];
+  lastExportedLogCount = 0;
+  localStorage.setItem(LOG_EXPORT_STORAGE_KEY, "0");
+  saveState();
+  renderAll();
+  showToast("Logs limpiados. La auditoría quedó liviana.");
+}
+
 async function updateProfileEmail(event) {
   event.preventDefault();
   const nextEmail = els.profileEmail.value.trim();
@@ -1783,6 +1909,8 @@ function bindEvents() {
   els.importClients.addEventListener("click", importClients);
   els.importInventory.addEventListener("click", importInventory);
   els.exportJson.addEventListener("click", exportJson);
+  els.exportLogsCsv.addEventListener("click", exportLogsCsv);
+  els.clearActivityLogs.addEventListener("click", clearActivityLogs);
   els.resetDemo.addEventListener("click", resetDemo);
   els.logoutButton.addEventListener("click", logout);
   els.emailForm.addEventListener("submit", updateProfileEmail);

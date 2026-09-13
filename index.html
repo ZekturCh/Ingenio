@@ -493,6 +493,29 @@ Traje Astronauta,Traje completo,2,Casco;Overol;Guantes;Botas,Revisar visor antes
             <section class="panel">
               <div class="panel-heading">
                 <div>
+                  <p class="eyebrow">Mantenimiento</p>
+                  <h2>Memoria de logs</h2>
+                </div>
+                <span class="status-pill" id="logMaintenanceStatus">0 logs</span>
+              </div>
+              <div class="maintenance-box" id="logMaintenanceBox">
+                <p class="muted" id="logMaintenanceHint">Los logs se usan para auditoría de usuarios y cambios.</p>
+                <div class="row-actions">
+                  <button class="secondary-button" type="button" id="exportLogsCsv">
+                    <i data-lucide="file-spreadsheet"></i>
+                    Exportar Excel
+                  </button>
+                  <button class="secondary-button danger" type="button" id="clearActivityLogs" disabled>
+                    <i data-lucide="trash-2"></i>
+                    Limpiar logs
+                  </button>
+                </div>
+              </div>
+
+              <hr class="panel-divider" />
+
+              <div class="panel-heading">
+                <div>
                   <p class="eyebrow">Auditoría</p>
                   <h2>Cambios recientes</h2>
                 </div>
