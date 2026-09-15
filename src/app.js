@@ -36,9 +36,8 @@ const firebaseConfig = {
 
 const remoteCollections = {
   clients: "clients",
-  inventory: "inventoryItems",
   orders: "orders",
-  movements: "inventoryMovements",
+  incidents: "incidents",
   activityLogs: "activityLogs",
 };
 
@@ -81,6 +80,7 @@ const seedData = {
   clients: [],
   inventory: [],
   orders: [],
+  incidents: [],
   movements: [],
   users: [],
   activityLogs: [],
@@ -99,40 +99,33 @@ const els = {
   activeOrders: document.querySelector("#activeOrders"),
   orderForm: document.querySelector("#orderForm"),
   orderPartyModes: document.querySelectorAll('input[name="orderPartyMode"]'),
-  serviceOnlyFields: document.querySelectorAll("[data-service-only]"),
-  spectacleOnlyFields: document.querySelectorAll("[data-spectacle-only]"),
-  clientSelectorField: document.querySelector("#clientSelectorField"),
+  outboundFields: document.querySelector("#outboundFields"),
+  returnFields: document.querySelector("#returnFields"),
+  incidentFields: document.querySelector("#incidentFields"),
   orderClient: document.querySelector("#orderClient"),
-  newClientFields: document.querySelector("#newClientFields"),
-  orderNewClientName: document.querySelector("#orderNewClientName"),
-  orderNewClientPhone: document.querySelector("#orderNewClientPhone"),
-  orderNewClientNotes: document.querySelector("#orderNewClientNotes"),
-  spectacleFields: document.querySelector("#spectacleFields"),
-  orderSpectacleName: document.querySelector("#orderSpectacleName"),
-  orderSpectaclePhone: document.querySelector("#orderSpectaclePhone"),
-  orderSpectacleTime: document.querySelector("#orderSpectacleTime"),
-  orderSpectacleNotes: document.querySelector("#orderSpectacleNotes"),
-  coordinatorList: document.querySelector("#coordinatorList"),
-  addCoordinator: document.querySelector("#addCoordinator"),
-  orderStartText: document.querySelector("#orderStartText"),
   orderStart: document.querySelector("#orderStart"),
   orderEnd: document.querySelector("#orderEnd"),
   orderOwner: document.querySelector("#orderOwner"),
   orderAmount: document.querySelector("#orderAmount"),
   orderPaid: document.querySelector("#orderPaid"),
-  orderInventory: document.querySelector("#orderInventory"),
-  newItemFields: document.querySelector("#newItemFields"),
-  orderNewItemName: document.querySelector("#orderNewItemName"),
-  orderNewItemCategory: document.querySelector("#orderNewItemCategory"),
-  orderNewItemStock: document.querySelector("#orderNewItemStock"),
-  orderNewItemChecklist: document.querySelector("#orderNewItemChecklist"),
-  orderNewItemNotes: document.querySelector("#orderNewItemNotes"),
-  orderQty: document.querySelector("#orderQty"),
+  orderItemName: document.querySelector("#orderItemName"),
+  orderItemDetails: document.querySelector("#orderItemDetails"),
   orderNotes: document.querySelector("#orderNotes"),
   addOrderItem: document.querySelector("#addOrderItem"),
   orderBuilder: document.querySelector("#orderBuilder"),
+  returnClientSearch: document.querySelector("#returnClientSearch"),
+  returnOrderSelect: document.querySelector("#returnOrderSelect"),
+  returnOrderSummary: document.querySelector("#returnOrderSummary"),
+  returnChecklist: document.querySelector("#returnChecklist"),
+  returnReceivedBy: document.querySelector("#returnReceivedBy"),
+  returnPayment: document.querySelector("#returnPayment"),
+  returnReplacementPending: document.querySelector("#returnReplacementPending"),
+  returnNotes: document.querySelector("#returnNotes"),
+  incidentName: document.querySelector("#incidentName"),
+  incidentNotes: document.querySelector("#incidentNotes"),
   availabilityPill: document.querySelector("#availabilityPill"),
   eventsBoard: document.querySelector("#eventsBoard"),
+  reportsMetrics: document.querySelector("#reportsMetrics"),
   orderSearch: document.querySelector("#orderSearch"),
   orderStatusFilter: document.querySelector("#orderStatusFilter"),
   inventoryForm: document.querySelector("#inventoryForm"),
@@ -187,11 +180,6 @@ const els = {
   passwordForm: document.querySelector("#passwordForm"),
   profilePassword: document.querySelector("#profilePassword"),
   storageMode: document.querySelector("#storageMode"),
-  returnDialog: document.querySelector("#returnDialog"),
-  returnForm: document.querySelector("#returnForm"),
-  returnChecklist: document.querySelector("#returnChecklist"),
-  returnNotes: document.querySelector("#returnNotes"),
-  cancelReturn: document.querySelector("#cancelReturn"),
   toast: document.querySelector("#toast"),
 };
 
@@ -205,6 +193,7 @@ function loadState() {
       clients: parsed.clients || [],
       inventory: parsed.inventory || [],
       orders: parsed.orders || [],
+      incidents: parsed.incidents || [],
       movements: parsed.movements || [],
       users: parsed.users || [],
       activityLogs: parsed.activityLogs || [],
@@ -554,10 +543,20 @@ function getClient(clientId) {
 }
 
 function orderPartyMode() {
-  return document.querySelector('input[name="orderPartyMode"]:checked')?.value || "spectacle";
+  return document.querySelector('input[name="orderPartyMode"]:checked')?.value || "outbound";
 }
 
 function getOrderParty(order) {
+  if (order.clientName) {
+    const client = getClient(order.clientId);
+    return {
+      name: order.clientName || client?.name || "Cliente sin nombre",
+      phone: order.clientPhone || client?.phone || "",
+      label: "Salida",
+      notes: order.notes || "",
+    };
+  }
+
   if (order.partyType === "spectacle") {
     return {
       name: order.spectacle?.name || "Espectaculo sin nombre",
@@ -593,7 +592,7 @@ function orderDateLabel(order) {
   if (order.partyType === "spectacle") {
     return [order.startDate, order.spectacle?.time].filter(Boolean).join(" · ");
   }
-  return `${order.startDate} → ${order.endDate}`;
+  return [order.startDate, order.endDate].filter(Boolean).join(" → ") || "Sin fecha";
 }
 
 function orderLabel(order) {
@@ -601,7 +600,7 @@ function orderLabel(order) {
 }
 
 function activeOrders() {
-  return state.orders.filter((order) => order.status !== "Devuelto" && order.status !== "Cancelado");
+  return state.orders.filter((order) => ["Activo", "Pendiente urgente"].includes(order.status || "Activo"));
 }
 
 function committedQty(inventoryId) {
@@ -615,16 +614,39 @@ function availableQty(item) {
 }
 
 function orderState(order) {
+  if (order.status === "Pendiente urgente") return "Pendiente urgente";
   if (order.status === "Devuelto") return "Devuelto";
   if (order.status === "Cancelado") return "Cancelado";
-  return order.endDate < todayISO() ? "Vencido" : "Activo";
+  return order.endDate && order.endDate < todayISO() ? "Vencido" : "Activo";
 }
 
 function splitChecklist(value) {
   return String(value || "")
-    .split(/\n|;/)
+    .split(/\r?\n/)
     .map((item) => item.trim())
     .filter(Boolean);
+}
+
+function getItemChecklist(item) {
+  const entries = item?.checklist || item?.details || [];
+  const normalized = Array.isArray(entries) ? entries : splitChecklist(entries);
+  return normalized.map((entry) => (typeof entry === "string" ? { name: entry, returned: false } : entry));
+}
+
+function missingEntries(order, includeUninspected = false) {
+  if (!includeUninspected && !order.inspectedAt && !["Pendiente urgente", "Devuelto"].includes(order.status)) {
+    return [];
+  }
+  return (order.items || []).flatMap((item) =>
+    getItemChecklist(item)
+      .filter((piece) => piece.returned !== true)
+      .map((piece) => `${item.name}: ${piece.name}`),
+  );
+}
+
+function orderDebt(order) {
+  if (order.paid) return 0;
+  return Math.max(0, Number(order.amount || 0) - Number(order.amountPaid || 0));
 }
 
 function renderAll() {
@@ -633,7 +655,6 @@ function renderAll() {
   renderOrderBuilder();
   renderActiveOrders();
   renderOrdersTable();
-  renderInventory();
   renderClients();
   renderUsers();
   renderLogMaintenance();
@@ -645,71 +666,38 @@ function renderAll() {
 
 function renderSelects() {
   const selectedClient = els.orderClient.value;
-  const selectedInventory = els.orderInventory.value;
   els.orderClient.innerHTML = state.clients
-    .map((client) => `<option value="${client.id}">${escapeHtml(client.name)}</option>`)
+    .slice()
+    .sort((a, b) => String(a.name).localeCompare(String(b.name)))
+    .map((client) => `<option value="${client.id}">${escapeHtml(client.name)}${client.phone ? ` · ${escapeHtml(client.phone)}` : ""}</option>`)
     .join("");
-  els.orderClient.insertAdjacentHTML("afterbegin", `<option value="__new_client__">+ Crear contacto nuevo</option>`);
+  els.orderClient.insertAdjacentHTML("afterbegin", `<option value="">Selecciona un cliente</option>`);
   if (selectedClient && [...els.orderClient.options].some((option) => option.value === selectedClient)) {
     els.orderClient.value = selectedClient;
   }
-
-  els.orderInventory.innerHTML = state.inventory
-    .map((item) => {
-      const available = availableQty(item);
-      return `<option value="${item.id}" ${available === 0 ? "disabled" : ""}>${escapeHtml(item.name)} · disp. ${available}</option>`;
-    })
-    .join("");
-  els.orderInventory.insertAdjacentHTML("afterbegin", `<option value="__new_item__">+ Crear item nuevo</option>`);
-  if (selectedInventory && [...els.orderInventory.options].some((option) => option.value === selectedInventory)) {
-    els.orderInventory.value = selectedInventory;
-  }
+  renderReturnCandidates();
   updateManualOrderFields();
 }
 
 function updateManualOrderFields() {
-  const isSpectacle = orderPartyMode() === "spectacle";
-  els.clientSelectorField?.classList.toggle("is-hidden", isSpectacle);
-  els.spectacleFields?.classList.toggle("is-hidden", !isSpectacle);
-  els.serviceOnlyFields.forEach((field) => field.classList.toggle("is-hidden", isSpectacle));
-  els.spectacleOnlyFields.forEach((field) => field.classList.toggle("is-hidden", !isSpectacle));
-  if (els.orderStartText) els.orderStartText.textContent = isSpectacle ? "Fecha del evento" : "Fecha entrega";
-  if (isSpectacle && els.orderEnd && els.orderStart) els.orderEnd.value = els.orderStart.value;
-  els.newClientFields?.classList.toggle("is-hidden", isSpectacle || els.orderClient.value !== "__new_client__");
-  els.newItemFields?.classList.toggle("is-hidden", els.orderInventory.value !== "__new_item__");
-}
-
-function addCoordinatorInput() {
-  const row = document.createElement("div");
-  row.className = "coordinator-row";
-  row.innerHTML = `
-    <input class="coordinator-input" type="text" placeholder="Nombre del coordinador" />
-    <button type="button" class="mini-button" data-remove-coordinator>Quitar</button>
-  `;
-  els.coordinatorList.appendChild(row);
-}
-
-function getCoordinatorNames() {
-  return [...els.coordinatorList.querySelectorAll(".coordinator-input")]
-    .map((input) => input.value.trim())
-    .filter(Boolean);
-}
-
-function resetCoordinatorInputs() {
-  els.coordinatorList.innerHTML = `<input class="coordinator-input" type="text" placeholder="Nombre del coordinador" />`;
+  const mode = orderPartyMode();
+  els.outboundFields.classList.toggle("is-hidden", mode !== "outbound");
+  els.returnFields.classList.toggle("is-hidden", mode !== "return");
+  els.incidentFields.classList.toggle("is-hidden", mode !== "incident");
+  if (mode === "return") renderReturnCandidates();
 }
 
 function renderMetrics() {
   const active = activeOrders();
   const overdue = active.filter((order) => order.endDate < todayISO()).length;
-  const unpaid = active.filter((order) => Number(order.amount || 0) > 0 && !order.paid).length;
-  const availableUnits = state.inventory.reduce((sum, item) => sum + availableQty(item), 0);
+  const unpaid = state.orders.filter((order) => orderDebt(order) > 0).length;
+  const urgent = active.filter((order) => order.status === "Pendiente urgente").length;
 
   const metrics = [
-    ["Eventos activos", active.length, "En alquiler o reservados"],
-    ["Unidades disponibles", availableUnits, "Stock libre ahora"],
-    ["Pagos pendientes", unpaid, "Eventos con monto sin pago"],
-    ["Devoluciones vencidas", overdue, "Revisar hoy"],
+    ["Salidas abiertas", active.length, "Pendientes de inspeccion"],
+    ["Pendientes urgentes", urgent, "Articulo sin cerrar"],
+    ["Pagos por confirmar", unpaid, "Con monto aun pendiente"],
+    ["Retornos vencidos", overdue, "Revisar hoy"],
   ];
 
   els.metricsGrid.innerHTML = metrics
@@ -725,7 +713,7 @@ function renderMetrics() {
 
 function renderOrderBuilder() {
   if (!draftOrderItems.length) {
-    els.orderBuilder.innerHTML = `<div class="builder-empty">Agrega uno o varios items para formar el evento. Cada item copia su checklist para revisar la devolucion despues.</div>`;
+    els.orderBuilder.innerHTML = `<div class="builder-empty">Agrega los articulos que salen. Sus lineas apareceran como checklist durante el retorno.</div>`;
     els.availabilityPill.textContent = "Listo";
     els.availabilityPill.className = "status-pill ok";
     return;
@@ -735,10 +723,9 @@ function renderOrderBuilder() {
     .map((item, index) => `
       <div class="order-line">
         <div>
-          <h4>${escapeHtml(item.name)} <span class="muted">x${item.quantity}</span></h4>
+          <h4>${escapeHtml(item.name)}</h4>
           <div class="chips">
-            ${item.isNewInventory ? `<span class="chip">Nuevo inventario</span>` : ""}
-            ${item.checklist.map((piece) => `<span class="chip">${escapeHtml(piece.name)}</span>`).join("") || `<span class="chip">Sin checklist</span>`}
+            ${getItemChecklist(item).map((piece) => `<span class="chip">${escapeHtml(piece.name)}</span>`).join("") || `<span class="chip">Sin detalles</span>`}
           </div>
         </div>
         <button type="button" class="mini-button" data-remove-draft="${index}">Quitar</button>
@@ -750,9 +737,12 @@ function renderOrderBuilder() {
 }
 
 function renderActiveOrders() {
-  const active = activeOrders().slice(0, 6);
+  const active = activeOrders()
+    .slice()
+    .sort((a, b) => String(a.endDate).localeCompare(String(b.endDate)))
+    .slice(0, 6);
   if (!active.length) {
-    els.activeOrders.innerHTML = `<div class="empty">No hay eventos activos. La agenda esta limpia.</div>`;
+    els.activeOrders.innerHTML = `<div class="empty">No hay salidas abiertas. Todo esta al dia.</div>`;
     return;
   }
 
@@ -770,9 +760,9 @@ function renderActiveOrders() {
             <span class="tag ${status === "Vencido" ? "danger" : "ok"}">${status}</span>
           </div>
           <div class="chips">
-            ${(party.coordinators || []).map((name) => `<span class="chip">Coord. ${escapeHtml(name)}</span>`).join("")}
-            ${order.items.map((item) => `<span class="chip">${escapeHtml(item.name)} x${item.quantity}</span>`).join("")}
+            ${order.items.map((item) => `<span class="chip">${escapeHtml(item.name)}</span>`).join("")}
           </div>
+          <div class="row-actions"><button class="mini-button" data-inspect-return="${escapeHtml(order.id)}">Inspeccionar</button></div>
         </article>
       `;
     })
@@ -782,7 +772,6 @@ function renderActiveOrders() {
 function renderOrdersTable() {
   const term = els.orderSearch.value.trim().toLowerCase();
   const filter = els.orderStatusFilter.value;
-  const week = currentWeekRange();
   const rows = state.orders
     .map((order) => ({ ...order, computedStatus: orderState(order), party: getOrderParty(order) }))
     .filter((order) => filter === "all" || order.computedStatus === filter)
@@ -791,49 +780,63 @@ function renderOrdersTable() {
         order.id,
         order.party?.name,
         order.party?.phone,
-        order.party?.label,
-        (order.party?.coordinators || []).join(" "),
         order.computedStatus,
-        order.items.map((item) => item.name).join(" "),
+        order.items.map((item) => `${item.name} ${getItemChecklist(item).map((piece) => piece.name).join(" ")}`).join(" "),
       ].join(" ").toLowerCase();
       return searchable.includes(term);
     });
 
-  const thisWeek = rows
-    .filter((order) => order.startDate <= week.end && order.endDate >= week.start)
-    .sort((a, b) => String(a.startDate).localeCompare(String(b.startDate)));
-  const future = rows
-    .filter((order) => order.startDate > week.end)
-    .sort((a, b) => String(a.startDate).localeCompare(String(b.startDate)));
-  const past = rows
-    .filter((order) => order.endDate < week.start)
-    .sort((a, b) => {
-      const priority = eventPriority(a) - eventPriority(b);
-      return priority || String(a.endDate).localeCompare(String(b.endDate));
-    });
+  renderReportMetrics(rows);
+  const clients = buildClientReports(rows);
+  const pending = rows
+    .filter((order) => ["Activo", "Pendiente urgente", "Vencido"].includes(order.computedStatus))
+    .sort((a, b) => String(a.endDate).localeCompare(String(b.endDate)));
+  const incidents = state.incidents
+    .filter((incident) => [incident.name, incident.notes].join(" ").toLowerCase().includes(term))
+    .slice()
+    .sort((a, b) => String(b.createdAt).localeCompare(String(a.createdAt)));
+  const history = rows
+    .slice()
+    .sort((a, b) => String(b.createdAt).localeCompare(String(a.createdAt)))
+    .slice(0, 24);
 
   els.eventsBoard.innerHTML = `
-    ${renderEventSection("Esta semana", `${week.start} al ${week.end}`, thisWeek)}
-    ${renderEventSection("Futuros", "Eventos programados despues de esta semana", future)}
-    ${renderEventSection("Registro de eventos pasados", "Prioridad: falta pagar y devolver, falta devolver, falta pagar, supervisados", past)}
+    ${renderReportSection("Clientes que llevaron mas articulos", "Se cuenta cada linea registrada en los detalles", clients.map(renderClientReport).join(""), clients.length)}
+    ${renderReportSection("Retornos y pendientes", "Ordenados por la fecha mas antigua de devolucion", pending.map(renderEventCard).join(""), pending.length)}
+    ${renderReportSection("Incidencias registradas", "Deudas, perdidas y acuerdos que requieren seguimiento", incidents.map(renderIncidentCard).join(""), incidents.length)}
+    ${renderReportSection("Historial de salidas", "Registros mas recientes", history.map(renderEventCard).join(""), history.length)}
   `;
 }
 
-function eventPriority(order) {
-  const notReturned = order.status === "Activo";
-  const unpaid = Number(order.amount || 0) > 0 && !order.paid;
-  if (notReturned && unpaid) return 0;
-  if (notReturned) return 1;
-  if (unpaid) return 2;
-  return 3;
+function buildClientReports(orders) {
+  const reports = new Map();
+  orders.forEach((order) => {
+    const party = order.party || getOrderParty(order);
+    const key = order.clientId || party.name || order.id;
+    const report = reports.get(key) || { name: party.name, phone: party.phone, articleCount: 0, debt: 0, missing: [], open: 0 };
+    report.articleCount += (order.items || []).reduce((sum, item) => sum + Math.max(getItemChecklist(item).length, 1), 0);
+    report.debt += orderDebt(order);
+    report.missing.push(...missingEntries(order));
+    if (["Activo", "Pendiente urgente", "Vencido"].includes(order.computedStatus || orderState(order))) report.open += 1;
+    reports.set(key, report);
+  });
+  return [...reports.values()].sort((a, b) => b.articleCount - a.articleCount || b.debt - a.debt);
 }
 
-function eventPriorityLabel(order) {
-  const priority = eventPriority(order);
-  return ["Falta pago y devolucion", "Falta devolucion", "Falta pago", "Supervisado"][priority] || "Supervisado";
+function renderReportMetrics(orders) {
+  const debt = orders.reduce((sum, order) => sum + orderDebt(order), 0);
+  const missing = orders.reduce((sum, order) => sum + missingEntries(order).length, 0);
+  const pending = orders.filter((order) => ["Activo", "Pendiente urgente", "Vencido"].includes(order.computedStatus)).length;
+  const metrics = [
+    ["Salidas por cerrar", pending, "Aun requieren retorno"],
+    ["Deuda registrada", formatMoney(debt), "Monto aun sin marcar como pago"],
+    ["Articulos faltantes", missing, "Incluye pendientes urgentes"],
+    ["Incidencias", state.incidents.length, "Registro de acuerdos y danos"],
+  ];
+  els.reportsMetrics.innerHTML = metrics.map(([label, value, hint]) => `<article class="metric"><span>${label}</span><strong>${value}</strong><span>${hint}</span></article>`).join("");
 }
 
-function renderEventSection(title, hint, orders) {
+function renderReportSection(title, hint, content, count) {
   return `
     <section class="event-section">
       <div class="panel-heading">
@@ -841,61 +844,122 @@ function renderEventSection(title, hint, orders) {
           <h3>${escapeHtml(title)}</h3>
           <p class="muted">${escapeHtml(hint)}</p>
         </div>
-        <span class="tag">${orders.length}</span>
+        <span class="tag">${count}</span>
       </div>
       <div class="event-list">
-        ${
-          orders.length
-            ? orders.map(renderEventCard).join("")
-            : `<div class="empty">No hay eventos en esta seccion.</div>`
-        }
+        ${content || `<div class="empty">No hay registros en esta seccion.</div>`}
       </div>
     </section>
   `;
 }
 
 function renderEventCard(order) {
-  const statusClass = order.computedStatus === "Vencido" ? "danger" : order.computedStatus === "Devuelto" ? "" : "ok";
-  const unpaid = Number(order.amount || 0) > 0 && !order.paid;
-  const missingPieces = order.status === "Devuelto"
-    ? (order.items || []).flatMap((item) => (item.checklist || []).filter((piece) => piece.returned === false).map((piece) => `${item.name}: ${piece.name}`))
-    : [];
+  const status = order.computedStatus || orderState(order);
+  const statusClass = ["Vencido", "Pendiente urgente"].includes(status) ? "danger" : status === "Devuelto" ? "" : "ok";
+  const debt = orderDebt(order);
+  const missingPieces = missingEntries(order);
   return `
     <article class="event-card">
       <div class="panel-heading">
         <div>
           <h3>${escapeHtml(order.party?.name || "Sin contacto")}</h3>
-          <p class="muted">${escapeHtml(order.party?.label || "Servicio")} · ${escapeHtml(orderDateLabel(order))} · Creado por: ${escapeHtml(order.createdByName || order.owner || "Sin usuario")}</p>
+          <p class="muted">Salida · ${escapeHtml(orderDateLabel(order))} · Creado por: ${escapeHtml(order.createdByName || order.owner || "Sin usuario")}</p>
         </div>
         <div class="event-tags">
-          <span class="tag ${statusClass}">${order.computedStatus}</span>
-          <span class="tag ${unpaid ? "warn" : "ok"}">${order.paid ? "Pagado" : "Pago pendiente"}</span>
-          ${(order.party?.coordinators || []).map((name) => `<span class="tag">Coord. ${escapeHtml(name)}</span>`).join("")}
+          <span class="tag ${statusClass}">${escapeHtml(status)}</span>
+          <span class="tag ${debt > 0 ? "warn" : "ok"}">${debt > 0 ? "Pago pendiente" : "Pago al dia"}</span>
         </div>
       </div>
       <div class="event-card-grid">
         <div>
           <span class="muted">Items</span>
-          <div class="chips">${(order.items || []).map((item) => `<span class="chip">${escapeHtml(item.name)} x${item.quantity}</span>`).join("")}</div>
+          <div class="chips">${(order.items || []).map((item) => `<span class="chip">${escapeHtml(item.name)}</span>`).join("")}</div>
         </div>
         <div>
-          <span class="muted">Monto</span>
-          <strong>${formatMoney(order.amount)}</strong>
+          <span class="muted">Deuda</span>
+          <strong>${formatMoney(debt)}</strong>
         </div>
         <div>
-          <span class="muted">Revision</span>
-          <strong>${escapeHtml(eventPriorityLabel(order))}</strong>
+          <span class="muted">Faltantes</span>
+          <strong>${missingPieces.length}</strong>
         </div>
       </div>
       ${missingPieces.length ? `<p class="muted">Faltantes registrados: ${escapeHtml(missingPieces.join(", "))}</p>` : ""}
       <div class="row-actions">
-        ${canManageOrders() && order.status === "Activo" ? `<button class="mini-button" data-return-order="${order.id}">Devolver</button>` : ""}
-        ${canManageOrders() ? `<button class="mini-button" data-toggle-paid="${order.id}">${order.paid ? "Marcar pendiente" : "Marcar pago"}</button>` : ""}
-        ${canManageOrders() && order.status === "Activo" ? `<button class="mini-button" data-cancel-order="${order.id}">Cancelar</button>` : ""}
-        ${!canManageOrders() ? `<span class="muted">Sin acciones</span>` : ""}
+        ${["Activo", "Pendiente urgente", "Vencido"].includes(status) ? `<button class="mini-button" data-inspect-return="${escapeHtml(order.id)}">Inspeccionar retorno</button>` : ""}
+        ${canManageOrders() && debt > 0 ? `<button class="mini-button" data-toggle-paid="${escapeHtml(order.id)}">Marcar pago</button>` : ""}
       </div>
     </article>
   `;
+}
+
+function renderClientReport(report) {
+  return `
+    <article class="event-card">
+      <div class="panel-heading">
+        <div>
+          <h3>${escapeHtml(report.name || "Cliente sin nombre")}</h3>
+          <p class="muted">${escapeHtml(report.phone || "Sin telefono")}</p>
+        </div>
+        <span class="tag">${report.articleCount} articulo(s)</span>
+      </div>
+      <div class="event-card-grid">
+        <div><span class="muted">Salidas abiertas</span><strong>${report.open}</strong></div>
+        <div><span class="muted">Deuda</span><strong>${formatMoney(report.debt)}</strong></div>
+        <div><span class="muted">Faltantes</span><strong>${report.missing.length}</strong></div>
+      </div>
+      ${report.missing.length ? `<p class="muted">Pendiente: ${escapeHtml(report.missing.join(", "))}</p>` : ""}
+    </article>
+  `;
+}
+
+function renderIncidentCard(incident) {
+  return `
+    <article class="event-card">
+      <div class="panel-heading">
+        <div>
+          <h3>${escapeHtml(incident.name || "Sin nombre")}</h3>
+          <p class="muted">Registrado por: ${escapeHtml(incident.createdByName || "Sin usuario")} · ${escapeHtml(incident.createdAt || "")}</p>
+        </div>
+        <span class="tag danger">Incidencia</span>
+      </div>
+      <p>${escapeHtml(incident.notes || "Sin detalle")}</p>
+    </article>
+  `;
+}
+
+function renderReturnCandidates() {
+  if (!els.returnOrderSelect) return;
+  const term = els.returnClientSearch?.value.trim().toLowerCase() || "";
+  const selectedId = currentReturnOrderId || els.returnOrderSelect.value;
+  const candidates = activeOrders()
+    .map((order) => ({ ...order, party: getOrderParty(order), computedStatus: orderState(order) }))
+    .filter((order) => [order.party.name, order.party.phone, order.id].join(" ").toLowerCase().includes(term))
+    .sort((a, b) => String(a.endDate).localeCompare(String(b.endDate)));
+
+  els.returnOrderSelect.innerHTML = candidates.length
+    ? candidates.map((order) => `<option value="${escapeHtml(order.id)}">${escapeHtml(order.party.name)} · devuelve ${escapeHtml(order.endDate || "sin fecha")} · ${escapeHtml(order.computedStatus)}</option>`).join("")
+    : `<option value="">No hay salidas pendientes para este filtro</option>`;
+
+  const nextId = candidates.some((order) => order.id === selectedId) ? selectedId : candidates[0]?.id || "";
+  els.returnOrderSelect.value = nextId;
+  currentReturnOrderId = nextId || null;
+  renderReturnSelection();
+}
+
+function renderReturnSelection() {
+  const order = state.orders.find((entry) => entry.id === currentReturnOrderId);
+  if (!order) {
+    els.returnOrderSummary.innerHTML = `<div class="empty">Busca un cliente o selecciona una salida pendiente para revisar sus articulos.</div>`;
+    els.returnChecklist.innerHTML = "";
+    return;
+  }
+  const party = getOrderParty(order);
+  els.returnOrderSummary.innerHTML = `<div class="order-card"><strong>${escapeHtml(party.name)}</strong><p class="muted">Salida: ${escapeHtml(order.startDate || "sin fecha")} · Devolucion prevista: ${escapeHtml(order.endDate || "sin fecha")} · Entrego: ${escapeHtml(order.owner || "Sin registro")}</p></div>`;
+  els.returnChecklist.innerHTML = (order.items || []).map((item, itemIndex) => {
+    const pieces = getItemChecklist(item);
+    return `<div class="order-card"><h3>${escapeHtml(item.name)}</h3><div class="return-checklist">${pieces.map((piece, pieceIndex) => `<label class="check-item"><input type="checkbox" ${piece.returned === true ? "checked" : ""} data-return-piece="${itemIndex}:${pieceIndex}" /><span>${escapeHtml(piece.name)}</span></label>`).join("") || `<span class="muted">Sin articulos detallados.</span>`}</div></div>`;
+  }).join("") || `<div class="empty">Esta salida no tiene articulos registrados.</div>`;
 }
 
 function renderInventory() {
@@ -1083,13 +1147,13 @@ function renderSupervisionOrders() {
 
   const watched = state.orders
     .map((order) => ({ ...order, party: getOrderParty(order), computedStatus: orderState(order) }))
-    .filter((order) => order.computedStatus === "Vencido" || (order.status === "Devuelto" && Number(order.amount || 0) > 0 && !order.paid) || order.status === "Activo")
+    .filter((order) => ["Vencido", "Activo", "Pendiente urgente"].includes(order.computedStatus) || orderDebt(order) > 0)
     .sort((a, b) => String(b.createdAt).localeCompare(String(a.createdAt)));
 
   els.supervisionOrders.innerHTML = watched.length
     ? watched
         .map((order) => {
-          const unpaidReturned = order.status === "Devuelto" && Number(order.amount || 0) > 0 && !order.paid;
+          const unpaidReturned = orderDebt(order) > 0;
           return `
             <article class="order-card">
               <div class="panel-heading">
@@ -1100,9 +1164,9 @@ function renderSupervisionOrders() {
                 <span class="tag ${order.computedStatus === "Vencido" || unpaidReturned ? "danger" : "ok"}">${unpaidReturned ? "Devuelto sin pago" : order.computedStatus}</span>
               </div>
               <div class="chips">
-                ${order.items.map((item) => `<span class="chip">${escapeHtml(item.name)} x${item.quantity}</span>`).join("")}
+                ${order.items.map((item) => `<span class="chip">${escapeHtml(item.name)}</span>`).join("")}
               </div>
-              <p class="muted">${formatMoney(order.amount)} · ${order.paid ? "Pagado" : "Pago pendiente"}</p>
+              <p class="muted">${formatMoney(orderDebt(order))} · ${order.paid ? "Pagado" : "Pago pendiente"}</p>
             </article>
           `;
         })
@@ -1111,78 +1175,36 @@ function renderSupervisionOrders() {
 }
 
 function addDraftItem() {
-  const inventoryId = els.orderInventory.value;
-  const qty = Math.max(1, Number(els.orderQty.value || 1));
-
-  if (inventoryId === "__new_item__") {
-    const name = els.orderNewItemName.value.trim();
-    const stock = Math.max(1, Number(els.orderNewItemStock.value || qty));
-    if (!name) {
-      showToast("Escribe el nombre del item nuevo.");
-      els.orderNewItemName.focus();
-      return;
-    }
-    if (qty > stock) {
-      showToast("La cantidad del evento no puede superar el stock total del item nuevo.");
-      return;
-    }
-
-    const inventoryRecord = {
-      id: uid("inv"),
-      name,
-      category: els.orderNewItemCategory.value,
-      quantity: stock,
-      checklist: splitChecklist(els.orderNewItemChecklist.value),
-      notes: els.orderNewItemNotes.value.trim(),
-      createdAt: todayISO(),
-      createdBy: currentActor().uid,
-      createdByName: currentActor().name,
-      updatedBy: currentActor().uid,
-      updatedByName: currentActor().name,
-      updatedAt: todayISO(),
-    };
-
-    draftOrderItems.push({
-      inventoryId: inventoryRecord.id,
-      name: inventoryRecord.name,
-      category: inventoryRecord.category,
-      quantity: qty,
-      checklist: inventoryRecord.checklist.map((piece) => ({ name: piece, returned: false })),
-      isNewInventory: true,
-      inventoryRecord,
-    });
-    els.orderNewItemName.value = "";
-    els.orderNewItemStock.value = "1";
-    els.orderNewItemChecklist.value = "";
-    els.orderNewItemNotes.value = "";
-    renderAll();
+  const name = els.orderItemName.value.trim();
+  const details = els.orderItemDetails.value.trim();
+  if (!name) {
+    showToast("Escribe el nombre del articulo.");
+    els.orderItemName.focus();
     return;
   }
-
-  const item = state.inventory.find((entry) => entry.id === inventoryId);
-  if (!item) return;
-
-  if (qty > availableQty(item)) {
-    showToast(`No hay suficiente disponibilidad de ${item.name}.`);
+  if (!details) {
+    showToast("Agrega los detalles: cada linea debe ser un articulo.");
+    els.orderItemDetails.focus();
     return;
   }
-
-  const alreadyDrafted = draftOrderItems
-    .filter((entry) => entry.inventoryId === inventoryId)
-    .reduce((sum, entry) => sum + Number(entry.quantity), 0);
-
-  if (alreadyDrafted + qty > availableQty(item)) {
-    showToast(`Ese item ya esta comprometido en el borrador.`);
+  if (details.includes(",")) {
+    showToast("Usa Enter para separar articulos; no uses comas.");
+    els.orderItemDetails.focus();
     return;
   }
-
+  const lines = splitChecklist(details);
+  if (!lines.length) {
+    showToast("Agrega al menos una linea en detalles.");
+    return;
+  }
   draftOrderItems.push({
-    inventoryId: item.id,
-    name: item.name,
-    category: item.category,
-    quantity: qty,
-    checklist: item.checklist.map((piece) => ({ name: piece, returned: false })),
+    id: uid("item"),
+    name,
+    details: lines,
+    checklist: lines.map((piece) => ({ name: piece, returned: false })),
   });
+  els.orderItemName.value = "";
+  els.orderItemDetails.value = "";
   renderAll();
 }
 
@@ -1192,107 +1214,57 @@ async function createOrder(event) {
     showToast("Tu usuario no está activo. Pide aprobación al admin.");
     return;
   }
-  if (!draftOrderItems.length) {
-    showToast("Agrega al menos un item al evento.");
+  const mode = orderPartyMode();
+  if (mode === "return") {
+    await closeReturn();
     return;
   }
-
-  const partyMode = orderPartyMode();
-  const isSpectacle = partyMode === "spectacle";
-  let clientId = partyMode === "service" ? els.orderClient.value : "";
-  let partyName = partyMode === "service" ? getClient(clientId)?.name || "" : els.orderSpectacleName.value.trim();
-  let spectacle = null;
-
-  if (isSpectacle) {
-    if (!partyName) {
-      showToast("Escribe el nombre del evento.");
-      els.orderSpectacleName.focus();
-      return;
-    }
-    const spectaclePhone = els.orderSpectaclePhone.value.trim();
-    if (!spectaclePhone) {
-      showToast("Escribe el telefono de contacto del evento.");
-      els.orderSpectaclePhone.focus();
-      return;
-    }
-    const spectacleTime = els.orderSpectacleTime.value;
-    if (!spectacleTime) {
-      showToast("Selecciona la hora del espectaculo.");
-      els.orderSpectacleTime.focus();
-      return;
-    }
-    const coordinators = getCoordinatorNames();
-    if (!coordinators.length) {
-      showToast("Agrega al menos un coordinador.");
-      els.coordinatorList.querySelector(".coordinator-input")?.focus();
-      return;
-    }
-    spectacle = {
-      name: partyName,
-      phone: spectaclePhone,
-      time: spectacleTime,
-      coordinators,
-      notes: els.orderSpectacleNotes.value.trim(),
-    };
+  if (mode === "incident") {
+    await createIncident();
+    return;
   }
+  await createOutbound();
+}
 
-  const owner = isSpectacle ? "" : els.orderOwner.value.trim();
-  if (!isSpectacle && !owner) {
-    showToast("Escribe quien entrega al cliente.");
+async function createOutbound() {
+  const client = getClient(els.orderClient.value);
+  if (!client) {
+    showToast("Selecciona el cliente de la salida.");
+    els.orderClient.focus();
+    return;
+  }
+  if (!els.orderStart.value || !els.orderEnd.value) {
+    showToast("Selecciona la fecha de salida y devolucion.");
+    return;
+  }
+  if (els.orderEnd.value < els.orderStart.value) {
+    showToast("La devolucion no puede ser antes de la salida.");
+    return;
+  }
+  const owner = els.orderOwner.value.trim();
+  if (!owner) {
+    showToast("Escribe quien lo entrego.");
     els.orderOwner.focus();
     return;
   }
-
-  if (partyMode === "service" && clientId === "__new_client__") {
-    partyName = els.orderNewClientName.value.trim();
-    if (!partyName) {
-      showToast("Escribe el nombre del contacto nuevo.");
-      els.orderNewClientName.focus();
-      return;
-    }
-    const client = {
-      id: uid("cli"),
-      name: partyName,
-      phone: els.orderNewClientPhone.value.trim(),
-      notes: els.orderNewClientNotes.value.trim(),
-      createdAt: todayISO(),
-      createdBy: currentActor().uid,
-      createdByName: currentActor().name,
-      updatedBy: currentActor().uid,
-      updatedByName: currentActor().name,
-      updatedAt: todayISO(),
-    };
-    const clientSaved = await persistDoc("clients", client);
-    if (!clientSaved) return;
-    state.clients.push(client);
-    clientId = client.id;
-    await logActivity("Creo contacto", "clients", client.id, client.name, { source: "servicio" });
+  if (!draftOrderItems.length) {
+    showToast("Agrega al menos un articulo a la salida.");
+    return;
   }
-
-  const newInventoryItems = draftOrderItems
-    .filter((item) => item.isNewInventory && item.inventoryRecord)
-    .map((item) => item.inventoryRecord);
-  if (newInventoryItems.length) {
-    const inventorySaved = await persistMany("inventory", newInventoryItems);
-    if (!inventorySaved) return;
-    state.inventory.push(...newInventoryItems);
-    await logActivity("Creo inventario", "inventoryItems", "bulk", `${newInventoryItems.length} item(s) desde evento`, {
-      items: newInventoryItems.map((item) => item.name),
-    });
-  }
-
-  const orderItems = draftOrderItems.map(({ inventoryRecord, isNewInventory, ...item }) => item);
-  const startDate = els.orderStart.value;
+  const amount = Number(els.orderAmount.value || 0);
   const order = {
     id: uid("ord"),
-    partyType: partyMode,
-    clientId: isSpectacle ? "" : clientId,
-    spectacle,
-    startDate,
-    endDate: isSpectacle ? startDate : els.orderEnd.value,
+    recordType: "outbound",
+    partyType: "service",
+    clientId: client.id,
+    clientName: client.name,
+    clientPhone: client.phone || "",
+    startDate: els.orderStart.value,
+    endDate: els.orderEnd.value,
     owner,
-    amount: isSpectacle ? 0 : Number(els.orderAmount.value || 0),
-    paid: isSpectacle ? false : els.orderPaid.checked,
+    amount,
+    amountPaid: els.orderPaid.checked ? amount : 0,
+    paid: els.orderPaid.checked || amount === 0,
     status: "Activo",
     notes: els.orderNotes.value.trim(),
     createdAt: todayISO(),
@@ -1300,38 +1272,50 @@ async function createOrder(event) {
     createdByName: currentActor().name,
     returnedAt: null,
     returnNotes: "",
-    items: structuredClone(orderItems),
+    items: structuredClone(draftOrderItems),
   };
-
-  const movements = order.items.map((item) => ({
-    id: uid("mov"),
-    type: "Salida",
-    orderId: order.id,
-    itemName: item.name,
-    quantity: item.quantity,
-    date: todayISO(),
-    note: order.notes,
-  }));
-
   const orderSaved = await persistDoc("orders", order);
-  const movementsSaved = orderSaved ? await persistMany("movements", movements) : false;
-  if (!orderSaved || !movementsSaved) return;
+  if (!orderSaved) return;
 
   state.orders.push(order);
-  state.movements.push(...movements);
-
   draftOrderItems = [];
   els.orderForm.reset();
-  resetCoordinatorInputs();
   setDefaultDates();
   saveState();
-  await logActivity("Creo evento", "orders", order.id, partyName || orderLabel(order), {
-    items: order.items.map((item) => `${item.name} x${item.quantity}`),
+  await logActivity("Registro salida", "orders", order.id, client.name, {
+    items: order.items.map((item) => item.name),
     amount: order.amount,
     paid: order.paid,
   });
   renderAll();
-  showToast("Evento guardado y stock comprometido.");
+  showToast("Salida registrada. Quedo lista para retorno e inspeccion.");
+}
+
+async function createIncident() {
+  const name = els.incidentName.value.trim();
+  const notes = els.incidentNotes.value.trim();
+  if (!name || !notes) {
+    showToast("Escribe el nombre y la nota de la incidencia.");
+    return;
+  }
+  const incident = {
+    id: uid("inc"),
+    name,
+    notes,
+    status: "Abierta",
+    createdAt: new Date().toISOString(),
+    createdBy: currentActor().uid,
+    createdByName: currentActor().name,
+  };
+  const saved = await persistDoc("incidents", incident);
+  if (!saved) return;
+  state.incidents.push(incident);
+  els.incidentName.value = "";
+  els.incidentNotes.value = "";
+  saveState();
+  await logActivity("Registro incidencia", "incidents", incident.id, incident.name, { notes: incident.notes });
+  renderAll();
+  showToast("Incidencia registrada para seguimiento.");
 }
 
 async function createInventoryItem(event) {
@@ -1505,84 +1489,82 @@ async function deleteInventoryItem(itemId) {
   showToast("Item eliminado.");
 }
 
-function openReturnDialog(orderId) {
+function openReturnRegistration(orderId) {
   const order = state.orders.find((entry) => entry.id === orderId);
   if (!order) return;
   currentReturnOrderId = orderId;
+  document.querySelector('[data-view="dashboard"]')?.click();
+  const returnMode = document.querySelector('input[name="orderPartyMode"][value="return"]');
+  if (returnMode) returnMode.checked = true;
+  els.returnClientSearch.value = getOrderParty(order).name;
   els.returnNotes.value = "";
-  els.returnChecklist.innerHTML = order.items
-    .map((item, itemIndex) => `
-      <div class="order-card">
-        <h3>${escapeHtml(item.name)} <span class="muted">x${item.quantity}</span></h3>
-        <div class="return-checklist">
-          ${
-            item.checklist.length
-              ? item.checklist
-                  .map((piece, pieceIndex) => `
-                    <label class="check-item">
-                      <input type="checkbox" checked data-return-piece="${itemIndex}:${pieceIndex}" />
-                      <span>${escapeHtml(piece.name)}</span>
-                    </label>
-                  `)
-                  .join("")
-              : `<span class="muted">Este item no tiene checklist configurado.</span>`
-          }
-        </div>
-      </div>
-    `)
-    .join("");
-  els.returnDialog.showModal();
-  if (window.lucide) window.lucide.createIcons();
+  els.returnReceivedBy.value = "";
+  els.returnPayment.value = "";
+  els.returnReplacementPending.checked = Boolean(order.replacementPending);
+  updateManualOrderFields();
+  renderReturnCandidates();
+  els.returnClientSearch.focus();
 }
 
-async function closeReturn(event) {
-  event.preventDefault();
+async function closeReturn() {
   if (!canManageOrders()) {
-    showToast("Solo supervisor o admin puede cerrar devoluciones.");
+    showToast("Solo supervisor o admin puede finalizar retornos.");
     return;
   }
   const order = state.orders.find((entry) => entry.id === currentReturnOrderId);
-  if (!order) return;
+  if (!order) {
+    showToast("Selecciona una salida pendiente.");
+    return;
+  }
+  const receivedBy = els.returnReceivedBy.value.trim();
+  if (!receivedBy) {
+    showToast("Escribe quien recibio el retorno.");
+    els.returnReceivedBy.focus();
+    return;
+  }
 
+  order.items = (order.items || []).map((item) => ({
+    ...item,
+    checklist: getItemChecklist(item),
+  }));
   els.returnChecklist.querySelectorAll("[data-return-piece]").forEach((checkbox) => {
     const [itemIndex, pieceIndex] = checkbox.dataset.returnPiece.split(":").map(Number);
     order.items[itemIndex].checklist[pieceIndex].returned = checkbox.checked;
   });
 
-  order.status = "Devuelto";
-  order.returnedAt = todayISO();
+  const missing = missingEntries(order, true);
+  const receivedPayment = Math.max(0, Number(els.returnPayment.value || 0));
+  const paidBefore = Number(order.amountPaid || (order.paid ? order.amount || 0 : 0));
+  const amountPaid = paidBefore + receivedPayment;
+  order.amountPaid = amountPaid;
+  order.paid = Number(order.amount || 0) === 0 || amountPaid >= Number(order.amount || 0);
+  order.status = missing.length ? "Pendiente urgente" : "Devuelto";
+  order.returnedAt = missing.length ? null : todayISO();
+  order.inspectedAt = todayISO();
   order.returnNotes = els.returnNotes.value.trim();
+  order.receivedBy = receivedBy;
+  order.replacementPending = missing.length && els.returnReplacementPending.checked;
   order.returnedBy = currentActor().uid;
   order.returnedByName = currentActor().name;
-
-  const movements = order.items.map((item) => {
-    const missing = item.checklist.filter((piece) => !piece.returned).map((piece) => piece.name);
-    return {
-      id: uid("mov"),
-      type: missing.length ? "Ingreso parcial" : "Ingreso",
-      orderId: order.id,
-      itemName: item.name,
-      quantity: item.quantity,
-      date: todayISO(),
-      note: missing.length ? `Faltantes: ${missing.join(", ")}` : order.returnNotes,
-    };
-  });
-
   const orderSaved = await persistDoc("orders", order);
-  const movementsSaved = orderSaved ? await persistMany("movements", movements) : false;
-  if (!orderSaved || !movementsSaved) return;
+  if (!orderSaved) return;
 
-  state.movements.push(...movements);
-  currentReturnOrderId = null;
-  els.returnDialog.close();
   saveState();
-  await logActivity("Cerro devolucion", "orders", order.id, orderLabel(order), {
-    returnedAt: order.returnedAt,
+  await logActivity(missing.length ? "Registro retorno pendiente" : "Finalizo retorno", "orders", order.id, orderLabel(order), {
+    inspectedAt: order.inspectedAt,
     paid: order.paid,
-    missing: order.items.flatMap((item) => item.checklist.filter((piece) => !piece.returned).map((piece) => `${item.name}: ${piece.name}`)),
+    receivedBy,
+    receivedPayment,
+    missing,
+    replacementPending: order.replacementPending,
   });
+  currentReturnOrderId = null;
+  els.returnReceivedBy.value = "";
+  els.returnPayment.value = "";
+  els.returnNotes.value = "";
+  els.returnReplacementPending.checked = false;
   renderAll();
-  showToast("Devolucion cerrada. El stock quedo liberado.");
+  showToast(missing.length ? "Retorno guardado como PENDIENTE URGENTE." : "Inspeccion finalizada y retorno cerrado.");
 }
 
 function parseCsv(text) {
@@ -1889,25 +1871,25 @@ function bindEvents() {
   });
 
   els.addOrderItem.addEventListener("click", addDraftItem);
-  els.addCoordinator.addEventListener("click", addCoordinatorInput);
   els.orderPartyModes.forEach((input) => input.addEventListener("change", updateManualOrderFields));
-  els.orderStart.addEventListener("change", updateManualOrderFields);
-  els.orderClient.addEventListener("change", updateManualOrderFields);
-  els.orderInventory.addEventListener("change", updateManualOrderFields);
   els.orderForm.addEventListener("submit", createOrder);
-  els.inventoryForm.addEventListener("submit", createInventoryItem);
-  els.cancelItemEdit.addEventListener("click", cancelInventoryEdit);
+  els.returnClientSearch.addEventListener("input", () => {
+    currentReturnOrderId = null;
+    renderReturnCandidates();
+  });
+  els.returnOrderSelect.addEventListener("change", () => {
+    currentReturnOrderId = els.returnOrderSelect.value || null;
+    renderReturnSelection();
+  });
   els.clientForm.addEventListener("submit", createClient);
   els.cancelClientEdit.addEventListener("click", cancelClientEdit);
   els.orderSearch.addEventListener("input", renderOrdersTable);
   els.orderStatusFilter.addEventListener("change", renderOrdersTable);
-  els.inventorySearch.addEventListener("input", renderInventory);
   els.clientSearch.addEventListener("input", renderClients);
   els.userSearch.addEventListener("input", renderUsers);
   els.userForm.addEventListener("submit", createUserProfile);
   els.auditSearch.addEventListener("input", renderAudit);
   els.importClients.addEventListener("click", importClients);
-  els.importInventory.addEventListener("click", importInventory);
   els.exportJson.addEventListener("click", exportJson);
   els.exportLogsCsv.addEventListener("click", exportLogsCsv);
   els.clearActivityLogs.addEventListener("click", clearActivityLogs);
@@ -1915,8 +1897,6 @@ function bindEvents() {
   els.logoutButton.addEventListener("click", logout);
   els.emailForm.addEventListener("submit", updateProfileEmail);
   els.passwordForm.addEventListener("submit", updateProfilePassword);
-  els.returnForm.addEventListener("submit", closeReturn);
-  els.cancelReturn.addEventListener("click", () => els.returnDialog.close());
 
   document.addEventListener("click", async (event) => {
     const removeDraft = event.target.closest("[data-remove-draft]");
@@ -1926,19 +1906,9 @@ function bindEvents() {
       return;
     }
 
-    const removeCoordinator = event.target.closest("[data-remove-coordinator]");
-    if (removeCoordinator) {
-      removeCoordinator.closest(".coordinator-row")?.remove();
-      return;
-    }
-
-    const returnOrder = event.target.closest("[data-return-order]");
-    if (returnOrder) {
-      if (!canManageOrders()) {
-        showToast("Solo supervisor o admin puede modificar eventos.");
-        return;
-      }
-      openReturnDialog(returnOrder.dataset.returnOrder);
+    const inspectReturn = event.target.closest("[data-inspect-return]");
+    if (inspectReturn) {
+      openReturnRegistration(inspectReturn.dataset.inspectReturn);
       return;
     }
 
@@ -1951,6 +1921,7 @@ function bindEvents() {
       const order = state.orders.find((entry) => entry.id === togglePaid.dataset.togglePaid);
       if (order) {
         order.paid = !order.paid;
+        order.amountPaid = order.paid ? Number(order.amount || 0) : 0;
         await persistDoc("orders", order);
         await logActivity(order.paid ? "Marco pago" : "Marco pago pendiente", "orders", order.id, orderLabel(order), {
           amount: order.amount,
@@ -1958,27 +1929,6 @@ function bindEvents() {
         });
         renderAll();
         showToast(order.paid ? "Pago marcado como recibido." : "Pago marcado como pendiente.");
-      }
-      return;
-    }
-
-    const cancelOrder = event.target.closest("[data-cancel-order]");
-    if (cancelOrder) {
-      if (!canManageOrders()) {
-        showToast("Solo supervisor o admin puede cancelar eventos.");
-        return;
-      }
-      const order = state.orders.find((entry) => entry.id === cancelOrder.dataset.cancelOrder);
-      if (order && order.status !== "Devuelto" && confirm("¿Cancelar este evento y liberar inventario?")) {
-        order.status = "Cancelado";
-        order.cancelledBy = currentActor().uid;
-        order.cancelledByName = currentActor().name;
-        await persistDoc("orders", order);
-        await logActivity("Cancelo evento", "orders", order.id, orderLabel(order), {
-          items: order.items.map((item) => `${item.name} x${item.quantity}`),
-        });
-        renderAll();
-        showToast("Evento cancelado.");
       }
       return;
     }
@@ -1992,18 +1942,6 @@ function bindEvents() {
     const deleteClientButton = event.target.closest("[data-delete-client]");
     if (deleteClientButton) {
       await deleteClient(deleteClientButton.dataset.deleteClient);
-      return;
-    }
-
-    const editInventoryButton = event.target.closest("[data-edit-inventory]");
-    if (editInventoryButton) {
-      editInventoryItem(editInventoryButton.dataset.editInventory);
-      return;
-    }
-
-    const deleteInventoryButton = event.target.closest("[data-delete-inventory]");
-    if (deleteInventoryButton) {
-      await deleteInventoryItem(deleteInventoryButton.dataset.deleteInventory);
       return;
     }
 

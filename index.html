@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Plataforma para administrar alquiler de trajes, clientes, inventario, checklist de piezas, salidas, devoluciones y pagos."
+      content="Plataforma para registrar salidas, retornos, incidencias, pagos y pendientes operativos."
     />
-    <title>Trajes OS | Alquiler e inventario</title>
+    <title>Trajes OS | Registros operativos</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -23,22 +23,18 @@
           <div class="brand-mark">T</div>
           <div>
             <strong>Trajes OS</strong>
-            <span>Alquiler e inventario</span>
+            <span>Registros operativos</span>
           </div>
         </div>
 
         <nav class="nav-list" aria-label="Secciones">
           <button class="nav-item active" data-view="dashboard">
             <i data-lucide="layout-dashboard"></i>
-            CREAR EVENTO
+            INICIAR REGISTRO
           </button>
           <button class="nav-item" data-view="orders">
-            <i data-lucide="clipboard-list"></i>
-            EVENTOS
-          </button>
-          <button class="nav-item" data-view="inventory">
-            <i data-lucide="boxes"></i>
-            Inventario
+            <i data-lucide="chart-no-axes-combined"></i>
+            REPORTES
           </button>
           <button class="nav-item" data-view="clients">
             <i data-lucide="users"></i>
@@ -72,7 +68,7 @@
         <header class="topbar">
           <div>
             <p class="eyebrow">Operacion diaria</p>
-            <h1>Control de alquileres, piezas y devoluciones</h1>
+            <h1>Control de salidas, retornos e incidencias</h1>
           </div>
           <div class="topbar-actions">
             <button class="icon-button is-hidden" id="exportJson" title="Exportar respaldo JSON" aria-label="Exportar respaldo JSON" data-admin-only>
@@ -94,139 +90,134 @@
             <section class="panel primary-panel">
               <div class="panel-heading">
                 <div>
-                  <p class="eyebrow">Registrar evento</p>
-                  <h2>Nuevo evento</h2>
+                  <p class="eyebrow">Operacion diaria</p>
+                  <h2>Iniciar registro</h2>
                 </div>
                 <span class="status-pill" id="availabilityPill">Listo</span>
               </div>
               <form id="orderForm" class="form-grid">
-                <div class="mode-toggle full-span" role="group" aria-label="Tipo de evento">
+                <div class="mode-toggle full-span" role="group" aria-label="Tipo de registro">
                   <label>
-                    <input type="radio" name="orderPartyMode" value="spectacle" checked />
-                    Espectaculo
+                    <input type="radio" name="orderPartyMode" value="outbound" checked />
+                    Salida
                   </label>
                   <label>
-                    <input type="radio" name="orderPartyMode" value="service" />
-                    Servicio
+                    <input type="radio" name="orderPartyMode" value="return" />
+                    Retorno
+                  </label>
+                  <label>
+                    <input type="radio" name="orderPartyMode" value="incident" />
+                    Incidencia
                   </label>
                 </div>
-                <label class="full-span is-hidden" id="clientSelectorField">
-                  Cliente / contacto de servicio
-                  <select id="orderClient" required></select>
-                </label>
-                <div class="manual-fields full-span is-hidden" id="newClientFields">
-                  <label>
-                    Contacto nuevo
-                    <input id="orderNewClientName" type="text" placeholder="Nombre o empresa" />
-                  </label>
-                  <label>
-                    Telefono
-                    <input id="orderNewClientPhone" type="text" placeholder="+57..." />
-                  </label>
+                <div class="record-mode full-span" id="outboundFields">
                   <label class="full-span">
-                    Notas del contacto
-                    <textarea id="orderNewClientNotes" rows="2" placeholder="Direccion, condiciones o referencias"></textarea>
-                  </label>
-                </div>
-                <div class="manual-fields full-span" id="spectacleFields">
-                  <label>
-                    Nombre del evento
-                    <input id="orderSpectacleName" type="text" placeholder="Hora loca, show, activacion..." />
+                    Seleccionar cliente
+                    <select id="orderClient"></select>
                   </label>
                   <label>
-                    Telefono de contacto
-                    <input id="orderSpectaclePhone" type="text" placeholder="+57..." />
+                    Fecha de salida
+                    <input id="orderStart" type="date" />
                   </label>
-                  <div class="coordinator-box full-span">
+                  <label>
+                    Fecha de devolucion
+                    <input id="orderEnd" type="date" />
+                  </label>
+                  <label>
+                    Quien lo entrego
+                    <input id="orderOwner" type="text" placeholder="Nombre del responsable" />
+                  </label>
+                  <label>
+                    Monto a cobrar
+                    <input id="orderAmount" type="number" min="0" max="7000" step="0.01" inputmode="decimal" placeholder="Opcional" />
+                  </label>
+                  <label class="check-row">
+                    <input id="orderPaid" type="checkbox" />
+                    <span>Pago completo recibido</span>
+                  </label>
+                  <div class="manual-items full-span">
                     <div class="panel-heading compact-heading">
                       <div>
-                        <span class="muted">Coordinadores</span>
+                        <span>Articulos de la salida</span>
+                        <p class="helper-text">En detalles, cada linea es un articulo. Usa Enter; no uses comas.</p>
                       </div>
-                      <button type="button" class="mini-button icon-mini" id="addCoordinator" title="Agregar coordinador" aria-label="Agregar coordinador">+</button>
                     </div>
-                    <div class="coordinator-list" id="coordinatorList">
-                      <input class="coordinator-input" type="text" placeholder="Nombre del coordinador" />
-                    </div>
-                  </div>
-                  <label class="full-span">
-                    Notas del espectaculo
-                    <textarea id="orderSpectacleNotes" rows="2" placeholder="Lugar, coordinacion o detalle del show"></textarea>
-                  </label>
-                </div>
-                <label id="orderStartField">
-                  <span id="orderStartText">Fecha del evento</span>
-                  <input id="orderStart" type="date" required />
-                </label>
-                <label id="spectacleTimeField" data-spectacle-only>
-                  Hora del espectaculo
-                  <input id="orderSpectacleTime" type="time" />
-                </label>
-                <label id="orderEndField" class="is-hidden" data-service-only>
-                  Fecha devolucion
-                  <input id="orderEnd" type="date" required />
-                </label>
-                <label id="orderOwnerField" class="is-hidden" data-service-only>
-                  Entregado por
-                  <input id="orderOwner" type="text" placeholder="Nombre del responsable" />
-                </label>
-                <label id="orderAmountField" class="is-hidden" data-service-only>
-                  Monto
-                  <input id="orderAmount" type="number" min="0" max="7000" step="0.01" inputmode="decimal" placeholder="Opcional" />
-                </label>
-                <label class="check-row is-hidden" id="orderPaidField" data-service-only>
-                  <input id="orderPaid" type="checkbox" />
-                  <span>Pago recibido</span>
-                </label>
-                <label class="full-span">
-                  Item para agregar
-                  <div class="inline-add">
-                    <select id="orderInventory"></select>
-                    <input id="orderQty" type="number" min="1" value="1" aria-label="Cantidad" />
+                    <label>
+                      Nombre
+                      <input id="orderItemName" type="text" placeholder="Ej. Traje Sonic" />
+                    </label>
+                    <label class="full-span">
+                      Detalles
+                      <textarea id="orderItemDetails" rows="4" placeholder="Cabeza&#10;Cuerpo&#10;Guantes&#10;Botas"></textarea>
+                    </label>
                     <button type="button" class="secondary-button" id="addOrderItem">
                       <i data-lucide="plus"></i>
-                      Agregar
+                      Agregar articulo
                     </button>
                   </div>
-                </label>
-                <div class="manual-fields full-span is-hidden" id="newItemFields">
-                  <label>
-                    Item nuevo
-                    <input id="orderNewItemName" type="text" placeholder="Traje, cabeza, accesorio..." />
-                  </label>
-                  <label>
-                    Categoria
-                    <select id="orderNewItemCategory">
-                      <option>Traje completo</option>
-                      <option>Cabeza</option>
-                      <option>Calzado</option>
-                      <option>Accesorio</option>
-                      <option>Vestuario</option>
-                      <option>Equipo evento</option>
-                    </select>
-                  </label>
-                  <label>
-                    Stock total
-                    <input id="orderNewItemStock" type="number" min="1" value="1" />
-                  </label>
+                  <div class="full-span order-builder" id="orderBuilder"></div>
                   <label class="full-span">
-                    Checklist incluido
-                    <textarea id="orderNewItemChecklist" rows="3" placeholder="Cabeza&#10;Cuerpo&#10;Guantes"></textarea>
+                    Nota
+                    <textarea id="orderNotes" rows="3" placeholder="Comentarios, condiciones o indicaciones"></textarea>
                   </label>
-                  <label class="full-span">
-                    Notas del item
-                    <textarea id="orderNewItemNotes" rows="2" placeholder="Estado u observaciones"></textarea>
-                  </label>
+                  <div class="form-actions full-span">
+                    <button type="submit" class="primary-button">
+                      <i data-lucide="send"></i>
+                      Registrar salida
+                    </button>
+                  </div>
                 </div>
-                <div class="full-span order-builder" id="orderBuilder"></div>
-                <label class="full-span">
-                  Observaciones
-                  <textarea id="orderNotes" rows="3" placeholder="Condiciones, tallas, piezas especiales, direccion, etc."></textarea>
-                </label>
-                <div class="form-actions full-span">
-                  <button type="submit" class="primary-button">
-                    <i data-lucide="send"></i>
-                    Guardar evento
-                  </button>
+
+                <div class="record-mode full-span is-hidden" id="returnFields">
+                  <label class="full-span">
+                    Buscar cliente o pedido
+                    <input id="returnClientSearch" type="search" placeholder="Escribe el nombre del cliente" />
+                  </label>
+                  <label class="full-span">
+                    Salidas pendientes de retorno
+                    <select id="returnOrderSelect"></select>
+                  </label>
+                  <div class="return-order-summary full-span" id="returnOrderSummary"></div>
+                  <div class="return-checklist full-span" id="returnChecklist"></div>
+                  <label>
+                    Quien lo recibio
+                    <input id="returnReceivedBy" type="text" placeholder="Nombre del responsable" />
+                  </label>
+                  <label>
+                    Pago recibido en retorno
+                    <input id="returnPayment" type="number" min="0" max="7000" step="0.01" inputmode="decimal" placeholder="Opcional" />
+                  </label>
+                  <label class="check-row full-span">
+                    <input id="returnReplacementPending" type="checkbox" />
+                    <span>Repuso el articulo faltante con pago, pendiente de retorno</span>
+                  </label>
+                  <label class="full-span">
+                    Nota de retorno
+                    <textarea id="returnNotes" rows="3" placeholder="Faltantes, dano, pago, acuerdos o seguimiento"></textarea>
+                  </label>
+                  <div class="form-actions full-span">
+                    <button type="submit" class="primary-button">
+                      <i data-lucide="clipboard-check"></i>
+                      Finalizar inspeccion
+                    </button>
+                  </div>
+                </div>
+
+                <div class="record-mode full-span is-hidden" id="incidentFields">
+                  <label class="full-span">
+                    Nombre
+                    <input id="incidentName" type="text" placeholder="Persona, coordinador o cliente" />
+                  </label>
+                  <label class="full-span">
+                    Nota
+                    <textarea id="incidentNotes" rows="6" placeholder="Describe lo ocurrido, lo que debe o el acuerdo pendiente"></textarea>
+                  </label>
+                  <div class="form-actions full-span">
+                    <button type="submit" class="primary-button">
+                      <i data-lucide="triangle-alert"></i>
+                      Registrar incidencia
+                    </button>
+                  </div>
                 </div>
               </form>
             </section>
@@ -234,8 +225,8 @@
             <section class="panel">
               <div class="panel-heading">
                 <div>
-                  <p class="eyebrow">Hoy</p>
-                  <h2>Eventos activos</h2>
+                  <p class="eyebrow">Seguimiento</p>
+                  <h2>Salidas abiertas</h2>
                 </div>
               </div>
               <div class="stack-list" id="activeOrders"></div>
@@ -247,25 +238,25 @@
           <div class="panel">
             <div class="panel-heading">
               <div>
-                <p class="eyebrow">Seguimiento</p>
-                <h2>Eventos</h2>
+                <p class="eyebrow">Control operativo</p>
+                <h2>Reportes</h2>
               </div>
               <div class="filter-row">
-                <input id="orderSearch" type="search" placeholder="Buscar cliente, item o estado" />
+                <input id="orderSearch" type="search" placeholder="Buscar cliente, articulo o estado" />
                 <select id="orderStatusFilter">
                   <option value="all">Todos</option>
-                  <option value="Activo">Activos</option>
-                  <option value="Devuelto">Devueltos</option>
-                  <option value="Vencido">Vencidos</option>
-                  <option value="Cancelado">Cancelados</option>
+                  <option value="Activo">Pendientes</option>
+                  <option value="Pendiente urgente">Pendiente urgente</option>
+                  <option value="Devuelto">Retornos cerrados</option>
                 </select>
               </div>
             </div>
+            <div class="metrics-grid report-metrics" id="reportsMetrics"></div>
             <div class="events-board" id="eventsBoard"></div>
           </div>
         </section>
 
-        <section class="view" id="inventory">
+        <section class="view is-hidden" id="inventory" aria-hidden="true">
           <div class="workspace-grid inventory-layout">
             <section class="panel">
               <div class="panel-heading">
@@ -396,21 +387,6 @@ Eventos Nova,+573001112233,Cliente corporativo</textarea>
               </button>
             </section>
 
-            <section class="panel">
-              <div class="panel-heading">
-                <div>
-                  <p class="eyebrow">Excel / CSV</p>
-                  <h2>Importar inventario</h2>
-                </div>
-              </div>
-              <p class="helper-text">Pega CSV con columnas: nombre, categoria, cantidad, checklist, notas. En checklist usa piezas separadas por punto y coma.</p>
-              <textarea id="inventoryCsv" class="csv-box" rows="10">nombre,categoria,cantidad,checklist,notas
-Traje Astronauta,Traje completo,2,Casco;Overol;Guantes;Botas,Revisar visor antes de salida</textarea>
-              <button class="primary-button" id="importInventory">
-                <i data-lucide="upload"></i>
-                Importar inventario
-              </button>
-            </section>
           </div>
         </section>
 
@@ -575,32 +551,6 @@ Traje Astronauta,Traje completo,2,Casco;Overol;Guantes;Botas,Revisar visor antes
         </section>
       </main>
     </div>
-
-    <dialog id="returnDialog" class="return-dialog">
-      <form method="dialog" id="returnForm">
-        <div class="panel-heading">
-          <div>
-            <p class="eyebrow">Devolucion</p>
-            <h2>Revisar piezas</h2>
-          </div>
-          <button class="icon-button" value="cancel" aria-label="Cerrar">
-            <i data-lucide="x"></i>
-          </button>
-        </div>
-        <div id="returnChecklist" class="return-checklist"></div>
-        <label>
-          Notas de devolucion
-          <textarea id="returnNotes" rows="3" placeholder="Piezas faltantes, dano, lavado, mantenimiento..."></textarea>
-        </label>
-        <div class="form-actions">
-          <button class="secondary-button" value="cancel" type="button" id="cancelReturn">Cancelar</button>
-          <button class="primary-button" value="confirm" type="submit">
-            <i data-lucide="check"></i>
-            Cerrar devolucion
-          </button>
-        </div>
-      </form>
-    </dialog>
 
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
 

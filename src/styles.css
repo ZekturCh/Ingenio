@@ -493,6 +493,28 @@ textarea:focus {
   background: rgba(90, 247, 255, 0.045);
 }
 
+.record-mode,
+.manual-items {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.manual-items {
+  padding: 14px;
+  border: 1px solid rgba(90, 247, 255, 0.2);
+  border-radius: 16px;
+  background: rgba(90, 247, 255, 0.045);
+}
+
+.return-order-summary {
+  display: grid;
+}
+
+.report-metrics {
+  margin: 0 0 18px;
+}
+
 .compact-heading {
   align-items: center;
   margin-bottom: 10px;
@@ -912,6 +934,8 @@ code {
   .form-grid.compact,
   .inventory-grid,
   .manual-fields,
+  .record-mode,
+  .manual-items,
   .event-card-grid {
     grid-template-columns: 1fr;
   }

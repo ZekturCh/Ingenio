@@ -48,9 +48,13 @@ service cloud.firestore {
           'paid',
           'status',
           'returnedAt',
+          'inspectedAt',
           'returnNotes',
           'returnedBy',
           'returnedByName',
+          'receivedBy',
+          'replacementPending',
+          'amountPaid',
           'items',
           'cancelledBy',
           'cancelledByName'
@@ -95,6 +99,12 @@ service cloud.firestore {
       allow create: if canCreateWork();
       allow update: if canAdmin() || canSupervisorUpdateOrder();
       allow delete: if canAdmin();
+    }
+
+    match /incidents/{incidentId} {
+      allow read: if canRead();
+      allow create: if canCreateWork();
+      allow update, delete: if canAdmin();
     }
 
     match /inventoryMovements/{movementId} {

@@ -1,16 +1,19 @@
 # Ingenio Trajes OS
 
-MVP web para administrar alquiler de trajes, clientes, inventario con checklist de piezas, salidas, devoluciones y pago opcional.
+Plataforma web para registrar salidas, retornos, incidencias, clientes, pagos y pendientes operativos.
 
 ## Que incluye
 
-- Panel operativo con pedidos activos, disponibilidad, pagos pendientes y vencidos.
+- Iniciar registro con tres flujos: salida, retorno e incidencia.
+- Salidas con cliente, fechas, responsable, monto, nota y artículos escritos manualmente por líneas.
+- Retornos con búsqueda de cliente, checklist, responsable que recibe, pago y estado pendiente urgente para faltantes.
+- Reportes de artículos por cliente, deuda registrada, retornos abiertos, faltantes e incidencias.
 - Login con Firebase Auth Email/Password.
 - Admin persistente por UID en `users/{uid}`.
-- Admin: usuarios, clientes, inventario, pedidos existentes, pagos, devoluciones, importaciones y auditoria.
+- Admin: usuarios, clientes, pagos, retornos, importaciones y auditoria.
 - Cloud Functions para crear y eliminar cuentas reales de Firebase Auth desde la app.
 - Operadores: crear pedidos y editar su propio correo/contrasena.
-- Auditoria de cambios: ingresos, pedidos, inventario, clientes, usuarios, pagos, cancelaciones y devoluciones.
+- Auditoria de cambios: ingresos, salidas, retornos, incidencias, clientes, usuarios y pagos.
 - Firebase conectado al proyecto `ingenioespectaculos`.
 - Reglas de Firestore listas para produccion y pruebas.
 
@@ -30,9 +33,8 @@ npm run start
 La app inicializa Firebase con el proyecto `ingenioespectaculos` y usa:
 
 - `clients`
-- `inventoryItems`
 - `orders`
-- `inventoryMovements`
+- `incidents`
 - `users`
 - `settings`
 - `activityLogs`
