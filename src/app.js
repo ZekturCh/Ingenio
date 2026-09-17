@@ -1365,14 +1365,14 @@ async function saveEditedOrderItems(event) {
   const orderIndex = state.orders.findIndex((entry) => entry.id === order.id);
   state.orders[orderIndex] = updatedOrder;
   saveState();
-  await logActivity("Edito articulos de salida", "orders", order.id, orderLabel(updatedOrder), {
-    items: items.map((item) => item.name),
-  });
   els.editOrderDialog.close();
   currentEditOrderId = null;
   editOrderItems = [];
   renderAll();
   showToast("Articulos de la salida actualizados.");
+  void logActivity("Edito articulos de salida", "orders", order.id, orderLabel(updatedOrder), {
+    items: items.map((item) => item.name),
+  });
 }
 
 async function createOrder(event) {
