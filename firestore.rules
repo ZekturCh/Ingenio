@@ -83,7 +83,7 @@ service cloud.firestore {
     match /clients/{clientId} {
       allow read: if canRead();
       allow create: if canCreateWork();
-      allow update: if canAdmin();
+      allow update: if canManageOrders();
       allow delete: if canAdmin();
     }
 

@@ -552,6 +552,46 @@ Eventos Nova,+573001112233,Cliente corporativo</textarea>
       </main>
     </div>
 
+    <dialog id="editOrderDialog" class="return-dialog edit-order-dialog">
+      <form id="editOrderForm">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">Salida abierta</p>
+            <h2>Editar articulos</h2>
+          </div>
+        </div>
+        <div class="return-order-summary" id="editOrderMeta"></div>
+        <div class="edit-order-list" id="editOrderItems"></div>
+        <section class="manual-items">
+          <div class="panel-heading compact-heading full-span">
+            <div>
+              <strong>Agregar articulo</strong>
+              <p class="helper-text">Escribe un articulo por linea en detalles. No uses comas.</p>
+            </div>
+          </div>
+          <label>
+            Nombre
+            <input id="editOrderItemName" type="text" placeholder="Ej. Traje Sonic" />
+          </label>
+          <label class="full-span">
+            Detalles
+            <textarea id="editOrderItemDetails" rows="4" placeholder="Cabeza&#10;Cuerpo&#10;Guantes"></textarea>
+          </label>
+          <button type="button" class="secondary-button" id="addEditOrderItem">
+            <i data-lucide="plus"></i>
+            Agregar articulo
+          </button>
+        </section>
+        <div class="form-actions dialog-actions">
+          <button type="button" class="secondary-button" id="cancelOrderEdit">Cancelar</button>
+          <button type="submit" class="primary-button">
+            <i data-lucide="save"></i>
+            Guardar articulos
+          </button>
+        </div>
+      </form>
+    </dialog>
+
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>

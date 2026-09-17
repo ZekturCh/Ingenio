@@ -89,6 +89,8 @@ const seedData = {
 let state = loadState();
 let draftOrderItems = [];
 let currentReturnOrderId = null;
+let currentEditOrderId = null;
+let editOrderItems = [];
 let lastExportedLogCount = Number(localStorage.getItem(LOG_EXPORT_STORAGE_KEY) || 0);
 let logThresholdToastShown = false;
 
@@ -121,6 +123,14 @@ const els = {
   returnPayment: document.querySelector("#returnPayment"),
   returnReplacementPending: document.querySelector("#returnReplacementPending"),
   returnNotes: document.querySelector("#returnNotes"),
+  editOrderDialog: document.querySelector("#editOrderDialog"),
+  editOrderForm: document.querySelector("#editOrderForm"),
+  editOrderMeta: document.querySelector("#editOrderMeta"),
+  editOrderItems: document.querySelector("#editOrderItems"),
+  editOrderItemName: document.querySelector("#editOrderItemName"),
+  editOrderItemDetails: document.querySelector("#editOrderItemDetails"),
+  addEditOrderItem: document.querySelector("#addEditOrderItem"),
+  cancelOrderEdit: document.querySelector("#cancelOrderEdit"),
   incidentName: document.querySelector("#incidentName"),
   incidentNotes: document.querySelector("#incidentNotes"),
   availabilityPill: document.querySelector("#availabilityPill"),
@@ -550,8 +560,8 @@ function getOrderParty(order) {
   if (order.clientName) {
     const client = getClient(order.clientId);
     return {
-      name: order.clientName || client?.name || "Cliente sin nombre",
-      phone: order.clientPhone || client?.phone || "",
+      name: client?.name || order.clientName || "Cliente sin nombre",
+      phone: client?.phone || order.clientPhone || "",
       label: "Salida",
       notes: order.notes || "",
     };
@@ -762,7 +772,10 @@ function renderActiveOrders() {
           <div class="chips">
             ${order.items.map((item) => `<span class="chip">${escapeHtml(item.name)}</span>`).join("")}
           </div>
-          <div class="row-actions"><button class="mini-button" data-inspect-return="${escapeHtml(order.id)}">Inspeccionar</button></div>
+          <div class="row-actions">
+            ${canManageOrders() ? `<button class="mini-button" data-edit-order="${escapeHtml(order.id)}">Editar articulos</button>` : ""}
+            <button class="mini-button" data-inspect-return="${escapeHtml(order.id)}">Inspeccionar</button>
+          </div>
         </article>
       `;
     })
@@ -886,6 +899,7 @@ function renderEventCard(order) {
       </div>
       ${missingPieces.length ? `<p class="muted">Faltantes registrados: ${escapeHtml(missingPieces.join(", "))}</p>` : ""}
       <div class="row-actions">
+        ${canManageOrders() && ["Activo", "Pendiente urgente", "Vencido"].includes(status) ? `<button class="mini-button" data-edit-order="${escapeHtml(order.id)}">Editar articulos</button>` : ""}
         ${["Activo", "Pendiente urgente", "Vencido"].includes(status) ? `<button class="mini-button" data-inspect-return="${escapeHtml(order.id)}">Inspeccionar retorno</button>` : ""}
         ${canManageOrders() && debt > 0 ? `<button class="mini-button" data-toggle-paid="${escapeHtml(order.id)}">Marcar pago</button>` : ""}
       </div>
@@ -1028,9 +1042,9 @@ function renderClients() {
                 <span>Agregado por: ${escapeHtml(client.createdByName || "Sin usuario")}</span>
                 <span>${escapeHtml(client.notes || "Sin notas")}</span>
               </div>
-              <div class="row-actions ${isAdmin() ? "" : "is-hidden"}">
+              <div class="row-actions ${canManageOrders() ? "" : "is-hidden"}">
                 <button class="mini-button" data-edit-client="${escapeHtml(client.id)}">Editar</button>
-                <button class="mini-button" data-delete-client="${escapeHtml(client.id)}">Eliminar</button>
+                <button class="mini-button ${isAdmin() ? "" : "is-hidden"}" data-delete-client="${escapeHtml(client.id)}">Eliminar</button>
               </div>
             </article>
           `;
@@ -1208,6 +1222,159 @@ function addDraftItem() {
   renderAll();
 }
 
+function isEditableOrder(order) {
+  return ["Activo", "Pendiente urgente", "Vencido"].includes(orderState(order));
+}
+
+function renderOrderItemsEditor() {
+  if (!els.editOrderItems) return;
+  if (!editOrderItems.length) {
+    els.editOrderItems.innerHTML = `<div class="empty">No hay articulos. Agrega al menos uno antes de guardar.</div>`;
+    return;
+  }
+
+  els.editOrderItems.innerHTML = editOrderItems
+    .map((item, index) => {
+      const details = getItemChecklist(item).map((piece) => piece.name).join("\n");
+      return `
+        <article class="edit-item-row" data-edit-order-index="${index}">
+          <div class="panel-heading compact-heading">
+            <strong>Articulo ${index + 1}</strong>
+            <button type="button" class="mini-button" data-remove-edit-item="${index}">Quitar</button>
+          </div>
+          <div class="edit-item-fields">
+            <label>
+              Nombre
+              <input type="text" data-edit-item-name value="${escapeHtml(item.name)}" />
+            </label>
+            <label>
+              Detalles
+              <textarea rows="4" data-edit-item-details placeholder="Cabeza&#10;Cuerpo&#10;Guantes">${escapeHtml(details)}</textarea>
+            </label>
+          </div>
+        </article>
+      `;
+    })
+    .join("");
+}
+
+function openOrderItemsEditor(orderId) {
+  if (!canManageOrders()) {
+    showToast("Solo supervisor o admin puede editar articulos.");
+    return;
+  }
+  const order = state.orders.find((entry) => entry.id === orderId);
+  if (!order || !isEditableOrder(order)) {
+    showToast("Solo se pueden editar articulos de salidas abiertas.");
+    return;
+  }
+
+  currentEditOrderId = order.id;
+  editOrderItems = (order.items || []).map((item) => ({
+    ...item,
+    id: item.id || uid("item"),
+    details: getItemChecklist(item).map((piece) => piece.name),
+    checklist: getItemChecklist(item),
+  }));
+  const party = getOrderParty(order);
+  els.editOrderMeta.innerHTML = `<div class="order-card"><strong>${escapeHtml(party.name)}</strong><p class="muted">Salida: ${escapeHtml(order.startDate || "sin fecha")} · Devolucion prevista: ${escapeHtml(order.endDate || "sin fecha")}</p></div>`;
+  els.editOrderItemName.value = "";
+  els.editOrderItemDetails.value = "";
+  renderOrderItemsEditor();
+  els.editOrderDialog.showModal();
+  if (window.lucide) window.lucide.createIcons();
+}
+
+function addEditedOrderItem() {
+  const name = els.editOrderItemName.value.trim();
+  const details = els.editOrderItemDetails.value.trim();
+  if (!name) {
+    showToast("Escribe el nombre del articulo.");
+    els.editOrderItemName.focus();
+    return;
+  }
+  if (!details || details.includes(",")) {
+    showToast("En detalles usa una linea por articulo y no uses comas.");
+    els.editOrderItemDetails.focus();
+    return;
+  }
+  const lines = splitChecklist(details);
+  if (!lines.length) {
+    showToast("Agrega al menos una linea en detalles.");
+    return;
+  }
+  editOrderItems.push({
+    id: uid("item"),
+    name,
+    details: lines,
+    checklist: lines.map((piece) => ({ name: piece, returned: false })),
+  });
+  els.editOrderItemName.value = "";
+  els.editOrderItemDetails.value = "";
+  renderOrderItemsEditor();
+}
+
+async function saveEditedOrderItems(event) {
+  event.preventDefault();
+  if (!canManageOrders()) {
+    showToast("Solo supervisor o admin puede editar articulos.");
+    return;
+  }
+  const order = state.orders.find((entry) => entry.id === currentEditOrderId);
+  if (!order || !isEditableOrder(order)) {
+    showToast("La salida ya no esta disponible para edicion.");
+    return;
+  }
+
+  const rows = [...els.editOrderItems.querySelectorAll("[data-edit-order-index]")];
+  const items = [];
+  for (const row of rows) {
+    const index = Number(row.dataset.editOrderIndex);
+    const previous = editOrderItems[index];
+    const name = row.querySelector("[data-edit-item-name]").value.trim();
+    const details = row.querySelector("[data-edit-item-details]").value.trim();
+    if (!name || !details || details.includes(",")) {
+      showToast("Cada articulo necesita nombre y detalles por lineas, sin comas.");
+      return;
+    }
+    const lines = splitChecklist(details);
+    if (!lines.length) {
+      showToast("Cada articulo debe tener al menos un detalle.");
+      return;
+    }
+    const previousPieces = getItemChecklist(previous);
+    items.push({
+      ...previous,
+      id: previous.id || uid("item"),
+      name,
+      details: lines,
+      checklist: lines.map((piece) => ({
+        name: piece,
+        returned: previousPieces.some((previousPiece) => previousPiece.name === piece && previousPiece.returned === true),
+      })),
+    });
+  }
+
+  if (!items.length) {
+    showToast("La salida debe conservar al menos un articulo.");
+    return;
+  }
+  const updatedOrder = { ...order, items };
+  const saved = await persistDoc("orders", updatedOrder);
+  if (!saved) return;
+  const orderIndex = state.orders.findIndex((entry) => entry.id === order.id);
+  state.orders[orderIndex] = updatedOrder;
+  saveState();
+  await logActivity("Edito articulos de salida", "orders", order.id, orderLabel(updatedOrder), {
+    items: items.map((item) => item.name),
+  });
+  els.editOrderDialog.close();
+  currentEditOrderId = null;
+  editOrderItems = [];
+  renderAll();
+  showToast("Articulos de la salida actualizados.");
+}
+
 async function createOrder(event) {
   event.preventDefault();
   if (!firebaseState.active) {
@@ -1365,8 +1532,8 @@ async function createInventoryItem(event) {
 async function createClient(event) {
   event.preventDefault();
   const recordId = els.clientRecordId.value;
-  if (recordId && !isAdmin()) {
-    showToast("Solo admin puede editar clientes existentes.");
+  if (recordId && !canManageOrders()) {
+    showToast("Solo supervisor o admin puede editar clientes existentes.");
     return;
   }
   if (!recordId && !firebaseState.active) {
@@ -1404,7 +1571,7 @@ async function createClient(event) {
 }
 
 function editClient(clientId) {
-  if (!isAdmin()) return;
+  if (!canManageOrders()) return;
   const client = state.clients.find((entry) => entry.id === clientId);
   if (!client) return;
   els.clientRecordId.value = client.id;
@@ -1881,6 +2048,13 @@ function bindEvents() {
     currentReturnOrderId = els.returnOrderSelect.value || null;
     renderReturnSelection();
   });
+  els.editOrderForm.addEventListener("submit", saveEditedOrderItems);
+  els.addEditOrderItem.addEventListener("click", addEditedOrderItem);
+  els.cancelOrderEdit.addEventListener("click", () => {
+    els.editOrderDialog.close();
+    currentEditOrderId = null;
+    editOrderItems = [];
+  });
   els.clientForm.addEventListener("submit", createClient);
   els.cancelClientEdit.addEventListener("click", cancelClientEdit);
   els.orderSearch.addEventListener("input", renderOrdersTable);
@@ -1903,6 +2077,19 @@ function bindEvents() {
     if (removeDraft) {
       draftOrderItems.splice(Number(removeDraft.dataset.removeDraft), 1);
       renderAll();
+      return;
+    }
+
+    const removeEditedItem = event.target.closest("[data-remove-edit-item]");
+    if (removeEditedItem) {
+      editOrderItems.splice(Number(removeEditedItem.dataset.removeEditItem), 1);
+      renderOrderItemsEditor();
+      return;
+    }
+
+    const editOrder = event.target.closest("[data-edit-order]");
+    if (editOrder) {
+      openOrderItemsEditor(editOrder.dataset.editOrder);
       return;
     }
 
