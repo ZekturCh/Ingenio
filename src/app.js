@@ -842,6 +842,25 @@ async function uploadOrderPhotos(order, files, existingCount = 0) {
   showToast(`${uploaded} foto(s) vinculada(s) a la salida.`);
 }
 
+async function cleanClosedOrderPhotos(order) {
+  if (!firebaseState.enabled || !firebaseState.functions || !order?.id) {
+    return { attempted: false, deleted: 0, retained: 0 };
+  }
+
+  try {
+    const deleteOrderPhotos = httpsCallable(firebaseState.functions, "deleteOrderPhotos");
+    const result = await deleteOrderPhotos({ orderId: order.id });
+    return {
+      attempted: true,
+      deleted: Number(result.data?.deleted || 0),
+      retained: Number(result.data?.retained || 0),
+    };
+  } catch (error) {
+    console.warn("No se pudieron limpiar las fotos del retorno cerrado.", error);
+    return { attempted: true, failed: true, deleted: 0, retained: 0 };
+  }
+}
+
 function missingEntries(order, includeUninspected = false) {
   if (!includeUninspected && !order.inspectedAt && !["Pendiente urgente", "Devuelto"].includes(order.status)) {
     return [];
@@ -2007,6 +2026,7 @@ async function closeReturn() {
   if (!orderSaved) return;
 
   saveState();
+  const photoCleanup = missing.length ? null : await cleanClosedOrderPhotos(order);
   await logActivity(missing.length ? "Registro retorno pendiente" : "Finalizo retorno", "orders", order.id, orderLabel(order), {
     inspectedAt: order.inspectedAt,
     paid: order.paid,
@@ -2014,6 +2034,8 @@ async function closeReturn() {
     receivedPayment,
     missing,
     replacementPending: order.replacementPending,
+    photosDeleted: photoCleanup?.deleted || 0,
+    photosRetained: photoCleanup?.retained || 0,
   });
   currentReturnOrderId = null;
   els.returnReceivedBy.value = "";
@@ -2021,7 +2043,15 @@ async function closeReturn() {
   els.returnNotes.value = "";
   els.returnReplacementPending.checked = false;
   renderAll();
-  showToast(missing.length ? "Retorno guardado como PENDIENTE URGENTE." : "Inspeccion finalizada y retorno cerrado.");
+  if (missing.length) {
+    showToast("Retorno guardado como PENDIENTE URGENTE.");
+  } else if (photoCleanup?.failed) {
+    showToast("Inspeccion cerrada. Las fotos quedan pendientes de limpieza hasta desplegar Cloud Functions.");
+  } else if (photoCleanup?.retained) {
+    showToast("Inspeccion cerrada. Algunas fotos no se pudieron borrar y quedaron registradas.");
+  } else {
+    showToast(photoCleanup?.deleted ? "Inspeccion cerrada y fotos eliminadas." : "Inspeccion finalizada y retorno cerrado.");
+  }
 }
 
 function parseCsv(text) {

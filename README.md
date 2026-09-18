@@ -55,6 +55,20 @@ La aplicación usa el `cloudName` ya presente en el proyecto `STREAMING`, pero n
 
 No pongas `api_secret` ni claves de Cloudinary en GitHub Pages. Las fotos se suben directo a Cloudinary y solo se registra en Firestore `orders/{orderId}/attachments/{attachmentId}` la URL, el `publicId`, la fecha y el usuario que la subió. Publica también `firestore.rules` para que esta subcolección tenga permisos.
 
+### Limpieza al cerrar un retorno
+
+Cuando un supervisor o admin finaliza una inspección sin faltantes, la app llama a la Cloud Function `deleteOrderPhotos`: elimina las imágenes remotas y sus documentos `attachments`. Si hay faltantes, las conserva hasta que el retorno quede cerrado.
+
+Antes de desplegar Functions, guarda estas dos credenciales en Firebase. Se mantienen del lado servidor y nunca se exponen en GitHub Pages:
+
+```bash
+firebase functions:secrets:set CLOUDINARY_API_KEY
+firebase functions:secrets:set CLOUDINARY_API_SECRET
+firebase deploy --only functions
+```
+
+Necesitas un plan de Firebase que permita Cloud Functions. Si la función no está desplegada, el retorno se cierra igual y la interfaz avisa que las fotos quedaron pendientes de limpieza.
+
 ## Usuarios y roles
 
 Hay un apartado `Usuarios` visible solo para usuarios con `role: "admin"` en Firestore.
