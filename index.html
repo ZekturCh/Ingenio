@@ -156,6 +156,20 @@
                     </button>
                   </div>
                   <div class="full-span order-builder" id="orderBuilder"></div>
+                  <section class="photo-manager full-span">
+                    <div class="panel-heading compact-heading">
+                      <div>
+                        <span>Fotos de la salida</span>
+                        <p class="helper-text">Opcional. Hasta 5 fotos JPG, PNG, WebP o HEIC de 8 MB cada una.</p>
+                      </div>
+                    </div>
+                    <label class="file-picker">
+                      <input id="orderPhotos" type="file" accept="image/jpeg,image/png,image/webp,image/heic" multiple />
+                      <i data-lucide="camera"></i>
+                      Seleccionar fotos
+                    </label>
+                    <div class="photo-queue" id="orderPhotoQueue"></div>
+                  </section>
                   <label class="full-span">
                     Nota
                     <textarea id="orderNotes" rows="3" placeholder="Comentarios, condiciones o indicaciones"></textarea>
@@ -557,10 +571,37 @@ Eventos Nova,+573001112233,Cliente corporativo</textarea>
         <div class="panel-heading">
           <div>
             <p class="eyebrow">Salida abierta</p>
-            <h2>Editar articulos</h2>
+            <h2>Editar salida</h2>
           </div>
         </div>
         <div class="return-order-summary" id="editOrderMeta"></div>
+        <section class="edit-client-box">
+          <div class="panel-heading compact-heading">
+            <div>
+              <strong>Cliente de la salida</strong>
+              <p class="helper-text">Cambia el cliente si el registro fue asignado por error.</p>
+            </div>
+            <button type="button" class="secondary-button" id="toggleNewOrderClient">Nuevo cliente</button>
+          </div>
+          <label>
+            Cliente
+            <select id="editOrderClient"></select>
+          </label>
+          <div class="form-grid compact is-hidden" id="editNewOrderClientFields">
+            <label>
+              Nombre
+              <input id="editNewOrderClientName" type="text" placeholder="Nombre del cliente" />
+            </label>
+            <label>
+              Telefono
+              <input id="editNewOrderClientPhone" type="tel" placeholder="Opcional" />
+            </label>
+            <label class="full-span">
+              Nota
+              <textarea id="editNewOrderClientNotes" rows="2" placeholder="Opcional"></textarea>
+            </label>
+          </div>
+        </section>
         <div class="edit-order-list" id="editOrderItems"></div>
         <section class="manual-items">
           <div class="panel-heading compact-heading full-span">
@@ -582,11 +623,26 @@ Eventos Nova,+573001112233,Cliente corporativo</textarea>
             Agregar articulo
           </button>
         </section>
+        <section class="photo-manager">
+          <div class="panel-heading compact-heading">
+            <div>
+              <strong>Fotos de la salida</strong>
+              <p class="helper-text">Se guardan en Cloudinary y quedan vinculadas a este pedido.</p>
+            </div>
+          </div>
+          <div class="photo-gallery" id="editOrderPhotoGallery"></div>
+          <label class="file-picker">
+            <input id="editOrderPhotos" type="file" accept="image/jpeg,image/png,image/webp,image/heic" multiple />
+            <i data-lucide="camera"></i>
+            Agregar fotos
+          </label>
+          <div class="photo-queue" id="editOrderPhotoQueue"></div>
+        </section>
         <div class="form-actions dialog-actions">
           <button type="button" class="secondary-button" id="cancelOrderEdit">Cancelar</button>
           <button type="submit" class="primary-button">
             <i data-lucide="save"></i>
-            Guardar articulos
+            Guardar salida
           </button>
         </div>
       </form>

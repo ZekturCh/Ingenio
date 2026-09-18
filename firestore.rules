@@ -56,6 +56,9 @@ service cloud.firestore {
           'replacementPending',
           'amountPaid',
           'items',
+          'clientId',
+          'clientName',
+          'clientPhone',
           'cancelledBy',
           'cancelledByName'
         ]);
@@ -99,6 +102,12 @@ service cloud.firestore {
       allow create: if canCreateWork();
       allow update: if canAdmin() || canSupervisorUpdateOrder();
       allow delete: if canAdmin();
+    }
+
+    match /orders/{orderId}/attachments/{attachmentId} {
+      allow read: if canRead();
+      allow create: if canCreateWork();
+      allow update, delete: if canManageOrders();
     }
 
     match /incidents/{incidentId} {

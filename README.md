@@ -6,6 +6,7 @@ Plataforma web para registrar salidas, retornos, incidencias, clientes, pagos y 
 
 - Iniciar registro con tres flujos: salida, retorno e incidencia.
 - Salidas con cliente, fechas, responsable, monto, nota y artículos escritos manualmente por líneas.
+- Fotos opcionales de salida en Cloudinary: máximo 5 por pedido; Firestore conserva solo sus metadatos.
 - Retornos con búsqueda de cliente, checklist, responsable que recibe, pago y estado pendiente urgente para faltantes.
 - Reportes de artículos por cliente, deuda registrada, retornos abiertos, faltantes e incidencias.
 - Login con Firebase Auth Email/Password.
@@ -40,6 +41,19 @@ La app inicializa Firebase con el proyecto `ingenioespectaculos` y usa:
 - `activityLogs`
 
 La app exige login en `login.html`. Si no hay sesion activa, `index.html` redirige al login.
+
+## Fotos con Cloudinary
+
+La aplicación usa el `cloudName` ya presente en el proyecto `STREAMING`, pero no incluye ninguna clave privada. Para habilitar fotos, entra a Cloudinary Console > Settings > Upload > Upload presets y crea este preset:
+
+- Nombre: `trajes_os_photos`
+- Modo: `Unsigned`
+- Formatos permitidos: `jpg`, `jpeg`, `png`, `webp`, `heic`
+- Tamaño máximo: `8 MB`
+- Carpeta: `trajes-os/records`
+- Activa `Disallow public ID` y conserva `Unique filename` activado.
+
+No pongas `api_secret` ni claves de Cloudinary en GitHub Pages. Las fotos se suben directo a Cloudinary y solo se registra en Firestore `orders/{orderId}/attachments/{attachmentId}` la URL, el `publicId`, la fecha y el usuario que la subió. Publica también `firestore.rules` para que esta subcolección tenga permisos.
 
 ## Usuarios y roles
 

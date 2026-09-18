@@ -11,6 +11,7 @@ import {
   deleteDoc,
   doc,
   getDoc,
+  getDocs,
   getFirestore,
   onSnapshot,
   setDoc,
@@ -25,6 +26,14 @@ const STORAGE_KEY = "trajes-os-v2";
 const LOG_EXPORT_STORAGE_KEY = "trajes-os-last-log-export-count";
 const LOG_EXPORT_THRESHOLD = 1000;
 const ADMIN_UID = "kXOgLCRPC0VhkqQltsgO1feNPLO2";
+const CLOUDINARY = {
+  cloudName: "dsnptnqil",
+  uploadPreset: "trajes_os_photos",
+  folder: "trajes-os/records",
+};
+const MAX_PHOTOS_PER_ORDER = 5;
+const MAX_PHOTO_BYTES = 8 * 1024 * 1024;
+const ALLOWED_PHOTO_TYPES = new Set(["image/jpeg", "image/png", "image/webp", "image/heic"]);
 const firebaseConfig = {
   apiKey: "AIzaSyDAYmwu9GD0R0BlL_6tUqOpUgByNci_Bhg",
   authDomain: "ingenioespectaculos.firebaseapp.com",
@@ -91,6 +100,10 @@ let draftOrderItems = [];
 let currentReturnOrderId = null;
 let currentEditOrderId = null;
 let editOrderItems = [];
+let editOrderNewClient = false;
+let currentEditOrderAttachments = [];
+let draftOrderPhotoFiles = [];
+let editOrderPhotoFiles = [];
 let lastExportedLogCount = Number(localStorage.getItem(LOG_EXPORT_STORAGE_KEY) || 0);
 let logThresholdToastShown = false;
 
@@ -115,6 +128,8 @@ const els = {
   orderNotes: document.querySelector("#orderNotes"),
   addOrderItem: document.querySelector("#addOrderItem"),
   orderBuilder: document.querySelector("#orderBuilder"),
+  orderPhotos: document.querySelector("#orderPhotos"),
+  orderPhotoQueue: document.querySelector("#orderPhotoQueue"),
   returnClientSearch: document.querySelector("#returnClientSearch"),
   returnOrderSelect: document.querySelector("#returnOrderSelect"),
   returnOrderSummary: document.querySelector("#returnOrderSummary"),
@@ -130,6 +145,15 @@ const els = {
   editOrderItemName: document.querySelector("#editOrderItemName"),
   editOrderItemDetails: document.querySelector("#editOrderItemDetails"),
   addEditOrderItem: document.querySelector("#addEditOrderItem"),
+  editOrderClient: document.querySelector("#editOrderClient"),
+  toggleNewOrderClient: document.querySelector("#toggleNewOrderClient"),
+  editNewOrderClientFields: document.querySelector("#editNewOrderClientFields"),
+  editNewOrderClientName: document.querySelector("#editNewOrderClientName"),
+  editNewOrderClientPhone: document.querySelector("#editNewOrderClientPhone"),
+  editNewOrderClientNotes: document.querySelector("#editNewOrderClientNotes"),
+  editOrderPhotos: document.querySelector("#editOrderPhotos"),
+  editOrderPhotoQueue: document.querySelector("#editOrderPhotoQueue"),
+  editOrderPhotoGallery: document.querySelector("#editOrderPhotoGallery"),
   cancelOrderEdit: document.querySelector("#cancelOrderEdit"),
   incidentName: document.querySelector("#incidentName"),
   incidentNotes: document.querySelector("#incidentNotes"),
@@ -407,6 +431,30 @@ async function persistDoc(localKey, record) {
   }
 }
 
+async function loadOrderAttachments(orderId) {
+  if (!firebaseState.enabled || !firebaseState.db || !orderId) return [];
+  try {
+    const snapshot = await getDocs(collection(firebaseState.db, "orders", orderId, "attachments"));
+    return snapshot.docs
+      .map((entry) => ({ id: entry.id, ...entry.data() }))
+      .sort((a, b) => String(b.uploadedAt || "").localeCompare(String(a.uploadedAt || "")));
+  } catch (error) {
+    console.warn("No se pudieron cargar las fotos del pedido.", error);
+    return [];
+  }
+}
+
+async function persistOrderAttachment(orderId, attachment) {
+  if (!firebaseState.enabled || !firebaseState.db || !orderId || !attachment?.id) return false;
+  try {
+    await setDoc(doc(firebaseState.db, "orders", orderId, "attachments", attachment.id), attachment);
+    return true;
+  } catch (error) {
+    console.warn("No se pudo guardar la referencia de la foto.", error);
+    return false;
+  }
+}
+
 async function deleteRemoteDoc(localKey, recordId) {
   saveState();
   if (!firebaseState.enabled || !recordId) return;
@@ -643,6 +691,157 @@ function getItemChecklist(item) {
   return normalized.map((entry) => (typeof entry === "string" ? { name: entry, returned: false } : entry));
 }
 
+function formatFileSize(bytes) {
+  if (bytes < 1024 * 1024) return `${Math.max(1, Math.round(bytes / 1024))} KB`;
+  return `${(bytes / (1024 * 1024)).toFixed(1)} MB`;
+}
+
+function selectPhotoFiles(files, selectedFiles, existingCount = 0) {
+  const available = Math.max(0, MAX_PHOTOS_PER_ORDER - existingCount - selectedFiles.length);
+  const accepted = [];
+  let skipped = 0;
+  [...files].some((file) => {
+    if (accepted.length >= available) return true;
+    if (!ALLOWED_PHOTO_TYPES.has(file.type) || file.size > MAX_PHOTO_BYTES) {
+      skipped += 1;
+      return false;
+    }
+    accepted.push(file);
+    return false;
+  });
+  return { accepted, skipped, reachedLimit: available < files.length };
+}
+
+function renderPhotoQueue(container, files, dataAttribute) {
+  if (!container) return;
+  container.innerHTML = files.length
+    ? files
+        .map((file, index) => `
+          <div class="photo-queue-item">
+            <span>${escapeHtml(file.name)}</span>
+            <small>${escapeHtml(formatFileSize(file.size))}</small>
+            <button type="button" class="mini-button" ${dataAttribute}="${index}" aria-label="Quitar foto">Quitar</button>
+          </div>
+        `)
+        .join("")
+    : `<span class="helper-text">No hay fotos seleccionadas.</span>`;
+}
+
+function buildPhotoPreviewUrl(attachment) {
+  if (!attachment?.publicId) return attachment?.secureUrl || "";
+  const version = attachment.version ? `v${attachment.version}/` : "";
+  return `https://res.cloudinary.com/${CLOUDINARY.cloudName}/image/upload/c_fill,w_320,h_240,g_auto,f_auto,q_auto/${version}${attachment.publicId}`;
+}
+
+function renderOrderPhotoGallery() {
+  if (!els.editOrderPhotoGallery) return;
+  els.editOrderPhotoGallery.innerHTML = currentEditOrderAttachments.length
+    ? currentEditOrderAttachments
+        .map((attachment) => {
+          const previewUrl = buildPhotoPreviewUrl(attachment);
+          const originalUrl = attachment.secureUrl || previewUrl;
+          return `
+            <a class="photo-thumb" href="${escapeHtml(originalUrl)}" target="_blank" rel="noreferrer" title="Abrir foto">
+              <img src="${escapeHtml(previewUrl)}" alt="Evidencia de la salida" loading="lazy" />
+            </a>
+          `;
+        })
+        .join("")
+    : `<span class="helper-text">Aun no hay fotos para esta salida.</span>`;
+}
+
+function addDraftOrderPhotos(event) {
+  const selection = selectPhotoFiles(event.target.files || [], draftOrderPhotoFiles);
+  draftOrderPhotoFiles.push(...selection.accepted);
+  event.target.value = "";
+  renderPhotoQueue(els.orderPhotoQueue, draftOrderPhotoFiles, "data-remove-draft-photo");
+  if (selection.skipped || selection.reachedLimit) {
+    showToast(`Solo se aceptan JPG, PNG, WebP o HEIC de hasta 8 MB. Maximo ${MAX_PHOTOS_PER_ORDER} fotos.`);
+  }
+}
+
+function addEditOrderPhotos(event) {
+  const selection = selectPhotoFiles(event.target.files || [], editOrderPhotoFiles, currentEditOrderAttachments.length);
+  editOrderPhotoFiles.push(...selection.accepted);
+  event.target.value = "";
+  renderPhotoQueue(els.editOrderPhotoQueue, editOrderPhotoFiles, "data-remove-edit-photo");
+  if (selection.skipped || selection.reachedLimit) {
+    showToast(`Solo se aceptan JPG, PNG, WebP o HEIC de hasta 8 MB. Maximo ${MAX_PHOTOS_PER_ORDER} fotos.`);
+  }
+}
+
+async function uploadOrderPhotos(order, files, existingCount = 0) {
+  if (!files.length) return;
+  if (!firebaseState.enabled || !firebaseState.active) {
+    showToast("La salida se guardo, pero las fotos requieren una sesion activa de Firebase.");
+    return;
+  }
+  if (!CLOUDINARY.uploadPreset) {
+    showToast("La salida se guardo. Falta configurar el preset de Cloudinary para subir fotos.");
+    return;
+  }
+
+  const uploadFiles = files.slice(0, Math.max(0, MAX_PHOTOS_PER_ORDER - existingCount));
+  if (!uploadFiles.length) {
+    showToast(`Este pedido ya tiene el maximo de ${MAX_PHOTOS_PER_ORDER} fotos.`);
+    return;
+  }
+
+  let uploaded = 0;
+  let failed = 0;
+  for (const file of uploadFiles) {
+    try {
+      const formData = new FormData();
+      formData.append("file", file);
+      formData.append("upload_preset", CLOUDINARY.uploadPreset);
+      formData.append("folder", `${CLOUDINARY.folder}/${order.id}`);
+      formData.append("tags", "trajes-os,salida");
+
+      const response = await fetch(`https://api.cloudinary.com/v1_1/${CLOUDINARY.cloudName}/image/upload`, {
+        method: "POST",
+        body: formData,
+      });
+      const result = await response.json();
+      if (!response.ok || !result.secure_url || !result.public_id) {
+        throw new Error(result.error?.message || "Cloudinary no acepto la foto.");
+      }
+
+      const actor = currentActor();
+      const attachment = {
+        id: uid("photo"),
+        publicId: result.public_id,
+        secureUrl: result.secure_url,
+        version: result.version || null,
+        format: result.format || "",
+        bytes: Number(result.bytes || file.size || 0),
+        uploadedAt: new Date().toISOString(),
+        uploadedBy: actor.uid,
+        uploadedByName: actor.name,
+      };
+      const saved = await persistOrderAttachment(order.id, attachment);
+      if (!saved) throw new Error("No se pudo vincular la foto al pedido.");
+      uploaded += 1;
+      if (currentEditOrderId === order.id) {
+        currentEditOrderAttachments.unshift(attachment);
+        renderOrderPhotoGallery();
+      }
+    } catch (error) {
+      failed += 1;
+      console.warn("No se pudo subir una foto de la salida.", error);
+    }
+  }
+
+  if (uploaded) {
+    void logActivity("Agrego fotos a salida", "orders", order.id, orderLabel(order), { count: uploaded });
+  }
+  const skippedForLimit = files.length - uploadFiles.length;
+  if (failed || skippedForLimit) {
+    showToast(`${uploaded} foto(s) subida(s). ${failed + skippedForLimit} no se pudo subir; revisa el limite o el preset de Cloudinary.`);
+    return;
+  }
+  showToast(`${uploaded} foto(s) vinculada(s) a la salida.`);
+}
+
 function missingEntries(order, includeUninspected = false) {
   if (!includeUninspected && !order.inspectedAt && !["Pendiente urgente", "Devuelto"].includes(order.status)) {
     return [];
@@ -687,6 +886,29 @@ function renderSelects() {
   }
   renderReturnCandidates();
   updateManualOrderFields();
+}
+
+function renderEditOrderClientSelect(selectedClientId = "") {
+  if (!els.editOrderClient) return;
+  const selectedClient = state.clients.find((client) => client.id === selectedClientId);
+  const clients = state.clients
+    .slice()
+    .sort((a, b) => String(a.name).localeCompare(String(b.name)));
+  const hasSelectedClient = clients.some((client) => client.id === selectedClientId);
+  els.editOrderClient.innerHTML = [
+    `<option value="">Selecciona un cliente</option>`,
+    !hasSelectedClient && selectedClientId
+      ? `<option value="${escapeHtml(selectedClientId)}">${escapeHtml(selectedClient?.name || "Cliente anterior")}</option>`
+      : "",
+    ...clients.map((client) => `<option value="${escapeHtml(client.id)}">${escapeHtml(client.name)}${client.phone ? ` · ${escapeHtml(client.phone)}` : ""}</option>`),
+  ].join("");
+  els.editOrderClient.value = selectedClientId || "";
+}
+
+function updateNewOrderClientFields() {
+  els.editNewOrderClientFields.classList.toggle("is-hidden", !editOrderNewClient);
+  els.editOrderClient.disabled = editOrderNewClient;
+  els.toggleNewOrderClient.textContent = editOrderNewClient ? "Usar cliente existente" : "Nuevo cliente";
 }
 
 function updateManualOrderFields() {
@@ -773,7 +995,7 @@ function renderActiveOrders() {
             ${order.items.map((item) => `<span class="chip">${escapeHtml(item.name)}</span>`).join("")}
           </div>
           <div class="row-actions">
-            ${canManageOrders() ? `<button class="mini-button" data-edit-order="${escapeHtml(order.id)}">Editar articulos</button>` : ""}
+            ${canManageOrders() ? `<button class="mini-button" data-edit-order="${escapeHtml(order.id)}">Editar salida</button>` : ""}
             <button class="mini-button" data-inspect-return="${escapeHtml(order.id)}">Inspeccionar</button>
           </div>
         </article>
@@ -899,7 +1121,7 @@ function renderEventCard(order) {
       </div>
       ${missingPieces.length ? `<p class="muted">Faltantes registrados: ${escapeHtml(missingPieces.join(", "))}</p>` : ""}
       <div class="row-actions">
-        ${canManageOrders() && ["Activo", "Pendiente urgente", "Vencido"].includes(status) ? `<button class="mini-button" data-edit-order="${escapeHtml(order.id)}">Editar articulos</button>` : ""}
+        ${canManageOrders() && ["Activo", "Pendiente urgente", "Vencido"].includes(status) ? `<button class="mini-button" data-edit-order="${escapeHtml(order.id)}">Editar salida</button>` : ""}
         ${["Activo", "Pendiente urgente", "Vencido"].includes(status) ? `<button class="mini-button" data-inspect-return="${escapeHtml(order.id)}">Inspeccionar retorno</button>` : ""}
         ${canManageOrders() && debt > 0 ? `<button class="mini-button" data-toggle-paid="${escapeHtml(order.id)}">Marcar pago</button>` : ""}
       </div>
@@ -1270,6 +1492,7 @@ function openOrderItemsEditor(orderId) {
   }
 
   currentEditOrderId = order.id;
+  editOrderNewClient = false;
   editOrderItems = (order.items || []).map((item) => ({
     ...item,
     id: item.id || uid("item"),
@@ -1278,11 +1501,25 @@ function openOrderItemsEditor(orderId) {
   }));
   const party = getOrderParty(order);
   els.editOrderMeta.innerHTML = `<div class="order-card"><strong>${escapeHtml(party.name)}</strong><p class="muted">Salida: ${escapeHtml(order.startDate || "sin fecha")} · Devolucion prevista: ${escapeHtml(order.endDate || "sin fecha")}</p></div>`;
+  renderEditOrderClientSelect(order.clientId || "");
+  els.editNewOrderClientName.value = "";
+  els.editNewOrderClientPhone.value = "";
+  els.editNewOrderClientNotes.value = "";
+  updateNewOrderClientFields();
   els.editOrderItemName.value = "";
   els.editOrderItemDetails.value = "";
+  editOrderPhotoFiles = [];
+  currentEditOrderAttachments = [];
+  renderPhotoQueue(els.editOrderPhotoQueue, editOrderPhotoFiles, "data-remove-edit-photo");
+  renderOrderPhotoGallery();
   renderOrderItemsEditor();
   els.editOrderDialog.showModal();
   if (window.lucide) window.lucide.createIcons();
+  void loadOrderAttachments(order.id).then((attachments) => {
+    if (currentEditOrderId !== order.id) return;
+    currentEditOrderAttachments = attachments;
+    renderOrderPhotoGallery();
+  });
 }
 
 function addEditedOrderItem() {
@@ -1359,7 +1596,50 @@ async function saveEditedOrderItems(event) {
     showToast("La salida debe conservar al menos un articulo.");
     return;
   }
-  const updatedOrder = { ...order, items };
+  let client = getClient(els.editOrderClient.value);
+  let createdClient = null;
+  if (editOrderNewClient) {
+    const name = els.editNewOrderClientName.value.trim();
+    if (!name) {
+      showToast("Escribe el nombre del nuevo cliente.");
+      els.editNewOrderClientName.focus();
+      return;
+    }
+    const actor = currentActor();
+    client = {
+      id: uid("cli"),
+      name,
+      phone: els.editNewOrderClientPhone.value.trim(),
+      notes: els.editNewOrderClientNotes.value.trim(),
+      createdAt: todayISO(),
+      createdBy: actor.uid,
+      createdByName: actor.name,
+      updatedAt: todayISO(),
+      updatedBy: actor.uid,
+      updatedByName: actor.name,
+    };
+    const clientSaved = await persistDoc("clients", client);
+    if (!clientSaved) return;
+    state.clients.push(client);
+    createdClient = client;
+    editOrderNewClient = false;
+    renderEditOrderClientSelect(client.id);
+    updateNewOrderClientFields();
+  }
+  if (!client) {
+    showToast("Selecciona o crea un cliente para esta salida.");
+    return;
+  }
+
+  const photosToUpload = [...editOrderPhotoFiles];
+  const existingPhotoCount = currentEditOrderAttachments.length;
+  const updatedOrder = {
+    ...order,
+    clientId: client.id,
+    clientName: client.name,
+    clientPhone: client.phone || "",
+    items,
+  };
   const saved = await persistDoc("orders", updatedOrder);
   if (!saved) return;
   const orderIndex = state.orders.findIndex((entry) => entry.id === order.id);
@@ -1368,11 +1648,17 @@ async function saveEditedOrderItems(event) {
   els.editOrderDialog.close();
   currentEditOrderId = null;
   editOrderItems = [];
+  editOrderPhotoFiles = [];
   renderAll();
-  showToast("Articulos de la salida actualizados.");
-  void logActivity("Edito articulos de salida", "orders", order.id, orderLabel(updatedOrder), {
+  showToast("Salida actualizada.");
+  void logActivity("Edito salida", "orders", order.id, orderLabel(updatedOrder), {
     items: items.map((item) => item.name),
+    client: client.name,
   });
+  if (createdClient) {
+    void logActivity("Creo cliente desde salida", "clients", createdClient.id, createdClient.name, {});
+  }
+  void uploadOrderPhotos(updatedOrder, photosToUpload, existingPhotoCount);
 }
 
 async function createOrder(event) {
@@ -1444,9 +1730,12 @@ async function createOutbound() {
   const orderSaved = await persistDoc("orders", order);
   if (!orderSaved) return;
 
+  const photosToUpload = [...draftOrderPhotoFiles];
   state.orders.push(order);
   draftOrderItems = [];
+  draftOrderPhotoFiles = [];
   els.orderForm.reset();
+  renderPhotoQueue(els.orderPhotoQueue, draftOrderPhotoFiles, "data-remove-draft-photo");
   setDefaultDates();
   saveState();
   await logActivity("Registro salida", "orders", order.id, client.name, {
@@ -1455,7 +1744,8 @@ async function createOutbound() {
     paid: order.paid,
   });
   renderAll();
-  showToast("Salida registrada. Quedo lista para retorno e inspeccion.");
+  showToast(photosToUpload.length ? "Salida registrada. Las fotos se estan subiendo." : "Salida registrada. Quedo lista para retorno e inspeccion.");
+  void uploadOrderPhotos(order, photosToUpload);
 }
 
 async function createIncident() {
@@ -1998,6 +2288,9 @@ async function resetDemo() {
   if (!confirm("Esto limpia la caché local de este navegador. No toca Firestore. ¿Continuar?")) return;
   state = structuredClone(seedData);
   draftOrderItems = [];
+  draftOrderPhotoFiles = [];
+  editOrderPhotoFiles = [];
+  currentEditOrderAttachments = [];
   localStorage.removeItem("trajes-os-v1");
   localStorage.removeItem(STORAGE_KEY);
   saveState();
@@ -2038,6 +2331,7 @@ function bindEvents() {
   });
 
   els.addOrderItem.addEventListener("click", addDraftItem);
+  els.orderPhotos.addEventListener("change", addDraftOrderPhotos);
   els.orderPartyModes.forEach((input) => input.addEventListener("change", updateManualOrderFields));
   els.orderForm.addEventListener("submit", createOrder);
   els.returnClientSearch.addEventListener("input", () => {
@@ -2050,10 +2344,19 @@ function bindEvents() {
   });
   els.editOrderForm.addEventListener("submit", saveEditedOrderItems);
   els.addEditOrderItem.addEventListener("click", addEditedOrderItem);
+  els.editOrderPhotos.addEventListener("change", addEditOrderPhotos);
+  els.toggleNewOrderClient.addEventListener("click", () => {
+    editOrderNewClient = !editOrderNewClient;
+    updateNewOrderClientFields();
+    if (editOrderNewClient) els.editNewOrderClientName.focus();
+  });
   els.cancelOrderEdit.addEventListener("click", () => {
     els.editOrderDialog.close();
     currentEditOrderId = null;
     editOrderItems = [];
+    editOrderPhotoFiles = [];
+    currentEditOrderAttachments = [];
+    editOrderNewClient = false;
   });
   els.clientForm.addEventListener("submit", createClient);
   els.cancelClientEdit.addEventListener("click", cancelClientEdit);
@@ -2077,6 +2380,20 @@ function bindEvents() {
     if (removeDraft) {
       draftOrderItems.splice(Number(removeDraft.dataset.removeDraft), 1);
       renderAll();
+      return;
+    }
+
+    const removeDraftPhoto = event.target.closest("[data-remove-draft-photo]");
+    if (removeDraftPhoto) {
+      draftOrderPhotoFiles.splice(Number(removeDraftPhoto.dataset.removeDraftPhoto), 1);
+      renderPhotoQueue(els.orderPhotoQueue, draftOrderPhotoFiles, "data-remove-draft-photo");
+      return;
+    }
+
+    const removeEditPhoto = event.target.closest("[data-remove-edit-photo]");
+    if (removeEditPhoto) {
+      editOrderPhotoFiles.splice(Number(removeEditPhoto.dataset.removeEditPhoto), 1);
+      renderPhotoQueue(els.editOrderPhotoQueue, editOrderPhotoFiles, "data-remove-edit-photo");
       return;
     }
 

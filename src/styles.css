@@ -507,6 +507,98 @@ textarea:focus {
   background: rgba(90, 247, 255, 0.045);
 }
 
+.photo-manager,
+.edit-client-box {
+  display: grid;
+  gap: 12px;
+  padding: 14px;
+  border: 1px solid rgba(90, 247, 255, 0.2);
+  border-radius: 16px;
+  background: rgba(90, 247, 255, 0.045);
+}
+
+.file-picker {
+  position: relative;
+  display: inline-flex;
+  width: fit-content;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 0 14px;
+  color: var(--text);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.file-picker:hover {
+  border-color: var(--line-strong);
+  background: rgba(255, 255, 255, 0.11);
+}
+
+.file-picker input {
+  position: absolute;
+  width: 1px;
+  min-height: 1px;
+  padding: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.file-picker svg {
+  width: 18px;
+  height: 18px;
+}
+
+.photo-queue {
+  display: grid;
+  gap: 8px;
+}
+
+.photo-queue-item {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto;
+  gap: 10px;
+  align-items: center;
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.photo-queue-item span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.photo-queue-item small {
+  color: var(--muted);
+}
+
+.photo-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(112px, 1fr));
+  gap: 10px;
+}
+
+.photo-thumb {
+  display: block;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.photo-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .return-order-summary {
   display: grid;
 }
@@ -973,6 +1065,7 @@ code {
   .manual-fields,
   .record-mode,
   .manual-items,
+  .photo-queue-item,
   .edit-item-fields,
   .event-card-grid {
     grid-template-columns: 1fr;
