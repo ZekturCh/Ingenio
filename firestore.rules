@@ -59,6 +59,9 @@ service cloud.firestore {
           'clientId',
           'clientName',
           'clientPhone',
+          'updatedBy',
+          'updatedByName',
+          'updatedAt',
           'cancelledBy',
           'cancelledByName'
         ]);

@@ -13,6 +13,7 @@ Plataforma web para registrar salidas, retornos, incidencias, clientes, pagos y 
 - Login con Firebase Auth Email/Password.
 - Admin persistente por UID en `users/{uid}`.
 - Admin: usuarios, clientes, pagos, retornos, importaciones y auditoria.
+- Supervisor: puede corregir clientes y los artículos de salidas abiertas, marcar pagos y finalizar retornos. No puede gestionar usuarios ni consultar Supervisión o auditoría.
 - Cloud Functions para crear y eliminar cuentas reales de Firebase Auth desde la app.
 - Operadores: crear pedidos y editar su propio correo/contrasena.
 - Auditoria de cambios: ingresos, salidas, retornos, incidencias, clientes, usuarios y pagos.

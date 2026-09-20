@@ -1716,12 +1716,16 @@ async function saveEditedOrderItems(event) {
 
   const photosToUpload = [...editOrderPhotoFiles];
   const existingPhotoCount = currentEditOrderAttachments.length;
+  const actor = currentActor();
   const updatedOrder = {
     ...order,
     clientId: client.id,
     clientName: client.name,
     clientPhone: client.phone || "",
     items,
+    updatedBy: actor.uid,
+    updatedByName: actor.name,
+    updatedAt: new Date().toISOString(),
   };
   const saved = await persistDoc("orders", updatedOrder);
   if (!saved) return;
