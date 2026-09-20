@@ -23,6 +23,7 @@ import {
 } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-functions.js";
 
 const STORAGE_KEY = "trajes-os-v2";
+const RETURN_SYNC_OUTBOX_KEY = "trajes-os-return-sync-outbox";
 const LOG_EXPORT_STORAGE_KEY = "trajes-os-last-log-export-count";
 const LOG_EXPORT_THRESHOLD = 1000;
 const ADMIN_UID = "kXOgLCRPC0VhkqQltsgO1feNPLO2";
@@ -96,6 +97,8 @@ const seedData = {
 };
 
 let state = loadState();
+let returnSyncOutbox = loadReturnSyncOutbox();
+let isProcessingReturnSync = false;
 let draftOrderItems = [];
 let currentReturnOrderId = null;
 let currentEditOrderId = null;
@@ -241,6 +244,19 @@ function saveState() {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
 }
 
+function loadReturnSyncOutbox() {
+  try {
+    const stored = JSON.parse(localStorage.getItem(RETURN_SYNC_OUTBOX_KEY) || "[]");
+    return Array.isArray(stored) ? stored : [];
+  } catch {
+    return [];
+  }
+}
+
+function saveReturnSyncOutbox() {
+  localStorage.setItem(RETURN_SYNC_OUTBOX_KEY, JSON.stringify(returnSyncOutbox));
+}
+
 async function initFirebase() {
   try {
     const app = initializeApp(firebaseConfig);
@@ -264,6 +280,7 @@ async function initFirebase() {
       await seedFirestoreIfEmpty();
       attachRemoteListeners();
       attachUsersListener();
+      void processReturnSyncOutbox();
       await logLoginOnce();
     });
   } catch (error) {
@@ -571,6 +588,51 @@ async function logActivity(action, entityType, entityId, label, details = {}) {
   state.activityLogs.unshift(log);
   await persistDoc("activityLogs", log);
   renderAudit();
+}
+
+function queueReturnSync(order, details) {
+  const operation = {
+    id: uid("return-sync"),
+    order: structuredClone(order),
+    details,
+    queuedAt: new Date().toISOString(),
+  };
+
+  returnSyncOutbox = returnSyncOutbox.filter((entry) => entry.order?.id !== order.id);
+  returnSyncOutbox.push(operation);
+  saveReturnSyncOutbox();
+  void processReturnSyncOutbox();
+}
+
+async function processReturnSyncOutbox() {
+  if (isProcessingReturnSync || !firebaseState.enabled || !returnSyncOutbox.length) return;
+  isProcessingReturnSync = true;
+
+  try {
+    while (returnSyncOutbox.length) {
+      const operation = returnSyncOutbox[0];
+      const orderSaved = await persistDoc("orders", operation.order);
+      if (!orderSaved) return;
+
+      const photoCleanup = operation.details.missing.length ? null : await cleanClosedOrderPhotos(operation.order);
+      await logActivity(
+        operation.details.missing.length ? "Registro retorno pendiente" : "Finalizo retorno",
+        "orders",
+        operation.order.id,
+        orderLabel(operation.order),
+        {
+          ...operation.details,
+          photosDeleted: photoCleanup?.deleted || 0,
+          photosRetained: photoCleanup?.retained || 0,
+        },
+      );
+
+      returnSyncOutbox.shift();
+      saveReturnSyncOutbox();
+    }
+  } finally {
+    isProcessingReturnSync = false;
+  }
 }
 
 async function logLoginOnce() {
@@ -988,6 +1050,8 @@ function renderOrderBuilder() {
 }
 
 function renderActiveOrders() {
+  if (!els.activeOrders) return;
+
   const active = activeOrders()
     .slice()
     .sort((a, b) => String(a.endDate).localeCompare(String(b.endDate)))
@@ -2022,35 +2086,28 @@ async function closeReturn() {
   order.replacementPending = missing.length && els.returnReplacementPending.checked;
   order.returnedBy = currentActor().uid;
   order.returnedByName = currentActor().name;
-  const orderSaved = await persistDoc("orders", order);
-  if (!orderSaved) return;
-
   saveState();
-  const photoCleanup = missing.length ? null : await cleanClosedOrderPhotos(order);
-  await logActivity(missing.length ? "Registro retorno pendiente" : "Finalizo retorno", "orders", order.id, orderLabel(order), {
+  queueReturnSync(order, {
     inspectedAt: order.inspectedAt,
     paid: order.paid,
     receivedBy,
     receivedPayment,
     missing,
     replacementPending: order.replacementPending,
-    photosDeleted: photoCleanup?.deleted || 0,
-    photosRetained: photoCleanup?.retained || 0,
   });
   currentReturnOrderId = null;
+  els.returnClientSearch.value = "";
   els.returnReceivedBy.value = "";
   els.returnPayment.value = "";
   els.returnNotes.value = "";
   els.returnReplacementPending.checked = false;
+  renderReturnCandidates();
   renderAll();
+  document.querySelector('[data-view="orders"]')?.click();
   if (missing.length) {
-    showToast("Retorno guardado como PENDIENTE URGENTE.");
-  } else if (photoCleanup?.failed) {
-    showToast("Inspeccion cerrada. Las fotos quedan pendientes de limpieza hasta desplegar Cloud Functions.");
-  } else if (photoCleanup?.retained) {
-    showToast("Inspeccion cerrada. Algunas fotos no se pudieron borrar y quedaron registradas.");
+    showToast("Retorno registrado como PENDIENTE URGENTE. Se sincroniza en segundo plano.");
   } else {
-    showToast(photoCleanup?.deleted ? "Inspeccion cerrada y fotos eliminadas." : "Inspeccion finalizada y retorno cerrado.");
+    showToast("Inspeccion cerrada. Ya puedes continuar; la sincronizacion sigue en segundo plano.");
   }
 }
 
@@ -2402,6 +2459,7 @@ function bindEvents() {
   els.clearActivityLogs.addEventListener("click", clearActivityLogs);
   els.resetDemo.addEventListener("click", resetDemo);
   els.logoutButton.addEventListener("click", logout);
+  window.addEventListener("online", () => void processReturnSyncOutbox());
   els.emailForm.addEventListener("submit", updateProfileEmail);
   els.passwordForm.addEventListener("submit", updateProfilePassword);
 

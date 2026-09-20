@@ -218,16 +218,15 @@ button {
 .topbar {
   display: flex;
   gap: 18px;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
-  margin-bottom: 24px;
+  margin-bottom: 18px;
 }
 
 .topbar h1 {
-  max-width: 760px;
   margin: 0;
-  font-size: clamp(2rem, 4vw, 4.4rem);
-  line-height: 0.94;
+  font-size: clamp(1.8rem, 2.8vw, 3rem);
+  line-height: 1.05;
   letter-spacing: 0;
 }
 
@@ -329,6 +328,32 @@ button {
 
 .primary-panel {
   border-color: rgba(90, 247, 255, 0.24);
+}
+
+#dashboard {
+  width: min(100%, 1180px);
+  margin: 0 auto;
+}
+
+#dashboard .metrics-grid {
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+#dashboard .metric {
+  min-height: 92px;
+  padding: 14px 16px;
+  border-radius: 14px;
+  box-shadow: none;
+}
+
+#dashboard .metric strong {
+  margin-top: 10px;
+  font-size: 1.7rem;
+}
+
+.registration-panel {
+  padding: clamp(18px, 2.4vw, 28px);
 }
 
 .panel-heading {

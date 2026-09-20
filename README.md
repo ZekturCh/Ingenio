@@ -8,6 +8,7 @@ Plataforma web para registrar salidas, retornos, incidencias, clientes, pagos y 
 - Salidas con cliente, fechas, responsable, monto, nota y artículos escritos manualmente por líneas.
 - Fotos opcionales de salida en Cloudinary: máximo 5 por pedido; Firestore conserva solo sus metadatos.
 - Retornos con búsqueda de cliente, checklist, responsable que recibe, pago y estado pendiente urgente para faltantes.
+- Cierre de retorno optimista: actualiza la interfaz al instante, vuelve a Reportes y conserva una cola local para sincronizar pedido, auditoría y fotos en segundo plano cuando haya conexión.
 - Reportes de artículos por cliente, deuda registrada, retornos abiertos, faltantes e incidencias.
 - Login con Firebase Auth Email/Password.
 - Admin persistente por UID en `users/{uid}`.

@@ -68,7 +68,7 @@
         <header class="topbar">
           <div>
             <p class="eyebrow">Operacion diaria</p>
-            <h1>Control de salidas, retornos e incidencias</h1>
+            <h1>Control operativo</h1>
           </div>
           <div class="topbar-actions">
             <button class="icon-button is-hidden" id="exportJson" title="Exportar respaldo JSON" aria-label="Exportar respaldo JSON" data-admin-only>
@@ -86,11 +86,10 @@
         <section class="view active" id="dashboard">
           <div class="metrics-grid" id="metricsGrid"></div>
 
-          <div class="workspace-grid">
-            <section class="panel primary-panel">
+          <section class="panel primary-panel registration-panel">
               <div class="panel-heading">
                 <div>
-                  <p class="eyebrow">Operacion diaria</p>
+                  <p class="eyebrow">Nuevo movimiento</p>
                   <h2>Iniciar registro</h2>
                 </div>
                 <span class="status-pill" id="availabilityPill">Listo</span>
@@ -234,18 +233,7 @@
                   </div>
                 </div>
               </form>
-            </section>
-
-            <section class="panel">
-              <div class="panel-heading">
-                <div>
-                  <p class="eyebrow">Seguimiento</p>
-                  <h2>Salidas abiertas</h2>
-                </div>
-              </div>
-              <div class="stack-list" id="activeOrders"></div>
-            </section>
-          </div>
+          </section>
         </section>
 
         <section class="view" id="orders">
