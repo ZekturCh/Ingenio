@@ -7,7 +7,7 @@ dispositivos diferentes y localStorage sincroniza pestanas del mismo navegador.
 
 ## Pantallas
 
-- `index.html`: canciones, busqueda sin distinguir tildes, categorias y favoritos.
+- `index.html`: canciones, busqueda sin distinguir tildes y favoritos.
 - `player.html`: audio, letras sincronizadas, pausa, anterior/siguiente,
   favoritos, aleatorio y barra tactil de progreso.
 - `admin.html` y `timing-editor.html`: administracion existente.

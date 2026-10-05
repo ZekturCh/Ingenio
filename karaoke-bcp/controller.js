@@ -10,7 +10,7 @@ const categories = {
   "himno-peru": ["peru", "clasicos"], "cuando-pienses": ["peru", "fiesta"],
   "ritmo-color-sabor": ["criollo", "fiesta", "peru"],
 };
-let query = "", activeFilter = "all", onlyFavorites = false, toastTimer;
+let query = "", onlyFavorites = false, toastTimer;
 
 function toast(message) {
   $("#toast").textContent = message;
@@ -24,9 +24,9 @@ function renderSongs() {
   const list = SONGS.filter((song) => {
     const tags = song.categories || categories[song.id] || [];
     const text = normalizeSearch(`${song.title} ${song.artist} ${tags.join(" ")}`);
-    return text.includes(normalizeSearch(query)) && (activeFilter === "all" || tags.includes(activeFilter)) && (!onlyFavorites || favorites.has(song.id));
+    return text.includes(normalizeSearch(query)) && (!onlyFavorites || favorites.has(song.id));
   });
-  $("#listTitle").textContent = onlyFavorites ? "Mis favoritas" : query || activeFilter !== "all" ? "Canciones" : "Canciones destacadas";
+  $("#listTitle").textContent = onlyFavorites ? "Mis favoritas" : query ? "Canciones" : "Canciones destacadas";
   $("#songs").innerHTML = list.length ? list.map((song) => `
     <article class="song ${song.enabled ? "enabled" : "disabled"}">
       <button class="songSelect" data-song="${escapeHtml(song.id)}" ${song.enabled ? "" : "disabled"} aria-label="${escapeHtml(song.title + (song.enabled ? "" : ", próximamente"))}">
@@ -72,19 +72,7 @@ $("#songs").onclick = (event) => {
   if (song?.enabled) openVersions(song);
 };
 
-function setFilter(value) {
-  activeFilter = value;
-  document.querySelectorAll(".filter").forEach((button) => {
-    button.classList.toggle("active", button.dataset.filter === value);
-    button.setAttribute("aria-pressed", button.dataset.filter === value);
-  });
-  renderSongs();
-}
-$("#filters").onclick = (event) => {
-  const button = event.target.closest("[data-filter]");
-  if (button) setFilter(button.dataset.filter);
-};
-$("#seeAll").onclick = () => { query = ""; onlyFavorites = false; $("#search").value = ""; setFilter("all"); };
+$("#seeAll").onclick = () => { query = ""; onlyFavorites = false; $("#search").value = ""; renderSongs(); };
 $("#searchForm").onsubmit = (event) => { event.preventDefault(); query = $("#search").value.trim(); renderSongs(); };
 $("#search").oninput = () => { query = $("#search").value.trim(); renderSongs(); };
 $("#close").onclick = () => $("#modal").close();
@@ -105,7 +93,7 @@ document.addEventListener("click", (event) => {
   if (!event.target.closest("#menu,#menuBtn,#roomPill")) toggleMenu(false);
 });
 document.addEventListener("keydown", (event) => { if (event.key === "Escape") toggleMenu(false); });
-$("#favoritesFilter").onclick = () => { onlyFavorites = !onlyFavorites; query = ""; $("#search").value = ""; setFilter("all"); toggleMenu(false); };
+$("#favoritesFilter").onclick = () => { onlyFavorites = !onlyFavorites; query = ""; $("#search").value = ""; renderSongs(); toggleMenu(false); };
 $("#fullscreenBtn").onclick = () => { toggleMenu(false); toggleFullscreen().catch(() => toast("Pantalla completa no disponible")); };
 window.addEventListener("storage", renderSongs);
 subscribeRoom(room, () => {}, (mode) => {
