@@ -3,131 +3,207 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#F36A18">
+<meta name="theme-color" content="#F67A1A">
 <title>Hallowow Karaoke · Player</title>
 <style>
 @font-face{font-family:"Flexo";src:url("assets/fonts/Flexo-Regular.woff2") format("woff2");font-style:normal;font-weight:400;font-display:swap}
 @font-face{font-family:"Flexo";src:url("assets/fonts/Flexo-Bold.woff2") format("woff2");font-style:normal;font-weight:700 900;font-display:swap}
-:root{--orange:#F36A18;--orange2:#FFB338;--red:#D91F26;--red-dark:#A9141B;--cream:#FFF8EA;--paper:#FFFDF7;--ink:#5F1E0B}
+:root{--orange:#F36A18;--amber:#FFB338;--red:#D91F26;--red-dark:#A9141B;--cream:#FFF4E0;--ink:#2B1209;--night:#14100E}
 *{box-sizing:border-box}
 html,body{margin:0;width:100%;height:100%;min-height:100dvh;overflow:hidden}
 body{font-family:"Flexo",Verdana,system-ui,sans-serif;background:var(--orange);color:#fff}
+button,a{-webkit-tap-highlight-color:transparent}
+:focus-visible{outline:3px solid #fff;outline-offset:2px}
+
 .stage{
-  position:relative;isolation:isolate;width:100%;height:100%;min-height:100dvh;
-  display:flex;flex-direction:column;align-items:center;justify-content:center;padding:18px;
+  position:relative;isolation:isolate;overflow:hidden;width:100%;height:100%;min-height:100dvh;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;padding:16px;
   background:
-    radial-gradient(circle at 72% 8%,rgba(255,229,131,.9),transparent 18%),
-    radial-gradient(circle at 18% 26%,rgba(255,193,59,.65),transparent 24%),
-    radial-gradient(circle at 87% 80%,rgba(247,54,10,.42),transparent 31%),
-    linear-gradient(155deg,#FFB333 0%,#FF8B1D 22%,#F36A18 56%,#D7430B 100%);
+    radial-gradient(circle at 72% 6%,rgba(255,229,131,.9),transparent 20%),
+    radial-gradient(circle at 14% 30%,rgba(255,193,59,.6),transparent 26%),
+    radial-gradient(circle at 88% 82%,rgba(247,54,10,.4),transparent 32%),
+    linear-gradient(160deg,#FFB333 0%,#FF8B1D 24%,#F36A18 58%,#D7430B 100%);
 }
 .stage:before{
-  content:"";position:absolute;z-index:-1;right:-12vw;bottom:-14vh;width:min(76vw,900px);aspect-ratio:1;
-  background:url("assets/calabaza-guitarra.webp") center/contain no-repeat;opacity:.22;
-  filter:brightness(1.3) saturate(1.25) drop-shadow(0 26px 42px rgba(101,22,0,.16))
+  content:"";position:absolute;z-index:-1;left:50%;bottom:-6vh;width:min(110vw,980px);aspect-ratio:1;transform:translateX(-50%);
+  background:url("assets/calabaza-guitarra.webp") center bottom/contain no-repeat;opacity:.55;
+  filter:saturate(1.15) drop-shadow(0 26px 42px rgba(101,22,0,.2))
 }
-.stage:after{
-  content:"";position:absolute;z-index:-1;left:-110px;top:23%;width:390px;height:86px;transform:rotate(-14deg);
-  background:linear-gradient(180deg,var(--red) 0 33%,#fff 33% 66%,var(--red) 66%);opacity:.48;
-  box-shadow:0 10px 22px rgba(115,22,0,.14)
+.ribbon{
+  position:absolute;z-index:-1;height:clamp(46px,7vw,84px);pointer-events:none;
+  background:linear-gradient(180deg,var(--red) 0 33%,#fff 33% 66%,var(--red) 66%);
+  box-shadow:0 10px 22px rgba(115,22,0,.18)
 }
-.header{position:absolute;top:2.2vh;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;z-index:5}
-.hallowowLogo{width:min(22vw,300px);filter:drop-shadow(0 8px 18px rgba(99,22,0,.18))}
-.samayLogo{width:min(13vw,175px);margin-top:3px}
-.room{position:absolute;left:18px;top:16px;z-index:7;border:1px solid rgba(255,255,255,.45);background:rgba(109,25,0,.18);backdrop-filter:blur(9px);border-radius:999px;padding:8px 11px;font-size:10px;font-weight:800;color:#fff}
-.online{color:#E0FFE1}.local{color:#FFF1A8}
-.bat{position:absolute;right:7%;top:13%;width:min(8vw,100px);animation:float 3.6s ease-in-out infinite;opacity:.9;filter:drop-shadow(0 8px 15px rgba(93,20,0,.15))}
+.ribbon.r1{width:60vw;right:-14vw;top:16%;transform:rotate(30deg)}
+.ribbon.r2{width:56vw;left:-16vw;bottom:14%;transform:rotate(-22deg)}
+
+/* ---------- Header ---------- */
+.top{position:absolute;z-index:6;top:max(14px,2vh);left:16px;right:16px;display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.iconBtn{
+  width:clamp(46px,5vw,60px);aspect-ratio:1;border-radius:50%;display:grid;place-items:center;flex:none;
+  background:rgba(38,18,12,.88);color:#fff;text-decoration:none;box-shadow:0 8px 18px rgba(80,16,0,.3)
+}
+.samayLogo{width:clamp(110px,17vw,200px);filter:drop-shadow(0 6px 12px rgba(99,22,0,.2));margin-top:2px}
+.roomPill{
+  display:flex;align-items:center;gap:9px;min-width:0;max-width:34vw;padding:9px 13px;border-radius:14px;
+  background:rgba(27,18,14,.92);box-shadow:0 8px 18px rgba(80,16,0,.3);font-weight:900;font-size:clamp(11px,1.2vw,15px);letter-spacing:.05em
+}
+.roomPill b{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.dot{width:16px;height:16px;border-radius:50%;flex:none;background:#8a8a8a;box-shadow:inset 0 -3px 4px rgba(0,0,0,.25)}
+.dot.online{background:radial-gradient(circle at 35% 30%,#7CFF6B,#23B21B)}
+.dot.local{background:radial-gradient(circle at 35% 30%,#FFE98A,#E5A912)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.bat{position:absolute;right:8%;top:14%;width:min(8vw,90px);z-index:1;filter:drop-shadow(0 8px 14px rgba(93,20,0,.2))}
+@media(prefers-reduced-motion:no-preference){.bat{animation:float 3.6s ease-in-out infinite}}
 @keyframes float{50%{transform:translateY(-12px) rotate(5deg)}}
 
-.playerWrap{width:min(1080px,88vw);margin-top:clamp(100px,15vh,160px);display:grid;gap:14px;z-index:2;position:relative}
-.playerWrap:before{content:"✦  ♪  ✿";position:absolute;left:-85px;top:40px;color:rgba(255,247,231,.35);font-size:28px;line-height:2.1;writing-mode:vertical-rl;letter-spacing:8px}
-.playerWrap:after{content:"";position:absolute;right:-100px;top:120px;width:165px;height:165px;border:2px solid rgba(255,247,231,.18);border-radius:50%;box-shadow:0 0 0 20px rgba(255,247,231,.05),0 0 0 40px rgba(255,247,231,.03)}
+/* ---------- Layout ---------- */
+.playerWrap{
+  position:relative;z-index:2;width:min(1000px,90vw);margin-top:clamp(70px,11vh,130px);
+  display:grid;gap:clamp(10px,2vh,18px)
+}
 .lyricPanel{
-  position:relative;overflow:hidden;border-radius:28px;padding:28px 38px 30px;min-height:360px;
+  position:relative;border-radius:clamp(26px,3vw,40px);padding:clamp(22px,4vh,44px) clamp(22px,4vw,56px);
+  min-height:clamp(260px,46vh,470px);display:grid;align-content:center;
   background:
-    radial-gradient(circle at 50% 10%,rgba(255,106,25,.12),transparent 34%),
-    linear-gradient(180deg,#241610 0%,#100B09 100%);
-  border:1px solid rgba(255,147,73,.34);
-  box-shadow:0 26px 70px rgba(91,18,0,.28)
+    radial-gradient(circle at 50% 12%,rgba(255,106,25,.16),transparent 40%),
+    linear-gradient(180deg,#1E1511,#0E0A08);
+  border:3px solid #FFAE3A;
+  box-shadow:0 0 0 7px rgba(255,255,255,.1),0 0 38px rgba(255,160,40,.35),0 26px 70px rgba(91,18,0,.35)
 }
-.lyricPanel:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 20%,rgba(255,111,22,.12),transparent 40%);pointer-events:none}
-.metaTop{position:relative;z-index:2;text-align:center}
-.kicker{font-size:12px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:#FF9C58}
-.title{margin:5px 0 0;font-size:clamp(42px,5.6vw,78px);line-height:.95;font-weight:900;color:#fff}
-.artist{margin-top:7px;font-size:clamp(15px,1.8vw,24px);font-weight:700;color:#D5C5BE}
-.version{display:inline-flex;margin-top:10px;border-radius:999px;padding:7px 11px;background:#311B14;color:#FFB184;font-size:11px;font-weight:800}
+.deco{position:absolute;pointer-events:none;z-index:3}
+.deco.fl1{width:clamp(44px,6vw,86px);left:-3.2%;top:22%;color:#fff3df}
+.deco.fl2{width:clamp(36px,5vw,70px);right:-2.8%;top:8%;color:#E3262E}
+.deco.fl3{width:clamp(34px,4.6vw,64px);right:-2.4%;bottom:14%;color:#E3262E}
+.deco.fl4{width:clamp(30px,4vw,56px);left:-2.4%;bottom:10%;color:#E3262E}
+.deco.lf1{width:clamp(20px,2.6vw,38px);left:-1%;top:12%;transform:rotate(-30deg)}
+.deco.lf2{width:clamp(20px,2.6vw,38px);right:-1%;bottom:30%;transform:rotate(40deg)}
 
-.lyrics{position:relative;z-index:2;margin:4vh auto 1vh;min-height:180px;display:grid;align-content:center;gap:11px;text-align:center;max-width:930px}
-.prev,.next{min-height:1.2em;font-size:clamp(18px,2.1vw,31px);font-weight:700;color:#675754}
-.current{position:relative;width:100%;font-size:clamp(36px,4.8vw,70px);line-height:1.06;font-weight:900;text-align:center}
+.kicker{position:relative;z-index:2;text-align:center;font-size:clamp(11px,1.3vw,16px);font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#FF9C58;margin-bottom:2vh}
+
+.lyrics{position:relative;z-index:2;margin:0 auto;min-height:clamp(150px,28vh,300px);display:grid;align-content:center;gap:clamp(8px,1.4vh,16px);text-align:center;max-width:900px;width:100%}
+.prev,.next{min-height:1.2em;font-size:clamp(18px,2.3vw,34px);font-weight:800;line-height:1.1}
+.prev{color:rgba(255,255,255,.34)}
+.next{color:rgba(255,255,255,.82)}
+.current{position:relative;width:100%;font-size:clamp(34px,5vw,76px);line-height:1.04;font-weight:900;letter-spacing:-.01em;text-align:center}
 .currentBase,.currentFill{display:block;width:100%;white-space:normal;overflow-wrap:anywhere}
-.currentBase{color:#7A6761}
-.currentFill{position:absolute;inset:0;color:#FF7B28;text-shadow:0 0 18px rgba(255,107,20,.3);clip-path:inset(0 100% 0 0);transition:clip-path .04s linear}
-.guide{font-size:clamp(20px,2vw,29px);line-height:1.45;color:#C7B7B0}.guide .hint{color:#FF8A3B;font-weight:900}
+.currentBase{color:#fff}
+.currentFill{position:absolute;inset:0;color:#FF7B28;text-shadow:0 0 22px rgba(255,107,20,.4);clip-path:inset(0 100% 0 0);transition:clip-path .04s linear}
+.guide{font-size:clamp(20px,2.2vw,30px);line-height:1.45;color:#E8D8CF}
+.guide .hint{color:#FF8A3B;font-weight:900;margin-bottom:6px}
+.idle .lyrics{opacity:.65}
 
+/* ---------- Info card ---------- */
 .infoCard{
-  display:grid;grid-template-columns:minmax(0,1fr) auto;gap:18px;align-items:center;
-  background:
-    linear-gradient(90deg,var(--red) 0 10px,transparent 10px calc(100% - 10px),var(--red) calc(100% - 10px)),
-    linear-gradient(180deg,#FFFDF8,#FFF6EC);
-  border:1px solid rgba(255,255,255,.7);border-radius:22px;padding:17px 22px 17px 26px;color:var(--ink);box-shadow:0 18px 42px rgba(106,25,0,.18)
+  position:relative;z-index:4;width:min(100%,820px);margin:0 auto;
+  padding:clamp(16px,2.4vh,28px) clamp(20px,3vw,40px);border-radius:clamp(24px,3vw,36px);text-align:center;
+  background:linear-gradient(180deg,#FFFAEE,#FFEFD6);border:1px solid rgba(255,255,255,.9);color:var(--ink);
+  box-shadow:0 20px 46px rgba(106,25,0,.28)
 }
-.progressWrap{min-width:0}.progress{height:8px;background:#E8D7CE;border-radius:999px;overflow:hidden}.bar{display:block;height:100%;width:0;background:var(--red);border-radius:inherit}
-.times{display:flex;justify-content:space-between;margin-top:8px;font-size:11px;font-weight:700;color:#8A5549;font-variant-numeric:tabular-nums}
-.state{max-width:280px;text-align:right;font-size:10px;font-weight:800;line-height:1.35;color:var(--red-dark);letter-spacing:.04em}
+.title{margin:0;font-size:clamp(30px,4.4vw,62px);line-height:1;font-weight:900;color:#1E0D06;letter-spacing:-.01em}
+.artist{margin-top:6px;font-size:clamp(15px,1.8vw,26px);font-weight:700;color:#4B2A1D}
+.version{display:inline-flex;margin-top:8px;border-radius:999px;padding:5px 12px;background:#FFE0BC;color:#9A3A07;font-size:clamp(10px,1vw,13px);font-weight:900;letter-spacing:.04em}
+.progress{position:relative;height:clamp(9px,1.2vh,14px);margin-top:clamp(12px,2vh,22px);background:#E8D7C5;border-radius:999px}
+.bar{position:relative;display:block;height:100%;width:0;border-radius:inherit;background:linear-gradient(90deg,#FF9440,#F1530B)}
+.bar:after{
+  content:"";position:absolute;right:-.9em;top:50%;width:1.8em;height:1.8em;margin-top:-.9em;border-radius:50%;font-size:clamp(8px,1vw,12px);
+  background:radial-gradient(circle at 35% 30%,#FFF1B5,#FFC24A);border:2px solid #fff;box-shadow:0 3px 8px rgba(110,40,0,.35)
+}
+.times{display:flex;justify-content:space-between;margin-top:8px;font-size:clamp(12px,1.3vw,18px);font-weight:700;color:#3A2118;font-variant-numeric:tabular-nums}
+.controls{display:flex;justify-content:center;align-items:center;gap:clamp(18px,4vw,52px);margin-top:clamp(6px,1.2vh,14px);color:#1E0D06}
+.controls svg{width:clamp(22px,2.6vw,34px);height:clamp(22px,2.6vw,34px);flex:none}
+.controls .side{opacity:.55}
+.controls .heart{color:var(--red);opacity:.85}
+.playBtn{
+  width:clamp(60px,7.5vw,100px);aspect-ratio:1;border-radius:50%;display:grid;place-items:center;color:#fff;
+  background:radial-gradient(circle at 35% 28%,#FF9A4A,#F1530B);border:3px solid rgba(255,255,255,.85);
+  box-shadow:0 10px 22px rgba(190,60,6,.45)
+}
+.playBtn svg{width:46%;height:46%}
+.playBtn .i-play{display:none}
+.stage.paused .playBtn .i-pause{display:none}
+.stage.paused .playBtn .i-play{display:block}
+.state{margin-top:clamp(8px,1.4vh,14px);font-size:clamp(10px,1.1vw,14px);font-weight:800;letter-spacing:.05em;color:var(--red-dark)}
 
-.activate{position:fixed;inset:0;z-index:30;display:grid;place-items:center;padding:18px;background:rgba(92,19,0,.68);backdrop-filter:blur(16px)}
+/* ---------- Activation ---------- */
+.activate{position:fixed;inset:0;z-index:30;display:grid;place-items:center;padding:18px;background:rgba(92,19,0,.7);backdrop-filter:blur(16px)}
 .activate.hide{display:none}
-.card{width:min(510px,94vw);padding:26px;border-radius:28px;text-align:center;background:linear-gradient(150deg,#FF9F25,#EF6413 60%,#D9470B);border:2px solid rgba(255,255,255,.55);box-shadow:0 38px 90px rgba(78,16,0,.34)}
-.card img{width:min(220px,65%)}.card h2{margin:8px 0 5px;font-size:30px}.card p{margin:0 0 16px;color:#FFF0DC;line-height:1.45}
-.card button{width:100%;min-height:56px;border:0;border-radius:16px;background:#fff;color:var(--red);font-weight:900;font-size:15px}
-.warning{margin-top:10px;font-size:10px;color:#FFE7CA}
-.idle .lyrics{opacity:.6}
+.card{width:min(510px,94vw);padding:26px;border-radius:28px;text-align:center;background:linear-gradient(150deg,#FF9F25,#EF6413 60%,#D9470B);border:2px solid rgba(255,255,255,.6);box-shadow:0 38px 90px rgba(78,16,0,.38)}
+.card img{width:min(220px,65%)}
+.card h2{margin:8px 0 5px;font-size:30px}
+.card p{margin:0 0 16px;color:#FFF0DC;line-height:1.45}
+.card button{width:100%;min-height:56px;border:0;border-radius:16px;background:#fff;color:var(--red);font-weight:900;font-size:15px;cursor:pointer}
+.warning{margin-top:10px;font-size:11px;color:#FFE7CA}
 
+/* ---------- Responsive ---------- */
 @media(max-width:700px){
-  .stage{padding:10px}.playerWrap:before,.playerWrap:after{display:none}.room{left:9px;top:9px;font-size:8px}.header{top:2vh}.hallowowLogo{width:min(49vw,220px)}.samayLogo{width:min(32vw,145px)}.bat{display:none}
-  .playerWrap{width:95vw;margin-top:clamp(100px,17vh,140px);gap:10px}.lyricPanel{min-height:55vh;padding:22px 14px;border-radius:23px}
-  .title{font-size:clamp(38px,11vw,58px)}.artist{font-size:18px}.version{font-size:10px}
-  .lyrics{margin:4vh auto 1vh;min-height:28vh}.prev,.next{font-size:clamp(17px,5vw,25px)}.current{font-size:clamp(30px,8.5vw,50px)}
-  .infoCard{grid-template-columns:1fr;padding:14px 18px 14px 22px;border-radius:18px}.state{text-align:left;max-width:none}
+  .stage{padding:10px}.bat{display:none}
+  .top{left:10px;right:10px}.roomPill{max-width:46vw}
+  .playerWrap{width:94vw;margin-top:clamp(66px,11vh,96px)}
+  .lyricPanel{min-height:48vh;padding:22px 18px}
+  .deco.fl1{left:-5%}.deco.fl2,.deco.fl3{right:-5%}.deco.fl4{left:-5%}
 }
 @media(orientation:portrait) and (min-width:700px){
-  .hallowowLogo{width:min(31vw,300px)}.samayLogo{width:min(20vw,185px)}.room{font-size:12px;padding:10px 13px}
-  .playerWrap{width:88vw;margin-top:clamp(145px,16vh,205px)}.lyricPanel{min-height:62vh;padding:5vh 5vw}
-  .title{font-size:clamp(70px,8.5vw,104px)}.artist{font-size:29px}.version{font-size:14px}
-  .lyrics{min-height:32vh;margin:6vh auto 3vh}.prev,.next{font-size:clamp(28px,3.5vw,42px)}.current{font-size:clamp(55px,6.8vw,84px)}
-  .infoCard{padding:22px 30px 22px 34px}.times{font-size:15px}.state{font-size:13px}
+  .playerWrap{width:88vw;margin-top:clamp(100px,12vh,150px)}
+  .lyricPanel{min-height:50vh}
+}
+/* TV / escritorio: tarjeta en dos columnas */
+@media(min-width:900px) and (orientation:landscape){
+  .infoCard{width:min(100%,980px);display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);column-gap:clamp(20px,3vw,48px);align-items:center;text-align:left}
+  .infoCard .meta{grid-column:1;grid-row:1 / span 3}
+  .infoCard .right{grid-column:2}
+  .controls{justify-content:space-between}
 }
 @media(orientation:landscape) and (max-height:720px){
-  .header{top:1vh}.hallowowLogo{width:min(17vw,205px)}.samayLogo{width:min(10vw,120px)}.room{font-size:9px}
-  .playerWrap{width:88vw;margin-top:clamp(82px,14vh,105px);gap:8px}.lyricPanel{min-height:58vh;padding:18px 32px 20px}
-  .kicker{font-size:9px}.title{font-size:clamp(38px,4.6vw,58px)}.artist{font-size:16px}.version{margin-top:6px;padding:5px 9px}
-  .lyrics{margin:2vh auto .5vh;min-height:26vh}.prev,.next{font-size:20px}.current{font-size:clamp(32px,4.2vw,52px)}
-  .infoCard{padding:10px 18px 10px 22px}.times{margin-top:5px}.state{font-size:9px}
-}
-@media(min-width:1600px) and (orientation:landscape){
-  .hallowowLogo{width:330px}.samayLogo{width:195px}.playerWrap{width:min(1180px,76vw)}.lyricPanel{min-height:440px}.title{font-size:88px}.current{font-size:78px}.prev,.next{font-size:35px}
+  .playerWrap{margin-top:clamp(58px,10vh,80px);gap:8px}
+  .lyricPanel{min-height:44vh;padding:16px 30px}
+  .kicker{margin-bottom:1vh}
+  .infoCard{padding:10px 22px}
 }
 </style>
 </head>
 <body>
-<div class="stage idle" id="stage">
-  <div class="room">SALA <b id="roomCode"></b> · <span id="syncState">CONECTANDO</span></div>
-  <div class="header">
-    <img class="hallowowLogo" src="assets/logo-hallowow.webp" alt="Hallowow Criollazo">
-    <img class="samayLogo" src="assets/logo-samay.png" alt="Samay">
-  </div>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="flower" viewBox="0 0 100 100">
+      <g fill="currentColor">
+        <circle cx="50" cy="22" r="20"/>
+        <circle cx="50" cy="22" r="20" transform="rotate(72 50 50)"/>
+        <circle cx="50" cy="22" r="20" transform="rotate(144 50 50)"/>
+        <circle cx="50" cy="22" r="20" transform="rotate(216 50 50)"/>
+        <circle cx="50" cy="22" r="20" transform="rotate(288 50 50)"/>
+      </g>
+      <circle cx="50" cy="50" r="13" fill="#FFC53D"/>
+    </symbol>
+    <symbol id="leaf" viewBox="0 0 60 100"><path d="M30 0C62 30 62 70 30 100 -2 70 -2 30 30 0Z" fill="#2E7D32"/></symbol>
+  </defs>
+</svg>
+
+<div class="stage idle paused" id="stage">
+  <div class="ribbon r1" aria-hidden="true"></div>
+  <div class="ribbon r2" aria-hidden="true"></div>
+
+  <header class="top">
+    <a class="iconBtn" id="backBtn" aria-label="Volver al selector de canciones">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>
+    </a>
+    <img class="samayLogo" src="assets/logo-samay.png" alt="Samay BCP">
+    <div class="roomPill"><i class="dot" id="dot"></i><span>SALA <b id="roomCode"></b></span><span class="sr" id="syncState">CONECTANDO</span></div>
+  </header>
   <img class="bat" src="assets/murcielago.webp" alt="">
 
   <main class="playerWrap">
     <section class="lyricPanel">
-      <div class="metaTop">
-        <div class="kicker" id="kicker">Pantalla de karaoke</div>
-        <h1 class="title" id="title">Esperando canción</h1>
-        <div class="artist" id="artist">Elige una canción desde el celular</div>
-        <div class="version" id="version">SALA LISTA</div>
-      </div>
-      <section class="lyrics" id="lyrics">
+      <svg class="deco fl1" viewBox="0 0 100 100" aria-hidden="true"><use href="#flower"/></svg>
+      <svg class="deco fl2" viewBox="0 0 100 100" aria-hidden="true"><use href="#flower"/></svg>
+      <svg class="deco fl3" viewBox="0 0 100 100" aria-hidden="true"><use href="#flower"/></svg>
+      <svg class="deco fl4" viewBox="0 0 100 100" aria-hidden="true"><use href="#flower"/></svg>
+      <svg class="deco lf1" viewBox="0 0 60 100" aria-hidden="true"><use href="#leaf"/></svg>
+      <svg class="deco lf2" viewBox="0 0 60 100" aria-hidden="true"><use href="#leaf"/></svg>
+
+      <div class="kicker" id="kicker">Pantalla de karaoke</div>
+      <section class="lyrics" id="lyrics" aria-live="off">
         <div class="prev" id="prev"></div>
         <div class="current" id="current"><span class="currentBase" id="currentBase">🎤</span><span class="currentFill" id="currentFill">🎤</span></div>
         <div class="next" id="next"></div>
@@ -135,11 +211,26 @@ body{font-family:"Flexo",Verdana,system-ui,sans-serif;background:var(--orange);c
     </section>
 
     <section class="infoCard">
-      <div class="progressWrap">
+      <div class="meta">
+        <h1 class="title" id="title">Esperando canción</h1>
+        <div class="artist" id="artist">Elige una canción desde el celular</div>
+        <div class="version" id="version">Sala lista</div>
+      </div>
+      <div class="right">
         <div class="progress"><i class="bar" id="bar"></i></div>
         <div class="times"><span id="elapsed">00:00</span><span id="remaining">00:00</span></div>
+        <div class="controls" aria-hidden="true">
+          <svg class="side" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3h5v5M4 20l17-17M21 16v5h-5M15 15l6 6M4 4l5 5"/></svg>
+          <svg class="side" viewBox="0 0 24 24" fill="currentColor"><path d="M6 5h2.5v14H6zM20 5v14L9.5 12z"/></svg>
+          <span class="playBtn">
+            <svg class="i-pause" viewBox="0 0 24 24" fill="currentColor"><rect x="5" y="4" width="5" height="16" rx="1.5"/><rect x="14" y="4" width="5" height="16" rx="1.5"/></svg>
+            <svg class="i-play" viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l13-7.5z"/></svg>
+          </span>
+          <svg class="side" viewBox="0 0 24 24" fill="currentColor"><path d="M15.5 5H18v14h-2.5zM4 5v14l10.5-7z"/></svg>
+          <svg class="heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"><path d="M12 20.5s-7.5-4.6-9.3-9.2C1.5 8 3.4 4.8 6.6 4.8c2 0 3.7 1.1 5.4 3.1 1.7-2 3.4-3.1 5.4-3.1 3.2 0 5.1 3.2 3.9 6.5-1.8 4.6-9.3 9.2-9.3 9.2z"/></svg>
+        </div>
+        <div class="state" id="playerState">ACTIVA ESTA PANTALLA UNA VEZ Y DÉJALA ABIERTA</div>
       </div>
-      <div class="state" id="playerState">ACTIVA ESTA PANTALLA UNA VEZ Y DÉJALA ABIERTA</div>
     </section>
   </main>
 </div>
@@ -157,13 +248,17 @@ body{font-family:"Flexo",Verdana,system-ui,sans-serif;background:var(--orange);c
 <audio id="audio" preload="auto" src="../cariñitobareto.mp3"></audio>
 
 <script type="module">
-import { roomFromUrl, subscribeRoom, getSong, getVersion } from "./shared.js";
+import { roomFromUrl, subscribeRoom, getSong, getVersion, controllerUrl } from "./shared.js";
 const room=roomFromUrl(),audio=document.querySelector("#audio"),stage=document.querySelector("#stage"),$=s=>document.querySelector(s);
 $("#roomCode").textContent=room;
+$("#backBtn").href=controllerUrl(room);
 let unlocked=false,pending=null,activeState=null,activeSong=null,activeVersion=null,lyricData=[],timedLyrics=false,lastCommand="stop";
 
 function mmss(v){const n=Math.max(0,Number(v)||0),m=Math.floor(n/60),s=Math.floor(n%60);return String(m).padStart(2,"0")+":"+String(s).padStart(2,"0")}
-function setSync(mode){const el=$("#syncState");el.textContent=mode==="online"?"EN LÍNEA":"MODO LOCAL";el.className=mode==="online"?"online":"local"}
+function setSync(mode){
+  $("#syncState").textContent=mode==="online"?"EN LÍNEA":"MODO LOCAL";
+  $("#dot").className="dot "+(mode==="online"?"online":"local");
+}
 async function loadLyrics(){
   const urls=["songs/carinito/lyrics-timed.json","songs/carinito/lyrics-template.json"];
   for(const url of urls){try{const r=await fetch(url,{cache:"no-store"});if(!r.ok)continue;const d=await r.json();lyricData=Array.isArray(d.lyrics)?d.lyrics:[];timedLyrics=lyricData.some(x=>Number.isFinite(Number(x.start??x.time)));return}catch{}}
@@ -208,7 +303,9 @@ audio.addEventListener("timeupdate",()=>{
   $("#bar").style.width=(pos/span*100)+"%";$("#elapsed").textContent=mmss(pos);$("#remaining").textContent=mmss(span);renderTimedLyrics(audio.currentTime);
   if(!audio.paused&&audio.currentTime>=end-.04){audio.pause();audio.currentTime=end;$("#playerState").textContent="FINALIZADO"}
 });
-audio.addEventListener("ended",()=>$("#playerState").textContent="FINALIZADO");
+audio.addEventListener("play",()=>stage.classList.remove("paused"));
+audio.addEventListener("pause",()=>stage.classList.add("paused"));
+audio.addEventListener("ended",()=>{$("#playerState").textContent="FINALIZADO";stage.classList.add("paused")});
 $("#activateBtn").onclick=async()=>{try{audio.volume=1;await audio.play();audio.pause();audio.currentTime=0}catch{}unlocked=true;$("#activate").classList.add("hide");$("#playerState").textContent="PANTALLA ACTIVA · ESPERANDO SELECCIÓN";if(pending){const p=pending;pending=null;execute(p)}};
 await loadLyrics();subscribeRoom(room,receive,setSync);
 </script>
