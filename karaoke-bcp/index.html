@@ -3,206 +3,269 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#F36A18">
+<meta name="theme-color" content="#F67A1A">
 <title>Hallowow Karaoke</title>
 <style>
 @font-face{font-family:"Flexo";src:url("assets/fonts/Flexo-Regular.woff2") format("woff2");font-style:normal;font-weight:400;font-display:swap}
 @font-face{font-family:"Flexo";src:url("assets/fonts/Flexo-Bold.woff2") format("woff2");font-style:normal;font-weight:700 900;font-display:swap}
 :root{
-  --orange:#F36A18;--orange-deep:#DF4C0B;--orange-light:#FFB338;
-  --red:#D91F26;--red-dark:#A9141B;--cream:#FFF7E9;--paper:#FFFDF7;
-  --ink:#5F1E0B;--wine:#7D1718;--shadow:0 18px 44px rgba(113,27,5,.18)
+  --orange:#F36A18;--orange-deep:#D9480C;--amber:#FFB338;
+  --red:#D91F26;--red-dark:#A9141B;--cream:#FFF4E0;
+  --ink:#3A1A0E;--wine:#7D1718;--night:#1B120E;
 }
 *{box-sizing:border-box}
 html,body{margin:0;min-height:100%;min-height:100dvh}
-body{
-  font-family:"Flexo",Verdana,system-ui,sans-serif;color:var(--ink);overflow-x:hidden;
+body{font-family:"Flexo",Verdana,system-ui,sans-serif;color:var(--ink);background:#0F1420;overflow-x:hidden}
+button,input{font:inherit;color:inherit}
+button{touch-action:manipulation;-webkit-tap-highlight-color:transparent;cursor:pointer}
+:focus-visible{outline:3px solid #fff;outline-offset:2px}
+
+/* ---------- App shell (columna tipo celular) ---------- */
+.app{
+  position:relative;isolation:isolate;overflow:hidden;
+  width:min(100%,480px);min-height:100dvh;margin:0 auto;padding:14px 14px 96px;
   background:
-    radial-gradient(circle at 75% 8%,rgba(255,220,107,.46),transparent 24%),
-    linear-gradient(160deg,#F98A1D 0%,#F36A18 52%,#D9480C 100%);
+    radial-gradient(circle at 72% 6%,rgba(255,226,120,.8),transparent 30%),
+    radial-gradient(circle at 6% 42%,rgba(255,170,50,.5),transparent 36%),
+    linear-gradient(170deg,#FFAE2B 0%,#F67A1A 40%,#E4560E 100%);
 }
-button,input{font:inherit}
-button{touch-action:manipulation;-webkit-tap-highlight-color:transparent}
-.page{position:relative;isolation:isolate;min-height:100dvh;padding:18px 14px 56px}
-.page:before,.page:after{display:none}
-.shell{width:min(1080px,100%);margin:0 auto;position:relative}
-.shell:before,.shell:after{display:none}
-.header{display:flex;justify-content:flex-end;align-items:center;min-height:42px;position:relative;z-index:5}
-.headerTools{display:flex;justify-content:flex-end;gap:8px;align-items:center}
-.badge,.miniLink{border:1px solid rgba(255,255,255,.44);background:rgba(111,26,0,.18);backdrop-filter:blur(10px);border-radius:999px;padding:8px 11px;color:#fff;text-decoration:none;font-size:10px;font-weight:800;letter-spacing:.04em}
-.sync.online{color:#e1ffe2}.sync.local{color:#fff0a9}
+@media(min-width:520px){
+  body{padding:24px 0}
+  .app{min-height:calc(100dvh - 48px);border-radius:38px;box-shadow:0 30px 80px rgba(0,0,0,.55)}
+}
+.app > *{position:relative;z-index:1}
 
+/* ---------- Top bar ---------- */
+.top{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.iconBtn{
+  width:54px;height:54px;border-radius:50%;border:0;display:grid;place-items:center;flex:none;
+  background:rgba(38,18,12,.88);color:#fff;box-shadow:0 8px 18px rgba(80,16,0,.3)
+}
+.roomPill{
+  display:flex;align-items:center;gap:10px;min-width:0;max-width:62%;
+  padding:9px 12px 9px 14px;border:0;border-radius:14px;background:rgba(27,18,14,.92);color:#fff;
+  box-shadow:0 8px 18px rgba(80,16,0,.3);text-align:left
+}
+.dot{width:20px;height:20px;border-radius:50%;flex:none;background:#8a8a8a;box-shadow:inset 0 -3px 5px rgba(0,0,0,.25)}
+.dot.online{background:radial-gradient(circle at 35% 30%,#7CFF6B,#23B21B)}
+.dot.local{background:radial-gradient(circle at 35% 30%,#FFE98A,#E5A912)}
+.roomText{display:grid;min-width:0;font-weight:900;font-size:13px;line-height:1.15;letter-spacing:.04em}
+.roomText b{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.chev{flex:none;opacity:.9}
+.bat{position:absolute;z-index:0;pointer-events:none;filter:drop-shadow(0 6px 10px rgba(70,14,0,.25))}
+.bat.b1{width:54px;left:23%;top:16px}
+.bat.b2{width:38px;left:7%;top:104px;transform:rotate(-12deg)}
+@media(prefers-reduced-motion:no-preference){
+  .bat.b1{animation:float 3.8s ease-in-out infinite}
+}
+@keyframes float{50%{transform:translateY(-8px) rotate(5deg)}}
 
-.heroArtWrap{
-  margin-top:10px;position:relative;overflow:hidden;border-radius:28px;
-  border:2px solid rgba(255,255,255,.58);box-shadow:0 22px 54px rgba(107,24,4,.20);
-  background:#EF6516
+.menu{
+  position:absolute;z-index:20;left:14px;top:76px;min-width:210px;display:none;
+  padding:8px;border-radius:18px;background:rgba(27,18,14,.97);box-shadow:0 18px 40px rgba(60,10,0,.4)
 }
-.heroPicture,.heroPicture img{display:block;width:100%}
-.heroPicture img{height:auto;object-fit:contain;object-position:center}
-.searchPanel{
-  width:min(760px,92%);margin:-26px auto 0;position:relative;z-index:4;
-  padding:12px;border-radius:20px;background:rgba(36,18,13,.94);
-  border:1px solid rgba(255,145,66,.48);box-shadow:0 18px 34px rgba(93,18,0,.23)
+.menu.open{display:grid;gap:4px}
+.menu a{padding:13px 14px;border-radius:12px;color:#fff;text-decoration:none;font-weight:800;font-size:14px}
+.menu a:hover,.menu a:focus-visible{background:rgba(255,125,43,.22)}
+
+/* ---------- Hero ---------- */
+.hero{position:relative;text-align:center;margin-top:2px;padding-bottom:6px}
+.logoHallo{display:block;width:84%;margin:4px auto 0;filter:drop-shadow(0 8px 14px rgba(80,16,0,.28))}
+.logoSamay{display:block;width:30%;margin:-2px auto 0}
+.tagline{
+  position:relative;display:inline-block;margin:4px 0 0;padding-bottom:7px;
+  font-family:"Segoe Script","Bradley Hand","Snell Roundhand","Comic Sans MS",cursive;font-style:italic;font-weight:700;
+  font-size:clamp(17px,5.2vw,22px);line-height:1.2;color:#4A1708;max-width:78%
 }
-.search{display:grid;grid-template-columns:1fr auto;gap:9px;margin:0}
-.search input{
-  min-width:0;min-height:56px;border:1px solid rgba(255,155,84,.24);border-radius:14px;padding:0 18px;
-  background:#FFF9F0;color:var(--ink);outline:none;box-shadow:none
+.tagline:after{content:"";position:absolute;left:8%;right:30%;bottom:0;height:3px;border-radius:3px;background:var(--red);transform:rotate(-1.5deg)}
+.heroArt{display:block;width:92%;max-height:230px;object-fit:contain;margin:6px auto -8px;filter:drop-shadow(0 14px 18px rgba(90,18,0,.3))}
+.flower{position:absolute;color:#E3262E;z-index:0}
+.flower.f1{width:46px;left:-4px;top:150px;color:#fff3df}
+.flower.f2{width:36px;right:-2px;top:70px}
+.flower.f3{width:30px;right:6%;bottom:40px;color:#fff3df}
+.leaf{position:absolute;width:26px;z-index:0}
+.leaf.l1{left:12px;top:120px;transform:rotate(-40deg)}
+.leaf.l2{right:8px;top:118px;transform:rotate(35deg)}
+
+/* ---------- Search ---------- */
+.search{
+  position:relative;z-index:3;display:flex;align-items:center;gap:8px;margin-top:-16px;
+  padding:6px 6px 6px 16px;border-radius:22px;background:#FFF9F0;border:2px solid rgba(255,255,255,.75);
+  box-shadow:0 12px 26px rgba(100,22,0,.28)
 }
-.search input::placeholder{color:#9E6550}
+.search svg{flex:none;color:#2B1209}
+.search input{flex:1;min-width:0;min-height:46px;border:0;background:transparent;outline:none;font-size:15px;color:var(--ink)}
+.search input::placeholder{color:#8D6A5B}
+.search:focus-within{box-shadow:0 0 0 3px #fff,0 12px 26px rgba(100,22,0,.28)}
 .search button{
-  min-height:56px;border:0;border-radius:14px;padding:0 24px;
-  background:linear-gradient(145deg,#FF852F,#ED4F09);color:#fff;font-weight:900;
-  box-shadow:0 8px 18px rgba(189,56,6,.25)
+  min-height:46px;padding:0 22px;border:0;border-radius:16px;color:#fff;font-weight:900;letter-spacing:.03em;
+  background:linear-gradient(145deg,#FF8A33,#EE4F0A);box-shadow:inset 0 1px 0 rgba(255,255,255,.35)
 }
-.filters{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;padding:22px 2px 12px}
+
+/* ---------- Filters ---------- */
+.filters{display:flex;gap:7px;margin:14px -14px 4px;padding:6px 14px;overflow-x:auto;scrollbar-width:none}
+.filters::-webkit-scrollbar{display:none}
 .filter{
-  position:relative;min-height:112px;border:1px solid rgba(255,164,72,.48);border-radius:22px;padding:16px 10px 13px;
-  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;
-  background:
-    radial-gradient(circle at 50% 18%,rgba(255,111,28,.18),transparent 40%),
-    linear-gradient(180deg,#2B1711,#120B09);
-  color:#FFE9D6;font-size:12px;font-weight:800;box-shadow:inset 0 0 0 1px rgba(255,255,255,.025),0 12px 28px rgba(94,20,0,.2);
-  transition:.18s
+  flex:1 0 66px;min-height:76px;padding:8px 4px;border-radius:14px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;
+  border:1px solid rgba(255,164,72,.4);background:linear-gradient(180deg,#2B1711,#150C09);
+  color:#FFE9D6;font-size:10px;font-weight:800;letter-spacing:.01em;text-transform:uppercase;
+  box-shadow:0 8px 16px rgba(80,16,0,.25)
 }
-.filter:before{
-  content:attr(data-icon);width:48px;height:48px;border-radius:16px;display:grid;place-items:center;
-  background:linear-gradient(145deg,#FF8D35,#F1530B);color:#fff;font-size:24px;
-  box-shadow:0 0 0 1px rgba(255,191,118,.5),0 8px 18px rgba(255,89,10,.2)
+.filter .ico{font-size:25px;line-height:1;filter:grayscale(.15)}
+.filter.active{
+  background:linear-gradient(150deg,#FF9440,#F1530B);border-color:#fff;color:#fff;
+  box-shadow:0 0 0 2px rgba(255,255,255,.35),0 10px 20px rgba(110,26,0,.35)
 }
-.filter:hover{transform:translateY(-2px);border-color:#FF9A48}
-.filter.active{border-color:#FFB46B;background:radial-gradient(circle at 50% 18%,rgba(255,119,28,.26),transparent 42%),linear-gradient(180deg,#351911,#170C09);color:#fff;box-shadow:0 0 0 2px rgba(255,111,28,.18),0 16px 32px rgba(92,18,0,.22)}
-.filter.active:after{content:"";position:absolute;inset:5px;border:1px solid rgba(255,131,55,.22);border-radius:17px;pointer-events:none}
 
-.sectionHead{display:flex;justify-content:space-between;align-items:flex-end;gap:10px;margin:16px 3px 12px}
-.sectionHead h2{margin:0;color:#fff;font-size:20px;font-weight:900;letter-spacing:.02em}
-.sectionHead small{color:#fff0db;font-size:12px}
-.flagLine{width:92px;height:6px;margin-bottom:8px;border-radius:99px;background:linear-gradient(90deg,var(--red) 0 33%,#fff 33% 66%,var(--red) 66%)}
-
-.songs{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+/* ---------- Songs ---------- */
+.sectionHead{display:flex;justify-content:space-between;align-items:center;gap:10px;margin:18px 2px 10px}
+.sectionHead h2{margin:0;color:#fff;font-size:15px;font-weight:900;letter-spacing:.03em;text-transform:uppercase;text-shadow:0 2px 6px rgba(90,16,0,.35)}
+.seeAll{border:0;background:none;color:#fff;font-weight:900;font-size:13px;padding:6px 2px;text-transform:uppercase;text-shadow:0 2px 6px rgba(90,16,0,.35)}
+.songs{display:grid;gap:9px}
 .song{
-  position:relative;overflow:hidden;min-height:104px;border:1px solid rgba(255,255,255,.62);border-radius:22px;padding:17px 18px 17px 20px;
-  display:grid;grid-template-columns:54px 1fr auto;align-items:center;gap:14px;text-align:left;
-  background:
-    linear-gradient(90deg,var(--red) 0 9px,transparent 9px calc(100% - 9px),var(--red) calc(100% - 9px)),
-    linear-gradient(180deg,#FFFDF8,#FFF7EE);
-  color:var(--wine);box-shadow:0 16px 36px rgba(111,25,0,.18);transition:.18s
+  position:relative;overflow:hidden;display:grid;grid-template-columns:40px minmax(0,1fr) auto;align-items:center;gap:12px;
+  min-height:70px;padding:10px 74px 10px 14px;border-radius:14px;text-align:left;
+  background:linear-gradient(180deg,#FFF9EC,#FFEDD2);border:1px solid rgba(255,255,255,.85);
+  color:var(--ink);box-shadow:0 8px 18px rgba(100,22,0,.24);transition:transform .15s
 }
-.song:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,.55),transparent 36%);pointer-events:none}
-.song.enabled{cursor:pointer}
-.song.enabled:hover{transform:translateY(-2px);box-shadow:0 22px 42px rgba(113,27,5,.22)}
-.song.disabled{opacity:.56;filter:saturate(.75);cursor:not-allowed}
-.songIcon{position:relative;z-index:2;width:50px;height:50px;border-radius:16px;display:grid;place-items:center;background:linear-gradient(145deg,#2A1711,#120B09);color:#FF8B3A;font-size:22px;box-shadow:0 8px 18px rgba(66,12,0,.18),inset 0 0 0 1px rgba(255,129,55,.28)}
-.songCopy{position:relative;z-index:2;min-width:0}
-.songCopy b{display:block;font-size:16px;font-weight:900;line-height:1.08}
-.artist{display:block;margin-top:6px;color:#A44D40;font-size:12px}
-.status{position:relative;z-index:2;justify-self:end;border-radius:999px;padding:7px 9px;font-size:9px;font-weight:900;letter-spacing:.05em;white-space:nowrap}
-.status.live{background:#FCE5E3;color:var(--red-dark)}
-.status.locked{background:#EFE5DE;color:#986B5E}
+.song:after{
+  content:"";position:absolute;top:0;right:0;bottom:0;width:66px;pointer-events:none;
+  background:linear-gradient(115deg,transparent 0 24%,var(--red) 24% 52%,#fff 52% 60%,var(--red) 60%);
+}
+.song.enabled:active{transform:scale(.985)}
+.song.disabled{opacity:.62;filter:saturate(.7);cursor:not-allowed}
+.songNote{font-size:34px;line-height:1;text-align:center;color:#F36A18;text-shadow:0 2px 0 rgba(150,50,0,.18)}
+.songCopy{min-width:0}
+.songCopy b{display:block;font-size:19px;font-weight:900;line-height:1.1;color:#2B1209;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.artist{display:block;margin-top:3px;font-size:14px;color:#5E3A2D;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.fav,.lock{position:relative;z-index:2;width:40px;height:40px;display:grid;place-items:center;border:0;background:none;color:#2B1209;border-radius:50%}
+.lock{font-size:18px;opacity:.7}
+.fav svg{width:28px;height:28px}
+.fav svg path{fill:transparent;stroke:currentColor;stroke-width:1.8}
+.fav.on{color:var(--red)}
+.fav.on svg path{fill:var(--red)}
+.empty{padding:26px;border:2px dashed rgba(255,255,255,.7);border-radius:18px;color:#fff;text-align:center;font-weight:700}
 
-.footerDecor{display:flex;justify-content:center;gap:22px;margin-top:28px;padding-top:22px;border-top:1px solid rgba(255,255,255,.3);color:#fff6e7;font-size:24px;opacity:.84}
+.footRibbon{
+  position:absolute !important;z-index:0 !important;left:-12%;right:-12%;bottom:-34px;height:96px;transform:rotate(-3.5deg);
+  background:linear-gradient(180deg,var(--red) 0 33%,#fff 33% 66%,var(--red) 66%);
+  box-shadow:0 -8px 22px rgba(90,16,0,.25);pointer-events:none
+}
 
-.modal{position:fixed;inset:0;z-index:30;display:none;place-items:center;padding:18px;background:rgba(88,18,0,.62);backdrop-filter:blur(14px)}
+/* ---------- Modal ---------- */
+.modal{position:fixed;inset:0;z-index:30;display:none;place-items:center;padding:18px;background:rgba(60,12,0,.7);backdrop-filter:blur(12px)}
 .modal.open{display:grid}
 .dialog{
-  position:relative;overflow:hidden;width:min(600px,100%);border-radius:28px;padding:24px;
-  background:linear-gradient(150deg,#FF9E24,#EF6413 60%,#D9460B);
-  border:2px solid rgba(255,255,255,.58);box-shadow:0 35px 90px rgba(84,18,0,.35)
+  position:relative;overflow:hidden;width:min(440px,100%);border-radius:28px;padding:22px;
+  background:linear-gradient(150deg,#FFB02A,#F36A18 58%,#D9460B);border:2px solid rgba(255,255,255,.7);box-shadow:0 35px 90px rgba(60,12,0,.45)
 }
-.dialog:before{content:"";position:absolute;right:-65px;top:-50px;width:185px;height:185px;background:url("assets/murcielago.webp") center/contain no-repeat;opacity:.18}
+.dialog:before{content:"";position:absolute;right:-50px;top:-36px;width:160px;height:160px;background:url("assets/murcielago.webp") center/contain no-repeat;opacity:.2}
 .dialogTop{position:relative;z-index:2;display:flex;justify-content:space-between;gap:16px}
-.dialogLabel{font-size:10px;font-weight:900;letter-spacing:.14em;color:#fff3df}
-.dialog h2{margin:4px 0 2px;color:#fff;font-size:36px;line-height:1}
+.dialogLabel{font-size:12px;font-weight:900;letter-spacing:.08em;color:#fff3df;text-transform:uppercase}
+.dialog h2{margin:4px 0 2px;color:#fff;font-size:34px;line-height:1;text-shadow:0 3px 0 rgba(150,40,0,.3)}
 .dialogArtist{color:#fff3df;font-weight:700}
-.close{width:42px;height:42px;min-height:42px;border:1px solid rgba(255,255,255,.42);background:rgba(111,25,0,.2);border-radius:50%;color:#fff;font-size:22px}
-.versions{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px}
+.close{width:42px;height:42px;border:1px solid rgba(255,255,255,.5);background:rgba(90,18,0,.25);border-radius:50%;color:#fff;font-size:22px}
+.versions{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px}
 .version{
-  position:relative;overflow:hidden;min-height:152px;border:1px solid rgba(255,148,72,.42);border-radius:22px;padding:18px 20px;text-align:left;
-  background:radial-gradient(circle at 78% 12%,rgba(255,105,25,.15),transparent 36%),linear-gradient(180deg,#2B1711,#120B09);
-  color:#FFE9D7;box-shadow:0 15px 30px rgba(75,16,0,.22)
+  position:relative;min-height:142px;padding:16px;border:1px solid rgba(255,148,72,.45);border-radius:20px;text-align:left;
+  background:linear-gradient(180deg,#FFF9EC,#FFEBCE);color:var(--ink);box-shadow:0 12px 24px rgba(75,16,0,.25)
 }
-.version strong{display:block;font-size:20px;font-weight:900;color:#fff}
-.version .duration{font-size:38px;font-weight:900;color:#FF7D2B;margin:6px 0}
-.version small{color:#CDAE9E}
-.version.recommended:before{content:"RECOMENDADA";display:inline-flex;margin-bottom:8px;background:var(--red);color:#fff;border-radius:999px;padding:5px 8px;font-size:8px;font-weight:900;letter-spacing:.1em}
-.modalNote{position:relative;z-index:2;margin-top:14px;color:#fff0DC;font-size:11px;line-height:1.45}
-.toast{position:fixed;left:50%;bottom:24px;z-index:50;transform:translate(-50%,30px);opacity:0;pointer-events:none;max-width:90vw;padding:11px 16px;border-radius:999px;background:#fff;color:var(--wine);font-weight:900;box-shadow:0 12px 30px rgba(89,18,0,.22);transition:.22s;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.version strong{display:block;font-size:19px;font-weight:900}
+.version .duration{font-size:38px;font-weight:900;color:var(--orange);margin:4px 0}
+.version small{color:#7a4a3a}
+.version.recommended:before{content:"Recomendada";display:inline-flex;margin-bottom:8px;background:var(--red);color:#fff;border-radius:999px;padding:4px 9px;font-size:10px;font-weight:900}
+.modalNote{position:relative;z-index:2;margin-top:14px;color:#fff0dc;font-size:12px;line-height:1.45}
+
+.toast{position:fixed;left:50%;bottom:24px;z-index:50;transform:translate(-50%,30px);opacity:0;pointer-events:none;max-width:90vw;padding:11px 16px;border-radius:999px;background:#fff;color:var(--wine);font-weight:900;box-shadow:0 12px 30px rgba(89,18,0,.25);transition:.22s;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .toast.show{opacity:1;transform:translate(-50%,0)}
 
-@media(max-width:760px){
-  .page{padding:10px 8px 42px}.header{min-height:38px;justify-content:center}.headerTools{justify-content:center}.miniLink{display:none}
-  .heroArtWrap{margin-top:7px;border-radius:22px}
-  .searchPanel{width:94%;margin:-18px auto 0;padding:9px;border-radius:17px}
-  .search{grid-template-columns:1fr}.search input,.search button{min-height:52px}.search button{width:100%}
-  .filters{grid-template-columns:repeat(3,1fr);gap:9px;padding-top:14px}.filter{min-height:92px;padding:12px 7px;font-size:11px}.filter:before{width:40px;height:40px;border-radius:13px;font-size:20px}
-  .sectionHead{margin-top:12px}.sectionHead h2{font-size:18px}.sectionHead small{display:none}
-  .songs{grid-template-columns:1fr}.song{min-height:86px;grid-template-columns:48px minmax(0,1fr);padding:13px 16px 13px 19px}.songIcon{width:44px;height:44px}.status{grid-column:2;justify-self:start;margin-top:-3px}
-  .versions{grid-template-columns:1fr}.version{min-height:130px}.dialog{padding:19px;border-radius:22px}
-}
-@media(max-width:420px){.filters{grid-template-columns:repeat(2,1fr)}.filter{min-height:88px}.searchPanel{margin-top:-12px}}
-@media(orientation:portrait) and (min-width:760px){
-  .shell{width:min(92vw,960px)}.heroArtWrap{border-radius:34px}
-  .searchPanel{width:min(800px,88%);margin-top:-34px;padding:14px}.search input,.search button{min-height:66px;font-size:18px}.filter{min-height:130px;font-size:16px;padding:16px 12px}.filter:before{width:58px;height:58px;font-size:28px}
-  .sectionHead h2{font-size:27px}.sectionHead small{font-size:15px}.songs{grid-template-columns:1fr}.song{min-height:102px}.songCopy b{font-size:22px}.artist{font-size:16px}.status{font-size:12px}
-}
-@media(orientation:landscape) and (max-height:700px){
-  .page{padding-top:6px}.header{min-height:32px}.heroArtWrap{margin-top:4px;border-radius:20px}
-  .searchPanel{width:min(700px,78%);margin-top:-22px;padding:8px}.search input,.search button{min-height:48px}
-  .filters{padding-top:10px}.sectionHead{margin-top:8px}.song{min-height:74px}.footerDecor{margin-top:16px;padding-top:14px}
+@media(max-width:380px){
+  .versions{grid-template-columns:1fr}.version{min-height:120px}
+  .songCopy b{font-size:17px}
 }
 </style>
 </head>
 <body>
-<div class="page">
-  <div class="shell">
-    <header class="header">
-      <div class="headerTools">
-        <div class="badge">SALA <b id="room"></b> · <span class="sync" id="sync">CONECTANDO</span></div>
-        <a class="miniLink" id="playerLink" target="_blank">PLAYER TV</a>
-        <a class="miniLink" id="adminLink" target="_blank">ADMIN</a>
-      </div>
-    </header>
 
-    <section class="heroArtWrap" aria-label="Hallowow Criollazo">
-      <picture class="heroPicture">
-        <source media="(orientation: portrait)" srcset="assets/header-hallowow-vertical.png">
-        <img src="assets/header-hallowow-horizontal.png" alt="Hallowow Criollazo · tradición y música" fetchpriority="high">
-      </picture>
-    </section>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="flower" viewBox="0 0 100 100">
+      <g fill="currentColor">
+        <circle cx="50" cy="22" r="20"/>
+        <circle cx="50" cy="22" r="20" transform="rotate(72 50 50)"/>
+        <circle cx="50" cy="22" r="20" transform="rotate(144 50 50)"/>
+        <circle cx="50" cy="22" r="20" transform="rotate(216 50 50)"/>
+        <circle cx="50" cy="22" r="20" transform="rotate(288 50 50)"/>
+      </g>
+      <circle cx="50" cy="50" r="13" fill="#FFC53D"/>
+    </symbol>
+    <symbol id="leaf" viewBox="0 0 60 100"><path d="M30 0C62 30 62 70 30 100 -2 70 -2 30 30 0Z" fill="#2E7D32"/></symbol>
+  </defs>
+</svg>
 
-    <div class="searchPanel">
-      <div class="search">
-        <input id="search" placeholder="Busca tu canción o artista…" autocomplete="off">
-        <button id="find">BUSCAR</button>
-      </div>
-    </div>
+<div class="app">
+  <img class="bat b1" src="assets/murcielago.webp" alt="">
+  <img class="bat b2" src="assets/murcielago.webp" alt="">
 
-    <nav class="filters" id="filters" aria-label="Categorías">
-      <button class="filter active" data-filter="all" data-icon="♫">Todas</button>
-      <button class="filter" data-filter="criollo" data-icon="🎸">Criollo</button>
-      <button class="filter" data-filter="peru" data-icon="🇵🇪">Perú</button>
-      <button class="filter" data-filter="fiesta" data-icon="✦">Fiesta</button>
-      <button class="filter" data-filter="halloween" data-icon="🎃">Halloween</button>
-    </nav>
+  <header class="top">
+    <button class="iconBtn" id="menuBtn" aria-label="Abrir menú" aria-expanded="false">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <button class="roomPill" id="roomPill" aria-label="Sala">
+      <i class="dot" id="dot"></i>
+      <span class="roomText"><span>SALA</span><b id="room"></b></span>
+      <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+    </button>
+  </header>
 
-    <div class="sectionHead">
-      <div><div class="flagLine"></div><h2>Canciones destacadas</h2></div>
-      <small>1 disponible · 4 próximamente</small>
-    </div>
-    <section class="songs" id="songs"></section>
+  <nav class="menu" id="menu" aria-label="Menú">
+    <a id="playerLink" target="_blank" rel="noopener">Abrir pantalla TV</a>
+    <a id="adminLink" target="_blank" rel="noopener">Administrar sala</a>
+  </nav>
 
-    <div class="footerDecor">✿ <span>♪</span> ✦ <span>♫</span> ✿</div>
+  <section class="hero" aria-label="Hallowow Criollazo">
+    <svg class="flower f1" viewBox="0 0 100 100"><use href="#flower"/></svg>
+    <svg class="flower f2" viewBox="0 0 100 100"><use href="#flower"/></svg>
+    <svg class="leaf l1" viewBox="0 0 60 100"><use href="#leaf"/></svg>
+    <svg class="leaf l2" viewBox="0 0 60 100"><use href="#leaf"/></svg>
+    <img class="logoHallo" src="assets/logo-hallowow.webp" alt="Hallowow Criollazo" fetchpriority="high">
+    <img class="logoSamay" src="assets/logo-samay.png" alt="Samay BCP">
+    <p class="tagline">Entre tradición, música y buenas historias</p>
+    <img class="heroArt" src="assets/calabaza-guitarra.webp" alt="">
+  </section>
+
+  <div class="search" role="search">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+    <input id="search" placeholder="Busca tu canción, artista o género…" autocomplete="off" aria-label="Buscar canción, artista o género">
+    <button id="find">Buscar</button>
   </div>
+
+  <nav class="filters" id="filters" aria-label="Categorías">
+    <button class="filter active" data-filter="all"><span class="ico">♫</span>Todas</button>
+    <button class="filter" data-filter="criollo"><span class="ico">🎸</span>Criollo</button>
+    <button class="filter" data-filter="peru"><span class="ico">⛰️</span>Perú</button>
+    <button class="filter" data-filter="fiesta"><span class="ico">✦</span>Fiesta</button>
+    <button class="filter" data-filter="clasicos"><span class="ico">★</span>Clásicos</button>
+    <button class="filter" data-filter="halloween"><span class="ico">🎃</span>Halloween</button>
+  </nav>
+
+  <div class="sectionHead">
+    <h2>Canciones destacadas</h2>
+    <button class="seeAll" id="seeAll">Ver todas ›</button>
+  </div>
+  <section class="songs" id="songs"></section>
+
+  <div class="footRibbon" aria-hidden="true"></div>
 </div>
 
 <div class="modal" id="modal">
-  <div class="dialog">
+  <div class="dialog" role="dialog" aria-modal="true" aria-labelledby="dlgTitle">
     <div class="dialogTop">
       <div>
-        <div class="dialogLabel">ELIGE TU VERSIÓN</div>
-        <h2>Cariñito</h2>
-        <div class="dialogArtist">Bareto</div>
+        <div class="dialogLabel">Elige tu versión</div>
+        <h2 id="dlgTitle">Cariñito</h2>
+        <div class="dialogArtist" id="dlgArtist">Bareto</div>
       </div>
       <button class="close" id="close" aria-label="Cerrar">×</button>
     </div>
@@ -222,12 +285,18 @@ $("#adminLink").href=adminUrl(room);
 
 const categories={
   "carinito":["fiesta","peru"],
-  "odiame":["criollo","peru"],
-  "himno-peru":["peru"],
+  "odiame":["criollo","peru","clasicos"],
+  "himno-peru":["peru","clasicos"],
   "cuando-pienses":["peru","fiesta"],
   "ritmo-color-sabor":["criollo","fiesta","peru"]
 };
 let query="",activeFilter="all";
+
+/* favoritos (solo en este dispositivo) */
+const FAV_KEY="samay-karaoke-favs";
+function loadFavs(){try{return new Set(JSON.parse(localStorage.getItem(FAV_KEY)||"[]"))}catch{return new Set()}}
+function saveFavs(set){try{localStorage.setItem(FAV_KEY,JSON.stringify([...set]))}catch{}}
+const favs=loadFavs();
 
 function toast(message){
   const el=$("#toast");el.textContent=message;el.classList.add("show");clearTimeout(window.__toast);
@@ -240,22 +309,40 @@ function visibleSongs(){
     return matchesText&&matchesFilter;
   });
 }
+const HEART='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-9.3-9.2C1.5 8 3.4 4.8 6.6 4.8c2 0 3.7 1.1 5.4 3.1 1.7-2 3.4-3.1 5.4-3.1 3.2 0 5.1 3.2 3.9 6.5-1.8 4.6-9.3 9.2-9.3 9.2z"/></svg>';
+
 function renderSongs(){
   const list=visibleSongs();
   $("#songs").innerHTML=list.length?list.map(s=>`
-    <button class="song ${s.enabled?"enabled":"disabled"}" data-id="${s.id}" ${s.enabled?"":"aria-disabled='true'"}>
-      <span class="songIcon">♫</span>
-      <span class="songCopy"><b>${s.title}</b><span class="artist">${s.artist}</span></span>
-      <span class="status ${s.enabled?"live":"locked"}">${s.enabled?"DISPONIBLE":"PRÓXIMAMENTE 🔒"}</span>
-    </button>`).join(""):'<div style="grid-column:1/-1;padding:30px;border:1px dashed rgba(255,255,255,.55);border-radius:18px;color:white;text-align:center">No encontré canciones en esta categoría.</div>';
+    <div class="song ${s.enabled?"enabled":"disabled"}" data-id="${s.id}" role="button" tabindex="${s.enabled?0:-1}" ${s.enabled?"":"aria-disabled='true'"}>
+      <span class="songNote" aria-hidden="true">♫</span>
+      <span class="songCopy"><b>${s.title}</b><span class="artist">${s.artist}${s.enabled?"":" · Próximamente"}</span></span>
+      ${s.enabled
+        ?`<button class="fav ${favs.has(s.id)?"on":""}" data-fav="${s.id}" aria-label="Favorita" aria-pressed="${favs.has(s.id)}">${HEART}</button>`
+        :`<span class="lock" aria-hidden="true">🔒</span>`}
+    </div>`).join(""):'<div class="empty">No encontré canciones con ese filtro. Prueba con otra categoría.</div>';
 
-  document.querySelectorAll(".song").forEach(btn=>btn.onclick=()=>{
-    const song=SONGS.find(s=>s.id===btn.dataset.id);
-    if(!song?.enabled){toast("Esa canción estará disponible próximamente.");return;}
-    openVersions(song);
+  document.querySelectorAll(".song").forEach(card=>{
+    const open=()=>{
+      const song=SONGS.find(s=>s.id===card.dataset.id);
+      if(!song?.enabled){toast("Esa canción estará disponible próximamente.");return;}
+      openVersions(song);
+    };
+    card.onclick=open;
+    card.onkeydown=e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();open()}};
+  });
+  document.querySelectorAll(".fav").forEach(btn=>btn.onclick=e=>{
+    e.stopPropagation();
+    const id=btn.dataset.fav;
+    favs.has(id)?favs.delete(id):favs.add(id);
+    saveFavs(favs);
+    btn.classList.toggle("on",favs.has(id));
+    btn.setAttribute("aria-pressed",favs.has(id));
   });
 }
 function openVersions(song){
+  $("#dlgTitle").textContent=song.title;
+  $("#dlgArtist").textContent=song.artist;
   $("#versions").innerHTML=song.versions.map(v=>`
     <button class="version ${v.id==="chorus"?"recommended":""}" data-version="${v.id}">
       <strong>${v.label}</strong>
@@ -270,17 +357,32 @@ function openVersions(song){
   });
   $("#modal").classList.add("open");
 }
-document.querySelectorAll(".filter").forEach(btn=>btn.onclick=()=>{
-  document.querySelectorAll(".filter").forEach(x=>x.classList.remove("active"));
-  btn.classList.add("active");activeFilter=btn.dataset.filter;renderSongs();
-});
+function setFilter(value){
+  activeFilter=value;
+  document.querySelectorAll(".filter").forEach(x=>x.classList.toggle("active",x.dataset.filter===value));
+  renderSongs();
+}
+document.querySelectorAll(".filter").forEach(btn=>btn.onclick=()=>setFilter(btn.dataset.filter));
+$("#seeAll").onclick=()=>{query="";$("#search").value="";setFilter("all")};
 $("#close").onclick=()=>$("#modal").classList.remove("open");
 $("#modal").onclick=e=>{if(e.target.id==="modal")$("#modal").classList.remove("open")};
 $("#find").onclick=()=>{query=$("#search").value.trim();renderSongs()};
 $("#search").oninput=()=>{query=$("#search").value.trim();renderSongs()};
+
+/* menú */
+function toggleMenu(force){
+  const open=force??!$("#menu").classList.contains("open");
+  $("#menu").classList.toggle("open",open);
+  $("#menuBtn").setAttribute("aria-expanded",open);
+}
+$("#menuBtn").onclick=e=>{e.stopPropagation();toggleMenu()};
+$("#roomPill").onclick=e=>{e.stopPropagation();toggleMenu()};
+document.addEventListener("click",e=>{if(!e.target.closest("#menu"))toggleMenu(false)});
+
 subscribeRoom(room,()=>{},mode=>{
-  $("#sync").textContent=mode==="online"?"EN LÍNEA":"LOCAL";
-  $("#sync").className="sync "+(mode==="online"?"online":"local");
+  const dot=$("#dot");
+  dot.className="dot "+(mode==="online"?"online":"local");
+  $("#roomPill").title=mode==="online"?"En línea":"Modo local";
 });
 renderSongs();
 </script>
