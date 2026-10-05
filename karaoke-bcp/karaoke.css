@@ -46,7 +46,8 @@ svg{width:28px;height:28px;flex:none;stroke-width:2.5}
 .seeAll{display:flex;gap:5px;align-items:center;min-height:44px;padding:4px 0;background:none;color:#ff8428;font-family:var(--display);font-size:18px;text-transform:uppercase;white-space:nowrap}
 .seeAll svg{width:24px;height:24px}
 .songs{display:grid;gap:9px}
-.song{position:relative;isolation:isolate;overflow:hidden;display:grid;grid-template-columns:minmax(0,1fr) 54px;gap:4px;align-items:center;min-height:72px;padding-right:12px;border:1px solid #fff7;border-radius:17px;background:var(--cream);box-shadow:0 5px 14px #88390025}
+.song{position:relative;isolation:isolate;overflow:hidden;display:grid;grid-template-columns:minmax(0,1fr) 54px;gap:4px;align-items:center;min-height:72px;padding-right:68px;border:1px solid #fff7;border-radius:17px;background:var(--cream);box-shadow:0 5px 14px #88390025}
+.song:after{content:"";position:absolute;z-index:-1;pointer-events:none;right:-46px;top:50%;width:120px;height:110px;background:url("assets/decor/cinta-curva.webp") center/100% auto no-repeat;transform:translateY(-50%) rotate(-62deg)}
 .songSelect{display:flex;align-items:center;gap:16px;text-align:left;min-width:0;min-height:70px;padding:8px 12px;background:transparent}
 .songNote{width:44px;height:44px;color:var(--orange);flex:none;stroke-width:3}
 .songCopy{min-width:0}
@@ -155,7 +156,8 @@ svg{width:28px;height:28px;flex:none;stroke-width:2.5}
   .controller-shell{padding:36px 5% 72px;gap:24px 60px;grid-template-rows:88px minmax(0,1fr)}
   .iconBtn{width:76px;height:76px}.roomPill{min-height:66px;padding:12px 20px}.roomText{font-size:20px}
   .search{min-height:76px}.search input{font-size:21px}.search button{min-height:60px;font-size:26px}
-  .song{min-height:94px;padding-right:16px}.songSelect{min-height:92px;gap:24px;padding-left:20px}
+  .song{min-height:94px;padding-right:78px}.songSelect{min-height:92px;gap:24px;padding-left:20px}
+  .song:after{width:140px;height:128px;right:-54px}
   .songCopy b{font-size:32px}.songCopy .artist{font-size:21px}.songNote{width:54px;height:54px}
   .sectionHead h1{font-size:28px}.seeAll{font-size:25px}
   .current{font-size:calc(76px * var(--lyric-scale))}.lyricContext{font-size:calc(48px * var(--lyric-scale))}.lyricContext.previous{font-size:calc(32px * var(--lyric-scale))}
@@ -168,7 +170,7 @@ svg{width:28px;height:28px;flex:none;stroke-width:2.5}
   .search{gap:7px;padding-left:12px;min-height:56px}.search svg{width:22px;height:22px}
   .search input{font-size:13px}.search button{padding:0 16px;font-size:17px;min-height:44px}
   .sectionHead h1{font-size:17px}.seeAll{font-size:15px}
-  .song{padding-right:8px;grid-template-columns:minmax(0,1fr) 44px}
+  .song{padding-right:58px;grid-template-columns:minmax(0,1fr) 44px}
   .songSelect{gap:10px;padding-left:10px}.songCopy b{font-size:22px}.songCopy .artist{font-size:14px}
   .songNote{width:32px;height:36px}.fav{width:44px;height:48px}.fav svg{width:28px;height:28px}
   .stage{padding:16px 4% 10dvh}.stage .top{gap:8px}.samayLogo{width:100px;max-width:28%}
@@ -194,7 +196,7 @@ svg{width:28px;height:28px;flex:none;stroke-width:2.5}
   .controller-shell{gap:12px 20px;padding-left:3%;padding-right:3%}
   .search{gap:7px;padding-left:12px}.search input{font-size:13px}.search button{font-size:17px;padding:0 16px}
   .sectionHead h1{font-size:17px}.seeAll{font-size:14px}.seeAll svg{width:20px}
-  .song{padding-right:8px;grid-template-columns:minmax(0,1fr) 44px}.songSelect{gap:8px;padding-left:8px}
+  .song{padding-right:58px;grid-template-columns:minmax(0,1fr) 44px}.songSelect{gap:8px;padding-left:8px}
   .songCopy b{font-size:20px}.songCopy .artist{font-size:13px}.songNote{width:28px;height:32px}
   .fav{width:44px;height:48px}.fav svg{width:28px}
 }

@@ -37,9 +37,10 @@ su estado de proximamente. Las pistas nuevas requieren los archivos respectivos.
 - `assets/backgrounds/selector-hero.webp`: arte de cabecera.
 - `assets/backgrounds/karaoke-frame.webp`: marco vertical.
 - `assets/backgrounds/karaoke-frame-landscape.webp`: marco horizontal.
+- `assets/decor/cinta-curva.webp`: cinta curva en los botones de canciones.
 
 Se incorporaron los fondos, adornos e iconos de Hallowow_Web_Visual_Assets.zip.
-Los tres nuevos artes se generaron con la herramienta integrada imagegen para
+Los nuevos artes se generaron con la herramienta integrada imagegen para
 aproximar el acabado de la referencia. Ver `assets/ARTWORK.md` para sus prompts.
 Flexo se conserva; Lilita One y Lucide se sirven localmente con sus licencias.
 

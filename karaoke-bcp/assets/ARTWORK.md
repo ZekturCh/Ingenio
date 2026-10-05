@@ -5,7 +5,7 @@ preserved in their corresponding directories. Existing Flexo fonts and logos
 remain available. Lucide is vendored under vendor/ and Lilita One under fonts/;
 both include their license files.
 
-Three supplementary illustrations were made with the built-in imagegen tool,
+Four supplementary illustrations were made with the built-in imagegen tool,
 using the user's supplied mockup as a style/composition reference. PNG originals
 were converted to WebP for the website. Buttons, lyrics and song metadata remain
 live HTML. References and original PNGs are not required at runtime.
@@ -80,3 +80,29 @@ ribbons along bottom edge, richly rendered at correct natural proportions. This
 is ONLY illustration, no text, no logos, no letters, no buttons, no song card,
 no mockup, no device. Preserve exact style and palette of portrait reference.
 Wide 16:9 composition for a touchscreen monitor.
+
+## assets/decor/cinta-curva.webp
+
+Generated with the built-in imagegen tool using the user's cropped ribbon
+reference; saved with real transparency, then converted to WebP. The song-button
+accent rotates this asset in CSS and clips it at the button edge.
+
+Prompt:
+
+Use case: background-extraction. Asset type: transparent decorative web asset,
+Peruvian red-white-red curved ribbon. The attached image is the edit
+target/reference. Extract and faithfully recreate ONLY the glossy curving
+red-white-red ribbon. Remove all lettering, the logo above it, the yellow
+background, and any other objects. Use a genuinely transparent background.
+Reconstruct the full ribbon tips cleanly where obscured by the logo. A single
+elegant flowing horizontal satin ribbon with a smooth S-shaped wave, starting
+in upper left then curving down into a deep smooth valley around the lower
+middle-right and rising up again at the right tip, exactly matching the sweeping
+shape of the reference. Continuous three horizontal bands RED at top, WHITE in
+middle, RED at bottom, all following the same smooth flowing curvature. Wide
+cinematic horizontal asset, ribbon spans 90% of width, no hard zigzags, no straight
+stripe, no rectangular flag. Rich red satin, soft realistic white highlights,
+subtle dimensional edges and folds, clean alpha edges, no baked background or
+drop shadow outside the ribbon. No text, no logos, no flowers, no UI. High
+resolution sharply rendered reusable curved ribbon with transparent space
+surrounding it.
