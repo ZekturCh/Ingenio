@@ -66,7 +66,7 @@ svg{width:28px;height:28px;flex:none;stroke-width:2.5}
 .empty{margin:0;padding:32px 15px;text-align:center;border:1px solid #fff4;border-radius:8px;background:#171411;color:#fff;line-height:1.5}
 .footerRibbon{position:absolute;z-index:1;pointer-events:none;bottom:-30px;left:-5%;width:110%;height:120px;object-fit:fill;transform:rotate(-4deg)}
 .controller-shell:after{content:"";position:absolute;z-index:0;left:0;right:0;bottom:0;top:44%;background:linear-gradient(180deg,transparent,#120f0bf0 20%,#120f0bd9 75%,transparent)}
-.dialog{width:min(540px,calc(100% - 32px));padding:26px;border:2px solid #ffdc73;border-radius:24px;background:#ffac2b url("assets/backgrounds/page-bg-horizontal.jpg") center/cover;color:var(--ink);box-shadow:0 24px 80px #0007}
+.dialog{width:min(540px,calc(100% - 32px));padding:26px;border:2px solid #ffdc73;border-radius:24px;background:linear-gradient(165deg,#ffbc32,#fa8b1c 48%,#d94706);color:var(--ink);box-shadow:0 24px 80px #0007}
 .dialog::backdrop{background:#111418bb;backdrop-filter:blur(6px)}
 #modal{isolation:isolate;overflow:hidden;background:url("assets/decor/cinta-curva.webp") center 132px/110% auto no-repeat,url("assets/decor/flores-izquierda.png") -28px calc(100% + 15px)/130px auto no-repeat,url("assets/decor/notas-musicales.png") right center/180px auto no-repeat,linear-gradient(165deg,#ffbc32,#fa8b1c 48%,#d94706)}
 #modal::before{content:"";position:absolute;z-index:-1;pointer-events:none;top:0;right:0;width:135px;height:135px;background:url("assets/decor/telarana-esquina.png") center/contain no-repeat;transform:scaleX(-1)}
@@ -124,8 +124,9 @@ svg{width:28px;height:28px;flex:none;stroke-width:2.5}
 .paused .i-pause{display:none}
 .paused .i-play{display:block}
 .state{min-height:16px;margin:8px 0 0;color:#7a3218;font-size:12px;font-weight:700}
-.activate{text-align:center}
-.activate img{width:230px;height:165px;object-fit:cover;margin:-15px auto 5px}
+.activate{text-align:center;background:url("assets/decor/notas-musicales.png") right bottom/150px auto no-repeat,linear-gradient(165deg,#ffbc32,#fa8b1c 48%,#d94706)}
+.activate > img:not(.activationRibbon){width:230px;height:165px;object-fit:cover;margin:-15px auto 5px}
+.activationRibbon{display:block;width:100%;height:auto;aspect-ratio:720/263;object-fit:contain;margin:-8px auto 14px;pointer-events:none}
 .activate h2{font-size:32px}
 .primaryButton{display:flex;align-items:center;justify-content:center;gap:12px;width:100%;min-height:60px;margin-top:22px;padding:14px;border-radius:8px;background:#171411;color:#fff;font-size:20px;font-weight:700}
 #activationState{min-height:18px;font-size:14px;margin-bottom:0}
