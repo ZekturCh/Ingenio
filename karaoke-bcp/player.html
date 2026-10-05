@@ -6,27 +6,28 @@
 <meta name="theme-color" content="#080302">
 <title>Samay Karaoke · Pantalla</title>
 <style>
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,400;6..12,700;6..12,800;6..12,900;6..12,1000&display=swap");
 :root{--o:#ff5a00;--o2:#ff913f;--cream:#fff3e4;--muted:#b59684}
-*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden}body{font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;background:#080302;color:var(--cream)}
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden}body{font-family:"Nunito Sans",Verdana,system-ui,sans-serif;background:#080302;color:var(--cream)}
 .stage{position:relative;width:100%;height:100%;display:grid;place-items:center;isolation:isolate;background:radial-gradient(circle at 50% 0,#401304 0,transparent 38%),linear-gradient(180deg,#120704,#070302 68%,#100501)}
 .stage:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 15% 70%,rgba(255,90,0,.13),transparent 23%),radial-gradient(circle at 85% 70%,rgba(255,90,0,.10),transparent 26%);z-index:-1}
-.asset{position:absolute;pointer-events:none;user-select:none}.logo{top:3vh;left:50%;transform:translateX(-50%);width:min(30vw,390px);filter:drop-shadow(0 10px 25px #0009)}.moon{right:-2vw;top:5vh;width:min(23vw,300px);opacity:.88}.pumpkin{left:1vw;bottom:-1vh;width:min(23vw,310px);filter:drop-shadow(0 20px 35px #000b)}.bat{right:18vw;top:22vh;width:min(11vw,145px);animation:float 3.8s ease-in-out infinite}.ornament{position:absolute;left:0;right:0;bottom:1vh;text-align:center;color:#ff5a00;font-size:clamp(18px,2.3vw,36px);letter-spacing:1.4vw;opacity:.56}
+.asset{position:absolute;pointer-events:none;user-select:none}.logo{top:3vh;left:50%;transform:translateX(-50%);width:min(30vw,390px);filter:drop-shadow(0 10px 25px #0009)}.pumpkin{left:1vw;bottom:-1vh;width:min(23vw,310px);filter:drop-shadow(0 20px 35px #000b)}.bat{right:18vw;top:22vh;width:min(11vw,145px);animation:float 3.8s ease-in-out infinite}.ornament{position:absolute;left:0;right:0;bottom:1vh;text-align:center;color:#ff5a00;font-size:clamp(18px,2.3vw,36px);letter-spacing:1.4vw;opacity:.56}
 @keyframes float{50%{transform:translateY(-15px) rotate(4deg)}}
 .center{width:min(1050px,82vw);text-align:center;z-index:2;padding-top:7vh}.kicker{font-size:clamp(11px,1vw,15px);font-weight:1000;letter-spacing:.32em;color:var(--o2);text-transform:uppercase}.title{font-family:"Brush Script MT","Segoe Script",cursive;font-size:clamp(55px,8vw,118px);line-height:.88;font-weight:500;margin:6px 0 0;text-shadow:0 8px 35px #000}.artist{font-size:clamp(15px,1.8vw,26px);font-weight:900;color:#ffd1b4;margin-top:10px}.version{display:inline-flex;margin-top:14px;border:1px solid #74341c;background:#190b07;border-radius:999px;padding:8px 13px;color:#ff9b62;font-weight:900;font-size:12px}
-.lyrics{margin:6vh auto 3vh;min-height:28vh;display:grid;align-content:center;gap:12px;max-width:940px}.prev,.next{font-size:clamp(20px,2.3vw,34px);color:#715a4e;font-weight:800;min-height:1.3em}.current{font-size:clamp(38px,5vw,76px);line-height:1.05;font-weight:1000;text-wrap:balance}.guide{font-size:clamp(20px,2vw,30px);line-height:1.45;color:#e9cdbb;max-height:27vh;overflow:hidden;mask-image:linear-gradient(transparent,#000 15%,#000 85%,transparent)}
+.lyrics{margin:6vh auto 3vh;min-height:28vh;display:grid;align-content:center;gap:12px;max-width:940px}.prev,.next{font-size:clamp(20px,2.3vw,34px);color:#715a4e;font-weight:800;min-height:1.3em}.current{position:relative;display:inline-block;justify-self:center;font-size:clamp(38px,5vw,76px);line-height:1.05;font-weight:1000;white-space:nowrap;max-width:95vw}.currentBase{color:#71584b}.currentFill{position:absolute;inset:0 auto 0 0;width:0;overflow:hidden;white-space:nowrap;color:#ff6b16;text-shadow:0 0 22px rgba(255,91,0,.48);transition:width .04s linear}.guide{font-size:clamp(20px,2vw,30px);line-height:1.45;color:#e9cdbb;max-height:27vh;overflow:hidden;mask-image:linear-gradient(transparent,#000 15%,#000 85%,transparent)}
 .guide div{padding:2px}.guide .hint{color:#ff8c4e;font-weight:1000}
 .progressWrap{max-width:780px;margin:0 auto}.progress{height:7px;background:#3b1d12;border-radius:99px;overflow:hidden}.bar{display:block;height:100%;width:0;background:linear-gradient(90deg,#ff4d00,#ff9a4e);border-radius:inherit}.times{display:flex;justify-content:space-between;color:#9c8172;font-size:12px;margin-top:8px;font-variant-numeric:tabular-nums}.state{margin-top:18px;color:#735d51;font-size:12px;font-weight:800;letter-spacing:.05em}
 .room{position:absolute;left:22px;top:20px;border:1px solid #532718;background:#120906cc;border-radius:999px;padding:8px 12px;font-size:11px;font-weight:900;color:#bd9b87;z-index:5}.online{color:#6fe09c}.local{color:#ffc261}
 .activate{position:fixed;inset:0;background:rgba(3,2,1,.84);backdrop-filter:blur(18px);display:grid;place-items:center;z-index:30;padding:20px}.activate.hide{display:none}.card{width:min(520px,94vw);border:1px solid #7b351b;background:linear-gradient(160deg,#281006,#0e0705);border-radius:26px;padding:28px;text-align:center;box-shadow:0 40px 100px #000a}.card img{width:190px;max-width:70%}.card h2{font-size:30px;margin:8px 0}.card p{color:#b99c8b;line-height:1.5}.card button{width:100%;border:0;border-radius:15px;padding:15px;background:linear-gradient(135deg,#ff4d00,#ff7a22);color:white;font-weight:1000;font-size:16px;cursor:pointer}.warning{margin-top:12px;color:#ffbf8f;font-size:11px}
 .idle .lyrics{opacity:.55}.idle .current{font-size:clamp(30px,3vw,48px);color:#9f7b68}
-@media(max-width:700px){.moon{width:38vw}.pumpkin{width:35vw}.bat{display:none}.center{width:92vw}.logo{width:52vw}}
+@media(max-width:700px){.pumpkin{width:35vw}.bat{display:none}.center{width:92vw}.logo{width:52vw}}
 </style>
 </head>
 <body>
 <div class="stage idle" id="stage">
   <div class="room">SALA <b id="roomCode"></b> · <span id="syncState">CONECTANDO</span></div>
   <img class="asset logo" src="assets/logo-hallowow.webp" alt="">
-  <img class="asset moon" src="assets/luna-halloween.webp" alt="">
+  
   <img class="asset pumpkin" src="assets/calabaza-guitarra.webp" alt="">
   <img class="asset bat" src="assets/murcielago.webp" alt="">
   <main class="center">
@@ -37,7 +38,7 @@
 
     <section class="lyrics" id="lyrics">
       <div class="prev" id="prev"></div>
-      <div class="current" id="current">🎤</div>
+      <div class="current" id="current"><span class="currentBase" id="currentBase">🎤</span><span class="currentFill" id="currentFill">🎤</span></div>
       <div class="next" id="next"></div>
     </section>
 
@@ -97,7 +98,7 @@ async function loadLyrics(){
       if(!res.ok) continue;
       const data=await res.json();
       lyricData=Array.isArray(data.lyrics)?data.lyrics:[];
-      timedLyrics=lyricData.length>0 && lyricData.some(x=>Number.isFinite(Number(x.time)));
+      timedLyrics=lyricData.length>0 && lyricData.some(x=>Number.isFinite(Number(x.start ?? x.time)));
       return;
     }catch{}
   }
@@ -113,20 +114,34 @@ function renderSong(){
   if(!timedLyrics){
     $("#lyrics").innerHTML='<div class="guide"><div class="hint">LETRA EN MODO GUÍA</div><div>La pista ya está operativa.</div><div>Falta terminar los timestamps para que cada frase avance sola.</div><div style="margin-top:12px;color:#8d7060">Puedes timearla desde timing-editor.html.</div></div>';
   }else{
-    $("#lyrics").innerHTML='<div class="prev" id="prev"></div><div class="current" id="current">♪</div><div class="next" id="next"></div>';
+    $("#lyrics").innerHTML='<div class="prev" id="prev"></div><div class="current" id="current"><span class="currentBase" id="currentBase">♪</span><span class="currentFill" id="currentFill">♪</span></div><div class="next" id="next"></div>';
   }
 }
 function renderTimedLyrics(t){
   if(!timedLyrics) return;
-  const valid=lyricData.filter(x=>Number.isFinite(Number(x.time))).sort((a,b)=>Number(a.time)-Number(b.time));
+  const valid=lyricData
+    .filter(x=>Number.isFinite(Number(x.start ?? x.time)))
+    .sort((a,b)=>Number(a.start ?? a.time)-Number(b.start ?? b.time));
   let index=-1;
-  for(let i=0;i<valid.length;i++){ if(Number(valid[i].time)<=t) index=i; else break; }
-  const current=index>=0?valid[index]?.text:"♪";
+  for(let i=0;i<valid.length;i++){
+    if(Number(valid[i].start ?? valid[i].time)<=t) index=i;
+    else break;
+  }
+  const line=index>=0?valid[index]:null;
   const prev=index>0?valid[index-1]?.text:"";
   const next=index+1<valid.length?valid[index+1]?.text:"";
-  $("#current").textContent=current||"♪";
+  const base=$("#currentBase"), fill=$("#currentFill");
+  if(!base||!fill) return;
+  const text=line?.text||"♪";
+  base.textContent=text;
+  fill.textContent=text;
   $("#prev").textContent=prev||"";
   $("#next").textContent=next||"";
+  if(!line){fill.style.width="0%";return;}
+  const start=Number(line.start ?? line.time);
+  const end=Number(line.end ?? (start+2.4));
+  const p=Math.max(0,Math.min(1,(t-start)/Math.max(.2,end-start)));
+  fill.style.width=(p*100).toFixed(1)+"%";
 }
 function applySelection(state){
   const song=getSong(state.songId), version=getVersion(song,state.versionId);
