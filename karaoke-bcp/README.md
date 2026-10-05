@@ -34,7 +34,8 @@ su estado de proximamente. Las pistas nuevas requieren los archivos respectivos.
 - `karaoke.css`: estilos compartidos y reglas por orientacion/tamano.
 - `controller.js`, `player.js`: interacciones de cada pantalla.
 - `ui.js`: iconos, favoritos y utilidades compartidas.
-- `assets/backgrounds/selector-hero.webp`: arte de cabecera.
+- `assets/backgrounds/selector-hero-no-samay.webp`: arte de cabecera sin logo incrustado.
+- `../Logo Samay.png`: logo original del repo, colocado como imagen independiente.
 - `assets/backgrounds/karaoke-frame.webp`: marco vertical.
 - `assets/backgrounds/karaoke-frame-landscape.webp`: marco horizontal.
 - `assets/decor/cinta-curva.webp`: cinta curva en los botones de canciones.

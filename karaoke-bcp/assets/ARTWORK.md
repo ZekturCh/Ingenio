@@ -5,7 +5,7 @@ preserved in their corresponding directories. Existing Flexo fonts and logos
 remain available. Lucide is vendored under vendor/ and Lilita One under fonts/;
 both include their license files.
 
-Four supplementary illustrations were made with the built-in imagegen tool,
+Five supplementary illustrations were made with the built-in imagegen tool,
 using the user's supplied mockup as a style/composition reference. PNG originals
 were converted to WebP for the website. Buttons, lyrics and song metadata remain
 live HTML. References and original PNGs are not required at runtime.
@@ -106,3 +106,29 @@ subtle dimensional edges and folds, clean alpha edges, no baked background or
 drop shadow outside the ribbon. No text, no logos, no flowers, no UI. High
 resolution sharply rendered reusable curved ribbon with transparent space
 surrounding it.
+
+## assets/backgrounds/selector-hero-no-samay.webp
+
+Edited from selector-hero.webp with the built-in imagegen tool to remove its
+embedded circular Samay logo. The live header overlays the exact original
+`../Logo Samay.png` file, without regenerating or modifying that brand image.
+
+Prompt:
+
+Use case: precise-object-edit. Asset type: existing Hallowow karaoke web app
+header artwork, 1374x1145 pixels, preserve the EXACT composition and proportions.
+Edit target: the supplied image. Make ONE surgical change only: REMOVE the SMALL
+multicolored circular 'samay' logo in the central area underneath the big
+CRIOLLAZO headline, and REMOVE the small white BCP text and chevrons immediately
+below it. The removal region is approximately x=500..900 and y=560..760. Fill the
+removed small logo and BCP lettering area with continuous golden-yellow
+background matching the existing surrounding background seamlessly. The center
+must be blank yellow there, because the website will overlay an exact brand PNG
+separately. Preserve EVERY OTHER element in its exact position: big purple
+Hallowow and CRIOLLAZO headline, their typography, the two red-white-red curling
+ribbons below the headline on either side of the small logo, pumpkin and black
+hat, guitar, all flowers and foliage, all bats, spiderwebs, musical notes, exact
+Spanish black script tagline 'Entre tradición, música y buenas historias' and its
+red underline. Do not replace the removed logo with anything. No new letters or
+logo. Do not shift, crop, redraw, resize, reframe or restyle the rest of the
+composition. Maintain original image aspect ratio.
