@@ -6,7 +6,8 @@
 <meta name="theme-color" content="#f26522">
 <title>Hallowow Karaoke</title>
 <style>
-@font-face{font-family:"Flexo";src:url("assets/fonts/Flexo-Regular.woff2") format("woff2");font-style:normal;font-weight:400;font-display:swap}\n@font-face{font-family:"Flexo";src:url("assets/fonts/Flexo-Bold.woff2") format("woff2");font-style:normal;font-weight:700 900;font-display:swap}
+@font-face{font-family:"Flexo";src:url("assets/fonts/Flexo-Regular.woff2") format("woff2");font-style:normal;font-weight:400;font-display:swap}
+@font-face{font-family:"Flexo";src:url("assets/fonts/Flexo-Bold.woff2") format("woff2");font-style:normal;font-weight:700 900;font-display:swap}
 :root{--orange:#f26522;--orange2:#ff861f;--orange3:#ffae37;--cream:#fff7ea;--ink:#682008;--muted:#7e371d;--line:rgba(255,255,255,.24);--panel:rgba(93,24,0,.22)}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;min-height:100vh;background:radial-gradient(circle at 68% 13%,#ffc052 0,rgba(255,174,55,.75) 13%,transparent 31%),radial-gradient(circle at 18% 60%,rgba(255,205,92,.35),transparent 28%),linear-gradient(145deg,#ff8b19 0%,#f56b12 38%,#ea4f08 72%,#c93b08 100%);color:var(--cream);font-family:"Flexo",Verdana,system-ui,sans-serif;overflow-x:hidden;position:relative}
 body:before{content:"";position:fixed;inset:0;pointer-events:none;background:url("assets/calabaza-guitarra.webp") right -8vw bottom -13vh/min(72vw,760px) auto no-repeat;opacity:.13;filter:saturate(1.25) brightness(1.2);mix-blend-mode:screen}
@@ -19,6 +20,58 @@ button,input{font:inherit}.wrap{width:min(980px,calc(100% - 24px));margin:auto;p
 .modal{position:fixed;inset:0;z-index:20;background:rgba(89,20,0,.62);backdrop-filter:blur(14px);display:none;place-items:center;padding:18px}.modal.open{display:grid}.dialog{width:min(570px,100%);border:1px solid rgba(255,255,255,.28);background:linear-gradient(155deg,#f47518,#d94b08);border-radius:26px;padding:22px;box-shadow:0 40px 100px rgba(90,20,0,.35);position:relative;overflow:hidden}.dialog:after{content:"";position:absolute;right:-60px;top:-50px;width:180px;height:180px;background:url("assets/murcielago.webp") center/contain no-repeat;opacity:.2;pointer-events:none}.dialogTop{position:relative;z-index:2;display:flex;justify-content:space-between;gap:14px}.label{font-size:10px;font-weight:900;letter-spacing:.15em;color:#fff4df}.dialog h2{font-size:34px;margin:6px 0 2px}.dialogArtist{color:#fff0dc;font-weight:700}.close{border:1px solid rgba(255,255,255,.35);background:rgba(111,25,0,.25);color:#fff3e5;width:39px;height:39px;border-radius:50%;font-size:20px;cursor:pointer}.versions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:20px;position:relative;z-index:2}.version{border:1px solid rgba(255,255,255,.3);background:rgba(111,24,0,.22);color:#fff;border-radius:18px;padding:17px;text-align:left;cursor:pointer;transition:.18s}.version:hover{border-color:#fff2d8;transform:translateY(-2px)}.version strong{display:block;font-size:18px}.version .duration{font-size:34px;font-weight:900;color:#fff3d5;margin:5px 0}.version small{color:#ffe2cc}.version.recommended{background:rgba(107,22,0,.34);border-color:#fff0ce}.version.recommended:before{content:"RECOMENDADA";display:inline-flex;font-size:9px;font-weight:1000;letter-spacing:.1em;color:#fff;background:#fff1d7;color:#8b2b08;border-radius:99px;padding:5px 7px;margin-bottom:9px}
 .modalNote{margin-top:14px;color:#ffe5d0;font-size:11px;line-height:1.5;position:relative;z-index:2}.toast{position:fixed;left:50%;bottom:24px;z-index:40;transform:translate(-50%,30px);opacity:0;pointer-events:none;background:#fff0df;color:#311407;padding:11px 16px;border-radius:999px;font-weight:900;transition:.25s;white-space:nowrap;max-width:90vw;overflow:hidden;text-overflow:ellipsis}.toast.show{opacity:1;transform:translate(-50%,0)}
 @media(max-width:720px){.wrap{padding-top:12px}.top{grid-template-columns:1fr;justify-items:center}.brandLockup,.topActions{grid-column:1}.topActions{justify-content:center}.linkBtn{display:none}.hero{padding:30px 18px;min-height:300px}.bat{right:4%;width:18vw;opacity:.55}.heroCopy{max-width:100%}.search{max-width:100%}.song{grid-template-columns:48px 1fr}.status{grid-column:2;justify-self:start}.versions{grid-template-columns:1fr}.head small{display:none}.samayWord{font-size:14px}}
+
+/* Responsive / touch hardening */
+html,body{min-height:100%;min-height:100dvh}
+button,.song,.version,.close,.linkBtn{touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+button,.version{min-height:52px}
+.samayLogo{display:block;width:clamp(118px,16vw,178px);height:auto;margin-top:4px;filter:drop-shadow(0 6px 14px rgba(93,24,0,.18))}
+.search input,.search button{min-height:54px}
+.song{min-height:72px}
+@media(max-width:480px){
+  .wrap{width:calc(100% - 16px)}
+  .campaignLogo{width:min(210px,60vw)}
+  .samayLogo{width:min(155px,48vw)}
+  .room{font-size:10px;padding:8px 10px}
+  .hero{margin-top:14px;padding:26px 14px;min-height:270px;border-radius:24px}
+  .hero h1{font-size:clamp(50px,18vw,76px)}
+  .eyebrow{font-size:13px}.sub{font-size:9px;letter-spacing:.18em}
+  .search{display:grid;grid-template-columns:1fr;margin-top:20px}
+  .search button{width:100%}
+  .head{margin-top:22px}.head h2{font-size:16px}
+  .song{grid-template-columns:44px minmax(0,1fr);padding:12px;min-height:78px}
+  .num{width:42px;height:42px}
+  .song b{font-size:15px}.artist{font-size:12px}
+  .status{font-size:10px}
+  .dialog{padding:18px;border-radius:22px}.dialog h2{font-size:29px}
+}
+@media(orientation:portrait) and (min-width:700px){
+  .wrap{width:min(88vw,920px);padding-top:3vh}
+  .campaignLogo{width:min(270px,32vw)}
+  .samayLogo{width:min(205px,24vw)}
+  .topActions{position:absolute;right:0;top:16px}
+  .hero{min-height:38vh;padding:5vh 5vw}
+  .hero h1{font-size:clamp(82px,10vw,112px)}
+  .eyebrow{font-size:20px}.sub{font-size:14px}
+  .search{max-width:760px;margin-top:3vh}.search input,.search button{min-height:68px;font-size:18px}
+  .head{margin-top:3vh}.head h2{font-size:24px}.head small{font-size:15px}
+  .songs{gap:14px}
+  .song{min-height:92px;padding:17px 20px;grid-template-columns:62px 1fr auto;border-radius:20px}
+  .num{width:58px;height:58px;font-size:17px}
+  .song b{font-size:22px}.artist{font-size:16px;margin-top:6px}.status{font-size:13px}
+  .versions{gap:14px}.version{min-height:155px;padding:22px}.version strong{font-size:22px}.version .duration{font-size:42px}
+}
+@media(orientation:landscape) and (max-height:760px){
+  .wrap{padding-top:10px}
+  .campaignLogo{width:min(180px,20vw)}.samayLogo{width:min(130px,14vw)}
+  .hero{min-height:230px;padding:26px 28px}.hero h1{font-size:64px}.search{margin-top:16px}
+  .head{margin-top:18px}.song{min-height:64px}.footer{height:48px;margin-top:18px}
+}
+@media(min-width:1400px){
+  .wrap{width:min(1120px,84vw)}
+  .campaignLogo{width:260px}.samayLogo{width:190px}
+  .hero{min-height:340px}.song{min-height:80px}
+}
 </style>
 </head>
 <body>
@@ -26,7 +79,7 @@ button,input{font:inherit}.wrap{width:min(980px,calc(100% - 24px));margin:auto;p
   <header class="top">
     <div class="brandLockup">
       <img class="campaignLogo" src="assets/logo-hallowow.webp" alt="Hallowow Criollazo">
-      <div class="samayWord">SAMAY</div>
+      <img class="samayLogo" src="assets/samay-logo-placeholder.webp" alt="Samay">
     </div>
     <div class="topActions">
       <div class="room">SALA <b id="room"></b> · <span class="sync" id="sync">CONECTANDO</span></div>
