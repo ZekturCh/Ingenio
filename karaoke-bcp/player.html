@@ -6,22 +6,60 @@
 <meta name="theme-color" content="#f26522">
 <title>Samay Karaoke · Pantalla</title>
 <style>
-@font-face{font-family:"Flexo";src:url("assets/fonts/Flexo-Regular.woff2") format("woff2");font-style:normal;font-weight:400;font-display:swap}\n@font-face{font-family:"Flexo";src:url("assets/fonts/Flexo-Bold.woff2") format("woff2");font-style:normal;font-weight:700 900;font-display:swap}
+@font-face{font-family:"Flexo";src:url("assets/fonts/Flexo-Regular.woff2") format("woff2");font-style:normal;font-weight:400;font-display:swap}
+@font-face{font-family:"Flexo";src:url("assets/fonts/Flexo-Bold.woff2") format("woff2");font-style:normal;font-weight:700 900;font-display:swap}
 :root{--orange:#f26522;--orange2:#ff8a1e;--cream:#fff8eb;--ink:#6d2209;--muted:#8b3b20}
 *{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden}body{font-family:"Flexo",Verdana,system-ui,sans-serif;background:#f56a14;color:var(--cream)}
 .stage{position:relative;width:100%;height:100%;display:grid;place-items:center;isolation:isolate;background:radial-gradient(circle at 72% 16%,#ffc451 0,rgba(255,188,65,.78) 13%,transparent 33%),radial-gradient(circle at 20% 74%,rgba(255,204,92,.28),transparent 27%),linear-gradient(145deg,#ff8d1c 0%,#f66c13 40%,#ed520b 72%,#cd3d08 100%)}
 .stage:before{content:"";position:absolute;inset:0;background:url("assets/calabaza-guitarra.webp") right -8vw bottom -14vh/min(74vw,850px) auto no-repeat;opacity:.16;filter:brightness(1.3) saturate(1.22);mix-blend-mode:screen;z-index:-1}
 .stage:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(101,26,0,.02),rgba(109,24,0,.18));z-index:-1}
-.asset{position:absolute;pointer-events:none;user-select:none}.brandLockup{position:absolute;top:2.8vh;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;z-index:4}.logo{position:static;width:min(24vw,310px);filter:drop-shadow(0 10px 20px rgba(100,25,0,.2))}.samayWord{margin-top:0;font-size:clamp(13px,1.2vw,18px);font-weight:900;letter-spacing:.34em;color:#fff;transform:translateX(.17em);text-shadow:0 2px 10px rgba(103,27,0,.25)}.pumpkin{display:none}.bat{right:8vw;top:16vh;width:min(8vw,105px);animation:float 3.8s ease-in-out infinite;opacity:.72}.ornament{position:absolute;left:0;right:0;bottom:1vh;text-align:center;color:#fff0d5;font-size:clamp(18px,2.3vw,36px);letter-spacing:1.4vw;opacity:.58}
+.asset{position:absolute;pointer-events:none;user-select:none}.brandLockup{position:absolute;top:2.8vh;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;z-index:4}.logo{position:static;width:min(24vw,310px);filter:drop-shadow(0 10px 20px rgba(100,25,0,.2))}.samayLogo{display:block;width:min(15vw,190px);height:auto;margin-top:3px;filter:drop-shadow(0 6px 14px rgba(103,27,0,.18))}.pumpkin{display:none}.bat{right:8vw;top:16vh;width:min(8vw,105px);animation:float 3.8s ease-in-out infinite;opacity:.72}.ornament{position:absolute;left:0;right:0;bottom:1vh;text-align:center;color:#fff0d5;font-size:clamp(18px,2.3vw,36px);letter-spacing:1.4vw;opacity:.58}
 @keyframes float{50%{transform:translateY(-15px) rotate(4deg)}}
 .center{width:min(980px,86vw);text-align:center;z-index:2;padding:clamp(130px,17vh,180px) clamp(22px,4vw,52px) 32px;border:1px solid rgba(255,255,255,.2);border-radius:34px;background:linear-gradient(145deg,rgba(125,28,0,.18),rgba(107,22,0,.11));backdrop-filter:blur(7px);box-shadow:0 25px 70px rgba(104,25,0,.18)}.kicker{font-size:clamp(11px,1vw,15px);font-weight:800;letter-spacing:.28em;color:#fff0d6;text-transform:uppercase}.title{font-family:"Flexo",Verdana,system-ui,sans-serif;font-size:clamp(46px,6vw,84px);font-weight:900;letter-spacing:-.025em;line-height:.95;margin:8px 0 0;text-shadow:0 6px 24px rgba(103,25,0,.22)}.artist{font-size:clamp(15px,1.8vw,25px);font-weight:700;color:#fff1dc;margin-top:10px}.version{display:inline-flex;margin-top:14px;border:1px solid rgba(255,255,255,.28);background:rgba(105,24,0,.22);border-radius:999px;padding:8px 13px;color:#fff3df;font-weight:800;font-size:12px}
-.lyrics{margin:5vh auto 3vh;min-height:27vh;display:grid;align-content:center;gap:12px;max-width:920px}.prev,.next{font-size:clamp(19px,2.2vw,32px);color:rgba(108,34,10,.65);font-weight:700;min-height:1.3em}.current{position:relative;display:inline-block;justify-self:center;font-size:clamp(38px,5vw,74px);line-height:1.06;font-weight:900;white-space:nowrap;max-width:95vw}.currentBase{color:rgba(102,31,7,.5)}.currentFill{position:absolute;inset:0 auto 0 0;width:0;overflow:hidden;white-space:nowrap;color:#fff9e9;text-shadow:0 2px 18px rgba(112,27,0,.26);transition:width .04s linear}.guide{font-size:clamp(20px,2vw,30px);line-height:1.45;color:#e9cdbb;max-height:27vh;overflow:hidden;mask-image:linear-gradient(transparent,#000 15%,#000 85%,transparent)}
+.lyrics{margin:5vh auto 3vh;min-height:27vh;display:grid;align-content:center;gap:12px;max-width:920px}.prev,.next{font-size:clamp(19px,2.2vw,32px);color:rgba(108,34,10,.65);font-weight:700;min-height:1.3em}.current{position:relative;display:block;width:100%;justify-self:center;font-size:clamp(38px,5vw,74px);line-height:1.06;font-weight:900;max-width:95vw;text-align:center}.currentBase,.currentFill{display:block;width:100%;white-space:normal;overflow-wrap:anywhere}.currentBase{color:rgba(102,31,7,.5)}.currentFill{position:absolute;inset:0;color:#fff9e9;text-shadow:0 2px 18px rgba(112,27,0,.26);clip-path:inset(0 100% 0 0);transition:clip-path .04s linear}.guide{font-size:clamp(20px,2vw,30px);line-height:1.45;color:#e9cdbb;max-height:27vh;overflow:hidden;mask-image:linear-gradient(transparent,#000 15%,#000 85%,transparent)}
 .guide div{padding:2px}.guide .hint{color:#ff8c4e;font-weight:1000}
 .progressWrap{max-width:760px;margin:0 auto}.progress{height:7px;background:rgba(104,31,8,.28);border-radius:99px;overflow:hidden}.bar{display:block;height:100%;width:0;background:#fff5dd;border-radius:inherit;box-shadow:0 0 15px rgba(255,255,255,.28)}.times{display:flex;justify-content:space-between;color:#7c2d12;font-size:12px;margin-top:8px;font-variant-numeric:tabular-nums;font-weight:700}.state{margin-top:18px;color:#7d2f13;font-size:12px;font-weight:700;letter-spacing:.04em}
 .room{position:absolute;left:22px;top:20px;border:1px solid rgba(255,255,255,.28);background:rgba(103,24,0,.2);backdrop-filter:blur(9px);border-radius:999px;padding:8px 12px;font-size:11px;font-weight:800;color:#fff2df;z-index:5}.online{color:#e0ffe0}.local{color:#fff4b8}
 .activate{position:fixed;inset:0;background:rgba(115,27,0,.7);backdrop-filter:blur(18px);display:grid;place-items:center;z-index:30;padding:20px}.activate.hide{display:none}.card{width:min(520px,94vw);border:1px solid rgba(255,255,255,.28);background:linear-gradient(155deg,#f57a18,#dc4b08);border-radius:26px;padding:28px;text-align:center;box-shadow:0 40px 100px rgba(91,20,0,.35)}.card img{width:190px;max-width:70%}.card h2{font-size:30px;margin:8px 0}.card p{color:#fff0dc;line-height:1.5}.card button{width:100%;border:1px solid rgba(255,255,255,.4);border-radius:15px;padding:15px;background:#fff2dc;color:#8a2a08;font-weight:900;font-size:16px;cursor:pointer}.warning{margin-top:12px;color:#ffe7ca;font-size:11px}
 .idle .lyrics{opacity:.55}.idle .current{font-size:clamp(30px,3vw,48px);color:#9f7b68}
 @media(max-width:700px){.bat{display:none}.center{width:92vw;padding:125px 18px 28px}.brandLockup{top:3.5vh}.logo{width:48vw}.samayWord{font-size:13px}.current{font-size:clamp(30px,8vw,56px)}}
+
+/* Responsive / TV / totem hardening */
+html,body,.stage{width:100%;height:100%;min-height:100dvh}
+button{touch-action:manipulation;-webkit-tap-highlight-color:transparent;min-height:54px}
+.samayLogo{max-width:46vw}
+@media(max-width:700px){
+  .brandLockup{top:2.4vh}.logo{width:min(46vw,230px)}.samayLogo{width:min(35vw,170px)}
+  .room{left:12px;top:12px;font-size:9px;padding:7px 9px}
+  .center{width:94vw;padding:clamp(118px,19vh,150px) 14px 24px;border-radius:25px}
+  .title{font-size:clamp(38px,12vw,62px)}
+  .artist{font-size:clamp(15px,5vw,22px)}
+  .lyrics{margin:4vh auto 2vh;min-height:30vh;gap:8px}
+  .prev,.next{font-size:clamp(17px,5.5vw,27px)}
+  .current{font-size:clamp(31px,9vw,54px);max-width:100%}
+  .progressWrap{width:92%}.ornament{font-size:19px;letter-spacing:3vw}
+}
+@media(orientation:portrait) and (min-width:700px){
+  .brandLockup{top:3vh}.logo{width:min(31vw,300px)}.samayLogo{width:min(22vw,205px)}
+  .room{left:3vw;top:2.2vh;font-size:13px;padding:10px 14px}
+  .center{width:88vw;min-height:68vh;padding:clamp(170px,18vh,220px) 5vw 5vh;display:flex;flex-direction:column;justify-content:center}
+  .kicker{font-size:18px}.title{font-size:clamp(72px,9vw,108px)}.artist{font-size:30px}.version{font-size:15px;padding:10px 16px}
+  .lyrics{margin:5vh auto 4vh;min-height:30vh;width:100%}
+  .prev,.next{font-size:clamp(28px,3.4vw,42px)}
+  .current{font-size:clamp(54px,6.6vw,82px)}
+  .progressWrap{width:82%;max-width:none}.times{font-size:16px}.state{font-size:14px}
+}
+@media(orientation:landscape) and (max-height:760px){
+  .brandLockup{top:1.5vh}.logo{width:min(18vw,220px)}.samayLogo{width:min(11vw,135px)}
+  .center{width:88vw;padding:clamp(88px,15vh,115px) 4vw 18px}
+  .kicker{font-size:11px}.title{font-size:clamp(40px,5vw,66px)}.artist{font-size:18px}.version{margin-top:8px}
+  .lyrics{margin:2.5vh auto 2vh;min-height:24vh}.prev,.next{font-size:22px}.current{font-size:clamp(34px,4.6vw,58px)}
+  .state{margin-top:10px}.ornament{display:none}
+}
+@media(min-width:1600px) and (orientation:landscape){
+  .logo{width:330px}.samayLogo{width:205px}.center{width:min(1160px,78vw)}
+  .title{font-size:96px}.current{font-size:82px}.prev,.next{font-size:36px}
+}
 </style>
 </head>
 <body>
@@ -29,7 +67,7 @@
   <div class="room">SALA <b id="roomCode"></b> · <span id="syncState">CONECTANDO</span></div>
   <div class="brandLockup">
     <img class="asset logo" src="assets/logo-hallowow.webp" alt="Hallowow Criollazo">
-    <div class="samayWord">SAMAY</div>
+    <img class="samayLogo" src="assets/samay-logo-placeholder.webp" alt="Samay">
   </div>
   <img class="asset bat" src="assets/murcielago.webp" alt="">
   <main class="center">
@@ -139,11 +177,11 @@ function renderTimedLyrics(t){
   fill.textContent=text;
   $("#prev").textContent=prev||"";
   $("#next").textContent=next||"";
-  if(!line){fill.style.width="0%";return;}
+  if(!line){fill.style.clipPath="inset(0 100% 0 0)";return;}
   const start=Number(line.start ?? line.time);
   const end=Number(line.end ?? (start+2.4));
   const p=Math.max(0,Math.min(1,(t-start)/Math.max(.2,end-start)));
-  fill.style.width=(p*100).toFixed(1)+"%";
+  fill.style.clipPath=`inset(0 ${((1-p)*100).toFixed(1)}% 0 0)`;
 }
 function applySelection(state){
   const song=getSong(state.songId), version=getVersion(song,state.versionId);
