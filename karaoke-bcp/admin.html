@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Samay Karaoke · Admin</title>
+<style>
+:root{--o:#ff5a00;--bg:#090504;--panel:#150b08;--line:#51291a;--text:#fff0e2;--muted:#a78d7e}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 50% 0,#361103,transparent 35%),var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif}.wrap{width:min(820px,calc(100% - 24px));margin:auto;padding:24px 0 50px}.top{display:flex;justify-content:space-between;gap:12px;align-items:center}.top img{width:190px;max-width:48vw}.badge{border:1px solid var(--line);border-radius:999px;padding:9px 12px;font-size:11px;font-weight:900}.card{margin-top:18px;border:1px solid var(--line);background:linear-gradient(160deg,#1e0e08,#0d0705);border-radius:22px;padding:20px}.label{font-size:11px;font-weight:1000;letter-spacing:.14em;color:#ff8e50}.song{font-size:36px;font-weight:1000;margin:6px 0 2px}.artist{color:#c5a99a}.version{display:inline-flex;margin-top:12px;border:1px solid #68351f;border-radius:999px;padding:7px 10px;color:#ff9b65;font-size:12px;font-weight:900}.controls{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin-top:18px}.controls button{border:1px solid #5d301e;background:#160b07;color:#fff;border-radius:13px;padding:14px 10px;font-weight:1000;cursor:pointer}.controls .primary{border:0;background:linear-gradient(135deg,#ff4c00,#ff7921)}.links{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}.links a,.links button{border:1px solid #4d291c;background:#100806;color:#e8d1c3;border-radius:12px;padding:12px;text-decoration:none;text-align:center;font-weight:900;font-size:12px;cursor:pointer}.status{margin-top:12px;color:var(--muted);font-size:12px}.online{color:#6ee099}.local{color:#ffc16b}.hint{margin-top:18px;color:#90786a;line-height:1.5;font-size:12px}@media(max-width:620px){.controls{grid-template-columns:1fr 1fr}.links{grid-template-columns:1fr}.song{font-size:29px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top"><img src="assets/logo-hallowow.webp" alt="Hallowow"><div class="badge">SALA <b id="room"></b> · <span id="sync">...</span></div></div>
+  <section class="card">
+    <div class="label">AHORA SELECCIONADO</div>
+    <div class="song" id="song">Esperando canción</div>
+    <div class="artist" id="artist">—</div>
+    <div class="version" id="version">SIN SELECCIÓN</div>
+    <div class="controls">
+      <button class="primary" data-command="play">▶ PLAY / RESUME</button>
+      <button data-command="pause">❚❚ PAUSA</button>
+      <button data-command="restart">↻ REINICIAR</button>
+      <button data-command="stop">■ DETENER</button>
+    </div>
+    <div class="status" id="status">Conectando…</div>
+  </section>
+  <div class="links">
+    <a id="openController" target="_blank">ABRIR SELECTOR</a>
+    <a id="openPlayer" target="_blank">ABRIR PLAYER TV</a>
+    <button id="copyPlayer">COPIAR LINK PLAYER</button>
+    <a href="timing-editor.html" target="_blank">EDITOR DE LETRAS</a>
+  </div>
+  <div class="hint">En la PC conectada a la TV abre el Player y pulsa “Activar audio” una vez. Después este panel o el celular pueden enviar órdenes a la misma sala.</div>
+</div>
+<script type="module">
+import { roomFromUrl, subscribeRoom, sendCommand, getSong, getVersion, controllerUrl, playerUrl } from "./shared.js";
+const room=roomFromUrl(),$=s=>document.querySelector(s);
+$("#room").textContent=room;
+$("#openController").href=controllerUrl(room);
+$("#openPlayer").href=playerUrl(room);
+let state=null;
+function statusMode(mode){$("#sync").textContent=mode==="online"?"EN LÍNEA":"LOCAL";$("#sync").className=mode==="online"?"online":"local";}
+subscribeRoom(room,(next)=>{
+  state=next;
+  const song=getSong(next.songId),version=getVersion(song,next.versionId);
+  $("#song").textContent=song?.title||"Esperando canción";
+  $("#artist").textContent=song?.artist||"—";
+  $("#version").textContent=version?`${version.label.toUpperCase()} · ${version.durationLabel}`:"SIN SELECCIÓN";
+  $("#status").textContent=`Última orden: ${String(next.command||"load").toUpperCase()}`;
+},statusMode);
+document.querySelectorAll("[data-command]").forEach(btn=>btn.onclick=async()=>{
+  if(!state){$("#status").textContent="Primero selecciona una canción desde el catálogo.";return;}
+  const result=await sendCommand(room,{...state,command:btn.dataset.command});
+  statusMode(result.mode);
+  $("#status").textContent=`Orden enviada: ${btn.dataset.command.toUpperCase()}`;
+});
+$("#copyPlayer").onclick=async()=>{
+  const url=playerUrl(room);
+  try{await navigator.clipboard.writeText(url);$("#status").textContent="Link del Player copiado.";}
+  catch{$("#status").textContent=url;}
+};
+</script>
+</body>
+</html>
