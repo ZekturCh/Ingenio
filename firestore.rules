@@ -136,6 +136,50 @@ service cloud.firestore {
       allow write: if canAdmin();
     }
 
+
+    // Hallowow Karaoke: sala publica limitada a comandos de reproduccion.
+    // GitHub Pages aloja la interfaz; Firestore solo sincroniza selector <-> player.
+    function validKaraokeRoomId(roomId) {
+      return roomId.size() >= 4 && roomId.size() <= 32;
+    }
+
+    function validKaraokeState() {
+      return request.resource.data.keys().hasOnly([
+          'songId',
+          'versionId',
+          'command',
+          'nonce',
+          'startAt',
+          'endAt',
+          'updatedAt'
+        ])
+        && request.resource.data.keys().hasAll([
+          'songId',
+          'versionId',
+          'command',
+          'nonce',
+          'startAt',
+          'endAt',
+          'updatedAt'
+        ])
+        && request.resource.data.songId == 'carinito'
+        && request.resource.data.versionId in ['chorus', 'full']
+        && request.resource.data.command in ['load', 'play', 'pause', 'restart', 'stop']
+        && request.resource.data.nonce is int
+        && request.resource.data.startAt is number
+        && request.resource.data.endAt is number
+        && request.resource.data.startAt >= 0
+        && request.resource.data.endAt > request.resource.data.startAt
+        && request.resource.data.endAt <= 240
+        && request.resource.data.updatedAt == request.time;
+    }
+
+    match /karaokeRooms/{roomId} {
+      allow read: if validKaraokeRoomId(roomId);
+      allow create, update: if validKaraokeRoomId(roomId) && validKaraokeState();
+      allow delete: if false;
+    }
+
     match /{document=**} {
       allow read, write: if false;
     }
