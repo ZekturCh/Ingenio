@@ -1,0 +1,232 @@
+@font-face{font-family:Flexo;src:url("assets/fonts/Flexo-Regular.woff2") format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:Flexo;src:url("assets/fonts/Flexo-Bold.woff2") format("woff2");font-weight:700 900;font-display:swap}
+@font-face{font-family:Lilita;src:url("assets/fonts/LilitaOne-Regular.ttf") format("truetype");font-weight:400;font-display:swap}
+:root{--orange:#ff5c16;--yellow:#ffcd35;--red:#e91d28;--cream:#fff0d7;--ink:#171411;--display:Lilita,Flexo,sans-serif;color-scheme:light}
+*{box-sizing:border-box;letter-spacing:0}
+html{min-height:100%}
+body{margin:0;font-family:Flexo,Arial,sans-serif;background:#101519;color:var(--ink);min-height:100dvh}
+button,input,a{-webkit-tap-highlight-color:transparent}
+button,input{font:inherit;color:inherit}
+button,a,input[type="range"]{touch-action:manipulation}
+button{cursor:pointer;border:0}
+button:disabled{cursor:default;opacity:.5}
+a{color:inherit}
+button:active:not(:disabled){transform:translateY(1px)}
+:focus-visible{outline:3px solid #fff;outline-offset:4px}
+[hidden]{display:none!important}
+svg{width:28px;height:28px;flex:none;stroke-width:2.5}
+.sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.app,.stage{position:relative;isolation:isolate;overflow:hidden;background:#ffb328 url("assets/backgrounds/page-bg-vertical.jpg") center/cover no-repeat}
+.controller-shell{min-height:100dvh;margin:auto;padding:20px 22px 74px}
+.top{position:relative;z-index:10;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.iconBtn{width:64px;height:64px;display:grid;place-items:center;flex:none;border-radius:50%;background:#361b12;color:white;box-shadow:inset 0 2px 4px #ffffff25,0 6px 18px #79270030;text-decoration:none}
+.iconBtn svg{width:34px;height:34px}
+.roomPill{display:flex;gap:12px;align-items:center;min-height:56px;max-width:65%;padding:10px 14px;background:#191817;color:#fff;border-radius:16px;box-shadow:0 6px 18px #79270030;text-align:left}
+.roomPill svg{width:22px;height:22px}
+.roomText{display:grid;font-size:16px;font-weight:900;line-height:1.1;min-width:0}
+.roomText b{max-width:15ch;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.dot{width:20px;height:20px;border-radius:50%;flex:none;background:#92918f}
+.dot.online{background:#31cc3f}
+.dot.local{background:#f4c436}
+.menu{position:absolute;z-index:30;top:96px;left:22px;display:grid;gap:3px;width:min(310px,calc(100% - 44px));padding:10px;border:1px solid #ffffff35;border-radius:8px;background:#191817;box-shadow:0 16px 35px #0007;color:#fff}
+.menu a,.menu button{display:flex;gap:12px;align-items:center;padding:14px;min-height:56px;background:transparent;border-radius:5px;text-decoration:none;text-align:left;font-weight:700;font-size:16px;color:inherit}
+.menu a:hover,.menu button:hover{background:#ffffff18}
+.menu svg{width:24px;height:24px}
+.hero{position:relative;margin:-84px -22px 0;overflow:hidden;background:#ffb525;aspect-ratio:6/5}
+.heroScene{display:block;width:100%;height:100%;object-fit:contain}
+.catalog{position:relative;z-index:4}
+.search{display:flex;align-items:center;gap:12px;min-height:60px;padding:4px 4px 4px 16px;border:2px solid #fff8;border-radius:34px;background:var(--cream);box-shadow:0 8px 22px #83380035}
+.search svg{color:#171411}
+.search input{flex:1;min-width:0;min-height:46px;font-size:16px;border:0;outline:none;background:none}
+.search input::placeholder{color:#4e504b}
+.search:focus-within{outline:3px solid var(--yellow);outline-offset:3px}
+.search button{min-height:48px;padding:0 30px;border:1px solid #ff9857;border-radius:28px;background:#ff6119;color:#fff;text-transform:uppercase;font-family:var(--display);font-size:21px;box-shadow:inset 0 0 6px #ffdd8260}
+.filters{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px;margin:16px 0 0}
+.filter{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;min-width:0;min-height:86px;padding:10px 3px;border:2px solid #8f8071;border-radius:11px;background:#181715;color:#fff;font-family:var(--display);font-size:14px;text-transform:uppercase;box-shadow:0 5px 12px #0003}
+.filter img{height:34px;width:38px;object-fit:contain}
+.filter svg{height:34px;width:38px;stroke-width:2}
+.filter[data-filter="fiesta"] svg{color:#ff751d}
+.filter[data-filter="clasicos"] svg{fill:currentColor}
+.filter.active{border-color:#ffe543;background:#ff6119;box-shadow:0 0 0 1px #ff8c23,0 0 16px #ffb60070}
+.sectionHead{display:flex;justify-content:space-between;align-items:center;gap:10px;margin:18px 2px 10px}
+.sectionHead h1{margin:0;color:#fff;font-family:var(--display);font-size:21px;font-weight:400;text-transform:uppercase;text-shadow:0 2px 3px #0008}
+.seeAll{display:flex;gap:5px;align-items:center;min-height:44px;padding:4px 0;background:none;color:#ff8428;font-family:var(--display);font-size:18px;text-transform:uppercase;white-space:nowrap}
+.seeAll svg{width:24px;height:24px}
+.songs{display:grid;gap:9px}
+.song{position:relative;isolation:isolate;overflow:hidden;display:grid;grid-template-columns:minmax(0,1fr) 54px;gap:4px;align-items:center;min-height:72px;padding-right:64px;border:1px solid #fff7;border-radius:17px;background:var(--cream);box-shadow:0 5px 14px #88390025}
+.song:after{content:"";position:absolute;z-index:-1;right:-4px;top:-4px;bottom:-4px;width:78px;background:url("assets/decor/ornamento-card.png") center/100% 100% no-repeat}
+.songSelect{display:flex;align-items:center;gap:16px;text-align:left;min-width:0;min-height:70px;padding:8px 12px;background:transparent}
+.songNote{width:44px;height:44px;color:var(--orange);flex:none;stroke-width:3}
+.songCopy{min-width:0}
+.songCopy b{display:block;font-family:var(--display);font-size:25px;font-weight:400;line-height:1.05;overflow-wrap:anywhere}
+.songCopy .artist{display:block;margin-top:4px;font-size:16px;line-height:1.2}
+.song.disabled .songSelect{opacity:1;cursor:default}
+.song .soon{display:block;font-size:10px;color:#796449;margin-top:3px;text-transform:uppercase;font-weight:700}
+.fav{width:52px;height:52px;display:grid;place-items:center;border-radius:50%;background:none;color:#171411}
+.fav svg{width:32px;height:32px;stroke-width:2}
+.fav.on{color:var(--red)}
+.fav.on svg{fill:var(--red)}
+.empty{margin:0;padding:32px 15px;text-align:center;border:1px solid #fff4;border-radius:8px;background:#171411;color:#fff;line-height:1.5}
+.footerRibbon{position:absolute;z-index:1;pointer-events:none;bottom:-30px;left:-5%;width:110%;height:120px;object-fit:fill;transform:rotate(-4deg)}
+.controller-shell:after{content:"";position:absolute;z-index:0;left:0;right:0;bottom:0;top:44%;background:linear-gradient(180deg,transparent,#120f0bf0 20%,#120f0bd9 75%,transparent)}
+.dialog{width:min(540px,calc(100% - 32px));padding:26px;border:2px solid #ffdc73;border-radius:24px;background:#ffac2b url("assets/backgrounds/page-bg-horizontal.jpg") center/cover;color:var(--ink);box-shadow:0 24px 80px #0007}
+.dialog::backdrop{background:#111418bb;backdrop-filter:blur(6px)}
+.dialogTop{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.dialogLabel{margin:0 0 8px;font-size:14px;font-weight:700;text-transform:uppercase}
+.dialog h2{margin:0;font-family:var(--display);font-size:36px;font-weight:400;overflow-wrap:anywhere}
+.dialogArtist{margin:8px 0;font-size:19px}
+.close{width:48px;height:48px}
+.close svg{width:26px;height:26px}
+.versions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:22px}
+.versionOption{min-height:160px;padding:18px 14px;text-align:left;border:2px solid #fff9;border-radius:8px;background:var(--cream)}
+.versionOption strong{display:block;font-family:var(--display);font-weight:400;font-size:25px}
+.versionOption .duration{display:block;font-family:var(--display);font-size:40px;color:var(--orange);margin:7px 0}
+.versionOption small{font-size:13px;line-height:1.3}
+.versionOption.recommended{border-color:var(--red)}
+.modalNote{margin:16px 0 0;font-size:14px;line-height:1.5}
+.toast{position:fixed;z-index:50;left:50%;bottom:24px;transform:translate(-50%,20px);padding:14px 20px;width:max-content;max-width:calc(100% - 32px);border-radius:8px;background:var(--cream);color:var(--ink);font-weight:700;box-shadow:0 8px 32px #0006;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;text-align:center}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+/* Keep the illustration behind live lyrics and accessible controls. */
+.player-page{overflow-x:hidden}
+.stage{display:flex;flex-direction:column;width:100%;height:100dvh;min-height:640px;padding:24px 5% 13dvh;background:#ffbb2f url("assets/backgrounds/karaoke-frame.webp") center/cover no-repeat}
+.stage .top{gap:10px}
+.samayLogo{width:158px;height:88px;max-width:30%;object-fit:contain}
+.stage .roomPill{max-width:43%}
+.playerWrap{position:relative;z-index:2;flex:1;display:grid;grid-template-rows:minmax(0,1fr) auto;gap:20px;min-height:0;padding-top:60px}
+.lyricPanel{display:flex;align-items:center;justify-content:center;min-width:0;min-height:0;padding:20px 6%;color:var(--cream)}
+.lyrics{display:grid;align-content:center;gap:14px;width:100%;text-align:center;min-width:0;--lyric-scale:1}
+.lyrics p{margin:0;overflow-wrap:anywhere;text-wrap:balance;font-family:var(--display);font-weight:400}
+.current{position:relative;width:100%;font-size:calc(46px * var(--lyric-scale));line-height:1.1}
+.currentBase,.currentFill{display:block;width:100%}
+.currentFill{position:absolute;inset:0;color:#ff712f;clip-path:inset(0 100% 0 0)}
+.lyricContext{font-size:calc(40px * var(--lyric-scale));line-height:1.12;color:#fff2dc}
+.lyricContext.previous{font-size:calc(28px * var(--lyric-scale));color:#fff2dc88}
+.lyricContext:empty{display:none}
+.infoCard{position:relative;z-index:4;width:92%;max-width:780px;margin:0 auto;padding:20px 26px 16px;border-radius:32px;border:1px solid #fff9;background:var(--cream);color:var(--ink);text-align:center;box-shadow:0 10px 32px #913b0025}
+.title{margin:0;font-family:var(--display);font-size:36px;font-weight:400;line-height:1.05;overflow-wrap:anywhere;text-wrap:balance}
+.infoCard .artist{font-family:var(--display);font-size:22px;line-height:1.15;margin:6px 0 14px}
+.seek{--progress:0%;display:block;width:100%;height:40px;margin:0;background:transparent;appearance:none;cursor:pointer}
+.seek::-webkit-slider-runnable-track{height:12px;background:linear-gradient(to right,#ff5b15 0 var(--progress),#baad99 var(--progress) 100%);border-radius:20px}
+.seek::-moz-range-track{height:12px;background:linear-gradient(to right,#ff5b15 0 var(--progress),#baad99 var(--progress) 100%);border-radius:20px}
+.seek::-webkit-slider-thumb{appearance:none;width:28px;height:28px;margin-top:-8px;border:2px solid #fff2a8;border-radius:50%;background:#ffd95c;box-shadow:0 2px 8px #b74b0066}
+.seek::-moz-range-thumb{width:24px;height:24px;border:2px solid #fff2a8;border-radius:50%;background:#ffd95c;box-shadow:0 2px 8px #b74b0066}
+.seek:focus-visible{outline-color:var(--orange);outline-offset:0;border-radius:4px}
+.times{display:flex;justify-content:space-between;font-size:17px;font-weight:700;font-variant-numeric:tabular-nums}
+.controls{display:grid;grid-template-columns:1fr 1fr 1.7fr 1fr 1fr;gap:6px;align-items:center;margin-top:14px}
+.controlBtn{justify-self:center;display:grid;place-items:center;width:56px;height:56px;border-radius:50%;background:none}
+.controlBtn svg{width:34px;height:34px;stroke-width:2.7}
+.controlBtn.active{color:var(--orange)}
+.controlBtn.heart{color:var(--red)}
+.controlBtn.heart.active svg{fill:var(--red)}
+.playBtn{justify-self:center;display:grid;place-items:center;width:94px;height:94px;border-radius:50%;border:2px solid #ffb03b;background:#ff5b12;color:white;box-shadow:inset 0 0 8px #ffbd4566}
+.playBtn svg{grid-area:1/1;width:44px;height:44px;fill:currentColor;stroke-width:2}
+.i-play{display:none}
+.paused .i-pause{display:none}
+.paused .i-play{display:block}
+.state{min-height:16px;margin:8px 0 0;color:#7a3218;font-size:12px;font-weight:700}
+.activate{text-align:center}
+.activate img{width:230px;height:165px;object-fit:cover;margin:-15px auto 5px}
+.activate h2{font-size:32px}
+.primaryButton{display:flex;align-items:center;justify-content:center;gap:12px;width:100%;min-height:60px;margin-top:22px;padding:14px;border-radius:8px;background:#171411;color:#fff;font-size:20px;font-weight:700}
+#activationState{min-height:18px;font-size:14px;margin-bottom:0}
+@media(min-width:520px) and (orientation:portrait){
+  .controller-shell{padding:24px 26px 86px}
+  .hero{margin:-88px -26px 0}
+  .search{min-height:64px}
+  .filter{min-height:100px;font-size:17px}
+  .filter img,.filter svg{height:40px;width:44px}
+  .song{min-height:79px}.songSelect{min-height:77px}
+  .songCopy b{font-size:29px}.songCopy .artist{font-size:19px}
+  .sectionHead h1{font-size:25px}.seeAll{font-size:21px}
+  .stage{padding:28px 5% 13dvh}
+  .playerWrap{padding-top:9dvh;gap:24px}
+  .current{font-size:calc(56px * var(--lyric-scale))}.lyricContext{font-size:calc(50px * var(--lyric-scale))}.lyricContext.previous{font-size:calc(34px * var(--lyric-scale))}
+  .infoCard{padding:26px 30px 20px}.title{font-size:44px}.infoCard .artist{font-size:27px}
+  .playBtn{width:104px;height:104px}
+}
+@media(min-width:700px) and (orientation:landscape){
+  .controller-shell{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);grid-template-rows:76px minmax(0,1fr);gap:16px 30px;max-width:none;min-height:100dvh;padding:24px 4% 55px;background-image:url("assets/backgrounds/page-bg-horizontal.jpg")}
+  .controller-shell .top{grid-column:1/-1}
+  .controller-shell:after{top:0;left:49%;background:linear-gradient(90deg,transparent,#120f0be6 15%)}
+  .hero{grid-column:1;grid-row:2;align-self:center;width:100%;height:auto;margin:0;max-height:100%;background:transparent;border-radius:20px}
+  .heroScene{height:auto;max-height:76dvh;object-fit:contain}
+  .catalog{grid-column:2;grid-row:2;align-self:center;width:100%;max-width:860px;justify-self:center}
+  .song{min-height:76px}.songSelect{min-height:74px}
+  .stage{min-height:460px;padding:22px 4% 40px;background-size:cover;background-image:url("assets/backgrounds/karaoke-frame-landscape.webp")}
+  .stage .top{flex:none}.samayLogo{width:180px}
+  .playerWrap{padding-top:35px;gap:22px}
+  .lyricPanel{width:88%;margin:0 auto;padding:25px 5%}
+  .current{font-size:calc(56px * var(--lyric-scale))}.lyricContext{font-size:calc(34px * var(--lyric-scale))}.lyricContext.previous{font-size:calc(24px * var(--lyric-scale))}.lyrics{gap:10px;max-width:1200px}
+  .infoCard{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px;align-items:center;max-width:1280px;padding:18px 32px;text-align:left}
+  .title{font-size:38px}.infoCard .artist{margin-bottom:0;font-size:25px}.controls{margin-top:6px}
+  .playBtn{width:74px;height:74px}.playBtn svg{width:34px;height:34px}.state{text-align:center}
+}
+@media(min-width:1600px) and (orientation:landscape){
+  .controller-shell{padding:36px 5% 72px;gap:24px 60px;grid-template-rows:88px minmax(0,1fr)}
+  .iconBtn{width:76px;height:76px}.roomPill{min-height:66px;padding:12px 20px}.roomText{font-size:20px}
+  .search{min-height:76px}.search input{font-size:21px}.search button{min-height:60px;font-size:26px}
+  .filter{min-height:108px;font-size:19px}.filter img,.filter svg{width:45px;height:44px}
+  .song{min-height:94px;padding-right:78px}.songSelect{min-height:92px;gap:24px;padding-left:20px}
+  .songCopy b{font-size:32px}.songCopy .artist{font-size:21px}.songNote{width:54px;height:54px}.song:after{width:95px}
+  .sectionHead h1{font-size:28px}.seeAll{font-size:25px}
+  .current{font-size:calc(76px * var(--lyric-scale))}.lyricContext{font-size:calc(48px * var(--lyric-scale))}.lyricContext.previous{font-size:calc(32px * var(--lyric-scale))}
+  .title{font-size:44px}.playBtn{width:94px;height:94px}.controlBtn{width:64px;height:64px}
+}
+@media(max-width:420px){
+  .controller-shell{padding:14px 12px 64px}.iconBtn{width:52px;height:52px}.roomText{font-size:13px}
+  .roomPill{gap:8px;min-height:48px;border-radius:12px}
+  .hero{margin:-66px -12px 0;padding-top:35px;aspect-ratio:6/5}
+  .search{gap:7px;padding-left:12px;min-height:56px}.search svg{width:22px;height:22px}
+  .search input{font-size:13px}.search button{padding:0 16px;font-size:17px;min-height:44px}
+  .filters{gap:5px}.filter{font-size:10px;min-height:75px;padding:8px 0;border-radius:8px}.filter img,.filter svg{width:28px;height:28px}
+  .sectionHead h1{font-size:17px}.seeAll{font-size:15px}
+  .song{padding-right:38px;grid-template-columns:minmax(0,1fr) 44px}.song:after{width:45px}
+  .songSelect{gap:10px;padding-left:10px}.songCopy b{font-size:22px}.songCopy .artist{font-size:14px}
+  .songNote{width:32px;height:36px}.fav{width:44px;height:48px}.fav svg{width:28px;height:28px}
+  .stage{padding:16px 4% 10dvh}.stage .top{gap:8px}.samayLogo{width:100px;max-width:28%}
+  .stage .roomPill{max-width:46%;padding:9px 10px}.stage .roomPill svg{display:none}.stage .dot{width:14px;height:14px}
+  .playerWrap{padding-top:65px;gap:12px}.lyricPanel{padding:18px 5%}
+  .current{font-size:calc(36px * var(--lyric-scale))}.lyricContext{font-size:calc(30px * var(--lyric-scale))}.lyricContext.previous{font-size:calc(22px * var(--lyric-scale))}.lyrics{gap:10px}
+  .infoCard{width:96%;padding:18px 16px 12px;border-radius:24px}.title{font-size:30px}.infoCard .artist{font-size:21px}
+  .controlBtn{width:44px;height:48px}.controlBtn svg{width:28px;height:28px}
+  .playBtn{width:76px;height:76px}.playBtn svg{width:34px;height:34px}.times{font-size:14px}
+}
+@media(orientation:landscape) and (max-height:720px){
+  .controller-shell{padding-top:12px;padding-bottom:22px;grid-template-rows:54px minmax(0,1fr);gap:10px 20px}
+  .filters{margin-top:8px}.filter{min-height:66px;font-size:10px;gap:3px}.filter img,.filter svg{height:25px}.sectionHead{margin:6px 0}
+  .song,.songSelect{min-height:60px}.songCopy b{font-size:22px}.songCopy .artist{font-size:14px}.songs{gap:5px}
+  .stage{padding:12px 3% 18px}.stage .iconBtn{width:48px;height:48px}
+  .stage .samayLogo{height:56px;width:140px}
+  .playerWrap{padding-top:16px;gap:10px}.lyricPanel{padding:15px 5%}
+  .current{font-size:calc(36px * var(--lyric-scale))}.lyricContext{font-size:calc(24px * var(--lyric-scale))}.lyricContext.previous,#next3{display:none}.lyrics{gap:8px}
+  .infoCard{padding:12px 24px}.title{font-size:28px}.infoCard .artist{font-size:19px}
+  .playBtn{width:60px;height:60px}.controls{margin-top:0}.state{margin-top:2px}
+}
+@media(min-width:700px) and (max-width:1050px) and (orientation:landscape){
+  .controller-shell{gap:12px 20px;padding-left:3%;padding-right:3%}
+  .search{gap:7px;padding-left:12px}.search input{font-size:13px}.search button{font-size:17px;padding:0 16px}
+  .filter{font-size:10px;padding-left:0;padding-right:0}.filters{gap:5px}
+  .sectionHead h1{font-size:17px}.seeAll{font-size:14px}.seeAll svg{width:20px}
+  .song{padding-right:35px;grid-template-columns:minmax(0,1fr) 44px}.songSelect{gap:8px;padding-left:8px}
+  .songCopy b{font-size:20px}.songCopy .artist{font-size:13px}.songNote{width:28px;height:32px}
+  .song:after{width:42px}.fav{width:44px;height:48px}.fav svg{width:28px}
+}
+@media(min-width:900px) and (orientation:portrait){
+  .controller-shell{padding:36px 4% 110px}
+  .controller-shell .top .iconBtn{width:90px;height:90px}
+  .controller-shell .roomPill{min-height:76px;padding:14px 22px}
+  .controller-shell .roomText{font-size:23px}
+  .hero{margin:-126px -4.35% 0}
+  .search{min-height:90px}.search input{font-size:25px}.search button{min-height:72px;font-size:28px;padding:0 48px}
+  .filter{min-height:142px;font-size:24px}.filter img,.filter svg{width:56px;height:54px}
+  .sectionHead{margin:26px 0 15px}.sectionHead h1{font-size:32px}.seeAll{font-size:28px}
+  .songs{gap:14px}.song{min-height:112px}.songSelect{min-height:110px;gap:24px;padding-left:24px}
+  .songCopy b{font-size:36px}.songCopy .artist{font-size:25px}.songNote{width:62px;height:62px}
+  .song .soon{font-size:13px}.fav{width:60px;height:60px}.fav svg{width:42px;height:42px}
+  .current{font-size:calc(76px * var(--lyric-scale))}.lyricContext{font-size:calc(68px * var(--lyric-scale))}.lyricContext.previous{font-size:calc(44px * var(--lyric-scale))}
+  .stage .top .iconBtn{width:90px;height:90px}.stage .roomText{font-size:23px}.stage .samayLogo{width:230px;height:110px}
+  .infoCard{padding:32px 38px 24px}.title{font-size:54px}.infoCard .artist{font-size:34px}
+  .playBtn{width:132px;height:132px}.playBtn svg{width:56px;height:56px}.controlBtn{width:76px;height:76px}.controlBtn svg{width:46px;height:46px}
+  .times{font-size:23px}.state{font-size:15px}
+}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}

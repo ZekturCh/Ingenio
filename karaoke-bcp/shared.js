@@ -29,6 +29,7 @@ export const SONGS = [
     artist: "Bareto",
     enabled: true,
     audio: AUDIO_URL,
+    lyrics: "songs/carinito/lyrics-timed.json",
     versions: [
       {
         id: "chorus",

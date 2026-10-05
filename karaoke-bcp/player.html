@@ -1,313 +1,52 @@
 <!doctype html>
 <html lang="es">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#F67A1A">
-<title>Hallowow Karaoke · Player</title>
-<style>
-@font-face{font-family:"Flexo";src:url("assets/fonts/Flexo-Regular.woff2") format("woff2");font-style:normal;font-weight:400;font-display:swap}
-@font-face{font-family:"Flexo";src:url("assets/fonts/Flexo-Bold.woff2") format("woff2");font-style:normal;font-weight:700 900;font-display:swap}
-:root{--orange:#F36A18;--amber:#FFB338;--red:#D91F26;--red-dark:#A9141B;--cream:#FFF4E0;--ink:#2B1209;--night:#14100E}
-*{box-sizing:border-box}
-html,body{margin:0;width:100%;height:100%;min-height:100dvh;overflow:hidden}
-body{font-family:"Flexo",Verdana,system-ui,sans-serif;background:var(--orange);color:#fff}
-button,a{-webkit-tap-highlight-color:transparent}
-:focus-visible{outline:3px solid #fff;outline-offset:2px}
-
-.stage{
-  position:relative;isolation:isolate;overflow:hidden;width:100%;height:100%;min-height:100dvh;
-  display:flex;flex-direction:column;align-items:center;justify-content:center;padding:16px;
-  background:
-    radial-gradient(circle at 72% 6%,rgba(255,229,131,.9),transparent 20%),
-    radial-gradient(circle at 14% 30%,rgba(255,193,59,.6),transparent 26%),
-    radial-gradient(circle at 88% 82%,rgba(247,54,10,.4),transparent 32%),
-    linear-gradient(160deg,#FFB333 0%,#FF8B1D 24%,#F36A18 58%,#D7430B 100%);
-}
-.stage:before{
-  content:"";position:absolute;z-index:-1;left:50%;bottom:-6vh;width:min(110vw,980px);aspect-ratio:1;transform:translateX(-50%);
-  background:url("assets/calabaza-guitarra.webp") center bottom/contain no-repeat;opacity:.55;
-  filter:saturate(1.15) drop-shadow(0 26px 42px rgba(101,22,0,.2))
-}
-.ribbon{
-  position:absolute;z-index:-1;height:clamp(46px,7vw,84px);pointer-events:none;
-  background:linear-gradient(180deg,var(--red) 0 33%,#fff 33% 66%,var(--red) 66%);
-  box-shadow:0 10px 22px rgba(115,22,0,.18)
-}
-.ribbon.r1{width:60vw;right:-14vw;top:16%;transform:rotate(30deg)}
-.ribbon.r2{width:56vw;left:-16vw;bottom:14%;transform:rotate(-22deg)}
-
-/* ---------- Header ---------- */
-.top{position:absolute;z-index:6;top:max(14px,2vh);left:16px;right:16px;display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
-.iconBtn{
-  width:clamp(46px,5vw,60px);aspect-ratio:1;border-radius:50%;display:grid;place-items:center;flex:none;
-  background:rgba(38,18,12,.88);color:#fff;text-decoration:none;box-shadow:0 8px 18px rgba(80,16,0,.3)
-}
-.samayLogo{width:clamp(110px,17vw,200px);filter:drop-shadow(0 6px 12px rgba(99,22,0,.2));margin-top:2px}
-.roomPill{
-  display:flex;align-items:center;gap:9px;min-width:0;max-width:34vw;padding:9px 13px;border-radius:14px;
-  background:rgba(27,18,14,.92);box-shadow:0 8px 18px rgba(80,16,0,.3);font-weight:900;font-size:clamp(11px,1.2vw,15px);letter-spacing:.05em
-}
-.roomPill b{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.dot{width:16px;height:16px;border-radius:50%;flex:none;background:#8a8a8a;box-shadow:inset 0 -3px 4px rgba(0,0,0,.25)}
-.dot.online{background:radial-gradient(circle at 35% 30%,#7CFF6B,#23B21B)}
-.dot.local{background:radial-gradient(circle at 35% 30%,#FFE98A,#E5A912)}
-.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-.bat{position:absolute;right:8%;top:14%;width:min(8vw,90px);z-index:1;filter:drop-shadow(0 8px 14px rgba(93,20,0,.2))}
-@media(prefers-reduced-motion:no-preference){.bat{animation:float 3.6s ease-in-out infinite}}
-@keyframes float{50%{transform:translateY(-12px) rotate(5deg)}}
-
-/* ---------- Layout ---------- */
-.playerWrap{
-  position:relative;z-index:2;width:min(1000px,90vw);margin-top:clamp(70px,11vh,130px);
-  display:grid;gap:clamp(10px,2vh,18px)
-}
-.lyricPanel{
-  position:relative;border-radius:clamp(26px,3vw,40px);padding:clamp(22px,4vh,44px) clamp(22px,4vw,56px);
-  min-height:clamp(260px,46vh,470px);display:grid;align-content:center;
-  background:
-    radial-gradient(circle at 50% 12%,rgba(255,106,25,.16),transparent 40%),
-    linear-gradient(180deg,#1E1511,#0E0A08);
-  border:3px solid #FFAE3A;
-  box-shadow:0 0 0 7px rgba(255,255,255,.1),0 0 38px rgba(255,160,40,.35),0 26px 70px rgba(91,18,0,.35)
-}
-.deco{position:absolute;pointer-events:none;z-index:3}
-.deco.fl1{width:clamp(44px,6vw,86px);left:-3.2%;top:22%;color:#fff3df}
-.deco.fl2{width:clamp(36px,5vw,70px);right:-2.8%;top:8%;color:#E3262E}
-.deco.fl3{width:clamp(34px,4.6vw,64px);right:-2.4%;bottom:14%;color:#E3262E}
-.deco.fl4{width:clamp(30px,4vw,56px);left:-2.4%;bottom:10%;color:#E3262E}
-.deco.lf1{width:clamp(20px,2.6vw,38px);left:-1%;top:12%;transform:rotate(-30deg)}
-.deco.lf2{width:clamp(20px,2.6vw,38px);right:-1%;bottom:30%;transform:rotate(40deg)}
-
-.kicker{position:relative;z-index:2;text-align:center;font-size:clamp(11px,1.3vw,16px);font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#FF9C58;margin-bottom:2vh}
-
-.lyrics{position:relative;z-index:2;margin:0 auto;min-height:clamp(150px,28vh,300px);display:grid;align-content:center;gap:clamp(8px,1.4vh,16px);text-align:center;max-width:900px;width:100%}
-.prev,.next{min-height:1.2em;font-size:clamp(18px,2.3vw,34px);font-weight:800;line-height:1.1}
-.prev{color:rgba(255,255,255,.34)}
-.next{color:rgba(255,255,255,.82)}
-.current{position:relative;width:100%;font-size:clamp(34px,5vw,76px);line-height:1.04;font-weight:900;letter-spacing:-.01em;text-align:center}
-.currentBase,.currentFill{display:block;width:100%;white-space:normal;overflow-wrap:anywhere}
-.currentBase{color:#fff}
-.currentFill{position:absolute;inset:0;color:#FF7B28;text-shadow:0 0 22px rgba(255,107,20,.4);clip-path:inset(0 100% 0 0);transition:clip-path .04s linear}
-.guide{font-size:clamp(20px,2.2vw,30px);line-height:1.45;color:#E8D8CF}
-.guide .hint{color:#FF8A3B;font-weight:900;margin-bottom:6px}
-.idle .lyrics{opacity:.65}
-
-/* ---------- Info card ---------- */
-.infoCard{
-  position:relative;z-index:4;width:min(100%,820px);margin:0 auto;
-  padding:clamp(16px,2.4vh,28px) clamp(20px,3vw,40px);border-radius:clamp(24px,3vw,36px);text-align:center;
-  background:linear-gradient(180deg,#FFFAEE,#FFEFD6);border:1px solid rgba(255,255,255,.9);color:var(--ink);
-  box-shadow:0 20px 46px rgba(106,25,0,.28)
-}
-.title{margin:0;font-size:clamp(30px,4.4vw,62px);line-height:1;font-weight:900;color:#1E0D06;letter-spacing:-.01em}
-.artist{margin-top:6px;font-size:clamp(15px,1.8vw,26px);font-weight:700;color:#4B2A1D}
-.version{display:inline-flex;margin-top:8px;border-radius:999px;padding:5px 12px;background:#FFE0BC;color:#9A3A07;font-size:clamp(10px,1vw,13px);font-weight:900;letter-spacing:.04em}
-.progress{position:relative;height:clamp(9px,1.2vh,14px);margin-top:clamp(12px,2vh,22px);background:#E8D7C5;border-radius:999px}
-.bar{position:relative;display:block;height:100%;width:0;border-radius:inherit;background:linear-gradient(90deg,#FF9440,#F1530B)}
-.bar:after{
-  content:"";position:absolute;right:-.9em;top:50%;width:1.8em;height:1.8em;margin-top:-.9em;border-radius:50%;font-size:clamp(8px,1vw,12px);
-  background:radial-gradient(circle at 35% 30%,#FFF1B5,#FFC24A);border:2px solid #fff;box-shadow:0 3px 8px rgba(110,40,0,.35)
-}
-.times{display:flex;justify-content:space-between;margin-top:8px;font-size:clamp(12px,1.3vw,18px);font-weight:700;color:#3A2118;font-variant-numeric:tabular-nums}
-.controls{display:flex;justify-content:center;align-items:center;gap:clamp(18px,4vw,52px);margin-top:clamp(6px,1.2vh,14px);color:#1E0D06}
-.controls svg{width:clamp(22px,2.6vw,34px);height:clamp(22px,2.6vw,34px);flex:none}
-.controls .side{opacity:.55}
-.controls .heart{color:var(--red);opacity:.85}
-.playBtn{
-  width:clamp(60px,7.5vw,100px);aspect-ratio:1;border-radius:50%;display:grid;place-items:center;color:#fff;
-  background:radial-gradient(circle at 35% 28%,#FF9A4A,#F1530B);border:3px solid rgba(255,255,255,.85);
-  box-shadow:0 10px 22px rgba(190,60,6,.45)
-}
-.playBtn svg{width:46%;height:46%}
-.playBtn .i-play{display:none}
-.stage.paused .playBtn .i-pause{display:none}
-.stage.paused .playBtn .i-play{display:block}
-.state{margin-top:clamp(8px,1.4vh,14px);font-size:clamp(10px,1.1vw,14px);font-weight:800;letter-spacing:.05em;color:var(--red-dark)}
-
-/* ---------- Activation ---------- */
-.activate{position:fixed;inset:0;z-index:30;display:grid;place-items:center;padding:18px;background:rgba(92,19,0,.7);backdrop-filter:blur(16px)}
-.activate.hide{display:none}
-.card{width:min(510px,94vw);padding:26px;border-radius:28px;text-align:center;background:linear-gradient(150deg,#FF9F25,#EF6413 60%,#D9470B);border:2px solid rgba(255,255,255,.6);box-shadow:0 38px 90px rgba(78,16,0,.38)}
-.card img{width:min(220px,65%)}
-.card h2{margin:8px 0 5px;font-size:30px}
-.card p{margin:0 0 16px;color:#FFF0DC;line-height:1.45}
-.card button{width:100%;min-height:56px;border:0;border-radius:16px;background:#fff;color:var(--red);font-weight:900;font-size:15px;cursor:pointer}
-.warning{margin-top:10px;font-size:11px;color:#FFE7CA}
-
-/* ---------- Responsive ---------- */
-@media(max-width:700px){
-  .stage{padding:10px}.bat{display:none}
-  .top{left:10px;right:10px}.roomPill{max-width:46vw}
-  .playerWrap{width:94vw;margin-top:clamp(66px,11vh,96px)}
-  .lyricPanel{min-height:48vh;padding:22px 18px}
-  .deco.fl1{left:-5%}.deco.fl2,.deco.fl3{right:-5%}.deco.fl4{left:-5%}
-}
-@media(orientation:portrait) and (min-width:700px){
-  .playerWrap{width:88vw;margin-top:clamp(100px,12vh,150px)}
-  .lyricPanel{min-height:50vh}
-}
-/* TV / escritorio: tarjeta en dos columnas */
-@media(min-width:900px) and (orientation:landscape){
-  .infoCard{width:min(100%,980px);display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);column-gap:clamp(20px,3vw,48px);align-items:center;text-align:left}
-  .infoCard .meta{grid-column:1;grid-row:1 / span 3}
-  .infoCard .right{grid-column:2}
-  .controls{justify-content:space-between}
-}
-@media(orientation:landscape) and (max-height:720px){
-  .playerWrap{margin-top:clamp(58px,10vh,80px);gap:8px}
-  .lyricPanel{min-height:44vh;padding:16px 30px}
-  .kicker{margin-bottom:1vh}
-  .infoCard{padding:10px 22px}
-}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#ff6b19">
+  <title>Hallowow Criollazo | Karaoke</title>
+  <link rel="stylesheet" href="./karaoke.css?v=20261005">
+  <script src="./assets/vendor/lucide.min.js" defer></script>
+  <script type="module" src="./player.js?v=20261005"></script>
 </head>
-<body>
-
-<svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <defs>
-    <symbol id="flower" viewBox="0 0 100 100">
-      <g fill="currentColor">
-        <circle cx="50" cy="22" r="20"/>
-        <circle cx="50" cy="22" r="20" transform="rotate(72 50 50)"/>
-        <circle cx="50" cy="22" r="20" transform="rotate(144 50 50)"/>
-        <circle cx="50" cy="22" r="20" transform="rotate(216 50 50)"/>
-        <circle cx="50" cy="22" r="20" transform="rotate(288 50 50)"/>
-      </g>
-      <circle cx="50" cy="50" r="13" fill="#FFC53D"/>
-    </symbol>
-    <symbol id="leaf" viewBox="0 0 60 100"><path d="M30 0C62 30 62 70 30 100 -2 70 -2 30 30 0Z" fill="#2E7D32"/></symbol>
-  </defs>
-</svg>
-
-<div class="stage idle paused" id="stage">
-  <div class="ribbon r1" aria-hidden="true"></div>
-  <div class="ribbon r2" aria-hidden="true"></div>
-
-  <header class="top">
-    <a class="iconBtn" id="backBtn" aria-label="Volver al selector de canciones">
-      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>
-    </a>
-    <img class="samayLogo" src="assets/logo-samay.png" alt="Samay BCP">
-    <div class="roomPill"><i class="dot" id="dot"></i><span>SALA <b id="roomCode"></b></span><span class="sr" id="syncState">CONECTANDO</span></div>
-  </header>
-  <img class="bat" src="assets/murcielago.webp" alt="">
-
-  <main class="playerWrap">
-    <section class="lyricPanel">
-      <svg class="deco fl1" viewBox="0 0 100 100" aria-hidden="true"><use href="#flower"/></svg>
-      <svg class="deco fl2" viewBox="0 0 100 100" aria-hidden="true"><use href="#flower"/></svg>
-      <svg class="deco fl3" viewBox="0 0 100 100" aria-hidden="true"><use href="#flower"/></svg>
-      <svg class="deco fl4" viewBox="0 0 100 100" aria-hidden="true"><use href="#flower"/></svg>
-      <svg class="deco lf1" viewBox="0 0 60 100" aria-hidden="true"><use href="#leaf"/></svg>
-      <svg class="deco lf2" viewBox="0 0 60 100" aria-hidden="true"><use href="#leaf"/></svg>
-
-      <div class="kicker" id="kicker">Pantalla de karaoke</div>
-      <section class="lyrics" id="lyrics" aria-live="off">
-        <div class="prev" id="prev"></div>
-        <div class="current" id="current"><span class="currentBase" id="currentBase">🎤</span><span class="currentFill" id="currentFill">🎤</span></div>
-        <div class="next" id="next"></div>
-      </section>
-    </section>
-
-    <section class="infoCard">
-      <div class="meta">
-        <h1 class="title" id="title">Esperando canción</h1>
-        <div class="artist" id="artist">Elige una canción desde el celular</div>
-        <div class="version" id="version">Sala lista</div>
-      </div>
-      <div class="right">
-        <div class="progress"><i class="bar" id="bar"></i></div>
-        <div class="times"><span id="elapsed">00:00</span><span id="remaining">00:00</span></div>
-        <div class="controls" aria-hidden="true">
-          <svg class="side" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3h5v5M4 20l17-17M21 16v5h-5M15 15l6 6M4 4l5 5"/></svg>
-          <svg class="side" viewBox="0 0 24 24" fill="currentColor"><path d="M6 5h2.5v14H6zM20 5v14L9.5 12z"/></svg>
-          <span class="playBtn">
-            <svg class="i-pause" viewBox="0 0 24 24" fill="currentColor"><rect x="5" y="4" width="5" height="16" rx="1.5"/><rect x="14" y="4" width="5" height="16" rx="1.5"/></svg>
-            <svg class="i-play" viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l13-7.5z"/></svg>
-          </span>
-          <svg class="side" viewBox="0 0 24 24" fill="currentColor"><path d="M15.5 5H18v14h-2.5zM4 5v14l10.5-7z"/></svg>
-          <svg class="heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"><path d="M12 20.5s-7.5-4.6-9.3-9.2C1.5 8 3.4 4.8 6.6 4.8c2 0 3.7 1.1 5.4 3.1 1.7-2 3.4-3.1 5.4-3.1 3.2 0 5.1 3.2 3.9 6.5-1.8 4.6-9.3 9.2-9.3 9.2z"/></svg>
+<body class="player-page">
+  <div class="stage idle paused" id="stage">
+    <header class="top">
+      <a class="iconBtn" id="backBtn" aria-label="Volver al selector de canciones" title="Volver"><i data-lucide="chevron-left"></i></a>
+      <img class="samayLogo" src="assets/logo-samay.png" alt="Samay BCP">
+      <button class="roomPill" id="fullscreenBtn" title="Pantalla completa" aria-label="Pantalla completa"><span class="dot" id="dot"></span><span class="roomText"><span>SALA</span><b id="roomCode">HALLOWOW</b></span><i data-lucide="chevron-down"></i></button>
+      <span class="sr" id="syncState" role="status">Conectando</span>
+    </header>
+    <main class="playerWrap">
+      <section class="lyricPanel" aria-label="Letra de la canción">
+        <p class="kicker sr" id="kicker">Pantalla de karaoke</p>
+        <div class="lyrics" id="lyrics" aria-live="off">
+          <p class="lyricContext previous" id="prev"></p>
+          <p class="current" id="current"><span class="currentBase" id="currentBase">Vamos a cantar</span><span class="currentFill" id="currentFill" aria-hidden="true">Vamos a cantar</span></p>
+          <p class="lyricContext" id="next"></p><p class="lyricContext" id="next2"></p><p class="lyricContext" id="next3"></p>
         </div>
-        <div class="state" id="playerState">ACTIVA ESTA PANTALLA UNA VEZ Y DÉJALA ABIERTA</div>
-      </div>
-    </section>
-  </main>
-</div>
-
-<div class="activate" id="activate">
-  <div class="card">
-    <img src="assets/logo-hallowow.webp" alt="Hallowow">
-    <h2>Activar karaoke</h2>
-    <p>Activa el audio una vez en esta PC. Luego el celular podrá enviar la canción y controlar la reproducción.</p>
-    <button id="activateBtn">🔊 ACTIVAR AUDIO Y CONECTAR</button>
-    <div class="warning">El audio saldrá únicamente por esta PC / TV.</div>
+      </section>
+      <section class="infoCard" aria-label="Reproducción">
+        <div class="meta"><h1 class="title" id="title">Esperando canción</h1><p class="artist" id="artist">Samay BCP</p><span class="version sr" id="version">Sala lista</span></div>
+        <div class="playback">
+          <label class="sr" for="seek">Posición de la canción</label><input class="seek" id="seek" type="range" min="0" max="100" value="0" step="0.1" disabled>
+          <div class="times"><span id="elapsed">00:00</span><span id="remaining">00:00</span></div>
+          <div class="controls">
+            <button class="controlBtn" id="shuffleBtn" aria-label="Reproducción aleatoria" aria-pressed="false" title="Aleatorio"><i data-lucide="shuffle"></i></button>
+            <button class="controlBtn" id="previousBtn" aria-label="Canción anterior" title="Anterior"><i data-lucide="skip-back"></i></button>
+            <button class="playBtn" id="playBtn" aria-label="Reproducir" title="Reproducir"><i class="i-pause" data-lucide="pause"></i><i class="i-play" data-lucide="play"></i></button>
+            <button class="controlBtn" id="nextBtn" aria-label="Siguiente canción" title="Siguiente"><i data-lucide="skip-forward"></i></button>
+            <button class="controlBtn heart" id="favoriteBtn" aria-label="Marcar favorita" aria-pressed="false" title="Favorita"><i data-lucide="heart"></i></button>
+          </div>
+          <p class="state" id="playerState" role="status">Selecciona una canción</p>
+        </div>
+      </section>
+    </main>
   </div>
-</div>
-
-<audio id="audio" preload="auto" src="../cariñitobareto.mp3"></audio>
-
-<script type="module">
-import { roomFromUrl, subscribeRoom, getSong, getVersion, controllerUrl } from "./shared.js";
-const room=roomFromUrl(),audio=document.querySelector("#audio"),stage=document.querySelector("#stage"),$=s=>document.querySelector(s);
-$("#roomCode").textContent=room;
-$("#backBtn").href=controllerUrl(room);
-let unlocked=false,pending=null,activeState=null,activeSong=null,activeVersion=null,lyricData=[],timedLyrics=false,lastCommand="stop";
-
-function mmss(v){const n=Math.max(0,Number(v)||0),m=Math.floor(n/60),s=Math.floor(n%60);return String(m).padStart(2,"0")+":"+String(s).padStart(2,"0")}
-function setSync(mode){
-  $("#syncState").textContent=mode==="online"?"EN LÍNEA":"MODO LOCAL";
-  $("#dot").className="dot "+(mode==="online"?"online":"local");
-}
-async function loadLyrics(){
-  const urls=["songs/carinito/lyrics-timed.json","songs/carinito/lyrics-template.json"];
-  for(const url of urls){try{const r=await fetch(url,{cache:"no-store"});if(!r.ok)continue;const d=await r.json();lyricData=Array.isArray(d.lyrics)?d.lyrics:[];timedLyrics=lyricData.some(x=>Number.isFinite(Number(x.start??x.time)));return}catch{}}
-}
-function renderSong(){
-  if(!activeSong||!activeVersion)return;stage.classList.remove("idle");
-  $("#kicker").textContent="Ahora canta";$("#title").textContent=activeSong.title;$("#artist").textContent=activeSong.artist;
-  $("#version").textContent=`${activeVersion.label.toUpperCase()} · ${activeVersion.durationLabel}`;$("#remaining").textContent=activeVersion.durationLabel;
-  if(!timedLyrics){
-    $("#lyrics").innerHTML='<div class="guide"><div class="hint">LETRA EN MODO GUÍA</div><div>La pista ya está operativa.</div><div>Falta terminar los timestamps para que cada frase avance sola.</div></div>';
-  }else{
-    $("#lyrics").innerHTML='<div class="prev" id="prev"></div><div class="current" id="current"><span class="currentBase" id="currentBase">♪</span><span class="currentFill" id="currentFill">♪</span></div><div class="next" id="next"></div>';
-  }
-}
-function renderTimedLyrics(t){
-  if(!timedLyrics)return;
-  const valid=lyricData.filter(x=>Number.isFinite(Number(x.start??x.time))).sort((a,b)=>Number(a.start??a.time)-Number(b.start??b.time));
-  let index=-1;for(let i=0;i<valid.length;i++){if(Number(valid[i].start??valid[i].time)<=t)index=i;else break}
-  const line=index>=0?valid[index]:null,prev=index>0?valid[index-1]?.text:"",next=index+1<valid.length?valid[index+1]?.text:"";
-  const base=$("#currentBase"),fill=$("#currentFill");if(!base||!fill)return;
-  const text=line?.text||"♪";base.textContent=text;fill.textContent=text;$("#prev").textContent=prev||"";$("#next").textContent=next||"";
-  if(!line){fill.style.clipPath="inset(0 100% 0 0)";return}
-  const start=Number(line.start??line.time),end=Number(line.end??(start+2.4)),p=Math.max(0,Math.min(1,(t-start)/Math.max(.2,end-start)));
-  fill.style.clipPath=`inset(0 ${((1-p)*100).toFixed(1)}% 0 0)`;
-}
-function applySelection(state){
-  const song=getSong(state.songId),version=getVersion(song,state.versionId);if(!song||!version)return false;
-  const changed=!activeSong||activeSong.id!==song.id||!activeVersion||activeVersion.id!==version.id;activeState=state;activeSong=song;activeVersion=version;if(changed)renderSong();return changed;
-}
-async function execute(state){
-  const changed=applySelection(state),command=state.command||"load",start=Number(state.startAt??activeVersion.startAt),end=Number(state.endAt??activeVersion.endAt);
-  if(command==="load"){audio.pause();audio.currentTime=start;$("#playerState").textContent="CANCIÓN CARGADA · ESPERANDO PLAY"}
-  else if(command==="pause"){audio.pause();$("#playerState").textContent="PAUSA"}
-  else if(command==="stop"){audio.pause();audio.currentTime=start;$("#playerState").textContent="DETENIDO"}
-  else if(command==="restart"){audio.currentTime=start;try{await audio.play();$("#playerState").textContent="REPRODUCIENDO"}catch{$("#playerState").textContent="ACTIVA AUDIO EN ESTA PANTALLA"}}
-  else if(command==="play"){if(changed||lastCommand==="stop"||audio.currentTime<start||audio.currentTime>=end-.25)audio.currentTime=start;try{await audio.play();$("#playerState").textContent="REPRODUCIENDO"}catch{$("#playerState").textContent="ACTIVA AUDIO EN ESTA PANTALLA"}}
-  lastCommand=command;
-}
-function receive(state){if(!unlocked){pending=state;applySelection(state);return}execute(state)}
-audio.addEventListener("timeupdate",()=>{
-  if(!activeVersion)return;const start=Number(activeState?.startAt??activeVersion.startAt),end=Number(activeState?.endAt??activeVersion.endAt),span=Math.max(.1,end-start),pos=Math.min(span,Math.max(0,audio.currentTime-start));
-  $("#bar").style.width=(pos/span*100)+"%";$("#elapsed").textContent=mmss(pos);$("#remaining").textContent=mmss(span);renderTimedLyrics(audio.currentTime);
-  if(!audio.paused&&audio.currentTime>=end-.04){audio.pause();audio.currentTime=end;$("#playerState").textContent="FINALIZADO"}
-});
-audio.addEventListener("play",()=>stage.classList.remove("paused"));
-audio.addEventListener("pause",()=>stage.classList.add("paused"));
-audio.addEventListener("ended",()=>{$("#playerState").textContent="FINALIZADO";stage.classList.add("paused")});
-$("#activateBtn").onclick=async()=>{try{audio.volume=1;await audio.play();audio.pause();audio.currentTime=0}catch{}unlocked=true;$("#activate").classList.add("hide");$("#playerState").textContent="PANTALLA ACTIVA · ESPERANDO SELECCIÓN";if(pending){const p=pending;pending=null;execute(p)}};
-await loadLyrics();subscribeRoom(room,receive,setSync);
-</script>
+  <dialog class="dialog activate" id="activate" aria-labelledby="activateTitle">
+    <img src="assets/logo-hallowow.webp" alt="Hallowow Criollazo"><h2 id="activateTitle">Que empiece el criollazo</h2>
+    <button class="primaryButton" id="activateBtn"><i data-lucide="volume-2"></i>Activar audio</button><p id="activationState" role="status"></p>
+  </dialog>
+  <audio id="audio" preload="metadata" src="../cariñitobareto.mp3"></audio>
 </body>
 </html>
