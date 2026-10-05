@@ -4,84 +4,127 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#0b0503">
-<title>Samay Karaoke · BCP</title>
+<title>Hallowow Karaoke</title>
 <style>
-:root{--orange:#ff5a00;--orange2:#ff7b22;--cream:#fff4e8;--muted:#aa9183;--line:#4f291c;--panel:#130a07}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;min-height:100vh;background:radial-gradient(circle at 50% -10%,rgba(255,89,0,.18),transparent 34%),linear-gradient(#0a0605,#050404 68%,#0d0502);color:var(--cream);font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif}
-button,input{font:inherit}.wrap{width:min(1040px,calc(100% - 24px));margin:auto;padding:26px 0 52px}.top{display:flex;justify-content:space-between;align-items:center;gap:16px}.brand{display:flex;align-items:center;gap:12px}.samay{display:flex;gap:4px;font-weight:1000}.samay i{font-style:normal;display:grid;place-items:center;width:35px;height:35px;border-radius:50%;color:#fff;box-shadow:inset 0 -3px 0 #0003}.samay i:nth-child(1){background:#ef006c}.samay i:nth-child(2){background:#7156e8}.samay i:nth-child(3){background:#ff9b00}.samay i:nth-child(4){background:#00a9c4}.samay i:nth-child(5){background:#df2929}.bcp{font-size:12px;font-weight:1000;letter-spacing:.13em}.hero{margin-top:24px;border:1px solid #67331e;border-radius:28px;padding:34px;position:relative;overflow:hidden;background:linear-gradient(100deg,#130905,#0b0706 68%,#281006);box-shadow:0 25px 80px #0007}.hero:after{content:"✦  ❀  ♪  ✿  ♫";position:absolute;right:-25px;bottom:-15px;color:#ff5a00;font-size:37px;letter-spacing:16px;opacity:.45;transform:rotate(-7deg)}.eyebrow{font:italic 17px Georgia,serif;color:#ffae78}.hero h1{margin:0;font-family:"Brush Script MT","Segoe Script",cursive;font-weight:500;font-size:clamp(65px,11vw,115px);line-height:.92}.sub{font-size:10px;text-transform:uppercase;letter-spacing:.38em;color:#d2bcaf;font-weight:900;margin-top:8px}.search{margin-top:24px;display:flex;gap:8px;max-width:760px}.search input{flex:1;min-width:0;border:1px solid #4c281d;border-radius:14px;padding:15px 16px;background:#070504;color:#fff;outline:none}.search input:focus{border-color:#ff6b1b;box-shadow:0 0 0 3px #ff5a001c}.search button{border:0;border-radius:12px;padding:0 22px;background:linear-gradient(135deg,#ff4e00,#ff7a22);color:#fff;font-weight:1000}.head{display:flex;justify-content:space-between;align-items:end;margin:28px 2px 12px}.head h2{margin:0;font-size:18px;text-transform:uppercase;letter-spacing:.08em}.head small{color:#9f887a}.songs{display:grid;gap:10px}.song{width:100%;display:grid;grid-template-columns:54px 1fr auto;align-items:center;gap:13px;border:1px solid #43241a;background:linear-gradient(180deg,#1a0e0a,#0d0806);color:#fff;border-radius:16px;padding:13px;text-align:left;transition:.2s}.song.enabled{border-color:#8e4020;box-shadow:0 13px 35px #0004}.song.enabled:hover{transform:translateY(-2px);border-color:#ff6b21;background:#211008;cursor:pointer}.song.disabled{opacity:.42;filter:saturate(.45);cursor:not-allowed}.num{width:46px;height:46px;display:grid;place-items:center;border-radius:13px;background:#27130d;color:#ff762b;font-weight:1000}.song b{display:block;font-size:15px}.song .artist{display:block;font-size:12px;color:#ad9688;margin-top:4px}.status{justify-self:end;display:flex;align-items:center;gap:8px;font-size:11px;font-weight:1000;letter-spacing:.08em}.status.live{color:#ff8140}.status.locked{color:#8c7568}.dot{width:8px;height:8px;border-radius:50%;background:currentColor;box-shadow:0 0 16px currentColor}.featured{margin-top:14px;border:1px solid #8a3c1b;border-radius:22px;background:radial-gradient(circle at 80% 0,#4a1704 0,transparent 35%),linear-gradient(145deg,#1d0d07,#0c0705);padding:22px;display:none}.featured.show{display:block}.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:20px}.cover{min-height:250px;border-radius:18px;border:1px solid #67301b;background:radial-gradient(circle at 50% 35%,#ff7025 0 8%,transparent 9%),radial-gradient(circle at 50% 60%,#56210d 0 24%,transparent 25%),linear-gradient(145deg,#351407,#100806);display:grid;place-items:center;text-align:center;padding:24px}.cover .big{font-family:"Brush Script MT","Segoe Script",cursive;font-size:72px;line-height:.85}.cover span{display:block;color:#ff874b;font-weight:1000;margin-top:10px}.meta{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0 18px}.pill{border:1px solid #61311f;border-radius:999px;padding:7px 10px;font-size:11px;color:#d6bdad}.actions{display:flex;gap:9px;flex-wrap:wrap}.actions button,.actions a{border-radius:12px;padding:12px 15px;font-weight:1000;text-decoration:none}.primary{border:0;background:linear-gradient(135deg,#ff4d00,#ff7922);color:#fff}.secondary{border:1px solid #5c3020;background:#120a07;color:#efd7ca}.lyricsBox{margin-top:17px;border:1px solid #3c2118;border-radius:17px;background:#090605;padding:16px;max-height:300px;overflow:auto}.lyricsBox p{margin:0 0 9px;color:#a99182;line-height:1.35}.lyricsBox p:nth-child(4),.lyricsBox p:nth-child(11),.lyricsBox p:nth-child(19){color:#fff;font-weight:900}.footer{margin-top:32px;height:72px;border-top:1px solid #4a2417;display:grid;place-items:center;color:#ff5d10;letter-spacing:18px;font-size:27px;opacity:.65}.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,30px);opacity:0;background:#fff0df;color:#311407;padding:11px 16px;border-radius:999px;font-weight:900;transition:.25s;pointer-events:none}.toast.show{opacity:1;transform:translate(-50%,0)}
-@media(max-width:760px){.hero{padding:25px 18px}.fgrid{grid-template-columns:1fr}.song{grid-template-columns:48px 1fr}.status{grid-column:2;justify-self:start}.search button{padding:0 14px}.cover{min-height:190px}.wrap{padding-top:16px}}
+:root{--o:#ff5a00;--o2:#ff8a42;--cream:#fff2e4;--muted:#aa8e7e;--line:#512819;--panel:#150a07}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;min-height:100vh;background:radial-gradient(circle at 50% -5%,rgba(255,86,0,.19),transparent 33%),linear-gradient(#0b0604,#050303 70%,#110501);color:var(--cream);font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;overflow-x:hidden}
+button,input{font:inherit}.wrap{width:min(1040px,calc(100% - 24px));margin:auto;padding:20px 0 52px}.top{display:flex;justify-content:space-between;align-items:center;gap:12px}.campaignLogo{width:min(250px,50vw);filter:drop-shadow(0 12px 28px #0008)}.topActions{display:flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:flex-end}.room,.linkBtn{border:1px solid #5c2d1b;background:#120806;color:#d7baa9;border-radius:999px;padding:9px 12px;font-size:11px;font-weight:1000;text-decoration:none}.sync.online{color:#6de19a}.sync.local{color:#ffc06a}
+.hero{margin-top:15px;min-height:310px;border:1px solid #71351d;border-radius:28px;padding:38px;position:relative;overflow:hidden;background:radial-gradient(circle at 80% 20%,#351002 0,transparent 33%),linear-gradient(100deg,#160904,#090504 72%);box-shadow:0 25px 80px #0008}.moon{position:absolute;right:-28px;top:-20px;width:min(31vw,310px);opacity:.83;pointer-events:none}.bat{position:absolute;right:29%;top:40px;width:min(12vw,125px);animation:float 3.8s ease-in-out infinite;pointer-events:none}.pumpkin{position:absolute;right:6%;bottom:-32px;width:min(24vw,225px);pointer-events:none}.heroCopy{position:relative;z-index:2;max-width:650px}.eyebrow{font:italic 17px Georgia,serif;color:#ffad78}.hero h1{margin:2px 0 0;font-family:"Brush Script MT","Segoe Script",cursive;font-weight:500;font-size:clamp(64px,11vw,116px);line-height:.88}.sub{font-size:10px;text-transform:uppercase;letter-spacing:.39em;color:#d2bcad;font-weight:900;margin-top:9px}.search{margin-top:25px;display:flex;gap:8px;max-width:670px}.search input{flex:1;min-width:0;border:1px solid #4d281b;border-radius:14px;padding:15px 16px;background:#070403df;color:#fff;outline:none}.search input:focus{border-color:#ff6a1d;box-shadow:0 0 0 3px #ff5a001b}.search button{border:0;border-radius:12px;padding:0 21px;background:linear-gradient(135deg,#ff4d00,#ff7b24);color:#fff;font-weight:1000}
+@keyframes float{50%{transform:translateY(-14px) rotate(5deg)}}
+.head{display:flex;justify-content:space-between;align-items:end;gap:10px;margin:28px 2px 12px}.head h2{margin:0;font-size:18px;text-transform:uppercase;letter-spacing:.08em}.head small{color:#987f72}.songs{display:grid;gap:10px}.song{width:100%;display:grid;grid-template-columns:54px 1fr auto;align-items:center;gap:13px;border:1px solid #432319;background:linear-gradient(180deg,#1a0e09,#0d0705);color:#fff;border-radius:16px;padding:13px;text-align:left;transition:.2s}.song.enabled{border-color:#8f411f;box-shadow:0 13px 35px #0004}.song.enabled:hover{transform:translateY(-2px);border-color:#ff6a20;background:#211008;cursor:pointer}.song.disabled{opacity:.4;filter:saturate(.5);cursor:not-allowed}.num{width:46px;height:46px;display:grid;place-items:center;border-radius:13px;background:#28130c;color:#ff772e;font-weight:1000}.song b{display:block;font-size:15px}.artist{display:block;font-size:12px;color:#ad9587;margin-top:4px}.status{justify-self:end;display:flex;align-items:center;gap:8px;font-size:11px;font-weight:1000;letter-spacing:.07em}.status.live{color:#ff8547}.status.locked{color:#8f786b}.dot{width:8px;height:8px;border-radius:50%;background:currentColor;box-shadow:0 0 15px currentColor}
+.footer{margin-top:30px;height:75px;border-top:1px solid #462317;display:grid;place-items:center;color:#ff5b0c;letter-spacing:18px;font-size:27px;opacity:.62}
+.modal{position:fixed;inset:0;z-index:20;background:rgba(3,2,1,.78);backdrop-filter:blur(14px);display:none;place-items:center;padding:18px}.modal.open{display:grid}.dialog{width:min(570px,100%);border:1px solid #81401f;background:linear-gradient(155deg,#251006,#0e0705);border-radius:26px;padding:22px;box-shadow:0 40px 100px #000c;position:relative;overflow:hidden}.dialog:after{content:"";position:absolute;right:-60px;top:-50px;width:180px;height:180px;background:url("assets/murcielago.webp") center/contain no-repeat;opacity:.2;pointer-events:none}.dialogTop{position:relative;z-index:2;display:flex;justify-content:space-between;gap:14px}.label{font-size:10px;font-weight:1000;letter-spacing:.15em;color:#ff7f3a}.dialog h2{font-size:34px;margin:6px 0 2px}.dialogArtist{color:#c6a99a;font-weight:800}.close{border:1px solid #69341e;background:#1a0b07;color:#ffb38a;width:39px;height:39px;border-radius:50%;font-size:20px;cursor:pointer}.versions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:20px;position:relative;z-index:2}.version{border:1px solid #67351f;background:#100805;color:#fff;border-radius:18px;padding:17px;text-align:left;cursor:pointer;transition:.18s}.version:hover{border-color:#ff6920;transform:translateY(-2px)}.version strong{display:block;font-size:18px}.version .duration{font-size:34px;font-weight:1000;color:#ff7c38;margin:5px 0}.version small{color:#9d8274}.version.recommended{background:linear-gradient(150deg,#321207,#150906);border-color:#a84a1e}.version.recommended:before{content:"RECOMENDADA";display:inline-flex;font-size:9px;font-weight:1000;letter-spacing:.1em;color:#fff;background:#ff5600;border-radius:99px;padding:5px 7px;margin-bottom:9px}
+.modalNote{margin-top:14px;color:#8f7568;font-size:11px;line-height:1.5;position:relative;z-index:2}.toast{position:fixed;left:50%;bottom:24px;z-index:40;transform:translate(-50%,30px);opacity:0;pointer-events:none;background:#fff0df;color:#311407;padding:11px 16px;border-radius:999px;font-weight:900;transition:.25s;white-space:nowrap;max-width:90vw;overflow:hidden;text-overflow:ellipsis}.toast.show{opacity:1;transform:translate(-50%,0)}
+@media(max-width:720px){.wrap{padding-top:12px}.top{align-items:flex-start}.linkBtn{display:none}.hero{padding:28px 18px;min-height:300px}.moon{width:46vw;right:-45px}.pumpkin{width:38vw;right:-18px}.bat{right:24%;width:18vw}.heroCopy{max-width:80%}.search{max-width:100%}.song{grid-template-columns:48px 1fr}.status{grid-column:2;justify-self:start}.versions{grid-template-columns:1fr}.head small{display:none}}
 </style>
 </head>
 <body>
 <div class="wrap">
   <header class="top">
-    <div class="brand"><div class="samay"><i>s</i><i>a</i><i>m</i><i>a</i><i>y</i></div><div class="bcp">› BCP</div></div>
-    <div style="font-size:28px">🦇</div>
+    <img class="campaignLogo" src="assets/logo-hallowow.webp" alt="Hallowow Criollazo">
+    <div class="topActions">
+      <div class="room">SALA <b id="room"></b> · <span class="sync" id="sync">CONECTANDO</span></div>
+      <a class="linkBtn" id="playerLink" target="_blank">PLAYER TV</a>
+      <a class="linkBtn" id="adminLink" target="_blank">ADMIN</a>
+    </div>
   </header>
 
   <section class="hero">
-    <div class="eyebrow">Entre tradición y buenas historias</div>
-    <h1>Karaoke</h1>
-    <div class="sub">Canta · Disfruta · Conecta</div>
-    <div class="search">
-      <input id="search" placeholder="Busca tu canción o artista…" autocomplete="off">
-      <button id="find">BUSCAR</button>
-    </div>
-  </section>
-
-  <div class="head"><div><h2>Canciones</h2><small>Selección inicial para la experiencia</small></div><small>1 disponible · 4 próximamente</small></div>
-  <section class="songs" id="songs"></section>
-
-  <section class="featured" id="featured">
-    <div class="fgrid">
-      <div class="cover"><div><div class="big">Cariñito</div><span>BARETO</span><div style="margin-top:18px;font-size:44px">🎤</div></div></div>
-      <div>
-        <div style="color:#ff7b37;font-size:11px;font-weight:1000;letter-spacing:.14em">DISPONIBLE AHORA</div>
-        <h2 style="font-size:32px;margin:7px 0 2px">Cariñito</h2>
-        <div style="color:#ccb1a1;font-weight:800">Bareto</div>
-        <div class="meta"><span class="pill">Karaoke interno</span><span class="pill">3:43</span><span class="pill">~99 BPM</span></div>
-        <p style="color:#ad9485;line-height:1.55">Esta es la canción piloto. La letra ya está cargada y el siguiente paso es terminar sus timestamps para que vaya avanzando automáticamente con la pista instrumental.</p>
-        <div class="actions">
-          <a class="primary" href="timing-editor.html">🎧 ABRIR CARIÑITO / TIMEAR</a>
-          <button class="secondary" id="previewLyrics">VER LETRA</button>
-        </div>
+    <img class="moon" src="assets/luna-halloween.webp" alt="">
+    <img class="bat" src="assets/murcielago.webp" alt="">
+    <img class="pumpkin" src="assets/calabaza-guitarra.webp" alt="">
+    <div class="heroCopy">
+      <div class="eyebrow">Entre tradición y buenas historias</div>
+      <h1>Karaoke</h1>
+      <div class="sub">Canta · Disfruta · Conecta</div>
+      <div class="search">
+        <input id="search" placeholder="Busca tu canción o artista…" autocomplete="off">
+        <button id="find">BUSCAR</button>
       </div>
     </div>
-    <div class="lyricsBox" id="lyricsBox" style="display:none"></div>
   </section>
 
+  <div class="head">
+    <div><h2>Canciones</h2><small>Selección inicial para la experiencia</small></div>
+    <small>1 disponible · 4 próximamente</small>
+  </div>
+  <section class="songs" id="songs"></section>
   <div class="footer">❀ ✦ ♪ ✿ ♫ ❀</div>
 </div>
-<div class="toast" id="toast">Esa canción estará disponible próximamente.</div>
-<script>
-const songs=[
- {id:1,title:"Cariñito",artist:"Bareto",enabled:true},
- {id:2,title:"Ódiame",artist:"Eva Ayllón",enabled:false},
- {id:3,title:"Himno Nacional del Perú",artist:"Perú",enabled:false},
- {id:4,title:"Cuando pienses en volver",artist:"Pedro Suárez-Vértiz",enabled:false},
- {id:5,title:"Ritmo, color y sabor",artist:"Eva Ayllón",enabled:false}
-];
-const lyrics=[
-"Uy","Ahora sí","Upa","Lloro","Por quererte","Por amarte","Por desearte","Lloro","Por quererte","Por amarte","Por desearte","Ay cariño","Ay mi vida","Nunca, pero nunca me abandones cariñito","Nunca, pero nunca me abandones cariñito","No llores, oye","Qué cosa","Hey","Lloro","Por quererte","Por amarte","Por desearte","Lloro","Por quererte","Por amarte","Por desearte","Ay cariño","Ay mi vida","Nunca, pero nunca me abandones cariñito","Nunca, pero nunca me abandones cariñito","Uy","Suavecito","Toma esto","Para que me recuerdes","Hey hey hey hey","Hey hey hey hey","Hey hey hey hey","Hey hey hey hey"
-];
-const box=document.querySelector("#songs"),featured=document.querySelector("#featured"),toast=document.querySelector("#toast"),search=document.querySelector("#search");
-function render(){
- const q=search.value.trim().toLowerCase();
- const list=songs.filter(s=>(s.title+" "+s.artist).toLowerCase().includes(q));
- box.innerHTML=list.map(s=>`<button class="song ${s.enabled?"enabled":"disabled"}" data-id="${s.id}" ${s.enabled?"":"aria-disabled='true'"}><span class="num">${String(s.id).padStart(2,"0")}</span><span><b>${s.title}</b><span class="artist">${s.artist}</span></span><span class="status ${s.enabled?"live":"locked"}"><span class="dot"></span>${s.enabled?"DISPONIBLE":"PRÓXIMAMENTE 🔒"}</span></button>`).join("")||'<div style="padding:28px;border:1px dashed #4a281b;border-radius:15px;color:#9d887c">No encontré esa canción.</div>';
- document.querySelectorAll(".song").forEach(el=>el.onclick=()=>{
-   const s=songs.find(x=>x.id===+el.dataset.id);
-   if(!s.enabled){toast.classList.add("show");setTimeout(()=>toast.classList.remove("show"),1700);return}
-   featured.classList.add("show");featured.scrollIntoView({behavior:"smooth",block:"start"});
- });
+
+<div class="modal" id="modal">
+  <div class="dialog">
+    <div class="dialogTop">
+      <div>
+        <div class="label">ELIGE CÓMO QUIERES CANTAR</div>
+        <h2>Cariñito</h2>
+        <div class="dialogArtist">Bareto</div>
+      </div>
+      <button class="close" id="close">×</button>
+    </div>
+    <div class="versions" id="versions"></div>
+    <div class="modalNote">La versión de 1 minuto usa un fragmento del mismo instrumental. La canción completa dura 3:44 en el MP3 que subiste.</div>
+  </div>
+</div>
+<div class="toast" id="toast"></div>
+
+<script type="module">
+import { SONGS, roomFromUrl, sendCommand, subscribeRoom, playerUrl, adminUrl } from "./shared.js";
+
+const room=roomFromUrl(),$=s=>document.querySelector(s);
+$("#room").textContent=room;
+$("#playerLink").href=playerUrl(room);
+$("#adminLink").href=adminUrl(room);
+
+let query="";
+function toast(message){
+  const el=$("#toast");el.textContent=message;el.classList.add("show");clearTimeout(window.__toast);
+  window.__toast=setTimeout(()=>el.classList.remove("show"),1900);
 }
-document.querySelector("#find").onclick=render;search.oninput=render;
-document.querySelector("#previewLyrics").onclick=()=>{
- const l=document.querySelector("#lyricsBox");l.style.display=l.style.display==="none"?"block":"none";
- l.innerHTML=lyrics.map(x=>`<p>${x}</p>`).join("");
- document.querySelector("#previewLyrics").textContent=l.style.display==="none"?"VER LETRA":"OCULTAR LETRA";
-};
-render();
+function renderSongs(){
+  const list=SONGS.filter(s=>(s.title+" "+s.artist).toLowerCase().includes(query.toLowerCase()));
+  $("#songs").innerHTML=list.length?list.map((s,i)=>`
+    <button class="song ${s.enabled?"enabled":"disabled"}" data-id="${s.id}" ${s.enabled?"":"aria-disabled='true'"}>
+      <span class="num">${String(i+1).padStart(2,"0")}</span>
+      <span><b>${s.title}</b><span class="artist">${s.artist}</span></span>
+      <span class="status ${s.enabled?"live":"locked"}"><span class="dot"></span>${s.enabled?"DISPONIBLE":"PRÓXIMAMENTE 🔒"}</span>
+    </button>`).join(""):'<div style="padding:28px;border:1px dashed #4a281b;border-radius:15px;color:#9d887c">No encontré esa canción.</div>';
+
+  document.querySelectorAll(".song").forEach(btn=>btn.onclick=()=>{
+    const song=SONGS.find(s=>s.id===btn.dataset.id);
+    if(!song?.enabled){toast("Esa canción estará disponible próximamente.");return;}
+    openVersions(song);
+  });
+}
+function openVersions(song){
+  $("#versions").innerHTML=song.versions.map(v=>`
+    <button class="version ${v.id==="chorus"?"recommended":""}" data-version="${v.id}">
+      <strong>${v.label}</strong>
+      <div class="duration">${v.durationLabel}</div>
+      <small>${v.note}</small>
+    </button>`).join("");
+  document.querySelectorAll(".version").forEach(btn=>btn.onclick=async()=>{
+    const version=song.versions.find(v=>v.id===btn.dataset.version);
+    const result=await sendCommand(room,{
+      songId:song.id,versionId:version.id,command:"play",
+      startAt:version.startAt,endAt:version.endAt
+    });
+    $("#modal").classList.remove("open");
+    toast(result.mode==="online"
+      ?`${song.title} · ${version.label} enviada a la TV 🎤`
+      :"Selección guardada. Para celular ↔ PC falta habilitar la regla de sincronización.");
+  });
+  $("#modal").classList.add("open");
+}
+$("#close").onclick=()=>$("#modal").classList.remove("open");
+$("#modal").onclick=e=>{if(e.target.id==="modal")$("#modal").classList.remove("open")};
+$("#find").onclick=()=>{query=$("#search").value.trim();renderSongs()};
+$("#search").oninput=()=>{query=$("#search").value.trim();renderSongs()};
+subscribeRoom(room,()=>{},mode=>{
+  $("#sync").textContent=mode==="online"?"EN LÍNEA":"LOCAL";
+  $("#sync").className="sync "+(mode==="online"?"online":"local");
+});
+renderSongs();
 </script>
 </body>
 </html>
