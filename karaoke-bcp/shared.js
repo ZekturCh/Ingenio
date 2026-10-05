@@ -34,8 +34,8 @@ export const SONGS = [
         id: "chorus",
         label: "Coro",
         durationLabel: "1:00",
-        startAt: 55,
-        endAt: 115,
+        startAt: 57.214,
+        endAt: 117.214,
         note: "Versión rápida para activación",
       },
       {
