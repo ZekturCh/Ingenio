@@ -20,6 +20,8 @@ async function run() {
     url.searchParams.set('room', 'SINGLESCREEN_TEST');
     await page.goto(url.href);
     await page.locator('#audio').waitFor({ state: 'attached' });
+    assert.equal(await page.locator('#songs').evaluate(el => getComputedStyle(el).scrollbarWidth), 'none');
+    assert.equal(await page.locator('#songs').getAttribute('tabindex'), '0');
     await page.locator('#search').fill('bareto');
     await page.locator('[data-song="carinito"]').tap();
     await page.locator('[data-version="chorus"]').tap();

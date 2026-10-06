@@ -56,7 +56,9 @@ svg{width:28px;height:28px;flex:none;stroke-width:2.5}
 .sectionHead h1{margin:0;font-family:var(--display);font-size:21px;font-weight:400;text-transform:uppercase}
 .seeAll{display:flex;gap:5px;align-items:center;min-height:44px;padding:4px 0;background:none;color:#7b2415;font-family:var(--display);font-size:18px;text-transform:uppercase;white-space:nowrap}
 .seeAll svg{width:24px;height:24px}
-.songs{display:flex;flex-direction:column;gap:8px;min-height:0;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;padding:2px 3px 4px;scroll-padding:4px}
+.songs{display:flex;flex-direction:column;gap:8px;min-height:0;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:none;padding:2px 3px 4px;scroll-padding:4px}
+.songs::-webkit-scrollbar{display:none;width:0;height:0}
+.songs:focus-visible{outline-offset:-3px}
 .song{position:relative;isolation:isolate;overflow:hidden;display:grid;grid-template-columns:minmax(0,1fr) 54px;gap:4px;align-items:center;flex:none;min-height:72px;padding-right:58px;border:1px solid #fff7;border-radius:8px;background:var(--cream);box-shadow:0 3px 10px #88390015}
 .song:after{content:"";position:absolute;z-index:-1;pointer-events:none;right:-46px;top:50%;width:120px;height:110px;background:url("assets/decor/cinta-curva.webp") center/100% auto no-repeat;transform:translateY(-50%) rotate(-62deg)}
 .songSelect{display:flex;align-items:center;gap:16px;text-align:left;min-width:0;min-height:70px;padding:8px 12px;background:transparent}
