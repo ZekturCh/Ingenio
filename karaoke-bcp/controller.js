@@ -33,7 +33,7 @@ function renderSongs() {
         <i class="songNote" data-lucide="music-2" aria-hidden="true"></i>
         <span class="songCopy"><b>${escapeHtml(song.title)}</b><span class="artist">${escapeHtml(song.artist)}</span>${song.enabled ? "" : '<span class="soon">Próximamente</span>'}</span>
       </button>
-      <button class="fav ${favorites.has(song.id) ? "on" : ""}" data-fav="${escapeHtml(song.id)}" aria-label="Favorita: ${escapeHtml(song.title)}" aria-pressed="${favorites.has(song.id)}" title="Favorita"><i data-lucide="heart"></i></button>
+      <button class="fav ${favorites.has(song.id) ? "on" : ""}" data-fav="${escapeHtml(song.id)}" aria-label="Favorita: ${escapeHtml(song.title)}" aria-pressed="${favorites.has(song.id)}" title="Favorita"><img class="favoriteGlyph" src="assets/icons/icon-halloween.png" alt=""></button>
     </article>`).join("") : '<p class="empty">No hay canciones con ese filtro.</p>';
   icons();
 }

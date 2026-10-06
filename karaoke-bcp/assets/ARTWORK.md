@@ -1,5 +1,83 @@
 # Hallowow visual assets
 
+## Modular portrait artwork, 2026-10-06
+
+The active selector and player use separate transparent assets, not the older
+flattened illustrations below. They match the requested full-page composition:
+wordmark and original Samay at top, live UI in the center, pumpkin and guitar at
+bottom, spiderwebs in the corners, no flowers or foliage. The former assets are
+retained as references only. Favorites reuse `icons/icon-halloween.png`.
+
+The following three pieces were generated with the built-in imagegen tool.
+Original PNGs stay in the Codex generated_images directory; the project uses
+WebP conversions with preserved alpha. No brand artwork was regenerated for
+Samay: the original root `Logo Samay.png` remains the source.
+
+### assets/decor/hallowow-wordmark.webp
+
+Source PNG: `exec-659aa618-b04f-40b6-bdb1-a06c8eae8847.png`.
+
+Exact prompt:
+
+Use case: background-extraction. Asset type: high-resolution transparent
+Hallowow Criollazo brand masthead for a portrait touchscreen karaoke web app.
+Edit target: supplied existing illustration. Extract ONLY the central large
+exact Hallowow CRIOLLAZO wordmark with its two short curved red-white-red ribbons
+immediately below the headline. Preserve the exact typography, letter shapes,
+colors and glossy dimensional material of the original: purple Hallowow over
+red and golden wooden CRIOLLAZO, black depth shadows and subtle clean light edge.
+Exact text: Hallowow CRIOLLAZO. Full complete logo horizontally centered, fill
+90% canvas width with small transparent margin. Reconstruct edges cleanly where
+necessary. Genuinely transparent background. Remove pumpkin, hat, guitar,
+flowers, leaves, birds or bats, spiderwebs, musical notes, background, tagline,
+sparkles, Samay and BCP, everything except this wordmark and its two small
+attached ribbons. No added white rectangular background, no sticker border,
+no new lettering. High resolution clean alpha edges. Wide aspect approximately
+2.4:1.
+
+### assets/decor/pumpkin-hat.webp
+
+Source PNG: `exec-334aea27-288d-4ab0-8bf6-8905bfbb86f4.png`.
+
+Exact prompt:
+
+Use case: background-extraction. Asset type: individual transparent pumpkin
+illustration for a portrait touchscreen karaoke app. References: image 1 rich
+illustration style, image 2 pumpkin and hat shape. Recreate ONLY a glowing
+smiling orange jack-o-lantern wearing a black traditional Peruvian wide brim hat
+with glossy red-white-red horizontal hat band. Preserve the polished 3D cartoon
+illustration style from the references and pumpkin face: warm yellow illuminated
+arched eyes, triangular nose, broad happy carved mouth with squared teeth,
+strongly ribbed orange pumpkin. Three quarter front view, hat tilted slightly,
+full pumpkin and full wide brim visible. Single isolated object, centered, fill
+90% canvas, transparent background with clean alpha. No guitar, no flowers,
+no leaves, no ribbons outside the hat, no additional objects, no floor or cast
+shadow outside silhouette. No text, logos or watermark. High-resolution square
+illustration.
+
+### assets/decor/criollo-guitar.webp
+
+Source PNG: `exec-f2d01fb5-5deb-42f2-b09e-8546593e07f8.png`.
+
+Exact prompt:
+
+Use case: background-extraction. Asset type: isolated high-resolution transparent
+acoustic guitar illustration for a vertical touchscreen karaoke web app.
+Reference/edit target: supplied artwork. Extract and faithfully recreate ONLY
+the wooden criollo acoustic guitar from the bottom-right of the reference.
+A complete golden honey-orange classical acoustic guitar, reddish-brown sides,
+dark circular sound hole with fine decorative rosette, six strings, detailed
+dark fretboard, glossy wooden tuning head with six tuning pegs, wood bridge.
+Upright guitar leaning about 12 degrees to the right, full guitar visible without
+cropping. Preserve rich polished glossy dimensional 3D illustration style and
+perspective from reference. Center single object tightly on a genuinely
+transparent background, portrait aspect approximately 1:2. No flowers, no foliage,
+no pumpkin, no hat, no ribbons, no notes, no lettering, no labels, no other
+objects, no floor or external cast shadow. Reconstruct portions obscured by
+foliage. Sharp clean alpha edges.
+
+## Previous flattened artwork
+
 The backgrounds, decor and icons supplied in Hallowow_Web_Visual_Assets.zip are
 preserved in their corresponding directories. Existing Flexo fonts and logos
 remain available. Lucide is vendored under vendor/ and Lilita One under fonts/;

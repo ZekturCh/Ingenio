@@ -1,10 +1,10 @@
 @font-face{font-family:Flexo;src:url("assets/fonts/Flexo-Regular.woff2") format("woff2");font-weight:400;font-display:swap}
 @font-face{font-family:Flexo;src:url("assets/fonts/Flexo-Bold.woff2") format("woff2");font-weight:700 900;font-display:swap}
 @font-face{font-family:Lilita;src:url("assets/fonts/LilitaOne-Regular.ttf") format("truetype");font-weight:400;font-display:swap}
-:root{--orange:#ff5c16;--yellow:#ffcd35;--red:#e91d28;--cream:#fff0d7;--ink:#171411;--display:Lilita,Flexo,sans-serif;color-scheme:light}
+:root{--orange:#ff5c16;--yellow:#ffcd35;--red:#e91d28;--cream:#fff0d7;--ink:#171411;--display:Lilita,Flexo,sans-serif;--page-padding:20px;--scene-height:16dvh;color-scheme:light}
 *{box-sizing:border-box;letter-spacing:0}
 html{min-height:100%}
-body{margin:0;font-family:Flexo,Arial,sans-serif;background:#101519;color:var(--ink);min-height:100dvh}
+body{margin:0;font-family:Flexo,Arial,sans-serif;background:#ff9f20;color:var(--ink);min-height:100dvh}
 button,input,a{-webkit-tap-highlight-color:transparent}
 button,input{font:inherit;color:inherit}
 button,a,input[type="range"]{touch-action:manipulation}
@@ -12,99 +12,105 @@ button{cursor:pointer;border:0}
 button:disabled{cursor:default;opacity:.5}
 a{color:inherit}
 button:active:not(:disabled){transform:translateY(1px)}
-:focus-visible{outline:3px solid #fff;outline-offset:4px}
+:focus-visible{outline:3px solid #481080;outline-offset:4px}
 [hidden]{display:none!important}
 svg{width:28px;height:28px;flex:none;stroke-width:2.5}
 .sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
-.app,.stage{position:relative;isolation:isolate;overflow:hidden;background:#ffb328 url("assets/backgrounds/page-bg-vertical.jpg") center/cover no-repeat}
-.controller-shell{min-height:100dvh;margin:auto;padding:20px 22px 74px}
+
+/* Independent artwork shares one full-screen backdrop with the live UI. */
+.app,.stage{position:relative;isolation:isolate;overflow:hidden;background:linear-gradient(160deg,#ff7216 0%,#ffc438 24%,#ffe172 48%,#ffb528 76%,#f46b13 100%)}
+.controller-shell,.stage{display:grid;grid-template-rows:auto auto minmax(0,1fr) clamp(100px,var(--scene-height),360px);gap:16px;height:100dvh;min-height:640px;padding:20px var(--page-padding) 0}
+.cornerWeb{position:absolute;z-index:-1;pointer-events:none;top:0;width:24%;max-width:300px;height:auto;opacity:.85}
+.webLeft{left:0}.webRight{right:0;transform:scaleX(-1)}
 .top{position:relative;z-index:10;display:flex;justify-content:space-between;align-items:center;gap:12px}
-.iconBtn{width:64px;height:64px;display:grid;place-items:center;flex:none;border-radius:50%;background:#361b12;color:white;box-shadow:inset 0 2px 4px #ffffff25,0 6px 18px #79270030;text-decoration:none}
-.iconBtn svg{width:34px;height:34px}
-.roomPill{display:flex;gap:12px;align-items:center;min-height:56px;max-width:65%;padding:10px 14px;background:#191817;color:#fff;border-radius:16px;box-shadow:0 6px 18px #79270030;text-align:left}
+.iconBtn{width:56px;height:56px;display:grid;place-items:center;flex:none;border-radius:50%;background:#361b12;color:white;box-shadow:inset 0 2px 4px #ffffff25,0 6px 18px #79270030;text-decoration:none}
+.iconBtn svg{width:30px;height:30px}
+.roomPill{display:flex;gap:10px;align-items:center;min-height:56px;max-width:70%;padding:10px 14px;background:#191817;color:#fff;border-radius:8px;text-align:left}
 .roomPill svg{width:22px;height:22px}
-.roomText{display:grid;font-size:16px;font-weight:900;line-height:1.1;min-width:0}
+.roomText{display:grid;font-size:15px;font-weight:900;line-height:1.1;min-width:0}
 .roomText b{max-width:15ch;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.dot{width:20px;height:20px;border-radius:50%;flex:none;background:#92918f}
-.dot.online{background:#31cc3f}
-.dot.local{background:#f4c436}
-.menu{position:absolute;z-index:30;top:96px;left:22px;display:grid;gap:3px;width:min(310px,calc(100% - 44px));padding:10px;border:1px solid #ffffff35;border-radius:8px;background:#191817;box-shadow:0 16px 35px #0007;color:#fff}
+.dot{width:18px;height:18px;border-radius:50%;flex:none;background:#92918f}
+.dot.online{background:#31cc3f}.dot.local{background:#f4c436}
+.menu{position:absolute;z-index:30;top:88px;left:var(--page-padding);display:grid;gap:3px;width:min(310px,calc(100% - 40px));padding:10px;border:1px solid #ffffff35;border-radius:8px;background:#191817;box-shadow:0 16px 35px #0007;color:#fff}
 .menu a,.menu button{display:flex;gap:12px;align-items:center;padding:14px;min-height:56px;background:transparent;border-radius:5px;text-decoration:none;text-align:left;font-weight:700;font-size:16px;color:inherit}
-.menu a:hover,.menu button:hover{background:#ffffff18}
-.menu svg{width:24px;height:24px}
-.hero{position:relative;margin:-84px -22px 0;overflow:hidden;background:#ffb525}
-.heroArtwork{position:relative;width:100%;aspect-ratio:6/5}
-.heroScene{display:block;width:100%;height:100%;object-fit:contain}
-.heroSamay{position:absolute;left:50%;top:48.5%;width:25%;aspect-ratio:938/560;transform:translateX(-50%);overflow:hidden;pointer-events:none}
-/* Crop only the source PNG's transparent margins; preserve the original logo. */
-.heroSamay img{position:absolute;width:138.6%;max-width:none;height:auto;left:-19.3%;top:-67.5%}
-.catalog{position:relative;z-index:4}
-.search{display:flex;align-items:center;gap:12px;min-height:60px;padding:4px 4px 4px 16px;border:2px solid #fff8;border-radius:34px;background:var(--cream);box-shadow:0 8px 22px #83380035}
-.search svg{color:#171411}
+.menu a:hover,.menu button:hover{background:#ffffff18}.menu svg{width:24px;height:24px}
+.menu .favoriteGlyph{width:28px;height:28px;filter:none}
+.brandMasthead{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;min-width:0}
+.brandWordmark{display:block;width:76%;max-width:660px;height:auto;aspect-ratio:1942/809;object-fit:contain}
+.brandSamay{position:relative;display:block;width:clamp(90px,22%,180px);aspect-ratio:938/560;overflow:hidden;flex:none}
+/* Crop only the original Samay PNG's transparent margins. */
+.brandSamay img{position:absolute;width:138.6%;max-width:none;height:auto;left:-19.3%;top:-67.5%}
+.sceneFooter{position:relative;z-index:0;min-width:0;min-height:0;pointer-events:none;margin:0 calc(-1 * var(--page-padding));overflow:hidden}
+.scenePumpkin,.sceneGuitar,.footerRibbon{position:absolute;display:block;object-fit:contain}
+.scenePumpkin{z-index:1;left:2%;bottom:0;width:56%;height:100%;object-position:left bottom}
+.sceneGuitar{z-index:1;right:4%;bottom:0;width:30%;height:100%;object-position:right bottom}
+.footerRibbon{z-index:0;left:-5%;bottom:-25%;width:110%;height:auto}
+
+.catalog{position:relative;z-index:4;display:flex;flex-direction:column;align-self:center;min-height:0;max-height:100%;width:100%;max-width:940px;margin:auto}
+.search{display:flex;align-items:center;gap:12px;flex:none;min-height:60px;padding:4px 4px 4px 16px;border:2px solid #fff8;border-radius:32px;background:var(--cream);box-shadow:0 6px 20px #83380020}
 .search input{flex:1;min-width:0;min-height:46px;font-size:16px;border:0;outline:none;background:none}
 .search input::placeholder{color:#4e504b}
-.search:focus-within{outline:3px solid var(--yellow);outline-offset:3px}
-.search button{min-height:48px;padding:0 30px;border:1px solid #ff9857;border-radius:28px;background:#ff6119;color:#fff;text-transform:uppercase;font-family:var(--display);font-size:21px;box-shadow:inset 0 0 6px #ffdd8260}
-.sectionHead{display:flex;justify-content:space-between;align-items:center;gap:10px;margin:18px 2px 10px}
-.sectionHead h1{margin:0;color:#fff;font-family:var(--display);font-size:21px;font-weight:400;text-transform:uppercase;text-shadow:0 2px 3px #0008}
-.seeAll{display:flex;gap:5px;align-items:center;min-height:44px;padding:4px 0;background:none;color:#ff8428;font-family:var(--display);font-size:18px;text-transform:uppercase;white-space:nowrap}
+.search:focus-within{outline:3px solid #481080;outline-offset:3px}
+.search button{min-height:48px;padding:0 26px;border:1px solid #ff9857;border-radius:26px;background:#ff6119;color:#fff;text-transform:uppercase;font-family:var(--display);font-size:21px}
+.sectionHead{display:flex;justify-content:space-between;align-items:center;gap:10px;flex:none;margin:12px 2px 8px}
+.sectionHead h1{margin:0;font-family:var(--display);font-size:21px;font-weight:400;text-transform:uppercase}
+.seeAll{display:flex;gap:5px;align-items:center;min-height:44px;padding:4px 0;background:none;color:#7b2415;font-family:var(--display);font-size:18px;text-transform:uppercase;white-space:nowrap}
 .seeAll svg{width:24px;height:24px}
-.songs{display:grid;gap:9px}
-.song{position:relative;isolation:isolate;overflow:hidden;display:grid;grid-template-columns:minmax(0,1fr) 54px;gap:4px;align-items:center;min-height:72px;padding-right:68px;border:1px solid #fff7;border-radius:17px;background:var(--cream);box-shadow:0 5px 14px #88390025}
+.songs{display:flex;flex-direction:column;gap:8px;min-height:0;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;padding:2px 3px 4px;scroll-padding:4px}
+.song{position:relative;isolation:isolate;overflow:hidden;display:grid;grid-template-columns:minmax(0,1fr) 54px;gap:4px;align-items:center;flex:none;min-height:72px;padding-right:58px;border:1px solid #fff7;border-radius:8px;background:var(--cream);box-shadow:0 3px 10px #88390015}
 .song:after{content:"";position:absolute;z-index:-1;pointer-events:none;right:-46px;top:50%;width:120px;height:110px;background:url("assets/decor/cinta-curva.webp") center/100% auto no-repeat;transform:translateY(-50%) rotate(-62deg)}
 .songSelect{display:flex;align-items:center;gap:16px;text-align:left;min-width:0;min-height:70px;padding:8px 12px;background:transparent}
-.songNote{width:44px;height:44px;color:var(--orange);flex:none;stroke-width:3}
-.songCopy{min-width:0}
-.songCopy b{display:block;font-family:var(--display);font-size:25px;font-weight:400;line-height:1.05;overflow-wrap:anywhere}
+.songNote{width:40px;height:40px;color:var(--orange);flex:none;stroke-width:3}
+.songCopy{min-width:0}.songCopy b{display:block;font-family:var(--display);font-size:25px;font-weight:400;line-height:1.05;overflow-wrap:anywhere}
 .songCopy .artist{display:block;margin-top:4px;font-size:16px;line-height:1.2}
 .song.disabled .songSelect{opacity:1;cursor:default}
 .song .soon{display:block;font-size:10px;color:#796449;margin-top:3px;text-transform:uppercase;font-weight:700}
-.fav{width:52px;height:52px;display:grid;place-items:center;border-radius:50%;background:none;color:#171411}
-.fav svg{width:32px;height:32px;stroke-width:2}
-.fav.on{color:var(--red)}
-.fav.on svg{fill:var(--red)}
-.empty{margin:0;padding:32px 15px;text-align:center;border:1px solid #fff4;border-radius:8px;background:#171411;color:#fff;line-height:1.5}
-.footerRibbon{position:absolute;z-index:1;pointer-events:none;bottom:-30px;left:-5%;width:110%;height:120px;object-fit:fill;transform:rotate(-4deg)}
-.controller-shell:after{content:"";position:absolute;z-index:0;left:0;right:0;bottom:0;top:44%;background:linear-gradient(180deg,transparent,#120f0bf0 20%,#120f0bd9 75%,transparent)}
-.dialog{width:min(540px,calc(100% - 32px));padding:26px;border:2px solid #ffdc73;border-radius:24px;background:linear-gradient(165deg,#ffbc32,#fa8b1c 48%,#d94706);color:var(--ink);box-shadow:0 24px 80px #0007}
+.fav{width:52px;height:52px;display:grid;place-items:center;border-radius:50%;background:none}
+.favoriteGlyph{display:block;width:36px;height:36px;object-fit:contain;filter:grayscale(1) brightness(.45)}
+.fav.on,.pumpkinFavorite.active{background:#ffb32935}
+.fav.on .favoriteGlyph,.pumpkinFavorite.active .favoriteGlyph{filter:none}
+.empty{margin:0;padding:32px 15px;text-align:center;border-radius:8px;background:#171411;color:#fff;line-height:1.5}
+
+.dialog{width:min(540px,calc(100% - 32px));max-height:calc(100dvh - 32px);padding:26px;border:2px solid #ffdc73;border-radius:24px;background:linear-gradient(165deg,#ffbc32,#fa8b1c 48%,#d94706);color:var(--ink);box-shadow:0 24px 80px #0007;overflow:auto}
 .dialog::backdrop{background:#111418bb;backdrop-filter:blur(6px)}
-#modal{isolation:isolate;overflow:hidden;background:url("assets/decor/cinta-curva.webp") center 132px/110% auto no-repeat,url("assets/decor/flores-izquierda.png") -28px calc(100% + 15px)/130px auto no-repeat,url("assets/decor/notas-musicales.png") right center/180px auto no-repeat,linear-gradient(165deg,#ffbc32,#fa8b1c 48%,#d94706)}
+#modal{isolation:isolate;background:url("assets/decor/cinta-curva.webp") center 132px/110% auto no-repeat,linear-gradient(165deg,#ffbc32,#fa8b1c 48%,#d94706)}
 #modal::before{content:"";position:absolute;z-index:-1;pointer-events:none;top:0;right:0;width:135px;height:135px;background:url("assets/decor/telarana-esquina.png") center/contain no-repeat;transform:scaleX(-1)}
-#modal .versions{margin-top:48px}
 .dialogTop{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
 .dialogLabel{margin:0 0 8px;font-size:14px;font-weight:700;text-transform:uppercase}
 .dialog h2{margin:0;font-family:var(--display);font-size:36px;font-weight:400;overflow-wrap:anywhere}
-.dialogArtist{margin:8px 0;font-size:19px}
-.close{width:48px;height:48px}
-.close svg{width:26px;height:26px}
-.versions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:22px}
+.dialogArtist{margin:8px 0;font-size:19px}.close{width:48px;height:48px}.close svg{width:26px;height:26px}
+.versions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:48px}
 .versionOption{min-height:160px;padding:18px 14px;text-align:left;border:2px solid #fff9;border-radius:8px;background:var(--cream)}
 .versionOption strong{display:block;font-family:var(--display);font-weight:400;font-size:25px}
 .versionOption .duration{display:block;font-family:var(--display);font-size:40px;color:var(--orange);margin:7px 0}
-.versionOption small{font-size:13px;line-height:1.3}
-.versionOption.recommended{border-color:var(--red)}
+.versionOption small{font-size:13px;line-height:1.3}.versionOption.recommended{border-color:var(--red)}
 .modalNote{margin:16px 0 0;font-size:14px;line-height:1.5}
+.activate{text-align:center}
+.activate > img:not(.activationRibbon){width:100%;max-width:360px;height:auto;aspect-ratio:1942/809;object-fit:contain;margin:0 auto 5px}
+.activationRibbon{display:block;width:100%;height:auto;aspect-ratio:720/263;object-fit:contain;margin:14px auto;pointer-events:none}
+.activate h2{font-size:32px}
+.primaryButton{display:flex;align-items:center;justify-content:center;gap:12px;width:100%;min-height:60px;margin-top:22px;padding:14px;border-radius:8px;background:#171411;color:#fff;font-size:20px;font-weight:700}
+#activationState{min-height:18px;font-size:14px;margin-bottom:0}
 .toast{position:fixed;z-index:50;left:50%;bottom:24px;transform:translate(-50%,20px);padding:14px 20px;width:max-content;max-width:calc(100% - 32px);border-radius:8px;background:var(--cream);color:var(--ink);font-weight:700;box-shadow:0 8px 32px #0006;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;text-align:center}
 .toast.show{opacity:1;transform:translate(-50%,0)}
-/* Keep the illustration behind live lyrics and accessible controls. */
+
+/* Keep artwork in its own row, outside lyrics and transport hit targets. */
 .player-page{overflow-x:hidden}
-.stage{display:flex;flex-direction:column;width:100%;height:100dvh;min-height:640px;padding:24px 5% 13dvh;background:#ffbb2f url("assets/backgrounds/karaoke-frame.webp") center/cover no-repeat}
-.stage .top{gap:10px}
-.samayLogo{width:158px;height:88px;max-width:30%;object-fit:contain}
-.stage .roomPill{max-width:43%}
-.playerWrap{position:relative;z-index:2;flex:1;display:grid;grid-template-rows:minmax(0,1fr) auto;gap:20px;min-height:0;padding-top:60px}
-.lyricPanel{display:flex;align-items:center;justify-content:center;min-width:0;min-height:0;padding:20px 6%;color:var(--cream)}
-.lyrics{display:grid;align-content:center;gap:14px;width:100%;text-align:center;min-width:0;--lyric-scale:1}
+.stage{--scene-height:12dvh;grid-template-rows:auto minmax(90px,20dvh) minmax(0,1fr) clamp(70px,var(--scene-height),320px);gap:14px}
+.stage .playerBrand .brandWordmark{width:auto;max-width:74%;height:60%;max-height:280px}
+.playerBrand .brandSamay{width:clamp(90px,18%,160px)}
+.playerWrap{position:relative;z-index:2;display:grid;grid-template-rows:minmax(0,1fr) auto;gap:18px;min-height:0}
+.lyricPanel{display:flex;align-items:center;justify-content:center;min-width:0;min-height:0;width:calc(100% + 2 * var(--page-padding));margin-left:calc(-1 * var(--page-padding));padding:20px calc(var(--page-padding) + 4%);background:#1c1918;color:var(--cream);border-top:2px solid #f39720;border-bottom:2px solid #f39720}
+.lyrics{display:grid;align-content:center;gap:14px;width:100%;max-width:1200px;text-align:center;min-width:0;--lyric-scale:1}
 .lyrics p{margin:0;overflow-wrap:anywhere;text-wrap:balance;font-family:var(--display);font-weight:400}
-.current{position:relative;width:100%;font-size:calc(46px * var(--lyric-scale));line-height:1.1}
+.current{position:relative;width:100%;font-size:calc(52px * var(--lyric-scale));line-height:1.1}
 .currentBase,.currentFill{display:block;width:100%}
 .currentFill{position:absolute;inset:0;color:#ff712f;clip-path:inset(0 100% 0 0)}
-.lyricContext{font-size:calc(40px * var(--lyric-scale));line-height:1.12;color:#fff2dc}
-.lyricContext.previous{font-size:calc(28px * var(--lyric-scale));color:#fff2dc88}
-.lyricContext:empty{display:none}
-.infoCard{position:relative;z-index:4;width:92%;max-width:780px;margin:0 auto;padding:20px 26px 16px;border-radius:32px;border:1px solid #fff9;background:var(--cream);color:var(--ink);text-align:center;box-shadow:0 10px 32px #913b0025}
-.title{margin:0;font-family:var(--display);font-size:36px;font-weight:400;line-height:1.05;overflow-wrap:anywhere;text-wrap:balance}
-.infoCard .artist{font-family:var(--display);font-size:22px;line-height:1.15;margin:6px 0 14px}
+.lyricContext{font-size:calc(42px * var(--lyric-scale));line-height:1.12;color:#fff2dc}
+.lyricContext.previous{font-size:calc(28px * var(--lyric-scale));color:#fff2dc88}.lyricContext:empty{display:none}
+.infoCard{position:relative;z-index:4;width:100%;max-width:980px;margin:0 auto;padding:18px 24px 12px;border-radius:8px;border:1px solid #fff9;background:var(--cream);color:var(--ink);text-align:center}
+.title{margin:0;font-family:var(--display);font-size:34px;font-weight:400;line-height:1.05;overflow-wrap:anywhere;text-wrap:balance}
+.infoCard .artist{font-family:var(--display);font-size:22px;line-height:1.15;margin:6px 0 10px}
 .seek{--progress:0%;display:block;width:100%;height:40px;margin:0;background:transparent;appearance:none;cursor:pointer}
 .seek::-webkit-slider-runnable-track{height:12px;background:linear-gradient(to right,#ff5b15 0 var(--progress),#baad99 var(--progress) 100%);border-radius:20px}
 .seek::-moz-range-track{height:12px;background:linear-gradient(to right,#ff5b15 0 var(--progress),#baad99 var(--progress) 100%);border-radius:20px}
@@ -112,117 +118,91 @@ svg{width:28px;height:28px;flex:none;stroke-width:2.5}
 .seek::-moz-range-thumb{width:24px;height:24px;border:2px solid #fff2a8;border-radius:50%;background:#ffd95c;box-shadow:0 2px 8px #b74b0066}
 .seek:focus-visible{outline-color:var(--orange);outline-offset:0;border-radius:4px}
 .times{display:flex;justify-content:space-between;font-size:17px;font-weight:700;font-variant-numeric:tabular-nums}
-.controls{display:grid;grid-template-columns:1fr 1fr 1.7fr 1fr 1fr;gap:6px;align-items:center;margin-top:14px}
+.controls{display:grid;grid-template-columns:1fr 1fr 1.7fr 1fr 1fr;gap:6px;align-items:center;margin-top:8px}
 .controlBtn{justify-self:center;display:grid;place-items:center;width:56px;height:56px;border-radius:50%;background:none}
-.controlBtn svg{width:34px;height:34px;stroke-width:2.7}
-.controlBtn.active{color:var(--orange)}
-.controlBtn.heart{color:var(--red)}
-.controlBtn.heart.active svg{fill:var(--red)}
-.playBtn{justify-self:center;display:grid;place-items:center;width:94px;height:94px;border-radius:50%;border:2px solid #ffb03b;background:#ff5b12;color:white;box-shadow:inset 0 0 8px #ffbd4566}
-.playBtn svg{grid-area:1/1;width:44px;height:44px;fill:currentColor;stroke-width:2}
-.i-play{display:none}
-.paused .i-pause{display:none}
-.paused .i-play{display:block}
+.controlBtn svg{width:34px;height:34px;stroke-width:2.7}.controlBtn.active{color:var(--orange)}
+.playBtn{justify-self:center;display:grid;place-items:center;width:82px;height:82px;border-radius:50%;border:2px solid #ffb03b;background:#ff5b12;color:white;box-shadow:inset 0 0 8px #ffbd4566}
+.playBtn svg{grid-area:1/1;width:40px;height:40px;fill:currentColor;stroke-width:2}
+.i-play{display:none}.paused .i-pause{display:none}.paused .i-play{display:block}
 .state{min-height:16px;margin:8px 0 0;color:#7a3218;font-size:12px;font-weight:700}
-.activate{text-align:center;background:url("assets/decor/notas-musicales.png") right bottom/150px auto no-repeat,linear-gradient(165deg,#ffbc32,#fa8b1c 48%,#d94706)}
-.activate > img:not(.activationRibbon){width:230px;height:165px;object-fit:cover;margin:-15px auto 5px}
-.activationRibbon{display:block;width:100%;height:auto;aspect-ratio:720/263;object-fit:contain;margin:-8px auto 14px;pointer-events:none}
-.activate h2{font-size:32px}
-.primaryButton{display:flex;align-items:center;justify-content:center;gap:12px;width:100%;min-height:60px;margin-top:22px;padding:14px;border-radius:8px;background:#171411;color:#fff;font-size:20px;font-weight:700}
-#activationState{min-height:18px;font-size:14px;margin-bottom:0}
-@media(min-width:520px) and (orientation:portrait){
-  .controller-shell{padding:24px 26px 86px}
-  .hero{margin:-88px -26px 0}
-  .search{min-height:64px}
-  .song{min-height:79px}.songSelect{min-height:77px}
-  .songCopy b{font-size:29px}.songCopy .artist{font-size:19px}
-  .sectionHead h1{font-size:25px}.seeAll{font-size:21px}
-  .stage{padding:28px 5% 13dvh}
-  .playerWrap{padding-top:9dvh;gap:24px}
-  .current{font-size:calc(56px * var(--lyric-scale))}.lyricContext{font-size:calc(50px * var(--lyric-scale))}.lyricContext.previous{font-size:calc(34px * var(--lyric-scale))}
-  .infoCard{padding:26px 30px 20px}.title{font-size:44px}.infoCard .artist{font-size:27px}
-  .playBtn{width:104px;height:104px}
+
+@media(max-width:420px){
+  :root{--page-padding:14px}
+  .controller-shell,.stage{padding-top:14px;gap:10px}
+  .iconBtn{width:48px;height:48px}.iconBtn svg{width:28px;height:28px}.roomText{font-size:13px}
+  .roomPill{gap:8px;min-height:48px;padding:9px 12px}.menu{top:76px}
+  .brandWordmark{width:78%}.brandMasthead{gap:4px}
+  .search{gap:7px;padding-left:12px;min-height:52px}.search svg{width:22px;height:22px}
+  .search input{font-size:13px;min-height:44px}.search button{padding:0 16px;font-size:17px;min-height:44px}
+  .sectionHead{margin:6px 0 4px}.sectionHead h1{font-size:17px}.seeAll{font-size:15px}
+  .song{min-height:64px;padding-right:42px;grid-template-columns:minmax(0,1fr) 44px}.songs{gap:6px}
+  .songSelect{min-height:62px;gap:10px;padding:6px 8px}.songCopy b{font-size:21px}.songCopy .artist{font-size:14px}
+  .songNote{width:30px;height:32px}.fav{width:44px;height:48px}.favoriteGlyph{width:32px;height:32px}
+  .playerBrand .brandWordmark{width:64%}.playerBrand .brandSamay{width:85px}
+  .playerWrap{gap:10px}.lyricPanel{padding-top:12px;padding-bottom:12px}.lyrics{gap:8px}
+  .current{font-size:calc(36px * var(--lyric-scale))}.lyricContext{font-size:calc(28px * var(--lyric-scale))}.lyricContext.previous{font-size:calc(20px * var(--lyric-scale))}
+  .infoCard{padding:14px 12px 8px}.title{font-size:28px}.infoCard .artist{font-size:18px;margin:4px 0 6px}
+  .controlBtn{width:44px;height:48px}.controlBtn svg{width:28px;height:28px}.playBtn{width:64px;height:64px}.playBtn svg{width:30px;height:30px}.times{font-size:14px}
+}
+@media(min-width:700px) and (orientation:portrait){
+  :root{--page-padding:36px;--scene-height:20dvh}
+  .controller-shell,.stage{padding-top:28px;gap:22px}
+  .iconBtn{width:76px;height:76px}.iconBtn svg{width:38px;height:38px}.roomPill{min-height:72px;padding:14px 20px}.roomText{font-size:21px}
+  .menu{top:118px}.brandWordmark{width:78%}.brandSamay{width:170px}
+  .search{min-height:76px}.search input{font-size:21px}.search button{min-height:60px;font-size:25px;padding:0 36px}
+  .sectionHead h1{font-size:28px}.seeAll{font-size:25px}.sectionHead{margin:20px 2px 12px}
+  .songs{gap:12px}.song{min-height:104px;padding-right:70px;grid-template-columns:minmax(0,1fr) 64px}.songSelect{min-height:102px;gap:22px;padding:12px 20px}
+  .songCopy b{font-size:32px}.songCopy .artist{font-size:22px}.song .soon{font-size:12px}.songNote{width:52px;height:52px}.fav{width:64px;height:64px}.favoriteGlyph{width:44px;height:44px}
+  .stage{--scene-height:14dvh}.playerBrand .brandSamay{width:160px}
+  .current{font-size:calc(66px * var(--lyric-scale))}.lyricContext{font-size:calc(54px * var(--lyric-scale))}.lyricContext.previous{font-size:calc(36px * var(--lyric-scale))}
+  .infoCard{padding:24px 30px 18px}.title{font-size:44px}.infoCard .artist{font-size:28px}
+  .playBtn{width:110px;height:110px}.playBtn svg{width:48px;height:48px}.controlBtn{width:72px;height:72px}.controlBtn svg{width:42px;height:42px}.times{font-size:22px}.state{font-size:15px}
+}
+@media(min-width:1000px) and (orientation:portrait){
+  :root{--page-padding:52px}
+  .controller-shell,.stage{padding-top:36px;gap:28px}
+  .brandWordmark{max-width:780px}.brandSamay{width:200px}
+  .song{min-height:120px}.songSelect{min-height:118px}.songCopy b{font-size:38px}.songCopy .artist{font-size:26px}
+  .search{min-height:86px}.search input{font-size:25px}.search button{min-height:70px;font-size:28px}
+  .sectionHead h1{font-size:32px}.seeAll{font-size:28px}
+  .playerBrand .brandSamay{width:180px}
+  .current{font-size:calc(78px * var(--lyric-scale))}.lyricContext{font-size:calc(64px * var(--lyric-scale))}.lyricContext.previous{font-size:calc(42px * var(--lyric-scale))}
 }
 @media(min-width:700px) and (orientation:landscape){
-  .controller-shell{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);grid-template-rows:76px minmax(0,1fr);gap:16px 30px;max-width:none;min-height:100dvh;padding:24px 4% 55px;background-image:url("assets/backgrounds/page-bg-horizontal.jpg")}
-  .controller-shell .top{grid-column:1/-1}
-  .controller-shell:after{top:0;left:49%;background:linear-gradient(90deg,transparent,#120f0be6 15%)}
-  .hero{grid-column:1;grid-row:2;align-self:center;width:100%;height:auto;margin:0;max-height:100%;background:transparent;border-radius:20px}
-  .heroArtwork{max-width:calc(76dvh * 1.2);margin:0 auto}
-  .catalog{grid-column:2;grid-row:2;align-self:center;width:100%;max-width:860px;justify-self:center}
-  .song{min-height:76px}.songSelect{min-height:74px}
-  .stage{min-height:460px;padding:22px 4% 40px;background-size:cover;background-image:url("assets/backgrounds/karaoke-frame-landscape.webp")}
-  .stage .top{flex:none}.samayLogo{width:180px}
-  .playerWrap{padding-top:35px;gap:22px}
-  .lyricPanel{width:88%;margin:0 auto;padding:25px 5%}
-  .current{font-size:calc(56px * var(--lyric-scale))}.lyricContext{font-size:calc(34px * var(--lyric-scale))}.lyricContext.previous{font-size:calc(24px * var(--lyric-scale))}.lyrics{gap:10px;max-width:1200px}
-  .infoCard{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px;align-items:center;max-width:1280px;padding:18px 32px;text-align:left}
-  .title{font-size:38px}.infoCard .artist{margin-bottom:0;font-size:25px}.controls{margin-top:6px}
-  .playBtn{width:74px;height:74px}.playBtn svg{width:34px;height:34px}.state{text-align:center}
-}
-@media(min-width:1600px) and (orientation:landscape){
-  .controller-shell{padding:36px 5% 72px;gap:24px 60px;grid-template-rows:88px minmax(0,1fr)}
-  .iconBtn{width:76px;height:76px}.roomPill{min-height:66px;padding:12px 20px}.roomText{font-size:20px}
-  .search{min-height:76px}.search input{font-size:21px}.search button{min-height:60px;font-size:26px}
-  .song{min-height:94px;padding-right:78px}.songSelect{min-height:92px;gap:24px;padding-left:20px}
-  .song:after{width:140px;height:128px;right:-54px}
-  .songCopy b{font-size:32px}.songCopy .artist{font-size:21px}.songNote{width:54px;height:54px}
-  .sectionHead h1{font-size:28px}.seeAll{font-size:25px}
-  .current{font-size:calc(76px * var(--lyric-scale))}.lyricContext{font-size:calc(48px * var(--lyric-scale))}.lyricContext.previous{font-size:calc(32px * var(--lyric-scale))}
-  .title{font-size:44px}.playBtn{width:94px;height:94px}.controlBtn{width:64px;height:64px}
-}
-@media(max-width:420px){
-  .controller-shell{padding:14px 12px 64px}.iconBtn{width:52px;height:52px}.roomText{font-size:13px}
-  .roomPill{gap:8px;min-height:48px;border-radius:12px}
-  .hero{margin:-66px -12px 0;padding-top:35px}
-  .search{gap:7px;padding-left:12px;min-height:56px}.search svg{width:22px;height:22px}
-  .search input{font-size:13px}.search button{padding:0 16px;font-size:17px;min-height:44px}
-  .sectionHead h1{font-size:17px}.seeAll{font-size:15px}
-  .song{padding-right:58px;grid-template-columns:minmax(0,1fr) 44px}
-  .songSelect{gap:10px;padding-left:10px}.songCopy b{font-size:22px}.songCopy .artist{font-size:14px}
-  .songNote{width:32px;height:36px}.fav{width:44px;height:48px}.fav svg{width:28px;height:28px}
-  .stage{padding:16px 4% 10dvh}.stage .top{gap:8px}.samayLogo{width:100px;max-width:28%}
-  .stage .roomPill{max-width:46%;padding:9px 10px}.stage .roomPill svg{display:none}.stage .dot{width:14px;height:14px}
-  .playerWrap{padding-top:65px;gap:12px}.lyricPanel{padding:18px 5%}
-  .current{font-size:calc(36px * var(--lyric-scale))}.lyricContext{font-size:calc(30px * var(--lyric-scale))}.lyricContext.previous{font-size:calc(22px * var(--lyric-scale))}.lyrics{gap:10px}
-  .infoCard{width:96%;padding:18px 16px 12px;border-radius:24px}.title{font-size:30px}.infoCard .artist{font-size:21px}
-  .controlBtn{width:44px;height:48px}.controlBtn svg{width:28px;height:28px}
-  .playBtn{width:76px;height:76px}.playBtn svg{width:34px;height:34px}.times{font-size:14px}
+  :root{--page-padding:32px;--scene-height:22dvh}
+  .controller-shell{grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);grid-template-rows:auto minmax(0,1fr) clamp(90px,var(--scene-height),240px);gap:14px 36px;min-height:540px}
+  .controller-shell .top{grid-column:1/-1}.controller-shell .brandMasthead{grid-column:1;grid-row:2}
+  .controller-shell .catalog{grid-column:2;grid-row:2}.controller-shell .sceneFooter{grid-column:1/-1;grid-row:3}
+  .controller-shell .brandWordmark{width:100%}.controller-shell .brandSamay{width:120px}
+  .scenePumpkin{left:7%;width:35%}.sceneGuitar{right:9%;width:22%}
+  .footerRibbon{left:50%;bottom:-30%;width:auto;height:140%;transform:translateX(-50%)}
+  .stage{--scene-height:12dvh;grid-template-rows:auto auto minmax(0,1fr) clamp(70px,var(--scene-height),160px);min-height:540px;gap:10px}
+  .playerBrand{flex-direction:row;gap:30px}.stage .playerBrand .brandWordmark{width:260px;height:auto}.playerBrand .brandSamay{width:100px}
+  .playerWrap{gap:12px}.lyricPanel{padding-top:16px;padding-bottom:16px}
+  .infoCard{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:24px;align-items:center;max-width:1200px;padding:14px 24px;text-align:left}
+  .title{font-size:30px}.infoCard .artist{font-size:21px;margin-bottom:0}.playBtn{width:64px;height:64px}.playBtn svg{width:30px;height:30px}.controls{margin-top:2px}.state{text-align:center}
 }
 @media(orientation:landscape) and (max-height:720px){
-  .controller-shell{padding-top:12px;padding-bottom:22px;grid-template-rows:54px minmax(0,1fr);gap:10px 20px}
-  .sectionHead{margin:6px 0}
-  .song,.songSelect{min-height:60px}.songCopy b{font-size:22px}.songCopy .artist{font-size:14px}.songs{gap:5px}
-  .stage{padding:12px 3% 18px}.stage .iconBtn{width:48px;height:48px}
-  .stage .samayLogo{height:56px;width:140px}
-  .playerWrap{padding-top:16px;gap:10px}.lyricPanel{padding:15px 5%}
-  .current{font-size:calc(36px * var(--lyric-scale))}.lyricContext{font-size:calc(24px * var(--lyric-scale))}.lyricContext.previous,#next3{display:none}.lyrics{gap:8px}
-  .infoCard{padding:12px 24px}.title{font-size:28px}.infoCard .artist{font-size:19px}
-  .playBtn{width:60px;height:60px}.controls{margin-top:0}.state{margin-top:2px}
+  :root{--page-padding:20px}
+  .controller-shell,.stage{padding-top:12px;gap:8px 24px}.iconBtn{width:48px;height:48px}.roomPill{min-height:48px}.roomText{font-size:13px}
+  .search{min-height:52px;gap:8px}.search input{min-height:44px;font-size:13px}.search button{min-height:44px;padding:0 18px;font-size:17px}
+  .sectionHead{margin:4px 0}.sectionHead h1{font-size:17px}.seeAll{font-size:15px}
+  .songs{gap:5px}.song,.songSelect{min-height:58px}.songSelect{gap:8px;padding:6px 8px}.songCopy b{font-size:20px}.songCopy .artist{font-size:13px}.songNote{width:28px;height:30px}
+  .song{padding-right:42px;grid-template-columns:minmax(0,1fr) 44px}.fav{width:44px;height:44px}.favoriteGlyph{width:30px;height:30px}
+  .stage .playerBrand .brandWordmark{width:180px}.playerBrand .brandSamay{width:75px}
+  .current{font-size:calc(36px * var(--lyric-scale))}.lyricContext{font-size:calc(26px * var(--lyric-scale))}.lyricContext.previous,#next3{display:none}.lyrics{gap:6px}
+  .infoCard{padding:10px 18px}.title{font-size:26px}.infoCard .artist{font-size:18px}.playBtn{width:54px;height:54px}.controlBtn{width:44px;height:44px}.controlBtn svg{width:28px;height:28px}.state{margin-top:2px}
 }
-@media(min-width:700px) and (max-width:1050px) and (orientation:landscape){
-  .controller-shell{gap:12px 20px;padding-left:3%;padding-right:3%}
-  .search{gap:7px;padding-left:12px}.search input{font-size:13px}.search button{font-size:17px;padding:0 16px}
-  .sectionHead h1{font-size:17px}.seeAll{font-size:14px}.seeAll svg{width:20px}
-  .song{padding-right:58px;grid-template-columns:minmax(0,1fr) 44px}.songSelect{gap:8px;padding-left:8px}
-  .songCopy b{font-size:20px}.songCopy .artist{font-size:13px}.songNote{width:28px;height:32px}
-  .fav{width:44px;height:48px}.fav svg{width:28px}
+@media(min-width:1600px) and (orientation:landscape){
+  :root{--page-padding:64px}
+  .controller-shell,.stage{padding-top:30px;gap:22px 60px}.iconBtn{width:72px;height:72px}.roomPill{min-height:68px}.roomText{font-size:20px}
+  .song{min-height:96px}.songSelect{min-height:94px}.songCopy b{font-size:32px}.songCopy .artist{font-size:21px}
+  .search{min-height:76px}.search input{font-size:21px}.search button{min-height:60px;font-size:26px}.sectionHead h1{font-size:28px}.seeAll{font-size:25px}
+  .stage .playerBrand .brandWordmark{width:340px}.playerBrand .brandSamay{width:130px}
+  .current{font-size:calc(68px * var(--lyric-scale))}.lyricContext{font-size:calc(48px * var(--lyric-scale))}.lyricContext.previous{font-size:calc(32px * var(--lyric-scale))}
+  .title{font-size:38px}.playBtn{width:88px;height:88px}.playBtn svg{width:40px;height:40px}
 }
-@media(min-width:900px) and (orientation:portrait){
-  .controller-shell{padding:36px 4% 110px}
-  .controller-shell .top .iconBtn{width:90px;height:90px}
-  .controller-shell .roomPill{min-height:76px;padding:14px 22px}
-  .controller-shell .roomText{font-size:23px}
-  .hero{margin:-126px -4.35% 0}
-  .search{min-height:90px}.search input{font-size:25px}.search button{min-height:72px;font-size:28px;padding:0 48px}
-  .sectionHead{margin:26px 0 15px}.sectionHead h1{font-size:32px}.seeAll{font-size:28px}
-  .songs{gap:14px}.song{min-height:112px}.songSelect{min-height:110px;gap:24px;padding-left:24px}
-  .songCopy b{font-size:36px}.songCopy .artist{font-size:25px}.songNote{width:62px;height:62px}
-  .song .soon{font-size:13px}.fav{width:60px;height:60px}.fav svg{width:42px;height:42px}
-  .current{font-size:calc(76px * var(--lyric-scale))}.lyricContext{font-size:calc(68px * var(--lyric-scale))}.lyricContext.previous{font-size:calc(44px * var(--lyric-scale))}
-  .stage .top .iconBtn{width:90px;height:90px}.stage .roomText{font-size:23px}.stage .samayLogo{width:230px;height:110px}
-  .infoCard{padding:32px 38px 24px}.title{font-size:54px}.infoCard .artist{font-size:34px}
-  .playBtn{width:132px;height:132px}.playBtn svg{width:56px;height:56px}.controlBtn{width:76px;height:76px}.controlBtn svg{width:46px;height:46px}
-  .times{font-size:23px}.state{font-size:15px}
+@media(orientation:portrait) and (max-height:850px){
+  .stage .lyricContext.previous,.stage #next3{display:none}
 }
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}

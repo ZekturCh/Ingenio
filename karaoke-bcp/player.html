@@ -5,18 +5,23 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="theme-color" content="#ff6b19">
   <title>Hallowow Criollazo | Karaoke</title>
-  <link rel="stylesheet" href="./karaoke.css?v=20261005-7">
+  <link rel="stylesheet" href="./karaoke.css?v=20261006-1">
   <script src="./assets/vendor/lucide.min.js" defer></script>
   <script type="module" src="./player.js?v=20261005"></script>
 </head>
 <body class="player-page">
   <div class="stage idle paused" id="stage">
+    <img class="cornerWeb webLeft" src="assets/decor/telarana-esquina.png" alt="">
+    <img class="cornerWeb webRight" src="assets/decor/telarana-esquina.png" alt="">
     <header class="top">
       <a class="iconBtn" id="backBtn" aria-label="Volver al selector de canciones" title="Volver"><i data-lucide="chevron-left"></i></a>
-      <img class="samayLogo" src="../Logo%20Samay.png" alt="Samay BCP">
       <button class="roomPill" id="fullscreenBtn" title="Pantalla completa" aria-label="Pantalla completa"><span class="dot" id="dot"></span><span class="roomText"><span>SALA</span><b id="roomCode">HALLOWOW</b></span><i data-lucide="chevron-down"></i></button>
       <span class="sr" id="syncState" role="status">Conectando</span>
     </header>
+    <section class="brandMasthead playerBrand" aria-label="Hallowow Criollazo, Samay BCP">
+      <img class="brandWordmark" src="assets/decor/hallowow-wordmark.webp" alt="Hallowow Criollazo" fetchpriority="high">
+      <span class="brandSamay"><img src="../Logo%20Samay.png" alt="Samay BCP"></span>
+    </section>
     <main class="playerWrap">
       <section class="lyricPanel" aria-label="Letra de la canción">
         <p class="kicker sr" id="kicker">Pantalla de karaoke</p>
@@ -36,15 +41,20 @@
             <button class="controlBtn" id="previousBtn" aria-label="Canción anterior" title="Anterior"><i data-lucide="skip-back"></i></button>
             <button class="playBtn" id="playBtn" aria-label="Reproducir" title="Reproducir"><i class="i-pause" data-lucide="pause"></i><i class="i-play" data-lucide="play"></i></button>
             <button class="controlBtn" id="nextBtn" aria-label="Siguiente canción" title="Siguiente"><i data-lucide="skip-forward"></i></button>
-            <button class="controlBtn heart" id="favoriteBtn" aria-label="Marcar favorita" aria-pressed="false" title="Favorita"><i data-lucide="heart"></i></button>
+            <button class="controlBtn pumpkinFavorite" id="favoriteBtn" aria-label="Marcar favorita" aria-pressed="false" title="Favorita"><img class="favoriteGlyph" src="assets/icons/icon-halloween.png" alt=""></button>
           </div>
           <p class="state" id="playerState" role="status">Selecciona una canción</p>
         </div>
       </section>
     </main>
+    <div class="sceneFooter" aria-hidden="true">
+      <img class="footerRibbon" src="assets/decor/cinta-curva.webp" alt="">
+      <img class="scenePumpkin" src="assets/decor/pumpkin-hat.webp" alt="">
+      <img class="sceneGuitar" src="assets/decor/criollo-guitar.webp" alt="">
+    </div>
   </div>
   <dialog class="dialog activate" id="activate" aria-labelledby="activateTitle">
-    <img src="assets/logo-hallowow.webp" alt="Hallowow Criollazo">
+    <img src="assets/decor/hallowow-wordmark.webp" alt="Hallowow Criollazo">
     <img class="activationRibbon" src="assets/decor/cinta-curva.webp" alt="">
     <h2 id="activateTitle">Que empiece el criollazo</h2>
     <button class="primaryButton" id="activateBtn"><i data-lucide="volume-2"></i>Activar audio</button><p id="activationState" role="status"></p>

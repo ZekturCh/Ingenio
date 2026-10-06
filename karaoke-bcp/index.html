@@ -5,12 +5,14 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="theme-color" content="#ff6b19">
   <title>Hallowow Criollazo | Karaoke Samay BCP</title>
-  <link rel="stylesheet" href="./karaoke.css?v=20261005-7">
+  <link rel="stylesheet" href="./karaoke.css?v=20261006-1">
   <script src="./assets/vendor/lucide.min.js" defer></script>
-  <script type="module" src="./controller.js?v=20261005-2"></script>
+  <script type="module" src="./controller.js?v=20261006-1"></script>
 </head>
 <body class="controller-page">
   <main class="app controller-shell">
+    <img class="cornerWeb webLeft" src="assets/decor/telarana-esquina.png" alt="">
+    <img class="cornerWeb webRight" src="assets/decor/telarana-esquina.png" alt="">
     <header class="top">
       <button class="iconBtn" id="menuBtn" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu" title="Menú"><i data-lucide="menu"></i></button>
       <button class="roomPill" id="roomPill" aria-label="Opciones de sala" aria-expanded="false" aria-controls="menu">
@@ -20,14 +22,12 @@
     <nav class="menu" id="menu" aria-label="Menú de sala" hidden>
       <a id="playerLink" target="_blank" rel="noopener"><i data-lucide="monitor-play"></i>Pantalla de karaoke</a>
       <a id="adminLink" target="_blank" rel="noopener"><i data-lucide="settings-2"></i>Administrar sala</a>
-      <button id="favoritesFilter"><i data-lucide="heart"></i>Mis favoritas</button>
+      <button id="favoritesFilter"><img class="favoriteGlyph" src="assets/icons/icon-halloween.png" alt="">Mis favoritas</button>
       <button id="fullscreenBtn"><i data-lucide="maximize"></i>Pantalla completa</button>
     </nav>
-    <section class="hero" aria-label="Hallowow Criollazo. Entre tradición, música y buenas historias">
-      <div class="heroArtwork">
-        <img class="heroScene" src="assets/backgrounds/selector-hero-no-samay.webp" alt="Hallowow Criollazo. Entre tradición, música y buenas historias" fetchpriority="high">
-        <span class="heroSamay"><img src="../Logo%20Samay.png" alt="Samay BCP"></span>
-      </div>
+    <section class="brandMasthead" aria-label="Hallowow Criollazo, Samay BCP">
+      <img class="brandWordmark" src="assets/decor/hallowow-wordmark.webp" alt="Hallowow Criollazo" fetchpriority="high">
+      <span class="brandSamay"><img src="../Logo%20Samay.png" alt="Samay BCP"></span>
     </section>
     <section class="catalog" aria-label="Seleccionar canción">
       <form class="search" id="searchForm" role="search">
@@ -38,7 +38,11 @@
       <div class="sectionHead"><h1 id="listTitle">Canciones destacadas</h1><button class="seeAll" id="seeAll">Ver todas <i data-lucide="arrow-right"></i></button></div>
       <section class="songs" id="songs" aria-label="Canciones"></section>
     </section>
-    <img class="footerRibbon" src="assets/decor/cinta-peruana.png" alt="">
+    <div class="sceneFooter" aria-hidden="true">
+      <img class="footerRibbon" src="assets/decor/cinta-curva.webp" alt="">
+      <img class="scenePumpkin" src="assets/decor/pumpkin-hat.webp" alt="">
+      <img class="sceneGuitar" src="assets/decor/criollo-guitar.webp" alt="">
+    </div>
   </main>
   <dialog class="dialog" id="modal" aria-labelledby="dlgTitle">
     <div class="dialogTop"><div><p class="dialogLabel">Elige tu versión</p><h2 id="dlgTitle"></h2><p class="dialogArtist" id="dlgArtist"></p></div><button class="close iconBtn" id="close" aria-label="Cerrar" title="Cerrar"><i data-lucide="x"></i></button></div>

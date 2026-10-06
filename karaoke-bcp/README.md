@@ -12,10 +12,14 @@ dispositivos diferentes y localStorage sincroniza pestanas del mismo navegador.
   favoritos, aleatorio y barra tactil de progreso.
 - `admin.html` y `timing-editor.html`: administracion existente.
 
-El selector usa dos columnas en horizontal y una en vertical. El reproductor
-usa ilustraciones distintas para cada orientacion y ajusta las estrofas al espacio
-disponible. Los controles principales tienen al menos 44 px de area tactil.
-Las letras y los botones son HTML real, no forman parte de una captura.
+La composicion prioriza una pantalla touch vertical (referencia 1080 x 1920).
+El arte ocupa toda la pagina: marca arriba, canciones o letras en el centro,
+calabaza y guitarra abajo, sin flores ni follaje. Las piezas tienen transparencia
+y se posicionan por separado, sin un flyer insertado. El selector conserva dos
+columnas en horizontal y una en vertical; en pantallas pequenas la lista permite
+desplazamiento tactil. Los controles principales tienen al menos 44 px de area
+tactil. Las letras y los botones son HTML real, no parte de una captura.
+Las favoritas se muestran con calabazas, conservando su comportamiento anterior.
 
 ## Cambiar canciones
 
@@ -34,11 +38,19 @@ su estado de proximamente. Las pistas nuevas requieren los archivos respectivos.
 - `karaoke.css`: estilos compartidos y reglas por orientacion/tamano.
 - `controller.js`, `player.js`: interacciones de cada pantalla.
 - `ui.js`: iconos, favoritos y utilidades compartidas.
-- `assets/backgrounds/selector-hero-no-samay.webp`: arte de cabecera sin logo incrustado.
+- `assets/decor/hallowow-wordmark.webp`: marca aislada, sin fondo ni otros adornos.
 - `../Logo Samay.png`: logo original del repo, colocado como imagen independiente.
-- `assets/backgrounds/karaoke-frame.webp`: marco vertical.
-- `assets/backgrounds/karaoke-frame-landscape.webp`: marco horizontal.
-- `assets/decor/cinta-curva.webp`: cinta curva en los botones de canciones.
+- `assets/decor/pumpkin-hat.webp`: calabaza con sombrero, independiente.
+- `assets/decor/criollo-guitar.webp`: guitarra independiente.
+- `assets/decor/telarana-esquina.png`: telaranas de las esquinas.
+- `assets/decor/cinta-curva.webp`: cinta en canciones, pie y ventanas.
+- `assets/icons/icon-halloween.png`: icono de favoritas (gris inactivo/color activo).
+
+Las dimensiones del escenario se controlan con `--page-padding` y
+`--scene-height` en `karaoke.css`. `.brandMasthead`, `.catalog`, `.playerWrap`
+y `.sceneFooter` tienen areas propias: los adornos no bloquean controles.
+Los fondos ilustrados anteriores se conservan como archivos de referencia,
+pero ya no se usan en estas dos pantallas.
 
 Se incorporaron los fondos, adornos e iconos de Hallowow_Web_Visual_Assets.zip.
 Los nuevos artes se generaron con la herramienta integrada imagegen para
