@@ -44,20 +44,23 @@ async function run() {
     await page.evaluate(() => { const a = document.querySelector('#audio'); a.currentTime = 65; a.dispatchEvent(new Event('timeupdate')); });
     await page.waitForFunction(() => document.querySelector('#currentBase').textContent !== 'Letra no disponible');
     await page.evaluate(() => document.fonts.ready);
-    for (const [width, height] of [[1080,1920],[390,844],[854,480]]) {
+    for (const [width, height] of [[1080,1920],[390,844],[320,480],[740,780],[800,800],[700,1001],[1000,1050],[1080,1200],[1366,768],[1920,1080],[854,480]]) {
       await page.setViewportSize({ width, height });
       await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
       const layout = await page.evaluate(() => {
         const ids = [...document.querySelectorAll('[id]')].map(el => el.id);
         const panel = document.querySelector('.lyricPanel'), style = getComputedStyle(panel);
+        const panelRect = panel.getBoundingClientRect(), current = document.querySelector('#currentBase').getBoundingClientRect();
         return {
           overflow: document.documentElement.scrollWidth > innerWidth,
           duplicateIds: ids.filter((id, i) => ids.indexOf(id) !== i),
           controlsVisible: document.querySelector('.controls').getBoundingClientRect().bottom <= innerHeight,
           lyricsFit: document.querySelector('#lyrics').scrollHeight <= panel.clientHeight - parseFloat(style.paddingTop) - parseFloat(style.paddingBottom) + 2,
+          currentClipped: current.top < panelRect.top - 1 || current.bottom > panelRect.bottom + 1,
+          sufficientLyricArea: panel.clientHeight >= Math.min(200, innerHeight * .3),
         };
       });
-      assert.deepEqual(layout, { overflow: false, duplicateIds: [], controlsVisible: true, lyricsFit: true });
+      assert.deepEqual(layout, { overflow: false, duplicateIds: [], controlsVisible: true, lyricsFit: true, currentClipped: false, sufficientLyricArea: true });
     }
     await page.goBack();
     await page.waitForFunction(() => !document.querySelector('#selectorView').hidden);

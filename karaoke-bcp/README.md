@@ -58,6 +58,10 @@ y `.sceneFooter` organizan las piezas. En el selector, `.playlistDecor` coloca
 la calabaza y guitarra sobre los laterales de la lista, con la cinta detras.
 `--playlist-inset` reserva los margenes para no tapar informacion ni controles.
 El reproductor conserva su fila independiente de decoracion.
+La reproduccion adapta su densidad al alto disponible: en ventanas bajas o casi
+cuadradas compacta las marcas y agrupa metadatos y controles en horizontal cuando
+caben. Las letras priorizan la frase actual y reducen las lineas de contexto si
+falta espacio, sin invadir la marca ni los controles.
 Los fondos ilustrados anteriores se conservan como archivos de referencia,
 pero ya no se usan en estas dos pantallas.
 

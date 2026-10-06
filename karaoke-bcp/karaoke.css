@@ -227,3 +227,64 @@ svg{width:28px;height:28px;flex:none;stroke-width:2.5}
   .controller-shell .sceneGuitar{right:-5%}
 }
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+
+/* Available height, not device orientation, determines the playback density. */
+.stage .playerBrand{min-height:0}
+.stage .lyricPanel{overflow:hidden}
+.lyrics[data-context="short"] .previous,.lyrics[data-context="short"] #next2,.lyrics[data-context="short"] #next3{display:none}
+.lyrics[data-context="single"] .lyricContext{display:none}
+@media(max-height:1200px){
+  .stage{--page-padding:20px;grid-template-rows:56px 76px minmax(0,1fr) 64px;min-height:0;gap:12px;padding:14px var(--page-padding) 0}
+  .stage .iconBtn{width:56px;height:56px}.stage .iconBtn svg{width:30px;height:30px}
+  .stage .roomPill{min-height:56px;padding:10px 14px;gap:10px}.stage .roomText{font-size:15px}
+  .stage .playerBrand{flex-direction:row;gap:24px}
+  .stage .playerBrand .brandWordmark{width:220px;max-width:60%;height:76px;max-height:none}
+  .stage .playerBrand .brandSamay{width:100px}
+  .stage .playerWrap{gap:12px}
+  .stage .lyricPanel{padding-top:16px;padding-bottom:16px}
+  .stage .lyrics{gap:12px}
+  .stage .current{font-size:calc(48px * var(--lyric-scale))}
+  .stage .lyricContext{font-size:calc(36px * var(--lyric-scale))}
+  .stage .lyricContext.previous{font-size:calc(24px * var(--lyric-scale))}
+  .stage .infoCard{padding:12px 18px 10px}
+  .stage .title{font-size:30px}.stage .infoCard .artist{font-size:20px;margin:4px 0 6px}
+  .stage .controls{margin-top:6px;gap:6px}
+  .stage .controlBtn{width:52px;height:52px}.stage .controlBtn svg{width:30px;height:30px}
+  .stage .playBtn{width:68px;height:68px}.stage .playBtn svg{width:32px;height:32px}
+  .stage .times{font-size:16px}.stage .state{font-size:12px;margin-top:6px}
+}
+@media(min-width:640px) and (max-height:1200px){
+  .stage .infoCard{display:grid;grid-template-columns:minmax(0,.7fr) minmax(320px,1.3fr);gap:20px;align-items:center;text-align:left;max-width:1200px}
+  .stage .infoCard .artist{margin-bottom:0}
+  .stage .state{text-align:center}
+}
+@media(min-width:1200px) and (max-height:1200px){
+  .stage .current{font-size:calc(60px * var(--lyric-scale))}
+  .stage .lyricContext{font-size:calc(44px * var(--lyric-scale))}
+}
+@media(max-width:639px) and (max-height:1200px){
+  .stage{--page-padding:14px;grid-template-rows:48px 64px minmax(0,1fr) 56px;gap:10px;padding-top:12px}
+  .stage .iconBtn{width:48px;height:48px}.stage .roomPill{min-height:48px;padding:9px 12px;gap:8px}.stage .roomText{font-size:13px}
+  .stage .playerBrand{gap:16px}.stage .playerBrand .brandWordmark{width:180px;height:64px}.stage .playerBrand .brandSamay{width:85px}
+  .stage .infoCard{display:block;padding:10px 12px 8px;text-align:center}
+  .stage .title{font-size:26px}.stage .infoCard .artist{font-size:18px}
+  .stage .controlBtn{width:44px;height:48px}.stage .controlBtn svg{width:28px;height:28px}
+  .stage .playBtn{width:60px;height:60px}
+  .stage .current{font-size:calc(38px * var(--lyric-scale))}.stage .lyricContext{font-size:calc(28px * var(--lyric-scale))}
+  .stage .lyrics{gap:8px}.stage .lyricPanel{padding-top:12px;padding-bottom:12px}
+  .stage .times{font-size:14px}
+}
+@media(max-height:600px){
+  .stage{grid-template-rows:48px 48px minmax(0,1fr) 40px;gap:8px;padding-top:8px}
+  .stage .iconBtn{width:48px;height:48px}.stage .roomPill{min-height:48px;padding:9px 12px}.stage .roomText{font-size:13px}
+  .stage .playerBrand .brandWordmark{height:48px;width:160px}.stage .playerBrand .brandSamay{width:70px}
+  .stage .infoCard{padding:8px 12px}.stage .title{font-size:24px}.stage .infoCard .artist{font-size:16px;margin:3px 0}
+  .stage .playBtn{width:52px;height:52px}.stage .controlBtn{width:44px;height:44px}
+  .stage .controls{margin-top:2px}.stage .state{margin-top:2px}
+  .stage .lyricPanel{padding-top:8px;padding-bottom:8px}
+}
+@media(max-height:520px){
+  .stage{grid-template-rows:48px 40px minmax(0,1fr);padding-bottom:8px;min-height:360px}
+  .stage .sceneFooter{display:none}
+  .stage .playerBrand .brandWordmark{height:40px;width:150px}.stage .playerBrand .brandSamay{width:60px}
+}

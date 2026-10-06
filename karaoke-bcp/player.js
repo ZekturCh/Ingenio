@@ -151,10 +151,12 @@ requestAnimationFrame(paint);
 
 function fitLyrics() {
   const panel = $(".lyricPanel"), lyrics = $("#lyrics");
-  lyrics.style.setProperty("--lyric-scale", 1);
   const style = getComputedStyle(panel);
   const available = panel.clientHeight - parseFloat(style.paddingTop) - parseFloat(style.paddingBottom);
-  // Fit the entire stanza to its available area, independent of screen resolution.
+  if (available <= 0) return;
+  // Keep the current line readable before spending space on additional context.
+  lyrics.dataset.context = available < 110 ? "single" : available < 240 ? "short" : "full";
+  lyrics.style.setProperty("--lyric-scale", 1);
   let scale = 1;
   while (lyrics.scrollHeight > available && scale > .45) {
     scale -= .05;
