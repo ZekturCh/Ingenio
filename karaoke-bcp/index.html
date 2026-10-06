@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="theme-color" content="#ff6b19">
   <title>Hallowow Criollazo | Karaoke Samay BCP</title>
-  <link rel="stylesheet" href="./karaoke.css?v=20261006-1">
+  <link rel="stylesheet" href="./karaoke.css?v=20261006-2">
   <script src="./assets/vendor/lucide.min.js" defer></script>
   <script type="module" src="./controller.js?v=20261006-1"></script>
 </head>
@@ -36,13 +36,15 @@
         <button id="find" type="submit">Buscar</button>
       </form>
       <div class="sectionHead"><h1 id="listTitle">Canciones destacadas</h1><button class="seeAll" id="seeAll">Ver todas <i data-lucide="arrow-right"></i></button></div>
-      <section class="songs" id="songs" aria-label="Canciones"></section>
+      <div class="playlistArea">
+        <section class="songs" id="songs" aria-label="Canciones"></section>
+        <img class="playlistRibbon" src="assets/decor/cinta-curva.webp" alt="">
+        <div class="playlistDecor" aria-hidden="true">
+          <img class="scenePumpkin" src="assets/decor/pumpkin-hat.webp" alt="">
+          <img class="sceneGuitar" src="assets/decor/criollo-guitar.webp" alt="">
+        </div>
+      </div>
     </section>
-    <div class="sceneFooter" aria-hidden="true">
-      <img class="footerRibbon" src="assets/decor/cinta-curva.webp" alt="">
-      <img class="scenePumpkin" src="assets/decor/pumpkin-hat.webp" alt="">
-      <img class="sceneGuitar" src="assets/decor/criollo-guitar.webp" alt="">
-    </div>
   </main>
   <dialog class="dialog" id="modal" aria-labelledby="dlgTitle">
     <div class="dialogTop"><div><p class="dialogLabel">Elige tu versión</p><h2 id="dlgTitle"></h2><p class="dialogArtist" id="dlgArtist"></p></div><button class="close iconBtn" id="close" aria-label="Cerrar" title="Cerrar"><i data-lucide="x"></i></button></div>

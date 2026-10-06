@@ -48,7 +48,10 @@ su estado de proximamente. Las pistas nuevas requieren los archivos respectivos.
 
 Las dimensiones del escenario se controlan con `--page-padding` y
 `--scene-height` en `karaoke.css`. `.brandMasthead`, `.catalog`, `.playerWrap`
-y `.sceneFooter` tienen areas propias: los adornos no bloquean controles.
+y `.sceneFooter` organizan las piezas. En el selector, `.playlistDecor` coloca
+la calabaza y guitarra sobre los laterales de la lista, con la cinta detras.
+`--playlist-inset` reserva los margenes para no tapar informacion ni controles.
+El reproductor conserva su fila independiente de decoracion.
 Los fondos ilustrados anteriores se conservan como archivos de referencia,
 pero ya no se usan en estas dos pantallas.
 
