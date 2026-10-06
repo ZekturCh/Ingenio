@@ -1,12 +1,16 @@
 import { SONGS, roomFromUrl, subscribeRoom, sendCommand, getSong, getVersion, controllerUrl } from "./shared.js";
-import { $, icons, loadFavorites, toggleFavorite, toggleFullscreen } from "./ui.js";
+import { icons, loadFavorites, toggleFavorite, toggleFullscreen } from "./ui.js";
 
+export function mountPlayer(root = document, { embedded = false, onBack } = {}) {
+const $ = (selector) => root.querySelector(selector);
 const room = roomFromUrl(), audio = $("#audio"), stage = $("#stage");
 $("#roomCode").textContent = room;
 $("#backBtn").href = controllerUrl(room);
 let unlocked = false, pending = null, activeState = null, activeSong = null, activeVersion = null;
 let lyricData = [], lastCommand = "stop", commandToken = 0, shuffle = false, seeking = false, ended = false;
 let lineIndex = -2;
+let visible = !embedded;
+if (onBack) $("#backBtn").onclick = (event) => { event.preventDefault(); onBack(); };
 
 const mmss = (value) => {
   const seconds = Math.max(0, Number(value) || 0);
@@ -20,7 +24,7 @@ function bounds() {
 function setState(message) { $("#playerState").textContent = message; }
 function setSync(mode) {
   $("#syncState").textContent = mode === "online" ? "Sala en línea" : "Sala local";
-  $("#dot").className = `dot ${mode === "online" ? "online" : "local"}`;
+  $("#playerDot").className = `dot ${mode === "online" ? "online" : "local"}`;
 }
 async function loadLyrics(song) {
   const urls = song.lyrics ? [song.lyrics] : [`songs/${song.id}/lyrics-timed.json`, `songs/${song.id}/lyrics-template.json`];
@@ -82,7 +86,7 @@ function updateProgress() {
   $("#remaining").textContent = mmss(span);
   renderLyrics(audio.currentTime);
 }
-async function selectState(state) {
+function selectState(state) {
   const song = getSong(state.songId), version = getVersion(song, state.versionId);
   if (!song?.enabled || !version) return null;
   const changedSong = activeSong?.id !== song.id;
@@ -90,7 +94,7 @@ async function selectState(state) {
   activeState = state; activeSong = song; activeVersion = version;
   if (changedSong) {
     audio.pause();
-    audio.src = song.audio;
+    if (audio.src !== new URL(song.audio, location.href).href) audio.src = song.audio;
     lyricData = []; lineIndex = -2;
     loadLyrics(song).then((lines) => {
       if (activeSong?.id === song.id) { lyricData = lines; lineIndex = -2; updateProgress(); }
@@ -109,7 +113,7 @@ async function playAudio(token) {
 }
 async function execute(state) {
   const token = ++commandToken;
-  const changed = await selectState(state);
+  const changed = selectState(state);
   if (changed === null || token !== commandToken) return;
   const { start, end } = bounds(), command = state.command || "load";
   if (command === "load" || command === "stop") {
@@ -119,11 +123,13 @@ async function execute(state) {
     audio.pause(); setState("Pausa");
   } else if (command === "restart" || command === "play") {
     if (command === "restart" || changed || lastCommand === "stop" || ended || audio.currentTime < start || audio.currentTime >= end - .05) audio.currentTime = start;
+    updateProgress();
     await playAudio(token);
   }
   if (token === commandToken) { lastCommand = command; updateProgress(); }
 }
 function receive(state) {
+  if (!visible) return;
   if (!unlocked) { pending = state; selectState(state); return; }
   execute(state).catch(() => setState("No se pudo cargar la canción"));
 }
@@ -158,6 +164,7 @@ function fitLyrics() {
 new ResizeObserver(fitLyrics).observe($(".lyricPanel"));
 document.fonts.ready.then(fitLyrics);
 
+if (!embedded) {
 $("#activateBtn").onclick = async () => {
   $("#activateBtn").disabled = true;
   audio.volume = 1;
@@ -173,6 +180,7 @@ $("#activateBtn").onclick = async () => {
   if (pending) { const state = pending; pending = null; await execute(state); }
 };
 $("#activate").addEventListener("cancel", (event) => event.preventDefault());
+}
 $("#playBtn").onclick = () => {
   if (!activeVersion) return;
   const command = audio.paused ? "play" : "pause";
@@ -209,8 +217,21 @@ $("#seek").oninput = () => {
   ended = false; renderLyrics(audio.currentTime); $("#elapsed").textContent = mmss(span * position);
 };
 $("#seek").onchange = () => { seeking = false; updateProgress(); };
-$("#fullscreenBtn").onclick = () => toggleFullscreen().catch(() => setState("Pantalla completa no disponible"));
+$("#playerFullscreenBtn").onclick = () => toggleFullscreen().catch(() => setState("Pantalla completa no disponible"));
 ["#playBtn", "#previousBtn", "#nextBtn", "#favoriteBtn"].forEach((selector) => $(selector).disabled = true);
 icons();
-$("#activate").showModal();
+if (!embedded) $("#activate").showModal();
 subscribeRoom(room, receive, setSync);
+return {
+  start(state) {
+    visible = true; unlocked = true; pending = null;
+    // Execute synchronously up to audio.play() to retain the version button's user gesture.
+    execute(state).catch(() => setState("No se pudo cargar la canción"));
+  },
+  hide() {
+    visible = false; ++commandToken; audio.pause(); lastCommand = "pause";
+    return activeState;
+  },
+  show() { visible = true; fitLyrics(); },
+};
+}

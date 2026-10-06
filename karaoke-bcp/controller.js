@@ -1,9 +1,10 @@
-import { SONGS, roomFromUrl, sendCommand, subscribeRoom, playerUrl, adminUrl } from "./shared.js";
+import { SONGS, roomFromUrl, sendCommand, subscribeRoom, adminUrl } from "./shared.js";
 import { $, icons, loadFavorites, toggleFavorite, toggleFullscreen, normalizeSearch, escapeHtml } from "./ui.js";
+import { mountPlayer } from "./player.js?v=20261006-3";
 
 const room = roomFromUrl();
 $("#room").textContent = room;
-$("#playerLink").href = playerUrl(room);
+$("#playerLink").href = "#reproduccion";
 $("#adminLink").href = adminUrl(room);
 const categories = {
   carinito: ["fiesta", "peru"], odiame: ["criollo", "peru", "clasicos"],
@@ -11,6 +12,64 @@ const categories = {
   "ritmo-color-sabor": ["criollo", "fiesta", "peru"],
 };
 let query = "", onlyFavorites = false, toastTimer;
+let player = null, selectedState = null, selectedSongId = null;
+let playlistScroll = 0;
+let preparingPlayer = false;
+history.replaceState({ ...history.state, karaokeView: "selector" }, "", location.pathname + location.search);
+
+async function preparePlayer() {
+  if (player || preparingPlayer) return;
+  preparingPlayer = true;
+  try {
+    // Reuse the standalone screen's markup so both playback modes stay visually identical.
+    const response = await fetch("./player.html?v=20261006-3");
+    if (!response.ok) throw new Error("Player unavailable");
+    const page = new DOMParser().parseFromString(await response.text(), "text/html");
+    const stage = page.querySelector("#stage"), audio = page.querySelector("#audio");
+    if (!stage || !audio) throw new Error("Invalid player view");
+    $("#playbackView").replaceChildren(document.importNode(stage, true), document.importNode(audio, true));
+    player = mountPlayer($("#playbackView"), { embedded: true, onBack: () => history.back() });
+    document.querySelectorAll("#versions button").forEach((button) => button.disabled = false);
+    $("#modalNote").textContent = "";
+  } catch {
+    $("#modalNote").textContent = "No se pudo preparar el karaoke. Cierra y vuelve a elegir la canción para reintentar.";
+  } finally {
+    preparingPlayer = false;
+  }
+}
+preparePlayer();
+
+function showPlayback() {
+  toggleMenu(false);
+  playlistScroll = $("#songs").scrollTop;
+  $("#selectorView").hidden = true;
+  $("#playbackView").hidden = false;
+  document.body.className = "player-page";
+  window.scrollTo(0, 0);
+  player.show();
+  $("#backBtn").focus({ preventScroll: true });
+}
+
+function showSelector() {
+  const stoppedState = player?.hide();
+  $("#playbackView").hidden = true;
+  $("#selectorView").hidden = false;
+  document.body.className = "controller-page";
+  renderSongs();
+  $("#songs").scrollTop = playlistScroll;
+  if (stoppedState) sendCommand(room, { ...stoppedState, command: "pause" }).catch(() => {});
+  document.querySelector(`[data-song="${CSS.escape(selectedSongId || "")}"]`)?.focus({ preventScroll: true });
+}
+window.addEventListener("popstate", (event) => {
+  if (event.state?.karaokeView === "player" && player && selectedState) showPlayback();
+  else showSelector();
+});
+$("#playerLink").onclick = (event) => {
+  event.preventDefault();
+  if (!player || !selectedState) { toggleMenu(false); toast("Elige una canción y su versión"); return; }
+  history.pushState({ karaokeView: "player" }, "", "#reproduccion");
+  showPlayback();
+};
 
 function toast(message) {
   $("#toast").textContent = message;
@@ -41,22 +100,25 @@ function renderSongs() {
 function openVersions(song) {
   $("#dlgTitle").textContent = song.title;
   $("#dlgArtist").textContent = song.artist;
-  $("#modalNote").textContent = "";
+  $("#modalNote").textContent = player ? "" : "Preparando karaoke…";
   $("#versions").innerHTML = song.versions.map((version) => `
-    <button class="versionOption ${version.id === "chorus" ? "recommended" : ""}" data-version="${escapeHtml(version.id)}">
+    <button class="versionOption ${version.id === "chorus" ? "recommended" : ""}" data-version="${escapeHtml(version.id)}" ${player ? "" : "disabled"}>
       <strong>${escapeHtml(version.label)}</strong><span class="duration">${escapeHtml(version.durationLabel)}</span><small>${escapeHtml(version.note || "")}</small>
     </button>`).join("");
   $("#versions").onclick = (event) => {
     const button = event.target.closest("[data-version]");
-    if (!button) return;
+    if (!button || !player || button.disabled) return;
     const version = song.versions.find((entry) => entry.id === button.dataset.version);
     $("#modal").close();
-    toast(`${song.title} · ${version.label} seleccionada`);
-    sendCommand(room, { songId: song.id, versionId: version.id, command: "play", startAt: version.startAt, endAt: version.endAt })
-      .then((result) => toast(result.mode === "online" ? "Canción enviada a la pantalla de karaoke" : "Selección guardada en esta sala"))
-      .catch(() => toast("No se pudo enviar la canción. Intenta nuevamente."));
+    selectedSongId = song.id;
+    selectedState = { songId: song.id, versionId: version.id, command: "restart", startAt: version.startAt, endAt: version.endAt };
+    history.pushState({ karaokeView: "player" }, "", "#reproduccion");
+    showPlayback();
+    player.start(selectedState);
+    sendCommand(room, selectedState).catch(() => toast("El audio es local; no se pudo sincronizar la sala."));
   };
   $("#modal").showModal();
+  if (!player) preparePlayer();
 }
 
 $("#songs").onclick = (event) => {
