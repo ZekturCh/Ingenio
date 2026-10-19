@@ -1,3 +1,5 @@
+import { SONGS } from "./songs/catalog.js?v=20261019-1";
+export { SONGS };
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
 import {
   getFirestore,
@@ -20,40 +22,7 @@ const app = initializeApp(firebaseConfig, "samay-karaoke");
 const db = getFirestore(app);
 
 export const DEFAULT_ROOM = "HALLOWOW";
-export const AUDIO_URL = "../cariñitobareto.mp3";
-
-export const SONGS = [
-  {
-    id: "carinito",
-    title: "Cariñito",
-    artist: "Bareto",
-    enabled: true,
-    audio: AUDIO_URL,
-    lyrics: "songs/carinito/lyrics-timed.json",
-    versions: [
-      {
-        id: "chorus",
-        label: "Coro",
-        durationLabel: "1:00",
-        startAt: 57.214,
-        endAt: 117.214,
-        note: "Versión rápida para activación",
-      },
-      {
-        id: "full",
-        label: "Completa",
-        durationLabel: "3:44",
-        startAt: 0,
-        endAt: 223.791,
-        note: "Canción completa",
-      },
-    ],
-  },
-  { id: "odiame", title: "Ódiame", artist: "Eva Ayllón", enabled: false, versions: [] },
-  { id: "himno-peru", title: "Himno Nacional del Perú", artist: "Perú", enabled: false, versions: [] },
-  { id: "cuando-pienses", title: "Cuando pienses en volver", artist: "Pedro Suárez-Vértiz", enabled: false, versions: [] },
-  { id: "ritmo-color-sabor", title: "Ritmo, color y sabor", artist: "Eva Ayllón", enabled: false, versions: [] },
-];
+export const AUDIO_URL = "songs/carinito/audio.mp3";
 
 export function getSong(songId) {
   return SONGS.find((song) => song.id === songId) || null;

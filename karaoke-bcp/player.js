@@ -1,4 +1,4 @@
-import { SONGS, roomFromUrl, subscribeRoom, sendCommand, getSong, getVersion, controllerUrl } from "./shared.js";
+import { SONGS, roomFromUrl, subscribeRoom, sendCommand, getSong, getVersion, controllerUrl } from "./shared.js?v=20261019-1";
 import { icons, loadFavorites, toggleFavorite, toggleFullscreen } from "./ui.js";
 
 export function mountPlayer(root = document, { embedded = false, onBack } = {}) {
@@ -27,6 +27,7 @@ function setSync(mode) {
   $("#playerDot").className = `dot ${mode === "online" ? "online" : "local"}`;
 }
 async function loadLyrics(song) {
+  if (song.lyricsStatus === "pending") return [];
   const urls = song.lyrics ? [song.lyrics] : [`songs/${song.id}/lyrics-timed.json`, `songs/${song.id}/lyrics-template.json`];
   for (const url of urls) {
     try {
@@ -62,7 +63,7 @@ function renderLyrics(time) {
   const line = lyricData[index];
   if (lineIndex !== index) {
     lineIndex = index;
-    const text = line?.text || (lyricData.length ? "♪" : "Letra no disponible");
+    const text = line?.text || (lyricData.length ? "♪" : "Letra pendiente de sincronizar");
     $("#currentBase").textContent = text;
     $("#currentFill").textContent = text;
     $("#prev").textContent = lyricData[index - 1]?.text || "";

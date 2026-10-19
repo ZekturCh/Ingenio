@@ -35,7 +35,7 @@
   <div class="hint">En la PC conectada a la TV abre el Player y pulsa “Activar audio” una vez. Después este panel o el celular pueden enviar órdenes a la misma sala.</div>
 </div>
 <script type="module">
-import { roomFromUrl, subscribeRoom, sendCommand, getSong, getVersion, controllerUrl, playerUrl } from "./shared.js";
+import { roomFromUrl, subscribeRoom, sendCommand, getSong, getVersion, controllerUrl, playerUrl } from "./shared.js?v=20261019-1";
 const room=roomFromUrl(),$=s=>document.querySelector(s);
 $("#room").textContent=room;
 $("#openController").href=controllerUrl(room);

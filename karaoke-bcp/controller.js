@@ -1,6 +1,6 @@
-import { SONGS, roomFromUrl, sendCommand, subscribeRoom, adminUrl } from "./shared.js";
+import { SONGS, roomFromUrl, sendCommand, subscribeRoom, adminUrl } from "./shared.js?v=20261019-1";
 import { $, icons, loadFavorites, toggleFavorite, toggleFullscreen, normalizeSearch, escapeHtml } from "./ui.js";
-import { mountPlayer } from "./player.js?v=20261006-5";
+import { mountPlayer } from "./player.js?v=20261019-1";
 
 const room = roomFromUrl();
 $("#room").textContent = room;
@@ -22,7 +22,7 @@ async function preparePlayer() {
   preparingPlayer = true;
   try {
     // Reuse the standalone screen's markup so both playback modes stay visually identical.
-    const response = await fetch("./player.html?v=20261006-5");
+    const response = await fetch("./player.html?v=20261019-1");
     if (!response.ok) throw new Error("Player unavailable");
     const page = new DOMParser().parseFromString(await response.text(), "text/html");
     const stage = page.querySelector("#stage"), audio = page.querySelector("#audio");
@@ -100,7 +100,7 @@ function renderSongs() {
 function openVersions(song) {
   $("#dlgTitle").textContent = song.title;
   $("#dlgArtist").textContent = song.artist;
-  $("#modalNote").textContent = player ? "" : "Preparando karaoke…";
+  $("#modalNote").textContent = player ? (song.lyricsStatus === "pending" ? "Letra pendiente de sincronizar" : "") : "Preparando karaoke…";
   $("#versions").innerHTML = song.versions.map((version) => `
     <button class="versionOption ${version.id === "chorus" ? "recommended" : ""}" data-version="${escapeHtml(version.id)}" ${player ? "" : "disabled"}>
       <strong>${escapeHtml(version.label)}</strong><span class="duration">${escapeHtml(version.durationLabel)}</span><small>${escapeHtml(version.note || "")}</small>

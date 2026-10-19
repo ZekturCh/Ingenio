@@ -27,15 +27,38 @@ Las favoritas se muestran con calabazas, conservando su comportamiento anterior.
 
 ## Cambiar canciones
 
-Editar `SONGS` en `shared.js`. Cada cancion habilitada requiere `audio`, `lyrics`
+Editar `SONGS` en `songs/catalog.js` (compartido por la web y el editor). Cada cancion habilitada requiere `audio`, `lyrics`
 y `versions`. `lyrics` apunta a un JSON con una propiedad `lyrics` que contiene
 objetos `{ "text": "Frase", "start": 12.5, "end": 15.2 }`. Los tiempos son segundos
 desde el inicio del audio completo, incluso para una version corta.
 
 Las categorias se pueden definir en el campo `categories` de cada cancion:
 `criollo`, `peru`, `fiesta`, `clasicos`, `halloween`.
-Actualmente solo Carinito tiene pista y tiempos; las otras canciones conservan
-su estado de proximamente. Las pistas nuevas requieren los archivos respectivos.
+Hay ocho pistas disponibles: Carinito y las siete incorporadas el 19/10/2026.
+Solo Carinito tiene letra sincronizada. Las siete nuevas permiten reproducir la
+pista completa y muestran su letra como pendiente; no se han inventado coros ni
+marcas. Mi Peru dura 1:27: se conserva el archivo recibido sin alargarlo.
+
+Cada carpeta `songs/<id>/` contiene `audio.mp3`, `letra.txt` y
+`lyrics-timed.json`. Los TXT nuevos son plantillas comentadas, no letras completas.
+Las lineas que empiezan por `#` no se consideran letra. El archivo JSON permanece
+vacio con `status: pending` hasta disponer de marcas verificadas.
+
+### Preparar letras
+
+1. Sustituir los comentarios de `letra.txt` por la letra aportada/autorizada,
+   una frase por linea y repitiendo los estribillos tal como aparecen en la pista.
+2. Abrir `timing-editor.html`, elegir la cancion y cargar el TXT o pegar su texto.
+3. Aplicar la letra, reproducir el audio y marcar cada entrada. Los ajustes de
+   0.1 segundos, deshacer y velocidad ayudan a revisar las marcas.
+4. Descargar `lyrics-timed.json` y reemplazar el de esa misma carpeta en GitHub.
+   Cambiar `lyricsStatus` a `timed` en el catalogo cuando se haya revisado.
+
+El editor guarda borradores separados por cancion en este navegador; no modifica
+el repo ni publica archivos automaticamente. Rechaza una exportacion incompleta
+o con tiempos fuera de orden. TXT por si solo no proporciona sincronizacion;
+una pista sin voz tampoco determina las entradas exactas de las palabras.
+La web solo carga el audio seleccionado, no todas las pistas a la vez.
 
 ## Cambiar el aspecto
 
