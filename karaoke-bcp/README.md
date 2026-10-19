@@ -88,6 +88,12 @@ falta espacio, sin invadir la marca ni los controles.
 Los fondos ilustrados anteriores se conservan como archivos de referencia,
 pero ya no se usan en estas dos pantallas.
 
+En reproduccion, Hallowow y Samay permanecen apilados en todas las orientaciones.
+El bloque de marca cruza ligeramente el borde superior del panel negro; su zona
+de superposicion queda reservada en el padding de la letra. Las variables
+`--brand-row`, `--wordmark-width`, `--samay-width` y `--brand-overlap` controlan
+este encaje y se compactan segun el alto disponible, sin alterar el selector.
+
 Se incorporaron los fondos, adornos e iconos de Hallowow_Web_Visual_Assets.zip.
 Los nuevos artes se generaron con la herramienta integrada imagegen para
 aproximar el acabado de la referencia. Ver `assets/ARTWORK.md` para sus prompts.

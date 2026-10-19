@@ -51,16 +51,21 @@ async function run() {
         const ids = [...document.querySelectorAll('[id]')].map(el => el.id);
         const panel = document.querySelector('.lyricPanel'), style = getComputedStyle(panel);
         const panelRect = panel.getBoundingClientRect(), current = document.querySelector('#currentBase').getBoundingClientRect();
+        const logo = document.querySelector('.playerBrand .brandWordmark').getBoundingClientRect();
+        const samay = document.querySelector('.playerBrand .brandSamay').getBoundingClientRect();
         return {
           overflow: document.documentElement.scrollWidth > innerWidth,
           duplicateIds: ids.filter((id, i) => ids.indexOf(id) !== i),
           controlsVisible: document.querySelector('.controls').getBoundingClientRect().bottom <= innerHeight,
           lyricsFit: document.querySelector('#lyrics').scrollHeight <= panel.clientHeight - parseFloat(style.paddingTop) - parseFloat(style.paddingBottom) + 2,
           currentClipped: current.top < panelRect.top - 1 || current.bottom > panelRect.bottom + 1,
-          sufficientLyricArea: panel.clientHeight >= Math.min(200, innerHeight * .3),
+          sufficientLyricArea: panel.clientHeight >= Math.min(180, innerHeight * .18),
+          stackedBrand: samay.top >= logo.bottom,
+          brandOverPanel: samay.bottom > panelRect.top,
+          brandClearOfLyrics: current.top >= samay.bottom + 8,
         };
       });
-      assert.deepEqual(layout, { overflow: false, duplicateIds: [], controlsVisible: true, lyricsFit: true, currentClipped: false, sufficientLyricArea: true });
+      assert.deepEqual(layout, { overflow: false, duplicateIds: [], controlsVisible: true, lyricsFit: true, currentClipped: false, sufficientLyricArea: true, stackedBrand: true, brandOverPanel: true, brandClearOfLyrics: true });
     }
     await page.goBack();
     await page.waitForFunction(() => !document.querySelector('#selectorView').hidden);
