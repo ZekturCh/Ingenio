@@ -95,7 +95,8 @@ de superposicion queda reservada en el padding de la letra. Las variables
 este encaje y se compactan segun el alto disponible, sin alterar el selector.
 
 Desde el 23/10/2026, la reproduccion no usa una franja negra: las letras quedan
-sobre el fondo continuo con un oscurecido gradual semitransparente, sin bordes.
+sobre el fondo continuo con un oscurecido uniforme neutro semitransparente,
+sin bordes, halos ni manchas de degradado detras de las letras.
 La familia completa aportada en `FLEXO (1).zip` esta en `assets/fonts/flexo/`;
 `flexo.css` declara sus 16 variantes bajo el nombre `Flexo Karaoke`. La frase
 actual usa Heavy (800), las siguientes Demi (600) y la anterior Regular (400).

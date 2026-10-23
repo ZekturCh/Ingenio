@@ -295,8 +295,8 @@ svg{width:28px;height:28px;flex:none;stroke-width:2.5}
 .stage .playerBrand .brandWordmark{width:var(--wordmark-width);max-width:74%;height:auto;max-height:none;flex:none}
 .stage .playerBrand .brandSamay{width:var(--samay-width);max-width:34%}
 .stage .lyricPanel{padding-top:calc(var(--brand-overlap) + 20px)}
-/* A continuous translucent scrim replaces the opaque black lyric band. */
-.stage::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background:linear-gradient(180deg,transparent 0%,rgba(42,20,8,.12) 18%,rgba(42,20,8,.70) 40%,rgba(42,20,8,.74) 68%,rgba(42,20,8,.10) 100%)}
+/* A neutral uniform scrim preserves contrast without a brown halo or a lyric band. */
+.stage::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background:rgba(0,0,0,.62)}
 .stage .lyrics p{font-family:"Flexo Karaoke",Flexo,Arial,sans-serif;font-synthesis:none;text-shadow:0 1px 2px rgba(68,35,10,.20)}
 .stage .lyrics .current{font-weight:800;width:fit-content;max-width:100%;justify-self:center}
 .stage .currentBase{color:#fff}
