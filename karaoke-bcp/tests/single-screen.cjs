@@ -65,11 +65,13 @@ async function run() {
           brandClearOfLyrics: current.top >= samay.bottom + 8,
           transparentLyrics: style.backgroundColor === 'rgba(0, 0, 0, 0)' && style.borderTopWidth === '0px',
           flexoLyrics: getComputedStyle(document.querySelector('#current')).fontFamily.includes('Flexo Karaoke'),
-          orangeFill: getComputedStyle(document.querySelector('#currentFill')).color === 'rgb(255, 155, 56)',
-          uniformBackdrop: getComputedStyle(document.querySelector('#stage'), '::before').backgroundImage === 'none',
+          orangeFill: getComputedStyle(document.querySelector('#currentFill')).color === 'rgb(217, 75, 0)',
+          brightBackdrop: getComputedStyle(document.querySelector('#stage'), '::before').content === 'none',
+          lightReadingSurface: getComputedStyle(document.querySelector('#lyrics')).backgroundColor === 'rgb(255, 245, 229)',
+          shadowlessLyrics: getComputedStyle(document.querySelector('#currentBase')).textShadow === 'none',
         };
       });
-      assert.deepEqual(layout, { overflow: false, duplicateIds: [], controlsVisible: true, lyricsFit: true, currentClipped: false, sufficientLyricArea: true, stackedBrand: true, brandOverPanel: true, brandClearOfLyrics: true, transparentLyrics: true, flexoLyrics: true, orangeFill: true, uniformBackdrop: true });
+      assert.deepEqual(layout, { overflow: false, duplicateIds: [], controlsVisible: true, lyricsFit: true, currentClipped: false, sufficientLyricArea: true, stackedBrand: true, brandOverPanel: true, brandClearOfLyrics: true, transparentLyrics: true, flexoLyrics: true, orangeFill: true, brightBackdrop: true, lightReadingSurface: true, shadowlessLyrics: true });
     }
     await page.goBack();
     await page.waitForFunction(() => !document.querySelector('#selectorView').hidden);

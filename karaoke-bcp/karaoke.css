@@ -295,14 +295,14 @@ svg{width:28px;height:28px;flex:none;stroke-width:2.5}
 .stage .playerBrand .brandWordmark{width:var(--wordmark-width);max-width:74%;height:auto;max-height:none;flex:none}
 .stage .playerBrand .brandSamay{width:var(--samay-width);max-width:34%}
 .stage .lyricPanel{padding-top:calc(var(--brand-overlap) + 20px)}
-/* A neutral uniform scrim preserves contrast without a brown halo or a lyric band. */
-.stage::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background:rgba(0,0,0,.62)}
-.stage .lyrics p{font-family:"Flexo Karaoke",Flexo,Arial,sans-serif;font-synthesis:none;text-shadow:0 1px 2px rgba(68,35,10,.20)}
+/* Keep the scene bright; only the lyric reading surface gets a quiet solid background. */
+.stage .lyrics{padding:18px 24px;border-radius:8px;background:#fff5e5}
+.stage .lyrics p{font-family:"Flexo Karaoke",Flexo,Arial,sans-serif;font-synthesis:none;text-shadow:none}
 .stage .lyrics .current{font-weight:800;width:fit-content;max-width:100%;justify-self:center}
-.stage .currentBase{color:#fff}
-.stage .currentFill{color:#ff9b38}
-.stage .lyricContext{font-weight:600;color:#fff}
-.stage .lyricContext.previous{font-weight:400;color:#fff0d7}
+.stage .currentBase{color:#26211c}
+.stage .currentFill{color:#d94b00}
+.stage .lyricContext{font-weight:600;color:#51483f}
+.stage .lyricContext.previous{font-weight:400;color:#6d6257}
 @media(max-height:1200px){
   .stage{--brand-row:180px;--wordmark-width:340px;--samay-width:120px;--brand-overlap:44px;grid-template-rows:56px var(--brand-row) minmax(0,1fr) 64px}
   .stage .playerBrand{gap:6px}
@@ -319,4 +319,5 @@ svg{width:28px;height:28px;flex:none;stroke-width:2.5}
 }
 @media(max-height:520px){
   .stage{--brand-row:94px;--wordmark-width:160px;--samay-width:68px;--brand-overlap:20px;grid-template-rows:48px var(--brand-row) minmax(0,1fr)}
+  .stage .lyrics{padding:6px 10px}
 }
