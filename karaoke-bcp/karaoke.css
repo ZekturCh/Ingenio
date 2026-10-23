@@ -297,10 +297,10 @@ svg{width:28px;height:28px;flex:none;stroke-width:2.5}
 .stage .lyricPanel{padding-top:calc(var(--brand-overlap) + 20px)}
 /* A continuous translucent scrim replaces the opaque black lyric band. */
 .stage::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background:linear-gradient(180deg,transparent 0%,rgba(42,20,8,.12) 18%,rgba(42,20,8,.70) 40%,rgba(42,20,8,.74) 68%,rgba(42,20,8,.10) 100%)}
-.stage .lyrics p{font-family:"Flexo Karaoke",Flexo,Arial,sans-serif;font-synthesis:none;text-shadow:0 2px 4px #301605b3,0 0 12px #30160566}
+.stage .lyrics p{font-family:"Flexo Karaoke",Flexo,Arial,sans-serif;font-synthesis:none;text-shadow:0 1px 2px rgba(68,35,10,.20)}
 .stage .lyrics .current{font-weight:800;width:fit-content;max-width:100%;justify-self:center}
 .stage .currentBase{color:#fff}
-.stage .currentFill{color:#ff9b38;-webkit-text-stroke:.35px #733000}
+.stage .currentFill{color:#ff9b38}
 .stage .lyricContext{font-weight:600;color:#fff}
 .stage .lyricContext.previous{font-weight:400;color:#fff0d7}
 @media(max-height:1200px){

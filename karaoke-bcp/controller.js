@@ -22,7 +22,7 @@ async function preparePlayer() {
   preparingPlayer = true;
   try {
     // Reuse the standalone screen's markup so both playback modes stay visually identical.
-    const response = await fetch("./player.html?v=20261023-2");
+    const response = await fetch("./player.html?v=20261023-3");
     if (!response.ok) throw new Error("Player unavailable");
     const page = new DOMParser().parseFromString(await response.text(), "text/html");
     const stage = page.querySelector("#stage"), audio = page.querySelector("#audio");
