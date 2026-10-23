@@ -89,10 +89,18 @@ Los fondos ilustrados anteriores se conservan como archivos de referencia,
 pero ya no se usan en estas dos pantallas.
 
 En reproduccion, Hallowow y Samay permanecen apilados en todas las orientaciones.
-El bloque de marca cruza ligeramente el borde superior del panel negro; su zona
+El bloque de marca cruza ligeramente el borde superior de la zona de letras; su zona
 de superposicion queda reservada en el padding de la letra. Las variables
 `--brand-row`, `--wordmark-width`, `--samay-width` y `--brand-overlap` controlan
 este encaje y se compactan segun el alto disponible, sin alterar el selector.
+
+Desde el 23/10/2026, la reproduccion no usa una franja negra: las letras quedan
+sobre el fondo continuo con un oscurecido gradual semitransparente, sin bordes.
+La familia completa aportada en `FLEXO (1).zip` esta en `assets/fonts/flexo/`;
+`flexo.css` declara sus 16 variantes bajo el nombre `Flexo Karaoke`. La frase
+actual usa Heavy (800), las siguientes Demi (600) y la anterior Regular (400).
+El texto base es blanco y el barrido sincronizado naranja `#ff9b38`, con una
+sombra de contraste. Solo se descargan los pesos realmente utilizados.
 
 Se incorporaron los fondos, adornos e iconos de Hallowow_Web_Visual_Assets.zip.
 Los nuevos artes se generaron con la herramienta integrada imagegen para

@@ -102,7 +102,7 @@ svg{width:28px;height:28px;flex:none;stroke-width:2.5}
 .stage .playerBrand .brandWordmark{width:auto;max-width:74%;height:60%;max-height:280px}
 .playerBrand .brandSamay{width:clamp(90px,18%,160px)}
 .playerWrap{position:relative;z-index:2;display:grid;grid-template-rows:minmax(0,1fr) auto;gap:18px;min-height:0}
-.lyricPanel{display:flex;align-items:center;justify-content:center;min-width:0;min-height:0;width:calc(100% + 2 * var(--page-padding));margin-left:calc(-1 * var(--page-padding));padding:20px calc(var(--page-padding) + 4%);background:#1c1918;color:var(--cream);border-top:2px solid #f39720;border-bottom:2px solid #f39720}
+.lyricPanel{display:flex;align-items:center;justify-content:center;min-width:0;min-height:0;width:calc(100% + 2 * var(--page-padding));margin-left:calc(-1 * var(--page-padding));padding:20px calc(var(--page-padding) + 4%);background:transparent;color:#fff;border:0}
 .lyrics{display:grid;align-content:center;gap:14px;width:100%;max-width:1200px;text-align:center;min-width:0;--lyric-scale:1}
 .lyrics p{margin:0;overflow-wrap:anywhere;text-wrap:balance;font-family:var(--display);font-weight:400}
 .current{position:relative;width:100%;font-size:calc(52px * var(--lyric-scale));line-height:1.1}
@@ -295,6 +295,14 @@ svg{width:28px;height:28px;flex:none;stroke-width:2.5}
 .stage .playerBrand .brandWordmark{width:var(--wordmark-width);max-width:74%;height:auto;max-height:none;flex:none}
 .stage .playerBrand .brandSamay{width:var(--samay-width);max-width:34%}
 .stage .lyricPanel{padding-top:calc(var(--brand-overlap) + 20px)}
+/* A continuous translucent scrim replaces the opaque black lyric band. */
+.stage::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background:linear-gradient(180deg,transparent 0%,rgba(42,20,8,.12) 18%,rgba(42,20,8,.70) 40%,rgba(42,20,8,.74) 68%,rgba(42,20,8,.10) 100%)}
+.stage .lyrics p{font-family:"Flexo Karaoke",Flexo,Arial,sans-serif;font-synthesis:none;text-shadow:0 2px 4px #301605b3,0 0 12px #30160566}
+.stage .lyrics .current{font-weight:800;width:fit-content;max-width:100%;justify-self:center}
+.stage .currentBase{color:#fff}
+.stage .currentFill{color:#ff9b38;-webkit-text-stroke:.35px #733000}
+.stage .lyricContext{font-weight:600;color:#fff}
+.stage .lyricContext.previous{font-weight:400;color:#fff0d7}
 @media(max-height:1200px){
   .stage{--brand-row:180px;--wordmark-width:340px;--samay-width:120px;--brand-overlap:44px;grid-template-rows:56px var(--brand-row) minmax(0,1fr) 64px}
   .stage .playerBrand{gap:6px}

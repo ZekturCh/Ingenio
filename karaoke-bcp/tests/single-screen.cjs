@@ -63,9 +63,12 @@ async function run() {
           stackedBrand: samay.top >= logo.bottom,
           brandOverPanel: samay.bottom > panelRect.top,
           brandClearOfLyrics: current.top >= samay.bottom + 8,
+          transparentLyrics: style.backgroundColor === 'rgba(0, 0, 0, 0)' && style.borderTopWidth === '0px',
+          flexoLyrics: getComputedStyle(document.querySelector('#current')).fontFamily.includes('Flexo Karaoke'),
+          orangeFill: getComputedStyle(document.querySelector('#currentFill')).color === 'rgb(255, 155, 56)',
         };
       });
-      assert.deepEqual(layout, { overflow: false, duplicateIds: [], controlsVisible: true, lyricsFit: true, currentClipped: false, sufficientLyricArea: true, stackedBrand: true, brandOverPanel: true, brandClearOfLyrics: true });
+      assert.deepEqual(layout, { overflow: false, duplicateIds: [], controlsVisible: true, lyricsFit: true, currentClipped: false, sufficientLyricArea: true, stackedBrand: true, brandOverPanel: true, brandClearOfLyrics: true, transparentLyrics: true, flexoLyrics: true, orangeFill: true });
     }
     await page.goBack();
     await page.waitForFunction(() => !document.querySelector('#selectorView').hidden);
