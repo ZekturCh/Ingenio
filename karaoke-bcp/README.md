@@ -95,13 +95,13 @@ de superposicion queda reservada en el padding de la letra. Las variables
 este encaje y se compactan segun el alto disponible, sin alterar el selector.
 
 Desde el 23/10/2026, la reproduccion no usa una franja negra: las letras quedan
-sobre una superficie clara solida, sin sombras ni halos. El fondo de la escena
+sobre una superficie dorada solida (`#ffd477`), sin sombras ni halos. El fondo de la escena
 mantiene su luminosidad original: no hay una capa que oscurezca toda la pantalla.
 La familia completa aportada en `FLEXO (1).zip` esta en `assets/fonts/flexo/`;
 `flexo.css` declara sus 16 variantes bajo el nombre `Flexo Karaoke`. La frase
 actual usa Heavy (800), las siguientes Demi (600) y la anterior Regular (400).
 El texto base es oscuro y el barrido sincronizado naranja `#d94b00`, para mantener
-contraste sobre la superficie clara. Solo se descargan los pesos utilizados.
+contraste sobre la superficie dorada. Solo se descargan los pesos utilizados.
 
 Se incorporaron los fondos, adornos e iconos de Hallowow_Web_Visual_Assets.zip.
 Los nuevos artes se generaron con la herramienta integrada imagegen para

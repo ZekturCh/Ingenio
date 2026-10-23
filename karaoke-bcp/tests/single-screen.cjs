@@ -67,7 +67,7 @@ async function run() {
           flexoLyrics: getComputedStyle(document.querySelector('#current')).fontFamily.includes('Flexo Karaoke'),
           orangeFill: getComputedStyle(document.querySelector('#currentFill')).color === 'rgb(217, 75, 0)',
           brightBackdrop: getComputedStyle(document.querySelector('#stage'), '::before').content === 'none',
-          lightReadingSurface: getComputedStyle(document.querySelector('#lyrics')).backgroundColor === 'rgb(255, 245, 229)',
+          lightReadingSurface: getComputedStyle(document.querySelector('#lyrics')).backgroundColor === 'rgb(255, 212, 119)',
           shadowlessLyrics: getComputedStyle(document.querySelector('#currentBase')).textShadow === 'none',
         };
       });
