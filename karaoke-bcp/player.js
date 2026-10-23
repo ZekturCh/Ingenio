@@ -166,6 +166,7 @@ function fitLyrics() {
 }
 new ResizeObserver(fitLyrics).observe($(".lyricPanel"));
 document.fonts.ready.then(fitLyrics);
+document.fonts.addEventListener("loadingdone", fitLyrics);
 
 if (!embedded) {
 $("#activateBtn").onclick = async () => {

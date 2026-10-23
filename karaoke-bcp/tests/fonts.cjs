@@ -15,4 +15,5 @@ for (const file of files) {
 for (const page of ['index.html', 'player.html']) {
   assert.match(fs.readFileSync(path.join(root, page), 'utf8'), /fonts\/flexo\/flexo\.css\?v=20261023-1/);
 }
+assert.match(fs.readFileSync(path.join(root, 'player.js'), 'utf8'), /document\.fonts\.addEventListener\("loadingdone", fitLyrics\)/);
 console.log('Flexo: 16 valid OpenType files and both playback entry points passed.');
