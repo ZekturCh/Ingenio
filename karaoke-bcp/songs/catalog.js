@@ -19,6 +19,16 @@ carinito.categories = ["fiesta", "peru"];
 carinito.versions.unshift({ id: "chorus", label: "Coro", durationLabel: "1:00",
   startAt: 57.214, endAt: 117.214, note: "Versión rápida para activación" });
 
+function pendingTrack(id, title, artist = "Versión por confirmar") {
+  return {
+    id, title, artist, enabled: false, audioStatus: "missing",
+    audio: `songs/${id}/audio.mp3`,
+    text: `songs/${id}/letra.txt`,
+    lyrics: `songs/${id}/lyrics-timed.json`,
+    lyricsStatus: "pending", versions: [],
+  };
+}
+
 export const SONGS = [
   carinito,
   track("la-flor-de-la-canela", "La Flor de la Canela", "Chabuca Granda", 211.148),
@@ -28,8 +38,24 @@ export const SONGS = [
   track("mi-peru", "Mi Perú", "Manuel Raygada", 87.536),
   track("contigo-peru", "Contigo Perú", "Arturo \"Zambo\" Cavero", 237.087),
   track("y-se-llama-peru", "Y se llama Perú", "Zambo Cavero y Óscar Avilés", 185.365),
-  { id: "odiame", title: "Ódiame", artist: "Eva Ayllón", enabled: false, versions: [] },
-  { id: "himno-peru", title: "Himno Nacional del Perú", artist: "Perú", enabled: false, versions: [] },
-  { id: "cuando-pienses", title: "Cuando pienses en volver", artist: "Pedro Suárez-Vértiz", enabled: false, versions: [] },
-  { id: "ritmo-color-sabor", title: "Ritmo, color y sabor", artist: "Eva Ayllón", enabled: false, versions: [] },
+  pendingTrack("a-quien-le-importa", "A quién le importa"),
+  pendingTrack("alma-corazon-y-vida", "Alma, corazón y vida"),
+  pendingTrack("amor-eterno", "Amor eterno"),
+  pendingTrack("cuando-pienses", "Cuando pienses en volver", "Pedro Suárez-Vértiz"),
+  pendingTrack("el-muerto-vivo", "El muerto vivo"),
+  pendingTrack("el-rey", "El rey"),
+  pendingTrack("el-triste", "El triste"),
+  pendingTrack("himno-peru", "Himno Nacional del Perú", "Perú"),
+  pendingTrack("la-bruja", "La Bruja"),
+  pendingTrack("la-llorona", "La Llorona"),
+  pendingTrack("la-malaguena", "La Malagueña"),
+  pendingTrack("mal-paso", "Mal paso"),
+  pendingTrack("mujer-contra-mujer", "Mujer contra mujer"),
+  pendingTrack("no-podras", "No podrás"),
+  pendingTrack("nuestro-secreto", "Nuestro secreto"),
+  pendingTrack("payaso", "Payaso"),
+  pendingTrack("quien-sera", "Quién será"),
+  pendingTrack("regresa", "Regresa"),
+  pendingTrack("ritmo-color-sabor", "Ritmo, color y sabor", "Eva Ayllón"),
+  pendingTrack("odiame", "Ódiame", "Eva Ayllón"),
 ];

@@ -14,8 +14,8 @@ La cancion Propiedad Privada esta guardada como `Mi propiedad privada.txt`.
 - Descargar los TXT para importarlos al lector movil.
 - Para recuperar todo despues de formatear, descargar el ZIP del repositorio
   Ingenio desde GitHub o clonarlo y abrir `karaoke-bcp/letras-para-lector/`.
-- Estos archivos son un respaldo independiente. No reemplazan los archivos de
-  `songs/`, no activan canciones y no cambian las letras sincronizadas de la app.
+- Estos archivos son un respaldo independiente. Sus copias sin el título están
+  organizadas en `songs/`. No activan canciones ni cambian las letras sincronizadas de la app.
 - Los TXT incluyen el titulo como primera linea. Para usarlos en el editor de
   tiempos, omitir esa linea y revisar la letra contra la grabacion exacta.
 

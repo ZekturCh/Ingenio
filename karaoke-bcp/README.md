@@ -28,8 +28,8 @@ Las favoritas se muestran con calabazas, conservando su comportamiento anterior.
 ## Cambiar canciones
 
 Las letras de practica aportadas por el usuario estan respaldadas en
-[`letras-para-lector/`](letras-para-lector/README.md): 27 TXT independientes del
-reproductor, sin marcas de tiempo. Carinito conserva su letra en `songs/carinito/`.
+[`letras-para-lector/`](letras-para-lector/README.md): 27 TXT originales, sin marcas de tiempo. Sus copias sin la línea del título
+están organizadas en `songs/<id>/letra.txt`. Consulta [los 20 audios pendientes](songs/PENDIENTES.md). Carinito conserva su letra en `songs/carinito/`.
 
 Editar `SONGS` en `songs/catalog.js` (compartido por la web y el editor). Cada cancion habilitada requiere `audio`, `lyrics`
 y `versions`. `lyrics` apunta a un JSON con una propiedad `lyrics` que contiene
@@ -43,8 +43,8 @@ Solo Carinito tiene letra sincronizada. Las siete nuevas permiten reproducir la
 pista completa y muestran su letra como pendiente; no se han inventado coros ni
 marcas. Mi Peru dura 1:27: se conserva el archivo recibido sin alargarlo.
 
-Cada carpeta `songs/<id>/` contiene `audio.mp3`, `letra.txt` y
-`lyrics-timed.json`. Los TXT nuevos son plantillas comentadas, no letras completas.
+Cada carpeta disponible `songs/<id>/` contiene `audio.mp3`, `letra.txt` y
+`lyrics-timed.json`. Los TXT contienen las letras aportadas; las 20 carpetas pendientes todavía no tienen audio.
 Las lineas que empiezan por `#` no se consideran letra. El archivo JSON permanece
 vacio con `status: pending` hasta disponer de marcas verificadas.
 
