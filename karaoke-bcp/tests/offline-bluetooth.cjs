@@ -99,7 +99,8 @@ async function main() {
       }
       navigator.serviceWorker.controller.postMessage({type:'CHECK_OFFLINE'});
     });
-    await page.locator('.offline-indicator[data-state="incomplete"]').waitFor();
+    // Another open page may retry the missing file while offline; both states stay red.
+    await page.waitForFunction(()=>['incomplete','error'].includes(document.querySelector('.offline-indicator').dataset.state));
     await context.setOffline(false);
     await page.locator('.offline-indicator[data-state="ready"]').waitFor({timeout:60000});
     assert.deepEqual(errors,[]);
