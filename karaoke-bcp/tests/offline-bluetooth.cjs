@@ -30,7 +30,7 @@ async function main() {
     await context.setOffline(true);
     await page.reload();
     await page.locator('.offline-indicator[data-state="ready"]').waitFor();
-    assert.equal(await page.locator('.song.enabled').count(),20);
+    assert.equal(await page.locator('.song.enabled').count(),23);
     assert.ok(await page.locator('#selectorView .brandWordmark').evaluate(img => img.complete && img.naturalWidth > 0));
     // Cold-load each available track from the cache, including seeks into full MP3 files.
     const songs = await page.evaluate(async () => (await import('./songs/catalog.js')).SONGS.filter(song=>song.enabled));
@@ -103,7 +103,7 @@ async function main() {
     await context.setOffline(false);
     await page.locator('.offline-indicator[data-state="ready"]').waitFor({timeout:60000});
     assert.deepEqual(errors,[]);
-    console.log('Offline: all 20 tracks, range seeks, cold pages, cache recovery, calibration and saved delay passed.');
+    console.log('Offline: all 23 tracks, range seeks, cold pages, cache recovery, calibration and saved delay passed.');
   } finally {await browser.close();}
 }
 main().catch(error=>{console.error(error);process.exitCode=1;});

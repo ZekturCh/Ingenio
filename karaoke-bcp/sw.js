@@ -1,4 +1,4 @@
-const VERSION = "3e65e78a292ac674719b";
+const VERSION = "728f2f160ac6495aa4a6";
 const PREFIX = `samay-karaoke-${self.registration.scope}-`;
 const CACHE = PREFIX + VERSION;
 const manifestURL = new URL("offline-assets.json", self.registration.scope).href;

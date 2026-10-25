@@ -1,5 +1,125 @@
 {
   "songId": "nuestro-secreto",
-  "status": "pending",
-  "lyrics": []
+  "title": "Nuestro secreto",
+  "status": "estimated",
+  "reviewRequired": true,
+  "timingMethod": "text-length-proportional; not aligned to vocals or instrumental sections",
+  "durationSeconds": 159.425306,
+  "lyrics": [
+    {
+      "text": "Este secreto que tienes conmigo nadie lo sabrá",
+      "start": 0.0,
+      "end": 7.375548
+    },
+    {
+      "text": "Este secreto seguira escondido una eternidad",
+      "start": 7.375548,
+      "end": 14.751096
+    },
+    {
+      "text": "Yo te aseguro nunca diré nada de lo que pasó",
+      "start": 14.751096,
+      "end": 21.370177
+    },
+    {
+      "text": "Y no te preocupes, que todo lo nuestro queda entre tú y yo",
+      "start": 21.370177,
+      "end": 29.880425
+    },
+    {
+      "text": "Este secreto que tienes conmigo nadie lo sabrá",
+      "start": 29.880425,
+      "end": 37.255973
+    },
+    {
+      "text": "Este secreto seguira escondido una eternidad",
+      "start": 37.255973,
+      "end": 44.631521
+    },
+    {
+      "text": "Yo te aseguro nunca diré nada de lo que pasó",
+      "start": 44.631521,
+      "end": 51.250603
+    },
+    {
+      "text": "Y no te preocupes, que todo lo nuestro queda entre tú y yo",
+      "start": 51.250603,
+      "end": 59.76085
+    },
+    {
+      "text": "Nadie sabrá que tu pecho, juntito al mío ha latido",
+      "start": 59.76085,
+      "end": 67.325515
+    },
+    {
+      "text": "Que disfrutamos instantes, de fascinante dulzura",
+      "start": 67.325515,
+      "end": 75.268413
+    },
+    {
+      "text": "Nunca diré que hubo noches que te adoré con locura",
+      "start": 75.268413,
+      "end": 83.022194
+    },
+    {
+      "text": "Nadie sabrá que en tus brazos",
+      "start": 83.022194,
+      "end": 87.560993
+    },
+    {
+      "text": "Borracho de amor, me quedé dormido",
+      "start": 87.560993,
+      "end": 92.856258
+    },
+    {
+      "text": "Nadie sabrá que tu pecho, juntitito al mío ha latido",
+      "start": 92.856258,
+      "end": 100.799156
+    },
+    {
+      "text": "Que disfrutamos instantes, de fascinante dulzura",
+      "start": 100.799156,
+      "end": 108.742053
+    },
+    {
+      "text": "Nunca diré que hubo noches que te adoré con locura",
+      "start": 108.742053,
+      "end": 116.495835
+    },
+    {
+      "text": "Nadie sabrá que en tus brazos",
+      "start": 116.495835,
+      "end": 121.034633
+    },
+    {
+      "text": "Borracho de amor, me quedé dormido",
+      "start": 121.034633,
+      "end": 126.329898
+    },
+    {
+      "text": "Nadie sabrá que tu pecho, juntito al mío ha latido",
+      "start": 126.329898,
+      "end": 133.894563
+    },
+    {
+      "text": "Que disfrutamos instantes, de fascinante dulzura",
+      "start": 133.894563,
+      "end": 141.837461
+    },
+    {
+      "text": "Nunca diré que hubo noches que te adoré con locura",
+      "start": 141.837461,
+      "end": 149.591242
+    },
+    {
+      "text": "Nadie sabrá que en tus brazos",
+      "start": 149.591242,
+      "end": 154.130041
+    },
+    {
+      "text": "Borracho de amor, me quedé dormido",
+      "start": 154.130041,
+      "end": 159.425306
+    }
+  ]
 }

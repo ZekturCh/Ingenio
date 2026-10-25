@@ -94,5 +94,29 @@
     "durationSeconds": 236.094694,
     "sha256": "a575458660951772757c3c4f12e549a825def63b44d00f576035b9aa7152b69d",
     "bytes": 3959362
+  },
+  {
+    "id": "nuestro-secreto",
+    "title": "Nuestro secreto",
+    "source": "Zambo Cavero - Nuestro Secreto KARAOKE PISTA.mp3",
+    "durationSeconds": 159.425306,
+    "sha256": "6c9db8c9bf2b142588a8db57fef624a1177da70d81cfd0af6f812c592b55a410",
+    "bytes": 2382113
+  },
+  {
+    "id": "regresa",
+    "title": "Regresa",
+    "source": "Eva Ayllon - Regresa (Versión Karaoke).mp3",
+    "durationSeconds": 247.118367,
+    "sha256": "f3eb45658e6a65d16d6846085f9bedd9af42403c589836f5e35cde6d97c3649f",
+    "bytes": 5931604
+  },
+  {
+    "id": "mujer-contra-mujer",
+    "title": "Mujer contra mujer",
+    "source": "Mecano - Mujer Contra Mujer (mp3cut.net).mp3",
+    "durationSeconds": 247.301224,
+    "sha256": "73af989c36b5d36bc54cbdc7c12235c05ab1f775f7a7a824454a2e98238964d6",
+    "bytes": 3489031
   }
 ]

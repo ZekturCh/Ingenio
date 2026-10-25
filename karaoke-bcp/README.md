@@ -29,7 +29,7 @@ Las favoritas se muestran con calabazas, conservando su comportamiento anterior.
 
 Las letras de practica aportadas por el usuario estan respaldadas en
 [`letras-para-lector/`](letras-para-lector/README.md): 27 TXT originales, sin marcas de tiempo. Sus copias sin la línea del título
-están organizadas en `songs/<id>/letra.txt`. Consulta [los 8 audios pendientes](songs/PENDIENTES.md). Carinito conserva su letra en `songs/carinito/`.
+están organizadas en `songs/<id>/letra.txt`. Consulta [los 5 audios pendientes](songs/PENDIENTES.md). Carinito conserva su letra en `songs/carinito/`.
 
 Editar `SONGS` en `songs/catalog.js` (compartido por la web y el editor). Cada cancion habilitada requiere `audio`, `lyrics`
 y `versions`. `lyrics` apunta a un JSON con una propiedad `lyrics` que contiene
@@ -38,14 +38,15 @@ desde el inicio del audio completo, incluso para una version corta.
 
 Las categorias se pueden definir en el campo `categories` de cada cancion:
 `criollo`, `peru`, `fiesta`, `clasicos`, `halloween`.
-Hay 20 pistas disponibles: Cariñito, las siete incorporadas el 19/10/2026 y 12 importadas de Descargas el 25/10/2026.
-Las 12 últimas tienen JSON de tiempos aproximados, identificados como tales en la app; requieren revisión contra cada grabación.
+Hay 23 pistas disponibles: Cariñito, las siete incorporadas el 19/10/2026 y 15 MP3 aportados por el usuario.
+Las cinco canciones sin audio quedan ocultas del selector.
+Las 15 últimas tienen JSON de tiempos aproximados, identificados como tales en la app; requieren revisión contra cada grabación.
 Solo Carinito tiene letra sincronizada. Las siete nuevas permiten reproducir la
 pista completa y muestran su letra como pendiente; no se han inventado coros ni
 marcas. Mi Peru dura 1:27: se conserva el archivo recibido sin alargarlo.
 
 Cada carpeta disponible `songs/<id>/` contiene `audio.mp3`, `letra.txt` y
-`lyrics-timed.json`. Los TXT contienen las letras aportadas; las 8 carpetas pendientes todavía no tienen audio.
+`lyrics-timed.json`. Los TXT contienen las letras aportadas; las 5 carpetas pendientes todavía no tienen audio.
 Las lineas que empiezan por `#` no se consideran letra. El archivo JSON permanece
 vacio con `status: pending` hasta disponer de marcas verificadas.
 
@@ -70,8 +71,8 @@ además todas las pistas disponibles en segundo plano.
 
 Abrir la página una vez con internet mediante HTTPS (o localhost para desarrollo)
 y mantenerla abierta hasta que el punto de la esquina inferior derecha esté verde.
-La descarga actual ocupa aproximadamente 93 MB e incluye las cuatro pantallas,
-imágenes, fuentes, letras, la prueba de sincronización y los 20 MP3 disponibles.
+La descarga actual ocupa aproximadamente 104 MB e incluye las cuatro pantallas,
+imágenes, fuentes, letras, la prueba de sincronización y los 23 MP3 disponibles.
 El punto rojo parpadea durante la descarga; al tocarlo se ve el progreso o el error
 y se puede reintentar. Un archivo faltante impide confirmar el estado verde.
 
@@ -109,7 +110,7 @@ cada frase de las pistas pendientes de revisión.
 La prueba se puede regenerar con
 `node karaoke-bcp/scripts/generate-calibration.cjs`; después regenerar el manifiesto.
 `tests/offline-bluetooth.cjs` comprueba descarga completa, recarga sin internet,
-las 20 pistas, solicitudes Range, recuperación de un archivo perdido, pantallas
+las 23 pistas, solicitudes Range, recuperación de un archivo perdido, pantallas
 no visitadas, calibración y persistencia del retraso.
 
 ## Cambiar el aspecto

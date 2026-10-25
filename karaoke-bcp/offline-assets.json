@@ -1,6 +1,6 @@
 {
-  "version": "3e65e78a292ac674719b",
-  "totalBytes": 97230797,
+  "version": "728f2f160ac6495aa4a6",
+  "totalBytes": 109044300,
   "assets": [
     {
       "url": "../Logo%20Samay.png",
@@ -334,8 +334,8 @@
     },
     {
       "url": "controller.js",
-      "size": 8499,
-      "sha256": "b90771e5c3080dc5253aadec4034b1280b0371dfebbd37e335afbd59ff11dfff"
+      "size": 8418,
+      "sha256": "a75eb789b88b455d4d6bfd70ba0efc944e7a32ed37f412a93ecc2b2d1219d726"
     },
     {
       "url": "device-menu.css",
@@ -524,8 +524,8 @@
     },
     {
       "url": "songs/AUDIOS-IMPORTADOS.json",
-      "size": 3132,
-      "sha256": "ffffafa2ca6180104740591102039a2e19d214cbc3e1fc6ac584d6109c22eaff"
+      "size": 3935,
+      "sha256": "ffea5dcb1fc4b4eff55b272e20b63c87743cfd8cbb91eac83b46fa46f85fe10b"
     },
     {
       "url": "songs/a-quien-le-importa/audio.mp3",
@@ -589,8 +589,8 @@
     },
     {
       "url": "songs/catalog.js",
-      "size": 3377,
-      "sha256": "76e08257a310b0785d60a8fb59c7c7af1af62761c0977919dd97ce63c2d34976"
+      "size": 3471,
+      "sha256": "2ed221c6575108146a80591a86eda0142b4d63c3a909dc4876dd46a9dba80f90"
     },
     {
       "url": "songs/contigo-peru/audio.mp3",
@@ -803,14 +803,19 @@
       "sha256": "2f2056ae55eb1ebdfb6ba75f238106796833042c3edb6aa49a44e881111b2569"
     },
     {
+      "url": "songs/mujer-contra-mujer/audio.mp3",
+      "size": 3489031,
+      "sha256": "73af989c36b5d36bc54cbdc7c12235c05ab1f775f7a7a824454a2e98238964d6"
+    },
+    {
       "url": "songs/mujer-contra-mujer/letra.txt",
       "size": 1076,
       "sha256": "09d0437db5cbbaa37a74299dcdd260d2610011294d63248c0f8d6adedd4d5775"
     },
     {
       "url": "songs/mujer-contra-mujer/lyrics-timed.json",
-      "size": 76,
-      "sha256": "e3dbc725e1a8ed28195796d7b5d203ccbe3105cca83f811be94bda01519b10b4"
+      "size": 4130,
+      "sha256": "57c6101d80b7381e6e0531c881d2237ea49f2275dd0e8596182806ca50f86873"
     },
     {
       "url": "songs/no-podras/audio.mp3",
@@ -828,14 +833,19 @@
       "sha256": "9a5ae7131cb02dbef9ab0066c32e1a50c901e9f8fd1d12ce9f33cb55065892a7"
     },
     {
+      "url": "songs/nuestro-secreto/audio.mp3",
+      "size": 2382113,
+      "sha256": "6c9db8c9bf2b142588a8db57fef624a1177da70d81cfd0af6f812c592b55a410"
+    },
+    {
       "url": "songs/nuestro-secreto/letra.txt",
       "size": 1077,
       "sha256": "c31edb4080930feea8f01d879f04bf11f42e618181a36113e6b9115a91920c98"
     },
     {
       "url": "songs/nuestro-secreto/lyrics-timed.json",
-      "size": 73,
-      "sha256": "9363c90e291426b15c9867d26aed885a0dc41e55947aab7fcd4a1ef16ffe47d7"
+      "size": 3154,
+      "sha256": "b6746dbb3fa3b921b34552da6a30bd37ba98b1b1bbbe249daee3a6854969ef04"
     },
     {
       "url": "songs/odiame/letra.txt",
@@ -878,14 +888,19 @@
       "sha256": "7e1a62da727fb4cf3fd21143a9e1792fe47a52e1e9cce16b3a6c88b69d0fff41"
     },
     {
+      "url": "songs/regresa/audio.mp3",
+      "size": 5931604,
+      "sha256": "f3eb45658e6a65d16d6846085f9bedd9af42403c589836f5e35cde6d97c3649f"
+    },
+    {
       "url": "songs/regresa/letra.txt",
       "size": 722,
       "sha256": "e6701a8b30d0e5ca36b08d31ba7547a3076946405509bfe838fadc1d6d1b0230"
     },
     {
       "url": "songs/regresa/lyrics-timed.json",
-      "size": 65,
-      "sha256": "290c1698f8cea0079aea3561be601bb207b4130ea7db53cc6ad06cfbbeb2f5a0"
+      "size": 2869,
+      "sha256": "a849b90cc8b897704fcb7f67926309f2bdb990b7f0e98daa07e3d24581e4ee5d"
     },
     {
       "url": "songs/ritmo-color-sabor/audio.mp3",

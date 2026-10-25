@@ -15,8 +15,8 @@ async function main() {
     page.on('pageerror', error => errors.push(error.message));
     await page.goto((process.env.KARAOKE_BASE_URL || 'http://127.0.0.1:5181/karaoke-bcp/') + '?room=IMPORT_TEST');
     await page.locator('#audio').waitFor({state:'attached'});
-    assert.equal(await page.locator('.song.enabled').count(), 20);
-    assert.equal(await page.locator('.song.disabled').count(), 8);
+    assert.equal(await page.locator('.song.enabled').count(), 23);
+    assert.equal(await page.locator('.song.disabled').count(), 0);
     for (const song of imported) {
       await page.locator(`[data-song="${song.id}"]`).click();
       await page.locator('[data-version="full"]').click();
