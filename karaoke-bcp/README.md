@@ -27,6 +27,10 @@ Las favoritas se muestran con calabazas, conservando su comportamiento anterior.
 
 ## Cambiar canciones
 
+Las letras de practica aportadas por el usuario estan respaldadas en
+[`letras-para-lector/`](letras-para-lector/README.md): 27 TXT independientes del
+reproductor, sin marcas de tiempo. Carinito conserva su letra en `songs/carinito/`.
+
 Editar `SONGS` en `songs/catalog.js` (compartido por la web y el editor). Cada cancion habilitada requiere `audio`, `lyrics`
 y `versions`. `lyrics` apunta a un JSON con una propiedad `lyrics` que contiene
 objetos `{ "text": "Frase", "start": 12.5, "end": 15.2 }`. Los tiempos son segundos
