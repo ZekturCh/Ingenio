@@ -52,7 +52,7 @@ function renderSong() {
   $("#kicker").textContent = "Ahora canta";
   $("#title").textContent = activeSong.title;
   $("#artist").textContent = activeSong.artist;
-  $("#version").textContent = `${activeVersion.label} · ${activeVersion.durationLabel}`;
+  $("#version").textContent = `${activeVersion.label} · ${activeVersion.durationLabel}${activeSong.lyricsStatus === "estimated" ? " · Letra con tiempos aproximados" : ""}`;
   $("#seek").disabled = false;
   ["#playBtn", "#previousBtn", "#nextBtn", "#favoriteBtn"].forEach((selector) => $(selector).disabled = false);
   updateFavorite();

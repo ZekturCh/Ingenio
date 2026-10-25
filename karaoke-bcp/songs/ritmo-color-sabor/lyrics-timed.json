@@ -1,5 +1,325 @@
 {
   "songId": "ritmo-color-sabor",
-  "status": "pending",
-  "lyrics": []
+  "title": "Ritmo, color y sabor",
+  "status": "estimated",
+  "reviewRequired": true,
+  "timingMethod": "text-length-proportional; not aligned to vocals or instrumental sections",
+  "durationSeconds": 257.07102,
+  "lyrics": [
+    {
+      "text": "Ritmo, color y sabor",
+      "start": 0.0,
+      "end": 3.456417
+    },
+    {
+      "text": "Ritmo para vacilar",
+      "start": 3.456417,
+      "end": 6.912834
+    },
+    {
+      "text": "Ritmo, color y sabor",
+      "start": 6.912834,
+      "end": 10.369251
+    },
+    {
+      "text": "Ritmo para vacilar",
+      "start": 10.369251,
+      "end": 13.825668
+    },
+    {
+      "text": "Ritmo, color y sabor",
+      "start": 13.825668,
+      "end": 17.282085
+    },
+    {
+      "text": "Ritmo para vacilar (pa' vacilar)",
+      "start": 17.282085,
+      "end": 22.682737
+    },
+    {
+      "text": "Ritmo, color y sabor",
+      "start": 22.682737,
+      "end": 26.139154
+    },
+    {
+      "text": "Ritmo para vacilar",
+      "start": 26.139154,
+      "end": 29.595571
+    },
+    {
+      "text": "Del África llegaron",
+      "start": 29.595571,
+      "end": 33.268014
+    },
+    {
+      "text": "Gran cantidad de negros",
+      "start": 33.268014,
+      "end": 37.588536
+    },
+    {
+      "text": "Trajeron a esta tierra",
+      "start": 37.588536,
+      "end": 41.693031
+    },
+    {
+      "text": "Su sabor, su raza y su ritmo tan bueno",
+      "start": 41.693031,
+      "end": 47.957787
+    },
+    {
+      "text": "Pasaron muchos años",
+      "start": 47.957787,
+      "end": 51.63023
+    },
+    {
+      "text": "Con penas y dolores",
+      "start": 51.63023,
+      "end": 55.086647
+    },
+    {
+      "text": "Pero ni las cadenas evitaron el sonar",
+      "start": 55.086647,
+      "end": 61.783455
+    },
+    {
+      "text": "De los tambores",
+      "start": 61.783455,
+      "end": 64.591794
+    },
+    {
+      "text": "Tuvieron que trabajar",
+      "start": 64.591794,
+      "end": 68.696289
+    },
+    {
+      "text": "Con azote, el mayoral",
+      "start": 68.696289,
+      "end": 72.368733
+    },
+    {
+      "text": "Se les dio la libertad",
+      "start": 72.368733,
+      "end": 76.257202
+    },
+    {
+      "text": "Y ahora nos hacen gozar",
+      "start": 76.257202,
+      "end": 80.361697
+    },
+    {
+      "text": "Ritmo, color y sabor",
+      "start": 80.361697,
+      "end": 83.818114
+    },
+    {
+      "text": "Ritmo para vacilar",
+      "start": 83.818114,
+      "end": 87.274531
+    },
+    {
+      "text": "Ritmo, color y sabor",
+      "start": 87.274531,
+      "end": 90.730948
+    },
+    {
+      "text": "Ritmo para vacilar (¿cómo?)",
+      "start": 90.730948,
+      "end": 95.05147
+    },
+    {
+      "text": "Ritmo, color y sabor",
+      "start": 95.05147,
+      "end": 98.507887
+    },
+    {
+      "text": "Ritmo para vacilar (para vacilar)",
+      "start": 98.507887,
+      "end": 104.34059
+    },
+    {
+      "text": "Ritmo, color y sabor",
+      "start": 104.34059,
+      "end": 107.797008
+    },
+    {
+      "text": "Ritmo para vacilar",
+      "start": 107.797008,
+      "end": 111.253425
+    },
+    {
+      "text": "Ay, mira cómo baila",
+      "start": 111.253425,
+      "end": 114.493816
+    },
+    {
+      "text": "Cómo baila ese moreno",
+      "start": 114.493816,
+      "end": 118.382285
+    },
+    {
+      "text": "A mí me gusta mucho",
+      "start": 118.382285,
+      "end": 121.622676
+    },
+    {
+      "text": "Cómo baila y cómo mueve sus caderas",
+      "start": 121.622676,
+      "end": 127.887432
+    },
+    {
+      "text": "Ritmo, color y sabor",
+      "start": 127.887432,
+      "end": 131.343849
+    },
+    {
+      "text": "Ritmo para vacilar",
+      "start": 131.343849,
+      "end": 134.800266
+    },
+    {
+      "text": "Ritmo, color y sabor",
+      "start": 134.800266,
+      "end": 138.256683
+    },
+    {
+      "text": "Ritmo para vacilar",
+      "start": 138.256683,
+      "end": 141.7131
+    },
+    {
+      "text": "Ritmo, color y sabor (eso es)",
+      "start": 141.7131,
+      "end": 146.249648
+    },
+    {
+      "text": "Ritmo para vacilar (para vacilar)",
+      "start": 146.249648,
+      "end": 152.082351
+    },
+    {
+      "text": "Ritmo, color y sabor",
+      "start": 152.082351,
+      "end": 155.538768
+    },
+    {
+      "text": "Ritmo para vacilar",
+      "start": 155.538768,
+      "end": 158.995185
+    },
+    {
+      "text": "Tiene sabor, ritmo y color",
+      "start": 158.995185,
+      "end": 163.531733
+    },
+    {
+      "text": "De chincha a la cuna",
+      "start": 163.531733,
+      "end": 166.98815
+    },
+    {
+      "text": "Como mi tierra, te juro, no hay ninguna",
+      "start": 166.98815,
+      "end": 173.468932
+    },
+    {
+      "text": "Tiene sabor, ritmo y color",
+      "start": 173.468932,
+      "end": 178.005479
+    },
+    {
+      "text": "Tiene azuquitar, canela",
+      "start": 178.005479,
+      "end": 182.326001
+    },
+    {
+      "text": "Y un poquito de clavo de olor",
+      "start": 182.326001,
+      "end": 187.2946
+    },
+    {
+      "text": "Tiene sabor, ritmo y color",
+      "start": 187.2946,
+      "end": 191.831148
+    },
+    {
+      "text": "Del Perú para el mundo",
+      "start": 191.831148,
+      "end": 195.719617
+    },
+    {
+      "text": "Con sentimiento profundo",
+      "start": 195.719617,
+      "end": 200.47219
+    },
+    {
+      "text": "Tiene sabor, ritmo y color",
+      "start": 200.47219,
+      "end": 205.008738
+    },
+    {
+      "text": "Ritmo, color y sabor",
+      "start": 205.008738,
+      "end": 208.465155
+    },
+    {
+      "text": "Ritmo, color y sabor",
+      "start": 208.465155,
+      "end": 211.921572
+    },
+    {
+      "text": "Ritmo para vacilar",
+      "start": 211.921572,
+      "end": 215.377989
+    },
+    {
+      "text": "Ritmo, color y sabor",
+      "start": 215.377989,
+      "end": 218.834406
+    },
+    {
+      "text": "Ritmo para vacilar (dice)",
+      "start": 218.834406,
+      "end": 223.154927
+    },
+    {
+      "text": "Ritmo, color y sabor",
+      "start": 223.154927,
+      "end": 226.611345
+    },
+    {
+      "text": "Ritmo para vacilar (para vacilar)",
+      "start": 226.611345,
+      "end": 232.444048
+    },
+    {
+      "text": "Ritmo, color y sabor",
+      "start": 232.444048,
+      "end": 235.900465
+    },
+    {
+      "text": "Ritmo para vacilar",
+      "start": 235.900465,
+      "end": 239.356882
+    },
+    {
+      "text": "Para vacilar, para vacilar",
+      "start": 239.356882,
+      "end": 244.109456
+    },
+    {
+      "text": "Para vacilar, pa' vacilar",
+      "start": 244.109456,
+      "end": 248.429977
+    },
+    {
+      "text": "Pa' vacilar, para vacilar",
+      "start": 248.429977,
+      "end": 252.750499
+    },
+    {
+      "text": "Pa' vacilar, para vacilar",
+      "start": 252.750499,
+      "end": 257.07102
+    }
+  ]
 }

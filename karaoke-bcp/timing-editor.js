@@ -1,4 +1,4 @@
-import { SONGS } from "./songs/catalog.js?v=20261019-1";
+import { SONGS } from "./songs/catalog.js?v=20261025-12";
 import { parseText, timedLyrics } from "./lyrics.js";
 
 const $ = selector => document.querySelector(selector);
@@ -61,7 +61,7 @@ async function selectSong(id) {
     }
     $("#text").value = lines.map(line => line.text).join("\n");
     cursor = lines.findIndex(line => line.time == null); if (cursor < 0) cursor = 0;
-    status(lines.length ? "Letra cargada." : "Letra pendiente.");
+    status(selected.lyricsStatus === "estimated" ? "Tiempos aproximados: revisa cada frase contra el audio antes de exportar." : lines.length ? "Letra cargada." : "Letra pendiente.");
   } catch { if (token === loadToken) status("No se pudo cargar la letra."); }
   if (token === loadToken) draw();
 }

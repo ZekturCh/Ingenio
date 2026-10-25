@@ -1,5 +1,240 @@
 {
   "songId": "a-quien-le-importa",
-  "status": "pending",
-  "lyrics": []
+  "title": "A quién le importa",
+  "status": "estimated",
+  "reviewRequired": true,
+  "timingMethod": "text-length-proportional; not aligned to vocals or instrumental sections",
+  "durationSeconds": 196.806531,
+  "lyrics": [
+    {
+      "text": "La gente me señala",
+      "start": 0.0,
+      "end": 3.385433
+    },
+    {
+      "text": "Me apuntan con el dedo",
+      "start": 3.385433,
+      "end": 7.447954
+    },
+    {
+      "text": "Susurra a mis espaldas",
+      "start": 7.447954,
+      "end": 11.736169
+    },
+    {
+      "text": "Y a mí me importa un bledo",
+      "start": 11.736169,
+      "end": 16.250081
+    },
+    {
+      "text": "¿Qué más me da",
+      "start": 16.250081,
+      "end": 18.507036
+    },
+    {
+      "text": "Si soy distinta a ellos?",
+      "start": 18.507036,
+      "end": 22.795252
+    },
+    {
+      "text": "No soy de nadie",
+      "start": 22.795252,
+      "end": 25.503599
+    },
+    {
+      "text": "No tengo dueño",
+      "start": 25.503599,
+      "end": 28.211945
+    },
+    {
+      "text": "Yo sé que me critican",
+      "start": 28.211945,
+      "end": 32.04877
+    },
+    {
+      "text": "Me consta que me odian",
+      "start": 32.04877,
+      "end": 36.11129
+    },
+    {
+      "text": "La envidia les corroe",
+      "start": 36.11129,
+      "end": 40.17381
+    },
+    {
+      "text": "Mi vida les agobia",
+      "start": 40.17381,
+      "end": 43.559244
+    },
+    {
+      "text": "¿Por qué será?",
+      "start": 43.559244,
+      "end": 45.816199
+    },
+    {
+      "text": "Yo no tengo la culpa",
+      "start": 45.816199,
+      "end": 49.427328
+    },
+    {
+      "text": "Mi circunstancia les insulta",
+      "start": 49.427328,
+      "end": 55.069717
+    },
+    {
+      "text": "Mi destino es el que yo decido",
+      "start": 55.069717,
+      "end": 60.486411
+    },
+    {
+      "text": "El que yo elijo para mí",
+      "start": 60.486411,
+      "end": 64.548931
+    },
+    {
+      "text": "¿A quién le importa lo que yo haga?",
+      "start": 64.548931,
+      "end": 70.417016
+    },
+    {
+      "text": "¿A quién le importa lo que yo diga?",
+      "start": 70.417016,
+      "end": 76.2851
+    },
+    {
+      "text": "Yo soy así y así seguiré",
+      "start": 76.2851,
+      "end": 80.573316
+    },
+    {
+      "text": "Nunca cambiaré",
+      "start": 80.573316,
+      "end": 83.507358
+    },
+    {
+      "text": "¿A quién le importa lo que yo haga?",
+      "start": 83.507358,
+      "end": 89.375443
+    },
+    {
+      "text": "¿A quién le importa lo que yo diga?",
+      "start": 89.375443,
+      "end": 95.243528
+    },
+    {
+      "text": "Yo soy así y así seguiré",
+      "start": 95.243528,
+      "end": 99.531743
+    },
+    {
+      "text": "Nunca cambiaré",
+      "start": 99.531743,
+      "end": 102.465786
+    },
+    {
+      "text": "Quizá la culpa es mía",
+      "start": 102.465786,
+      "end": 106.30261
+    },
+    {
+      "text": "Por no seguir la norma",
+      "start": 106.30261,
+      "end": 110.36513
+    },
+    {
+      "text": "Ya es demasiado tarde",
+      "start": 110.36513,
+      "end": 114.42765
+    },
+    {
+      "text": "Para cambiar ahora",
+      "start": 114.42765,
+      "end": 118.038779
+    },
+    {
+      "text": "Me mantendré",
+      "start": 118.038779,
+      "end": 120.521431
+    },
+    {
+      "text": "Firme en mis convicciones",
+      "start": 120.521431,
+      "end": 125.486733
+    },
+    {
+      "text": "Reforzaré mis posiciones",
+      "start": 125.486733,
+      "end": 130.452035
+    },
+    {
+      "text": "Mi destino es el que yo decido",
+      "start": 130.452035,
+      "end": 135.868729
+    },
+    {
+      "text": "El que yo elijo para mí",
+      "start": 135.868729,
+      "end": 139.931249
+    },
+    {
+      "text": "¿A quién le importa lo que yo haga?",
+      "start": 139.931249,
+      "end": 145.799334
+    },
+    {
+      "text": "¿A quién le importa lo que yo diga?",
+      "start": 145.799334,
+      "end": 151.667418
+    },
+    {
+      "text": "Yo soy así y así seguiré",
+      "start": 151.667418,
+      "end": 155.955634
+    },
+    {
+      "text": "Nunca cambiaré",
+      "start": 155.955634,
+      "end": 158.889676
+    },
+    {
+      "text": "¿A quién le importa lo que yo haga?",
+      "start": 158.889676,
+      "end": 164.757761
+    },
+    {
+      "text": "¿A quién le importa lo que yo diga?",
+      "start": 164.757761,
+      "end": 170.625846
+    },
+    {
+      "text": "Yo soy así y así seguiré",
+      "start": 170.625846,
+      "end": 174.914061
+    },
+    {
+      "text": "Nunca cambiaré",
+      "start": 174.914061,
+      "end": 177.848104
+    },
+    {
+      "text": "¿A quién le importa lo que yo haga?",
+      "start": 177.848104,
+      "end": 183.716188
+    },
+    {
+      "text": "¿A quién le importa lo que yo diga?",
+      "start": 183.716188,
+      "end": 189.584273
+    },
+    {
+      "text": "Yo soy así y así seguiré",
+      "start": 189.584273,
+      "end": 193.872489
+    },
+    {
+      "text": "Nunca cambiaré",
+      "start": 193.872489,
+      "end": 196.806531
+    }
+  ]
 }

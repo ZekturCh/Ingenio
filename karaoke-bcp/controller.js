@@ -100,7 +100,7 @@ function renderSongs() {
 function openVersions(song) {
   $("#dlgTitle").textContent = song.title;
   $("#dlgArtist").textContent = song.artist;
-  $("#modalNote").textContent = player ? (song.lyricsStatus === "pending" ? "Letra pendiente de sincronizar" : "") : "Preparando karaoke…";
+  $("#modalNote").textContent = player ? (song.lyricsStatus === "pending" ? "Letra pendiente de sincronizar" : song.lyricsStatus === "estimated" ? "Letra con tiempos aproximados; pendiente de revisión" : "") : "Preparando karaoke…";
   $("#versions").innerHTML = song.versions.map((version) => `
     <button class="versionOption ${version.id === "chorus" ? "recommended" : ""}" data-version="${escapeHtml(version.id)}" ${player ? "" : "disabled"}>
       <strong>${escapeHtml(version.label)}</strong><span class="duration">${escapeHtml(version.durationLabel)}</span><small>${escapeHtml(version.note || "")}</small>

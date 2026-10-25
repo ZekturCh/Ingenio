@@ -19,6 +19,11 @@ carinito.categories = ["fiesta", "peru"];
 carinito.versions.unshift({ id: "chorus", label: "Coro", durationLabel: "1:00",
   startAt: 57.214, endAt: 117.214, note: "Versión rápida para activación" });
 
+// Estimated cues distribute the supplied text across the file; review against the audio.
+function estimatedTrack(id, title, artist, durationSeconds) {
+  return { ...track(id, title, artist, durationSeconds), lyricsStatus: "estimated" };
+}
+
 function pendingTrack(id, title, artist = "Versión por confirmar") {
   return {
     id, title, artist, enabled: false, audioStatus: "missing",
@@ -38,24 +43,24 @@ export const SONGS = [
   track("mi-peru", "Mi Perú", "Manuel Raygada", 87.536),
   track("contigo-peru", "Contigo Perú", "Arturo \"Zambo\" Cavero", 237.087),
   track("y-se-llama-peru", "Y se llama Perú", "Zambo Cavero y Óscar Avilés", 185.365),
-  pendingTrack("a-quien-le-importa", "A quién le importa"),
+  estimatedTrack("a-quien-le-importa", "A quién le importa", "Alaska y Dinarama", 196.806531),
   pendingTrack("alma-corazon-y-vida", "Alma, corazón y vida"),
-  pendingTrack("amor-eterno", "Amor eterno"),
-  pendingTrack("cuando-pienses", "Cuando pienses en volver", "Pedro Suárez-Vértiz"),
+  estimatedTrack("amor-eterno", "Amor eterno", "Juan Gabriel", 281.312653),
+  estimatedTrack("cuando-pienses", "Cuando pienses en volver", "Pedro Suárez-Vértiz", 251.506939),
   pendingTrack("el-muerto-vivo", "El muerto vivo"),
   pendingTrack("el-rey", "El rey"),
-  pendingTrack("el-triste", "El triste"),
-  pendingTrack("himno-peru", "Himno Nacional del Perú", "Perú"),
-  pendingTrack("la-bruja", "La Bruja"),
-  pendingTrack("la-llorona", "La Llorona"),
-  pendingTrack("la-malaguena", "La Malagueña"),
+  estimatedTrack("el-triste", "El triste", "José José", 238.262857),
+  estimatedTrack("himno-peru", "Himno Nacional del Perú", "Perú", 161.593469),
+  estimatedTrack("la-bruja", "La Bruja", "Rosy Arango", 233.586939),
+  estimatedTrack("la-llorona", "La Llorona", "Chavela Vargas", 337.057959),
+  estimatedTrack("la-malaguena", "La Malagueña", "Ángela Aguilar", 297.691429),
   pendingTrack("mal-paso", "Mal paso"),
   pendingTrack("mujer-contra-mujer", "Mujer contra mujer"),
-  pendingTrack("no-podras", "No podrás"),
+  estimatedTrack("no-podras", "No podrás", "Cristian Castro", 236.094694),
   pendingTrack("nuestro-secreto", "Nuestro secreto"),
-  pendingTrack("payaso", "Payaso"),
-  pendingTrack("quien-sera", "Quién será"),
+  estimatedTrack("payaso", "Payaso", "José José", 178.155102),
+  estimatedTrack("quien-sera", "Quién será", "Julio Iglesias", 166.321633),
   pendingTrack("regresa", "Regresa"),
-  pendingTrack("ritmo-color-sabor", "Ritmo, color y sabor", "Eva Ayllón"),
+  estimatedTrack("ritmo-color-sabor", "Ritmo, color y sabor", "Eva Ayllón", 257.07102),
   pendingTrack("odiame", "Ódiame", "Eva Ayllón"),
 ];

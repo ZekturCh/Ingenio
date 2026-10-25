@@ -1,5 +1,205 @@
 {
   "songId": "cuando-pienses",
-  "status": "pending",
-  "lyrics": []
+  "title": "Cuando pienses en volver",
+  "status": "estimated",
+  "reviewRequired": true,
+  "timingMethod": "text-length-proportional; not aligned to vocals or instrumental sections",
+  "durationSeconds": 251.506939,
+  "lyrics": [
+    {
+      "text": "Cuando pienses en volver",
+      "start": 0.0,
+      "end": 4.545306
+    },
+    {
+      "text": "Aquí están tus amigos, tu lugar y tu mujer",
+      "start": 4.545306,
+      "end": 11.68793
+    },
+    {
+      "text": "Y te abrazarán, dirán que el tiempo no pasó",
+      "start": 11.68793,
+      "end": 19.046997
+    },
+    {
+      "text": "Y te amarán con todo el corazón",
+      "start": 19.046997,
+      "end": 24.458076
+    },
+    {
+      "text": "Trabajas hasta muy tarde y no puedes descansar",
+      "start": 24.458076,
+      "end": 32.899359
+    },
+    {
+      "text": "Las palabras de tu madre empiezan a sonar",
+      "start": 32.899359,
+      "end": 40.258426
+    },
+    {
+      "text": "Cuando tú te estés muriendo por un poco de amor",
+      "start": 40.258426,
+      "end": 48.483265
+    },
+    {
+      "text": "Hijito, sigue adelante, domina al corazón",
+      "start": 48.483265,
+      "end": 55.842332
+    },
+    {
+      "text": "Debes sacar los tormentos de tu corazón",
+      "start": 55.842332,
+      "end": 62.984956
+    },
+    {
+      "text": "Pues el dolor no es eterno y pronto saldrá el Sol",
+      "start": 62.984956,
+      "end": 71.426239
+    },
+    {
+      "text": "Saldrá el Sol",
+      "start": 71.426239,
+      "end": 73.807114
+    },
+    {
+      "text": "Cuando pienses en volver",
+      "start": 73.807114,
+      "end": 78.35242
+    },
+    {
+      "text": "Aquí están tus amigos, tu lugar y tu mujer",
+      "start": 78.35242,
+      "end": 85.495044
+    },
+    {
+      "text": "Y te abrazarán, dirán que el tiempo no pasó",
+      "start": 85.495044,
+      "end": 92.854111
+    },
+    {
+      "text": "Y te amarán con todo el corazón",
+      "start": 92.854111,
+      "end": 98.26519
+    },
+    {
+      "text": "Puede ser que, en tu tierra, no había a dónde ir",
+      "start": 98.26519,
+      "end": 106.057143
+    },
+    {
+      "text": "Puede ser que tus sueños no tenían lugar",
+      "start": 106.057143,
+      "end": 113.199767
+    },
+    {
+      "text": "Pero, solo en tu cuarto, tú tendrás que admitir",
+      "start": 113.199767,
+      "end": 121.208163
+    },
+    {
+      "text": "Que podía haber pobreza, pero nunca soledad",
+      "start": 121.208163,
+      "end": 129.000117
+    },
+    {
+      "text": "Quieres sacar los tormentos de tu corazón",
+      "start": 129.000117,
+      "end": 136.575627
+    },
+    {
+      "text": "Pues el dolor no es eterno y pronto saldrá el Sol",
+      "start": 136.575627,
+      "end": 145.01691
+    },
+    {
+      "text": "Saldrá el Sol",
+      "start": 145.01691,
+      "end": 147.397784
+    },
+    {
+      "text": "Cuando pienses en volver",
+      "start": 147.397784,
+      "end": 151.943091
+    },
+    {
+      "text": "Aquí están tus amigos, tu lugar y tu mujer",
+      "start": 151.943091,
+      "end": 159.085714
+    },
+    {
+      "text": "Y te abrazarán, dirán que el tiempo no pasó",
+      "start": 159.085714,
+      "end": 166.444781
+    },
+    {
+      "text": "Y te amarán con todo el corazón",
+      "start": 166.444781,
+      "end": 171.85586
+    },
+    {
+      "text": "Quieres sacar los tormentos de tu corazón",
+      "start": 171.85586,
+      "end": 179.43137
+    },
+    {
+      "text": "Pues el dolor no es eterno y pronto saldrá el Sol",
+      "start": 179.43137,
+      "end": 187.872653
+    },
+    {
+      "text": "Saldrá el Sol",
+      "start": 187.872653,
+      "end": 190.253528
+    },
+    {
+      "text": "Cuando pienses en volver",
+      "start": 190.253528,
+      "end": 194.798834
+    },
+    {
+      "text": "Aquí están tus amigos, tu lugar y tu mujer",
+      "start": 194.798834,
+      "end": 201.941458
+    },
+    {
+      "text": "Y te abrazarán, dirán que el tiempo no pasó",
+      "start": 201.941458,
+      "end": 209.300525
+    },
+    {
+      "text": "Y te amarán con todo el corazón",
+      "start": 209.300525,
+      "end": 214.711604
+    },
+    {
+      "text": "Cuando ya tú estés acá",
+      "start": 214.711604,
+      "end": 218.60758
+    },
+    {
+      "text": "Trabaja hasta las lágrimas, como lo hacías allá",
+      "start": 218.60758,
+      "end": 227.048863
+    },
+    {
+      "text": "Solo así verás que tu país no fracasó",
+      "start": 227.048863,
+      "end": 233.542158
+    },
+    {
+      "text": "Sino que tanto amor te relajó",
+      "start": 233.542158,
+      "end": 238.736793
+    },
+    {
+      "text": "Y te abrazarán, dirán que el tiempo no pasó",
+      "start": 238.736793,
+      "end": 246.09586
+    },
+    {
+      "text": "Y te amarán con todo el corazón",
+      "start": 246.09586,
+      "end": 251.506939
+    }
+  ]
 }

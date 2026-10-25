@@ -1,5 +1,260 @@
 {
   "songId": "amor-eterno",
-  "status": "pending",
-  "lyrics": []
+  "title": "Amor eterno",
+  "status": "estimated",
+  "reviewRequired": true,
+  "timingMethod": "text-length-proportional; not aligned to vocals or instrumental sections",
+  "durationSeconds": 281.312653,
+  "lyrics": [
+    {
+      "text": "Tú eres la tristeza de mis ojos",
+      "start": 0.0,
+      "end": 5.182621
+    },
+    {
+      "text": "Que lloran en silencio por tu amor",
+      "start": 5.182621,
+      "end": 10.987156
+    },
+    {
+      "text": "Me miro en el espejo y veo en mi rostro",
+      "start": 10.987156,
+      "end": 17.206301
+    },
+    {
+      "text": "El tiempo que he sufrido por tu adiós",
+      "start": 17.206301,
+      "end": 23.425446
+    },
+    {
+      "text": "Obligo a que te olvide en el pensamiento",
+      "start": 23.425446,
+      "end": 30.266505
+    },
+    {
+      "text": "Pues siempre estoy pensando en el ayer",
+      "start": 30.266505,
+      "end": 36.90026
+    },
+    {
+      "text": "Prefiero estar dormido que despierto",
+      "start": 36.90026,
+      "end": 43.534014
+    },
+    {
+      "text": "De tanto y tanto que me duele que no estés",
+      "start": 43.534014,
+      "end": 50.375073
+    },
+    {
+      "text": "Cómo quisiera",
+      "start": 50.375073,
+      "end": 52.862731
+    },
+    {
+      "text": "Que tú vivieras",
+      "start": 52.862731,
+      "end": 55.557694
+    },
+    {
+      "text": "Que tus ojitos jamás se hubieran",
+      "start": 55.557694,
+      "end": 61.154925
+    },
+    {
+      "text": "Cerrado nunca, y estar mirándolos",
+      "start": 61.154925,
+      "end": 66.95946
+    },
+    {
+      "text": "Amor eterno e inolvidable",
+      "start": 66.95946,
+      "end": 71.520166
+    },
+    {
+      "text": "Pero tarde o temprano",
+      "start": 71.520166,
+      "end": 75.251653
+    },
+    {
+      "text": "Yo voy a estar contigo",
+      "start": 75.251653,
+      "end": 78.98314
+    },
+    {
+      "text": "Para seguir amándonos",
+      "start": 78.98314,
+      "end": 82.921932
+    },
+    {
+      "text": "Yo he sufrido mucho por tu ausencia",
+      "start": 82.921932,
+      "end": 88.933772
+    },
+    {
+      "text": "Desde ese día hasta hoy, no soy feliz",
+      "start": 88.933772,
+      "end": 94.945612
+    },
+    {
+      "text": "Y aunque tengo muy tranquila mi conciencia",
+      "start": 94.945612,
+      "end": 102.408586
+    },
+    {
+      "text": "Yo sé qué pude y sé que pude haber yo hecho más por ti",
+      "start": 102.408586,
+      "end": 110.908084
+    },
+    {
+      "text": "Oscura soledad, estoy viendo yo",
+      "start": 110.908084,
+      "end": 116.298009
+    },
+    {
+      "text": "Y la misma soledad de tu sepulcro, mamá",
+      "start": 116.298009,
+      "end": 122.724459
+    },
+    {
+      "text": "Y es que tú eres, es que tú eres el amor del cual yo tengo",
+      "start": 122.724459,
+      "end": 131.638566
+    },
+    {
+      "text": "El más triste recuerdo de Acapulco",
+      "start": 131.638566,
+      "end": 137.650406
+    },
+    {
+      "text": "Pero cómo quisiera",
+      "start": 137.650406,
+      "end": 140.967284
+    },
+    {
+      "text": "Que tú vivieras",
+      "start": 140.967284,
+      "end": 143.662247
+    },
+    {
+      "text": "Que tus ojitos jamás se hubieran",
+      "start": 143.662247,
+      "end": 149.259477
+    },
+    {
+      "text": "Cerrado nunca, y estar mirándolos",
+      "start": 149.259477,
+      "end": 155.064012
+    },
+    {
+      "text": "Amor eterno e inolvidable",
+      "start": 155.064012,
+      "end": 159.624718
+    },
+    {
+      "text": "Pero tarde o temprano",
+      "start": 159.624718,
+      "end": 163.356205
+    },
+    {
+      "text": "Estaré contigo",
+      "start": 163.356205,
+      "end": 166.051168
+    },
+    {
+      "text": "Para seguir amándonos",
+      "start": 166.051168,
+      "end": 169.98996
+    },
+    {
+      "text": "Amor eterno, eterno",
+      "start": 169.98996,
+      "end": 173.306837
+    },
+    {
+      "text": "Amor eterno, eterno",
+      "start": 173.306837,
+      "end": 176.623714
+    },
+    {
+      "text": "Ojos que hayan derramado tantas lágrimas por pena",
+      "start": 176.623714,
+      "end": 185.330517
+    },
+    {
+      "text": "De dolor, de amor, de tantas despedidas y de esperas",
+      "start": 185.330517,
+      "end": 193.830015
+    },
+    {
+      "text": "Soledad, eso es todo lo que tengo ahora y tus recuerdos",
+      "start": 193.830015,
+      "end": 202.951428
+    },
+    {
+      "text": "Que hacen más triste la angustia de vivir pensando",
+      "start": 202.951428,
+      "end": 211.65823
+    },
+    {
+      "text": "Como siempre, en ti",
+      "start": 211.65823,
+      "end": 214.767803
+    },
+    {
+      "text": "Ojos que te vieron tanto",
+      "start": 214.767803,
+      "end": 218.913899
+    },
+    {
+      "text": "Y que no han vuelto a verte hasta el Sol de hoy",
+      "start": 218.913899,
+      "end": 226.376873
+    },
+    {
+      "text": "Tristes, de tanto extrañarte",
+      "start": 226.376873,
+      "end": 231.352189
+    },
+    {
+      "text": "Y de tanto esperarte desde aquel adiós",
+      "start": 231.352189,
+      "end": 237.985944
+    },
+    {
+      "text": "Soledad, eso es todo lo que tengo ahora",
+      "start": 237.985944,
+      "end": 244.412393
+    },
+    {
+      "text": "Y eso es todo lo que tengo ahora y tus recuerdos",
+      "start": 244.412393,
+      "end": 252.289977
+    },
+    {
+      "text": "Que hacen más triste la angustia de vivir pensando",
+      "start": 252.289977,
+      "end": 260.99678
+    },
+    {
+      "text": "Como siempre y para siempre y por siempre en ti",
+      "start": 260.99678,
+      "end": 268.874363
+    },
+    {
+      "text": "Amor eterno, eterno",
+      "start": 268.874363,
+      "end": 272.191241
+    },
+    {
+      "text": "Amor eterno, eterno amor",
+      "start": 272.191241,
+      "end": 276.337337
+    },
+    {
+      "text": "Amor, amor, amor, amor, amor, amor",
+      "start": 276.337337,
+      "end": 281.312653
+    }
+  ]
 }

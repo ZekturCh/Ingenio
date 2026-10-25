@@ -1,4 +1,4 @@
-import { SONGS } from "./songs/catalog.js?v=20261019-1";
+import { SONGS } from "./songs/catalog.js?v=20261025-12";
 export { SONGS };
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
 import {

@@ -1,5 +1,140 @@
 {
   "songId": "quien-sera",
-  "status": "pending",
-  "lyrics": []
+  "title": "Quién será",
+  "status": "estimated",
+  "reviewRequired": true,
+  "timingMethod": "text-length-proportional; not aligned to vocals or instrumental sections",
+  "durationSeconds": 166.321633,
+  "lyrics": [
+    {
+      "text": "Quién será la que me quiere a mí",
+      "start": 0.0,
+      "end": 7.282033
+    },
+    {
+      "text": "Quién será, quién será",
+      "start": 7.282033,
+      "end": 12.525097
+    },
+    {
+      "text": "Quién será la que me dé su amor",
+      "start": 12.525097,
+      "end": 19.515848
+    },
+    {
+      "text": "Quién será, quién será",
+      "start": 19.515848,
+      "end": 24.758912
+    },
+    {
+      "text": "Yo no sé si la podré encontrar",
+      "start": 24.758912,
+      "end": 31.749664
+    },
+    {
+      "text": "Yo no sé, yo no sé",
+      "start": 31.749664,
+      "end": 35.24504
+    },
+    {
+      "text": "Yo no sé si volveré a querer",
+      "start": 35.24504,
+      "end": 41.653229
+    },
+    {
+      "text": "Yo no sé, yo no sé",
+      "start": 41.653229,
+      "end": 45.148604
+    },
+    {
+      "text": "He querido volver a vivir",
+      "start": 45.148604,
+      "end": 51.265512
+    },
+    {
+      "text": "La pasión y el calor de otro amor",
+      "start": 51.265512,
+      "end": 58.838826
+    },
+    {
+      "text": "De otro amor que me hiciera sentir",
+      "start": 58.838826,
+      "end": 66.994703
+    },
+    {
+      "text": "Que me hiciera feliz, como ayer lo fui",
+      "start": 66.994703,
+      "end": 75.733143
+    },
+    {
+      "text": "Quién será la que me quiere a mí",
+      "start": 75.733143,
+      "end": 83.015176
+    },
+    {
+      "text": "Quién será, quién será",
+      "start": 83.015176,
+      "end": 88.25824
+    },
+    {
+      "text": "Quién será la que me dé su amor",
+      "start": 88.25824,
+      "end": 95.248991
+    },
+    {
+      "text": "Quién será, quién será",
+      "start": 95.248991,
+      "end": 100.492055
+    },
+    {
+      "text": "He querido de nuevo vivir",
+      "start": 100.492055,
+      "end": 106.608963
+    },
+    {
+      "text": "La pasión y el calor de otro amor",
+      "start": 106.608963,
+      "end": 114.182277
+    },
+    {
+      "text": "De otro amor que me hiciera sentir",
+      "start": 114.182277,
+      "end": 122.338154
+    },
+    {
+      "text": "Que me hiciera feliz, como ayer lo fui",
+      "start": 122.338154,
+      "end": 131.076593
+    },
+    {
+      "text": "Quién será la que me quiere a mí",
+      "start": 131.076593,
+      "end": 138.358626
+    },
+    {
+      "text": "Quién será, quién será",
+      "start": 138.358626,
+      "end": 143.60169
+    },
+    {
+      "text": "Quién será la que me dé su amor",
+      "start": 143.60169,
+      "end": 150.592442
+    },
+    {
+      "text": "Quién será, quién será",
+      "start": 150.592442,
+      "end": 155.835506
+    },
+    {
+      "text": "Quién será, quién será",
+      "start": 155.835506,
+      "end": 161.078569
+    },
+    {
+      "text": "Quién será, quién será",
+      "start": 161.078569,
+      "end": 166.321633
+    }
+  ]
 }

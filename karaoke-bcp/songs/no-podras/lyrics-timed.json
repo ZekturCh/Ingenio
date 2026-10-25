@@ -1,5 +1,185 @@
 {
   "songId": "no-podras",
-  "status": "pending",
-  "lyrics": []
+  "title": "No podrás",
+  "status": "estimated",
+  "reviewRequired": true,
+  "timingMethod": "text-length-proportional; not aligned to vocals or instrumental sections",
+  "durationSeconds": 236.094694,
+  "lyrics": [
+    {
+      "text": "Tal vez te olvides de mí",
+      "start": 0.0,
+      "end": 6.408285
+    },
+    {
+      "text": "Tal vez me olvide de ti, oh, no",
+      "start": 6.408285,
+      "end": 13.828404
+    },
+    {
+      "text": "Pero, esta vez, aprendí",
+      "start": 13.828404,
+      "end": 19.89941
+    },
+    {
+      "text": "Que no se debe mentir, no, oh",
+      "start": 19.89941,
+      "end": 26.982251
+    },
+    {
+      "text": "De una promesa viví",
+      "start": 26.982251,
+      "end": 32.378701
+    },
+    {
+      "text": "Hoy ya no puedo seguir",
+      "start": 32.378701,
+      "end": 38.449707
+    },
+    {
+      "text": "Creyendo en ti",
+      "start": 38.449707,
+      "end": 42.497045
+    },
+    {
+      "text": "Cada momento",
+      "start": 42.497045,
+      "end": 46.207104
+    },
+    {
+      "text": "Voy tropezando en desamor",
+      "start": 46.207104,
+      "end": 53.627223
+    },
+    {
+      "text": "Y es que no queda nada entre tú y yo",
+      "start": 53.627223,
+      "end": 62.733733
+    },
+    {
+      "text": "Si estoy llorando",
+      "start": 62.733733,
+      "end": 67.792905
+    },
+    {
+      "text": "No es que te extrañe el corazón",
+      "start": 67.792905,
+      "end": 76.224858
+    },
+    {
+      "text": "Es que, a tu lado, aprendí el dolor",
+      "start": 76.224858,
+      "end": 84.99409
+    },
+    {
+      "text": "No podrás olvidar que te amé",
+      "start": 84.99409,
+      "end": 92.751487
+    },
+    {
+      "text": "Como yo nunca imaginé",
+      "start": 92.751487,
+      "end": 98.822493
+    },
+    {
+      "text": "Estaré en tu piel",
+      "start": 98.822493,
+      "end": 103.544387
+    },
+    {
+      "text": "Cada momento en donde estés",
+      "start": 103.544387,
+      "end": 111.301784
+    },
+    {
+      "text": "Siempre habrá un lugar",
+      "start": 111.301784,
+      "end": 117.710069
+    },
+    {
+      "text": "Algún recuerdo que será",
+      "start": 117.710069,
+      "end": 124.455632
+    },
+    {
+      "text": "Un eterno suspirar",
+      "start": 124.455632,
+      "end": 129.852082
+    },
+    {
+      "text": "Si estoy llorando",
+      "start": 129.852082,
+      "end": 134.911254
+    },
+    {
+      "text": "No es que te extrañe el corazón",
+      "start": 134.911254,
+      "end": 143.343207
+    },
+    {
+      "text": "Es que, a tu lado, aprendí el dolor",
+      "start": 143.343207,
+      "end": 152.112439
+    },
+    {
+      "text": "No podrás olvidar que te amé",
+      "start": 152.112439,
+      "end": 159.869836
+    },
+    {
+      "text": "Como yo nunca imaginé",
+      "start": 159.869836,
+      "end": 165.940842
+    },
+    {
+      "text": "Estaré en tu piel",
+      "start": 165.940842,
+      "end": 170.662736
+    },
+    {
+      "text": "Cada momento en donde estés",
+      "start": 170.662736,
+      "end": 178.420133
+    },
+    {
+      "text": "Siempre habrá un lugar",
+      "start": 178.420133,
+      "end": 184.828418
+    },
+    {
+      "text": "Algún recuerdo que será",
+      "start": 184.828418,
+      "end": 191.57398
+    },
+    {
+      "text": "Un eterno suspirar, uoh-uoh",
+      "start": 191.57398,
+      "end": 198.994099
+    },
+    {
+      "text": "No podrás olvidar que te amé (como yo nunca imaginé)",
+      "start": 198.994099,
+      "end": 212.822503
+    },
+    {
+      "text": "(Cada momento en donde estés)",
+      "start": 212.822503,
+      "end": 220.5799
+    },
+    {
+      "text": "Como yo nunca imaginé",
+      "start": 220.5799,
+      "end": 226.650906
+    },
+    {
+      "text": "(Algún recuerdo que será)",
+      "start": 226.650906,
+      "end": 233.396469
+    },
+    {
+      "text": "(Un eterno)",
+      "start": 233.396469,
+      "end": 236.094694
+    }
+  ]
 }

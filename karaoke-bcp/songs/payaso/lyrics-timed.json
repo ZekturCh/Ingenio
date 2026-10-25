@@ -1,5 +1,195 @@
 {
   "songId": "payaso",
-  "status": "pending",
-  "lyrics": []
+  "title": "Payaso",
+  "status": "estimated",
+  "reviewRequired": true,
+  "timingMethod": "text-length-proportional; not aligned to vocals or instrumental sections",
+  "durationSeconds": 178.155102,
+  "lyrics": [
+    {
+      "text": "Dicen que soy un payaso",
+      "start": 0.0,
+      "end": 4.821862
+    },
+    {
+      "text": "Que estoy muriendo por ti",
+      "start": 4.821862,
+      "end": 10.151288
+    },
+    {
+      "text": "Y tú no me haces ni caso",
+      "start": 10.151288,
+      "end": 14.719367
+    },
+    {
+      "text": "Dicen que soy un payaso",
+      "start": 14.719367,
+      "end": 19.541229
+    },
+    {
+      "text": "Porque toda mi ilusión",
+      "start": 19.541229,
+      "end": 24.363091
+    },
+    {
+      "text": "Es tenerte entre mis brazos",
+      "start": 24.363091,
+      "end": 30.200081
+    },
+    {
+      "text": "Dicen que soy un payaso",
+      "start": 30.200081,
+      "end": 35.021943
+    },
+    {
+      "text": "Que por culpa de tu amor",
+      "start": 35.021943,
+      "end": 39.843805
+    },
+    {
+      "text": "Voy de fracaso en fracaso",
+      "start": 39.843805,
+      "end": 45.173231
+    },
+    {
+      "text": "Dicen que soy un payaso",
+      "start": 45.173231,
+      "end": 49.995093
+    },
+    {
+      "text": "Que va buscando valor",
+      "start": 49.995093,
+      "end": 54.563172
+    },
+    {
+      "text": "En el fondo de los vasos",
+      "start": 54.563172,
+      "end": 59.385034
+    },
+    {
+      "text": "Y es verdad soy un payaso",
+      "start": 59.385034,
+      "end": 64.460678
+    },
+    {
+      "text": "Pero que le voy a hacer",
+      "start": 64.460678,
+      "end": 69.028757
+    },
+    {
+      "text": "Uno no es lo que quiere",
+      "start": 69.028757,
+      "end": 73.596837
+    },
+    {
+      "text": "Sino lo que puede ser",
+      "start": 73.596837,
+      "end": 77.911134
+    },
+    {
+      "text": "Dicen que soy payaso",
+      "start": 77.911134,
+      "end": 82.225432
+    },
+    {
+      "text": "Que estoy muriendo por ti",
+      "start": 82.225432,
+      "end": 87.554858
+    },
+    {
+      "text": "Y tú no me haces ni caso",
+      "start": 87.554858,
+      "end": 92.122937
+    },
+    {
+      "text": "Dicen que soy un payaso",
+      "start": 92.122937,
+      "end": 96.944799
+    },
+    {
+      "text": "Que te sigue por ahí",
+      "start": 96.944799,
+      "end": 101.005314
+    },
+    {
+      "text": "Con el alma hecha pedazos",
+      "start": 101.005314,
+      "end": 106.33474
+    },
+    {
+      "text": "Dicen que soy un payaso",
+      "start": 106.33474,
+      "end": 111.156602
+    },
+    {
+      "text": "Que querría hasta el amor",
+      "start": 111.156602,
+      "end": 116.486028
+    },
+    {
+      "text": "Que vas tirando a tu paso",
+      "start": 116.486028,
+      "end": 121.561672
+    },
+    {
+      "text": "Dicen que soy un payaso",
+      "start": 121.561672,
+      "end": 126.383534
+    },
+    {
+      "text": "Que no tengo ni valor",
+      "start": 126.383534,
+      "end": 130.697831
+    },
+    {
+      "text": "Para pegarme ni un balazo",
+      "start": 130.697831,
+      "end": 136.027257
+    },
+    {
+      "text": "Y es verdad soy un payaso",
+      "start": 136.027257,
+      "end": 141.102901
+    },
+    {
+      "text": "Pero que le voy a hacer",
+      "start": 141.102901,
+      "end": 145.670981
+    },
+    {
+      "text": "Uno no es lo que quiere",
+      "start": 145.670981,
+      "end": 150.23906
+    },
+    {
+      "text": "Sino lo que puede ser",
+      "start": 150.23906,
+      "end": 154.553358
+    },
+    {
+      "text": "Y es verdad soy un payaso",
+      "start": 154.553358,
+      "end": 159.629002
+    },
+    {
+      "text": "Pero que le voy a hacer",
+      "start": 159.629002,
+      "end": 164.197081
+    },
+    {
+      "text": "Uno no es lo que quiere",
+      "start": 164.197081,
+      "end": 168.765161
+    },
+    {
+      "text": "Sino lo que puede ser",
+      "start": 168.765161,
+      "end": 173.079458
+    },
+    {
+      "text": "Y es verdad, soy un payaso",
+      "start": 173.079458,
+      "end": 178.155102
+    }
+  ]
 }
