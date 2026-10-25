@@ -1,5 +1,6 @@
-import { SONGS, roomFromUrl, subscribeRoom, sendCommand, getSong, getVersion, controllerUrl } from "./shared.js?v=20261019-1";
+import { SONGS, roomFromUrl, subscribeRoom, sendCommand, getSong, getVersion, controllerUrl } from "./shared.js?v=20261025-3";
 import { icons, loadFavorites, toggleFavorite, toggleFullscreen } from "./ui.js";
+import { lyricTime, DELAY_KEY } from "./audio-settings.js";
 
 export function mountPlayer(root = document, { embedded = false, onBack } = {}) {
 const $ = (selector) => root.querySelector(selector);
@@ -58,6 +59,7 @@ function renderSong() {
   updateFavorite();
 }
 function renderLyrics(time) {
+  time = lyricTime(time);
   let index = -1;
   for (let i = 0; i < lyricData.length; i++) { if (lyricData[i].start <= time) index = i; else break; }
   const line = lyricData[index];
@@ -165,6 +167,9 @@ function fitLyrics() {
   }
 }
 new ResizeObserver(fitLyrics).observe($(".lyricPanel"));
+const refreshDelay = () => { lineIndex = -2; updateProgress(); };
+window.addEventListener("samay-delay-change", refreshDelay);
+window.addEventListener("storage", event => { if (event.key === DELAY_KEY) refreshDelay(); });
 document.fonts.ready.then(fitLyrics);
 document.fonts.addEventListener("loadingdone", fitLyrics);
 

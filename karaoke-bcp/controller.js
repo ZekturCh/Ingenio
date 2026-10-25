@@ -1,6 +1,6 @@
-import { SONGS, roomFromUrl, sendCommand, subscribeRoom, adminUrl } from "./shared.js?v=20261019-1";
+import { SONGS, roomFromUrl, sendCommand, subscribeRoom, adminUrl } from "./shared.js?v=20261025-3";
 import { $, icons, loadFavorites, toggleFavorite, toggleFullscreen, normalizeSearch, escapeHtml } from "./ui.js";
-import { mountPlayer } from "./player.js?v=20261023-2";
+import { mountPlayer } from "./player.js?v=20261025-3";
 
 const room = roomFromUrl();
 $("#room").textContent = room;

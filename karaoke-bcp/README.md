@@ -63,7 +63,54 @@ El editor guarda borradores separados por cancion en este navegador; no modifica
 el repo ni publica archivos automaticamente. Rechaza una exportacion incompleta
 o con tiempos fuera de orden. TXT por si solo no proporciona sincronizacion;
 una pista sin voz tampoco determina las entradas exactas de las palabras.
-La web solo carga el audio seleccionado, no todas las pistas a la vez.
+La reproducción solo carga el audio seleccionado. La descarga sin conexión guarda
+además todas las pistas disponibles en segundo plano.
+
+## Uso sin internet
+
+Abrir la página una vez con internet mediante HTTPS (o localhost para desarrollo)
+y mantenerla abierta hasta que el punto de la esquina inferior derecha esté verde.
+La descarga actual ocupa aproximadamente 93 MB e incluye las cuatro pantallas,
+imágenes, fuentes, letras, la prueba de sincronización y los 20 MP3 disponibles.
+El punto rojo parpadea durante la descarga; al tocarlo se ve el progreso o el error
+y se puede reintentar. Un archivo faltante impide confirmar el estado verde.
+
+La descarga verifica tamaño y SHA-256 de cada archivo. Si se interrumpe, conserva
+los archivos completos y continúa con los pendientes. Las actualizaciones reutilizan
+archivos sin cambios y solo eliminan la caché anterior al completar la nueva.
+El navegador guarda los archivos para ese sitio, perfil y dispositivo. Si se borran
+los datos del sitio, hay que descargarlos otra vez. El botón de reintento solicita
+almacenamiento persistente cuando el navegador lo permite.
+
+Sin internet funcionan el selector, las pistas, las letras, favoritas, editor,
+ajustes y administración entre pestañas del mismo navegador. La sincronización
+de sala entre dispositivos mediante Firebase necesita conexión. La app local no
+depende de descargar Firebase para arrancar.
+
+Después de cambiar archivos de la app o incorporar pistas, ejecutar
+`node karaoke-bcp/scripts/build-offline.cjs` y guardar también `offline-assets.json`
+y `sw.js`. El generador conserva rutas relativas para GitHub Pages.
+
+## Calibrar Bluetooth
+
+El botón de engranaje de la esquina inferior izquierda abre Audio y descarga.
+Conectar el altavoz, pulsar Reproducir prueba y ajustar hasta que el pitido y el
+destello coincidan. La pista original tiene seis pitidos de 880 Hz, en los segundos
+2 a 7, con bordes suaves; el círculo sigue el mismo reloj del audio y la compensación.
+Al iniciar la prueba se pausa la canción; al cerrar el menú se detiene la prueba.
+
+Un valor positivo retrasa la letra y el destello, para compensar un altavoz que
+suena tarde; uno negativo los adelanta. El intervalo es de −1500 a +2500 ms, con
+pasos de 10 ms y botones de 50 ms. Se aplica al instante sin modificar el MP3 ni
+sus marcas, y se guarda en ese navegador. Restablecer vuelve a 0 ms.
+El ajuste es global para ese dispositivo; no corrige los tiempos aproximados de
+cada frase de las pistas pendientes de revisión.
+
+La prueba se puede regenerar con
+`node karaoke-bcp/scripts/generate-calibration.cjs`; después regenerar el manifiesto.
+`tests/offline-bluetooth.cjs` comprueba descarga completa, recarga sin internet,
+las 20 pistas, solicitudes Range, recuperación de un archivo perdido, pantallas
+no visitadas, calibración y persistencia del retraso.
 
 ## Cambiar el aspecto
 

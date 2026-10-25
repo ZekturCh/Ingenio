@@ -1,0 +1,941 @@
+{
+  "version": "3e65e78a292ac674719b",
+  "totalBytes": 97230797,
+  "assets": [
+    {
+      "url": "../Logo%20Samay.png",
+      "size": 61168,
+      "sha256": "245304a8d1abee025b98d3ca1455f61cdb41c043f405c23ce15c2c932e58200b"
+    },
+    {
+      "url": "Hallowow%20Criollazo_%20Tradici%C3%B3n%20y%20M%C3%BAsica%20(1).png",
+      "size": 2142395,
+      "sha256": "c94ffbaf450b9dc06ebecbfbb66fe1d525d4cf603a1f9cefeb8f9a8a3b3b6ae0"
+    },
+    {
+      "url": "Hallowow%20Criollazo_%20Tradici%C3%B3n%20y%20M%C3%BAsica.png",
+      "size": 2122829,
+      "sha256": "facdfbb25c13744f1897309fa249d75b6b552bdd21504fc487b82fe9665ac356"
+    },
+    {
+      "url": "admin.html",
+      "size": 5544,
+      "sha256": "f7ff223bc5cf20ad4b44bbc379c6198d2af36ab29c26503dd5b450ed00da5e0d"
+    },
+    {
+      "url": "assets/audio/bluetooth-calibration.wav",
+      "size": 882044,
+      "sha256": "1120b29ecb866a094aba43611b4f7166d46187c3bbc2ae6d76c712e574f16f06"
+    },
+    {
+      "url": "assets/backgrounds/karaoke-frame-landscape.webp",
+      "size": 191462,
+      "sha256": "8837b1af975dcef1cf438699a3e23ee56b0f2c37045cd43cf00ecf0db76ad19d"
+    },
+    {
+      "url": "assets/backgrounds/karaoke-frame.webp",
+      "size": 191034,
+      "sha256": "af91773a9f0daa26e73825accba5fabb0a2fbf711e4c45f2a688f6223aaa65d6"
+    },
+    {
+      "url": "assets/backgrounds/page-bg-horizontal.jpg",
+      "size": 168905,
+      "sha256": "cb3ba4ea15eba0bc85d5b91c6becdec5b1d523416e914eb638c3ae2cf7298897"
+    },
+    {
+      "url": "assets/backgrounds/page-bg-vertical.jpg",
+      "size": 163064,
+      "sha256": "b608bbbf62f416d48504e7675a133df04a0156b78b938030f62e8ce41669bc95"
+    },
+    {
+      "url": "assets/backgrounds/player-bg-horizontal.jpg",
+      "size": 168905,
+      "sha256": "cb3ba4ea15eba0bc85d5b91c6becdec5b1d523416e914eb638c3ae2cf7298897"
+    },
+    {
+      "url": "assets/backgrounds/player-bg-vertical.jpg",
+      "size": 163064,
+      "sha256": "b608bbbf62f416d48504e7675a133df04a0156b78b938030f62e8ce41669bc95"
+    },
+    {
+      "url": "assets/backgrounds/selector-hero-no-samay.webp",
+      "size": 324996,
+      "sha256": "8f0b2b2849e0141987c6c0a96cabf864feaaf4aa77a12c7e9693f7c5cd9eaa97"
+    },
+    {
+      "url": "assets/backgrounds/selector-hero.webp",
+      "size": 353856,
+      "sha256": "6365f1165038239107d4b284e0a55d08b25a447656b1a793e3e2a230963bdb13"
+    },
+    {
+      "url": "assets/calabaza-guitarra.webp",
+      "size": 15788,
+      "sha256": "c8a507d3f207c735b689ef440ebcd981a30503b05908bfa7c121e06b6b7dc937"
+    },
+    {
+      "url": "assets/decor/calabaza-musical.png",
+      "size": 5529,
+      "sha256": "b096c2f95e214451edeb54dbed483da45365722e537d5226589f45625e462d3a"
+    },
+    {
+      "url": "assets/decor/cinta-curva.webp",
+      "size": 28380,
+      "sha256": "f2e19ffd03101a8577b235ae1f2d74a60ffd356021e0573cbfef48b1bf7b493a"
+    },
+    {
+      "url": "assets/decor/cinta-peruana.png",
+      "size": 5810,
+      "sha256": "acb682998347819980a440ac70cd99a200321f16fdee2f2f8805d22959668048"
+    },
+    {
+      "url": "assets/decor/cinta-peruana.svg",
+      "size": 304,
+      "sha256": "44db8d7eabe078dd7ea8cd051ad39783b84a886ec7dcc0e4c773f464f487b5c1"
+    },
+    {
+      "url": "assets/decor/criollo-guitar.webp",
+      "size": 155502,
+      "sha256": "9cf17adabb997189020d2a37d4b9a771f833165debee251883968e528e162731"
+    },
+    {
+      "url": "assets/decor/flores-derecha.png",
+      "size": 11674,
+      "sha256": "66a995c54538692348c7bbdc6bffedb988262ad175b814452f2a0b55bc226670"
+    },
+    {
+      "url": "assets/decor/flores-izquierda.png",
+      "size": 10783,
+      "sha256": "9b1e56a6fface81fd01814d9cac6a5a1484ce9d9c16abe6cdf0e5d01dc31617d"
+    },
+    {
+      "url": "assets/decor/guitarra-criolla.png",
+      "size": 106541,
+      "sha256": "465d7b509b19a0e86823be37053b5ffdfb9bc1d84358832e281db381a2b7fbfa"
+    },
+    {
+      "url": "assets/decor/hallowow-wordmark.webp",
+      "size": 213288,
+      "sha256": "12a17beb6746dbff43e8935caab5f312efe7892d1f84e49e9bebabb80280b401"
+    },
+    {
+      "url": "assets/decor/notas-musicales.png",
+      "size": 3507,
+      "sha256": "1e73aa202515cd3f526464a238e1c3f157fb3b84f3eb0a11b7ba3b9f73a70f3c"
+    },
+    {
+      "url": "assets/decor/ornamento-card.png",
+      "size": 3352,
+      "sha256": "2ce670862e2ce50c017c721035951616b7b2293312ff42e1fc3ece20177d73da"
+    },
+    {
+      "url": "assets/decor/overlay-horizontal.png",
+      "size": 188291,
+      "sha256": "f854878eb8642fcc242825ed368ccc720eb13544f8b6d5fb9bda8b59e7507af2"
+    },
+    {
+      "url": "assets/decor/overlay-vertical.png",
+      "size": 176021,
+      "sha256": "cb0755a08ef45f9df62851c9fa6dca6cb075789de851de6de915ffb622bc0ed7"
+    },
+    {
+      "url": "assets/decor/pumpkin-hat.webp",
+      "size": 137378,
+      "sha256": "ae571076d3f875444bd2384f3c2b83c71dcfab74b0d40710c1454b068ff519cf"
+    },
+    {
+      "url": "assets/decor/telarana-esquina.png",
+      "size": 17931,
+      "sha256": "64911a00c01865004858f9170bf7ee1a9ea99011c89c30a472d27bc04df3a4fe"
+    },
+    {
+      "url": "assets/decor/telarana-esquina.svg",
+      "size": 1635,
+      "sha256": "b685fc51c5f6d537d540561eaf3854f06c39d64429dd2740cc69cbfeec2c4b9d"
+    },
+    {
+      "url": "assets/fonts/Flexo-Bold.woff2",
+      "size": 6284,
+      "sha256": "b5f377463c17a839e1ba0240c5f2fd0b2425439e7028ce128a38dcab308cf5f0"
+    },
+    {
+      "url": "assets/fonts/Flexo-Regular.woff2",
+      "size": 6280,
+      "sha256": "f1aa7af435638d7e9343b7ff7e68552dd1e37a92583409a0e8d658269827e88e"
+    },
+    {
+      "url": "assets/fonts/LilitaOne-OFL.txt",
+      "size": 4392,
+      "sha256": "255d5debbb80eb2ea762644311f266a279e8778f00156655a516e2b7781a63e1"
+    },
+    {
+      "url": "assets/fonts/LilitaOne-Regular.ttf",
+      "size": 26332,
+      "sha256": "26ad0d77404141ff7af714353cdf23c980841829dd270fc26e6c2dfcf654bd6d"
+    },
+    {
+      "url": "assets/fonts/flexo/Flexo-Black.otf",
+      "size": 113004,
+      "sha256": "bb233f08475c84872b399a42e8e4c47740564d35ffa8377aa04d5e3dff5f4d1b"
+    },
+    {
+      "url": "assets/fonts/flexo/Flexo-BlackIt.otf",
+      "size": 121604,
+      "sha256": "ecde2ee118370a421aca8e300a87130624b9cda5b7d6a9eec220551bfe6c28f9"
+    },
+    {
+      "url": "assets/fonts/flexo/Flexo-Bold.otf",
+      "size": 112508,
+      "sha256": "8fe4d2ddab9e66f2d24de1ffbbb8e16883d347cb933870305585174e50bb7ac7"
+    },
+    {
+      "url": "assets/fonts/flexo/Flexo-BoldIt.otf",
+      "size": 121668,
+      "sha256": "9cf0dafed616939adc95940d01f993e93bc4cd1bcf7c2ad0d3cb6178b352d299"
+    },
+    {
+      "url": "assets/fonts/flexo/Flexo-Demi.otf",
+      "size": 112992,
+      "sha256": "fc4f03c5ada48b4659022337aca50a2640d37d466f089062132df25764e3035d"
+    },
+    {
+      "url": "assets/fonts/flexo/Flexo-DemiIt.otf",
+      "size": 121896,
+      "sha256": "fb86e2fb7ab1ef2bd88c6fa591b8e345067bd6d04eae524f907932576ae3f878"
+    },
+    {
+      "url": "assets/fonts/flexo/Flexo-Heavy.otf",
+      "size": 112704,
+      "sha256": "fdefa3b9225a1829151955c1157871e01c36064514c1770a7d46dd6d04e46000"
+    },
+    {
+      "url": "assets/fonts/flexo/Flexo-HeavyIt.otf",
+      "size": 121792,
+      "sha256": "652926ee540c45705b0b3a0b571876005ce7fbc1f5e30fb485ed0629cd90de52"
+    },
+    {
+      "url": "assets/fonts/flexo/Flexo-It.otf",
+      "size": 120148,
+      "sha256": "d83afcae1a76a1c1c029d7cd4ef2676d25d97850ee1d77db7d4f70c1a8959409"
+    },
+    {
+      "url": "assets/fonts/flexo/Flexo-Light.otf",
+      "size": 112012,
+      "sha256": "6f721aef4e1e97cb53bc95aa81de083b9bcc13f988eac835b6d7969a87a74874"
+    },
+    {
+      "url": "assets/fonts/flexo/Flexo-LightIt.otf",
+      "size": 120164,
+      "sha256": "218e1b3a7b938aac19a959552bc8723d87e7760f0aa840a173429bdc7fd9adce"
+    },
+    {
+      "url": "assets/fonts/flexo/Flexo-Medium.otf",
+      "size": 112008,
+      "sha256": "6c9f753b023740b4956f610fc5c62cbc009ddf28c3787e6bb1904720c8766b56"
+    },
+    {
+      "url": "assets/fonts/flexo/Flexo-MediumIt.otf",
+      "size": 120700,
+      "sha256": "35fd0dbf8572d0deda2b0e919b817fa6e313737f1ca350319c72680089e0bc26"
+    },
+    {
+      "url": "assets/fonts/flexo/Flexo-Regular.otf",
+      "size": 111860,
+      "sha256": "e6914696b3233969c7a61c2b2dd41645eef6006f7a4dcdc271d17129cc096ae3"
+    },
+    {
+      "url": "assets/fonts/flexo/Flexo-Thin.otf",
+      "size": 112016,
+      "sha256": "1b01cb27db38911b4696c6d674e2bae8a674543968b94e1f0e35d55fa0fd7292"
+    },
+    {
+      "url": "assets/fonts/flexo/Flexo-ThinIt.otf",
+      "size": 120156,
+      "sha256": "6bb7386ae322e55b67a76da78e9954ddeaea2f541e21015d4778e30a13763b64"
+    },
+    {
+      "url": "assets/fonts/flexo/flexo.css",
+      "size": 2217,
+      "sha256": "3baab21b2002123698e5573b3164dd142d7ebea77770b5741982fc0d3e40818c"
+    },
+    {
+      "url": "assets/header-hallowow-horizontal.png",
+      "size": 2122829,
+      "sha256": "facdfbb25c13744f1897309fa249d75b6b552bdd21504fc487b82fe9665ac356"
+    },
+    {
+      "url": "assets/header-hallowow-vertical.png",
+      "size": 2142395,
+      "sha256": "c94ffbaf450b9dc06ebecbfbb66fe1d525d4cf603a1f9cefeb8f9a8a3b3b6ae0"
+    },
+    {
+      "url": "assets/icons/icon-clasicos.png",
+      "size": 2100,
+      "sha256": "af9650f9ea60cc27c7b6beee20728a9104793552f905a8e178de4d471192352b"
+    },
+    {
+      "url": "assets/icons/icon-criollo.png",
+      "size": 1574,
+      "sha256": "ae6fdf98bce15775f46d7a23e45a323861244e49d5c520a89960a68861499d58"
+    },
+    {
+      "url": "assets/icons/icon-fiesta.png",
+      "size": 1383,
+      "sha256": "915fbf526f9f869fe35f9ed68e2af0f2f1f7ba8584e0dddc123b8e4b54b9946d"
+    },
+    {
+      "url": "assets/icons/icon-halloween.png",
+      "size": 1866,
+      "sha256": "f547fe779f8ec0fb0cd90573885d05eb4be469df4de21a3e1b904d9190bc0c46"
+    },
+    {
+      "url": "assets/icons/icon-peru.png",
+      "size": 644,
+      "sha256": "b99369a6f28d7e7645321e8a37e4b9dc9fd9076019c698efc6ca0c10c327975f"
+    },
+    {
+      "url": "assets/icons/icon-todas.png",
+      "size": 1093,
+      "sha256": "a20add36c65fba5bde1db8d5bf1a6c92c7835cf26a4a59defbc138de6410c071"
+    },
+    {
+      "url": "assets/logo-hallowow.webp",
+      "size": 16498,
+      "sha256": "8e10c53001d9dfc4426588d15d084bbcbbf47ab4789ac58437b959ba82e53fa6"
+    },
+    {
+      "url": "assets/logo-samay.png",
+      "size": 61168,
+      "sha256": "245304a8d1abee025b98d3ca1455f61cdb41c043f405c23ce15c2c932e58200b"
+    },
+    {
+      "url": "assets/luna-halloween.webp",
+      "size": 4754,
+      "sha256": "b4d9eac5060b87f047ecbf512fb3e86dc8b65071cccac818b629088b5330daf9"
+    },
+    {
+      "url": "assets/murcielago.webp",
+      "size": 10282,
+      "sha256": "cdf6cf99c17ab92eed2958ba71e65fa85f87421a2551c54cf74a7ddde44944d4"
+    },
+    {
+      "url": "assets/samay-logo-placeholder.webp",
+      "size": 15009,
+      "sha256": "b64c56e06d65adf5f6ede777ec40b0439135212fbd96ea743a04bb51fd4b1548"
+    },
+    {
+      "url": "assets/vendor/lucide.min.js",
+      "size": 397450,
+      "sha256": "ab85225ecc1daa2033607856f03dd2dabcbc08e2d260a5b97e17c690aa929766"
+    },
+    {
+      "url": "audio-settings.js",
+      "size": 878,
+      "sha256": "c033d2f6221758ad41e3f2a0e273d16597a0a68d3d29c284aca5fd2a865e9fc8"
+    },
+    {
+      "url": "controller.js",
+      "size": 8499,
+      "sha256": "b90771e5c3080dc5253aadec4034b1280b0371dfebbd37e335afbd59ff11dfff"
+    },
+    {
+      "url": "device-menu.css",
+      "size": 3368,
+      "sha256": "f92c2edc91b0679ab42f2f067715c0e0b262b93b4e6e8d9eb402c482b76cbf9c"
+    },
+    {
+      "url": "device-menu.js",
+      "size": 6758,
+      "sha256": "486d5cf7478fe7f34afc6925f34cdf003547b2359d45a1f42a35cd245bbeb0f6"
+    },
+    {
+      "url": "index.html",
+      "size": 3910,
+      "sha256": "9693d0b1c60b7addf6332b395f3ddf7e60feb22fcb5e7f533f2d10884b24e679"
+    },
+    {
+      "url": "karaoke.css",
+      "size": 28656,
+      "sha256": "c1c4485e6e33bffe9ceb0c3e69fc509b990c0b23fc41ca45227af41714fdfc60"
+    },
+    {
+      "url": "letras-para-lector/A%20qui%C3%A9n%20le%20importa.txt",
+      "size": 1223,
+      "sha256": "50ecba0379f434431776784c25a73972a4d56bcf04b5eb7ad3454dd013cd4009"
+    },
+    {
+      "url": "letras-para-lector/Alma%2C%20coraz%C3%B3n%20y%20vida.txt",
+      "size": 483,
+      "sha256": "838473580c5fe4b78e5300fb8c440daedaa59dd06c017a1f078ebfa97d2d341c"
+    },
+    {
+      "url": "letras-para-lector/Amor%20eterno.txt",
+      "size": 1756,
+      "sha256": "5bd789ed2de24be51152784258d048203e2d1b733f8713266a45ccea9a5b0a5f"
+    },
+    {
+      "url": "letras-para-lector/Contigo%20Per%C3%BA.txt",
+      "size": 1347,
+      "sha256": "87fd8816e3ff96ff76207accabf4ad38d5f085708dfaef187adfc67afb7d2a23"
+    },
+    {
+      "url": "letras-para-lector/Cuando%20pienses%20en%20volver.txt",
+      "size": 1578,
+      "sha256": "5de8dcc9ac9f7d53d437c193fbed21a33d1d3516cb7833fac6aeb1aff000b19f"
+    },
+    {
+      "url": "letras-para-lector/El%20muerto%20vivo.txt",
+      "size": 1246,
+      "sha256": "df77361065c64c36d04d6065468eae42820bbf3794752531c4e52abd9854ecbc"
+    },
+    {
+      "url": "letras-para-lector/El%20rey.txt",
+      "size": 692,
+      "sha256": "6e2d25c06b4594174639b870b7217a9c4fd38cd90e150d430e20a14678eec06c"
+    },
+    {
+      "url": "letras-para-lector/El%20triste.txt",
+      "size": 932,
+      "sha256": "50981cf986178667a3ae004d6d40e6e150d291aa2019f7f0ccae423b1c2f1255"
+    },
+    {
+      "url": "letras-para-lector/Esta%20es%20mi%20tierra.txt",
+      "size": 1077,
+      "sha256": "f62f7573914a7652f7eb7f37e1b61f43ac29dcb24c0e05da226118a3ddb717ce"
+    },
+    {
+      "url": "letras-para-lector/Fina%20Estampa.txt",
+      "size": 1124,
+      "sha256": "eb2836dea3a8523d4832e2d2165a977fb2c4cab411b200b8e21d4b065cb5f282"
+    },
+    {
+      "url": "letras-para-lector/Himno%20Nacional%20del%20Per%C3%BA.txt",
+      "size": 861,
+      "sha256": "637c65acb0ac119270400fe3c116d8c6a699798778fc24e3bff50ed781a3cd43"
+    },
+    {
+      "url": "letras-para-lector/La%20Bruja.txt",
+      "size": 1064,
+      "sha256": "447a97681c3bfba12ff77cfffb18f93081f567a58e7459811288256fc9e0f704"
+    },
+    {
+      "url": "letras-para-lector/La%20Flor%20de%20la%20Canela.txt",
+      "size": 1348,
+      "sha256": "2e73a3f79ef7f4860e6d5463f1935dadb4b87e044e2e30a61d056433e3d3b542"
+    },
+    {
+      "url": "letras-para-lector/La%20Llorona.txt",
+      "size": 1413,
+      "sha256": "1b93be522fa52c70e56a4274c1fb5daf7c8cd25edd7435c8ffbe2589510bbbe2"
+    },
+    {
+      "url": "letras-para-lector/La%20Malague%C3%B1a.txt",
+      "size": 812,
+      "sha256": "e30903181d63487a3f99bb3040bddd926f8b3e326a20fe275665f9e3534e09c2"
+    },
+    {
+      "url": "letras-para-lector/Mal%20paso.txt",
+      "size": 1064,
+      "sha256": "a8e17ffc535f2c4b553b7b9179760331f06a39bed5d24cd5469015909f993147"
+    },
+    {
+      "url": "letras-para-lector/Mi%20Per%C3%BA.txt",
+      "size": 813,
+      "sha256": "34661b97d59ad5a646d0a029432a7d4b6ce3b0689dceb35ffa5febab212daae2"
+    },
+    {
+      "url": "letras-para-lector/Mi%20propiedad%20privada.txt",
+      "size": 812,
+      "sha256": "84083a4073ef2769a2330dadb2b34b2419254dfbc3b2af9db605d8e9ac1c9dc6"
+    },
+    {
+      "url": "letras-para-lector/Mujer%20contra%20mujer.txt",
+      "size": 1096,
+      "sha256": "aa53cd98cd293f759e94cbc70685ec3c203ac138d975d5b04e97be17022ed142"
+    },
+    {
+      "url": "letras-para-lector/No%20podr%C3%A1s.txt",
+      "size": 949,
+      "sha256": "1473437b14ed47ac0b869a92be28add9520db86c9c57aff097bdb4ef099a1e97"
+    },
+    {
+      "url": "letras-para-lector/Nuestro%20secreto.txt",
+      "size": 1094,
+      "sha256": "c1cc52aa2208380d58949d888991309dbbeddbdbc753b09650ecc5308311cf78"
+    },
+    {
+      "url": "letras-para-lector/Payaso.txt",
+      "size": 926,
+      "sha256": "ebb05dedddbcefcbb4130d2565ae9e58bb5a538eac1335e4946a5b2abee605ed"
+    },
+    {
+      "url": "letras-para-lector/Qui%C3%A9n%20ser%C3%A1.txt",
+      "size": 824,
+      "sha256": "ed0d29b04ce968fbcb8c8b6a16ee98611b9a6e8c5fdf306accda56f9d94d39f0"
+    },
+    {
+      "url": "letras-para-lector/Regresa.txt",
+      "size": 731,
+      "sha256": "60c8dc9025e44a82fde23ad2903f67739387af6a4b5d578a4f994715d1f17602"
+    },
+    {
+      "url": "letras-para-lector/Ritmo%2C%20color%20y%20sabor.txt",
+      "size": 1575,
+      "sha256": "0fe90e0189f58d8c2b71d8c31a17d7351ff320e951d179dc8054c1eba161ef93"
+    },
+    {
+      "url": "letras-para-lector/Y%20se%20llama%20Per%C3%BA.txt",
+      "size": 1282,
+      "sha256": "2615d5e249de1b0663c8026780c38204a07e6d3fbc7e7c020c6e33edf6bc65ce"
+    },
+    {
+      "url": "letras-para-lector/%C3%93diame.txt",
+      "size": 1020,
+      "sha256": "6d5956121cfd7345744ab28d51e2758afb2cba6ec1d26cdbf851347bb5b0083f"
+    },
+    {
+      "url": "lyrics.js",
+      "size": 808,
+      "sha256": "8ea60f05731229677cce7f6f218a019548e8aa6cbcdd739c6e26f164a493a74f"
+    },
+    {
+      "url": "offline.js",
+      "size": 1535,
+      "sha256": "a5cd0527b95aabae1e04760c81063c96a2c2215567972a613e2fcf2b3afaaa08"
+    },
+    {
+      "url": "player-entry.js",
+      "size": 72,
+      "sha256": "4959f31711e8eb2e258bcaca04f73ef0c49d70608e53f9a0b37d27af4cf4bbac"
+    },
+    {
+      "url": "player.html",
+      "size": 4792,
+      "sha256": "59a0e1e75a7868ed7202604e172f7e941ac59ad1033f36614c357609a4dcf5f2"
+    },
+    {
+      "url": "player.js",
+      "size": 11936,
+      "sha256": "9dbfa877b811b06f1df9633979466b7811796e9dd9a46442a694e4dddfa8c74e"
+    },
+    {
+      "url": "shared.js",
+      "size": 5370,
+      "sha256": "ba2749224fb3145bd072d2437aacf47cec79b49ecf769f09bfb44ab20ab6f411"
+    },
+    {
+      "url": "songs/AUDIOS-IMPORTADOS.json",
+      "size": 3132,
+      "sha256": "ffffafa2ca6180104740591102039a2e19d214cbc3e1fc6ac584d6109c22eaff"
+    },
+    {
+      "url": "songs/a-quien-le-importa/audio.mp3",
+      "size": 3323805,
+      "sha256": "d4c5efb46cb5654d7835a01e38a0b3f0250684ce8c9675ada925383abb7e74c7"
+    },
+    {
+      "url": "songs/a-quien-le-importa/letra.txt",
+      "size": 1202,
+      "sha256": "7c390f06b5aee5bde6ba57d87db18e000df35f61bb696bd6f29693ca104abc85"
+    },
+    {
+      "url": "songs/a-quien-le-importa/lyrics-timed.json",
+      "size": 5108,
+      "sha256": "433ae8fd90438fbfb8c52ca406bc11f83190d3954e80a03bce06553fd87db570"
+    },
+    {
+      "url": "songs/alma-corazon-y-vida/letra.txt",
+      "size": 460,
+      "sha256": "fcd745e2e2ba12250ea7247fc64c688eb3ad8aa9068f0cd3b54a866f61eb4a9b"
+    },
+    {
+      "url": "songs/alma-corazon-y-vida/lyrics-timed.json",
+      "size": 77,
+      "sha256": "820b46e0c29e13776e67edd650993b0fdf1a88e54e130469d2e82b57ee7b6b39"
+    },
+    {
+      "url": "songs/amor-eterno/audio.mp3",
+      "size": 6752268,
+      "sha256": "06c10d814b3fe9f98163debdc1ed3f043567869fe51203fe9856839c108b9b14"
+    },
+    {
+      "url": "songs/amor-eterno/letra.txt",
+      "size": 1743,
+      "sha256": "c814f41cd5f10ed6eec9a75f8d7aebe5a049987d12ac83d5d2b640077cccbb0e"
+    },
+    {
+      "url": "songs/amor-eterno/lyrics-timed.json",
+      "size": 5972,
+      "sha256": "a3f345c7f31e46143efb7a779d0759c43f781d55031239790d74eb7cc8d6cd62"
+    },
+    {
+      "url": "songs/carinito/audio.mp3",
+      "size": 5372136,
+      "sha256": "ff4e96de800aafd69194ce4a8286fab7c3203a220612d743b9f19454abfad98e"
+    },
+    {
+      "url": "songs/carinito/letra.txt",
+      "size": 543,
+      "sha256": "0521eed94e8dac35c32bf4a6caa43bfd5830df0d1a255b5cb91fd4b1390d58bf"
+    },
+    {
+      "url": "songs/carinito/lyrics-template.json",
+      "size": 3202,
+      "sha256": "6c74bbe38d78c9df435ba97a6f8b74d506c330d45175dcc4210e0f420f615ee3"
+    },
+    {
+      "url": "songs/carinito/lyrics-timed.json",
+      "size": 3607,
+      "sha256": "39082f96bb52cfb97202c53bc1a57ceb6a7d49d4bc5b0bf8b602d75d408c85e8"
+    },
+    {
+      "url": "songs/catalog.js",
+      "size": 3377,
+      "sha256": "76e08257a310b0785d60a8fb59c7c7af1af62761c0977919dd97ce63c2d34976"
+    },
+    {
+      "url": "songs/contigo-peru/audio.mp3",
+      "size": 4066837,
+      "sha256": "d60c96e8566b5859eb95528366d09d693f40bdecb824ba00583e7740e56f436b"
+    },
+    {
+      "url": "songs/contigo-peru/letra.txt",
+      "size": 1332,
+      "sha256": "e6c5c85685ae03627cef6cdc90d87e04704bea67db017b8f563cb662e1c285b4"
+    },
+    {
+      "url": "songs/contigo-peru/lyrics-timed.json",
+      "size": 70,
+      "sha256": "40dcfd8c38ff945e6ed30a7262d1e1a6e54f29815a59fa03f30fb32d72899c46"
+    },
+    {
+      "url": "songs/cuando-pienses/audio.mp3",
+      "size": 4334326,
+      "sha256": "a2779365b83c9612f7d04d2d24b08a651b880a5d3ab8ab20982ef8a68d38c821"
+    },
+    {
+      "url": "songs/cuando-pienses/letra.txt",
+      "size": 1552,
+      "sha256": "69425fd4cc1319128a623eb71e792900b8a03abd9984a9c50c20e62c259febbe"
+    },
+    {
+      "url": "songs/cuando-pienses/lyrics-timed.json",
+      "size": 4903,
+      "sha256": "480bffb03b9cabaaca88b87fb5d0c4e941a4c56a0f84ceb85bbfbf1d7bee01fd"
+    },
+    {
+      "url": "songs/el-muerto-vivo/letra.txt",
+      "size": 1230,
+      "sha256": "59200f96c7fb757cc661b2d9d19b1358bd4679ff59609ea08d1b933f0bf75116"
+    },
+    {
+      "url": "songs/el-muerto-vivo/lyrics-timed.json",
+      "size": 72,
+      "sha256": "472b8b235d5f50b5add895c78d38736c5aaf60773ed353fb95c36997b4432078"
+    },
+    {
+      "url": "songs/el-rey/letra.txt",
+      "size": 684,
+      "sha256": "552d68929374735dba0ca379de18c0ce018c0f608faaa008e21156e6ea8c65cd"
+    },
+    {
+      "url": "songs/el-rey/lyrics-timed.json",
+      "size": 64,
+      "sha256": "2a1c018f85e3793dbcf5d4dce1d9a67bcab279ddbc2c215cafd0aea102920bc0"
+    },
+    {
+      "url": "songs/el-triste/audio.mp3",
+      "size": 3628408,
+      "sha256": "04a3ad642b90415413361d314117cd9c83554e4785d9b9d5bb0494cbcef3da82"
+    },
+    {
+      "url": "songs/el-triste/letra.txt",
+      "size": 921,
+      "sha256": "19ee33eecff7d44af0c6cecc052106a79bf36c0e3eeec73ea70b9d2f728f1bb0"
+    },
+    {
+      "url": "songs/el-triste/lyrics-timed.json",
+      "size": 3626,
+      "sha256": "fec35df4087a147136393f2a802f958a959d8b8dc3417e9b5f4b34585686892f"
+    },
+    {
+      "url": "songs/esta-es-mi-tierra/audio.mp3",
+      "size": 3554328,
+      "sha256": "9e367eeccf12c26f6d6b27f8b9e5e0278b8a0cec575e44dc819ed1e0bd3f9a19"
+    },
+    {
+      "url": "songs/esta-es-mi-tierra/letra.txt",
+      "size": 1058,
+      "sha256": "2988a5fdd69ea3d69c5dc8b97be68bb8c54c7c394811cc1277df86231d0a46a7"
+    },
+    {
+      "url": "songs/esta-es-mi-tierra/lyrics-timed.json",
+      "size": 75,
+      "sha256": "135566ae24ebdd64d3a7e21b0905b99d8ce2d929fb864f39a29f18a8c9f83804"
+    },
+    {
+      "url": "songs/fina-estampa/audio.mp3",
+      "size": 2302463,
+      "sha256": "9b6bebed284d6d0b44e3bad355e53a9d11d42844b34c2e09ce083666fecccb22"
+    },
+    {
+      "url": "songs/fina-estampa/letra.txt",
+      "size": 1110,
+      "sha256": "839026cc00bd77f8d9370d6ec9376bf79647cd4e7e932eae597225d26d1e5177"
+    },
+    {
+      "url": "songs/fina-estampa/lyrics-timed.json",
+      "size": 70,
+      "sha256": "e2af8fb857f1ee100d33ace48f91cee2219583f906913bc73896552d49c7ae59"
+    },
+    {
+      "url": "songs/himno-peru/audio.mp3",
+      "size": 3879007,
+      "sha256": "3a3fd6eb5a45c2651cbaced81120a07f2fa73ace12cb8515f57d1a43a266603c"
+    },
+    {
+      "url": "songs/himno-peru/letra.txt",
+      "size": 835,
+      "sha256": "195d4bdfa54e742a02dce13048017d3a72862c8ebfda7aaeff23fd1b2f5bba3c"
+    },
+    {
+      "url": "songs/himno-peru/lyrics-timed.json",
+      "size": 4191,
+      "sha256": "13198256b5ebbb6e1c9aeb0dc8c45bcd35908d9e75649b63b7daaaceceeda982"
+    },
+    {
+      "url": "songs/la-bruja/audio.mp3",
+      "size": 5606850,
+      "sha256": "06d8bab3c5965df473ef7ced2b20a652dc486a39eed8d5075fbb21ea19ebdab7"
+    },
+    {
+      "url": "songs/la-bruja/letra.txt",
+      "size": 1054,
+      "sha256": "696b60f9edb9cdbb1bcba728dd17ba6bc9be453506db9d3e36960f13e6724fcf"
+    },
+    {
+      "url": "songs/la-bruja/lyrics-timed.json",
+      "size": 3210,
+      "sha256": "92d092cb44573a0b968347c9f059a9281b2135065adf0f608be9755ca3ad96ad"
+    },
+    {
+      "url": "songs/la-flor-de-la-canela/audio.mp3",
+      "size": 3423959,
+      "sha256": "f06d0749d22f769007d137908ae612a19a2b930bb018779f82ad919bee339e25"
+    },
+    {
+      "url": "songs/la-flor-de-la-canela/letra.txt",
+      "size": 1326,
+      "sha256": "406c6720db36e917a64432ea558593410179447647a6ecaa876e70be7d61f516"
+    },
+    {
+      "url": "songs/la-flor-de-la-canela/lyrics-timed.json",
+      "size": 78,
+      "sha256": "277932b3bde7a0abc33d1dacee0b5d8f1957bd1bef4f3fffcd8bde416c1b7228"
+    },
+    {
+      "url": "songs/la-llorona/audio.mp3",
+      "size": 8090155,
+      "sha256": "a154b0ca560ff945d4734d1f79ee2ed2f57169ea035f7dbf3e4b034234caaf99"
+    },
+    {
+      "url": "songs/la-llorona/letra.txt",
+      "size": 1401,
+      "sha256": "ab9e3a5289306977754ee6509dc4a82a4228bc9bfb09cd79a35210756b88549e"
+    },
+    {
+      "url": "songs/la-llorona/lyrics-timed.json",
+      "size": 5467,
+      "sha256": "81961ecad992bae4fdf7fa43788fe981ee6ee8481a7636d9dac2a29154479d88"
+    },
+    {
+      "url": "songs/la-malaguena/audio.mp3",
+      "size": 7145358,
+      "sha256": "a111053fe57d934263fbcf2fe12aa826b739457e39b2643fd741b595138975a1"
+    },
+    {
+      "url": "songs/la-malaguena/letra.txt",
+      "size": 797,
+      "sha256": "589bf42f1e853519483c38c7e76eb0a41b3dc12cb4f91ac50e0927d3f8b021be"
+    },
+    {
+      "url": "songs/la-malaguena/lyrics-timed.json",
+      "size": 3686,
+      "sha256": "bd19ad785b1a04f0cffa587f26a6a8fd811489fac41921edc21c72c71d388241"
+    },
+    {
+      "url": "songs/mal-paso/letra.txt",
+      "size": 1054,
+      "sha256": "095d2f14a00172152646f7d0dce5bde5c903bd806cef386885eeee6f9a8093ec"
+    },
+    {
+      "url": "songs/mal-paso/lyrics-timed.json",
+      "size": 66,
+      "sha256": "88c452a0e3521f27f0c92da91a764eb6d70ce92c030fa6cb30f406ea4057f9df"
+    },
+    {
+      "url": "songs/mi-peru/audio.mp3",
+      "size": 1637753,
+      "sha256": "90cbc848c5e3ce12257636c22945ea19227372971f7523cd24e3e01f6a3a924a"
+    },
+    {
+      "url": "songs/mi-peru/letra.txt",
+      "size": 803,
+      "sha256": "fb82c7f5ac3f9a7dece6331e28ef9f62f65e115ae9417b46ebcb853b6c98ce88"
+    },
+    {
+      "url": "songs/mi-peru/lyrics-timed.json",
+      "size": 65,
+      "sha256": "2bcf332153f681dc4b5c3419ff8754822c9fbc651e94f0d01c21f0f0a7a27bbf"
+    },
+    {
+      "url": "songs/mi-propiedad-privada/audio.mp3",
+      "size": 2349015,
+      "sha256": "6b10dcb1e9369eb6cdede98cd7ba1f3f538381dda1dae5adef8c8ff9c28b5bb8"
+    },
+    {
+      "url": "songs/mi-propiedad-privada/letra.txt",
+      "size": 790,
+      "sha256": "352820118214aa2e924b08a271bdd91f32a6b677c908d4b19b2578e6bc7a7705"
+    },
+    {
+      "url": "songs/mi-propiedad-privada/lyrics-timed.json",
+      "size": 78,
+      "sha256": "2f2056ae55eb1ebdfb6ba75f238106796833042c3edb6aa49a44e881111b2569"
+    },
+    {
+      "url": "songs/mujer-contra-mujer/letra.txt",
+      "size": 1076,
+      "sha256": "09d0437db5cbbaa37a74299dcdd260d2610011294d63248c0f8d6adedd4d5775"
+    },
+    {
+      "url": "songs/mujer-contra-mujer/lyrics-timed.json",
+      "size": 76,
+      "sha256": "e3dbc725e1a8ed28195796d7b5d203ccbe3105cca83f811be94bda01519b10b4"
+    },
+    {
+      "url": "songs/no-podras/audio.mp3",
+      "size": 3959362,
+      "sha256": "a575458660951772757c3c4f12e549a825def63b44d00f576035b9aa7152b69d"
+    },
+    {
+      "url": "songs/no-podras/letra.txt",
+      "size": 937,
+      "sha256": "5e5b79f3886e1c15cb834dc8ab8df83671e2998477eb902f0bbcd59e5ac5e654"
+    },
+    {
+      "url": "songs/no-podras/lyrics-timed.json",
+      "size": 3963,
+      "sha256": "9a5ae7131cb02dbef9ab0066c32e1a50c901e9f8fd1d12ce9f33cb55065892a7"
+    },
+    {
+      "url": "songs/nuestro-secreto/letra.txt",
+      "size": 1077,
+      "sha256": "c31edb4080930feea8f01d879f04bf11f42e618181a36113e6b9115a91920c98"
+    },
+    {
+      "url": "songs/nuestro-secreto/lyrics-timed.json",
+      "size": 73,
+      "sha256": "9363c90e291426b15c9867d26aed885a0dc41e55947aab7fcd4a1ef16ffe47d7"
+    },
+    {
+      "url": "songs/odiame/letra.txt",
+      "size": 1011,
+      "sha256": "c7c9fbafe5dbda566c4d60da94c93d0f17a445ec4f01313401fb4b5dc1355d0f"
+    },
+    {
+      "url": "songs/odiame/lyrics-timed.json",
+      "size": 64,
+      "sha256": "27aca4d56d7c449682eeedcf1baacfd6fb7ab17997dee99d8c14ca64d4be7683"
+    },
+    {
+      "url": "songs/payaso/audio.mp3",
+      "size": 3039825,
+      "sha256": "aae702e4f7e5a81fc2f4d354e7f3593a13bb5eed1b06a9ee7e02fd1c48a79d82"
+    },
+    {
+      "url": "songs/payaso/letra.txt",
+      "size": 918,
+      "sha256": "e1906da6f53e48029d6b3a7ddaffbd76401c218bf758946ce4db72812f5a943b"
+    },
+    {
+      "url": "songs/payaso/lyrics-timed.json",
+      "size": 4093,
+      "sha256": "cebc70cf12760c0887bb13e89911bc8bef69922909b5dbc93dee7288c8871b84"
+    },
+    {
+      "url": "songs/quien-sera/audio.mp3",
+      "size": 2710693,
+      "sha256": "7f595b4f4539ff461ecc62731b508b9b54b8db8fe3bd5cff956ef96da2a1cf25"
+    },
+    {
+      "url": "songs/quien-sera/letra.txt",
+      "size": 810,
+      "sha256": "79f2c2df56c23f02bde56388b913e366f4ed5e66458ace87cdbc84c53a712407"
+    },
+    {
+      "url": "songs/quien-sera/lyrics-timed.json",
+      "size": 3118,
+      "sha256": "7e1a62da727fb4cf3fd21143a9e1792fe47a52e1e9cce16b3a6c88b69d0fff41"
+    },
+    {
+      "url": "songs/regresa/letra.txt",
+      "size": 722,
+      "sha256": "e6701a8b30d0e5ca36b08d31ba7547a3076946405509bfe838fadc1d6d1b0230"
+    },
+    {
+      "url": "songs/regresa/lyrics-timed.json",
+      "size": 65,
+      "sha256": "290c1698f8cea0079aea3561be601bb207b4130ea7db53cc6ad06cfbbeb2f5a0"
+    },
+    {
+      "url": "songs/ritmo-color-sabor/audio.mp3",
+      "size": 4098684,
+      "sha256": "4d33201d4194a5ed5b05d78a0e3c2f63ab9afdcd64dec27acd53f8630f38b514"
+    },
+    {
+      "url": "songs/ritmo-color-sabor/letra.txt",
+      "size": 1553,
+      "sha256": "ade6c51a3d0b52e3147ed1d7b53bd7430af43bfb2ca1780cb0f77b7341ea1b66"
+    },
+    {
+      "url": "songs/ritmo-color-sabor/lyrics-timed.json",
+      "size": 6809,
+      "sha256": "53c8f0c31a35cbbd8d4c88916e5bd260d11e6326286a84565376ca547e50ad8b"
+    },
+    {
+      "url": "songs/y-se-llama-peru/audio.mp3",
+      "size": 3024582,
+      "sha256": "d3a0a823f4dc0b1b6583cd4fdad623d19c699355b5c2d7433c21f3bea0aea2c8"
+    },
+    {
+      "url": "songs/y-se-llama-peru/letra.txt",
+      "size": 1264,
+      "sha256": "dbea5db2f3ba2113c1f538647d53f66035ea3ac9b8bef1c8b9ac2a335fa4f9c8"
+    },
+    {
+      "url": "songs/y-se-llama-peru/lyrics-timed.json",
+      "size": 73,
+      "sha256": "ffc9c63d80ef2286fc6fa6d2494df0f585dbcc2dcc3614ca185f496b2ed3a584"
+    },
+    {
+      "url": "timing-editor.css",
+      "size": 2939,
+      "sha256": "019a3cf79e26aa04c30e6a50708ece7e594d224b3bc00bb90f84c69cf4aa50a5"
+    },
+    {
+      "url": "timing-editor.html",
+      "size": 2794,
+      "sha256": "e01739250517ad83ac8375192a7183f3b1d35e0620e70c1e63f692ecc4a0b365"
+    },
+    {
+      "url": "timing-editor.js",
+      "size": 7865,
+      "sha256": "1a9196b741a21d0aaf8018504a929f7e16c988ded8c0f0f9822800d46c96d22c"
+    },
+    {
+      "url": "ui.js",
+      "size": 1106,
+      "sha256": "afa10b495d5d36e562fee9033fdc5d053f6200d9be5131ecdb2ac0b92323e62b"
+    }
+  ]
+}
