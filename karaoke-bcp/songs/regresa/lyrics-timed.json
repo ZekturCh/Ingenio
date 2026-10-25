@@ -1,0 +1,130 @@
+{
+  "songId": "regresa",
+  "title": "Regresa",
+  "status": "estimated",
+  "reviewRequired": true,
+  "timingMethod": "text-length-proportional; not aligned to vocals or instrumental sections",
+  "durationSeconds": 247.118367,
+  "lyrics": [
+    {
+      "text": "Te estoy buscando",
+      "start": 0.0,
+      "end": 6.480377
+    },
+    {
+      "text": "Porque mis labios extrañan tus besos de fuego",
+      "start": 6.480377,
+      "end": 22.897331
+    },
+    {
+      "text": "Te estoy llamando",
+      "start": 22.897331,
+      "end": 29.377708
+    },
+    {
+      "text": "Y en mis palabras tan tristes mi voz es un ruego",
+      "start": 29.377708,
+      "end": 45.794662
+    },
+    {
+      "text": "Te necesito porque sin verte mi vida no tiene sentido y van",
+      "start": 45.794662,
+      "end": 66.531868
+    },
+    {
+      "text": "Y van por el mundo mis pasos perdidos",
+      "start": 66.531868,
+      "end": 79.492622
+    },
+    {
+      "text": "Buscando el camino de tu comprensión",
+      "start": 79.492622,
+      "end": 92.8854
+    },
+    {
+      "text": "Apiádate de mi",
+      "start": 92.8854,
+      "end": 98.069702
+    },
+    {
+      "text": "Si tienes corazón",
+      "start": 98.069702,
+      "end": 104.550078
+    },
+    {
+      "text": "Escucha en sus latidos",
+      "start": 104.550078,
+      "end": 112.758556
+    },
+    {
+      "text": "La voz de mi dolor",
+      "start": 112.758556,
+      "end": 118.806907
+    },
+    {
+      "text": "Pero regresa",
+      "start": 118.806907,
+      "end": 123.559184
+    },
+    {
+      "text": "Para llenar el vació que dejaste al irte regresa",
+      "start": 123.559184,
+      "end": 140.840188
+    },
+    {
+      "text": "Regresa aunque sea para despedirte no dejes que muera",
+      "start": 140.840188,
+      "end": 160.281318
+    },
+    {
+      "text": "Sin decirte adiós",
+      "start": 160.281318,
+      "end": 166.761695
+    },
+    {
+      "text": "Apiádate de mi",
+      "start": 166.761695,
+      "end": 171.945997
+    },
+    {
+      "text": "Si tienes corazón",
+      "start": 171.945997,
+      "end": 178.426373
+    },
+    {
+      "text": "Escucha en sus latidos",
+      "start": 178.426373,
+      "end": 186.634851
+    },
+    {
+      "text": "La voz de mi dolor",
+      "start": 186.634851,
+      "end": 192.683202
+    },
+    {
+      "text": "Pero regresa",
+      "start": 192.683202,
+      "end": 197.435479
+    },
+    {
+      "text": "Para llenar el vació que dejaste al irte regresa",
+      "start": 197.435479,
+      "end": 214.716483
+    },
+    {
+      "text": "Regresa aunque sea para despedirte no dejes que muera",
+      "start": 214.716483,
+      "end": 234.157613
+    },
+    {
+      "text": "Sin decirte adiós",
+      "start": 234.157613,
+      "end": 240.63799
+    },
+    {
+      "text": "Te estoy buscando",
+      "start": 240.63799,
+      "end": 247.118367
+    }
+  ]
+}

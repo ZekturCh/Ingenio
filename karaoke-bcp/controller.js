@@ -1,6 +1,6 @@
-import { SONGS, roomFromUrl, sendCommand, subscribeRoom, adminUrl } from "./shared.js?v=20261019-1";
+import { SONGS, roomFromUrl, sendCommand, subscribeRoom, adminUrl } from "./shared.js?v=20261025-3";
 import { $, icons, loadFavorites, toggleFavorite, toggleFullscreen, normalizeSearch, escapeHtml } from "./ui.js";
-import { mountPlayer } from "./player.js?v=20261023-2";
+import { mountPlayer } from "./player.js?v=20261025-3";
 
 const room = roomFromUrl();
 $("#room").textContent = room;
@@ -81,16 +81,17 @@ function toast(message) {
 function renderSongs() {
   const favorites = loadFavorites();
   const list = SONGS.filter((song) => {
+    if (!song.enabled || !song.audio || !song.text || !song.versions?.length) return false;
     const tags = song.categories || categories[song.id] || [];
     const text = normalizeSearch(`${song.title} ${song.artist} ${tags.join(" ")}`);
     return text.includes(normalizeSearch(query)) && (!onlyFavorites || favorites.has(song.id));
   });
   $("#listTitle").textContent = onlyFavorites ? "Mis favoritas" : query ? "Canciones" : "Canciones destacadas";
   $("#songs").innerHTML = list.length ? list.map((song) => `
-    <article class="song ${song.enabled ? "enabled" : "disabled"}">
-      <button class="songSelect" data-song="${escapeHtml(song.id)}" ${song.enabled ? "" : "disabled"} aria-label="${escapeHtml(song.title + (song.enabled ? "" : ", próximamente"))}">
+    <article class="song enabled">
+      <button class="songSelect" data-song="${escapeHtml(song.id)}" aria-label="${escapeHtml(song.title)}">
         <i class="songNote" data-lucide="music-2" aria-hidden="true"></i>
-        <span class="songCopy"><b>${escapeHtml(song.title)}</b><span class="artist">${escapeHtml(song.artist)}</span>${song.enabled ? "" : '<span class="soon">Próximamente</span>'}</span>
+        <span class="songCopy"><b>${escapeHtml(song.title)}</b><span class="artist">${escapeHtml(song.artist)}</span></span>
       </button>
       <button class="fav ${favorites.has(song.id) ? "on" : ""}" data-fav="${escapeHtml(song.id)}" aria-label="Favorita: ${escapeHtml(song.title)}" aria-pressed="${favorites.has(song.id)}" title="Favorita"><img class="favoriteGlyph" src="assets/icons/icon-halloween.png" alt=""></button>
     </article>`).join("") : '<p class="empty">No hay canciones con ese filtro.</p>';
@@ -100,7 +101,7 @@ function renderSongs() {
 function openVersions(song) {
   $("#dlgTitle").textContent = song.title;
   $("#dlgArtist").textContent = song.artist;
-  $("#modalNote").textContent = player ? (song.lyricsStatus === "pending" ? "Letra pendiente de sincronizar" : "") : "Preparando karaoke…";
+  $("#modalNote").textContent = player ? (song.lyricsStatus === "pending" ? "Letra pendiente de sincronizar" : song.lyricsStatus === "estimated" ? "Letra con tiempos aproximados; pendiente de revisión" : "") : "Preparando karaoke…";
   $("#versions").innerHTML = song.versions.map((version) => `
     <button class="versionOption ${version.id === "chorus" ? "recommended" : ""}" data-version="${escapeHtml(version.id)}" ${player ? "" : "disabled"}>
       <strong>${escapeHtml(version.label)}</strong><span class="duration">${escapeHtml(version.durationLabel)}</span><small>${escapeHtml(version.note || "")}</small>

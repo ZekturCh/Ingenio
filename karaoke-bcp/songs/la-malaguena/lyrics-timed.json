@@ -1,0 +1,175 @@
+{
+  "songId": "la-malaguena",
+  "title": "La Malagueña",
+  "status": "estimated",
+  "reviewRequired": true,
+  "timingMethod": "text-length-proportional; not aligned to vocals or instrumental sections",
+  "durationSeconds": 297.691429,
+  "lyrics": [
+    {
+      "text": "Qué bonitos ojos tienes",
+      "start": 0.0,
+      "end": 9.33202
+    },
+    {
+      "text": "Debajo de esas dos cejas",
+      "start": 9.33202,
+      "end": 18.664039
+    },
+    {
+      "text": "Debajo de esas dos cejas",
+      "start": 18.664039,
+      "end": 27.996059
+    },
+    {
+      "text": "Qué bonitos ojos tienes",
+      "start": 27.996059,
+      "end": 37.328079
+    },
+    {
+      "text": "Ellos me quieren mirar",
+      "start": 37.328079,
+      "end": 46.193498
+    },
+    {
+      "text": "Pero si tú no los dejas",
+      "start": 46.193498,
+      "end": 54.592315
+    },
+    {
+      "text": "Pero si tú no los dejas",
+      "start": 54.592315,
+      "end": 62.991133
+    },
+    {
+      "text": "Ni siquiera parpadear",
+      "start": 62.991133,
+      "end": 71.856552
+    },
+    {
+      "text": "Malagueña salerosa",
+      "start": 71.856552,
+      "end": 79.788769
+    },
+    {
+      "text": "Besar tus labios quisiera",
+      "start": 79.788769,
+      "end": 90.05399
+    },
+    {
+      "text": "Besar tus labios quisiera",
+      "start": 90.05399,
+      "end": 100.319212
+    },
+    {
+      "text": "Malagueña salerosa",
+      "start": 100.319212,
+      "end": 108.251429
+    },
+    {
+      "text": "Y decirte, niña hermosa",
+      "start": 108.251429,
+      "end": 117.116847
+    },
+    {
+      "text": "Eres linda y hechicera",
+      "start": 117.116847,
+      "end": 125.982266
+    },
+    {
+      "text": "Eres linda y hechicera",
+      "start": 125.982266,
+      "end": 134.847685
+    },
+    {
+      "text": "Como el candor de una rosa",
+      "start": 134.847685,
+      "end": 144.646306
+    },
+    {
+      "text": "Si por pobre me desprecias",
+      "start": 144.646306,
+      "end": 154.911527
+    },
+    {
+      "text": "Yo te concedo razón",
+      "start": 154.911527,
+      "end": 162.377143
+    },
+    {
+      "text": "Yo te concedo razón",
+      "start": 162.377143,
+      "end": 169.842759
+    },
+    {
+      "text": "Si por pobre me desprecias",
+      "start": 169.842759,
+      "end": 180.107981
+    },
+    {
+      "text": "Yo no te ofrezco riquezas",
+      "start": 180.107981,
+      "end": 189.906601
+    },
+    {
+      "text": "Te ofrezco mi corazón",
+      "start": 189.906601,
+      "end": 198.305419
+    },
+    {
+      "text": "Te ofrezco mi corazón",
+      "start": 198.305419,
+      "end": 206.704237
+    },
+    {
+      "text": "A cambio de mi pobreza",
+      "start": 206.704237,
+      "end": 215.103054
+    },
+    {
+      "text": "Malagueña salerosa",
+      "start": 215.103054,
+      "end": 223.035271
+    },
+    {
+      "text": "Besar tus labios quisiera",
+      "start": 223.035271,
+      "end": 233.300493
+    },
+    {
+      "text": "Besar tus labios quisiera",
+      "start": 233.300493,
+      "end": 243.565715
+    },
+    {
+      "text": "Malagueña salerosa",
+      "start": 243.565715,
+      "end": 251.497931
+    },
+    {
+      "text": "Y decirte, niña hermosa",
+      "start": 251.497931,
+      "end": 260.36335
+    },
+    {
+      "text": "Eres linda y hechicera",
+      "start": 260.36335,
+      "end": 269.228769
+    },
+    {
+      "text": "Eres linda y hechicera",
+      "start": 269.228769,
+      "end": 278.094188
+    },
+    {
+      "text": "Como el candor de una rosa",
+      "start": 278.094188,
+      "end": 287.892808
+    },
+    {
+      "text": "Como el candor de una rosa",
+      "start": 287.892808,
+      "end": 297.691429
+    }
+  ]
+}

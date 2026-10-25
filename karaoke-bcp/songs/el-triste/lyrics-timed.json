@@ -1,0 +1,165 @@
+{
+  "songId": "el-triste",
+  "title": "El triste",
+  "status": "estimated",
+  "reviewRequired": true,
+  "timingMethod": "text-length-proportional; not aligned to vocals or instrumental sections",
+  "durationSeconds": 238.262857,
+  "lyrics": [
+    {
+      "text": "Qué triste fue decirnos adiós",
+      "start": 0.0,
+      "end": 8.261542
+    },
+    {
+      "text": "Cuando nos adorábamos más",
+      "start": 8.261542,
+      "end": 15.531698
+    },
+    {
+      "text": "Hasta la golondrina emigró",
+      "start": 15.531698,
+      "end": 23.132316
+    },
+    {
+      "text": "Presagiando el final",
+      "start": 23.132316,
+      "end": 29.080626
+    },
+    {
+      "text": "Qué triste luce todo sin ti",
+      "start": 29.080626,
+      "end": 36.350783
+    },
+    {
+      "text": "Los mares de las playas se van",
+      "start": 36.350783,
+      "end": 44.281862
+    },
+    {
+      "text": "Se tiñen los colores de gris",
+      "start": 44.281862,
+      "end": 51.882481
+    },
+    {
+      "text": "Hoy todo es soledad",
+      "start": 51.882481,
+      "end": 57.169867
+    },
+    {
+      "text": "No sé si vuelva a verte después",
+      "start": 57.169867,
+      "end": 65.431409
+    },
+    {
+      "text": "No sé qué de mi vida será",
+      "start": 65.431409,
+      "end": 71.71018
+    },
+    {
+      "text": "Sin el lucero azul de tu ser",
+      "start": 71.71018,
+      "end": 78.980337
+    },
+    {
+      "text": "Que no me alumbra ya",
+      "start": 78.980337,
+      "end": 84.267723
+    },
+    {
+      "text": "Hoy quiero saborear mi dolor",
+      "start": 84.267723,
+      "end": 92.198803
+    },
+    {
+      "text": "No pido compasión ni piedad",
+      "start": 92.198803,
+      "end": 99.799421
+    },
+    {
+      "text": "La historia de este amor se escribió",
+      "start": 99.799421,
+      "end": 109.713271
+    },
+    {
+      "text": "Para la eternidad",
+      "start": 109.713271,
+      "end": 114.670196
+    },
+    {
+      "text": "Qué triste todos dicen que soy",
+      "start": 114.670196,
+      "end": 122.931738
+    },
+    {
+      "text": "Que siempre estoy hablando de ti",
+      "start": 122.931738,
+      "end": 131.854202
+    },
+    {
+      "text": "No saben que pensando en tu amor",
+      "start": 131.854202,
+      "end": 140.446206
+    },
+    {
+      "text": "En tu amor, he podido ayudarme a vivir",
+      "start": 140.446206,
+      "end": 150.360055
+    },
+    {
+      "text": "He podido ayudarme a vivir",
+      "start": 150.360055,
+      "end": 157.630212
+    },
+    {
+      "text": "Hoy quiero saborear mi dolor",
+      "start": 157.630212,
+      "end": 165.561292
+    },
+    {
+      "text": "No pido compasión ni piedad",
+      "start": 165.561292,
+      "end": 173.16191
+    },
+    {
+      "text": "La historia de este amor se escribió",
+      "start": 173.16191,
+      "end": 183.07576
+    },
+    {
+      "text": "Para la eternidad",
+      "start": 183.07576,
+      "end": 188.032685
+    },
+    {
+      "text": "Que triste todos dicen que soy",
+      "start": 188.032685,
+      "end": 196.294226
+    },
+    {
+      "text": "Que siempre estoy hablando de ti",
+      "start": 196.294226,
+      "end": 205.216691
+    },
+    {
+      "text": "No saben que pensando en tu amor",
+      "start": 205.216691,
+      "end": 213.808694
+    },
+    {
+      "text": "En tu amor, he podido ayudarme a vivir",
+      "start": 213.808694,
+      "end": 223.722544
+    },
+    {
+      "text": "He podido ayudarme a vivir",
+      "start": 223.722544,
+      "end": 230.9927
+    },
+    {
+      "text": "He podido ayudarme a vivir",
+      "start": 230.9927,
+      "end": 238.262857
+    }
+  ]
+}

@@ -1,0 +1,205 @@
+{
+  "songId": "himno-peru",
+  "title": "Himno Nacional del Perú",
+  "status": "estimated",
+  "reviewRequired": true,
+  "timingMethod": "text-length-proportional; not aligned to vocals or instrumental sections",
+  "durationSeconds": 161.593469,
+  "lyrics": [
+    {
+      "text": "Somos libres,",
+      "start": 0.0,
+      "end": 2.72627
+    },
+    {
+      "text": "seámoslo siempre,",
+      "start": 2.72627,
+      "end": 6.443911
+    },
+    {
+      "text": "seámoslo siempre,",
+      "start": 6.443911,
+      "end": 10.161552
+    },
+    {
+      "text": "y antes niegue sus luces",
+      "start": 10.161552,
+      "end": 15.118407
+    },
+    {
+      "text": "sus luces,",
+      "start": 15.118407,
+      "end": 17.101149
+    },
+    {
+      "text": "sus luces,",
+      "start": 17.101149,
+      "end": 19.083891
+    },
+    {
+      "text": "el sol,",
+      "start": 19.083891,
+      "end": 20.323105
+    },
+    {
+      "text": "que faltemos al voto solemne",
+      "start": 20.323105,
+      "end": 26.271331
+    },
+    {
+      "text": "que la patria al Eterno elevó.",
+      "start": 26.271331,
+      "end": 32.219557
+    },
+    {
+      "text": "que faltemos al voto solemne",
+      "start": 32.219557,
+      "end": 38.167783
+    },
+    {
+      "text": "que la patria al Eterno elevó.",
+      "start": 38.167783,
+      "end": 44.116008
+    },
+    {
+      "text": "ESTROFA",
+      "start": 44.116008,
+      "end": 45.850908
+    },
+    {
+      "text": "Largo tiempo el peruano oprimido,",
+      "start": 45.850908,
+      "end": 52.790504
+    },
+    {
+      "text": "la ominosa cadena arrastró;",
+      "start": 52.790504,
+      "end": 58.490888
+    },
+    {
+      "text": "condenado a una cruel servidumbre,",
+      "start": 58.490888,
+      "end": 65.678327
+    },
+    {
+      "text": "largo tiempo,",
+      "start": 65.678327,
+      "end": 68.404597
+    },
+    {
+      "text": "largo tiempo,",
+      "start": 68.404597,
+      "end": 71.130867
+    },
+    {
+      "text": "largo tiempo en silencio gimió.",
+      "start": 71.130867,
+      "end": 77.574779
+    },
+    {
+      "text": "Mas apenas el grito sagrado",
+      "start": 77.574779,
+      "end": 83.275162
+    },
+    {
+      "text": "¡Libertad!",
+      "start": 83.275162,
+      "end": 85.257904
+    },
+    {
+      "text": "En sus costas se oyó,",
+      "start": 85.257904,
+      "end": 89.223388
+    },
+    {
+      "text": "la indolencia de esclavo sacude,",
+      "start": 89.223388,
+      "end": 95.915142
+    },
+    {
+      "text": "la humillada,",
+      "start": 95.915142,
+      "end": 98.641412
+    },
+    {
+      "text": "la humillada,",
+      "start": 98.641412,
+      "end": 101.367682
+    },
+    {
+      "text": "la humillada cerviz levantó.",
+      "start": 101.367682,
+      "end": 107.315908
+    },
+    {
+      "text": "la humillada cerviz levantó.",
+      "start": 107.315908,
+      "end": 113.264134
+    },
+    {
+      "text": "cerviz levantó.",
+      "start": 113.264134,
+      "end": 116.48609
+    },
+    {
+      "text": "CORO",
+      "start": 116.48609,
+      "end": 117.477461
+    },
+    {
+      "text": "Somos libres,",
+      "start": 117.477461,
+      "end": 120.203731
+    },
+    {
+      "text": "seámoslo siempre,",
+      "start": 120.203731,
+      "end": 123.921372
+    },
+    {
+      "text": "seámoslo siempre,",
+      "start": 123.921372,
+      "end": 127.639013
+    },
+    {
+      "text": "y antes niegue sus luces",
+      "start": 127.639013,
+      "end": 132.595868
+    },
+    {
+      "text": "sus luces,",
+      "start": 132.595868,
+      "end": 134.57861
+    },
+    {
+      "text": "sus luces,",
+      "start": 134.57861,
+      "end": 136.561352
+    },
+    {
+      "text": "el sol,",
+      "start": 136.561352,
+      "end": 137.800566
+    },
+    {
+      "text": "que faltemos al voto solemne",
+      "start": 137.800566,
+      "end": 143.748791
+    },
+    {
+      "text": "que la patria al Eterno elevó.",
+      "start": 143.748791,
+      "end": 149.697017
+    },
+    {
+      "text": "que faltemos al voto solemne",
+      "start": 149.697017,
+      "end": 155.645243
+    },
+    {
+      "text": "que la patria al Eterno elevó.",
+      "start": 155.645243,
+      "end": 161.593469
+    }
+  ]
+}

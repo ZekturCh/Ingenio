@@ -1,0 +1,250 @@
+{
+  "songId": "la-llorona",
+  "title": "La Llorona",
+  "status": "estimated",
+  "reviewRequired": true,
+  "timingMethod": "text-length-proportional; not aligned to vocals or instrumental sections",
+  "durationSeconds": 337.057959,
+  "lyrics": [
+    {
+      "text": "No sé qué tienen las flores, llorona",
+      "start": 0.0,
+      "end": 9.30922
+    },
+    {
+      "text": "Las flores del campo santo",
+      "start": 9.30922,
+      "end": 16.371387
+    },
+    {
+      "text": "No sé qué tienen las flores, llorona",
+      "start": 16.371387,
+      "end": 25.680606
+    },
+    {
+      "text": "Las flores del campo santo",
+      "start": 25.680606,
+      "end": 32.742773
+    },
+    {
+      "text": "Que cuando las mueve el viento, llorona",
+      "start": 32.742773,
+      "end": 43.015016
+    },
+    {
+      "text": "Parece que están llorando",
+      "start": 43.015016,
+      "end": 50.077182
+    },
+    {
+      "text": "Que cuando las mueve el viento, llorona",
+      "start": 50.077182,
+      "end": 60.349425
+    },
+    {
+      "text": "Parece que están llorando",
+      "start": 60.349425,
+      "end": 67.411592
+    },
+    {
+      "text": "Ay de mí, llorona",
+      "start": 67.411592,
+      "end": 71.58469
+    },
+    {
+      "text": "Llorona, tú eres mi chunca",
+      "start": 71.58469,
+      "end": 78.32585
+    },
+    {
+      "text": "Ay de mí, llorona",
+      "start": 78.32585,
+      "end": 82.498948
+    },
+    {
+      "text": "Llorona, tú eres mi chunca",
+      "start": 82.498948,
+      "end": 89.240107
+    },
+    {
+      "text": "Me quitarán de quererte, llorona",
+      "start": 89.240107,
+      "end": 97.907312
+    },
+    {
+      "text": "Pero, de olvidarte, nunca",
+      "start": 97.907312,
+      "end": 104.327463
+    },
+    {
+      "text": "Me quitarán de quererte, llorona",
+      "start": 104.327463,
+      "end": 112.994668
+    },
+    {
+      "text": "Pero, de olvidarte, nunca",
+      "start": 112.994668,
+      "end": 119.41482
+    },
+    {
+      "text": "A un Santo Cristo de fierro, llorona",
+      "start": 119.41482,
+      "end": 128.72404
+    },
+    {
+      "text": "Mis penas, le conté yo",
+      "start": 128.72404,
+      "end": 134.181168
+    },
+    {
+      "text": "A un Santo Cristo de fierro, llorona",
+      "start": 134.181168,
+      "end": 143.490388
+    },
+    {
+      "text": "Mis penas, le conté yo",
+      "start": 143.490388,
+      "end": 148.947517
+    },
+    {
+      "text": "Cuáles no serían mis penas, llorona",
+      "start": 148.947517,
+      "end": 158.256737
+    },
+    {
+      "text": "Que el Santo Cristo lloró",
+      "start": 158.256737,
+      "end": 164.997896
+    },
+    {
+      "text": "Cuáles no serían mis penas, llorona",
+      "start": 164.997896,
+      "end": 174.307116
+    },
+    {
+      "text": "Que el Santo Cristo lloró",
+      "start": 174.307116,
+      "end": 181.048275
+    },
+    {
+      "text": "Ay de mí, llorona",
+      "start": 181.048275,
+      "end": 185.221374
+    },
+    {
+      "text": "Llorona de un campo lirio",
+      "start": 185.221374,
+      "end": 191.962533
+    },
+    {
+      "text": "Ay de mí, llorona",
+      "start": 191.962533,
+      "end": 196.135631
+    },
+    {
+      "text": "Llorona de un campo lirio",
+      "start": 196.135631,
+      "end": 202.876791
+    },
+    {
+      "text": "El que no sabe de amores, llorona",
+      "start": 202.876791,
+      "end": 211.222988
+    },
+    {
+      "text": "No sabe lo que es martirio",
+      "start": 211.222988,
+      "end": 217.964147
+    },
+    {
+      "text": "El que no sabe de amores, llorona",
+      "start": 217.964147,
+      "end": 226.310344
+    },
+    {
+      "text": "No sabe lo que es martirio",
+      "start": 226.310344,
+      "end": 233.051503
+    },
+    {
+      "text": "Dos besos llevo en el alma, llorona",
+      "start": 233.051503,
+      "end": 242.039715
+    },
+    {
+      "text": "Que no se apartan de mí",
+      "start": 242.039715,
+      "end": 247.817852
+    },
+    {
+      "text": "Dos besos llevo en el alma, llorona",
+      "start": 247.817852,
+      "end": 256.806064
+    },
+    {
+      "text": "Que no se apartan de mí",
+      "start": 256.806064,
+      "end": 262.5842
+    },
+    {
+      "text": "El último de mi madre, llorona",
+      "start": 262.5842,
+      "end": 270.288382
+    },
+    {
+      "text": "Y el primero que te di",
+      "start": 270.288382,
+      "end": 275.745511
+    },
+    {
+      "text": "El último de mi madre, llorona",
+      "start": 275.745511,
+      "end": 283.449693
+    },
+    {
+      "text": "Y el primero que te di",
+      "start": 283.449693,
+      "end": 288.906822
+    },
+    {
+      "text": "Ay de mí, llorona",
+      "start": 288.906822,
+      "end": 293.079921
+    },
+    {
+      "text": "Llorona, llévame al río",
+      "start": 293.079921,
+      "end": 299.179065
+    },
+    {
+      "text": "Ay de mí, llorona",
+      "start": 299.179065,
+      "end": 303.352163
+    },
+    {
+      "text": "Llorona, llévame al río",
+      "start": 303.352163,
+      "end": 309.451307
+    },
+    {
+      "text": "Tápame con tu rebozo, llorona",
+      "start": 309.451307,
+      "end": 317.155489
+    },
+    {
+      "text": "Porque me muero de frío",
+      "start": 317.155489,
+      "end": 323.254633
+    },
+    {
+      "text": "Tápame con tu rebozo, llorona",
+      "start": 323.254633,
+      "end": 330.958815
+    },
+    {
+      "text": "Porque me muero de frío",
+      "start": 330.958815,
+      "end": 337.057959
+    }
+  ]
+}
