@@ -46,8 +46,11 @@ function updateFavorite() {
   const on = activeSong && loadFavorites().has(activeSong.id);
   $("#favoriteBtn").classList.toggle("active", Boolean(on));
   $("#favoriteBtn").setAttribute("aria-pressed", Boolean(on));
+  $("#favoriteBtn").title = on ? "Quitar de favoritas" : "Añadir a favoritas";
+  $("#favoriteBtn").setAttribute("aria-label", `${on ? "Quitar de" : "Añadir a"} favoritas: ${activeSong?.title || "canción"}`);
 }
 function renderSong() {
+  document.body.dataset.songId = activeSong.id;
   stage.classList.remove("idle");
   $("#kicker").textContent = "Ahora canta";
   $("#title").textContent = activeSong.title;
@@ -61,9 +64,11 @@ function renderLyrics(time) {
   time = lyricTime(time);
   let index = -1;
   for (let i = 0; i < lyricData.length; i++) { if (lyricData[i].start <= time) index = i; else break; }
-  const line = lyricData[index];
-  if (lineIndex !== index) {
-    lineIndex = index;
+  const candidate = lyricData[index];
+  const line = candidate && time < candidate.end ? candidate : null;
+  const displayKey = line ? index : `gap-${index}`;
+  if (lineIndex !== displayKey) {
+    lineIndex = displayKey;
     const text = line?.text || (lyricData.length ? "♪" : "Letra pendiente de sincronizar");
     $("#currentBase").textContent = text;
     $("#currentFill").textContent = text;

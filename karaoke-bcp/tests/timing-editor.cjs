@@ -1,0 +1,53 @@
+const {chromium}=require('playwright');
+const assert=require('node:assert/strict');
+async function main(){
+ const browser=await chromium.launch({channel:process.env.PLAYWRIGHT_CHANNEL||'chrome',headless:true});
+ try{
+  const context=await browser.newContext();
+  await context.route('https://www.gstatic.com/**',r=>r.abort());
+  const page=await context.newPage(),errors=[];
+  page.on('pageerror',e=>errors.push(e.message));
+  const base=process.env.KARAOKE_BASE_URL||'http://127.0.0.1:5181/karaoke-bcp/';
+  await page.goto(new URL('timing-editor.html?song=himno-peru',base).href);
+  await page.waitForFunction(()=>document.querySelector('#text').value.includes('En su cima'));
+  assert.ok(!(await page.locator('#text').inputValue()).includes('Largo tiempo'));
+  await page.waitForFunction(()=>Number(document.querySelector('#waveform').getAttribute('aria-valuemax'))>160);
+  const wave=page.locator('#waveform'),box=await wave.boundingBox();
+  await wave.click({position:{x:box.width*.25,y:50}});
+  assert.ok(Math.abs(await page.locator('#audio').evaluate(a=>a.currentTime)-40.4)<1);
+  await wave.press('ArrowRight');
+  assert.ok(Math.abs(await page.locator('#audio').evaluate(a=>a.currentTime)-41.4)<1);
+  await page.locator('#listenLine').click();
+  await page.waitForFunction(()=>!document.querySelector('#audio').paused);
+  assert.ok(await page.locator('#audio').evaluate(a=>a.currentTime>=3.9&&a.currentTime<6.5));
+  await page.locator('#audio').evaluate(a=>a.pause());
+  const original=await page.locator('#list time').first().textContent();
+  await page.locator('#restartTiming').click();
+  assert.equal(await page.locator('#list time').first().textContent(),'--:--.---');
+  await page.locator('#audio').evaluate(a=>{a.currentTime=5;});
+  await page.locator('#mark').click();
+  assert.equal(await page.locator('#list time').first().textContent(),'00:05.000');
+  await page.locator('#undo').click();
+  await page.locator('#undo').click();
+  assert.equal(await page.locator('#list time').first().textContent(),original);
+  const download=page.waitForEvent('download');
+  await page.locator('#export').click();
+  assert.equal((await download).suggestedFilename(),'lyrics-timed.json');
+  await page.goto(base+'?room=TIMING_TEST');
+  await page.locator('[data-song="himno-peru"]').click();
+  await page.locator('[data-version="full"]').click();
+  await page.locator('#audio').evaluate(a=>{a.pause();a.currentTime=2;a.dispatchEvent(new Event('timeupdate'));});
+  await page.waitForFunction(()=>document.querySelector('#currentBase').textContent==='♪');
+  await page.locator('#audio').evaluate(a=>{a.currentTime=54;a.dispatchEvent(new Event('timeupdate'));});
+  await page.waitForFunction(()=>document.querySelector('#currentBase').textContent.includes('En su cima'));
+  await page.locator('#audio').evaluate(a=>{a.currentTime=48;a.dispatchEvent(new Event('timeupdate'));});
+  assert.equal(await page.locator('#currentBase').textContent(),'♪');
+  await page.locator('#favoriteBtn').click();
+  assert.equal(await page.locator('#favoriteBtn').getAttribute('title'),'Quitar de favoritas');
+  await page.locator('.device-open').click();
+  assert.ok((await page.locator('#timingEditorLink').getAttribute('href')).includes('song=himno-peru'));
+  assert.deepEqual(errors,[]);
+  console.log('Waveform, audio preview, reset/undo, export, hymn verse, instrumental gaps and favorite state passed.');
+ }finally{await browser.close();}
+}
+main().catch(e=>{console.error(e);process.exitCode=1;});

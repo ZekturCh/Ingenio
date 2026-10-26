@@ -53,7 +53,7 @@ async function main() {
       const i=lines.findIndex((line,index)=>index>0 && line.text!==lines[index-1].text && line.start-lines[index-1].start>.5);
       const audio=document.querySelector('#audio');
       audio.pause();audio.currentTime=lines[i].start+.1;
-      return {text:lines[i].text,previous:lines[i-1].text,time:audio.currentTime};
+      return {text:lines[i].text,previous:lines[i-1].end>lines[i].start-.2?lines[i-1].text:'♪',time:audio.currentTime};
     });
     await page.waitForFunction(text=>document.querySelector('#currentBase').textContent===text,expected.text);
     await page.locator('.device-open').click();

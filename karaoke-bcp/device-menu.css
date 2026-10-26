@@ -27,5 +27,6 @@
 .calibration-pulse{display:grid;place-items:center;width:76px;height:76px;border-radius:50%;border:3px solid #e6b56c;color:#896d4c;background:#241d17;font-size:46px;line-height:1}
 .calibration-pulse.flash{background:#fdf3a2;color:#226d28;border-color:#fff;box-shadow:0 0 16px #fff5a5}
 .calibration-play{width:100%;min-height:44px;margin:8px 0;border:1px solid #a56c3c;border-radius:8px;color:#42230c;background:#ffdc9e;font-weight:700!important}
+.device-editor{display:block;min-height:44px;padding:10px 0;color:#6e350f;font-weight:700;text-underline-offset:3px}
 .device-controls button:focus-visible,.device-dialog input:focus-visible{outline:3px solid #0068ac;outline-offset:2px}
 @media(prefers-reduced-motion:reduce){.offline-indicator[data-state="downloading"] span{animation:none}}

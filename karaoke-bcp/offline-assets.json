@@ -1,6 +1,6 @@
 {
-  "version": "277ef114439fadb092e6",
-  "totalBytes": 109074158,
+  "version": "0d1076f9c41a3af76569",
+  "totalBytes": 109081884,
   "assets": [
     {
       "url": "../Logo%20Samay.png",
@@ -339,13 +339,13 @@
     },
     {
       "url": "device-menu.css",
-      "size": 3368,
-      "sha256": "f92c2edc91b0679ab42f2f067715c0e0b262b93b4e6e8d9eb402c482b76cbf9c"
+      "size": 3485,
+      "sha256": "089057c07da371825fb47eb746fe1fc33871ea716cce81bb3e21cab97622e5a8"
     },
     {
       "url": "device-menu.js",
-      "size": 6758,
-      "sha256": "486d5cf7478fe7f34afc6925f34cdf003547b2359d45a1f42a35cd245bbeb0f6"
+      "size": 7118,
+      "sha256": "ea0583d2fed78721108ed6c12eb6e464eb123a226b578120672024a88e8c6d26"
     },
     {
       "url": "index.html",
@@ -514,8 +514,8 @@
     },
     {
       "url": "player.js",
-      "size": 11886,
-      "sha256": "5d483249b13ccebadf5b27e638f0006ad361d6ff539dc047be5cc519b27fd3aa"
+      "size": 12281,
+      "sha256": "85ed4a4a7ddf19113b219fea0204918d73dff5a9074cfaffd77ce7400f1795c9"
     },
     {
       "url": "shared.js",
@@ -694,13 +694,13 @@
     },
     {
       "url": "songs/himno-peru/letra.txt",
-      "size": 835,
-      "sha256": "195d4bdfa54e742a02dce13048017d3a72862c8ebfda7aaeff23fd1b2f5bba3c"
+      "size": 1008,
+      "sha256": "087dde80882732978e7bd7cdf3584f6c82ca521bbd4183e42efb5417316c7440"
     },
     {
       "url": "songs/himno-peru/lyrics-timed.json",
-      "size": 4191,
-      "sha256": "13198256b5ebbb6e1c9aeb0dc8c45bcd35908d9e75649b63b7daaaceceeda982"
+      "size": 5923,
+      "sha256": "9076a0314a673b77f67e2cb2e98b13cf0b3d37c5eac89ecb81a2f0adc332e3b3"
     },
     {
       "url": "songs/la-bruja/audio.mp3",
@@ -729,8 +729,8 @@
     },
     {
       "url": "songs/la-flor-de-la-canela/lyrics-timed.json",
-      "size": 4764,
-      "sha256": "e4ad018cfe3f2448c97a6d6b8702457b37192211fcd9e71668cf04a7c9735872"
+      "size": 5767,
+      "sha256": "0d3195410c76c883c3c1591463a15c0a5fa6a6885bc32db3f3e7fe206decbe77"
     },
     {
       "url": "songs/la-llorona/audio.mp3",
@@ -934,18 +934,18 @@
     },
     {
       "url": "timing-editor.css",
-      "size": 2939,
-      "sha256": "019a3cf79e26aa04c30e6a50708ece7e594d224b3bc00bb90f84c69cf4aa50a5"
+      "size": 3209,
+      "sha256": "d1241ecd6387ab8b4444c16aeefe958443cd17cb5d8a433af32f763933e75ca9"
     },
     {
       "url": "timing-editor.html",
-      "size": 2794,
-      "sha256": "e01739250517ad83ac8375192a7183f3b1d35e0620e70c1e63f692ecc4a0b365"
+      "size": 3294,
+      "sha256": "c79679785e89631d74f062c5edd747f138dbc6dcaa43a6d344b64d0109a6dac3"
     },
     {
       "url": "timing-editor.js",
-      "size": 7865,
-      "sha256": "1a9196b741a21d0aaf8018504a929f7e16c988ded8c0f0f9822800d46c96d22c"
+      "size": 11041,
+      "sha256": "211d66f2d3c1b6bb72f73d65a44a38f8c939ed0c6e85eb7f2964cdc4d517e246"
     },
     {
       "url": "ui.js",

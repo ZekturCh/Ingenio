@@ -4,6 +4,57 @@ import { parseText, timedLyrics } from "./lyrics.js";
 const $ = selector => document.querySelector(selector);
 const audio = $("#audio"), songs = SONGS.filter(song => song.enabled);
 let selected, lines = [], cursor = 0, undoStack = [], loadToken = 0;
+let peaks = [], waveformDuration = 0;
+const canvas = $("#waveform"), context = canvas.getContext("2d");
+function drawWaveform() {
+  context.clearRect(0, 0, canvas.width, canvas.height);
+  context.fillStyle = "#146d65";
+  peaks.forEach((peak, i) => {
+    const height = Math.max(1, peak * (canvas.height - 12));
+    context.fillRect(i / peaks.length * canvas.width, (canvas.height - height) / 2, Math.max(1, canvas.width / peaks.length), height);
+  });
+  if (waveformDuration > 0) {
+    context.fillStyle = "#c54118";
+    context.fillRect(audio.currentTime / waveformDuration * canvas.width, 0, 2, canvas.height);
+    if (lines[cursor]?.time != null) {
+      context.fillStyle = "#d99b00";
+      context.fillRect(lines[cursor].time / waveformDuration * canvas.width, 0, 2, canvas.height);
+    }
+    canvas.setAttribute("aria-valuemax", waveformDuration.toFixed(1));
+    canvas.setAttribute("aria-valuenow", audio.currentTime.toFixed(1));
+  }
+}
+async function loadWaveform(song, token) {
+  peaks = []; waveformDuration = 0; drawWaveform();
+  try {
+    const response = await fetch(song.audio);
+    if (!response.ok) throw new Error();
+    const decoder = new OfflineAudioContext(1, 1, 44100);
+    const buffer = await decoder.decodeAudioData(await response.arrayBuffer());
+    if (token !== loadToken) return;
+    const signal = buffer.getChannelData(0), count = 1000;
+    peaks = Array.from({ length: count }, (_, i) => {
+      let peak = 0;
+      const start = Math.floor(i * signal.length / count), end = Math.floor((i + 1) * signal.length / count);
+      for (let j = start; j < end; j += 16) peak = Math.max(peak, Math.abs(signal[j]));
+      return peak;
+    });
+    waveformDuration = buffer.duration; drawWaveform();
+  } catch { if (token === loadToken) canvas.setAttribute("aria-label", "Onda no disponible; usa los controles del audio para escuchar y marcar"); }
+}
+canvas.onclick = event => {
+  if (!waveformDuration) return;
+  const bounds = canvas.getBoundingClientRect();
+  audio.currentTime = Math.max(0, Math.min(waveformDuration, (event.clientX - bounds.left) / bounds.width * waveformDuration));
+  drawWaveform();
+  audio.play().catch(() => status("No se pudo reproducir la pista."));
+};
+canvas.onkeydown = event => {
+  if (!["ArrowLeft", "ArrowRight"].includes(event.key) || !waveformDuration) return;
+  event.preventDefault();
+  audio.currentTime = Math.max(0, Math.min(waveformDuration, audio.currentTime + (event.key === "ArrowRight" ? 1 : -1)));
+  drawWaveform();
+};
 const key = () => `samay-timing-${selected.id}`;
 const status = text => { $("#status").textContent = text; };
 const fmt = time => time == null ? "--:--.---" : `${String(Math.floor(time / 60)).padStart(2, "0")}:${(time % 60).toFixed(3).padStart(6, "0")}`;
@@ -14,6 +65,7 @@ function save() {
   catch { status("No se pudo guardar el borrador local. Descarga los archivos antes de salir."); }
 }
 function draw() {
+  $("#listenLine").disabled = lines[cursor]?.time == null;
   $("#current").textContent = lines[cursor]?.text || (lines.length ? "Marcas completadas" : "Sin letra");
   $("#next").textContent = lines[cursor + 1]?.text || "";
   $("#idx").textContent = `${Math.min(cursor + 1, lines.length)} / ${lines.length}`;
@@ -31,11 +83,13 @@ function draw() {
     clear.onclick = () => { undoStack.push({ i, time: line.time, cursor }); line.time = null; cursor = i; draw(); save(); };
     row.append(button, clear); return row;
   }));
+  drawWaveform();
 }
 async function selectSong(id) {
   const token = ++loadToken;
   audio.pause(); selected = songs.find(song => song.id === id) || songs[0];
   $("#song").value = selected.id; audio.src = selected.audio;
+  loadWaveform(selected, token);
   audio.playbackRate = Number($("#rate").value);
   lines = []; cursor = 0; undoStack = []; $("#text").value = ""; draw();
   status("Cargando…");
@@ -82,7 +136,12 @@ function mark() {
   status(`${lines.filter(line => line.time != null).length} / ${lines.length} frases marcadas.`);
   $("#list .active")?.scrollIntoView({ block: "nearest" });
 }
-function undo() { const old = undoStack.pop(); if (!old) return; lines[old.i].time = old.time; cursor = old.cursor; draw(); save(); }
+function undo() {
+  const old = undoStack.pop(); if (!old) return;
+  if (old.lines) lines = old.lines;
+  else lines[old.i].time = old.time;
+  cursor = old.cursor; draw(); save();
+}
 function nudge(delta) {
   const i = cursor === lines.length || lines[cursor]?.time == null ? cursor - 1 : cursor;
   if (i < 0 || lines[i].time == null) return;
@@ -105,12 +164,22 @@ $("#textFile").onchange = async event => {
   $("#text").value = text; applyText(); event.target.value = "";
 };
 $("#mark").onclick = mark; $("#undo").onclick = undo;
+$("#listenLine").onclick = () => {
+  if (lines[cursor]?.time == null) return;
+  audio.currentTime = Math.max(0, lines[cursor].time - .6);
+  audio.play().catch(() => status("No se pudo reproducir la pista."));
+};
+$("#restartTiming").onclick = () => {
+  undoStack.push({ lines: lines.map(line => ({ ...line })), cursor });
+  lines = lines.map(line => ({ text: line.text, time: null })); cursor = 0;
+  draw(); save(); status("Marcas reiniciadas. Escucha el audio y marca cada entrada. Puedes deshacer este cambio.");
+};
 $("#nudgeBack").onclick = () => nudge(-.1); $("#nudgeFwd").onclick = () => nudge(.1);
 $("#play").onclick = () => audio.paused ? audio.play().catch(() => status("No se pudo reproducir la pista.")) : audio.pause();
 $("#back").onclick = () => { audio.currentTime = Math.max(0, audio.currentTime - 2); };
 $("#forward").onclick = () => { audio.currentTime = Math.min(audio.duration || 0, audio.currentTime + 2); };
 $("#rate").onchange = () => { audio.playbackRate = Number($("#rate").value); };
-audio.ontimeupdate = () => { $("#time").textContent = fmt(audio.currentTime); };
+audio.ontimeupdate = () => { $("#time").textContent = fmt(audio.currentTime); drawWaveform(); };
 audio.onerror = () => status("Audio no disponible.");
 $("#exportText").onclick = () => download("letra.txt", $("#text").value, "text/plain;charset=utf-8");
 $("#export").onclick = () => {

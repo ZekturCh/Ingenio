@@ -16,6 +16,8 @@
     <section class="source">
       <label for="song">Canción</label><select id="song"></select>
       <audio id="audio" controls preload="metadata"></audio>
+      <canvas id="waveform" width="1000" height="130" role="slider" tabindex="0" aria-label="Onda del audio: toca para escuchar desde ese punto" aria-valuemin="0" aria-valuemax="0" aria-valuenow="0"></canvas>
+      <p class="waveHint">Toca la onda para escuchar un tramo. Las flechas mueven un segundo. Escucha la entrada de cada frase y pulsa Marcar frase o la barra espaciadora.</p>
       <div class="transport"><output id="time">00:00.000</output><label>Velocidad <select id="rate"><option value="0.75">0.75×</option><option value="1" selected>1×</option><option value="1.25">1.25×</option></select></label></div>
       <nav class="tools" aria-label="Audio y tiempos">
         <button id="back" title="Retroceder 2 segundos" aria-label="Retroceder 2 segundos"><i data-lucide="rewind"></i></button>
@@ -26,6 +28,8 @@
       </nav>
       <div class="preview" aria-live="polite"><small id="idx"></small><div id="current">Sin letra</div><div id="next"></div></div>
       <nav class="tools" aria-label="Ajustar marca">
+        <button id="listenLine">Escuchar frase</button>
+        <button id="restartTiming">Rehacer marcas</button>
         <button id="nudgeBack" title="Restar 0.1 segundos">−0.1 s</button>
         <button id="nudgeFwd" title="Sumar 0.1 segundos">+0.1 s</button>
         <button id="export" class="primary"><i data-lucide="download"></i>JSON</button>

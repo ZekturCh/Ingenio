@@ -3,203 +3,280 @@
   "title": "Himno Nacional del Perú",
   "status": "estimated",
   "reviewRequired": true,
-  "timingMethod": "text-length-proportional; not aligned to vocals or instrumental sections",
+  "timingMethod": "forced word-to-audio alignment anchored by local speech recognition; review required",
   "durationSeconds": 161.593469,
   "lyrics": [
     {
       "text": "Somos libres,",
-      "start": 0.0,
-      "end": 2.72627
+      "start": 4.58,
+      "end": 6.14,
+      "probability": 0.707
     },
     {
       "text": "seámoslo siempre,",
-      "start": 2.72627,
-      "end": 6.443911
+      "start": 6.14,
+      "end": 9.18,
+      "probability": 0.478
     },
     {
       "text": "seámoslo siempre,",
-      "start": 6.443911,
-      "end": 10.161552
+      "start": 9.18,
+      "end": 11.3,
+      "probability": 0.881
     },
     {
-      "text": "y antes niegue sus luces",
-      "start": 10.161552,
-      "end": 15.118407
-    },
-    {
-      "text": "sus luces,",
-      "start": 15.118407,
-      "end": 17.101149
+      "text": "y antes niegue sus luces,",
+      "start": 11.3,
+      "end": 16.7,
+      "probability": 0.409
     },
     {
       "text": "sus luces,",
-      "start": 17.101149,
-      "end": 19.083891
+      "start": 16.7,
+      "end": 18.18,
+      "probability": 0.93
+    },
+    {
+      "text": "sus luces,",
+      "start": 18.18,
+      "end": 19.16,
+      "probability": 0.89
     },
     {
       "text": "el sol,",
-      "start": 19.083891,
-      "end": 20.323105
+      "start": 19.16,
+      "end": 19.8,
+      "probability": 0.452
     },
     {
       "text": "que faltemos al voto solemne",
-      "start": 20.323105,
-      "end": 26.271331
+      "start": 20.8,
+      "end": 24.6,
+      "probability": 0.447
     },
     {
       "text": "que la patria al Eterno elevó.",
-      "start": 26.271331,
-      "end": 32.219557
+      "start": 24.6,
+      "end": 29.32,
+      "probability": 0.567
     },
     {
       "text": "que faltemos al voto solemne",
-      "start": 32.219557,
-      "end": 38.167783
+      "start": 29.32,
+      "end": 33.32,
+      "probability": 0.781
     },
     {
       "text": "que la patria al Eterno elevó.",
-      "start": 38.167783,
-      "end": 44.116008
+      "start": 33.32,
+      "end": 37.42,
+      "probability": 0.99
     },
     {
-      "text": "ESTROFA",
-      "start": 44.116008,
-      "end": 45.850908
+      "text": "que faltemos al voto solemne",
+      "start": 37.42,
+      "end": 42.12,
+      "probability": 0.894
     },
     {
-      "text": "Largo tiempo el peruano oprimido,",
-      "start": 45.850908,
-      "end": 52.790504
+      "text": "que la patria al Eterno elevó.",
+      "start": 42.12,
+      "end": 45.96,
+      "probability": 0.996
     },
     {
-      "text": "la ominosa cadena arrastró;",
-      "start": 52.790504,
-      "end": 58.490888
+      "text": "En su cima los Andes sostengan",
+      "start": 53.58,
+      "end": 58.46,
+      "probability": 0.597
     },
     {
-      "text": "condenado a una cruel servidumbre,",
-      "start": 58.490888,
-      "end": 65.678327
+      "text": "la bandera o pendón bicolor,",
+      "start": 58.46,
+      "end": 62.16,
+      "probability": 0.367
     },
     {
-      "text": "largo tiempo,",
-      "start": 65.678327,
-      "end": 68.404597
+      "text": "que a los siglos anuncie el esfuerzo,",
+      "start": 62.16,
+      "end": 67.6,
+      "probability": 0.686
     },
     {
-      "text": "largo tiempo,",
-      "start": 68.404597,
-      "end": 71.130867
+      "text": "que ser libres,",
+      "start": 67.6,
+      "end": 70.02,
+      "probability": 0.46
     },
     {
-      "text": "largo tiempo en silencio gimió.",
-      "start": 71.130867,
-      "end": 77.574779
+      "text": "que ser libres,",
+      "start": 70.02,
+      "end": 71.38,
+      "probability": 0.828
     },
     {
-      "text": "Mas apenas el grito sagrado",
-      "start": 77.574779,
-      "end": 83.275162
+      "text": "que ser libres,",
+      "start": 71.38,
+      "end": 73.28,
+      "probability": 0.921
     },
     {
-      "text": "¡Libertad!",
-      "start": 83.275162,
-      "end": 85.257904
+      "text": "que ser libres,",
+      "start": 73.28,
+      "end": 74.02,
+      "probability": 0.532
     },
     {
-      "text": "En sus costas se oyó,",
-      "start": 85.257904,
-      "end": 89.223388
+      "text": "por siempre nos dio.",
+      "start": 74.02,
+      "end": 75.66,
+      "probability": 0.423
     },
     {
-      "text": "la indolencia de esclavo sacude,",
-      "start": 89.223388,
-      "end": 95.915142
+      "text": "A su sombra vivamos tranquilos,",
+      "start": 76.8,
+      "end": 81.1,
+      "probability": 0.544
     },
     {
-      "text": "la humillada,",
-      "start": 95.915142,
-      "end": 98.641412
+      "text": "y al nacer por sus cumbres el sol,",
+      "start": 81.1,
+      "end": 85.4,
+      "probability": 0.764
     },
     {
-      "text": "la humillada,",
-      "start": 98.641412,
-      "end": 101.367682
+      "text": "renovemos el gran juramento,",
+      "start": 85.4,
+      "end": 89.42,
+      "probability": 0.441
     },
     {
-      "text": "la humillada cerviz levantó.",
-      "start": 101.367682,
-      "end": 107.315908
+      "text": "que rendimos,",
+      "start": 90.98,
+      "end": 92.06,
+      "probability": 0.607
     },
     {
-      "text": "la humillada cerviz levantó.",
-      "start": 107.315908,
-      "end": 113.264134
+      "text": "que rendimos,",
+      "start": 92.06,
+      "end": 93.2,
+      "probability": 0.67
     },
     {
-      "text": "cerviz levantó.",
-      "start": 113.264134,
-      "end": 116.48609
+      "text": "que rendimos,",
+      "start": 93.2,
+      "end": 94.34,
+      "probability": 0.707
     },
     {
-      "text": "CORO",
-      "start": 116.48609,
-      "end": 117.477461
+      "text": "que rendimos,",
+      "start": 94.34,
+      "end": 95.5,
+      "probability": 0.775
+    },
+    {
+      "text": "que rendimos al Dios de Jacob,",
+      "start": 95.5,
+      "end": 98.42,
+      "probability": 0.621
+    },
+    {
+      "text": "de Jacob,",
+      "start": 98.42,
+      "end": 99.64,
+      "probability": 0.832
+    },
+    {
+      "text": "que rendimos al Dios de Jacob,",
+      "start": 99.64,
+      "end": 103.62,
+      "probability": 0.92
+    },
+    {
+      "text": "al Dios de Jacob.",
+      "start": 103.62,
+      "end": 106.58,
+      "probability": 0.958
     },
     {
       "text": "Somos libres,",
-      "start": 117.477461,
-      "end": 120.203731
+      "start": 108.46,
+      "end": 110.82,
+      "probability": 0.506
     },
     {
       "text": "seámoslo siempre,",
-      "start": 120.203731,
-      "end": 123.921372
+      "start": 110.82,
+      "end": 113.74,
+      "probability": 0.742
     },
     {
       "text": "seámoslo siempre,",
-      "start": 123.921372,
-      "end": 127.639013
+      "start": 113.74,
+      "end": 116.16,
+      "probability": 0.81
     },
     {
-      "text": "y antes niegue sus luces",
-      "start": 127.639013,
-      "end": 132.595868
-    },
-    {
-      "text": "sus luces,",
-      "start": 132.595868,
-      "end": 134.57861
+      "text": "y antes niegue sus luces,",
+      "start": 116.16,
+      "end": 121.76,
+      "probability": 0.439
     },
     {
       "text": "sus luces,",
-      "start": 134.57861,
-      "end": 136.561352
+      "start": 121.76,
+      "end": 123.16,
+      "probability": 0.919
+    },
+    {
+      "text": "sus luces,",
+      "start": 123.16,
+      "end": 124.26,
+      "probability": 0.949
     },
     {
       "text": "el sol,",
-      "start": 136.561352,
-      "end": 137.800566
+      "start": 124.26,
+      "end": 124.62,
+      "probability": 0.249
     },
     {
       "text": "que faltemos al voto solemne",
-      "start": 137.800566,
-      "end": 143.748791
+      "start": 126.12,
+      "end": 129.62,
+      "probability": 0.671
     },
     {
       "text": "que la patria al Eterno elevó.",
-      "start": 143.748791,
-      "end": 149.697017
+      "start": 129.62,
+      "end": 133.96,
+      "probability": 0.555
     },
     {
       "text": "que faltemos al voto solemne",
-      "start": 149.697017,
-      "end": 155.645243
+      "start": 133.96,
+      "end": 138.5,
+      "probability": 0.785
     },
     {
       "text": "que la patria al Eterno elevó.",
-      "start": 155.645243,
-      "end": 161.593469
+      "start": 138.5,
+      "end": 142.88,
+      "probability": 0.987
+    },
+    {
+      "text": "que faltemos al voto solemne",
+      "start": 142.88,
+      "end": 147.48,
+      "probability": 0.87
+    },
+    {
+      "text": "que la patria al Eterno elevó.",
+      "start": 147.48,
+      "end": 151.58,
+      "probability": 0.995
     }
-  ]
+  ],
+  "timingSource": "Exact repository audio; faster-whisper small INT8, approximate automatic alignment",
+  "audioSha256": "3a3fd6eb5a45c2651cbaced81120a07f2fa73ace12cb8515f57d1a43a266603c"
 }

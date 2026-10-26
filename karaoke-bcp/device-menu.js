@@ -19,6 +19,7 @@ controls.innerHTML = `
       <input id="bluetoothDelay" type="range" min="${MIN_DELAY}" max="${MAX_DELAY}" step="10" value="${getDelay()}">
       <div class="delay-actions"><button type="button" data-delay-step="-50">−50 ms</button><button type="button" data-delay-step="50">+50 ms</button><button type="button" id="resetDelay">Restablecer</button></div>
       <p class="device-hint">Se guarda en este navegador y se aplica al instante. 0 ms para altavoces sin retraso. Ajusta la compensación en el dispositivo que reproduce el audio.</p>
+      <a class="device-editor" id="timingEditorLink" href="timing-editor.html">Escuchar y ajustar la letra de esta canción</a>
     </section>
     <section aria-labelledby="offlineTitle">
       <h3 id="offlineTitle">Usar sin internet</h3>
@@ -68,7 +69,13 @@ function reflectDelay() {
   output.value = `${Number(slider.value) > 0 ? "+" : ""}${slider.value} ms`;
   slider.setAttribute("aria-valuetext", output.value);
 }
-export function openDeviceMenu() { reflectDelay(); if (!dialog.open) dialog.showModal(); }
+export function openDeviceMenu() {
+  reflectDelay();
+  const target = new URL("timing-editor.html", location.href);
+  if (document.body.dataset.songId) target.searchParams.set("song", document.body.dataset.songId);
+  controls.querySelector("#timingEditorLink").href = target.href;
+  if (!dialog.open) dialog.showModal();
+}
 controls.querySelector(".device-open").onclick = openDeviceMenu;
 indicator.onclick = openDeviceMenu;
 document.addEventListener("click", event => { if (event.target.closest("[data-device-settings]")) openDeviceMenu(); });

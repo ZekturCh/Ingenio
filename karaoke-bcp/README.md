@@ -24,6 +24,8 @@ columnas en horizontal y una en vertical; en pantallas pequenas la lista permite
 desplazamiento tactil. Los controles principales tienen al menos 44 px de area
 tactil. Las letras y los botones son HTML real, no parte de una captura.
 Las favoritas se muestran con calabazas, conservando su comportamiento anterior.
+La calabaza del reproductor añade o quita la canción de Mis favoritas; su estado
+y el texto de ayuda cambian al pulsarla.
 
 ## Cambiar canciones
 
@@ -41,22 +43,30 @@ Las categorias se pueden definir en el campo `categories` de cada cancion:
 Hay 23 pistas disponibles: Cariñito, las siete incorporadas el 19/10/2026 y 15 MP3 aportados por el usuario.
 Las cinco canciones sin audio quedan ocultas del selector.
 Las 22 pistas distintas de Cariñito tienen JSON con frases y tiempos aproximados, identificados como tales en la app; requieren revisión contra cada grabación.
+El Himno y La Flor de la Canela tienen marcas rehechas mediante reconocimiento de
+voz y alineación de palabras sobre sus MP3 exactos. El Himno usa la sexta estrofa
+que canta esa grabación. Ver [el detalle de alineación](songs/ALIGNMENT.md).
 Cariñito conserva su sincronización original. Todas las otras pistas activas muestran
 su letra con tiempos aproximados. Ninguna pista activa queda con un JSON vacío.
 Mi Perú dura 1:27: se conserva el archivo recibido sin alargarlo.
 
 Cada carpeta disponible `songs/<id>/` contiene `audio.mp3`, `letra.txt` y
 `lyrics-timed.json`. Los TXT contienen las letras aportadas; las 5 carpetas pendientes todavía no tienen audio.
-Las lineas que empiezan por `#` no se consideran letra. El archivo JSON permanece
-vacio con `status: pending` hasta disponer de marcas verificadas.
+Las lineas que empiezan por `#` no se consideran letra. Las cinco canciones sin
+pista conservan un JSON vacío con `status: pending`.
 
 ### Preparar letras
 
 1. Sustituir los comentarios de `letra.txt` por la letra aportada/autorizada,
    una frase por linea y repitiendo los estribillos tal como aparecen en la pista.
 2. Abrir `timing-editor.html`, elegir la cancion y cargar el TXT o pegar su texto.
+   El engranaje del reproductor incluye un acceso al editor de la canción actual.
+   Tocar la onda reproduce desde ese punto; las flechas mueven un segundo y
+   Escuchar frase empieza un poco antes de la marca seleccionada.
 3. Aplicar la letra, reproducir el audio y marcar cada entrada. Los ajustes de
    0.1 segundos, deshacer y velocidad ayudan a revisar las marcas.
+   Rehacer marcas elimina las marcas aproximadas para poder registrarlas de nuevo,
+   conservando la letra. Deshacer recupera las marcas anteriores.
 4. Descargar `lyrics-timed.json` y reemplazar el de esa misma carpeta en GitHub.
    Cambiar `lyricsStatus` a `timed` en el catalogo cuando se haya revisado.
 
@@ -64,6 +74,8 @@ El editor guarda borradores separados por cancion en este navegador; no modifica
 el repo ni publica archivos automaticamente. Rechaza una exportacion incompleta
 o con tiempos fuera de orden. TXT por si solo no proporciona sincronizacion;
 una pista sin voz tampoco determina las entradas exactas de las palabras.
+El reproductor respeta el final de cada frase y muestra una pausa musical durante
+los intervalos que no tienen letra, incluidos introducciones e intermedios.
 La reproducción solo carga el audio seleccionado. La descarga sin conexión guarda
 además todas las pistas disponibles en segundo plano.
 
