@@ -22,12 +22,14 @@ async function main() {
     assert.deepEqual(song.versions, []);
     assert.deepEqual(JSON.parse(fs.readFileSync(path.join(root, song.lyrics), "utf8")).lyrics, []);
   }
-  assert.equal(SONGS.filter(song => song.lyricsStatus === "estimated").length, 15);
+  assert.equal(SONGS.filter(song => song.lyricsStatus === "estimated").length, 22);
   const enabled = SONGS.filter(song => song.enabled);
   assert.equal(enabled.length, 23);
   for (const song of enabled) {
     assert.ok(fs.statSync(path.join(root, song.audio)).size > 100000);
     const data = JSON.parse(fs.readFileSync(path.join(root, song.lyrics), 'utf8'));
+    assert.ok(['estimated', 'timed'].includes(song.lyricsStatus), `${song.id}: active track must have usable lyrics`);
+    assert.ok(data.lyrics.length > 0, `${song.id}: active lyrics cannot be empty`);
     if (song.lyricsStatus === 'estimated') {
       assert.equal(data.status, 'estimated');
       assert.equal(data.reviewRequired, true);
@@ -44,11 +46,6 @@ async function main() {
       assert.ok(version.startAt >= 0 && version.endAt > version.startAt);
       assert.ok(version.endAt <= song.durationSeconds);
     }
-    if (song.lyricsStatus === 'pending') {
-      assert.deepEqual(data.lyrics, []);
-      assert.ok(parseText(fs.readFileSync(path.join(root, song.text), 'utf8')).length > 0);
-      assert.deepEqual(song.versions.map(version => version.id), ['full']);
-    } else assert.ok(data.lyrics.length > 0);
   }
   assert.deepEqual(parseText('\uFEFF# pending\r\n\n A \r\nB\n# note'), ['A', 'B']);
   assert.deepEqual(timedLyrics([{text:'A',time:0},{text:'B',time:2}], 5), [
@@ -59,6 +56,6 @@ async function main() {
   assert.throws(() => timedLyrics([{text:'A',time:2},{text:'B',time:1}], 5));
   assert.throws(() => timedLyrics([{text:'A',time:2},{text:'B',time:2}], 5));
   assert.throws(() => timedLyrics([{text:'A',time:0}], NaN));
-  console.log('Catalog: 28 lyrics, 23 audio assets, 15 estimated cue files, 5 pending tracks and timing validation passed.');
+  console.log('Catalog: all 23 active tracks have nonempty lyrics, 22 estimated cue files and 5 pending tracks passed.');
 }
 main().catch(error => { console.error(error); process.exitCode = 1; });

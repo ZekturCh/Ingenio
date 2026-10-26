@@ -1,5 +1,175 @@
 {
   "songId": "mi-peru",
-  "status": "pending",
-  "lyrics": []
+  "title": "Mi Perú",
+  "status": "estimated",
+  "reviewRequired": true,
+  "timingMethod": "text-length-proportional; not aligned to vocals or instrumental sections",
+  "durationSeconds": 87.536,
+  "lyrics": [
+    {
+      "text": "Tengo el orgullo de ser peruano y soy feliz",
+      "start": 0.0,
+      "end": 4.925659
+    },
+    {
+      "text": "Y haber nacido en esta hermosa tierra del Sol",
+      "start": 4.925659,
+      "end": 10.132785
+    },
+    {
+      "text": "Donde el indómito inca, prefiriendo morir",
+      "start": 10.132785,
+      "end": 15.058444
+    },
+    {
+      "text": "Legó a su raza la gran herencia de su valor",
+      "start": 15.058444,
+      "end": 19.84337
+    },
+    {
+      "text": "Ricas montañas (ricas montañas)",
+      "start": 19.84337,
+      "end": 23.502431
+    },
+    {
+      "text": "Hermosas tierras (hermosas tierras)",
+      "start": 23.502431,
+      "end": 27.724424
+    },
+    {
+      "text": "Risueñas playas (ah-ah-ah)",
+      "start": 27.724424,
+      "end": 30.539087
+    },
+    {
+      "text": "Es mi Perú",
+      "start": 30.539087,
+      "end": 31.664952
+    },
+    {
+      "text": "Fértiles tierras",
+      "start": 31.664952,
+      "end": 33.775949
+    },
+    {
+      "text": "Cumbres nevadas",
+      "start": 33.775949,
+      "end": 35.746212
+    },
+    {
+      "text": "Ríos, quebradas",
+      "start": 35.746212,
+      "end": 37.575743
+    },
+    {
+      "text": "Es mi Perú",
+      "start": 37.575743,
+      "end": 38.701608
+    },
+    {
+      "text": "Así es mi raza, noble y humilde por tradición",
+      "start": 38.701608,
+      "end": 43.768
+    },
+    {
+      "text": "Pero rebelde cuando coartan su libertad",
+      "start": 43.768,
+      "end": 48.552926
+    },
+    {
+      "text": "Entonces, poniendo alma, mente y corazón",
+      "start": 48.552926,
+      "end": 53.197119
+    },
+    {
+      "text": "Rompen cadenas, aunque la muerte vea llegar",
+      "start": 53.197119,
+      "end": 58.263511
+    },
+    {
+      "text": "Ricas montañas",
+      "start": 58.263511,
+      "end": 60.093042
+    },
+    {
+      "text": "Hermosas tierras",
+      "start": 60.093042,
+      "end": 62.204039
+    },
+    {
+      "text": "Risueñas playas",
+      "start": 62.204039,
+      "end": 64.174302
+    },
+    {
+      "text": "Es mi Perú",
+      "start": 64.174302,
+      "end": 65.300167
+    },
+    {
+      "text": "Fértiles tierras",
+      "start": 65.300167,
+      "end": 67.411164
+    },
+    {
+      "text": "Cumbres nevadas",
+      "start": 67.411164,
+      "end": 69.381428
+    },
+    {
+      "text": "Ríos, quebradas",
+      "start": 69.381428,
+      "end": 71.210958
+    },
+    {
+      "text": "Es mi Perú",
+      "start": 71.210958,
+      "end": 72.336823
+    },
+    {
+      "text": "Ricas montañas",
+      "start": 72.336823,
+      "end": 74.166354
+    },
+    {
+      "text": "Hermosas tierras",
+      "start": 74.166354,
+      "end": 76.27735
+    },
+    {
+      "text": "Risueñas playas",
+      "start": 76.27735,
+      "end": 78.247614
+    },
+    {
+      "text": "Es mi Perú",
+      "start": 78.247614,
+      "end": 79.373479
+    },
+    {
+      "text": "Fértiles tierras",
+      "start": 79.373479,
+      "end": 81.484476
+    },
+    {
+      "text": "Cumbres nevadas",
+      "start": 81.484476,
+      "end": 83.45474
+    },
+    {
+      "text": "Ríos, quebradas",
+      "start": 83.45474,
+      "end": 85.28427
+    },
+    {
+      "text": "Es mi Perú",
+      "start": 85.28427,
+      "end": 86.410135
+    },
+    {
+      "text": "Es mi Perú",
+      "start": 86.410135,
+      "end": 87.536
+    }
+  ]
 }

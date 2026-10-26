@@ -28,7 +28,6 @@ function setSync(mode) {
   $("#playerDot").className = `dot ${mode === "online" ? "online" : "local"}`;
 }
 async function loadLyrics(song) {
-  if (song.lyricsStatus === "pending") return [];
   const urls = song.lyrics ? [song.lyrics] : [`songs/${song.id}/lyrics-timed.json`, `songs/${song.id}/lyrics-template.json`];
   for (const url of urls) {
     try {

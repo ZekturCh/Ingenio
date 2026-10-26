@@ -1,5 +1,245 @@
 {
   "songId": "esta-es-mi-tierra",
-  "status": "pending",
-  "lyrics": []
+  "title": "Esta es mi tierra",
+  "status": "estimated",
+  "reviewRequired": true,
+  "timingMethod": "text-length-proportional; not aligned to vocals or instrumental sections",
+  "durationSeconds": 213.603,
+  "lyrics": [
+    {
+      "text": "Esta es mi tierra",
+      "start": 0.0,
+      "end": 3.664757
+    },
+    {
+      "text": "Así es mi Perú",
+      "start": 3.664757,
+      "end": 6.54421
+    },
+    {
+      "text": "Esta es mi tierra",
+      "start": 6.54421,
+      "end": 10.208967
+    },
+    {
+      "text": "Así es mi Perú",
+      "start": 10.208967,
+      "end": 13.088419
+    },
+    {
+      "text": "Raza que al mundo escribiera",
+      "start": 13.088419,
+      "end": 19.37086
+    },
+    {
+      "text": "La historia viril del Imperio del Sol",
+      "start": 19.37086,
+      "end": 27.48568
+    },
+    {
+      "text": "Enarbolada flamea mi bandera bicolor",
+      "start": 27.48568,
+      "end": 35.862268
+    },
+    {
+      "text": "En costa, montaña y sierra",
+      "start": 35.862268,
+      "end": 41.359404
+    },
+    {
+      "text": "Con paz, trabajo y amor",
+      "start": 41.359404,
+      "end": 46.071235
+    },
+    {
+      "text": "La riqueza de su costa",
+      "start": 46.071235,
+      "end": 50.783066
+    },
+    {
+      "text": "En el mundo sin igual",
+      "start": 50.783066,
+      "end": 55.233129
+    },
+    {
+      "text": "Y la sierra generosa",
+      "start": 55.233129,
+      "end": 59.683191
+    },
+    {
+      "text": "Fructifica nuestro pan",
+      "start": 59.683191,
+      "end": 64.918559
+    },
+    {
+      "text": "Mientras la montaña espera",
+      "start": 64.918559,
+      "end": 70.939232
+    },
+    {
+      "text": "Quien la vaya a conquistar",
+      "start": 70.939232,
+      "end": 76.698136
+    },
+    {
+      "text": "El orgullo de mi raza",
+      "start": 76.698136,
+      "end": 81.148199
+    },
+    {
+      "text": "Es la historia del Perú",
+      "start": 81.148199,
+      "end": 86.121798
+    },
+    {
+      "text": "Y quiero que este tondero",
+      "start": 86.121798,
+      "end": 91.618934
+    },
+    {
+      "text": "Con sabor a gratitud",
+      "start": 91.618934,
+      "end": 96.068996
+    },
+    {
+      "text": "Se escuche en los cuatro vientos",
+      "start": 96.068996,
+      "end": 103.136743
+    },
+    {
+      "text": "En el norte, centro y sur",
+      "start": 103.136743,
+      "end": 108.110342
+    },
+    {
+      "text": "¿Cómo dice?",
+      "start": 108.110342,
+      "end": 110.204489
+    },
+    {
+      "text": "Esta es mi tierra",
+      "start": 110.204489,
+      "end": 113.869246
+    },
+    {
+      "text": "Así es mi Perú",
+      "start": 113.869246,
+      "end": 116.748699
+    },
+    {
+      "text": "Esta es mi tierra",
+      "start": 116.748699,
+      "end": 120.413456
+    },
+    {
+      "text": "Así es mi Perú",
+      "start": 120.413456,
+      "end": 123.292908
+    },
+    {
+      "text": "La riqueza de su costa",
+      "start": 123.292908,
+      "end": 128.004739
+    },
+    {
+      "text": "En el mundo sin igual",
+      "start": 128.004739,
+      "end": 132.454801
+    },
+    {
+      "text": "Y la sierra generosa",
+      "start": 132.454801,
+      "end": 136.904864
+    },
+    {
+      "text": "Fructifica nuestro pan",
+      "start": 136.904864,
+      "end": 142.140232
+    },
+    {
+      "text": "Mientras la montaña espera",
+      "start": 142.140232,
+      "end": 148.160904
+    },
+    {
+      "text": "Quien la vaya a conquistar",
+      "start": 148.160904,
+      "end": 153.919809
+    },
+    {
+      "text": "El orgullo de mi raza",
+      "start": 153.919809,
+      "end": 158.369871
+    },
+    {
+      "text": "Es la historia del Perú",
+      "start": 158.369871,
+      "end": 163.343471
+    },
+    {
+      "text": "Y quiero que este tondero",
+      "start": 163.343471,
+      "end": 168.840607
+    },
+    {
+      "text": "Con sabor a gratitud",
+      "start": 168.840607,
+      "end": 173.290669
+    },
+    {
+      "text": "Se escuche en los cuatro vientos",
+      "start": 173.290669,
+      "end": 180.358415
+    },
+    {
+      "text": "En el norte, centro y sur",
+      "start": 180.358415,
+      "end": 185.332015
+    },
+    {
+      "text": "¿Cómo dice?",
+      "start": 185.332015,
+      "end": 187.426162
+    },
+    {
+      "text": "Esta es mi tierra",
+      "start": 187.426162,
+      "end": 191.090919
+    },
+    {
+      "text": "Así es mi Perú",
+      "start": 191.090919,
+      "end": 193.970371
+    },
+    {
+      "text": "Esta es mi tierra",
+      "start": 193.970371,
+      "end": 197.635129
+    },
+    {
+      "text": "Así es mi Perú",
+      "start": 197.635129,
+      "end": 200.514581
+    },
+    {
+      "text": "Esta es mi tierra",
+      "start": 200.514581,
+      "end": 204.179338
+    },
+    {
+      "text": "Así es mi Perú",
+      "start": 204.179338,
+      "end": 207.05879
+    },
+    {
+      "text": "Esta es mi tierra",
+      "start": 207.05879,
+      "end": 210.723548
+    },
+    {
+      "text": "Así es mi Perú",
+      "start": 210.723548,
+      "end": 213.603
+    }
+  ]
 }

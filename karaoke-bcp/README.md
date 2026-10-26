@@ -40,10 +40,10 @@ Las categorias se pueden definir en el campo `categories` de cada cancion:
 `criollo`, `peru`, `fiesta`, `clasicos`, `halloween`.
 Hay 23 pistas disponibles: Cariñito, las siete incorporadas el 19/10/2026 y 15 MP3 aportados por el usuario.
 Las cinco canciones sin audio quedan ocultas del selector.
-Las 15 últimas tienen JSON de tiempos aproximados, identificados como tales en la app; requieren revisión contra cada grabación.
-Solo Carinito tiene letra sincronizada. Las siete nuevas permiten reproducir la
-pista completa y muestran su letra como pendiente; no se han inventado coros ni
-marcas. Mi Peru dura 1:27: se conserva el archivo recibido sin alargarlo.
+Las 22 pistas distintas de Cariñito tienen JSON con frases y tiempos aproximados, identificados como tales en la app; requieren revisión contra cada grabación.
+Cariñito conserva su sincronización original. Todas las otras pistas activas muestran
+su letra con tiempos aproximados. Ninguna pista activa queda con un JSON vacío.
+Mi Perú dura 1:27: se conserva el archivo recibido sin alargarlo.
 
 Cada carpeta disponible `songs/<id>/` contiene `audio.mp3`, `letra.txt` y
 `lyrics-timed.json`. Los TXT contienen las letras aportadas; las 5 carpetas pendientes todavía no tienen audio.

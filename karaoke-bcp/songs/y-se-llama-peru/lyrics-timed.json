@@ -1,5 +1,270 @@
 {
   "songId": "y-se-llama-peru",
-  "status": "pending",
-  "lyrics": []
+  "title": "Y se llama Perú",
+  "status": "estimated",
+  "reviewRequired": true,
+  "timingMethod": "text-length-proportional; not aligned to vocals or instrumental sections",
+  "durationSeconds": 185.365,
+  "lyrics": [
+    {
+      "text": "Cosechando mis mares, sembrando mis tierras",
+      "start": 0.0,
+      "end": 7.250005
+    },
+    {
+      "text": "Quiero más a mi patria",
+      "start": 7.250005,
+      "end": 10.777035
+    },
+    {
+      "text": "Mi nación que luchando",
+      "start": 10.777035,
+      "end": 14.500011
+    },
+    {
+      "text": "Rompió las cadenas de la esclavitud",
+      "start": 14.500011,
+      "end": 20.378393
+    },
+    {
+      "text": "Es la tierra del inca",
+      "start": 20.378393,
+      "end": 23.709477
+    },
+    {
+      "text": "Que el Sol ilumina porque Dios lo manda",
+      "start": 23.709477,
+      "end": 29.979752
+    },
+    {
+      "text": "Y es que Dios a la gloria le cambió de nombre",
+      "start": 29.979752,
+      "end": 36.837865
+    },
+    {
+      "text": "Y le puso Perú",
+      "start": 36.837865,
+      "end": 38.993272
+    },
+    {
+      "text": "Atesoran sus playas",
+      "start": 38.993272,
+      "end": 42.324355
+    },
+    {
+      "text": "La riqueza pesquera de mi mar soberano",
+      "start": 42.324355,
+      "end": 48.59463
+    },
+    {
+      "text": "Y en la sierra bravía",
+      "start": 48.59463,
+      "end": 51.925714
+    },
+    {
+      "text": "La nieve perpetua, bandera de paz",
+      "start": 51.925714,
+      "end": 57.216258
+    },
+    {
+      "text": "La montaña en sus venas",
+      "start": 57.216258,
+      "end": 60.939234
+    },
+    {
+      "text": "Guardado el petróleo de nuestro mañana",
+      "start": 60.939234,
+      "end": 67.405455
+    },
+    {
+      "text": "Y la tierra serrana",
+      "start": 67.405455,
+      "end": 70.540592
+    },
+    {
+      "text": "Nos da a manos llenas, el acero y el pan",
+      "start": 70.540592,
+      "end": 76.418975
+    },
+    {
+      "text": "Y se llama Perú",
+      "start": 76.418975,
+      "end": 78.770328
+    },
+    {
+      "text": "Con P de patria",
+      "start": 78.770328,
+      "end": 81.121681
+    },
+    {
+      "text": "La E del ejemplo",
+      "start": 81.121681,
+      "end": 83.66898
+    },
+    {
+      "text": "La R del rifle",
+      "start": 83.66898,
+      "end": 85.824387
+    },
+    {
+      "text": "La U de la unión",
+      "start": 85.824387,
+      "end": 88.17574
+    },
+    {
+      "text": "Yo me llamo Perú",
+      "start": 88.17574,
+      "end": 90.723039
+    },
+    {
+      "text": "Pues mi raza peruana",
+      "start": 90.723039,
+      "end": 94.054123
+    },
+    {
+      "text": "Con la sangre y el alma",
+      "start": 94.054123,
+      "end": 97.581152
+    },
+    {
+      "text": "Pintó los colores de mi pabellón",
+      "start": 97.581152,
+      "end": 102.871697
+    },
+    {
+      "text": "Yo también me llamo Perú",
+      "start": 102.871697,
+      "end": 106.790618
+    },
+    {
+      "text": "Con P de patria",
+      "start": 106.790618,
+      "end": 109.141971
+    },
+    {
+      "text": "La E del ejemplo",
+      "start": 109.141971,
+      "end": 111.689271
+    },
+    {
+      "text": "La R del rifle",
+      "start": 111.689271,
+      "end": 113.844678
+    },
+    {
+      "text": "La U de la unión",
+      "start": 113.844678,
+      "end": 116.196031
+    },
+    {
+      "text": "Yo me llamo Perú",
+      "start": 116.196031,
+      "end": 118.74333
+    },
+    {
+      "text": "Pues mi raza peruana",
+      "start": 118.74333,
+      "end": 122.074413
+    },
+    {
+      "text": "Con la sangre y el alma",
+      "start": 122.074413,
+      "end": 125.601443
+    },
+    {
+      "text": "Pintó los colores de mi pabellón",
+      "start": 125.601443,
+      "end": 130.891987
+    },
+    {
+      "text": "Y se llama Perú",
+      "start": 130.891987,
+      "end": 133.24334
+    },
+    {
+      "text": "Con P de patria",
+      "start": 133.24334,
+      "end": 135.594693
+    },
+    {
+      "text": "La E del ejemplo",
+      "start": 135.594693,
+      "end": 138.141993
+    },
+    {
+      "text": "La R del rifle",
+      "start": 138.141993,
+      "end": 140.2974
+    },
+    {
+      "text": "La U de la unión",
+      "start": 140.2974,
+      "end": 142.648753
+    },
+    {
+      "text": "Yo me llamo Perú",
+      "start": 142.648753,
+      "end": 145.196052
+    },
+    {
+      "text": "Pues mi raza peruana",
+      "start": 145.196052,
+      "end": 148.527135
+    },
+    {
+      "text": "Con la sangre y el alma",
+      "start": 148.527135,
+      "end": 152.054165
+    },
+    {
+      "text": "Pintó los colores de mi pabellón",
+      "start": 152.054165,
+      "end": 157.344709
+    },
+    {
+      "text": "Yo también me llamo Perú",
+      "start": 157.344709,
+      "end": 161.263631
+    },
+    {
+      "text": "Con P de patria",
+      "start": 161.263631,
+      "end": 163.614984
+    },
+    {
+      "text": "La E del ejemplo",
+      "start": 163.614984,
+      "end": 166.162283
+    },
+    {
+      "text": "La R del rifle",
+      "start": 166.162283,
+      "end": 168.31769
+    },
+    {
+      "text": "La U de la unión",
+      "start": 168.31769,
+      "end": 170.669043
+    },
+    {
+      "text": "Yo me llamo Perú",
+      "start": 170.669043,
+      "end": 173.216342
+    },
+    {
+      "text": "Pues mi raza peruana",
+      "start": 173.216342,
+      "end": 176.547426
+    },
+    {
+      "text": "Con la sangre y el alma",
+      "start": 176.547426,
+      "end": 180.074456
+    },
+    {
+      "text": "Pintó los colores de mi pabellón",
+      "start": 180.074456,
+      "end": 185.365
+    }
+  ]
 }

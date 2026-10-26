@@ -40,6 +40,7 @@ async function main() {
       await page.waitForFunction(() => { const a=document.querySelector('#audio');return !a.paused && a.currentTime>0 && a.readyState>=2; });
       await page.locator('#seek').evaluate(input=>{input.value=60;input.dispatchEvent(new Event('input'));input.dispatchEvent(new Event('change'));});
       await page.waitForFunction(() => {const a=document.querySelector('#audio');return a.currentTime > a.duration*.55 && a.readyState>=2;});
+      await page.waitForFunction(() => !['', '♪', 'Letra pendiente de sincronizar', 'Vamos a cantar'].includes(document.querySelector('#currentBase').textContent));
       await page.locator('#backBtn').click();
       await page.waitForFunction(()=>!document.querySelector('#selectorView').hidden);
     }
@@ -99,7 +100,8 @@ async function main() {
       }
       navigator.serviceWorker.controller.postMessage({type:'CHECK_OFFLINE'});
     });
-    // Another open page may retry the missing file while offline; both states stay red.
+    // Another open page may immediately retry the missing file while offline,
+    // producing an error state rather than an idle incomplete state. Both are red.
     await page.waitForFunction(()=>['incomplete','error'].includes(document.querySelector('.offline-indicator').dataset.state));
     await context.setOffline(false);
     await page.locator('.offline-indicator[data-state="ready"]').waitFor({timeout:60000});

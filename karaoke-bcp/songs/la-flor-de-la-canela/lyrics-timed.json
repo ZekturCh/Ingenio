@@ -1,5 +1,210 @@
 {
   "songId": "la-flor-de-la-canela",
-  "status": "pending",
-  "lyrics": []
+  "title": "La Flor de la Canela",
+  "status": "estimated",
+  "reviewRequired": true,
+  "timingMethod": "text-length-proportional; not aligned to vocals or instrumental sections",
+  "durationSeconds": 211.148,
+  "lyrics": [
+    {
+      "text": "Déjame que te cuente, limeño",
+      "start": 0.0,
+      "end": 4.728728
+    },
+    {
+      "text": "Déjame que te diga la gloria",
+      "start": 4.728728,
+      "end": 9.457457
+    },
+    {
+      "text": "Del ensueño que evoca la memoria",
+      "start": 9.457457,
+      "end": 15.008573
+    },
+    {
+      "text": "Del viejo puente, del río y la alameda",
+      "start": 15.008573,
+      "end": 21.176479
+    },
+    {
+      "text": "Déjame que te cuente, limeño",
+      "start": 21.176479,
+      "end": 25.905207
+    },
+    {
+      "text": "Ahora que aún perfuma el recuerdo",
+      "start": 25.905207,
+      "end": 31.66192
+    },
+    {
+      "text": "Ahora que aún se mece en un sueño",
+      "start": 31.66192,
+      "end": 37.007439
+    },
+    {
+      "text": "El viejo puente el río y la alameda",
+      "start": 37.007439,
+      "end": 42.764152
+    },
+    {
+      "text": "Jazmines en el pelo y rosas en la cara",
+      "start": 42.764152,
+      "end": 48.932058
+    },
+    {
+      "text": "Airosa caminaba la flor de la canela",
+      "start": 48.932058,
+      "end": 55.099965
+    },
+    {
+      "text": "Derramaba lisura y a su paso dejaba",
+      "start": 55.099965,
+      "end": 61.062275
+    },
+    {
+      "text": "Aroma de mixtura que en el pecho llevaba",
+      "start": 61.062275,
+      "end": 67.846972
+    },
+    {
+      "text": "Del puente a la alameda",
+      "start": 67.846972,
+      "end": 71.753313
+    },
+    {
+      "text": "Menudo pie la lleva",
+      "start": 71.753313,
+      "end": 75.042863
+    },
+    {
+      "text": "Por la vereda que se estremece",
+      "start": 75.042863,
+      "end": 80.182785
+    },
+    {
+      "text": "Al ritmo de su cadera",
+      "start": 80.182785,
+      "end": 83.677932
+    },
+    {
+      "text": "Recogía la risa de la brisa del río",
+      "start": 83.677932,
+      "end": 89.434645
+    },
+    {
+      "text": "Y al viento la lanzaba del puente a la alameda",
+      "start": 89.434645,
+      "end": 97.041729
+    },
+    {
+      "text": "Déjame que te cuente, limeño ¡ay!",
+      "start": 97.041729,
+      "end": 102.181651
+    },
+    {
+      "text": "Deja que te diga moreno mi pensamiento",
+      "start": 102.181651,
+      "end": 108.760752
+    },
+    {
+      "text": "A ver si así despiertas del sueño",
+      "start": 108.760752,
+      "end": 114.311868
+    },
+    {
+      "text": "Del sueño que entretiene, moreno",
+      "start": 114.311868,
+      "end": 119.862983
+    },
+    {
+      "text": "Tus sentimientos",
+      "start": 119.862983,
+      "end": 122.946937
+    },
+    {
+      "text": "Aspiras de la lisura",
+      "start": 122.946937,
+      "end": 126.442084
+    },
+    {
+      "text": "Que da la flor de canela",
+      "start": 126.442084,
+      "end": 130.348425
+    },
+    {
+      "text": "Adornada con jazmines",
+      "start": 130.348425,
+      "end": 134.254765
+    },
+    {
+      "text": "Matizando tu hermosura",
+      "start": 134.254765,
+      "end": 138.366703
+    },
+    {
+      "text": "Alfombras de nuevo el puente",
+      "start": 138.366703,
+      "end": 143.301028
+    },
+    {
+      "text": "Y engalanas la alameda",
+      "start": 143.301028,
+      "end": 147.207369
+    },
+    {
+      "text": "Que el río acompasara tu paso por la vereda",
+      "start": 147.207369,
+      "end": 154.40326
+    },
+    {
+      "text": "Y recuerda que, jazmines en el pelo y rosas en la cara",
+      "start": 154.40326,
+      "end": 163.038329
+    },
+    {
+      "text": "Airosa caminaba la flor de la canela",
+      "start": 163.038329,
+      "end": 169.206236
+    },
+    {
+      "text": "Derramaba lisura y a su paso dejaba",
+      "start": 169.206236,
+      "end": 175.168545
+    },
+    {
+      "text": "Aroma de mixtura que en el pecho llevaba",
+      "start": 175.168545,
+      "end": 181.953242
+    },
+    {
+      "text": "Del puente a la alameda",
+      "start": 181.953242,
+      "end": 185.859583
+    },
+    {
+      "text": "Menudo pie la lleva",
+      "start": 185.859583,
+      "end": 189.149133
+    },
+    {
+      "text": "Por la vereda que se estremece",
+      "start": 189.149133,
+      "end": 194.289056
+    },
+    {
+      "text": "Al ritmo de su cadera",
+      "start": 194.289056,
+      "end": 197.784203
+    },
+    {
+      "text": "Recogía la risa de la brisa del río",
+      "start": 197.784203,
+      "end": 203.540915
+    },
+    {
+      "text": "Y al viento la lanzaba del puente a la alameda",
+      "start": 203.540915,
+      "end": 211.148
+    }
+  ]
 }

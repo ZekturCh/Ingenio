@@ -1,5 +1,245 @@
 {
   "songId": "contigo-peru",
-  "status": "pending",
-  "lyrics": []
+  "title": "Contigo Perú",
+  "status": "estimated",
+  "reviewRequired": true,
+  "timingMethod": "text-length-proportional; not aligned to vocals or instrumental sections",
+  "durationSeconds": 237.087,
+  "lyrics": [
+    {
+      "text": "Cuando despiertan mis ojos y veo",
+      "start": 0.0,
+      "end": 6.407757
+    },
+    {
+      "text": "Que sigo viviendo contigo, Perú",
+      "start": 6.407757,
+      "end": 12.578189
+    },
+    {
+      "text": "Emocionado, doy gracias al cielo",
+      "start": 12.578189,
+      "end": 18.985946
+    },
+    {
+      "text": "Por darme la vida contigo, Perú",
+      "start": 18.985946,
+      "end": 24.919054
+    },
+    {
+      "text": "Eres muy grande",
+      "start": 24.919054,
+      "end": 28.00427
+    },
+    {
+      "text": "Y lo seguirás siendo",
+      "start": 28.00427,
+      "end": 32.038784
+    },
+    {
+      "text": "Pues todos estamos contigo, Perú",
+      "start": 32.038784,
+      "end": 38.446541
+    },
+    {
+      "text": "Sobre mi pecho, llevo tus colores",
+      "start": 38.446541,
+      "end": 44.854297
+    },
+    {
+      "text": "Y están mis amores contigo, Perú",
+      "start": 44.854297,
+      "end": 51.02473
+    },
+    {
+      "text": "Somos tus hijos y nos uniremos",
+      "start": 51.02473,
+      "end": 56.957838
+    },
+    {
+      "text": "Y así triunfaremos contigo, Perú",
+      "start": 56.957838,
+      "end": 63.365595
+    },
+    {
+      "text": "Unida la costa (unida la costa)",
+      "start": 63.365595,
+      "end": 69.061378
+    },
+    {
+      "text": "Unida la sierra (unida la sierra)",
+      "start": 69.061378,
+      "end": 75.231811
+    },
+    {
+      "text": "Unida la selva contigo, Perú",
+      "start": 75.231811,
+      "end": 80.69027
+    },
+    {
+      "text": "Unido el trabajo (unido el trabajo)",
+      "start": 80.69027,
+      "end": 87.335351
+    },
+    {
+      "text": "Unido el deporte (unido el deporte)",
+      "start": 87.335351,
+      "end": 93.980432
+    },
+    {
+      "text": "Unidos el norte, el centro y el sur",
+      "start": 93.980432,
+      "end": 100.388189
+    },
+    {
+      "text": "¡A triunfar, peruanos! (¡A triunfar, peruanos¡)",
+      "start": 100.388189,
+      "end": 108.457216
+    },
+    {
+      "text": "Que somos hermanos (que somos hermanos)",
+      "start": 108.457216,
+      "end": 116.051595
+    },
+    {
+      "text": "Que se haga victoria",
+      "start": 116.051595,
+      "end": 120.086108
+    },
+    {
+      "text": "Nuestra gran gratitud",
+      "start": 120.086108,
+      "end": 124.59527
+    },
+    {
+      "text": "Te daré la vida",
+      "start": 124.59527,
+      "end": 127.443162
+    },
+    {
+      "text": "Y cuando yo muera",
+      "start": 127.443162,
+      "end": 130.765703
+    },
+    {
+      "text": "Me uniré en la tierra",
+      "start": 130.765703,
+      "end": 134.800216
+    },
+    {
+      "text": "Contigo, Perú",
+      "start": 134.800216,
+      "end": 137.410784
+    },
+    {
+      "text": "Te daré la vida",
+      "start": 137.410784,
+      "end": 140.258676
+    },
+    {
+      "text": "Y cuando yo muera",
+      "start": 140.258676,
+      "end": 143.581216
+    },
+    {
+      "text": "Me uniré en la tierra",
+      "start": 143.581216,
+      "end": 147.61573
+    },
+    {
+      "text": "Contigo, Perú",
+      "start": 147.61573,
+      "end": 150.226297
+    },
+    {
+      "text": "Unida la costa (unida la costa)",
+      "start": 150.226297,
+      "end": 155.922081
+    },
+    {
+      "text": "Unida la sierra (unida la sierra)",
+      "start": 155.922081,
+      "end": 162.092514
+    },
+    {
+      "text": "Unida la selva contigo, Perú",
+      "start": 162.092514,
+      "end": 167.550973
+    },
+    {
+      "text": "Unido el trabajo (unido el trabajo)",
+      "start": 167.550973,
+      "end": 174.196054
+    },
+    {
+      "text": "Unido el deporte (unido el deporte)",
+      "start": 174.196054,
+      "end": 180.841135
+    },
+    {
+      "text": "Unidos el norte, el centro y el sur",
+      "start": 180.841135,
+      "end": 187.248892
+    },
+    {
+      "text": "¡A triunfar, peruanos! (¡A triunfar, peruanos¡)",
+      "start": 187.248892,
+      "end": 195.317919
+    },
+    {
+      "text": "Que somos hermanos (que somos hermanos)",
+      "start": 195.317919,
+      "end": 202.912297
+    },
+    {
+      "text": "Que se haga victoria",
+      "start": 202.912297,
+      "end": 206.946811
+    },
+    {
+      "text": "Nuestra gran gratitud",
+      "start": 206.946811,
+      "end": 211.455973
+    },
+    {
+      "text": "Te daré la vida",
+      "start": 211.455973,
+      "end": 214.303865
+    },
+    {
+      "text": "Y cuando yo muera",
+      "start": 214.303865,
+      "end": 217.626405
+    },
+    {
+      "text": "Me uniré en la tierra",
+      "start": 217.626405,
+      "end": 221.660919
+    },
+    {
+      "text": "Contigo, Perú",
+      "start": 221.660919,
+      "end": 224.271486
+    },
+    {
+      "text": "Te daré la vida",
+      "start": 224.271486,
+      "end": 227.119378
+    },
+    {
+      "text": "Y cuando yo muera",
+      "start": 227.119378,
+      "end": 230.441919
+    },
+    {
+      "text": "Me uniré en la tierra",
+      "start": 230.441919,
+      "end": 234.476432
+    },
+    {
+      "text": "Contigo, Perú",
+      "start": 234.476432,
+      "end": 237.087
+    }
+  ]
 }

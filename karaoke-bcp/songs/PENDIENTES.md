@@ -17,7 +17,7 @@ Las 28 canciones están en el catálogo: 23 tienen audio y 5 quedan ocultas hast
 3. Reemplazar su entrada `pendingTrack(...)` por `track(id, título, intérprete, duraciónEnSegundos)` en `songs/catalog.js`. Esto habilita la pista completa y la carga de su letra en `timing-editor.html`.
 4. En el editor, marcar las entradas de cada frase y reemplazar `lyrics-timed.json` por el archivo exportado. Cambiar `lyricsStatus` a `timed` solo después de revisar las marcas.
 
-Las siete pistas incorporadas previamente ya tienen sus TXT, pero todavía requieren sincronización. Cariñito conserva su letra sincronizada.
+Las siete pistas previas también tienen ahora JSON con su letra y tiempos aproximados. Las 23 canciones activas muestran letra; 22 requieren revisar las marcas contra la grabación. Cariñito conserva su sincronización original.
 
 ## Audios incorporados el 25/10/2026
 

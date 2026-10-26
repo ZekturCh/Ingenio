@@ -1,5 +1,100 @@
 {
   "songId": "mi-propiedad-privada",
-  "status": "pending",
-  "lyrics": []
+  "title": "Mi propiedad privada",
+  "status": "estimated",
+  "reviewRequired": true,
+  "timingMethod": "text-length-proportional; not aligned to vocals or instrumental sections",
+  "durationSeconds": 204.042,
+  "lyrics": [
+    {
+      "text": "Para que sepan todos a quien tú perteneces",
+      "start": 0.0,
+      "end": 11.426352
+    },
+    {
+      "text": "Con sangre de mis venas te marcaré la frente",
+      "start": 11.426352,
+      "end": 23.179171
+    },
+    {
+      "text": "Para que te respeten aun con la mirada",
+      "start": 23.179171,
+      "end": 33.299654
+    },
+    {
+      "text": "Y sepan que tú eres mi propiedad privada.",
+      "start": 33.299654,
+      "end": 44.073072
+    },
+    {
+      "text": "Que no se atreva nadie a mirarte con ansias",
+      "start": 44.073072,
+      "end": 55.499424
+    },
+    {
+      "text": "Y que conserven todos respetables distancia",
+      "start": 55.499424,
+      "end": 67.905178
+    },
+    {
+      "text": "Porque mi pobre alma se retuerce de celos",
+      "start": 67.905178,
+      "end": 79.005062
+    },
+    {
+      "text": "Y no quiere que nadie respire de tu aliento.",
+      "start": 79.005062,
+      "end": 90.431414
+    },
+    {
+      "text": "Porque siendo tu dueño no me importa mas nada",
+      "start": 90.431414,
+      "end": 102.510701
+    },
+    {
+      "text": "Que verte solo mía mi propiedad privada",
+      "start": 102.510701,
+      "end": 113.284118
+    },
+    {
+      "text": "Que verte solo mía mi propiedad privada",
+      "start": 113.284118,
+      "end": 124.057536
+    },
+    {
+      "text": "Que no se atreva nadie a mirarte con ansias",
+      "start": 124.057536,
+      "end": 135.483888
+    },
+    {
+      "text": "Y que conserven todos respetables distancia",
+      "start": 135.483888,
+      "end": 147.889642
+    },
+    {
+      "text": "Porque mi pobre alma se retuerce de celos",
+      "start": 147.889642,
+      "end": 158.989526
+    },
+    {
+      "text": "Y no quiere que nadie respire de tu aliento.",
+      "start": 158.989526,
+      "end": 170.415878
+    },
+    {
+      "text": "Porque siendo tu dueño no me importa mas nada",
+      "start": 170.415878,
+      "end": 182.495165
+    },
+    {
+      "text": "Que verte solo mía mi propiedad privada",
+      "start": 182.495165,
+      "end": 193.268582
+    },
+    {
+      "text": "Que verte solo mía mi propiedad privada.",
+      "start": 193.268582,
+      "end": 204.042
+    }
+  ]
 }

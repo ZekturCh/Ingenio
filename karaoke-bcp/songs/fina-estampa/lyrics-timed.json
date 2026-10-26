@@ -1,5 +1,145 @@
 {
   "songId": "fina-estampa",
-  "status": "pending",
-  "lyrics": []
+  "title": "Fina Estampa",
+  "status": "estimated",
+  "reviewRequired": true,
+  "timingMethod": "text-length-proportional; not aligned to vocals or instrumental sections",
+  "durationSeconds": 161.097,
+  "lyrics": [
+    {
+      "text": "Una veredita alegre con luz de luna o de sol",
+      "start": 0.0,
+      "end": 6.385498
+    },
+    {
+      "text": "Tendida como una cinta con sus lados de arrebol",
+      "start": 6.385498,
+      "end": 13.500768
+    },
+    {
+      "text": "Arrebol de los geranios y sonrisas con rubor",
+      "start": 13.500768,
+      "end": 20.251152
+    },
+    {
+      "text": "Arrebol de los claveles y las mejillas en flor",
+      "start": 20.251152,
+      "end": 27.183978
+    },
+    {
+      "text": "Perfumada de magnolia rociada de mañanita",
+      "start": 27.183978,
+      "end": 33.75192
+    },
+    {
+      "text": "La veredita sonríe cuando tu piel acaricia",
+      "start": 33.75192,
+      "end": 40.319861
+    },
+    {
+      "text": "Y la cuculí se ríe y la ventana se agita",
+      "start": 40.319861,
+      "end": 45.975588
+    },
+    {
+      "text": "Cuando por esa vereda tu fina estampa pasea",
+      "start": 45.975588,
+      "end": 52.543529
+    },
+    {
+      "text": "Fina estampa, caballero",
+      "start": 52.543529,
+      "end": 56.192385
+    },
+    {
+      "text": "Caballero de fina estampa",
+      "start": 56.192385,
+      "end": 60.206127
+    },
+    {
+      "text": "Un lucero que sonriera bajo un sombrero",
+      "start": 60.206127,
+      "end": 66.22674
+    },
+    {
+      "text": "No sonriera más hermoso",
+      "start": 66.22674,
+      "end": 69.875596
+    },
+    {
+      "text": "Ni más luciera caballero",
+      "start": 69.875596,
+      "end": 73.706895
+    },
+    {
+      "text": "Y en tu andar, andar, reluce la acera al andar, andar",
+      "start": 73.706895,
+      "end": 81.004607
+    },
+    {
+      "text": "Te lleva hacia los zaguanes y a los patios encantados",
+      "start": 81.004607,
+      "end": 89.032091
+    },
+    {
+      "text": "Te lleva hacia las plazuelas y a los amores soñados",
+      "start": 89.032091,
+      "end": 96.694689
+    },
+    {
+      "text": "Veredita que se arrulla con tafetanes bordados",
+      "start": 96.694689,
+      "end": 103.992401
+    },
+    {
+      "text": "Tacón de chapín de seda y fustes almidonados",
+      "start": 103.992401,
+      "end": 110.742785
+    },
+    {
+      "text": "Es un caminito alegre con luz de luna o de sol",
+      "start": 110.742785,
+      "end": 117.310726
+    },
+    {
+      "text": "Que he de recorrer cantando por si te puedo alcanzar",
+      "start": 117.310726,
+      "end": 125.155767
+    },
+    {
+      "text": "Fina estampa caballero quién te pudiera guardar",
+      "start": 125.155767,
+      "end": 132.635922
+    },
+    {
+      "text": "Fina estampa, caballero",
+      "start": 132.635922,
+      "end": 136.284778
+    },
+    {
+      "text": "Caballero de fina estampa",
+      "start": 136.284778,
+      "end": 140.29852
+    },
+    {
+      "text": "Un lucero que sonriera bajo un sombrero",
+      "start": 140.29852,
+      "end": 146.319133
+    },
+    {
+      "text": "No sonriera más hermoso",
+      "start": 146.319133,
+      "end": 149.967989
+    },
+    {
+      "text": "Ni más luciera caballero",
+      "start": 149.967989,
+      "end": 153.799288
+    },
+    {
+      "text": "Y en tu andar, andar, reluce la acera al andar, andar",
+      "start": 153.799288,
+      "end": 161.097
+    }
+  ]
 }

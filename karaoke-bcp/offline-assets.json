@@ -1,6 +1,6 @@
 {
-  "version": "728f2f160ac6495aa4a6",
-  "totalBytes": 109044300,
+  "version": "277ef114439fadb092e6",
+  "totalBytes": 109074158,
   "assets": [
     {
       "url": "../Logo%20Samay.png",
@@ -514,8 +514,8 @@
     },
     {
       "url": "player.js",
-      "size": 11936,
-      "sha256": "9dbfa877b811b06f1df9633979466b7811796e9dd9a46442a694e4dddfa8c74e"
+      "size": 11886,
+      "sha256": "5d483249b13ccebadf5b27e638f0006ad361d6ff539dc047be5cc519b27fd3aa"
     },
     {
       "url": "shared.js",
@@ -589,8 +589,8 @@
     },
     {
       "url": "songs/catalog.js",
-      "size": 3471,
-      "sha256": "2ed221c6575108146a80591a86eda0142b4d63c3a909dc4876dd46a9dba80f90"
+      "size": 3534,
+      "sha256": "ea7486ed99b2a8f26afaa987cdd1c2f5268a012a96e0c350fc81b3ce888de00e"
     },
     {
       "url": "songs/contigo-peru/audio.mp3",
@@ -604,8 +604,8 @@
     },
     {
       "url": "songs/contigo-peru/lyrics-timed.json",
-      "size": 70,
-      "sha256": "40dcfd8c38ff945e6ed30a7262d1e1a6e54f29815a59fa03f30fb32d72899c46"
+      "size": 5312,
+      "sha256": "aa6bf6d00be9f5470cbaaed1e7a7f9debceca70622f97719445a2ce24e530ab1"
     },
     {
       "url": "songs/cuando-pienses/audio.mp3",
@@ -669,8 +669,8 @@
     },
     {
       "url": "songs/esta-es-mi-tierra/lyrics-timed.json",
-      "size": 75,
-      "sha256": "135566ae24ebdd64d3a7e21b0905b99d8ce2d929fb864f39a29f18a8c9f83804"
+      "size": 5066,
+      "sha256": "c2d11e91c7a1f281dfc2e2780392c126ecd09a8b76c88c7e62afd7729a5dfbee"
     },
     {
       "url": "songs/fina-estampa/audio.mp3",
@@ -684,8 +684,8 @@
     },
     {
       "url": "songs/fina-estampa/lyrics-timed.json",
-      "size": 70,
-      "sha256": "e2af8fb857f1ee100d33ace48f91cee2219583f906913bc73896552d49c7ae59"
+      "size": 3487,
+      "sha256": "0d920359c54d4cb194b9f91ff41039291a7175cf625b3047e83673e92bc33165"
     },
     {
       "url": "songs/himno-peru/audio.mp3",
@@ -729,8 +729,8 @@
     },
     {
       "url": "songs/la-flor-de-la-canela/lyrics-timed.json",
-      "size": 78,
-      "sha256": "277932b3bde7a0abc33d1dacee0b5d8f1957bd1bef4f3fffcd8bde416c1b7228"
+      "size": 4764,
+      "sha256": "e4ad018cfe3f2448c97a6d6b8702457b37192211fcd9e71668cf04a7c9735872"
     },
     {
       "url": "songs/la-llorona/audio.mp3",
@@ -784,8 +784,8 @@
     },
     {
       "url": "songs/mi-peru/lyrics-timed.json",
-      "size": 65,
-      "sha256": "2bcf332153f681dc4b5c3419ff8754822c9fbc651e94f0d01c21f0f0a7a27bbf"
+      "size": 3610,
+      "sha256": "bdc2f41d3115090e60a15e4d088bf22bf0da490af6dd47fb2d28a2e533f861cf"
     },
     {
       "url": "songs/mi-propiedad-privada/audio.mp3",
@@ -799,8 +799,8 @@
     },
     {
       "url": "songs/mi-propiedad-privada/lyrics-timed.json",
-      "size": 78,
-      "sha256": "2f2056ae55eb1ebdfb6ba75f238106796833042c3edb6aa49a44e881111b2569"
+      "size": 2480,
+      "sha256": "195878b50651ab0ef63e4504b3f9d0cec794134cefe4f6e7216e371a084ffcb9"
     },
     {
       "url": "songs/mujer-contra-mujer/audio.mp3",
@@ -929,8 +929,8 @@
     },
     {
       "url": "songs/y-se-llama-peru/lyrics-timed.json",
-      "size": 73,
-      "sha256": "ffc9c63d80ef2286fc6fa6d2494df0f585dbcc2dcc3614ca185f496b2ed3a584"
+      "size": 5635,
+      "sha256": "6e7d05b70a2b3bf8aa12db1ad5ed768a52a0feb20d7131c66089c8574bf7f215"
     },
     {
       "url": "timing-editor.css",
