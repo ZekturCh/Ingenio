@@ -22,3 +22,17 @@ confianza: varias no tienen una voz utilizable para alinear palabras; otras solo
 permiten reconocer fragmentos. Sus marcas anteriores siguen siendo aproximadas.
 La forma de onda del editor muestra el sonido completo y ayuda a escuchar tramos y
 marcar entradas manualmente. No distingue por sí sola una entrada vocal.
+
+## Revisión completa de las pistas restantes
+
+Se recorrieron completos los otros 20 MP3 activos mediante reconocimiento local,
+contrastando las palabras obtenidas con sus TXT. No se obtuvo una alineación
+suficientemente fiable para reemplazar las marcas. Cuando pienses en volver dio
+algunos fragmentos, pero la coincidencia continua fue inferior al 6 % del texto.
+En las otras 19 no aparecieron secuencias coincidentes de al menos tres palabras
+que permitieran reconstruir la entrada de las frases. Esto no demuestra que no
+haya ninguna voz: evita presentar como fiables resultados que no lo son.
+
+Se conservan las marcas aproximadas y se añade un ajuste local por canción de
+primera y última frase. Ese ajuste comprime o estira el tramo de letras; no altera
+el MP3 ni se confunde con la compensación Bluetooth global. Se puede restablecer.

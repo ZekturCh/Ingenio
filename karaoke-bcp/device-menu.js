@@ -1,5 +1,6 @@
 import { getDelay, setDelay, lyricTime, MIN_DELAY, MAX_DELAY, DELAY_KEY } from "./audio-settings.js";
 import { onOfflineStatus, downloadOffline } from "./offline.js";
+import { getActiveTrack, getCalibration, saveCalibration, resetCalibration } from "./track-timing.js";
 
 const controls = document.createElement("div");
 controls.className = "device-controls";
@@ -20,12 +21,23 @@ controls.innerHTML = `
       <div class="delay-actions"><button type="button" data-delay-step="-50">−50 ms</button><button type="button" data-delay-step="50">+50 ms</button><button type="button" id="resetDelay">Restablecer</button></div>
       <p class="device-hint">Se guarda en este navegador y se aplica al instante. 0 ms para altavoces sin retraso. Ajusta la compensación en el dispositivo que reproduce el audio.</p>
       <a class="device-editor" id="timingEditorLink" href="timing-editor.html">Escuchar y ajustar la letra de esta canción</a>
+      <details class="song-adjustment"><summary>Ajuste rápido de esta canción</summary>
+        <p id="songTimingTitle">Elige una canción para ajustar su letra.</p>
+        <p class="device-hint">Indica cuándo entra la primera frase y cuándo termina la última. Las frases intermedias se acomodan dentro de ese tramo.</p>
+        <label for="songFirst">Primera frase, en segundos</label><input id="songFirst" type="number" min="0" step="0.1" disabled>
+        <button type="button" id="markFirst" disabled>Primera frase aquí</button>
+        <label for="songLast">Fin de la última frase, en segundos</label><input id="songLast" type="number" min="0" step="0.1" disabled>
+        <button type="button" id="markLast" disabled>Fin de letra aquí</button>
+        <button type="button" id="resetSongTiming" disabled>Restablecer esta canción</button>
+        <p id="songTimingMessage" class="device-hint" role="status">Se guarda en este navegador y solo afecta a esta canción.</p>
+      </details>
     </section>
     <section aria-labelledby="offlineTitle">
       <h3 id="offlineTitle">Usar sin internet</h3>
       <p id="offlineMessage" role="status">Comprobando los archivos guardados…</p>
       <progress id="offlineProgress" max="1" value="0" aria-label="Descarga para uso sin internet"></progress>
       <button type="button" id="retryOffline">Completar descarga</button>
+      <button type="button" id="applyUpdate" hidden>Aplicar actualización</button>
       <p class="device-hint">El punto verde confirma que están guardadas las páginas, imágenes, letras y todas las pistas disponibles. Mantén esta página abierta hasta que termine. Sin internet, el control de sala funciona entre pestañas de este navegador; otros dispositivos necesitan conexión.</p>
     </section>
   </dialog>`;
@@ -39,9 +51,9 @@ const retry = controls.querySelector("#retryOffline");
 const calibration = controls.querySelector("#calibrationAudio");
 const calibrationPlay = controls.querySelector("#calibrationPlay");
 const pulse = controls.querySelector("#calibrationPulse");
-let animation;
+let animation, calibrationDelay = getDelay();
 function drawCalibration() {
-  const time = lyricTime(calibration.currentTime);
+  const time = lyricTime(calibration.currentTime, calibrationDelay);
   const active = [2, 3, 4, 5, 6, 7].some(beat => time >= beat && time < beat + .12);
   pulse.classList.toggle("flash", active && !calibration.paused);
   controls.querySelector("#calibrationHint").textContent = active ? "¡Ahora!" : "Haz coincidir el pitido y el destello";
@@ -65,12 +77,14 @@ calibration.onpause = () => {
 };
 dialog.addEventListener("close", () => { calibration.pause(); calibration.currentTime = 0; });
 function reflectDelay() {
+  calibrationDelay = getDelay();
   slider.value = getDelay();
   output.value = `${Number(slider.value) > 0 ? "+" : ""}${slider.value} ms`;
   slider.setAttribute("aria-valuetext", output.value);
 }
 export function openDeviceMenu() {
   reflectDelay();
+  reflectSongTiming();
   const target = new URL("timing-editor.html", location.href);
   if (document.body.dataset.songId) target.searchParams.set("song", document.body.dataset.songId);
   controls.querySelector("#timingEditorLink").href = target.href;
@@ -87,6 +101,38 @@ for (const button of controls.querySelectorAll("[data-delay-step]")) button.oncl
 controls.querySelector("#resetDelay").onclick = () => { setDelay(0); reflectDelay(); };
 window.addEventListener("storage", event => { if (event.key === DELAY_KEY) reflectDelay(); });
 reflectDelay();
+function reflectSongTiming() {
+  const track = getActiveTrack(), value = getCalibration(track);
+  controls.querySelector("#songTimingTitle").textContent = track?.title || "Elige una canción para ajustar su letra.";
+  for (const id of ["songFirst", "songLast", "markFirst", "markLast", "resetSongTiming"]) controls.querySelector(`#${id}`).disabled = !track;
+  controls.querySelector("#songFirst").value = track ? (value?.first ?? track.first).toFixed(2) : "";
+  controls.querySelector("#songLast").value = track ? (value?.last ?? track.last).toFixed(2) : "";
+  controls.querySelector("#songFirst").max = track?.duration || 0;
+  controls.querySelector("#songLast").max = track?.duration || 0;
+}
+function applySongTiming() {
+  try {
+    saveCalibration(getActiveTrack(), Number(controls.querySelector("#songFirst").value), Number(controls.querySelector("#songLast").value));
+    controls.querySelector("#songTimingMessage").textContent = "Ajuste guardado y aplicado. Puedes restablecerlo en cualquier momento.";
+  } catch (error) { controls.querySelector("#songTimingMessage").textContent = error.message; }
+  reflectSongTiming();
+}
+for (const id of ["songFirst", "songLast"]) controls.querySelector(`#${id}`).onchange = applySongTiming;
+for (const [button, input] of [["markFirst", "songFirst"], ["markLast", "songLast"]]) controls.querySelector(`#${button}`).onclick = () => {
+  const audio = document.querySelector("#audio");
+  if (!audio || !getActiveTrack()) return;
+  controls.querySelector(`#${input}`).value = Math.max(0, audio.currentTime - getDelay() / 1000).toFixed(2);
+  applySongTiming();
+};
+controls.querySelector("#resetSongTiming").onclick = () => {
+  try {
+    resetCalibration(getActiveTrack()); reflectSongTiming();
+    controls.querySelector("#songTimingMessage").textContent = "Se recuperaron los tiempos originales de esta canción.";
+  } catch { controls.querySelector("#songTimingMessage").textContent = "No se pudo guardar el cambio en este navegador."; }
+};
+window.addEventListener("samay-active-track", reflectSongTiming);
+window.addEventListener("samay-track-calibration", reflectSongTiming);
+controls.querySelector("#applyUpdate").onclick = () => location.reload();
 retry.onclick = async () => {
   // Ask the browser to keep the downloaded files when it supports persistent storage.
   try { await navigator.storage?.persist?.(); } catch {}
@@ -96,7 +142,7 @@ const mb = bytes => `${(bytes / 1024 / 1024).toFixed(1)} MB`;
 onOfflineStatus(status => {
   const ready = status.state === "ready", downloading = status.state === "downloading";
   indicator.dataset.state = status.state;
-  let message = ready ? "Todo listo para usar sin internet." : downloading
+  let message = ready ? (status.updateAvailable ? "Descarga completa. Hay una actualización lista para aplicar." : "Todo listo para usar sin internet.") : downloading
     ? `Descargando: ${status.done} de ${status.total} archivos · ${mb(status.bytes)} de ${mb(status.totalBytes)}.`
     : status.message || "Comprobando los archivos guardados…";
   indicator.title = message;
@@ -106,4 +152,5 @@ onOfflineStatus(status => {
   progress.value = ready ? progress.max : status.bytes || 0;
   retry.disabled = downloading;
   retry.textContent = ready ? "Verificar descarga" : "Reintentar descarga";
+  controls.querySelector("#applyUpdate").hidden = !ready || !status.updateAvailable;
 });

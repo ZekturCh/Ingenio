@@ -83,10 +83,14 @@ además todas las pistas disponibles en segundo plano.
 
 Abrir la página una vez con internet mediante HTTPS (o localhost para desarrollo)
 y mantenerla abierta hasta que el punto de la esquina inferior derecha esté verde.
-La descarga actual ocupa aproximadamente 104 MB e incluye las cuatro pantallas,
+La descarga actual ocupa aproximadamente 94 MB e incluye las cuatro pantallas,
 imágenes, fuentes, letras, la prueba de sincronización y los 23 MP3 disponibles.
 El punto rojo parpadea durante la descarga; al tocarlo se ve el progreso o el error
 y se puede reintentar. Un archivo faltante impide confirmar el estado verde.
+Se guardan 120 recursos usados por la app, incluidas las licencias. Las imágenes
+de referencia y los respaldos que no usan las pantallas permanecen en el repositorio,
+sin ampliar la descarga offline. Una actualización lista se puede aplicar desde
+el menú sin borrar los MP3 ni las preferencias.
 
 La descarga verifica tamaño y SHA-256 de cada archivo. Si se interrumpe, conserva
 los archivos completos y continúa con los pendientes. Las actualizaciones reutilizan
@@ -118,6 +122,28 @@ pasos de 10 ms y botones de 50 ms. Se aplica al instante sin modificar el MP3 ni
 sus marcas, y se guarda en ese navegador. Restablecer vuelve a 0 ms.
 El ajuste es global para ese dispositivo; no corrige los tiempos aproximados de
 cada frase de las pistas pendientes de revisión.
+
+### Ajuste rápido por canción
+
+En el mismo menú, desplegar Ajuste rápido de esta canción. Primera frase aquí
+coloca la entrada inicial en el punto escuchado; Fin de letra aquí fija el final.
+También se pueden escribir los segundos. La app acomoda las frases intermedias
+dentro de ese tramo y conserva el Bluetooth global por separado. Este ajuste es
+aproximado: no identifica repeticiones ni corrige cada frase individual.
+
+Se guarda solo en el navegador y para esa canción. No modifica el TXT ni el JSON
+del repositorio. Restablecer esta canción elimina el ajuste local. Si cambia la
+duración o los extremos del archivo de letras publicado, el ajuste anterior se
+descarta para evitar aplicarlo sobre otra versión.
+
+### Rendimiento
+
+El reproductor deja de solicitar animaciones al pausarse, ocultarse o volver al
+selector. Mientras reproduce, actualiza el barrido hasta 30 veces por segundo y
+evita consultar el almacenamiento o buscar nodos del DOM en cada cuadro. Las
+letras se reutilizan al cambiar de canción y volver. El audio offline usa trozos
+de Blob y conserva como máximo dos pistas recientes para resolver avances sin
+crear un ArrayBuffer completo en cada solicitud Range.
 
 La prueba se puede regenerar con
 `node karaoke-bcp/scripts/generate-calibration.cjs`; después regenerar el manifiesto.

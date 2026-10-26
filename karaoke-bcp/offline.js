@@ -1,8 +1,10 @@
 let registration;
 let latest = { state: "checking", done: 0, total: 0, bytes: 0, totalBytes: 0 };
 const listeners = new Set();
+const pageBuild = document.querySelector('meta[name="karaoke-build"]')?.content;
 
 function emit(status) {
+  status = { ...status, updateAvailable: Boolean(pageBuild && status.version && pageBuild !== status.version) };
   latest = status;
   for (const listener of listeners) listener(status);
 }

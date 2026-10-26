@@ -1,9 +1,14 @@
 import { SONGS, roomFromUrl, subscribeRoom, sendCommand, getSong, getVersion, controllerUrl } from "./shared.js?v=20261025-3";
 import { icons, loadFavorites, toggleFavorite, toggleFullscreen } from "./ui.js";
-import { lyricTime, DELAY_KEY } from "./audio-settings.js";
+import { getDelay, lyricTime, DELAY_KEY } from "./audio-settings.js";
+import { getCalibration, setActiveTrack, calibratedTime } from "./track-timing.js";
 
 export function mountPlayer(root = document, { embedded = false, onBack } = {}) {
-const $ = (selector) => root.querySelector(selector);
+const nodes = new Map();
+const $ = (selector) => {
+  if (!nodes.has(selector)) nodes.set(selector, root.querySelector(selector));
+  return nodes.get(selector);
+};
 const room = roomFromUrl(), audio = $("#audio"), stage = $("#stage");
 $("#roomCode").textContent = room;
 $("#backBtn").href = controllerUrl(room);
@@ -11,6 +16,9 @@ let unlocked = false, pending = null, activeState = null, activeSong = null, act
 let lyricData = [], lastCommand = "stop", commandToken = 0, shuffle = false, seeking = false, ended = false;
 let lineIndex = -2;
 let visible = !embedded;
+let delay = getDelay(), timing = null, calibration = null;
+let paintFrame = 0, lastPaint = 0, lastPercent = -1, lastElapsed = "", lastDuration = "";
+const lyricCache = new Map();
 if (onBack) $("#backBtn").onclick = (event) => { event.preventDefault(); onBack(); };
 
 const mmss = (value) => {
@@ -27,7 +35,11 @@ function setSync(mode) {
   $("#syncState").textContent = mode === "online" ? "Sala en línea" : "Sala local";
   $("#playerDot").className = `dot ${mode === "online" ? "online" : "local"}`;
 }
-async function loadLyrics(song) {
+function loadLyrics(song) {
+  if (!lyricCache.has(song.id)) lyricCache.set(song.id, fetchLyrics(song));
+  return lyricCache.get(song.id);
+}
+async function fetchLyrics(song) {
   const urls = song.lyrics ? [song.lyrics] : [`songs/${song.id}/lyrics-timed.json`, `songs/${song.id}/lyrics-template.json`];
   for (const url of urls) {
     try {
@@ -40,6 +52,7 @@ async function loadLyrics(song) {
       return lines.map((line, index) => ({ ...line, end: Number(line.end ?? lines[index + 1]?.start ?? line.start + 2.4) }));
     } catch {}
   }
+  lyricCache.delete(song.id);
   return [];
 }
 function updateFavorite() {
@@ -61,9 +74,14 @@ function renderSong() {
   updateFavorite();
 }
 function renderLyrics(time) {
-  time = lyricTime(time);
-  let index = -1;
-  for (let i = 0; i < lyricData.length; i++) { if (lyricData[i].start <= time) index = i; else break; }
+  time = calibratedTime(lyricTime(time, delay), timing, calibration);
+  let low = 0, high = lyricData.length;
+  while (low < high) {
+    const middle = (low + high) >>> 1;
+    if (lyricData[middle].start <= time) low = middle + 1;
+    else high = middle;
+  }
+  const index = low - 1;
   const candidate = lyricData[index];
   const line = candidate && time < candidate.end ? candidate : null;
   const displayKey = line ? index : `gap-${index}`;
@@ -86,11 +104,16 @@ function updateProgress() {
   const { start, span } = bounds();
   const position = Math.min(span, Math.max(0, audio.currentTime - start));
   if (!seeking) {
-    $("#seek").value = position / span * 100;
-    $("#seek").style.setProperty("--progress", `${position / span * 100}%`);
+    const percent = Math.round(position / span * 1000) / 10;
+    if (percent !== lastPercent) {
+      lastPercent = percent;
+      $("#seek").value = percent;
+      $("#seek").style.setProperty("--progress", `${percent}%`);
+    }
   }
-  $("#elapsed").textContent = mmss(position);
-  $("#remaining").textContent = mmss(span);
+  const elapsed = mmss(position), duration = mmss(span);
+  if (elapsed !== lastElapsed) { $("#elapsed").textContent = elapsed; lastElapsed = elapsed; }
+  if (duration !== lastDuration) { $("#remaining").textContent = duration; lastDuration = duration; }
   renderLyrics(audio.currentTime);
 }
 function selectState(state) {
@@ -102,9 +125,15 @@ function selectState(state) {
   if (changedSong) {
     audio.pause();
     if (audio.src !== new URL(song.audio, location.href).href) audio.src = song.audio;
-    lyricData = []; lineIndex = -2;
+    lyricData = []; lineIndex = -2; timing = null; calibration = null;
+    setActiveTrack(null);
     loadLyrics(song).then((lines) => {
-      if (activeSong?.id === song.id) { lyricData = lines; lineIndex = -2; updateProgress(); }
+      if (activeSong?.id === song.id) {
+        lyricData = lines; lineIndex = -2;
+        timing = lines.length ? { id: song.id, title: song.title, duration: song.durationSeconds,
+          first: lines[0].start, last: lines[lines.length - 1].end } : null;
+        calibration = getCalibration(timing); setActiveTrack(timing); updateProgress();
+      }
     });
   }
   if (changed) { ended = false; renderSong(); }
@@ -142,19 +171,31 @@ function receive(state) {
 }
 
 audio.addEventListener("timeupdate", () => {
-  updateProgress();
+  if (visible && !document.hidden) updateProgress();
   if (activeVersion && !audio.paused && audio.currentTime >= bounds().end - .04) {
     audio.pause(); ended = true; setState("Finalizado");
     if (shuffle) nextSong(1);
   }
 });
-audio.addEventListener("play", () => { stage.classList.remove("paused"); $("#playBtn").setAttribute("aria-label", "Pausar"); $("#playBtn").title = "Pausar"; });
-audio.addEventListener("pause", () => { stage.classList.add("paused"); $("#playBtn").setAttribute("aria-label", "Reproducir"); $("#playBtn").title = "Reproducir"; });
+audio.addEventListener("play", () => { stage.classList.remove("paused"); $("#playBtn").setAttribute("aria-label", "Pausar"); $("#playBtn").title = "Pausar"; startPainting(); });
+audio.addEventListener("pause", () => { stage.classList.add("paused"); $("#playBtn").setAttribute("aria-label", "Reproducir"); $("#playBtn").title = "Reproducir"; stopPainting(); });
 audio.addEventListener("ended", () => { ended = true; setState("Finalizado"); stage.classList.add("paused"); if (shuffle) nextSong(1); });
 audio.addEventListener("error", () => { setState("Audio no disponible"); });
-// Paint against the audio clock, including seeks, pauses and resumed playback.
-function paint() { if (!audio.paused && activeVersion) updateProgress(); requestAnimationFrame(paint); }
-requestAnimationFrame(paint);
+// No animation loop while paused, hidden or showing the song selector.
+function paint(now) {
+  paintFrame = 0;
+  if (!visible || audio.paused || document.hidden) return;
+  if (now - lastPaint >= 1000 / 30) { updateProgress(); lastPaint = now; }
+  paintFrame = requestAnimationFrame(paint);
+}
+function startPainting() {
+  if (!paintFrame && visible && !audio.paused && !document.hidden) paintFrame = requestAnimationFrame(paint);
+}
+function stopPainting() { cancelAnimationFrame(paintFrame); paintFrame = 0; }
+document.addEventListener("visibilitychange", () => {
+  if (document.hidden) stopPainting();
+  else { updateProgress(); startPainting(); }
+});
 
 function fitLyrics() {
   const panel = $(".lyricPanel"), lyrics = $("#lyrics");
@@ -171,9 +212,12 @@ function fitLyrics() {
   }
 }
 new ResizeObserver(fitLyrics).observe($(".lyricPanel"));
-const refreshDelay = () => { lineIndex = -2; updateProgress(); };
+const refreshDelay = () => { delay = getDelay(); lineIndex = -2; updateProgress(); };
 window.addEventListener("samay-delay-change", refreshDelay);
 window.addEventListener("storage", event => { if (event.key === DELAY_KEY) refreshDelay(); });
+window.addEventListener("samay-track-calibration", () => {
+  calibration = getCalibration(timing); lineIndex = -2; updateProgress();
+});
 document.fonts.ready.then(fitLyrics);
 document.fonts.addEventListener("loadingdone", fitLyrics);
 
@@ -242,9 +286,9 @@ return {
     execute(state).catch(() => setState("No se pudo cargar la canción"));
   },
   hide() {
-    visible = false; ++commandToken; audio.pause(); lastCommand = "pause";
+    visible = false; ++commandToken; audio.pause(); stopPainting(); lastCommand = "pause";
     return activeState;
   },
-  show() { visible = true; fitLyrics(); },
+  show() { visible = true; fitLyrics(); updateProgress(); startPainting(); },
 };
 }

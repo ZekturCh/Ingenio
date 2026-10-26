@@ -1,0 +1,70 @@
+const {chromium}=require('playwright');
+const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');
+async function main(){
+ const source=fs.readFileSync(path.resolve(__dirname,'../track-timing.js')).toString('base64');
+ const {normalizeCalibration,calibratedTime}=await import('data:text/javascript;base64,'+source);
+ const track={id:'test',duration:100,first:5,last:95};
+ const value=normalizeCalibration(track,{first:15,last:85,signature:'100|5|95'});
+ assert.equal(calibratedTime(15,track,value),5);
+ assert.equal(calibratedTime(85,track,value),95);
+ assert.equal(calibratedTime(50,track,value),50);
+ for(const v of [{first:90,last:10},{first:-1,last:99},{first:2,last:101},{first:NaN,last:95}]) assert.equal(normalizeCalibration(track,{...v,signature:'100|5|95'}),null);
+ assert.equal(normalizeCalibration(track,{first:15,last:85,signature:'old'}),null);
+ assert.equal(normalizeCalibration(track,{first:15,last:100.005,signature:'100|5|95'}).last,100);
+ const browser=await chromium.launch({channel:process.env.PLAYWRIGHT_CHANNEL||'chrome',headless:true});
+ try{
+  const context=await browser.newContext({serviceWorkers:'block'});
+  await context.route('https://www.gstatic.com/**',r=>r.abort());
+  await context.addInitScript(()=>{
+   window.__performanceProbe={frames:0,delayReads:0};
+   const frame=window.requestAnimationFrame.bind(window),get=Storage.prototype.getItem;
+   window.requestAnimationFrame=callback=>frame(time=>{window.__performanceProbe.frames++;callback(time);});
+   Storage.prototype.getItem=function(key){if(key==='samay-karaoke-bluetooth-delay-ms')window.__performanceProbe.delayReads++;return get.call(this,key);};
+  });
+  const page=await context.newPage(),errors=[];let hymnRequests=0;
+  page.on('pageerror',e=>errors.push(e.message));
+  page.on('request',r=>{if(r.url().includes('himno-peru/lyrics-timed.json'))hymnRequests++;});
+  const base=process.env.KARAOKE_BASE_URL||'http://127.0.0.1:5181/karaoke-bcp/';
+  await page.goto(base+'?room=OPTIMIZATION_TEST');
+  await page.locator('#audio').waitFor({state:'attached'});
+  const idle=await page.evaluate(()=>window.__performanceProbe.frames);
+  await page.waitForTimeout(300);
+  assert.equal(await page.evaluate(()=>window.__performanceProbe.frames),idle,'player must not animate while idle');
+  async function select(id){await page.locator('[data-song="'+id+'"]').click();await page.locator('[data-version="full"]').click();await page.waitForFunction(()=>!document.querySelector('#songFirst').disabled);}
+  await select('himno-peru');
+  const reads=await page.evaluate(()=>window.__performanceProbe.delayReads);
+  await page.waitForTimeout(350);
+  assert.equal(await page.evaluate(()=>window.__performanceProbe.delayReads),reads,'playback must not read localStorage every frame');
+  await page.locator('#audio').evaluate(a=>a.pause());
+  const paused=await page.evaluate(()=>window.__performanceProbe.frames);
+  await page.waitForTimeout(200);
+  assert.equal(await page.evaluate(()=>window.__performanceProbe.frames),paused);
+  await page.locator('.device-open').click();
+  await page.locator('.song-adjustment summary').click();
+  await page.locator('#songFirst').fill('10');await page.locator('#songFirst').dispatchEvent('change');
+  await page.locator('#songLast').fill('150');await page.locator('#songLast').dispatchEvent('change');
+  await page.locator('.device-close').click();
+  await page.locator('#audio').evaluate(a=>{a.currentTime=9;a.dispatchEvent(new Event('timeupdate'));});
+  assert.equal(await page.locator('#currentBase').textContent(),'♪');
+  await page.locator('#audio').evaluate(a=>{a.currentTime=10.5;a.dispatchEvent(new Event('timeupdate'));});
+  assert.equal(await page.locator('#currentBase').textContent(),'Somos libres,');
+  await page.locator('#backBtn').click();await select('la-flor-de-la-canela');
+  await page.locator('.device-open').click();
+  assert.equal(await page.locator('#songFirst').inputValue(),'26.84','adjustment must not leak to another song');
+  await page.locator('.device-close').click();await page.locator('#backBtn').click();await select('himno-peru');
+  assert.equal(hymnRequests,1,'revisiting a song should reuse its lyrics');
+  await page.reload();await select('himno-peru');
+  await page.locator('.device-open').click();
+  assert.equal(await page.locator('#songFirst').inputValue(),'10.00');
+  await page.locator('.song-adjustment summary').click();
+  await page.locator('#resetSongTiming').click();
+  assert.equal(await page.locator('#songFirst').inputValue(),'4.58');
+  await page.locator('.device-close').click();
+  await page.evaluate(()=>navigator.serviceWorker.dispatchEvent(new MessageEvent('message',{data:{type:'OFFLINE_STATUS',status:{state:'ready',version:'new-build',totalBytes:1}}})));
+  await page.locator('.device-open').click();
+  assert.equal(await page.locator('#applyUpdate').isVisible(),true);
+  assert.deepEqual(errors,[]);
+  console.log('Optimizations: idle loops stopped, no per-frame storage reads, lyric reuse, per-song timing persistence and update notice passed.');
+ }finally{await browser.close();}
+}
+main().catch(e=>{console.error(e);process.exitCode=1;});

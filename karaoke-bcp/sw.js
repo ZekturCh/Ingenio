@@ -1,14 +1,16 @@
-const VERSION = "0d1076f9c41a3af76569";
+const VERSION = "c7cfaf1e0a707a55f0e2";
 const PREFIX = `samay-karaoke-${self.registration.scope}-`;
 const CACHE = PREFIX + VERSION;
 const manifestURL = new URL("offline-assets.json", self.registration.scope).href;
 let job = null;
 let lastStatus = null;
+const mediaBlobs = new Map();
 
 self.addEventListener("install", event => event.waitUntil(self.skipWaiting()));
 self.addEventListener("activate", event => event.waitUntil(self.clients.claim()));
 
 async function broadcast(status) {
+  status = { ...status, version: VERSION };
   lastStatus = status;
   const clients = await self.clients.matchAll({ includeUncontrolled: true });
   for (const client of clients) client.postMessage({ type: "OFFLINE_STATUS", status });
@@ -121,11 +123,11 @@ async function fromCache(url) {
   }
 }
 
-async function partial(response, range) {
-  const body = await response.arrayBuffer(), size = body.byteLength;
+async function partial(response, range, url) {
+  const size = Number(response.headers.get("Content-Length"));
   const match = /^bytes=(\d*)-(\d*)$/.exec(range);
   // An unsupported multi-range header can be ignored with a full 200 response.
-  if (!match) return new Response(body, { status: 200, headers: response.headers });
+  if (!match) return response;
   let start = match[1] ? Number(match[1]) : Math.max(0, size - Number(match[2]));
   let end = match[1] && match[2] ? Math.min(Number(match[2]), size - 1) : size - 1;
   if ((!match[1] && !match[2]) || !Number.isSafeInteger(start) || !Number.isSafeInteger(end) || start > end || start >= size) {
@@ -135,6 +137,12 @@ async function partial(response, range) {
   headers.set("Content-Range", `bytes ${start}-${end}/${size}`);
   headers.set("Content-Length", end - start + 1);
   headers.set("Accept-Ranges", "bytes");
+  let body = mediaBlobs.get(url);
+  if (!body) {
+    body = await response.blob();
+    mediaBlobs.set(url,body);
+    if (mediaBlobs.size > 2) mediaBlobs.delete(mediaBlobs.keys().next().value);
+  } else { mediaBlobs.delete(url); mediaBlobs.set(url,body); }
   return new Response(body.slice(start, end + 1), { status: 206, headers });
 }
 
@@ -145,6 +153,6 @@ self.addEventListener("fetch", event => {
     const cached = await fromCache(canonical(request));
     if (!cached) return fetch(request);
     if (request.method === "HEAD") return new Response(null, { status: cached.status, headers: cached.headers });
-    return request.headers.has("Range") ? partial(cached, request.headers.get("Range")) : cached;
+    return request.headers.has("Range") ? partial(cached, request.headers.get("Range"), canonical(request)) : cached;
   })());
 });

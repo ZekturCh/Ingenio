@@ -6,5 +6,7 @@
 *.txt text eol=lf
 *.svg text eol=lf
 *.md text eol=lf
+*LICENSE* text eol=lf
+*OFL* text eol=lf
 *.mp3 -text
 *.wav -text

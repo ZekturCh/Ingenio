@@ -28,5 +28,9 @@
 .calibration-pulse.flash{background:#fdf3a2;color:#226d28;border-color:#fff;box-shadow:0 0 16px #fff5a5}
 .calibration-play{width:100%;min-height:44px;margin:8px 0;border:1px solid #a56c3c;border-radius:8px;color:#42230c;background:#ffdc9e;font-weight:700!important}
 .device-editor{display:block;min-height:44px;padding:10px 0;color:#6e350f;font-weight:700;text-underline-offset:3px}
+.song-adjustment{border-top:1px solid #b88f6455;padding-top:12px}
+.song-adjustment summary{min-height:44px;cursor:pointer;font-weight:700}
+.song-adjustment input{display:block;width:100%;min-height:44px;margin:4px 0 8px;border:1px solid #a56c3c;border-radius:6px;padding:8px;font:inherit;background:#fff;color:#311b0d}
+.song-adjustment button,#applyUpdate{min-height:44px;margin:0 4px 10px 0;border:1px solid #a56c3c;border-radius:8px;padding:8px 12px;color:#42230c;background:#ffdc9e;font-weight:700}
 .device-controls button:focus-visible,.device-dialog input:focus-visible{outline:3px solid #0068ac;outline-offset:2px}
 @media(prefers-reduced-motion:reduce){.offline-indicator[data-state="downloading"] span{animation:none}}
