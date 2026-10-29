@@ -307,6 +307,9 @@ svg{width:28px;height:28px;flex:none;stroke-width:2.5}
 .stage .lyricWord{background:linear-gradient(to right,#d94b00 var(--word-fill,0%),#26211c var(--word-fill,0%));background-clip:text;-webkit-background-clip:text;color:transparent}
 .stage .lyricContext{font-weight:600;color:#51483f}
 .stage .lyricContext.previous{font-weight:400;color:#6d6257}
+.stage.preparing .currentBase{color:#d94b00;font-variant-numeric:tabular-nums}
+.stage.preparing .lyrics #next{display:block;font-weight:800;color:#26211c}
+.stage.preparing #prev,.stage.preparing #next2,.stage.preparing #next3{display:none}
 @media(max-height:1200px){
   .stage{--brand-row:180px;--wordmark-width:340px;--samay-width:120px;--brand-overlap:44px;grid-template-rows:56px var(--brand-row) minmax(0,1fr) 64px}
   .stage .playerBrand{gap:6px}

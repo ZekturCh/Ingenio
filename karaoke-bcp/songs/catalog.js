@@ -145,7 +145,7 @@ function withChorus(song) {
   const seconds = Math.floor(window.endAt - window.startAt);
   return { ...song, versions: [{ id: "chorus", label: "Coro", ...window,
     durationLabel: `${Math.floor(seconds / 60)}:${String(seconds % 60).padStart(2, "0")}`,
-    reviewRequired: song.lyricsStatus !== "timed", note: "Fragmento central" }, ...song.versions] };
+    reviewRequired: song.lyricsStatus !== "timed", note: "Fragmento central · 5 s de preparación" }, ...song.versions] };
 }
 // END GENERATED CHORUSES
 

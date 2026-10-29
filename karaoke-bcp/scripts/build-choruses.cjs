@@ -26,7 +26,7 @@ function withChorus(song) {
   const seconds = Math.floor(window.endAt - window.startAt);
   return { ...song, versions: [{ id: "chorus", label: "Coro", ...window,
     durationLabel: \x60\x24{Math.floor(seconds / 60)}:\x24{String(seconds % 60).padStart(2, "0")}\x60,
-    reviewRequired: song.lyricsStatus !== "timed", note: "Fragmento central" }, ...song.versions] };
+    reviewRequired: song.lyricsStatus !== "timed", note: "Fragmento central · 5 s de preparación" }, ...song.versions] };
 }
 // END GENERATED CHORUSES\n\n`;
 source = source.replace(/\/\/ BEGIN GENERATED CHORUSES[\s\S]*?\/\/ END GENERATED CHORUSES\n\n/, '');

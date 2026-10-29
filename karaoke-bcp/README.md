@@ -1,5 +1,13 @@
 # Hallowow Criollazo
 
+Todos los coros reproducen los cinco segundos anteriores al fragmento para preparar
+al cantante. Se muestra 5, 4, 3, 2, 1 en Flexo y la primera frase debajo desde el
+inicio. La cuenta usa el mismo reloj compensado por Bluetooth que el pintado.
+El contador de la canción permanece en cero durante la preparación; la duración
+mostrada corresponde al coro. Pausar conserva la cuenta y reiniciar la repite.
+Las versiones completas mantienen su inicio original. El módulo de preparación
+se incluye automáticamente en la descarga offline.
+
 ## Estimacion completa autorizada
 
 Las 24 grabaciones con voz tienen ahora una marca para cada frase de su TXT.

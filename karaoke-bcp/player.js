@@ -1,8 +1,9 @@
-import { SONGS, roomFromUrl, subscribeRoom, sendCommand, getSong, getVersion, controllerUrl } from "./shared.js?v=20261029-5";
+import { SONGS, roomFromUrl, subscribeRoom, sendCommand, getSong, getVersion, controllerUrl } from "./shared.js?v=20261029-6";
 import { icons, loadFavorites, toggleFavorite, toggleFullscreen } from "./ui.js";
 import { getDelay, lyricTime, heardPosition, DELAY_KEY } from "./audio-settings.js";
 import { getCalibration, setActiveTrack, calibratedTime } from "./track-timing.js";
 import { cueProgress, lyricParts } from "./lyric-progress.js";
+import { preparationStart, preparationCount } from "./chorus-preparation.js";
 
 export function mountPlayer(root = document, { embedded = false, onBack } = {}) {
 const nodes = new Map();
@@ -30,7 +31,7 @@ const mmss = (value) => {
 function bounds() {
   const start = Number(activeState?.startAt ?? activeVersion?.startAt ?? 0);
   const end = Number(activeState?.endAt ?? activeVersion?.endAt ?? 0);
-  return { start, end, span: Math.max(0.1, end - start) };
+  return { start, end, span: Math.max(0.1, end - start), playbackStart: preparationStart(start, activeVersion?.id) };
 }
 function setState(message) { $("#playerState").textContent = message; }
 function resetFinish() {
@@ -99,7 +100,27 @@ function renderSong() {
   updateFavorite();
 }
 function renderLyrics(time) {
-  time = calibratedTime(lyricTime(time, delay), timing, calibration);
+  const heardTime = lyricTime(time, delay);
+  const preparation = preparationCount(heardTime, bounds().start, activeVersion?.id);
+  stage.classList.toggle("preparing", preparation > 0);
+  if (preparation) {
+    const { start, end } = bounds();
+    const first = lyricData.find(cue => cue.end > start && cue.start < end);
+    const key = `preparation-${preparation}-${first?.text || ""}`;
+    if (lineIndex !== key) {
+      lineIndex = key; wordNodes = [];
+      $("#kicker").textContent = "Prepárate para cantar";
+      $("#currentBase").textContent = String(preparation);
+      $("#currentFill").hidden = true;
+      $("#prev").textContent = "";
+      $("#next").textContent = first?.text || "Prepárate para cantar";
+      $("#next2").textContent = ""; $("#next3").textContent = "";
+      fitLyrics();
+    }
+    return;
+  }
+  $("#kicker").textContent = "Ahora canta";
+  time = calibratedTime(heardTime, timing, calibration);
   let low = 0, high = lyricData.length;
   while (low < high) {
     const middle = (low + high) >>> 1;
@@ -205,17 +226,17 @@ async function execute(state) {
   const token = ++commandToken;
   const changed = selectState(state);
   if (changed === null || token !== commandToken) return;
-  const { start, end } = bounds(), command = state.command || "load";
+  const { playbackStart, end } = bounds(), command = state.command || "load";
   if (command === "load" || command === "stop") {
     resetFinish();
-    audio.pause(); audio.currentTime = start; ended = false;
+    audio.pause(); audio.currentTime = playbackStart; ended = false;
     setState(command === "load" ? "Canción lista" : "Detenido");
   } else if (command === "pause") {
     resetFinish();
     audio.pause(); setState("Pausa");
   } else if (command === "restart" || command === "play") {
     resetFinish();
-    if (command === "restart" || changed || lastCommand === "stop" || ended || audio.currentTime < start || audio.currentTime >= end - .05) audio.currentTime = start;
+    if (command === "restart" || changed || lastCommand === "stop" || ended || audio.currentTime < playbackStart || audio.currentTime >= end - .05) audio.currentTime = playbackStart;
     updateProgress();
     await playAudio(token);
   }
@@ -302,7 +323,7 @@ $("#playBtn").onclick = () => {
 function nextSong(direction) {
   const available = SONGS.filter((song) => song.enabled && song.versions.length);
   if (!activeSong || !available.length) return;
-  if (direction < 0 && audio.currentTime - bounds().start > 3) {
+  if (direction < 0 && audio.currentTime - bounds().playbackStart > 3) {
     sendCommand(room, { ...activeState, command: "restart" }).catch(() => setState("No se pudo sincronizar la sala"));
     return;
   }

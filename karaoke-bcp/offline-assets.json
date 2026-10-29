@@ -1,6 +1,6 @@
 {
-  "version": "777fe7e01ffd3319a75d",
-  "totalBytes": 124885974,
+  "version": "a24a21b7a791a2201b6d",
+  "totalBytes": 124887680,
   "assets": [
     {
       "url": "../Logo%20Samay.png",
@@ -10,7 +10,7 @@
     {
       "url": "admin.html",
       "size": 5605,
-      "sha256": "185873a550ce23d6839e75e991fff6e60f3a2ec2fa9b5c5ac2df4251b3df522d"
+      "sha256": "41de589e670221858d14815327dd6ca496f3de97fa4d91f71db501842b97e013"
     },
     {
       "url": "assets/audio/bluetooth-calibration.wav",
@@ -173,9 +173,14 @@
       "sha256": "3df4d0720744e7f466d29652e48d88e172cdaf3c8369fe7e7f8c7f84b830d873"
     },
     {
+      "url": "chorus-preparation.js",
+      "size": 408,
+      "sha256": "1afe958aa0771435aa0b19c86da46725279eb5220f1bd5b788ed35d890342928"
+    },
+    {
       "url": "controller.js",
       "size": 7103,
-      "sha256": "ea426f4a451da23cb832752cc50cec7b0c0f686c9a1d6ad62980e9126c8a98c4"
+      "sha256": "86d2b18eb81f6263c5bf89ccc723a364c0fa8edcfd099d04c960db95597ff6e1"
     },
     {
       "url": "device-menu.css",
@@ -190,12 +195,12 @@
     {
       "url": "index.html",
       "size": 3099,
-      "sha256": "9dcbb301a4a8c26e89ef5871cfa7076bf8ad03602c2af9abc881415826915041"
+      "sha256": "60f3ac281e119ed0cbc3e10c295610865c61c8a5df2cb99064236d31b49fd4b9"
     },
     {
       "url": "karaoke.css",
-      "size": 29146,
-      "sha256": "c4d68ad7829f34a770f99a98d3b32645c415cc3f48f15e73f0d60c31f0872df1"
+      "size": 29386,
+      "sha256": "bbbb68ff7d5e59ae1d95267f34b4c58ba63be3459d04ea34897aeee909a0f925"
     },
     {
       "url": "lyric-progress.js",
@@ -215,22 +220,22 @@
     {
       "url": "player-entry.js",
       "size": 72,
-      "sha256": "180bd61b24750e9e0d9d6f5afdf5d9346c31fb8ddc77dd93549c391698c1d649"
+      "sha256": "e2ca1eb6148bd4d0f21167a9318da8399762f0f792cf322950b3a3cc5fff23a4"
     },
     {
       "url": "player.html",
       "size": 4765,
-      "sha256": "627ec10b02eac0752d76b20fac084c365b4e3fb1201ae44313613d8f2ce4a999"
+      "sha256": "bc7beacf728f97857db5b9399f4a5ba7c1600cda3b1cd4c336f35be940499601"
     },
     {
       "url": "player.js",
-      "size": 16546,
-      "sha256": "1f0aaa4c025e5c9478639468b33cba35d2d9ce8560fd1c43ff33deabc8ac13d9"
+      "size": 17581,
+      "sha256": "ea8b2e815e44146d1e52ec2f5c0d2667ac1bfe45c3a91f5a36ad2868dea261c2"
     },
     {
       "url": "shared.js",
       "size": 5369,
-      "sha256": "c00b6d0581463524f781fec5f6aad1c52b95f8b6038634f4dd58dbbf91207010"
+      "sha256": "3f1218beb365e7ad35988c223c0e647a620a85348c84d25048e778cb396844d7"
     },
     {
       "url": "songs/a-quien-le-importa/audio.mp3",
@@ -294,8 +299,8 @@
     },
     {
       "url": "songs/catalog.js",
-      "size": 7469,
-      "sha256": "a6754fc34b7acbe89c0cc2fe4d1d764fec430d010da0023d2320f2b67b1c9cb1"
+      "size": 7492,
+      "sha256": "dc421add870b7055304d99bbe91edf82f61d8550afa7299bea9d609796681a4a"
     },
     {
       "url": "songs/contigo-peru/audio.mp3",
@@ -665,12 +670,12 @@
     {
       "url": "timing-editor.html",
       "size": 3355,
-      "sha256": "9988e4c54d76459a5ef49b2086bbdd4943cab90a7205c40d65008dce6d5f57fa"
+      "sha256": "97652711c42a160197d8b5b39773acabb0545886c43ae788533620696593c04e"
     },
     {
       "url": "timing-editor.js",
       "size": 11040,
-      "sha256": "7f223863c10286cd78b9e24c37e8a3300090ed4f2c68bb2b44b7ffdea24bc390"
+      "sha256": "2f762ff6c13989d65bce4d42836dd8b1d1d25eff84bdf0bc93c2366e427075af"
     },
     {
       "url": "track-timing.js",
