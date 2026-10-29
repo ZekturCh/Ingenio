@@ -3,10 +3,13 @@ import { onOfflineStatus, downloadOffline } from "./offline.js";
 import { getActiveTrack, getCalibration, saveCalibration, resetCalibration } from "./track-timing.js";
 
 const controls = document.createElement("div");
+const publicView = document.body.matches('.controller-page,.player-page') && new URLSearchParams(location.search).get('settings') !== '1';
+let updateReady = false;
+let retryTimer = 0, retries = 0;
 controls.className = "device-controls";
 controls.innerHTML = `
   <button class="device-open" type="button" aria-label="Abrir ajustes de audio y descarga" title="Audio y descarga">⚙</button>
-  <button class="offline-indicator" data-state="checking" type="button" aria-label="Comprobando descarga sin conexión" title="Comprobando descarga sin conexión"><span aria-hidden="true"></span></button>
+  <span class="offline-indicator" data-state="checking" role="status" aria-label="Comprobando descarga sin conexión" title="Comprobando descarga sin conexión"><span aria-hidden="true"></span></span>
   <dialog class="device-dialog" aria-labelledby="deviceTitle">
     <div class="device-heading"><h2 id="deviceTitle">Audio y descarga</h2><button class="device-close" type="button" aria-label="Cerrar ajustes">×</button></div>
     <section aria-labelledby="bluetoothTitle">
@@ -90,8 +93,8 @@ export function openDeviceMenu() {
   controls.querySelector("#timingEditorLink").href = target.href;
   if (!dialog.open) dialog.showModal();
 }
+controls.querySelector(".device-open").hidden = publicView;
 controls.querySelector(".device-open").onclick = openDeviceMenu;
-indicator.onclick = openDeviceMenu;
 document.addEventListener("click", event => { if (event.target.closest("[data-device-settings]")) openDeviceMenu(); });
 controls.querySelector(".device-close").onclick = () => { calibration.pause(); dialog.close(); };
 slider.oninput = () => { setDelay(slider.value); reflectDelay(); };
@@ -139,6 +142,12 @@ retry.onclick = async () => {
   downloadOffline();
 };
 const mb = bytes => `${(bytes / 1024 / 1024).toFixed(1)} MB`;
+function applyPublicUpdate() {
+  if (publicView && updateReady && !document.hidden && document.querySelector('#selectorView:not([hidden])') && !document.querySelector('dialog[open]')) location.reload();
+}
+window.addEventListener('popstate', () => queueMicrotask(applyPublicUpdate));
+document.addEventListener('visibilitychange', applyPublicUpdate);
+document.addEventListener('close', () => queueMicrotask(applyPublicUpdate), true);
 onOfflineStatus(status => {
   const ready = status.state === "ready", downloading = status.state === "downloading";
   indicator.dataset.state = status.state;
@@ -153,4 +162,10 @@ onOfflineStatus(status => {
   retry.disabled = downloading;
   retry.textContent = ready ? "Verificar descarga" : "Reintentar descarga";
   controls.querySelector("#applyUpdate").hidden = !ready || !status.updateAvailable;
+  updateReady = ready && status.updateAvailable;
+  if (ready) { clearTimeout(retryTimer); retryTimer = 0; retries = 0; }
+  else if (publicView && status.state === 'error' && navigator.onLine && !retryTimer && retries < 3) {
+    retryTimer = setTimeout(() => { retryTimer = 0; downloadOffline(); }, 30000 * ++retries);
+  }
+  applyPublicUpdate();
 });

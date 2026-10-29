@@ -33,7 +33,7 @@ async function main(){
   const download=page.waitForEvent('download');
   await page.locator('#export').click();
   assert.equal((await download).suggestedFilename(),'lyrics-timed.json');
-  await page.goto(base+'?room=TIMING_TEST');
+  await page.goto(base+'?room=TIMING_TEST&settings=1');
   await page.locator('[data-song="himno-peru"]').click();
   await page.locator('[data-version="full"]').click();
   await page.locator('#audio').evaluate(a=>{a.pause();a.currentTime=2;a.dispatchEvent(new Event('timeupdate'));});

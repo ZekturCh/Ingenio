@@ -6,20 +6,20 @@
   <meta name="theme-color" content="#ff6b19">
   <title>Hallowow Criollazo | Karaoke</title>
   <link rel="stylesheet" href="./assets/fonts/flexo/flexo.css?v=20261023-1">
-  <link rel="stylesheet" href="./karaoke.css?v=20261029-1">
+  <link rel="stylesheet" href="./karaoke.css?v=20261029-2">
   <script src="./assets/vendor/lucide.min.js" defer></script>
-  <script type="module" src="./player-entry.js?v=20261029-1"></script>
+  <script type="module" src="./player-entry.js?v=20261029-2"></script>
   <link rel="stylesheet" href="./device-menu.css?v=20261025-1">
-  <script type="module" src="./device-menu.js?v=20261025-1"></script>
-  <meta name="karaoke-build" content="601b10f7323516ff2d0d">
+  <script type="module" src="./device-menu.js?v=20261029-2"></script>
+  <meta name="karaoke-build" content="6597717212e11b2c1c2f">
 </head>
 <body class="player-page">
   <div class="stage idle paused" id="stage">
     <img class="cornerWeb webLeft" src="assets/decor/telarana-esquina.png" alt="">
     <img class="cornerWeb webRight" src="assets/decor/telarana-esquina.png" alt="">
     <header class="top">
-      <a class="iconBtn" id="backBtn" aria-label="Volver al selector de canciones" title="Volver"><i data-lucide="chevron-left"></i></a>
-      <button class="roomPill" id="playerFullscreenBtn" title="Pantalla completa" aria-label="Pantalla completa"><span class="dot" id="playerDot"></span><span class="roomText"><span>SALA</span><b id="roomCode">HALLOWOW</b></span><i data-lucide="chevron-down"></i></button>
+      <a class="iconBtn" id="backBtn" aria-label="Volver al selector de canciones" title="Volver al inicio"><i data-lucide="menu"></i></a>
+      <button class="fullscreenControl" id="playerFullscreenBtn" title="Pantalla completa" aria-label="Pantalla completa" aria-pressed="false"><i data-lucide="maximize"></i></button>
       <span class="sr" id="syncState" role="status">Conectando</span>
     </header>
     <section class="brandMasthead playerBrand" aria-label="Hallowow Criollazo, Samay BCP">

@@ -1,4 +1,4 @@
-import { SONGS, roomFromUrl, subscribeRoom, sendCommand, getSong, getVersion, controllerUrl } from "./shared.js?v=20261029-1";
+import { SONGS, roomFromUrl, subscribeRoom, sendCommand, getSong, getVersion, controllerUrl } from "./shared.js?v=20261029-2";
 import { icons, loadFavorites, toggleFavorite, toggleFullscreen } from "./ui.js";
 import { getDelay, lyricTime, DELAY_KEY } from "./audio-settings.js";
 import { getCalibration, setActiveTrack, calibratedTime } from "./track-timing.js";
@@ -11,7 +11,6 @@ const $ = (selector) => {
   return nodes.get(selector);
 };
 const room = roomFromUrl(), audio = $("#audio"), stage = $("#stage");
-$("#roomCode").textContent = room;
 $("#backBtn").href = controllerUrl(room);
 let unlocked = false, pending = null, activeState = null, activeSong = null, activeVersion = null;
 let lyricData = [], lastCommand = "stop", commandToken = 0, shuffle = false, seeking = false, ended = false;
@@ -35,7 +34,6 @@ function bounds() {
 function setState(message) { $("#playerState").textContent = message; }
 function setSync(mode) {
   $("#syncState").textContent = mode === "online" ? "Sala en línea" : "Sala local";
-  $("#playerDot").className = `dot ${mode === "online" ? "online" : "local"}`;
 }
 function loadLyrics(song) {
   if (!lyricCache.has(song.id)) lyricCache.set(song.id, fetchLyrics(song));
@@ -88,6 +86,11 @@ function renderLyrics(time) {
   const index = low - 1;
   const candidate = lyricData[index];
   const line = candidate && time < candidate.end ? candidate : null;
+  const { start, end } = bounds();
+  const contextText = index => {
+    const cue = lyricData[index];
+    return cue && cue.start >= start && cue.start < end ? cue.text : "";
+  };
   const displayKey = line ? index : `gap-${index}`;
   if (lineIndex !== displayKey) {
     lineIndex = displayKey;
@@ -107,10 +110,10 @@ function renderLyrics(time) {
       }
       $("#currentBase").replaceChildren(fragment);
     }
-    $("#prev").textContent = lyricData[index - 1]?.text || "";
-    $("#next").textContent = lyricData[index + 1]?.text || "";
-    $("#next2").textContent = lyricData[index + 2]?.text || "";
-    $("#next3").textContent = lyricData[index + 3]?.text || "";
+    $("#prev").textContent = contextText(index - 1);
+    $("#next").textContent = contextText(index + 1);
+    $("#next2").textContent = contextText(index + 2);
+    $("#next3").textContent = contextText(index + 3);
     fitLyrics();
   }
   for (const word of wordNodes) {
@@ -162,7 +165,7 @@ function selectState(state) {
       }
     });
   }
-  if (changed) { ended = false; renderSong(); }
+  if (changed) { ended = false; lineIndex = -2; renderSong(); }
   return changed;
 }
 async function playAudio(token) {

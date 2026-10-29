@@ -6,30 +6,20 @@
   <meta name="theme-color" content="#ff6b19">
   <title>Hallowow Criollazo | Karaoke Samay BCP</title>
   <link rel="stylesheet" href="./assets/fonts/flexo/flexo.css?v=20261023-1">
-  <link rel="stylesheet" href="./karaoke.css?v=20261029-1">
+  <link rel="stylesheet" href="./karaoke.css?v=20261029-2">
   <script src="./assets/vendor/lucide.min.js" defer></script>
-  <script type="module" src="./controller.js?v=20261029-1"></script>
+  <script type="module" src="./controller.js?v=20261029-2"></script>
   <link rel="stylesheet" href="./device-menu.css?v=20261025-1">
-  <script type="module" src="./device-menu.js?v=20261025-1"></script>
-  <meta name="karaoke-build" content="601b10f7323516ff2d0d">
+  <script type="module" src="./device-menu.js?v=20261029-2"></script>
+  <meta name="karaoke-build" content="6597717212e11b2c1c2f">
 </head>
 <body class="controller-page">
   <main class="app controller-shell" id="selectorView">
     <img class="cornerWeb webLeft" src="assets/decor/telarana-esquina.png" alt="">
     <img class="cornerWeb webRight" src="assets/decor/telarana-esquina.png" alt="">
     <header class="top">
-      <button class="iconBtn" id="menuBtn" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu" title="Menú"><i data-lucide="menu"></i></button>
-      <button class="roomPill" id="roomPill" aria-label="Opciones de sala" aria-expanded="false" aria-controls="menu">
-        <span class="dot" id="dot"></span><span class="roomText"><span>SALA</span><b id="room">HALLOWOW</b></span><i data-lucide="chevron-down"></i>
-      </button>
+      <button class="fullscreenControl" id="fullscreenBtn" aria-label="Pantalla completa" aria-pressed="false" title="Pantalla completa"><i data-lucide="maximize"></i></button>
     </header>
-    <nav class="menu" id="menu" aria-label="Menú de sala" hidden>
-      <a id="playerLink"><i data-lucide="monitor-play"></i>Pantalla de karaoke</a>
-      <a id="adminLink" target="_blank" rel="noopener"><i data-lucide="settings-2"></i>Administrar sala</a>
-      <button id="favoritesFilter"><img class="favoriteGlyph" src="assets/icons/icon-halloween.png" alt="">Mis favoritas</button>
-      <button type="button" data-device-settings><i data-lucide="sliders-horizontal"></i>Audio y descarga</button>
-      <button id="fullscreenBtn"><i data-lucide="maximize"></i>Pantalla completa</button>
-    </nav>
     <section class="brandMasthead" aria-label="Hallowow Criollazo, Samay BCP">
       <img class="brandWordmark" src="assets/decor/hallowow-wordmark.webp" alt="Hallowow Criollazo" fetchpriority="high">
       <span class="brandSamay"><img src="../Logo%20Samay.png" alt="Samay BCP"></span>

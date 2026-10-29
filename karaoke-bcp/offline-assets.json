@@ -1,6 +1,6 @@
 {
-  "version": "601b10f7323516ff2d0d",
-  "totalBytes": 124787357,
+  "version": "6597717212e11b2c1c2f",
+  "totalBytes": 124789526,
   "assets": [
     {
       "url": "../Logo%20Samay.png",
@@ -10,7 +10,7 @@
     {
       "url": "admin.html",
       "size": 5605,
-      "sha256": "0b7d0f6193b735f9f483f57aba42c97c86bf403307fdf9cc774e8aa754b85daf"
+      "sha256": "ba96bec9122bf318481da94e9fde83bb7d114ece6fdbb61e6753c2163dc42708"
     },
     {
       "url": "assets/audio/bluetooth-calibration.wav",
@@ -174,8 +174,8 @@
     },
     {
       "url": "controller.js",
-      "size": 8418,
-      "sha256": "6ec22909ca162bc518375dfc7005e6f05682491462599372e51fd210b7da9f0f"
+      "size": 7103,
+      "sha256": "dadded213307414481beaace223081089d4882856d7e319f026c2b4f50fc86bb"
     },
     {
       "url": "device-menu.css",
@@ -184,18 +184,18 @@
     },
     {
       "url": "device-menu.js",
-      "size": 10783,
-      "sha256": "23e2dc30e4f4f023e3df834a4e2b23599cc9495208ff624a64b922b196dc1934"
+      "size": 11777,
+      "sha256": "3a02faffe2f806fa5cdad78b39e1e2fede99aea5093edad632c43e01c94b1e44"
     },
     {
       "url": "index.html",
-      "size": 3971,
-      "sha256": "a4aa317ed4ac90015b7f7aa5ca91b1c247bb1407d9263e02f65cd3a04717efde"
+      "size": 3099,
+      "sha256": "644955c289cc0b877dc1c6db105fd0f02aea4b568072e711bb3f8eaf99d0bca6"
     },
     {
       "url": "karaoke.css",
-      "size": 28836,
-      "sha256": "be5ad323793764ae5b63d9a759efd88e7fbe614b9bc56572ed320d73cbe3e052"
+      "size": 29146,
+      "sha256": "c4d68ad7829f34a770f99a98d3b32645c415cc3f48f15e73f0d60c31f0872df1"
     },
     {
       "url": "lyric-progress.js",
@@ -209,28 +209,28 @@
     },
     {
       "url": "offline.js",
-      "size": 1729,
-      "sha256": "26aa2b83887516fcc2154525af9644893fb96b278a87d8357909f43a3d5d8b92"
+      "size": 1920,
+      "sha256": "97c110c180d24acb1e26246af5bdb7fc7a747773673d66b5fe13593ab64b1f60"
     },
     {
       "url": "player-entry.js",
       "size": 72,
-      "sha256": "925da707ded713c26cfd9cc4647d431301fbc584ea5005f145c3c63c06d894c0"
+      "sha256": "5e14779c60b16bfc34ee0b4998053d9ce43ff58345f8ccf7ee270d0630b0c16a"
     },
     {
       "url": "player.html",
-      "size": 4853,
-      "sha256": "ed597b4b3650971b0380a1490f80d2ef0aeca393835769c272b5b05528be2dc1"
+      "size": 4765,
+      "sha256": "7b1a828e9f899e0360d592d9d242f614dc513ae2d6966ac1c273cb5642bee312"
     },
     {
       "url": "player.js",
-      "size": 15461,
-      "sha256": "f982b8ee77b858759c1ab826d75b5855cd4d1b3e79bcecb3c8d06c4234cabe7d"
+      "size": 15503,
+      "sha256": "0a5ca5702765a9006106b7c3c64247c6277a335f289abde234cf22ea8ede03f0"
     },
     {
       "url": "shared.js",
       "size": 5369,
-      "sha256": "9bfc30f28836c73ba9d4cc4e3c737cc725cccd32b6c16042f43865d8c673acae"
+      "sha256": "145dc6d3ff8846633f7dc086289b6b464b5e510bc8fd7cd8e7ae1897515a20e3"
     },
     {
       "url": "songs/a-quien-le-importa/audio.mp3",
@@ -294,8 +294,8 @@
     },
     {
       "url": "songs/catalog.js",
-      "size": 5059,
-      "sha256": "a5e362b9dda268f6d24a2155f253a35f21b361e721bd73e68010e9a3ec553a30"
+      "size": 7468,
+      "sha256": "6c0e0c1cd4458780731f80338acf7d2b67eb206c907c493e15e019f44a28f0df"
     },
     {
       "url": "songs/contigo-peru/audio.mp3",
@@ -665,12 +665,12 @@
     {
       "url": "timing-editor.html",
       "size": 3355,
-      "sha256": "c7e9b2fcc72e87aff725faba138a8671581b9c0b59c384e67d26fe8b7fc340e1"
+      "sha256": "a81e088e68b17cf7dbe3ad7a234be94470703865998023b9e7f4a8c516718d02"
     },
     {
       "url": "timing-editor.js",
       "size": 11040,
-      "sha256": "2d23c31397569db0bf9bbfb47e4887584e40159025e29e46013ce439242c56d5"
+      "sha256": "858cef524192e9ed4ac29aad680ef621e772933b017664d4be90be3d8aa983aa"
     },
     {
       "url": "track-timing.js",
@@ -679,8 +679,8 @@
     },
     {
       "url": "ui.js",
-      "size": 1106,
-      "sha256": "afa10b495d5d36e562fee9033fdc5d053f6200d9be5131ecdb2ac0b92323e62b"
+      "size": 1604,
+      "sha256": "95baef04291dd4767afad637cbd0e9451afcf2ccb4d2273532d49b245d139929"
     }
   ]
 }

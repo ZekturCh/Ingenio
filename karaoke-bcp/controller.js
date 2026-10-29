@@ -1,11 +1,8 @@
-import { SONGS, roomFromUrl, sendCommand, subscribeRoom, adminUrl } from "./shared.js?v=20261029-1";
+import { SONGS, roomFromUrl, sendCommand } from "./shared.js?v=20261029-2";
 import { $, icons, loadFavorites, toggleFavorite, toggleFullscreen, normalizeSearch, escapeHtml } from "./ui.js";
-import { mountPlayer } from "./player.js?v=20261029-1";
+import { mountPlayer } from "./player.js?v=20261029-2";
 
 const room = roomFromUrl();
-$("#room").textContent = room;
-$("#playerLink").href = "#reproduccion";
-$("#adminLink").href = adminUrl(room);
 const categories = {
   carinito: ["fiesta", "peru"], odiame: ["criollo", "peru", "clasicos"],
   "himno-peru": ["peru", "clasicos"], "cuando-pienses": ["peru", "fiesta"],
@@ -22,7 +19,7 @@ async function preparePlayer() {
   preparingPlayer = true;
   try {
     // Reuse the standalone screen's markup so both playback modes stay visually identical.
-    const response = await fetch("./player.html?v=20261029-1");
+    const response = await fetch("./player.html?v=20261029-2");
     if (!response.ok) throw new Error("Player unavailable");
     const page = new DOMParser().parseFromString(await response.text(), "text/html");
     const stage = page.querySelector("#stage"), audio = page.querySelector("#audio");
@@ -40,7 +37,6 @@ async function preparePlayer() {
 preparePlayer();
 
 function showPlayback() {
-  toggleMenu(false);
   playlistScroll = $("#songs").scrollTop;
   $("#selectorView").hidden = true;
   $("#playbackView").hidden = false;
@@ -64,12 +60,6 @@ window.addEventListener("popstate", (event) => {
   if (event.state?.karaokeView === "player" && player && selectedState) showPlayback();
   else showSelector();
 });
-$("#playerLink").onclick = (event) => {
-  event.preventDefault();
-  if (!player || !selectedState) { toggleMenu(false); toast("Elige una canción y su versión"); return; }
-  history.pushState({ karaokeView: "player" }, "", "#reproduccion");
-  showPlayback();
-};
 
 function toast(message) {
   $("#toast").textContent = message;
@@ -144,24 +134,7 @@ $("#modal").onclick = (event) => {
   if (event.target === $("#modal") && (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom)) $("#modal").close();
 };
 
-function toggleMenu(force) {
-  const open = force ?? $("#menu").hidden;
-  $("#menu").hidden = !open;
-  $("#menuBtn").setAttribute("aria-expanded", open);
-  $("#roomPill").setAttribute("aria-expanded", open);
-}
-$("#menuBtn").onclick = () => toggleMenu();
-$("#roomPill").onclick = () => toggleMenu();
-document.addEventListener("click", (event) => {
-  if (!event.target.closest("#menu,#menuBtn,#roomPill")) toggleMenu(false);
-});
-document.addEventListener("keydown", (event) => { if (event.key === "Escape") toggleMenu(false); });
-$("#favoritesFilter").onclick = () => { onlyFavorites = !onlyFavorites; query = ""; $("#search").value = ""; renderSongs(); toggleMenu(false); };
-$("#fullscreenBtn").onclick = () => { toggleMenu(false); toggleFullscreen().catch(() => toast("Pantalla completa no disponible")); };
+$("#fullscreenBtn").onclick = () => toggleFullscreen().catch(() => toast("Pantalla completa no disponible"));
 window.addEventListener("storage", renderSongs);
-subscribeRoom(room, () => {}, (mode) => {
-  $("#dot").className = `dot ${mode === "online" ? "online" : "local"}`;
-  $("#roomPill").title = mode === "online" ? "Sala en línea" : "Sala local";
-});
 renderSongs();
 icons();

@@ -29,7 +29,13 @@ async function start() {
     if (event.data?.type === "OFFLINE_STATUS") emit(event.data.status);
   });
   navigator.serviceWorker.addEventListener("controllerchange", downloadOffline);
-  window.addEventListener("online", downloadOffline);
+  window.addEventListener("online", () => {
+    registration?.update().catch(() => {});
+    downloadOffline();
+  });
+  document.addEventListener("visibilitychange", () => {
+    if (!document.hidden) registration?.update().catch(() => {});
+  });
   window.addEventListener("pageshow", () => registration?.active?.postMessage({ type: "CHECK_OFFLINE" }));
   try {
     registration = await navigator.serviceWorker.register(new URL("./sw.js", import.meta.url), {

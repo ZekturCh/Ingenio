@@ -16,7 +16,7 @@ async function main() {
     const page = await context.newPage(), errors=[];
     page.on('pageerror', e => errors.push(e.message));
     const base = process.env.KARAOKE_BASE_URL || 'http://127.0.0.1:5181/karaoke-bcp/';
-    await page.goto(base + '?room=OFFLINE_TEST');
+    await page.goto(base + '?room=OFFLINE_TEST&settings=1');
     await page.locator('.offline-indicator[data-state="downloading"]').waitFor({timeout:30000});
     await page.locator('.offline-indicator[data-state="ready"]').waitFor({timeout:120000});
     await page.waitForFunction(() => !!navigator.serviceWorker.controller);

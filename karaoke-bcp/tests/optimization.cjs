@@ -25,7 +25,7 @@ async function main(){
   page.on('pageerror',e=>errors.push(e.message));
   page.on('request',r=>{if(r.url().includes('himno-peru/lyrics-timed.json'))hymnRequests++;});
   const base=process.env.KARAOKE_BASE_URL||'http://127.0.0.1:5181/karaoke-bcp/';
-  await page.goto(base+'?room=OPTIMIZATION_TEST');
+  await page.goto(base+'?room=OPTIMIZATION_TEST&settings=1');
   await page.locator('#audio').waitFor({state:'attached'});
   const idle=await page.evaluate(()=>window.__performanceProbe.frames);
   await page.waitForTimeout(300);

@@ -1,5 +1,30 @@
 # Hallowow Criollazo
 
+## Vista publica y coros
+
+La vista publica no tiene menus desplegables ni engranaje de configuracion.
+El boton cuadrado superior derecho alterna pantalla completa (52 x 52 px).
+En reproduccion, el icono de menu izquierdo vuelve directamente al selector.
+Los controles de favoritos de cada cancion se conservan.
+
+Las 28 canciones ofrecen Coro y Completa. Coro reproduce solo un intervalo del
+MP3 original, con las mismas marcas de letra y compensacion Bluetooth, sin
+descargar ni recomprimir otra pista. Carinito mantiene su corte anterior.
+Los otros 27 fragmentos se seleccionaron por sus frases centrales; los cortes
+basados en marcas automaticas siguen pendientes de revision musical al oido.
+
+Editar `songs/chorus-selections.json` (primera y ultima entrada vocal del corte)
+y ejecutar `node karaoke-bcp/scripts/build-choruses.cjs` para actualizar el catalogo.
+El generador avisa si las marcas se movieron al cambiar una grabacion.
+Despues, ejecutar `node karaoke-bcp/scripts/build-offline.cjs`.
+
+La descarga offline sigue siendo automatica y su punto de estado no abre menus.
+Una actualizacion descargada se aplica automaticamente en el selector, sin
+dialogos abiertos; nunca recarga una cancion en curso. La descarga fallida se
+reintenta hasta tres veces con espera creciente, ademas del reintento al reconectar.
+Para mantenimiento y calibracion Bluetooth abrir la pagina con `?settings=1`;
+el engranaje solo aparece en ese modo o en las paginas de administracion.
+
 ## Grabaciones con voz del 29/10/2026
 
 Se reemplazaron o incorporaron 23 MP3 proporcionados por el usuario, sin convertir

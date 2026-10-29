@@ -16,5 +16,6 @@ const rows = songs.map(song => {
 });
 const prefix = source.slice(0, source.indexOf('export const SONGS'))
   .replace(/function pendingTrack\([\s\S]*?\n}\n\n/, '');
-fs.writeFileSync(catalogPath, prefix + 'export const SONGS = [\n' + rows.join('\n') + '\n];\n');
+const ending = source.includes('function withChorus') ? '\n].map(withChorus);\n' : '\n];\n';
+fs.writeFileSync(catalogPath, prefix + 'export const SONGS = [\n' + rows.join('\n') + ending);
 console.log(`Updated ${report.length} vocal recordings; ${songs.length} enabled songs.`);
