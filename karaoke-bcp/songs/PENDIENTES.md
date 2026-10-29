@@ -1,5 +1,9 @@
 # Estado del repertorio al 29/10/2026
 
+Actualizacion posterior: Carinito tambien se reemplazo por el MP3 con voz de
+Bareto. Ver `carinito/assisted-recording.json`; no conserva los tiempos de la
+pista anterior. El informe de 23 MP3 que sigue corresponde al lote previo.
+
 Las 28 canciones del catalogo tienen audio. Se incorporaron las cinco que faltaban:
 Alma, corazon y vida; El muerto vivo; El rey; Mal paso; y Odiame.
 

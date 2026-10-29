@@ -22,7 +22,7 @@ async function main() {
     assert.deepEqual(song.versions, []);
     assert.deepEqual(JSON.parse(fs.readFileSync(path.join(root, song.lyrics), "utf8")).lyrics, []);
   }
-  assert.equal(SONGS.filter(song => song.lyricsStatus === "estimated").length, 27);
+  assert.equal(SONGS.filter(song => song.lyricsStatus === "estimated").length, 28);
   const enabled = SONGS.filter(song => song.enabled);
   assert.equal(enabled.length, 28);
   for (const song of enabled) {

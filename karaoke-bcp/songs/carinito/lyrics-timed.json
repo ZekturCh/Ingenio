@@ -1,204 +1,702 @@
 {
-  "title": "Cariñito",
-  "artist": "Bareto",
-  "timingSource": "automatic vocal-vs-instrumental alignment",
-  "referenceOffsetSeconds": 0.5573,
-  "durationSeconds": 223.791,
+  "songId": "carinito",
+  "status": "estimated",
+  "reviewRequired": true,
+  "method": "local-asr-word-matching",
+  "alignmentModel": "faster-whisper-small",
+  "durationSeconds": 226.168163,
+  "audioSha256": "8f6273f3157d04d02cbf9b8846088fd081724d1cda651899b28cb1d460002cb5",
   "lyrics": [
     {
       "text": "Uy",
-      "start": 8.429,
-      "end": 10.728
+      "start": 11.24,
+      "end": 12.64,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 11.24,
+          "end": 12.64
+        }
+      ],
+      "sourceLine": 1,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Ahora sí",
-      "start": 12.028,
-      "end": 14.187
+      "start": 12.64,
+      "end": 14.3,
+      "words": [
+        {
+          "from": 0,
+          "to": 5,
+          "start": 12.64,
+          "end": 14.04
+        },
+        {
+          "from": 6,
+          "to": 8,
+          "start": 14.04,
+          "end": 14.3
+        }
+      ],
+      "sourceLine": 2,
+      "matchedWordRatio": 1.0,
+      "alignment": "acoustic-gap-refinement"
     },
     {
       "text": "Upa",
-      "start": 17.879,
-      "end": 18.994
-    },
-    {
-      "text": "Lloro",
-      "start": 38.197,
-      "end": 39.056
-    },
-    {
-      "text": "Por quererte",
-      "start": 39.962,
-      "end": 41.448
-    },
-    {
-      "text": "Por amarte, por desearte",
-      "start": 42.4,
-      "end": 46.301
-    },
-    {
-      "text": "Lloro",
-      "start": 47.74,
-      "end": 48.437
+      "start": 17.6,
+      "end": 19.0,
+      "words": [
+        {
+          "from": 0,
+          "to": 3,
+          "start": 17.6,
+          "end": 19.0
+        }
+      ],
+      "sourceLine": 3,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Por quererte",
-      "start": 49.551,
-      "end": 50.828
+      "start": 40.08,
+      "end": 41.74,
+      "words": [
+        {
+          "from": 0,
+          "to": 3,
+          "start": 40.08,
+          "end": 40.76
+        },
+        {
+          "from": 4,
+          "to": 12,
+          "start": 40.76,
+          "end": 41.74
+        }
+      ],
+      "sourceLine": 5,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Por amarte, por desearte",
-      "start": 51.92,
-      "end": 55.705
+      "start": 42.24,
+      "end": 45.28,
+      "words": [
+        {
+          "from": 0,
+          "to": 3,
+          "start": 42.24,
+          "end": 43.28
+        },
+        {
+          "from": 4,
+          "to": 10,
+          "start": 43.28,
+          "end": 44.48
+        },
+        {
+          "from": 12,
+          "to": 15,
+          "start": 44.48,
+          "end": 45.28
+        }
+      ],
+      "sourceLine": 6,
+      "matchedWordRatio": 0.75
+    },
+    {
+      "text": "Por quererte",
+      "start": 49.78,
+      "end": 51.18,
+      "words": [
+        {
+          "from": 0,
+          "to": 3,
+          "start": 49.78,
+          "end": 50.26
+        },
+        {
+          "from": 4,
+          "to": 12,
+          "start": 50.26,
+          "end": 51.18
+        }
+      ],
+      "sourceLine": 8,
+      "matchedWordRatio": 1.0
+    },
+    {
+      "text": "Por amarte, por desearte",
+      "start": 51.96,
+      "end": 54.84,
+      "words": [
+        {
+          "from": 0,
+          "to": 3,
+          "start": 51.96,
+          "end": 52.82
+        },
+        {
+          "from": 4,
+          "to": 10,
+          "start": 52.82,
+          "end": 53.98
+        },
+        {
+          "from": 12,
+          "to": 15,
+          "start": 53.98,
+          "end": 54.84
+        }
+      ],
+      "sourceLine": 9,
+      "matchedWordRatio": 0.75
     },
     {
       "text": "Ay cariño",
-      "start": 57.214,
-      "end": 60.976
+      "start": 55.96,
+      "end": 61.1,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 55.96,
+          "end": 58.46
+        },
+        {
+          "from": 3,
+          "to": 9,
+          "start": 60.24,
+          "end": 61.1
+        }
+      ],
+      "sourceLine": 10,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Ay mi vida",
-      "start": 61.951,
-      "end": 65.55
+      "start": 61.66,
+      "end": 65.86,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 61.66,
+          "end": 63.26
+        },
+        {
+          "from": 3,
+          "to": 5,
+          "start": 64.4,
+          "end": 64.78
+        },
+        {
+          "from": 6,
+          "to": 10,
+          "start": 64.78,
+          "end": 65.86
+        }
+      ],
+      "sourceLine": 11,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Nunca, pero nunca",
-      "start": 66.781,
-      "end": 70.24
+      "start": 65.86,
+      "end": 70.24,
+      "words": [
+        {
+          "from": 0,
+          "to": 5,
+          "start": 65.86,
+          "end": 68.08
+        },
+        {
+          "from": 7,
+          "to": 11,
+          "start": 69.18,
+          "end": 69.48
+        },
+        {
+          "from": 12,
+          "to": 17,
+          "start": 69.48,
+          "end": 70.24
+        }
+      ],
+      "sourceLine": 12,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Me abandones cariñito",
-      "start": 70.891,
-      "end": 74.745
+      "start": 70.9,
+      "end": 73.26,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 70.9,
+          "end": 71.62
+        },
+        {
+          "from": 3,
+          "to": 12,
+          "start": 71.62,
+          "end": 73.26
+        }
+      ],
+      "sourceLine": 13,
+      "matchedWordRatio": 0.667
     },
     {
       "text": "Nunca, pero nunca",
-      "start": 76.231,
-      "end": 79.737
+      "start": 76.14,
+      "end": 79.78,
+      "words": [
+        {
+          "from": 0,
+          "to": 5,
+          "start": 76.14,
+          "end": 77.54
+        },
+        {
+          "from": 7,
+          "to": 11,
+          "start": 78.4,
+          "end": 78.96
+        },
+        {
+          "from": 12,
+          "to": 17,
+          "start": 78.96,
+          "end": 79.78
+        }
+      ],
+      "sourceLine": 14,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Me abandones cariñito",
-      "start": 80.341,
-      "end": 84.405
+      "start": 80.6,
+      "end": 82.72,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 80.6,
+          "end": 81.1
+        },
+        {
+          "from": 3,
+          "to": 12,
+          "start": 81.1,
+          "end": 82.72
+        }
+      ],
+      "sourceLine": 15,
+      "matchedWordRatio": 0.667
     },
     {
       "text": "No llores, oye",
-      "start": 89.258,
-      "end": 90.256
-    },
-    {
-      "text": "Qué cosa",
-      "start": 96.316,
-      "end": 96.874
-    },
-    {
-      "text": "Hey",
-      "start": 103.491,
-      "end": 104.42
-    },
-    {
-      "text": "Lloro",
-      "start": 123.762,
-      "end": 124.645
-    },
-    {
-      "text": "Por quererte",
-      "start": 125.527,
-      "end": 127.06
-    },
-    {
-      "text": "Por amarte, por desearte",
-      "start": 127.919,
-      "end": 131.773
-    },
-    {
-      "text": "Lloro",
-      "start": 133.259,
-      "end": 133.956
+      "start": 89.82,
+      "end": 96.12,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 89.82,
+          "end": 89.92
+        },
+        {
+          "from": 3,
+          "to": 9,
+          "start": 89.92,
+          "end": 90.3
+        },
+        {
+          "from": 11,
+          "to": 14,
+          "start": 94.8,
+          "end": 96.12
+        }
+      ],
+      "sourceLine": 16,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Por quererte",
-      "start": 135.07,
-      "end": 136.417
+      "start": 125.0,
+      "end": 127.46,
+      "words": [
+        {
+          "from": 0,
+          "to": 3,
+          "start": 125.0,
+          "end": 126.34
+        },
+        {
+          "from": 4,
+          "to": 12,
+          "start": 126.34,
+          "end": 127.46
+        }
+      ],
+      "sourceLine": 20,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Por amarte, por desearte",
-      "start": 137.439,
-      "end": 141.247
+      "start": 128.86,
+      "end": 132.38,
+      "words": [
+        {
+          "from": 4,
+          "to": 10,
+          "start": 128.86,
+          "end": 130.06
+        },
+        {
+          "from": 12,
+          "to": 15,
+          "start": 130.06,
+          "end": 130.8
+        },
+        {
+          "from": 16,
+          "to": 24,
+          "start": 130.8,
+          "end": 132.38
+        }
+      ],
+      "sourceLine": 21,
+      "matchedWordRatio": 0.75
+    },
+    {
+      "text": "Por quererte",
+      "start": 134.72,
+      "end": 136.74,
+      "words": [
+        {
+          "from": 0,
+          "to": 3,
+          "start": 134.72,
+          "end": 135.84
+        },
+        {
+          "from": 4,
+          "to": 12,
+          "start": 135.84,
+          "end": 136.74
+        }
+      ],
+      "sourceLine": 23,
+      "matchedWordRatio": 1.0
+    },
+    {
+      "text": "Por amarte, por desearte",
+      "start": 137.46,
+      "end": 142.26,
+      "words": [
+        {
+          "from": 0,
+          "to": 3,
+          "start": 137.46,
+          "end": 138.36
+        },
+        {
+          "from": 4,
+          "to": 10,
+          "start": 138.36,
+          "end": 139.54
+        },
+        {
+          "from": 12,
+          "to": 15,
+          "start": 139.54,
+          "end": 140.28
+        },
+        {
+          "from": 16,
+          "to": 24,
+          "start": 140.28,
+          "end": 142.26
+        }
+      ],
+      "sourceLine": 24,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Ay cariño",
-      "start": 142.756,
-      "end": 146.541
+      "start": 142.26,
+      "end": 146.7,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 142.26,
+          "end": 144.0
+        },
+        {
+          "from": 3,
+          "to": 9,
+          "start": 145.82,
+          "end": 146.7
+        }
+      ],
+      "sourceLine": 25,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Ay mi vida",
-      "start": 147.516,
-      "end": 151.162
+      "start": 147.46,
+      "end": 151.18,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 147.46,
+          "end": 148.6
+        },
+        {
+          "from": 3,
+          "to": 5,
+          "start": 149.96,
+          "end": 150.16
+        },
+        {
+          "from": 6,
+          "to": 10,
+          "start": 150.16,
+          "end": 151.18
+        }
+      ],
+      "sourceLine": 26,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Nunca, pero nunca",
-      "start": 152.323,
-      "end": 155.69
-    },
-    {
-      "text": "Me abandones cariñito",
-      "start": 156.479,
-      "end": 160.334
+      "start": 152.46,
+      "end": 155.76,
+      "words": [
+        {
+          "from": 0,
+          "to": 5,
+          "start": 152.46,
+          "end": 153.64
+        },
+        {
+          "from": 7,
+          "to": 11,
+          "start": 154.72,
+          "end": 155.02
+        },
+        {
+          "from": 12,
+          "to": 17,
+          "start": 155.02,
+          "end": 155.76
+        }
+      ],
+      "sourceLine": 27,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Nunca, pero nunca",
-      "start": 161.773,
-      "end": 165.21
+      "start": 161.76,
+      "end": 165.28,
+      "words": [
+        {
+          "from": 0,
+          "to": 5,
+          "start": 161.76,
+          "end": 163.14
+        },
+        {
+          "from": 7,
+          "to": 11,
+          "start": 163.96,
+          "end": 164.52
+        },
+        {
+          "from": 12,
+          "to": 17,
+          "start": 164.52,
+          "end": 165.28
+        }
+      ],
+      "sourceLine": 29,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Me abandones cariñito",
-      "start": 165.93,
-      "end": 170.017
+      "start": 165.28,
+      "end": 170.44,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 165.28,
+          "end": 166.64
+        },
+        {
+          "from": 13,
+          "to": 21,
+          "start": 168.36,
+          "end": 170.44
+        }
+      ],
+      "sourceLine": 30,
+      "matchedWordRatio": 0.667
     },
     {
       "text": "Uy",
-      "start": 171.317,
-      "end": 171.642
+      "start": 170.44,
+      "end": 172.14,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 170.44,
+          "end": 172.14
+        }
+      ],
+      "sourceLine": 31,
+      "matchedWordRatio": 1.0,
+      "alignment": "acoustic-gap-refinement"
     },
     {
       "text": "Suavecito",
-      "start": 173.942,
-      "end": 174.848
+      "start": 172.7,
+      "end": 175.46,
+      "words": [
+        {
+          "from": 0,
+          "to": 9,
+          "start": 172.7,
+          "end": 175.46
+        }
+      ],
+      "sourceLine": 32,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Toma esto",
-      "start": 181.093,
-      "end": 181.975
+      "start": 181.42,
+      "end": 182.32,
+      "words": [
+        {
+          "from": 0,
+          "to": 4,
+          "start": 181.42,
+          "end": 181.94
+        },
+        {
+          "from": 5,
+          "to": 9,
+          "start": 181.94,
+          "end": 182.32
+        }
+      ],
+      "sourceLine": 33,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Para que me recuerdes",
-      "start": 183.299,
-      "end": 184.692
+      "start": 182.76,
+      "end": 185.2,
+      "words": [
+        {
+          "from": 0,
+          "to": 4,
+          "start": 182.76,
+          "end": 184.08
+        },
+        {
+          "from": 5,
+          "to": 8,
+          "start": 184.08,
+          "end": 184.26
+        },
+        {
+          "from": 9,
+          "to": 11,
+          "start": 184.26,
+          "end": 184.44
+        },
+        {
+          "from": 12,
+          "to": 21,
+          "start": 184.44,
+          "end": 185.2
+        }
+      ],
+      "sourceLine": 34,
+      "matchedWordRatio": 1.0
+    }
+  ],
+  "unmatchedLines": [
+    {
+      "line": 4,
+      "text": "Lloro",
+      "coverage": 0.0
     },
     {
+      "line": 7,
+      "text": "Lloro",
+      "coverage": 0.0
+    },
+    {
+      "line": 17,
+      "text": "Qué cosa",
+      "coverage": 0.0
+    },
+    {
+      "line": 18,
+      "text": "Hey",
+      "coverage": 0.0
+    },
+    {
+      "line": 19,
+      "text": "Lloro",
+      "coverage": 0.0
+    },
+    {
+      "line": 22,
+      "text": "Lloro",
+      "coverage": 0.0
+    },
+    {
+      "line": 28,
+      "text": "Me abandones cariñito",
+      "coverage": 0.333
+    },
+    {
+      "line": 35,
       "text": "Sí",
-      "start": 208.35,
-      "end": 208.65
+      "coverage": 0.0
     },
     {
+      "line": 36,
       "text": "Hey hey hey hey",
-      "start": 209.583,
-      "end": 211.72
+      "coverage": 0.0
     },
     {
+      "line": 37,
       "text": "Hey hey hey hey",
-      "start": 212.02,
-      "end": 214.11
+      "coverage": 0.0
     },
     {
+      "line": 38,
       "text": "Hey hey hey hey",
-      "start": 214.37,
-      "end": 216.46
+      "coverage": 0.0
     },
     {
+      "line": 39,
       "text": "Hey hey hey hey",
-      "start": 216.78,
-      "end": 218.94
+      "coverage": 0.0
     }
   ]
 }

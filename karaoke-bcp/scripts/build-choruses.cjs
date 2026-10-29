@@ -33,4 +33,4 @@ source = source.replace(/\/\/ BEGIN GENERATED CHORUSES[\s\S]*?\/\/ END GENERATED
 source = source.replace('export const SONGS = [', block + 'export const SONGS = [');
 source = source.replace(/\];\s*$|\]\.map\(withChorus\);\s*$/, '].map(withChorus);\n');
 fs.writeFileSync(file, source);
-console.log('Prepared 27 short excerpts; preserved the original Cariñito chorus.');
+console.log(`Prepared ${Object.keys(windows).length} short excerpts from the active recordings.`);

@@ -5,6 +5,10 @@ export function cueProgress(time, start, end) {
 // Keep the original characters, including punctuation, when constructing word spans.
 export function lyricParts(line) {
   if (!Array.isArray(line?.words) || !line.words.length) return [];
+  // Partial word matches would leave permanently unpainted holes in the phrase.
+  // Use the continuous phrase sweep until every sung word has a timestamp.
+  const tokens = [...line.text.matchAll(/[\p{L}\p{N}]+/gu)];
+  if (!tokens.every(token => line.words.some(word => word.from === token.index && word.to === token.index + token[0].length))) return [];
   const result = [];
   let offset = 0;
   for (const word of line.words) {

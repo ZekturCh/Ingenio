@@ -11,6 +11,7 @@ async function main() {
   const line = { text: '¡Ay, Perú!', words: [{ from: 1, to: 3, start: 2, end: 3 }, { from: 5, to: 9, start: 4, end: 5 }] };
   assert.equal(lyricParts(line).map(p => p.text).join(''), line.text);
   assert.deepEqual(lyricParts({ text: 'Legacy' }), []);
+  assert.deepEqual(lyricParts({text:'Jazmines en el pelo',words:[{from:9,to:11,start:1,end:2},{from:12,to:14,start:2,end:3}]}), []);
   assert.equal(cueProgress(1, 2, 3), 0);
   assert.equal(cueProgress(4, 2, 3), 1);
   assert.equal(cueProgress(2.5, 2, 3), .5);

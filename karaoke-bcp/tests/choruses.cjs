@@ -12,13 +12,14 @@ async function main() {
     const lyrics = JSON.parse(fs.readFileSync(path.join(root,song.lyrics),'utf8')).lyrics;
     assert.ok(lyrics.some(line=>line.start >= short.startAt && line.end <= short.endAt));
   }
-  assert.equal(SONGS[0].versions[0].startAt,57.214);
-  assert.equal(SONGS[0].versions[0].endAt,117.214);
+  const assisted = JSON.parse(fs.readFileSync(path.join(root,'songs/carinito/assisted-recording.json'),'utf8'));
+  assert.equal(SONGS[0].audioRevision,assisted.sha256);
+  assert.equal(SONGS[0].durationSeconds,assisted.durationSeconds);
   const home = fs.readFileSync(path.join(root,'index.html'),'utf8');
   const player = fs.readFileSync(path.join(root,'player.html'),'utf8');
   assert.ok(!home.includes('id="menu"') && !home.includes('roomPill'));
   assert.ok(home.includes('class="fullscreenControl"'));
   assert.ok(player.includes('data-lucide="menu"') && !player.includes('chevron-down'));
-  console.log('28 musical excerpts, full versions, original Cariñito and simplified touch navigation passed.');
+  console.log('28 musical excerpts, full versions, assisted Cariñito and simplified touch navigation passed.');
 }
 main().catch(error=>{console.error(error);process.exitCode=1;});

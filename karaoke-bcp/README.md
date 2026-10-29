@@ -1,5 +1,18 @@
 # Hallowow Criollazo
 
+## Carinito con voz asistida
+
+Se reemplazo Carinito por `Bareto - Cariñito 【LETRA】.mp3`, aportado por el usuario,
+sin recompresion. Dura 226.168163 s. El registro de archivo y las frases pendientes
+estan en `songs/carinito/assisted-recording.json`. Sus tiempos son nuevos y
+automaticos, no las marcas verificadas de la grabacion anterior.
+El recorte Coro usa el primer estribillo de esta grabacion (unos 28 s).
+
+Si no estan marcadas todas las palabras de una frase, el reproductor usa un barrido
+continuo de frase: no deja palabras negras entre otras ya pintadas. Esto no inventa
+marcas para las frases que siguen sin alinear. Las frases completas con tiempos
+de palabras siguen usando el pintado palabra por palabra.
+
 ## Vista publica y coros
 
 La vista publica no tiene menus desplegables ni engranaje de configuracion.
@@ -9,8 +22,8 @@ Los controles de favoritos de cada cancion se conservan.
 
 Las 28 canciones ofrecen Coro y Completa. Coro reproduce solo un intervalo del
 MP3 original, con las mismas marcas de letra y compensacion Bluetooth, sin
-descargar ni recomprimir otra pista. Carinito mantiene su corte anterior.
-Los otros 27 fragmentos se seleccionaron por sus frases centrales; los cortes
+descargar ni recomprimir otra pista.
+Los 28 fragmentos se seleccionaron por sus frases centrales; los cortes
 basados en marcas automaticas siguen pendientes de revision musical al oido.
 
 Editar `songs/chorus-selections.json` (primera y ultima entrada vocal del corte)

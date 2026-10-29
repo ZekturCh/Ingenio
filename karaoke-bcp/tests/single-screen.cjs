@@ -33,7 +33,7 @@ async function run() {
     assert.equal(await page.locator('#selectorView').isVisible(), false);
     assert.equal(await page.locator('#stage').isVisible(), true);
     assert.equal(await page.locator('#activate').count(), 0);
-    assert.equal(await page.locator('#remaining').textContent(), '01:00');
+    assert.equal(await page.locator('#remaining').textContent(), '00:27');
     await page.locator('#backBtn').tap();
     await page.waitForFunction(() => !document.querySelector('#selectorView').hidden);
     assert.equal(await page.locator('#audio').evaluate(a => a.paused), true);
@@ -41,7 +41,7 @@ async function run() {
     await page.locator('[data-song="carinito"]').tap();
     await page.locator('[data-version="full"]').tap();
     await page.waitForFunction(() => !document.querySelector('#audio').paused && document.querySelector('#audio').currentTime < 4);
-    assert.equal(await page.locator('#remaining').textContent(), '03:43');
+    assert.equal(await page.locator('#remaining').textContent(), '03:46');
     await page.locator('#playBtn').tap();
     await page.waitForFunction(() => document.querySelector('#audio').paused);
     await page.evaluate(() => { const a = document.querySelector('#audio'); a.currentTime = 65; a.dispatchEvent(new Event('timeupdate')); });

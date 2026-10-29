@@ -13,11 +13,10 @@ function track(id, title, artist, durationSeconds) {
   };
 }
 
-const carinito = track("carinito", "Cariñito", "Bareto", 223.791);
-carinito.lyricsStatus = "timed";
+const carinito = track("carinito", "Cariñito", "Bareto", 226.168163);
+carinito.audioRevision = "8f6273f3157d04d02cbf9b8846088fd081724d1cda651899b28cb1d460002cb5";
+carinito.lyricsStatus = "estimated";
 carinito.categories = ["fiesta", "peru"];
-carinito.versions.unshift({ id: "chorus", label: "Coro", durationLabel: "1:00",
-  startAt: 57.214, endAt: 117.214, note: "Versión rápida para activación" });
 
 // Automatically aligned cues still require listening review before marking them verified.
 function estimatedTrack(id, title, artist, durationSeconds, audioRevision) {
@@ -26,6 +25,10 @@ function estimatedTrack(id, title, artist, durationSeconds, audioRevision) {
 
 // BEGIN GENERATED CHORUSES
 const CHORUS_WINDOWS = {
+  "carinito": {
+    "startAt": 55.16,
+    "endAt": 83.02
+  },
   "la-flor-de-la-canela": {
     "startAt": 68.56,
     "endAt": 109.62
