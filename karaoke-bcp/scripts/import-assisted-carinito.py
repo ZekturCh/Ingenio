@@ -44,7 +44,8 @@ def main():
         cache.write_text(json.dumps(words, ensure_ascii=False), encoding='utf-8')
     cues, missing = alignment.align(lines, words)
     cues = alignment.refine_missing(model, source, lines, cues, duration)
-    cues = alignment.refine_phonetic_gaps(model, source, lines, words, cues, duration)
+    aliases = json.loads((ROOT / 'songs/alignment-aliases.json').read_text(encoding='utf-8'))
+    cues = alignment.refine_phonetic_gaps(model, source, lines, words, cues, duration, aliases.get('carinito'))
     cues = alignment.recover_repeats(lines, words, cues)
     for index, cue in enumerate(cues):
         cue['end'] = min(cue['end'], duration, cues[index + 1]['start'] if index + 1 < len(cues) else duration)

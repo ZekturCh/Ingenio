@@ -168,7 +168,7 @@ def recover_repeats(lines, words, cues):
     return sorted(cues, key=lambda cue: cue['start'])
 
 
-def refine_phonetic_gaps(model, source, lines, words, cues, duration):
+def refine_phonetic_gaps(model, source, lines, words, cues, duration, aliases=None):
     """Use close ASR spellings only to find a window, then verify it acoustically."""
     tokenizer = Tokenizer(model.hf_tokenizer, model.model.is_multilingual,
                           task='transcribe', language='es')
@@ -177,7 +177,8 @@ def refine_phonetic_gaps(model, source, lines, words, cues, duration):
         if any(cue['sourceLine'] == index + 1 for cue in cues):
             continue
         reference = ''.join(tokens(line))
-        if len(reference) < 12:
+        variants = [''.join(tokens(alias)) for alias in (aliases or {}).get(' '.join(tokens(line)), [])]
+        if len(reference) < 12 and not variants:
             continue
         previous = next((cue for cue in reversed(cues) if cue['sourceLine'] < index + 1), None)
         following = next((cue for cue in cues if cue['sourceLine'] > index + 1), None)
@@ -187,14 +188,17 @@ def refine_phonetic_gaps(model, source, lines, words, cues, duration):
         for start in range(len(words)):
             if words[start]['start'] < lower or words[start]['start'] >= upper:
                 continue
-            for count in range(max(1, expected_words - 2), expected_words + 3):
+            for count in range(1 if variants else max(1, expected_words - 2), expected_words + 3):
                 window = words[start:start + count]
                 if len(window) != count or window[-1]['end'] > upper or window[-1]['end'] - window[0]['start'] > 14:
                     continue
                 heard = ''.join(tokens(' '.join(word['word'] for word in window)))
                 score = SequenceMatcher(None, reference, heard, autojunk=False).ratio()
+                alias_match = heard in variants
+                if alias_match:
+                    score = 1.0
                 if score >= .82 and (best is None or score > best[0]):
-                    best = (score, window)
+                    best = (score, window, alias_match)
         if best is None:
             continue
         window = best[1]
@@ -208,12 +212,14 @@ def refine_phonetic_gaps(model, source, lines, words, cues, duration):
             model.encode(pad_or_trim(features)), min(features.shape[-1], 3000))[0]
         aligned = [{'word': word['word'], 'start': start + float(word['start']),
                     'end': min(end, start + float(word['end']))} for word in result
-                   if word['probability'] >= .2 and word['end'] - word['start'] >= .04]
+                   if (word['probability'] >= .2 or best[2]) and word['end'] - word['start'] >= .04]
         extra, _ = align([line], aligned)
         for cue in extra:
             if cue['matchedWordRatio'] >= .7:
                 cue['sourceLine'] = index + 1
                 cue['alignment'] = 'phonetic-window-acoustic-refinement'
+                if best[2]:
+                    cue['anchorAlias'] = ' '.join(word['word'].strip() for word in window)
                 cues.append(cue)
         cues.sort(key=lambda cue: cue['start'])
     return cues
@@ -227,6 +233,7 @@ def main():
     parser.add_argument('--only', help='Process one track ID, retaining the other report entries')
     args = parser.parse_args()
     manifest = json.loads((ROOT / 'scripts/import-vocal-tracks.json').read_text(encoding='utf-8'))
+    aliases = json.loads((ROOT / 'songs/alignment-aliases.json').read_text(encoding='utf-8'))
     # Validate the complete batch before replacing any recording.
     for _, filename, _ in manifest:
         if not (args.source / filename).is_file():
@@ -266,7 +273,7 @@ def main():
         cues, missing = align(lines, words)
         if args.refine:
             cues = refine_missing(model, source, lines, cues, duration)
-            cues = refine_phonetic_gaps(model, source, lines, words, cues, duration)
+            cues = refine_phonetic_gaps(model, source, lines, words, cues, duration, aliases.get(song_id))
             cues = recover_repeats(lines, words, cues)
             present = {cue['sourceLine'] for cue in cues}
             missing = [line for line in missing if line['line'] not in present]

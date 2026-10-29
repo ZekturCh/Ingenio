@@ -916,6 +916,52 @@
       "matchedWordRatio": 1.0
     },
     {
+      "text": "Unida la costa (unida la costa)",
+      "start": 148.71,
+      "end": 152.91,
+      "words": [
+        {
+          "from": 0,
+          "to": 5,
+          "start": 148.71,
+          "end": 150.37
+        },
+        {
+          "from": 6,
+          "to": 8,
+          "start": 150.37,
+          "end": 150.67
+        },
+        {
+          "from": 9,
+          "to": 14,
+          "start": 150.67,
+          "end": 151.59
+        },
+        {
+          "from": 16,
+          "to": 21,
+          "start": 151.59,
+          "end": 151.85
+        },
+        {
+          "from": 22,
+          "to": 24,
+          "start": 151.85,
+          "end": 152.07
+        },
+        {
+          "from": 25,
+          "to": 30,
+          "start": 152.07,
+          "end": 152.91
+        }
+      ],
+      "sourceLine": 30,
+      "matchedWordRatio": 1.0,
+      "alignment": "phonetic-window-acoustic-refinement"
+    },
+    {
       "text": "Unida la selva contigo, Perú",
       "start": 154.6,
       "end": 160.56,
@@ -1355,11 +1401,6 @@
       "line": 21,
       "text": "Nuestra gran gratitud",
       "coverage": 0.333
-    },
-    {
-      "line": 30,
-      "text": "Unida la costa (unida la costa)",
-      "coverage": 0.5
     },
     {
       "line": 31,

@@ -107,8 +107,8 @@
     "durationSeconds": 205.224,
     "sha256": "71ba8c841737014186276425c681fe64a17ef14125141fa063317a10e69db422",
     "bytes": 4925997,
-    "alignedLines": 37,
-    "matchedSourceLines": 37,
+    "alignedLines": 38,
+    "matchedSourceLines": 38,
     "totalLines": 46,
     "unmatchedLines": [
       {
@@ -130,11 +130,6 @@
         "line": 41,
         "text": "Yo soy así y así seguiré",
         "coverage": 0.5
-      },
-      {
-        "line": 42,
-        "text": "Nunca cambiaré",
-        "coverage": 0.0
       },
       {
         "line": 43,
@@ -228,8 +223,8 @@
     "durationSeconds": 245.368163,
     "sha256": "13e3c782a804a16896ca1973ff5ac08ef05bc0aa46e6d06d3779932df74f0100",
     "bytes": 5889599,
-    "alignedLines": 32,
-    "matchedSourceLines": 32,
+    "alignedLines": 33,
+    "matchedSourceLines": 33,
     "totalLines": 35,
     "unmatchedLines": [
       {
@@ -241,11 +236,6 @@
         "line": 26,
         "text": "Mujer contra mujer",
         "coverage": 0.333
-      },
-      {
-        "line": 31,
-        "text": "Volando a ras de suelo",
-        "coverage": 0.2
       }
     ]
   },
@@ -256,18 +246,13 @@
     "durationSeconds": 240.117551,
     "sha256": "28777654c46ef8fd94fcd7a899b95ab6d8c2db51c1711492c164a470d33a959a",
     "bytes": 3850183,
-    "alignedLines": 29,
-    "matchedSourceLines": 29,
+    "alignedLines": 30,
+    "matchedSourceLines": 30,
     "totalLines": 35,
     "unmatchedLines": [
       {
         "line": 28,
         "text": "Siempre habrá un lugar",
-        "coverage": 0.5
-      },
-      {
-        "line": 29,
-        "text": "Algún recuerdo que será",
         "coverage": 0.5
       },
       {
@@ -299,8 +284,8 @@
     "durationSeconds": 324.545306,
     "sha256": "76ff3a36d89b9d30198d08c7ee7312ac916cf81407580ebd99e5b17b441a3715",
     "bytes": 4828220,
-    "alignedLines": 27,
-    "matchedSourceLines": 27,
+    "alignedLines": 28,
+    "matchedSourceLines": 28,
     "totalLines": 33,
     "unmatchedLines": [
       {
@@ -317,11 +302,6 @@
         "line": 14,
         "text": "Eres linda y hechicera",
         "coverage": 0.75
-      },
-      {
-        "line": 25,
-        "text": "Malagueña salerosa",
-        "coverage": 0.5
       },
       {
         "line": 27,
@@ -592,8 +572,8 @@
     "durationSeconds": 210.050612,
     "sha256": "8439d3d662ce46ff0ac293b3767fd31f58f3b0c47cdafce86090ef63c989ed29",
     "bytes": 5041978,
-    "alignedLines": 37,
-    "matchedSourceLines": 37,
+    "alignedLines": 38,
+    "matchedSourceLines": 38,
     "totalLines": 47,
     "unmatchedLines": [
       {
@@ -620,11 +600,6 @@
         "line": 21,
         "text": "Nuestra gran gratitud",
         "coverage": 0.333
-      },
-      {
-        "line": 30,
-        "text": "Unida la costa (unida la costa)",
-        "coverage": 0.5
       },
       {
         "line": 31,
@@ -655,27 +630,12 @@
     "durationSeconds": 258.403265,
     "sha256": "ee95ce5da0f1dbe3ca7b7e5c3fcd683341327f985b8bc718289c36b8e1c9e0bc",
     "bytes": 6202442,
-    "alignedLines": 34,
-    "matchedSourceLines": 34,
+    "alignedLines": 39,
+    "matchedSourceLines": 39,
     "totalLines": 63,
     "unmatchedLines": [
       {
-        "line": 1,
-        "text": "Ritmo, color y sabor",
-        "coverage": 0.25
-      },
-      {
         "line": 3,
-        "text": "Ritmo, color y sabor",
-        "coverage": 0.0
-      },
-      {
-        "line": 5,
-        "text": "Ritmo, color y sabor",
-        "coverage": 0.0
-      },
-      {
-        "line": 7,
         "text": "Ritmo, color y sabor",
         "coverage": 0.0
       },
@@ -743,16 +703,6 @@
         "line": 45,
         "text": "Tiene azuquitar, canela",
         "coverage": 0.333
-      },
-      {
-        "line": 51,
-        "text": "Ritmo, color y sabor",
-        "coverage": 0.0
-      },
-      {
-        "line": 52,
-        "text": "Ritmo, color y sabor",
-        "coverage": 0.25
       },
       {
         "line": 53,

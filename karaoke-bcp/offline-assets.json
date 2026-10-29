@@ -1,6 +1,6 @@
 {
-  "version": "0c68df2697a5bc640050",
-  "totalBytes": 124855959,
+  "version": "3b5225b4201498e0d69a",
+  "totalBytes": 124862483,
   "assets": [
     {
       "url": "../Logo%20Samay.png",
@@ -10,7 +10,7 @@
     {
       "url": "admin.html",
       "size": 5605,
-      "sha256": "e22040edb330a8e9059c6fec49e08bf1a53b137716135e98d1c673b87bca06a4"
+      "sha256": "899825952dd4755758337f7655083d571afef6da1e9aa77e441fcdb4c76d2c72"
     },
     {
       "url": "assets/audio/bluetooth-calibration.wav",
@@ -175,7 +175,7 @@
     {
       "url": "controller.js",
       "size": 7103,
-      "sha256": "d0bc5d92a510193a146274b1187e47fdad6541d2c68f2dccf7e85ea451b2caaf"
+      "sha256": "d99ef8631b47f313fe52723ea2f5ecfeaa053189c4ad248d29b12006190b7dc4"
     },
     {
       "url": "device-menu.css",
@@ -190,7 +190,7 @@
     {
       "url": "index.html",
       "size": 3099,
-      "sha256": "1088dfba5076bade8aaf38826a585f29ad62fc969a5180e882f44cb2b11b7b26"
+      "sha256": "5edd92b0c98f46d52e1b62d6cdc1c58d9866f32731ec68c75170b2ddf24f5c13"
     },
     {
       "url": "karaoke.css",
@@ -215,22 +215,22 @@
     {
       "url": "player-entry.js",
       "size": 72,
-      "sha256": "f251a9bede787ec182d8ccdadfb6046d7978f579eafb0a5cb434e54f2293102c"
+      "sha256": "c8d51b59a96c17261b5cc68ce80cb4b006ca3a6fc2ae3a304c2d9af78f9ee247"
     },
     {
       "url": "player.html",
       "size": 4765,
-      "sha256": "cf2e669c3b2e647d701146eecd8b24e85fc6f681691394dc0c464fe8aeaefc6c"
+      "sha256": "8525356f4409e2ed7512b4ea39582cf92a7fff543a9b002ac10d95e1150d5d38"
     },
     {
       "url": "player.js",
       "size": 15503,
-      "sha256": "001399bc248f4b7038557a89895212f8f77f6389fa16c7148337a06e2ae5a61f"
+      "sha256": "93923e10ea013f5c5ee855739c607d4b0ebb29ff9b2937518e0c7abfda0bf247"
     },
     {
       "url": "shared.js",
       "size": 5369,
-      "sha256": "8ad7ad3ce041aab90408cf52466a99d6e30e66e62e522a1040e98a926c198bfd"
+      "sha256": "3c9cb108819cc13a4d82cf603b157a84096c09c08f4517d58dabc709f54b47c6"
     },
     {
       "url": "songs/a-quien-le-importa/audio.mp3",
@@ -244,8 +244,8 @@
     },
     {
       "url": "songs/a-quien-le-importa/lyrics-timed.json",
-      "size": 25771,
-      "sha256": "da6d540ea92e9afdfb1afe412eda6b101b33a51fe2a6e63ba4143ad4e9796bee"
+      "size": 26137,
+      "sha256": "5d62526712a4f7b6e55909a3743acbc5f64382757d2aa81e6a195934b444cf73"
     },
     {
       "url": "songs/alma-corazon-y-vida/audio.mp3",
@@ -259,8 +259,8 @@
     },
     {
       "url": "songs/alma-corazon-y-vida/lyrics-timed.json",
-      "size": 15554,
-      "sha256": "348a57723aac99f073ada9aad08385413db600dc5f0a6c4a869924d70ca61a71"
+      "size": 15352,
+      "sha256": "8a2bc0b47ceaea36d71e53ff18fe759b17b9195221f1c934f02eca9cab8dd314"
     },
     {
       "url": "songs/amor-eterno/audio.mp3",
@@ -289,13 +289,13 @@
     },
     {
       "url": "songs/carinito/lyrics-timed.json",
-      "size": 13020,
-      "sha256": "4b29a835d9d952172ffe5d9220a219118b86ab668e3158d23f0aef26efc91bfb"
+      "size": 13864,
+      "sha256": "fbb312a440cac3fdcb8d26ef0c331112c0fdbb6e1d8fba8dfb1acbd13d7a20c1"
     },
     {
       "url": "songs/catalog.js",
       "size": 7469,
-      "sha256": "23a24e3a7346e1318c0f7f13a0afe62aeba239db58ac6cbbb2567870b01c416a"
+      "sha256": "0b3fb45eba715177dce5ba0e6bb09466e4a73c595c33c5231df15c50529cccfe"
     },
     {
       "url": "songs/contigo-peru/audio.mp3",
@@ -309,8 +309,8 @@
     },
     {
       "url": "songs/contigo-peru/lyrics-timed.json",
-      "size": 26477,
-      "sha256": "a707f8b4464b5bd3b832db2e27c19580aff2df4ba825b01044133a22c022cfd5"
+      "size": 27297,
+      "sha256": "3374f61853a467f65ae75577effb54d4137bb35900290f1bbbe5fe90262f4525"
     },
     {
       "url": "songs/cuando-pienses/audio.mp3",
@@ -474,8 +474,8 @@
     },
     {
       "url": "songs/la-malaguena/lyrics-timed.json",
-      "size": 17728,
-      "sha256": "596c5d7b0ae7adde281e23bb3b16411f207b7ec44d33e355be476499ed322ed7"
+      "size": 18095,
+      "sha256": "9a8f002decd6af06ef212b6c83586d669336d87aa90088bdae040606e74291a2"
     },
     {
       "url": "songs/mal-paso/audio.mp3",
@@ -534,8 +534,8 @@
     },
     {
       "url": "songs/mujer-contra-mujer/lyrics-timed.json",
-      "size": 26660,
-      "sha256": "a652dc7836475e55b43dda6a2679945c0e54cdbe0767c095ff11853c9b9d85f6"
+      "size": 27251,
+      "sha256": "cd79758c99758a4aef7c9a8057acf0eb91b43a0958b2e6cdb01db2d741a636a6"
     },
     {
       "url": "songs/no-podras/audio.mp3",
@@ -549,8 +549,8 @@
     },
     {
       "url": "songs/no-podras/lyrics-timed.json",
-      "size": 19868,
-      "sha256": "178effb6fb34e27bf6099936cea89e59d19f7f18d2e3131aa4975df39f65b57d"
+      "size": 20462,
+      "sha256": "ae4e9c1ae9c970ca198b34b50703e8a3b564059d41c504ace8ffa4060978d06f"
     },
     {
       "url": "songs/nuestro-secreto/audio.mp3",
@@ -639,8 +639,8 @@
     },
     {
       "url": "songs/ritmo-color-sabor/lyrics-timed.json",
-      "size": 23830,
-      "sha256": "9e10c6c8cc39b70b498f4717cbfbb03136300f4bd0033264cbb4769dd733352b"
+      "size": 26974,
+      "sha256": "14dc3a5a95aefe21d54817259c3dc7729436f51c9ac763597df72a0d50513968"
     },
     {
       "url": "songs/y-se-llama-peru/audio.mp3",
@@ -665,12 +665,12 @@
     {
       "url": "timing-editor.html",
       "size": 3355,
-      "sha256": "68e23c88c203ed28df1567258926385c18fade4f510d6db6d9d39a736e4486ea"
+      "sha256": "c2187cd7d77ceafa2bed6638432afe48e659420f194d9d8af7c92c5346750c1e"
     },
     {
       "url": "timing-editor.js",
       "size": 11040,
-      "sha256": "abd5ee330d2232492f7299185eff85eaf6418437b4bb7d8cc6ac18b44b6472ac"
+      "sha256": "51c8daf372a1556ea40f3d1cd60ba10198ba4615587149ec2e2860f667ab8312"
     },
     {
       "url": "track-timing.js",

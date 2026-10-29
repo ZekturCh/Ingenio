@@ -1,5 +1,22 @@
 # Hallowow Criollazo
 
+## Estado de las voces y marcas
+
+El inventario actual por cancion esta en
+[`songs/ESTADO-SINCRONIZACION.md`](songs/ESTADO-SINCRONIZACION.md).
+Se recibieron 24 grabaciones con voz (las 23 del lote y Carinito).
+La Bruja, La Llorona y Quien sera todavia necesitan una grabacion con voz guia.
+El himno no venia en el lote nuevo, pero su pista anterior ya contiene voces.
+Todas las canciones tienen texto y audio; eso no implica que sus tiempos esten
+verificados. El informe diferencia frases sin alinear de marcas automaticas.
+
+`songs/alignment-aliases.json` recoge confusiones concretas del reconocedor
+en estribillos (por ejemplo, palabras unidas al cantar). Solo sirven para buscar
+un fragmento reconocido del audio; despues se aplica alineacion acustica y se
+conserva `reviewRequired: true`. No se crean tiempos por porcentaje de duracion.
+Ejecutar `node karaoke-bcp/scripts/build-alignment-status.cjs` despues de cambiar
+marcas para actualizar el inventario y sus conteos.
+
 ## Carinito con voz asistida
 
 Se reemplazo Carinito por `Bareto - Cariñito 【LETRA】.mp3`, aportado por el usuario,

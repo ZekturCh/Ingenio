@@ -696,6 +696,28 @@
       "matchedWordRatio": 0.6
     },
     {
+      "text": "Malagueña salerosa",
+      "start": 220.99,
+      "end": 233.51,
+      "words": [
+        {
+          "from": 0,
+          "to": 9,
+          "start": 220.99,
+          "end": 226.47
+        },
+        {
+          "from": 10,
+          "to": 18,
+          "start": 226.47,
+          "end": 233.51
+        }
+      ],
+      "sourceLine": 25,
+      "matchedWordRatio": 1.0,
+      "alignment": "phonetic-window-acoustic-refinement"
+    },
+    {
       "text": "Besar tus labios quisiera",
       "start": 237.44,
       "end": 240.74,
@@ -910,11 +932,6 @@
       "line": 14,
       "text": "Eres linda y hechicera",
       "coverage": 0.75
-    },
-    {
-      "line": 25,
-      "text": "Malagueña salerosa",
-      "coverage": 0.5
     },
     {
       "line": 27,

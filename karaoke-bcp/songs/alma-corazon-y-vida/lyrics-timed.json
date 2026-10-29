@@ -589,55 +589,43 @@
     },
     {
       "text": "y vida para vivirla junto a ti",
-      "start": 80.06,
-      "end": 84.02,
+      "start": 80.73,
+      "end": 83.61,
       "words": [
-        {
-          "from": 0,
-          "to": 1,
-          "start": 80.06,
-          "end": 80.76
-        },
         {
           "from": 2,
           "to": 6,
-          "start": 80.76,
-          "end": 81.1
+          "start": 80.73,
+          "end": 81.11
         },
         {
           "from": 7,
           "to": 11,
-          "start": 81.1,
-          "end": 81.46
+          "start": 81.11,
+          "end": 81.47
         },
         {
           "from": 12,
           "to": 19,
-          "start": 81.46,
-          "end": 82.66
+          "start": 81.47,
+          "end": 82.67
         },
         {
           "from": 20,
           "to": 25,
-          "start": 82.66,
-          "end": 83.2
+          "start": 82.67,
+          "end": 83.17
         },
         {
           "from": 26,
           "to": 27,
-          "start": 83.2,
-          "end": 83.66
-        },
-        {
-          "from": 28,
-          "to": 30,
-          "start": 83.66,
-          "end": 84.02
+          "start": 83.17,
+          "end": 83.61
         }
       ],
       "sourceLine": 15,
-      "matchedWordRatio": 1.0,
-      "alignment": "recognized-repetition"
+      "matchedWordRatio": 0.714,
+      "alignment": "phonetic-window-acoustic-refinement"
     },
     {
       "text": "recuerdo aquella tarde pero",

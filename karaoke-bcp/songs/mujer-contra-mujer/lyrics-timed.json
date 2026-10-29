@@ -1256,6 +1256,40 @@
       "matchedWordRatio": 0.6
     },
     {
+      "text": "Volando a ras de suelo",
+      "start": 206.84,
+      "end": 209.96,
+      "words": [
+        {
+          "from": 0,
+          "to": 7,
+          "start": 206.84,
+          "end": 208.4
+        },
+        {
+          "from": 8,
+          "to": 9,
+          "start": 208.4,
+          "end": 208.56
+        },
+        {
+          "from": 10,
+          "to": 13,
+          "start": 208.56,
+          "end": 208.92
+        },
+        {
+          "from": 17,
+          "to": 22,
+          "start": 209.26,
+          "end": 209.96
+        }
+      ],
+      "sourceLine": 31,
+      "matchedWordRatio": 0.8,
+      "alignment": "phonetic-window-acoustic-refinement"
+    },
+    {
       "text": "Mujer contra mujer",
       "start": 210.96,
       "end": 212.92,
@@ -1387,11 +1421,6 @@
       "line": 26,
       "text": "Mujer contra mujer",
       "coverage": 0.333
-    },
-    {
-      "line": 31,
-      "text": "Volando a ras de suelo",
-      "coverage": 0.2
     }
   ]
 }

@@ -1,0 +1,320 @@
+{
+  "updated": "2026-10-29",
+  "totalSongs": 28,
+  "newVocalRecordings": 24,
+  "notInNewVocalBatch": [
+    {
+      "id": "himno-peru",
+      "title": "Himno Nacional del Perú"
+    },
+    {
+      "id": "la-bruja",
+      "title": "La Bruja"
+    },
+    {
+      "id": "la-llorona",
+      "title": "La Llorona"
+    },
+    {
+      "id": "quien-sera",
+      "title": "Quién será"
+    }
+  ],
+  "needVocalGuide": [
+    {
+      "id": "la-bruja",
+      "title": "La Bruja"
+    },
+    {
+      "id": "la-llorona",
+      "title": "La Llorona"
+    },
+    {
+      "id": "quien-sera",
+      "title": "Quién será"
+    }
+  ],
+  "unmatchedProvidedPhrases": 102,
+  "songs": [
+    {
+      "id": "carinito",
+      "title": "Cariñito",
+      "newVocalRecording": true,
+      "vocalRecording": "provided-vocal-guide",
+      "method": "local-asr-word-matching",
+      "markedPhrases": 30,
+      "unmatchedLines": 9,
+      "reviewRequired": true
+    },
+    {
+      "id": "la-flor-de-la-canela",
+      "title": "La Flor de la Canela",
+      "newVocalRecording": true,
+      "vocalRecording": "provided-vocal-guide",
+      "method": "local-asr-word-matching",
+      "markedPhrases": 36,
+      "unmatchedLines": 4,
+      "reviewRequired": true
+    },
+    {
+      "id": "esta-es-mi-tierra",
+      "title": "Esta es mi tierra",
+      "newVocalRecording": true,
+      "vocalRecording": "provided-vocal-guide",
+      "method": "local-asr-word-matching",
+      "markedPhrases": 45,
+      "unmatchedLines": 2,
+      "reviewRequired": true
+    },
+    {
+      "id": "mi-propiedad-privada",
+      "title": "Mi propiedad privada",
+      "newVocalRecording": true,
+      "vocalRecording": "provided-vocal-guide",
+      "method": "local-asr-word-matching",
+      "markedPhrases": 18,
+      "unmatchedLines": 0,
+      "reviewRequired": true
+    },
+    {
+      "id": "fina-estampa",
+      "title": "Fina Estampa",
+      "newVocalRecording": true,
+      "vocalRecording": "provided-vocal-guide",
+      "method": "local-asr-word-matching",
+      "markedPhrases": 26,
+      "unmatchedLines": 1,
+      "reviewRequired": true
+    },
+    {
+      "id": "mi-peru",
+      "title": "Mi Perú",
+      "newVocalRecording": true,
+      "vocalRecording": "provided-vocal-guide",
+      "method": "local-asr-word-matching",
+      "markedPhrases": 27,
+      "unmatchedLines": 6,
+      "reviewRequired": true
+    },
+    {
+      "id": "contigo-peru",
+      "title": "Contigo Perú",
+      "newVocalRecording": true,
+      "vocalRecording": "provided-vocal-guide",
+      "method": "local-asr-word-matching",
+      "markedPhrases": 38,
+      "unmatchedLines": 9,
+      "reviewRequired": true
+    },
+    {
+      "id": "y-se-llama-peru",
+      "title": "Y se llama Perú",
+      "newVocalRecording": true,
+      "vocalRecording": "provided-vocal-guide",
+      "method": "local-asr-word-matching",
+      "markedPhrases": 46,
+      "unmatchedLines": 6,
+      "reviewRequired": true
+    },
+    {
+      "id": "a-quien-le-importa",
+      "title": "A quién le importa",
+      "newVocalRecording": true,
+      "vocalRecording": "provided-vocal-guide",
+      "method": "local-asr-word-matching",
+      "markedPhrases": 38,
+      "unmatchedLines": 8,
+      "reviewRequired": true
+    },
+    {
+      "id": "alma-corazon-y-vida",
+      "title": "Alma, corazón y vida",
+      "newVocalRecording": true,
+      "vocalRecording": "provided-vocal-guide",
+      "method": "local-asr-word-matching",
+      "markedPhrases": 20,
+      "unmatchedLines": 0,
+      "reviewRequired": true
+    },
+    {
+      "id": "amor-eterno",
+      "title": "Amor eterno",
+      "newVocalRecording": true,
+      "vocalRecording": "provided-vocal-guide",
+      "method": "local-asr-word-matching",
+      "markedPhrases": 40,
+      "unmatchedLines": 10,
+      "reviewRequired": true
+    },
+    {
+      "id": "cuando-pienses",
+      "title": "Cuando pienses en volver",
+      "newVocalRecording": true,
+      "vocalRecording": "provided-vocal-guide",
+      "method": "local-asr-word-matching",
+      "markedPhrases": 38,
+      "unmatchedLines": 1,
+      "reviewRequired": true
+    },
+    {
+      "id": "el-muerto-vivo",
+      "title": "El muerto vivo",
+      "newVocalRecording": true,
+      "vocalRecording": "provided-vocal-guide",
+      "method": "local-asr-word-matching",
+      "markedPhrases": 21,
+      "unmatchedLines": 3,
+      "reviewRequired": true
+    },
+    {
+      "id": "el-rey",
+      "title": "El rey",
+      "newVocalRecording": true,
+      "vocalRecording": "provided-vocal-guide",
+      "method": "local-asr-word-matching",
+      "markedPhrases": 26,
+      "unmatchedLines": 0,
+      "reviewRequired": true
+    },
+    {
+      "id": "el-triste",
+      "title": "El triste",
+      "newVocalRecording": true,
+      "vocalRecording": "provided-vocal-guide",
+      "method": "local-asr-word-matching",
+      "markedPhrases": 26,
+      "unmatchedLines": 5,
+      "reviewRequired": true
+    },
+    {
+      "id": "himno-peru",
+      "title": "Himno Nacional del Perú",
+      "newVocalRecording": false,
+      "vocalRecording": "previous-vocal-recording",
+      "method": "forced word-to-audio alignment anchored by local speech recognition; review required",
+      "markedPhrases": 45,
+      "unmatchedLines": null,
+      "reviewRequired": true
+    },
+    {
+      "id": "la-bruja",
+      "title": "La Bruja",
+      "newVocalRecording": false,
+      "vocalRecording": "previous-karaoke-track",
+      "method": "text-length-proportional; not aligned to vocals or instrumental sections",
+      "markedPhrases": 24,
+      "unmatchedLines": null,
+      "reviewRequired": true
+    },
+    {
+      "id": "la-llorona",
+      "title": "La Llorona",
+      "newVocalRecording": false,
+      "vocalRecording": "previous-karaoke-track",
+      "method": "text-length-proportional; not aligned to vocals or instrumental sections",
+      "markedPhrases": 48,
+      "unmatchedLines": null,
+      "reviewRequired": true
+    },
+    {
+      "id": "la-malaguena",
+      "title": "La Malagueña",
+      "newVocalRecording": true,
+      "vocalRecording": "provided-vocal-guide",
+      "method": "local-asr-word-matching",
+      "markedPhrases": 28,
+      "unmatchedLines": 5,
+      "reviewRequired": true
+    },
+    {
+      "id": "mal-paso",
+      "title": "Mal paso",
+      "newVocalRecording": true,
+      "vocalRecording": "provided-vocal-guide",
+      "method": "local-asr-word-matching",
+      "markedPhrases": 24,
+      "unmatchedLines": 2,
+      "reviewRequired": true
+    },
+    {
+      "id": "mujer-contra-mujer",
+      "title": "Mujer contra mujer",
+      "newVocalRecording": true,
+      "vocalRecording": "provided-vocal-guide",
+      "method": "local-asr-word-matching",
+      "markedPhrases": 33,
+      "unmatchedLines": 2,
+      "reviewRequired": true
+    },
+    {
+      "id": "no-podras",
+      "title": "No podrás",
+      "newVocalRecording": true,
+      "vocalRecording": "provided-vocal-guide",
+      "method": "local-asr-word-matching",
+      "markedPhrases": 30,
+      "unmatchedLines": 5,
+      "reviewRequired": true
+    },
+    {
+      "id": "nuestro-secreto",
+      "title": "Nuestro secreto",
+      "newVocalRecording": true,
+      "vocalRecording": "provided-vocal-guide",
+      "method": "local-asr-word-matching",
+      "markedPhrases": 23,
+      "unmatchedLines": 0,
+      "reviewRequired": true
+    },
+    {
+      "id": "payaso",
+      "title": "Payaso",
+      "newVocalRecording": true,
+      "vocalRecording": "provided-vocal-guide",
+      "method": "local-asr-word-matching",
+      "markedPhrases": 37,
+      "unmatchedLines": 0,
+      "reviewRequired": true
+    },
+    {
+      "id": "quien-sera",
+      "title": "Quién será",
+      "newVocalRecording": false,
+      "vocalRecording": "previous-karaoke-track",
+      "method": "text-length-proportional; not aligned to vocals or instrumental sections",
+      "markedPhrases": 26,
+      "unmatchedLines": null,
+      "reviewRequired": true
+    },
+    {
+      "id": "regresa",
+      "title": "Regresa",
+      "newVocalRecording": true,
+      "vocalRecording": "provided-vocal-guide",
+      "method": "local-asr-word-matching",
+      "markedPhrases": 24,
+      "unmatchedLines": 0,
+      "reviewRequired": true
+    },
+    {
+      "id": "ritmo-color-sabor",
+      "title": "Ritmo, color y sabor",
+      "newVocalRecording": true,
+      "vocalRecording": "provided-vocal-guide",
+      "method": "local-asr-word-matching",
+      "markedPhrases": 39,
+      "unmatchedLines": 24,
+      "reviewRequired": true
+    },
+    {
+      "id": "odiame",
+      "title": "Ódiame",
+      "newVocalRecording": true,
+      "vocalRecording": "provided-vocal-guide",
+      "method": "local-asr-word-matching",
+      "markedPhrases": 28,
+      "unmatchedLines": 0,
+      "reviewRequired": true
+    }
+  ]
+}

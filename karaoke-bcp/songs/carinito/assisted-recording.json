@@ -4,20 +4,10 @@
   "durationSeconds": 226.168163,
   "sha256": "8f6273f3157d04d02cbf9b8846088fd081724d1cda651899b28cb1d460002cb5",
   "bytes": 5428799,
-  "alignedLines": 27,
-  "matchedSourceLines": 27,
+  "alignedLines": 30,
+  "matchedSourceLines": 30,
   "totalLines": 39,
   "unmatchedLines": [
-    {
-      "line": 4,
-      "text": "Lloro",
-      "coverage": 0.0
-    },
-    {
-      "line": 7,
-      "text": "Lloro",
-      "coverage": 0.0
-    },
     {
       "line": 17,
       "text": "Qué cosa",
@@ -30,11 +20,6 @@
     },
     {
       "line": 19,
-      "text": "Lloro",
-      "coverage": 0.0
-    },
-    {
-      "line": 22,
       "text": "Lloro",
       "coverage": 0.0
     },

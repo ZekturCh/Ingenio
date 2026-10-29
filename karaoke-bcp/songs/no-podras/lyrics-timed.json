@@ -956,6 +956,40 @@
       "matchedWordRatio": 1.0
     },
     {
+      "text": "Algún recuerdo que será",
+      "start": 190.39,
+      "end": 192.67,
+      "words": [
+        {
+          "from": 0,
+          "to": 5,
+          "start": 190.39,
+          "end": 190.45
+        },
+        {
+          "from": 6,
+          "to": 14,
+          "start": 190.45,
+          "end": 191.29
+        },
+        {
+          "from": 15,
+          "to": 18,
+          "start": 191.29,
+          "end": 191.99
+        },
+        {
+          "from": 19,
+          "to": 23,
+          "start": 191.99,
+          "end": 192.67
+        }
+      ],
+      "sourceLine": 29,
+      "matchedWordRatio": 1.0,
+      "alignment": "phonetic-window-acoustic-refinement"
+    },
+    {
       "text": "Como yo nunca imaginé",
       "start": 222.86,
       "end": 226.16,
@@ -1009,11 +1043,6 @@
     {
       "line": 28,
       "text": "Siempre habrá un lugar",
-      "coverage": 0.5
-    },
-    {
-      "line": 29,
-      "text": "Algún recuerdo que será",
       "coverage": 0.5
     },
     {

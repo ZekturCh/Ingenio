@@ -1,4 +1,4 @@
-import { SONGS, roomFromUrl, subscribeRoom, sendCommand, getSong, getVersion, controllerUrl } from "./shared.js?v=20261029-3";
+import { SONGS, roomFromUrl, subscribeRoom, sendCommand, getSong, getVersion, controllerUrl } from "./shared.js?v=20261029-4";
 import { icons, loadFavorites, toggleFavorite, toggleFullscreen } from "./ui.js";
 import { getDelay, lyricTime, DELAY_KEY } from "./audio-settings.js";
 import { getCalibration, setActiveTrack, calibratedTime } from "./track-timing.js";

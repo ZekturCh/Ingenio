@@ -63,7 +63,7 @@ const CHORUS_WINDOWS = {
   },
   "alma-corazon-y-vida": {
     "startAt": 47.12,
-    "endAt": 84.32
+    "endAt": 83.91
   },
   "amor-eterno": {
     "startAt": 90.42,

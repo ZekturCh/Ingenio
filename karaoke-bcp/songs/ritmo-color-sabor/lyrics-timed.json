@@ -8,6 +8,41 @@
   "audioSha256": "ee95ce5da0f1dbe3ca7b7e5c3fcd683341327f985b8bc718289c36b8e1c9e0bc",
   "lyrics": [
     {
+      "text": "Ritmo, color y sabor",
+      "start": 29.75,
+      "end": 32.67,
+      "words": [
+        {
+          "from": 0,
+          "to": 5,
+          "start": 29.75,
+          "end": 31.39
+        },
+        {
+          "from": 7,
+          "to": 12,
+          "start": 31.41,
+          "end": 31.77
+        },
+        {
+          "from": 13,
+          "to": 14,
+          "start": 31.77,
+          "end": 32.23
+        },
+        {
+          "from": 15,
+          "to": 20,
+          "start": 32.23,
+          "end": 32.67
+        }
+      ],
+      "sourceLine": 1,
+      "matchedWordRatio": 1.0,
+      "alignment": "phonetic-window-acoustic-refinement",
+      "anchorAlias": "ritmo colorizado,"
+    },
+    {
       "text": "Ritmo para vacilar",
       "start": 34.18,
       "end": 36.6,
@@ -56,6 +91,41 @@
       "matchedWordRatio": 0.667
     },
     {
+      "text": "Ritmo, color y sabor",
+      "start": 45.29,
+      "end": 47.17,
+      "words": [
+        {
+          "from": 0,
+          "to": 5,
+          "start": 45.29,
+          "end": 45.71
+        },
+        {
+          "from": 7,
+          "to": 12,
+          "start": 45.83,
+          "end": 46.19
+        },
+        {
+          "from": 13,
+          "to": 14,
+          "start": 46.19,
+          "end": 46.51
+        },
+        {
+          "from": 15,
+          "to": 20,
+          "start": 46.51,
+          "end": 47.17
+        }
+      ],
+      "sourceLine": 5,
+      "matchedWordRatio": 1.0,
+      "alignment": "phonetic-window-acoustic-refinement",
+      "anchorAlias": "no colorizabó"
+    },
+    {
       "text": "Ritmo para vacilar (pa' vacilar)",
       "start": 47.9,
       "end": 51.66,
@@ -87,6 +157,41 @@
       ],
       "sourceLine": 6,
       "matchedWordRatio": 0.8
+    },
+    {
+      "text": "Ritmo, color y sabor",
+      "start": 51.79,
+      "end": 54.25,
+      "words": [
+        {
+          "from": 0,
+          "to": 5,
+          "start": 51.79,
+          "end": 52.99
+        },
+        {
+          "from": 7,
+          "to": 12,
+          "start": 53.11,
+          "end": 53.47
+        },
+        {
+          "from": 13,
+          "to": 14,
+          "start": 53.47,
+          "end": 53.89
+        },
+        {
+          "from": 15,
+          "to": 20,
+          "start": 53.89,
+          "end": 54.25
+        }
+      ],
+      "sourceLine": 7,
+      "matchedWordRatio": 1.0,
+      "alignment": "phonetic-window-acoustic-refinement",
+      "anchorAlias": "que no colorizabó"
     },
     {
       "text": "Ritmo para vacilar",
@@ -1064,6 +1169,76 @@
       "alignment": "phonetic-window-acoustic-refinement"
     },
     {
+      "text": "Ritmo, color y sabor",
+      "start": 207.85,
+      "end": 209.63,
+      "words": [
+        {
+          "from": 0,
+          "to": 5,
+          "start": 207.85,
+          "end": 208.47
+        },
+        {
+          "from": 7,
+          "to": 12,
+          "start": 208.55,
+          "end": 208.81
+        },
+        {
+          "from": 13,
+          "to": 14,
+          "start": 208.81,
+          "end": 209.21
+        },
+        {
+          "from": 15,
+          "to": 20,
+          "start": 209.21,
+          "end": 209.63
+        }
+      ],
+      "sourceLine": 51,
+      "matchedWordRatio": 1.0,
+      "alignment": "phonetic-window-acoustic-refinement",
+      "anchorAlias": "Ritmo colorizado"
+    },
+    {
+      "text": "Ritmo, color y sabor",
+      "start": 211.81,
+      "end": 213.19,
+      "words": [
+        {
+          "from": 0,
+          "to": 5,
+          "start": 211.81,
+          "end": 211.99
+        },
+        {
+          "from": 7,
+          "to": 12,
+          "start": 212.07,
+          "end": 212.29
+        },
+        {
+          "from": 13,
+          "to": 14,
+          "start": 212.29,
+          "end": 212.69
+        },
+        {
+          "from": 15,
+          "to": 20,
+          "start": 212.69,
+          "end": 213.19
+        }
+      ],
+      "sourceLine": 52,
+      "matchedWordRatio": 1.0,
+      "alignment": "phonetic-window-acoustic-refinement",
+      "anchorAlias": "Ritmo colorizado"
+    },
+    {
       "text": "Para vacilar, pa' vacilar",
       "start": 247.21,
       "end": 249.95,
@@ -1100,22 +1275,7 @@
   ],
   "unmatchedLines": [
     {
-      "line": 1,
-      "text": "Ritmo, color y sabor",
-      "coverage": 0.25
-    },
-    {
       "line": 3,
-      "text": "Ritmo, color y sabor",
-      "coverage": 0.0
-    },
-    {
-      "line": 5,
-      "text": "Ritmo, color y sabor",
-      "coverage": 0.0
-    },
-    {
-      "line": 7,
       "text": "Ritmo, color y sabor",
       "coverage": 0.0
     },
@@ -1183,16 +1343,6 @@
       "line": 45,
       "text": "Tiene azuquitar, canela",
       "coverage": 0.333
-    },
-    {
-      "line": 51,
-      "text": "Ritmo, color y sabor",
-      "coverage": 0.0
-    },
-    {
-      "line": 52,
-      "text": "Ritmo, color y sabor",
-      "coverage": 0.25
     },
     {
       "line": 53,

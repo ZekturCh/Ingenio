@@ -60,6 +60,23 @@
       "matchedWordRatio": 1.0
     },
     {
+      "text": "Lloro",
+      "start": 37.35,
+      "end": 39.57,
+      "words": [
+        {
+          "from": 0,
+          "to": 5,
+          "start": 37.35,
+          "end": 39.57
+        }
+      ],
+      "sourceLine": 4,
+      "matchedWordRatio": 1.0,
+      "alignment": "phonetic-window-acoustic-refinement",
+      "anchorAlias": "Yo no,"
+    },
+    {
       "text": "Por quererte",
       "start": 40.08,
       "end": 41.74,
@@ -106,6 +123,23 @@
       ],
       "sourceLine": 6,
       "matchedWordRatio": 0.75
+    },
+    {
+      "text": "Lloro",
+      "start": 46.75,
+      "end": 48.95,
+      "words": [
+        {
+          "from": 0,
+          "to": 5,
+          "start": 46.75,
+          "end": 48.95
+        }
+      ],
+      "sourceLine": 7,
+      "matchedWordRatio": 1.0,
+      "alignment": "phonetic-window-acoustic-refinement",
+      "anchorAlias": "Yo no,"
     },
     {
       "text": "Por quererte",
@@ -375,6 +409,23 @@
       "matchedWordRatio": 0.75
     },
     {
+      "text": "Lloro",
+      "start": 132.38,
+      "end": 134.56,
+      "words": [
+        {
+          "from": 0,
+          "to": 5,
+          "start": 132.38,
+          "end": 134.56
+        }
+      ],
+      "sourceLine": 22,
+      "matchedWordRatio": 1.0,
+      "alignment": "phonetic-window-acoustic-refinement",
+      "anchorAlias": "Yo voy"
+    },
+    {
       "text": "Por quererte",
       "start": 134.72,
       "end": 136.74,
@@ -639,16 +690,6 @@
   ],
   "unmatchedLines": [
     {
-      "line": 4,
-      "text": "Lloro",
-      "coverage": 0.0
-    },
-    {
-      "line": 7,
-      "text": "Lloro",
-      "coverage": 0.0
-    },
-    {
       "line": 17,
       "text": "Qué cosa",
       "coverage": 0.0
@@ -660,11 +701,6 @@
     },
     {
       "line": 19,
-      "text": "Lloro",
-      "coverage": 0.0
-    },
-    {
-      "line": 22,
       "text": "Lloro",
       "coverage": 0.0
     },

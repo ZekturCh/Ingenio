@@ -1,4 +1,4 @@
-import { SONGS } from "./songs/catalog.js?v=20261029-3";
+import { SONGS } from "./songs/catalog.js?v=20261029-4";
 import { parseText, timedLyrics } from "./lyrics.js";
 
 const $ = selector => document.querySelector(selector);

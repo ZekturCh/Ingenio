@@ -1303,6 +1303,28 @@
       ],
       "sourceLine": 40,
       "matchedWordRatio": 0.875
+    },
+    {
+      "text": "Nunca cambiaré",
+      "start": 167.21,
+      "end": 169.07,
+      "words": [
+        {
+          "from": 0,
+          "to": 5,
+          "start": 167.21,
+          "end": 168.41
+        },
+        {
+          "from": 6,
+          "to": 14,
+          "start": 168.41,
+          "end": 169.07
+        }
+      ],
+      "sourceLine": 42,
+      "matchedWordRatio": 1.0,
+      "alignment": "phonetic-window-acoustic-refinement"
     }
   ],
   "unmatchedLines": [
@@ -1325,11 +1347,6 @@
       "line": 41,
       "text": "Yo soy así y así seguiré",
       "coverage": 0.5
-    },
-    {
-      "line": 42,
-      "text": "Nunca cambiaré",
-      "coverage": 0.0
     },
     {
       "line": 43,
