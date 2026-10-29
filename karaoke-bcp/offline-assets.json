@@ -1,6 +1,6 @@
 {
-  "version": "3b5225b4201498e0d69a",
-  "totalBytes": 124862483,
+  "version": "777fe7e01ffd3319a75d",
+  "totalBytes": 124885974,
   "assets": [
     {
       "url": "../Logo%20Samay.png",
@@ -10,7 +10,7 @@
     {
       "url": "admin.html",
       "size": 5605,
-      "sha256": "899825952dd4755758337f7655083d571afef6da1e9aa77e441fcdb4c76d2c72"
+      "sha256": "185873a550ce23d6839e75e991fff6e60f3a2ec2fa9b5c5ac2df4251b3df522d"
     },
     {
       "url": "assets/audio/bluetooth-calibration.wav",
@@ -169,13 +169,13 @@
     },
     {
       "url": "audio-settings.js",
-      "size": 878,
-      "sha256": "c033d2f6221758ad41e3f2a0e273d16597a0a68d3d29c284aca5fd2a865e9fc8"
+      "size": 1025,
+      "sha256": "3df4d0720744e7f466d29652e48d88e172cdaf3c8369fe7e7f8c7f84b830d873"
     },
     {
       "url": "controller.js",
       "size": 7103,
-      "sha256": "d99ef8631b47f313fe52723ea2f5ecfeaa053189c4ad248d29b12006190b7dc4"
+      "sha256": "ea426f4a451da23cb832752cc50cec7b0c0f686c9a1d6ad62980e9126c8a98c4"
     },
     {
       "url": "device-menu.css",
@@ -190,7 +190,7 @@
     {
       "url": "index.html",
       "size": 3099,
-      "sha256": "5edd92b0c98f46d52e1b62d6cdc1c58d9866f32731ec68c75170b2ddf24f5c13"
+      "sha256": "9dcbb301a4a8c26e89ef5871cfa7076bf8ad03602c2af9abc881415826915041"
     },
     {
       "url": "karaoke.css",
@@ -215,22 +215,22 @@
     {
       "url": "player-entry.js",
       "size": 72,
-      "sha256": "c8d51b59a96c17261b5cc68ce80cb4b006ca3a6fc2ae3a304c2d9af78f9ee247"
+      "sha256": "180bd61b24750e9e0d9d6f5afdf5d9346c31fb8ddc77dd93549c391698c1d649"
     },
     {
       "url": "player.html",
       "size": 4765,
-      "sha256": "8525356f4409e2ed7512b4ea39582cf92a7fff543a9b002ac10d95e1150d5d38"
+      "sha256": "627ec10b02eac0752d76b20fac084c365b4e3fb1201ae44313613d8f2ce4a999"
     },
     {
       "url": "player.js",
-      "size": 15503,
-      "sha256": "93923e10ea013f5c5ee855739c607d4b0ebb29ff9b2937518e0c7abfda0bf247"
+      "size": 16546,
+      "sha256": "1f0aaa4c025e5c9478639468b33cba35d2d9ce8560fd1c43ff33deabc8ac13d9"
     },
     {
       "url": "shared.js",
       "size": 5369,
-      "sha256": "3c9cb108819cc13a4d82cf603b157a84096c09c08f4517d58dabc709f54b47c6"
+      "sha256": "c00b6d0581463524f781fec5f6aad1c52b95f8b6038634f4dd58dbbf91207010"
     },
     {
       "url": "songs/a-quien-le-importa/audio.mp3",
@@ -244,8 +244,8 @@
     },
     {
       "url": "songs/a-quien-le-importa/lyrics-timed.json",
-      "size": 26137,
-      "sha256": "5d62526712a4f7b6e55909a3743acbc5f64382757d2aa81e6a195934b444cf73"
+      "size": 28197,
+      "sha256": "8c540280fa2519f8cc898663bdbf1c4af6d2c36e6edcbd6bcbb5ac8f05e640df"
     },
     {
       "url": "songs/alma-corazon-y-vida/audio.mp3",
@@ -259,8 +259,8 @@
     },
     {
       "url": "songs/alma-corazon-y-vida/lyrics-timed.json",
-      "size": 15352,
-      "sha256": "8a2bc0b47ceaea36d71e53ff18fe759b17b9195221f1c934f02eca9cab8dd314"
+      "size": 15322,
+      "sha256": "2ac5a0e09f7fa71a0bc2146d4f5ee0a89ef0befc2e4ae1d59263b536f800de80"
     },
     {
       "url": "songs/amor-eterno/audio.mp3",
@@ -274,8 +274,8 @@
     },
     {
       "url": "songs/amor-eterno/lyrics-timed.json",
-      "size": 38513,
-      "sha256": "a372b73bef30a85c45b33d425bd805f7ccd037e3377678b37990338fbe043752"
+      "size": 41035,
+      "sha256": "8a08c44b0b549a4b8a87ff6349f765b22b178c33cc37fd32e51a96d49066861c"
     },
     {
       "url": "songs/carinito/audio.mp3",
@@ -284,18 +284,18 @@
     },
     {
       "url": "songs/carinito/letra.txt",
-      "size": 543,
-      "sha256": "0521eed94e8dac35c32bf4a6caa43bfd5830df0d1a255b5cb91fd4b1390d58bf"
+      "size": 544,
+      "sha256": "c503b1895dc8633474e6981399cd711ad2b829c4fd79c1fcac9219b8d4a8d862"
     },
     {
       "url": "songs/carinito/lyrics-timed.json",
-      "size": 13864,
-      "sha256": "fbb312a440cac3fdcb8d26ef0c331112c0fdbb6e1d8fba8dfb1acbd13d7a20c1"
+      "size": 13800,
+      "sha256": "f3b9037ec593b465768a0698dc951f524f36ca51cb6163c19deee9eba918cc68"
     },
     {
       "url": "songs/catalog.js",
       "size": 7469,
-      "sha256": "0b3fb45eba715177dce5ba0e6bb09466e4a73c595c33c5231df15c50529cccfe"
+      "sha256": "a6754fc34b7acbe89c0cc2fe4d1d764fec430d010da0023d2320f2b67b1c9cb1"
     },
     {
       "url": "songs/contigo-peru/audio.mp3",
@@ -309,8 +309,8 @@
     },
     {
       "url": "songs/contigo-peru/lyrics-timed.json",
-      "size": 27297,
-      "sha256": "3374f61853a467f65ae75577effb54d4137bb35900290f1bbbe5fe90262f4525"
+      "size": 29633,
+      "sha256": "abf81d01b47d710e3835d958bc99a90b15eec3380ce49cc6c2f19ff392bb325b"
     },
     {
       "url": "songs/cuando-pienses/audio.mp3",
@@ -324,8 +324,8 @@
     },
     {
       "url": "songs/cuando-pienses/lyrics-timed.json",
-      "size": 36220,
-      "sha256": "fde1ebefc419c09079a6d47787c97da5bcca10814c9208dc6005481d7c18700f"
+      "size": 36494,
+      "sha256": "843e5928667c5bfe4467dcd7c203b517050951e32addbe3c481ed07e87eadb62"
     },
     {
       "url": "songs/el-muerto-vivo/audio.mp3",
@@ -339,8 +339,8 @@
     },
     {
       "url": "songs/el-muerto-vivo/lyrics-timed.json",
-      "size": 21986,
-      "sha256": "9d2ebf5aa06082dbe5b8dbff2c7ec71e9c7450b837ca8f1e25a21eb853edb489"
+      "size": 22879,
+      "sha256": "f9c3b98c207f47b7c9d0d149eb102355e4c2e9c72f04bf5e4d98627a45f3f3fc"
     },
     {
       "url": "songs/el-rey/audio.mp3",
@@ -354,8 +354,8 @@
     },
     {
       "url": "songs/el-rey/lyrics-timed.json",
-      "size": 19592,
-      "sha256": "9b2cd325f64a9e6d0246934a332b2f890e62099892c508f4a9a39da746a58972"
+      "size": 19522,
+      "sha256": "b5bcef9b3dec62a0f974a687b31bca38bbc7348947c00caa1a1586ffafe68b7a"
     },
     {
       "url": "songs/el-triste/audio.mp3",
@@ -369,8 +369,8 @@
     },
     {
       "url": "songs/el-triste/lyrics-timed.json",
-      "size": 20330,
-      "sha256": "7f064ba0f376252479bb315f70bce442ea9bfc4eca03a47b4c4bd7159835ec4a"
+      "size": 21668,
+      "sha256": "0b58efff890aaa1b556abcddf5ec0c2f2da8525644dd4ffc2544afdb4f61994c"
     },
     {
       "url": "songs/esta-es-mi-tierra/audio.mp3",
@@ -384,8 +384,8 @@
     },
     {
       "url": "songs/esta-es-mi-tierra/lyrics-timed.json",
-      "size": 27765,
-      "sha256": "87c0fffa839aa54ae4436902ebcb01cbd8b472b733a3db5cf8ed844e1435d2ce"
+      "size": 28246,
+      "sha256": "71966ba8b6f00a0d7395cd5dfd2c47440d8397f76f745bec2ccc505899fa5733"
     },
     {
       "url": "songs/fina-estampa/audio.mp3",
@@ -399,8 +399,8 @@
     },
     {
       "url": "songs/fina-estampa/lyrics-timed.json",
-      "size": 23990,
-      "sha256": "2287b9e0ff5d1413fbe28c9a5e7c170ecbba80f8f22ee6570a54e0df182da685"
+      "size": 24291,
+      "sha256": "b393444b0823332d7a6e48d79088c2b53cfb093167ab408e4ba0e2a8efe8880f"
     },
     {
       "url": "songs/himno-peru/audio.mp3",
@@ -444,8 +444,8 @@
     },
     {
       "url": "songs/la-flor-de-la-canela/lyrics-timed.json",
-      "size": 30583,
-      "sha256": "f0c273d1a50e42536a5a25a1dea2f7c2032ced6fb6f90d3c1f84930bba3f653a"
+      "size": 31572,
+      "sha256": "a5d124fedb065b820f730902271e922973a311dd5091dc04e2c136f24e611e3a"
     },
     {
       "url": "songs/la-llorona/audio.mp3",
@@ -474,8 +474,8 @@
     },
     {
       "url": "songs/la-malaguena/lyrics-timed.json",
-      "size": 18095,
-      "sha256": "9a8f002decd6af06ef212b6c83586d669336d87aa90088bdae040606e74291a2"
+      "size": 19377,
+      "sha256": "06cdb7a0e8c40b24bc2ce090dd6fba087ab634b28fe4ddaf31f49fc9b3605776"
     },
     {
       "url": "songs/mal-paso/audio.mp3",
@@ -489,8 +489,8 @@
     },
     {
       "url": "songs/mal-paso/lyrics-timed.json",
-      "size": 24679,
-      "sha256": "1a79e375b628fd6eee6ec63fb3ff873c89bceb3c7320b8ce7473c23178563672"
+      "size": 24416,
+      "sha256": "f76f1912d9ca9bdb6be1b38e1a058bd61ca8e4434de12f89d2e0ea887a8d95fe"
     },
     {
       "url": "songs/mi-peru/audio.mp3",
@@ -504,8 +504,8 @@
     },
     {
       "url": "songs/mi-peru/lyrics-timed.json",
-      "size": 16920,
-      "sha256": "0256ac55405cb521b6ee468dab1a30ee7915707db883bac8331fb60e8cf0ed17"
+      "size": 18417,
+      "sha256": "1baebb5dda05a9caa951159c717b131740144e69f12147a58a25a98d9537b196"
     },
     {
       "url": "songs/mi-propiedad-privada/audio.mp3",
@@ -519,8 +519,8 @@
     },
     {
       "url": "songs/mi-propiedad-privada/lyrics-timed.json",
-      "size": 19159,
-      "sha256": "f42688390263549b8ace7046764c50698232e8c918cc283916f5df7a213b3ea0"
+      "size": 19121,
+      "sha256": "826df5c41d4c9586d201efcd3ce7d613d13a8991aeda157a2c52883c3177b8d9"
     },
     {
       "url": "songs/mujer-contra-mujer/audio.mp3",
@@ -534,8 +534,8 @@
     },
     {
       "url": "songs/mujer-contra-mujer/lyrics-timed.json",
-      "size": 27251,
-      "sha256": "cd79758c99758a4aef7c9a8057acf0eb91b43a0958b2e6cdb01db2d741a636a6"
+      "size": 27766,
+      "sha256": "2b236dfa2c75e7b5c614e4556c3b3430a196437e541e758a2562c0f276673b7f"
     },
     {
       "url": "songs/no-podras/audio.mp3",
@@ -549,8 +549,8 @@
     },
     {
       "url": "songs/no-podras/lyrics-timed.json",
-      "size": 20462,
-      "sha256": "ae4e9c1ae9c970ca198b34b50703e8a3b564059d41c504ace8ffa4060978d06f"
+      "size": 21783,
+      "sha256": "db5d3aa00eb1565c9441f812e3f0314950019fb867c4afb8b153f0320415d3ba"
     },
     {
       "url": "songs/nuestro-secreto/audio.mp3",
@@ -564,8 +564,8 @@
     },
     {
       "url": "songs/nuestro-secreto/lyrics-timed.json",
-      "size": 24718,
-      "sha256": "a1f82201c917f525a8ba0f83f6f01342532faf9cb4a23fa21bab043102b6cb01"
+      "size": 24678,
+      "sha256": "29301dc6ab974a9b1d4f304a652d3f03646196b777a8ed177f210a34bbaa806d"
     },
     {
       "url": "songs/odiame/audio.mp3",
@@ -579,8 +579,8 @@
     },
     {
       "url": "songs/odiame/lyrics-timed.json",
-      "size": 23735,
-      "sha256": "6aec838cbd0cae477d53d0febd08637cc1649267287c7b15cc54e0ddaa7eb0a1"
+      "size": 23687,
+      "sha256": "09fecac107f031a7256d8c95f7a1c6ad6551daba312c5331e04e209adcc352c1"
     },
     {
       "url": "songs/payaso/audio.mp3",
@@ -594,8 +594,8 @@
     },
     {
       "url": "songs/payaso/lyrics-timed.json",
-      "size": 28349,
-      "sha256": "00fdf811bd5d9d2b28fe70f3e514a3fb87dd0e21c5a7a692ed8f4a5bab55a840"
+      "size": 28275,
+      "sha256": "541eea7c84cf826ed649009fdf1ccfa01dc6951e405428bcca53d004311c9fc8"
     },
     {
       "url": "songs/quien-sera/audio.mp3",
@@ -624,8 +624,8 @@
     },
     {
       "url": "songs/regresa/lyrics-timed.json",
-      "size": 17720,
-      "sha256": "4beb8966685850e1cd64e286b00c7d753f1f4df23c516d65ad1ee341f34fb1e1"
+      "size": 17674,
+      "sha256": "b3f5946c741acd34f248cec674a849db16031487e12cf0373e15d7d10999b569"
     },
     {
       "url": "songs/ritmo-color-sabor/audio.mp3",
@@ -639,8 +639,8 @@
     },
     {
       "url": "songs/ritmo-color-sabor/lyrics-timed.json",
-      "size": 26974,
-      "sha256": "14dc3a5a95aefe21d54817259c3dc7729436f51c9ac763597df72a0d50513968"
+      "size": 32702,
+      "sha256": "ce9a94bc184d84689bf1e99b94844ecb7224c63b9c70ae6108dfc295a17e61b6"
     },
     {
       "url": "songs/y-se-llama-peru/audio.mp3",
@@ -654,8 +654,8 @@
     },
     {
       "url": "songs/y-se-llama-peru/lyrics-timed.json",
-      "size": 32809,
-      "sha256": "2f299d162ba3d7c33ffa10862f7ff3576dd4ae249937da977b3e849ab3582b63"
+      "size": 34245,
+      "sha256": "a9a2478676eafb66989ce9250a3d8557ea8d1aa2417a6364eeeb5547b4b39a6d"
     },
     {
       "url": "timing-editor.css",
@@ -665,12 +665,12 @@
     {
       "url": "timing-editor.html",
       "size": 3355,
-      "sha256": "c2187cd7d77ceafa2bed6638432afe48e659420f194d9d8af7c92c5346750c1e"
+      "sha256": "9988e4c54d76459a5ef49b2086bbdd4943cab90a7205c40d65008dce6d5f57fa"
     },
     {
       "url": "timing-editor.js",
       "size": 11040,
-      "sha256": "51c8daf372a1556ea40f3d1cd60ba10198ba4615587149ec2e2860f667ab8312"
+      "sha256": "7f223863c10286cd78b9e24c37e8a3300090ed4f2c68bb2b44b7ffdea24bc390"
     },
     {
       "url": "track-timing.js",

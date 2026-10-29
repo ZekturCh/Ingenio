@@ -44,7 +44,7 @@
         }
       ],
       "sourceLine": 1,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Vas contandole a la gente, la razon de tu fracaso",
@@ -170,7 +170,7 @@
         }
       ],
       "sourceLine": 3,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "y que no le importa nada, se rie de tu mal paso",
@@ -251,7 +251,7 @@
         }
       ],
       "sourceLine": 4,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Pero la gente, que es tan cruel y despiadada",
@@ -314,7 +314,7 @@
         }
       ],
       "sourceLine": 5,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "y que no le importa nada, se rie de tu mal paso.",
@@ -355,7 +355,7 @@
           "from": 20,
           "to": 24,
           "start": 44.32,
-          "end": 45.0
+          "end": 45
         },
         {
           "from": 26,
@@ -395,7 +395,7 @@
         }
       ],
       "sourceLine": 6,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Ahora sufres, y vives angustiado",
@@ -709,12 +709,12 @@
           "from": 38,
           "to": 42,
           "start": 75.84,
-          "end": 76.0
+          "end": 76
         },
         {
           "from": 43,
           "to": 47,
-          "start": 76.0,
+          "start": 76,
           "end": 76.34
         },
         {
@@ -748,12 +748,12 @@
           "from": 5,
           "to": 10,
           "start": 78.72,
-          "end": 79.0
+          "end": 79
         },
         {
           "from": 11,
           "to": 14,
-          "start": 79.0,
+          "start": 79,
           "end": 79.3
         },
         {
@@ -782,7 +782,7 @@
         }
       ],
       "sourceLine": 13,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Recuerda que yo, te quise tanto",
@@ -827,7 +827,7 @@
         }
       ],
       "sourceLine": 14,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Y tu sin piedad, te fuiste de mi",
@@ -979,7 +979,7 @@
           "from": 16,
           "to": 21,
           "start": 103.3,
-          "end": 104.0
+          "end": 104
         },
         {
           "from": 34,
@@ -1079,7 +1079,7 @@
         }
       ],
       "sourceLine": 20,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Y tu sin piedad, te fuiste de mi",
@@ -1114,12 +1114,12 @@
           "from": 17,
           "to": 19,
           "start": 138.78,
-          "end": 140.0
+          "end": 140
         },
         {
           "from": 20,
           "to": 26,
-          "start": 140.0,
+          "start": 140,
           "end": 140.34
         },
         {
@@ -1136,7 +1136,7 @@
         }
       ],
       "sourceLine": 21,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Sabiendo que te amaba, me pagaste mal",
@@ -1185,60 +1185,21 @@
     },
     {
       "text": "Y tu sin piedad, te fuiste de mi",
-      "start": 145.66,
-      "end": 150.84,
-      "words": [
-        {
-          "from": 0,
-          "to": 1,
-          "start": 145.66,
-          "end": 147.34
-        },
-        {
-          "from": 2,
-          "to": 4,
-          "start": 147.34,
-          "end": 147.5
-        },
-        {
-          "from": 5,
-          "to": 8,
-          "start": 147.5,
-          "end": 147.86
-        },
-        {
-          "from": 9,
-          "to": 15,
-          "start": 147.86,
-          "end": 148.5
-        },
-        {
-          "from": 17,
-          "to": 19,
-          "start": 148.5,
-          "end": 149.1
-        },
-        {
-          "from": 20,
-          "to": 26,
-          "start": 149.1,
-          "end": 150.08
-        },
-        {
-          "from": 27,
-          "to": 29,
-          "start": 150.08,
-          "end": 150.38
-        },
-        {
-          "from": 30,
-          "to": 32,
-          "start": 150.38,
-          "end": 150.84
-        }
-      ],
       "sourceLine": 23,
-      "matchedWordRatio": 1.0
+      "start": 145.66,
+      "end": 148.423,
+      "timingMethod": "neighbor-estimate",
+      "estimateBasis": "local-anchor-reflow",
+      "reviewRequired": true
+    },
+    {
+      "text": "Sabiendo que te amaba, me pagaste mal",
+      "sourceLine": 24,
+      "start": 148.423,
+      "end": 150.84,
+      "timingMethod": "neighbor-estimate",
+      "estimateBasis": "local-anchor-reflow",
+      "reviewRequired": true
     },
     {
       "text": "Sabiendo que te amaba, me pagaste mal",
@@ -1272,18 +1233,33 @@
       ],
       "sourceLine": 25,
       "matchedWordRatio": 0.571
+    },
+    {
+      "text": "Sabiendo que te amaba, me pagaste mal",
+      "sourceLine": 26,
+      "start": 152.74,
+      "end": 157.172,
+      "timingMethod": "neighbor-estimate",
+      "estimateBasis": "outro-after-vocal-anchor",
+      "reviewRequired": true
     }
   ],
-  "unmatchedLines": [
+  "unmatchedLines": [],
+  "unmatchedBeforeEstimation": [
     {
       "line": 24,
       "text": "Sabiendo que te amaba, me pagaste mal",
-      "coverage": 0.0
+      "coverage": 0
     },
     {
       "line": 26,
       "text": "Sabiendo que te amaba, me pagaste mal",
       "coverage": 0.429
     }
+  ],
+  "estimatedFallbackLines": [
+    23,
+    24,
+    26
   ]
 }

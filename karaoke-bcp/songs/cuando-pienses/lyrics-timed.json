@@ -197,7 +197,7 @@
         }
       ],
       "sourceLine": 4,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Trabajas hasta muy tarde y no puedes descansar",
@@ -254,7 +254,7 @@
         }
       ],
       "sourceLine": 5,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Las palabras de tu madre empiezan a sonar",
@@ -345,6 +345,15 @@
       ],
       "sourceLine": 7,
       "matchedWordRatio": 0.6
+    },
+    {
+      "text": "Hijito, sigue adelante, domina al corazón",
+      "sourceLine": 8,
+      "start": 58.14,
+      "end": 62.56,
+      "timingMethod": "neighbor-estimate",
+      "estimateBasis": "between-vocal-anchors",
+      "reviewRequired": true
     },
     {
       "text": "Debes sacar los tormentos de tu corazón",
@@ -479,7 +488,7 @@
         }
       ],
       "sourceLine": 11,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Cuando pienses en volver",
@@ -570,7 +579,7 @@
         }
       ],
       "sourceLine": 13,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Y te abrazarán, dirán que el tiempo no pasó",
@@ -633,7 +642,7 @@
         }
       ],
       "sourceLine": 14,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Y te amarán con todo el corazón",
@@ -684,7 +693,7 @@
         }
       ],
       "sourceLine": 15,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Puede ser que, en tu tierra, no había a dónde ir",
@@ -792,7 +801,7 @@
         }
       ],
       "sourceLine": 17,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Pero, solo en tu cuarto, tú tendrás que admitir",
@@ -855,7 +864,7 @@
         }
       ],
       "sourceLine": 18,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Que podía haber pobreza, pero nunca soledad",
@@ -951,7 +960,7 @@
         }
       ],
       "sourceLine": 20,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Pues el dolor no es eterno y pronto saldrá el Sol",
@@ -1026,7 +1035,7 @@
         }
       ],
       "sourceLine": 21,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Saldrá el Sol",
@@ -1053,7 +1062,7 @@
         }
       ],
       "sourceLine": 22,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Cuando pienses en volver",
@@ -1086,7 +1095,7 @@
         }
       ],
       "sourceLine": 23,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Aquí están tus amigos, tu lugar y tu mujer",
@@ -1115,12 +1124,12 @@
           "from": 15,
           "to": 21,
           "start": 138.46,
-          "end": 139.0
+          "end": 139
         },
         {
           "from": 23,
           "to": 25,
-          "start": 139.0,
+          "start": 139,
           "end": 139.46
         },
         {
@@ -1149,7 +1158,7 @@
         }
       ],
       "sourceLine": 24,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Y te abrazarán, dirán que el tiempo no pasó",
@@ -1290,7 +1299,7 @@
         }
       ],
       "sourceLine": 27,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Pues el dolor no es eterno y pronto saldrá el Sol",
@@ -1374,7 +1383,7 @@
         }
       ],
       "sourceLine": 29,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Cuando pienses en volver",
@@ -1385,12 +1394,12 @@
           "from": 0,
           "to": 6,
           "start": 195.14,
-          "end": 196.0
+          "end": 196
         },
         {
           "from": 7,
           "to": 14,
-          "start": 196.0,
+          "start": 196,
           "end": 197.48
         },
         {
@@ -1407,7 +1416,7 @@
         }
       ],
       "sourceLine": 30,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Aquí están tus amigos, tu lugar y tu mujer",
@@ -1418,12 +1427,12 @@
           "from": 0,
           "to": 4,
           "start": 199.42,
-          "end": 200.0
+          "end": 200
         },
         {
           "from": 5,
           "to": 10,
-          "start": 200.0,
+          "start": 200,
           "end": 200.42
         },
         {
@@ -1470,7 +1479,7 @@
         }
       ],
       "sourceLine": 31,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Y te abrazarán, dirán que el tiempo no pasó",
@@ -1533,7 +1542,7 @@
         }
       ],
       "sourceLine": 32,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Y te amarán con todo el corazón",
@@ -1584,7 +1593,7 @@
         }
       ],
       "sourceLine": 33,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Cuando ya tú estés acá",
@@ -1623,7 +1632,7 @@
         }
       ],
       "sourceLine": 34,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Trabaja hasta las lágrimas, como lo hacías allá",
@@ -1658,12 +1667,12 @@
           "from": 33,
           "to": 35,
           "start": 220.72,
-          "end": 221.0
+          "end": 221
         },
         {
           "from": 36,
           "to": 42,
-          "start": 221.0,
+          "start": 221,
           "end": 221.46
         },
         {
@@ -1759,7 +1768,7 @@
         }
       ],
       "sourceLine": 37,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Y te abrazarán, dirán que el tiempo no pasó",
@@ -1867,14 +1876,18 @@
         }
       ],
       "sourceLine": 39,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     }
   ],
-  "unmatchedLines": [
+  "unmatchedLines": [],
+  "unmatchedBeforeEstimation": [
     {
       "line": 8,
       "text": "Hijito, sigue adelante, domina al corazón",
       "coverage": 0.5
     }
+  ],
+  "estimatedFallbackLines": [
+    8
   ]
 }

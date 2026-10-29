@@ -44,7 +44,7 @@
         }
       ],
       "sourceLine": 1,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Que estoy muriendo por ti",
@@ -83,7 +83,7 @@
         }
       ],
       "sourceLine": 2,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Y tú no me haces ni caso",
@@ -134,7 +134,7 @@
         }
       ],
       "sourceLine": 3,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Dicen que soy un payaso",
@@ -173,7 +173,7 @@
         }
       ],
       "sourceLine": 4,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Porque toda mi ilusión",
@@ -206,7 +206,7 @@
         }
       ],
       "sourceLine": 5,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Es tenerte entre mis brazos",
@@ -245,7 +245,7 @@
         }
       ],
       "sourceLine": 6,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Dicen que soy un payaso",
@@ -284,7 +284,7 @@
         }
       ],
       "sourceLine": 7,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Que por culpa de tu amor",
@@ -329,7 +329,7 @@
         }
       ],
       "sourceLine": 8,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Voy de fracaso en fracaso",
@@ -368,7 +368,7 @@
         }
       ],
       "sourceLine": 9,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Dicen que soy un payaso",
@@ -407,12 +407,12 @@
         }
       ],
       "sourceLine": 10,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Que va buscando valor",
       "start": 51.72,
-      "end": 54.0,
+      "end": 54,
       "words": [
         {
           "from": 0,
@@ -436,21 +436,21 @@
           "from": 16,
           "to": 21,
           "start": 53.18,
-          "end": 54.0
+          "end": 54
         }
       ],
       "sourceLine": 11,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "En el fondo de los vasos",
-      "start": 54.0,
+      "start": 54,
       "end": 55.84,
       "words": [
         {
           "from": 0,
           "to": 2,
-          "start": 54.0,
+          "start": 54,
           "end": 54.58
         },
         {
@@ -563,7 +563,7 @@
         }
       ],
       "sourceLine": 14,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Uno no es lo que quiere",
@@ -608,7 +608,7 @@
         }
       ],
       "sourceLine": 15,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Sino lo que puede ser",
@@ -674,7 +674,7 @@
         }
       ],
       "sourceLine": 17,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Que estoy muriendo por ti",
@@ -713,7 +713,7 @@
         }
       ],
       "sourceLine": 18,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Y tú no me haces ni caso",
@@ -764,7 +764,7 @@
         }
       ],
       "sourceLine": 19,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Dicen que soy un payaso",
@@ -803,7 +803,7 @@
         }
       ],
       "sourceLine": 20,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Que te sigue por ahí",
@@ -842,7 +842,7 @@
         }
       ],
       "sourceLine": 21,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Con el alma hecha pedazos",
@@ -881,7 +881,7 @@
         }
       ],
       "sourceLine": 22,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Dicen que soy un payaso",
@@ -898,12 +898,12 @@
           "from": 6,
           "to": 9,
           "start": 96.78,
-          "end": 97.0
+          "end": 97
         },
         {
           "from": 10,
           "to": 13,
-          "start": 97.0,
+          "start": 97,
           "end": 97.24
         },
         {
@@ -920,7 +920,7 @@
         }
       ],
       "sourceLine": 23,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Que querría hasta el amor",
@@ -959,7 +959,7 @@
         }
       ],
       "sourceLine": 24,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Que vas tirando a tu paso",
@@ -1004,7 +1004,7 @@
         }
       ],
       "sourceLine": 25,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Dicen que soy un payaso",
@@ -1043,7 +1043,7 @@
         }
       ],
       "sourceLine": 26,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Que no tengo ni valor",
@@ -1154,7 +1154,7 @@
         }
       ],
       "sourceLine": 29,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Pero que le voy a hacer",
@@ -1199,7 +1199,7 @@
         }
       ],
       "sourceLine": 30,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Uno no es lo que quiere",
@@ -1244,7 +1244,7 @@
         }
       ],
       "sourceLine": 31,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Sino lo que puede ser",
@@ -1322,7 +1322,7 @@
         }
       ],
       "sourceLine": 33,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Pero que le voy a hacer",
@@ -1367,7 +1367,7 @@
         }
       ],
       "sourceLine": 34,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Uno no es lo que quiere",
@@ -1412,7 +1412,7 @@
         }
       ],
       "sourceLine": 35,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Sino lo que puede ser",
@@ -1451,7 +1451,7 @@
         }
       ],
       "sourceLine": 36,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Y es verdad, soy un payaso",
@@ -1496,7 +1496,7 @@
         }
       ],
       "sourceLine": 37,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     }
   ],
   "unmatchedLines": []

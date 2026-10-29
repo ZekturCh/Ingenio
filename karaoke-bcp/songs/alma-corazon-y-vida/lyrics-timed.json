@@ -83,7 +83,7 @@
         }
       ],
       "sourceLine": 2,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "ni me acuerdo de como te vi.",
@@ -173,7 +173,7 @@
         }
       ],
       "sourceLine": 4,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Pero si te diré que yo me enamoré",
@@ -230,7 +230,7 @@
         }
       ],
       "sourceLine": 4,
-      "matchedWordRatio": 1.0,
+      "matchedWordRatio": 1,
       "alignment": "recognized-repetition"
     },
     {
@@ -272,12 +272,12 @@
           "from": 30,
           "to": 36,
           "start": 43.66,
-          "end": 44.0
+          "end": 44
         },
         {
           "from": 37,
           "to": 42,
-          "start": 44.0,
+          "start": 44,
           "end": 44.46
         }
       ],
@@ -309,7 +309,7 @@
         }
       ],
       "sourceLine": 6,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Oye esta canción que lleva",
@@ -375,7 +375,7 @@
         }
       ],
       "sourceLine": 8,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "esas tres cositas nada más te doy;",
@@ -453,7 +453,7 @@
         }
       ],
       "sourceLine": 10,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "esas tres cosas te ofrezco",
@@ -469,7 +469,7 @@
         {
           "from": 10,
           "to": 15,
-          "start": 60.0,
+          "start": 60,
           "end": 60.42
         },
         {
@@ -537,7 +537,7 @@
         }
       ],
       "sourceLine": 12,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "alma para conquistarte",
@@ -564,7 +564,7 @@
         }
       ],
       "sourceLine": 13,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "corazón para querete",
@@ -658,7 +658,7 @@
         }
       ],
       "sourceLine": 2,
-      "matchedWordRatio": 1.0,
+      "matchedWordRatio": 1,
       "alignment": "recognized-repetition"
     },
     {
@@ -716,7 +716,7 @@
         }
       ],
       "sourceLine": 4,
-      "matchedWordRatio": 1.0,
+      "matchedWordRatio": 1,
       "alignment": "recognized-repetition"
     },
     {
@@ -756,7 +756,7 @@
         }
       ],
       "sourceLine": 7,
-      "matchedWordRatio": 1.0,
+      "matchedWordRatio": 1,
       "alignment": "recognized-repetition"
     },
     {
@@ -790,7 +790,7 @@
         }
       ],
       "sourceLine": 10,
-      "matchedWordRatio": 1.0,
+      "matchedWordRatio": 1,
       "alignment": "recognized-repetition"
     }
   ],

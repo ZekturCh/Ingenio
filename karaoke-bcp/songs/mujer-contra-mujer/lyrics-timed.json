@@ -9,13 +9,13 @@
   "lyrics": [
     {
       "text": "Nada tienen de especial",
-      "start": 0.0,
+      "start": 0,
       "end": 4.24,
       "words": [
         {
           "from": 0,
           "to": 4,
-          "start": 0.0,
+          "start": 0,
           "end": 1.78
         },
         {
@@ -38,7 +38,7 @@
         }
       ],
       "sourceLine": 1,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Dos mujeres que se dan la mano",
@@ -89,7 +89,7 @@
         }
       ],
       "sourceLine": 2,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "El matiz viene después",
@@ -122,7 +122,7 @@
         }
       ],
       "sourceLine": 3,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Cuando lo hacen por debajo del mantel",
@@ -173,7 +173,7 @@
         }
       ],
       "sourceLine": 4,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Luego a solas sin nada que perder",
@@ -224,7 +224,7 @@
         }
       ],
       "sourceLine": 5,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Tras las manos va el resto de la piel",
@@ -308,7 +308,7 @@
         }
       ],
       "sourceLine": 7,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Aunque en cueros no hay donde esconderlo",
@@ -349,17 +349,17 @@
           "from": 24,
           "to": 29,
           "start": 49.64,
-          "end": 50.0
+          "end": 50
         },
         {
           "from": 30,
           "to": 40,
-          "start": 50.0,
+          "start": 50,
           "end": 51.98
         }
       ],
       "sourceLine": 8,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Lo disfrazan de amistad",
@@ -482,7 +482,7 @@
         }
       ],
       "sourceLine": 11,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "La otra opina que qué se le va a hacer",
@@ -493,12 +493,12 @@
           "from": 0,
           "to": 2,
           "start": 70.56,
-          "end": 72.0
+          "end": 72
         },
         {
           "from": 3,
           "to": 7,
-          "start": 72.0,
+          "start": 72,
           "end": 72.32
         },
         {
@@ -551,7 +551,7 @@
         }
       ],
       "sourceLine": 12,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Y lo que opinen los demás está de más",
@@ -614,7 +614,7 @@
         }
       ],
       "sourceLine": 13,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Quien detiene palomas al vuelo",
@@ -653,7 +653,7 @@
         }
       ],
       "sourceLine": 14,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Volando a ras de suelo",
@@ -681,6 +681,15 @@
       ],
       "sourceLine": 15,
       "matchedWordRatio": 0.6
+    },
+    {
+      "text": "Mujer contra mujer",
+      "sourceLine": 16,
+      "start": 93.08,
+      "end": 101.56,
+      "timingMethod": "neighbor-estimate",
+      "estimateBasis": "between-vocal-anchors",
+      "reviewRequired": true
     },
     {
       "text": "No estoy yo por la labor",
@@ -725,7 +734,7 @@
         }
       ],
       "sourceLine": 17,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "De tirarles la primera piedra",
@@ -785,7 +794,7 @@
         }
       ],
       "sourceLine": 19,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Y las hallo labio a labio en el salón",
@@ -846,7 +855,7 @@
         {
           "from": 25,
           "to": 26,
-          "start": 130.0,
+          "start": 130,
           "end": 130.32
         },
         {
@@ -926,7 +935,7 @@
         }
       ],
       "sourceLine": 22,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Que con mis piedras hacen ellas su pared",
@@ -983,7 +992,7 @@
         }
       ],
       "sourceLine": 23,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Quien detiene palomas al vuelo",
@@ -1055,7 +1064,16 @@
         }
       ],
       "sourceLine": 25,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
+    },
+    {
+      "text": "Mujer contra mujer",
+      "sourceLine": 26,
+      "start": 154.02,
+      "end": 156.96,
+      "timingMethod": "neighbor-estimate",
+      "estimateBasis": "local-voices-with-instrumental-gap",
+      "reviewRequired": true
     },
     {
       "text": "Una opina que aquello no está bien",
@@ -1106,7 +1124,7 @@
         }
       ],
       "sourceLine": 27,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "La otra opina que qué se le va a hacer",
@@ -1175,7 +1193,7 @@
         }
       ],
       "sourceLine": 28,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Y lo que opinen los demás está de más",
@@ -1314,7 +1332,7 @@
         }
       ],
       "sourceLine": 32,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Quien detiene palomas al vuelo",
@@ -1380,7 +1398,7 @@
         }
       ],
       "sourceLine": 34,
-      "matchedWordRatio": 1.0,
+      "matchedWordRatio": 1,
       "alignment": "acoustic-gap-refinement"
     },
     {
@@ -1408,10 +1426,11 @@
         }
       ],
       "sourceLine": 35,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     }
   ],
-  "unmatchedLines": [
+  "unmatchedLines": [],
+  "unmatchedBeforeEstimation": [
     {
       "line": 16,
       "text": "Mujer contra mujer",
@@ -1422,5 +1441,9 @@
       "text": "Mujer contra mujer",
       "coverage": 0.333
     }
+  ],
+  "estimatedFallbackLines": [
+    16,
+    26
   ]
 }

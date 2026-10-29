@@ -64,7 +64,7 @@
     {
       "text": "Debajo de esas dos cejas",
       "start": 53.82,
-      "end": 56.0,
+      "end": 56,
       "words": [
         {
           "from": 0,
@@ -82,7 +82,7 @@
           "from": 10,
           "to": 14,
           "start": 55.64,
-          "end": 56.0
+          "end": 56
         }
       ],
       "sourceLine": 3,
@@ -119,7 +119,7 @@
         }
       ],
       "sourceLine": 4,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Ellos me quieren mirar",
@@ -152,7 +152,7 @@
         }
       ],
       "sourceLine": 5,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Pero si tú no los dejas",
@@ -169,12 +169,12 @@
           "from": 5,
           "to": 7,
           "start": 67.64,
-          "end": 68.0
+          "end": 68
         },
         {
           "from": 8,
           "to": 10,
-          "start": 68.0,
+          "start": 68,
           "end": 68.32
         },
         {
@@ -197,7 +197,7 @@
         }
       ],
       "sourceLine": 6,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Pero si tú no los dejas",
@@ -242,7 +242,7 @@
         }
       ],
       "sourceLine": 7,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Ni siquiera parpadear",
@@ -269,12 +269,21 @@
         }
       ],
       "sourceLine": 8,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
+    },
+    {
+      "text": "Malagueña salerosa",
+      "sourceLine": 9,
+      "start": 80.06,
+      "end": 82.06,
+      "timingMethod": "neighbor-estimate",
+      "estimateBasis": "local-voices-with-instrumental-gap",
+      "reviewRequired": true
     },
     {
       "text": "Besar tus labios quisiera",
       "start": 98.66,
-      "end": 102.0,
+      "end": 102,
       "words": [
         {
           "from": 0,
@@ -298,11 +307,20 @@
           "from": 17,
           "to": 25,
           "start": 101.04,
-          "end": 102.0
+          "end": 102
         }
       ],
       "sourceLine": 10,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
+    },
+    {
+      "text": "Besar tus labios quisiera",
+      "sourceLine": 11,
+      "start": 102,
+      "end": 116.62,
+      "timingMethod": "neighbor-estimate",
+      "estimateBasis": "between-vocal-anchors",
+      "reviewRequired": true
     },
     {
       "text": "Malagueña salerosa",
@@ -323,7 +341,7 @@
         }
       ],
       "sourceLine": 12,
-      "matchedWordRatio": 1.0,
+      "matchedWordRatio": 1,
       "alignment": "acoustic-gap-refinement"
     },
     {
@@ -357,7 +375,16 @@
         }
       ],
       "sourceLine": 13,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
+    },
+    {
+      "text": "Eres linda y hechicera",
+      "sourceLine": 14,
+      "start": 125.32,
+      "end": 130.33,
+      "timingMethod": "neighbor-estimate",
+      "estimateBasis": "local-voices-with-instrumental-gap",
+      "reviewRequired": true
     },
     {
       "text": "Eres linda y hechicera",
@@ -456,7 +483,7 @@
         }
       ],
       "sourceLine": 17,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Yo te concedo razón",
@@ -479,17 +506,17 @@
           "from": 6,
           "to": 13,
           "start": 190.2,
-          "end": 191.0
+          "end": 191
         },
         {
           "from": 14,
           "to": 19,
-          "start": 191.0,
+          "start": 191,
           "end": 191.62
         }
       ],
       "sourceLine": 18,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Yo te concedo razón",
@@ -522,7 +549,7 @@
         }
       ],
       "sourceLine": 19,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Si por pobre me desprecias",
@@ -561,7 +588,7 @@
         }
       ],
       "sourceLine": 20,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Yo no te ofrezco riquezas",
@@ -600,7 +627,7 @@
         }
       ],
       "sourceLine": 21,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Te ofrezco mi corazón",
@@ -633,7 +660,7 @@
         }
       ],
       "sourceLine": 22,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Te ofrezco mi corazón",
@@ -666,7 +693,7 @@
         }
       ],
       "sourceLine": 23,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "A cambio de mi pobreza",
@@ -714,7 +741,7 @@
         }
       ],
       "sourceLine": 25,
-      "matchedWordRatio": 1.0,
+      "matchedWordRatio": 1,
       "alignment": "phonetic-window-acoustic-refinement"
     },
     {
@@ -748,7 +775,16 @@
         }
       ],
       "sourceLine": 26,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
+    },
+    {
+      "text": "Besar tus labios quisiera",
+      "sourceLine": 27,
+      "start": 240.74,
+      "end": 255.16,
+      "timingMethod": "neighbor-estimate",
+      "estimateBasis": "between-vocal-anchors",
+      "reviewRequired": true
     },
     {
       "text": "Malagueña salerosa",
@@ -769,7 +805,7 @@
         }
       ],
       "sourceLine": 28,
-      "matchedWordRatio": 1.0,
+      "matchedWordRatio": 1,
       "alignment": "acoustic-gap-refinement"
     },
     {
@@ -803,7 +839,7 @@
         }
       ],
       "sourceLine": 29,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Eres linda y hechicera",
@@ -836,7 +872,7 @@
         }
       ],
       "sourceLine": 30,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Eres linda y hechicera",
@@ -869,7 +905,7 @@
         }
       ],
       "sourceLine": 31,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Como el candor de una rosa",
@@ -914,14 +950,24 @@
         }
       ],
       "sourceLine": 32,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
+    },
+    {
+      "text": "Como el candor de una rosa",
+      "sourceLine": 33,
+      "start": 291.36,
+      "end": 300.925,
+      "timingMethod": "neighbor-estimate",
+      "estimateBasis": "outro-after-vocal-anchor",
+      "reviewRequired": true
     }
   ],
-  "unmatchedLines": [
+  "unmatchedLines": [],
+  "unmatchedBeforeEstimation": [
     {
       "line": 9,
       "text": "Malagueña salerosa",
-      "coverage": 0.0
+      "coverage": 0
     },
     {
       "line": 11,
@@ -943,5 +989,12 @@
       "text": "Como el candor de una rosa",
       "coverage": 0.833
     }
+  ],
+  "estimatedFallbackLines": [
+    9,
+    11,
+    14,
+    27,
+    33
   ]
 }

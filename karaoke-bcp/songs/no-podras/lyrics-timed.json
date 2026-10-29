@@ -123,7 +123,7 @@
         }
       ],
       "sourceLine": 3,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Que no se debe mentir, no, oh",
@@ -271,7 +271,7 @@
         }
       ],
       "sourceLine": 8,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Voy tropezando en desamor",
@@ -367,17 +367,17 @@
           "from": 3,
           "to": 8,
           "start": 67.64,
-          "end": 68.0
+          "end": 68
         },
         {
           "from": 9,
           "to": 17,
-          "start": 68.0,
+          "start": 68,
           "end": 69.02
         }
       ],
       "sourceLine": 11,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "No es que te extrañe el corazón",
@@ -494,7 +494,7 @@
         }
       ],
       "sourceLine": 14,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Como yo nunca imaginé",
@@ -527,7 +527,7 @@
         }
       ],
       "sourceLine": 15,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Estaré en tu piel",
@@ -560,7 +560,7 @@
         }
       ],
       "sourceLine": 16,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Cada momento en donde estés",
@@ -599,7 +599,7 @@
         }
       ],
       "sourceLine": 17,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Siempre habrá un lugar",
@@ -632,7 +632,7 @@
         }
       ],
       "sourceLine": 18,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Algún recuerdo que será",
@@ -665,7 +665,7 @@
         }
       ],
       "sourceLine": 19,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Un eterno suspirar",
@@ -692,7 +692,7 @@
         }
       ],
       "sourceLine": 20,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Si estoy llorando",
@@ -764,7 +764,7 @@
         }
       ],
       "sourceLine": 22,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Es que, a tu lado, aprendí el dolor",
@@ -832,12 +832,12 @@
           "from": 18,
           "to": 21,
           "start": 171.1,
-          "end": 172.0
+          "end": 172
         },
         {
           "from": 22,
           "to": 24,
-          "start": 172.0,
+          "start": 172,
           "end": 172.24
         },
         {
@@ -859,12 +859,12 @@
           "from": 0,
           "to": 4,
           "start": 173.38,
-          "end": 174.0
+          "end": 174
         },
         {
           "from": 5,
           "to": 7,
-          "start": 174.0,
+          "start": 174,
           "end": 174.3
         },
         {
@@ -881,7 +881,7 @@
         }
       ],
       "sourceLine": 25,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Estaré en tu piel",
@@ -914,7 +914,7 @@
         }
       ],
       "sourceLine": 26,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Cada momento en donde estés",
@@ -953,7 +953,16 @@
         }
       ],
       "sourceLine": 27,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
+    },
+    {
+      "text": "Siempre habrá un lugar",
+      "sourceLine": 28,
+      "start": 185.52,
+      "end": 190.39,
+      "timingMethod": "neighbor-estimate",
+      "estimateBasis": "between-vocal-anchors",
+      "reviewRequired": true
     },
     {
       "text": "Algún recuerdo que será",
@@ -986,8 +995,35 @@
         }
       ],
       "sourceLine": 29,
-      "matchedWordRatio": 1.0,
+      "matchedWordRatio": 1,
       "alignment": "phonetic-window-acoustic-refinement"
+    },
+    {
+      "text": "Un eterno suspirar, uoh-uoh",
+      "sourceLine": 30,
+      "start": 192.67,
+      "end": 200.218,
+      "timingMethod": "neighbor-estimate",
+      "estimateBasis": "between-vocal-anchors",
+      "reviewRequired": true
+    },
+    {
+      "text": "No podrás olvidar que te amé (como yo nunca imaginé)",
+      "sourceLine": 31,
+      "start": 200.218,
+      "end": 215.313,
+      "timingMethod": "neighbor-estimate",
+      "estimateBasis": "between-vocal-anchors",
+      "reviewRequired": true
+    },
+    {
+      "text": "(Cada momento en donde estés)",
+      "sourceLine": 32,
+      "start": 215.313,
+      "end": 222.86,
+      "timingMethod": "neighbor-estimate",
+      "estimateBasis": "between-vocal-anchors",
+      "reviewRequired": true
     },
     {
       "text": "Como yo nunca imaginé",
@@ -1017,6 +1053,15 @@
       "matchedWordRatio": 0.75
     },
     {
+      "text": "(Algún recuerdo que será)",
+      "sourceLine": 34,
+      "start": 226.16,
+      "end": 228.2,
+      "timingMethod": "neighbor-estimate",
+      "estimateBasis": "between-vocal-anchors",
+      "reviewRequired": true
+    },
+    {
       "text": "(Un eterno)",
       "start": 228.2,
       "end": 238.58,
@@ -1035,11 +1080,12 @@
         }
       ],
       "sourceLine": 35,
-      "matchedWordRatio": 1.0,
+      "matchedWordRatio": 1,
       "alignment": "acoustic-gap-refinement"
     }
   ],
-  "unmatchedLines": [
+  "unmatchedLines": [],
+  "unmatchedBeforeEstimation": [
     {
       "line": 28,
       "text": "Siempre habrá un lugar",
@@ -1058,12 +1104,19 @@
     {
       "line": 32,
       "text": "(Cada momento en donde estés)",
-      "coverage": 0.0
+      "coverage": 0
     },
     {
       "line": 34,
       "text": "(Algún recuerdo que será)",
-      "coverage": 0.0
+      "coverage": 0
     }
+  ],
+  "estimatedFallbackLines": [
+    28,
+    30,
+    31,
+    32,
+    34
   ]
 }

@@ -23,3 +23,7 @@ export function setDelay(value) {
 export function lyricTime(audioTime, delay = getDelay()) {
   return audioTime - normalizeDelay(delay) / 1000;
 }
+
+export function heardPosition(audioTime, start, end, delay) {
+  return Math.max(0, Math.min(end - start, lyricTime(audioTime, delay) - start));
+}

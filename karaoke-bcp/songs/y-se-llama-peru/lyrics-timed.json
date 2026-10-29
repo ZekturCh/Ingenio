@@ -9,13 +9,13 @@
   "lyrics": [
     {
       "text": "Cosechando mis mares, sembrando mis tierras",
-      "start": 0.0,
+      "start": 0,
       "end": 10.24,
       "words": [
         {
           "from": 0,
           "to": 10,
-          "start": 0.0,
+          "start": 0,
           "end": 7.58
         },
         {
@@ -50,7 +50,7 @@
         }
       ],
       "sourceLine": 1,
-      "matchedWordRatio": 1.0,
+      "matchedWordRatio": 1,
       "alignment": "acoustic-gap-refinement"
     },
     {
@@ -90,7 +90,7 @@
         }
       ],
       "sourceLine": 2,
-      "matchedWordRatio": 1.0,
+      "matchedWordRatio": 1,
       "alignment": "acoustic-gap-refinement"
     },
     {
@@ -196,7 +196,7 @@
         }
       ],
       "sourceLine": 5,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Que el Sol ilumina porque Dios lo manda",
@@ -243,17 +243,17 @@
           "from": 31,
           "to": 33,
           "start": 22.8,
-          "end": 23.0
+          "end": 23
         },
         {
           "from": 34,
           "to": 39,
-          "start": 23.0,
+          "start": 23,
           "end": 23.74
         }
       ],
       "sourceLine": 6,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Y es que Dios a la gloria le cambió de nombre",
@@ -328,7 +328,7 @@
         }
       ],
       "sourceLine": 7,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Y le puso Perú",
@@ -361,7 +361,7 @@
         }
       ],
       "sourceLine": 8,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Atesoran sus playas",
@@ -433,7 +433,7 @@
         }
       ],
       "sourceLine": 10,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Y en la sierra bravía",
@@ -511,7 +511,7 @@
         }
       ],
       "sourceLine": 12,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "La montaña en sus venas",
@@ -550,7 +550,7 @@
         }
       ],
       "sourceLine": 13,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Guardado el petróleo de nuestro mañana",
@@ -689,7 +689,7 @@
         }
       ],
       "sourceLine": 17,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Con P de patria",
@@ -760,12 +760,12 @@
           "from": 3,
           "to": 4,
           "start": 63.8,
-          "end": 64.0
+          "end": 64
         },
         {
           "from": 5,
           "to": 8,
-          "start": 64.0,
+          "start": 64,
           "end": 64.22
         },
         {
@@ -776,7 +776,7 @@
         }
       ],
       "sourceLine": 20,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "La U de la unión",
@@ -843,7 +843,7 @@
         }
       ],
       "sourceLine": 22,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Pues mi raza peruana",
@@ -876,7 +876,7 @@
         }
       ],
       "sourceLine": 23,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Con la sangre y el alma",
@@ -938,12 +938,12 @@
           "from": 18,
           "to": 20,
           "start": 76.76,
-          "end": 77.0
+          "end": 77
         },
         {
           "from": 21,
           "to": 23,
-          "start": 77.0,
+          "start": 77,
           "end": 77.34
         }
       ],
@@ -953,7 +953,7 @@
     {
       "text": "Yo también me llamo Perú",
       "start": 78.52,
-      "end": 82.0,
+      "end": 82,
       "words": [
         {
           "from": 3,
@@ -977,11 +977,38 @@
           "from": 20,
           "to": 24,
           "start": 80.7,
-          "end": 82.0
+          "end": 82
         }
       ],
       "sourceLine": 26,
       "matchedWordRatio": 0.8
+    },
+    {
+      "text": "Con P de patria",
+      "sourceLine": 27,
+      "start": 82,
+      "end": 84.38,
+      "timingMethod": "neighbor-estimate",
+      "estimateBasis": "between-vocal-anchors",
+      "reviewRequired": true
+    },
+    {
+      "text": "La E del ejemplo",
+      "sourceLine": 28,
+      "start": 84.38,
+      "end": 86.76,
+      "timingMethod": "neighbor-estimate",
+      "estimateBasis": "between-vocal-anchors",
+      "reviewRequired": true
+    },
+    {
+      "text": "La R del rifle",
+      "sourceLine": 29,
+      "start": 86.76,
+      "end": 89.14,
+      "timingMethod": "neighbor-estimate",
+      "estimateBasis": "between-vocal-anchors",
+      "reviewRequired": true
     },
     {
       "text": "La U de la unión",
@@ -1020,7 +1047,7 @@
         }
       ],
       "sourceLine": 30,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Yo me llamo Perú",
@@ -1119,7 +1146,7 @@
         }
       ],
       "sourceLine": 33,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Pintó los colores de mi pabellón",
@@ -1164,7 +1191,7 @@
         }
       ],
       "sourceLine": 34,
-      "matchedWordRatio": 1.0,
+      "matchedWordRatio": 1,
       "alignment": "acoustic-gap-refinement"
     },
     {
@@ -1198,7 +1225,16 @@
         }
       ],
       "sourceLine": 35,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
+    },
+    {
+      "text": "Con P de patria",
+      "sourceLine": 36,
+      "start": 130.08,
+      "end": 132.98,
+      "timingMethod": "neighbor-estimate",
+      "estimateBasis": "between-vocal-anchors",
+      "reviewRequired": true
     },
     {
       "text": "La E del ejemplo",
@@ -1221,17 +1257,17 @@
           "from": 5,
           "to": 8,
           "start": 134.68,
-          "end": 135.0
+          "end": 135
         },
         {
           "from": 9,
           "to": 16,
-          "start": 135.0,
+          "start": 135,
           "end": 135.78
         }
       ],
       "sourceLine": 37,
-      "matchedWordRatio": 1.0,
+      "matchedWordRatio": 1,
       "alignment": "acoustic-gap-refinement"
     },
     {
@@ -1265,7 +1301,7 @@
         }
       ],
       "sourceLine": 38,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "La U de la unión",
@@ -1304,7 +1340,7 @@
         }
       ],
       "sourceLine": 39,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Yo me llamo Perú",
@@ -1337,7 +1373,7 @@
         }
       ],
       "sourceLine": 40,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Pues mi raza peruana",
@@ -1476,7 +1512,25 @@
         }
       ],
       "sourceLine": 44,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
+    },
+    {
+      "text": "Con P de patria",
+      "sourceLine": 45,
+      "start": 154.3,
+      "end": 157.27,
+      "timingMethod": "neighbor-estimate",
+      "estimateBasis": "between-vocal-anchors",
+      "reviewRequired": true
+    },
+    {
+      "text": "La E del ejemplo",
+      "sourceLine": 46,
+      "start": 157.27,
+      "end": 160.24,
+      "timingMethod": "neighbor-estimate",
+      "estimateBasis": "between-vocal-anchors",
+      "reviewRequired": true
     },
     {
       "text": "La R del rifle",
@@ -1509,7 +1563,7 @@
         }
       ],
       "sourceLine": 47,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "La U de la unión",
@@ -1548,7 +1602,7 @@
         }
       ],
       "sourceLine": 48,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Yo me llamo Perú",
@@ -1609,7 +1663,7 @@
         }
       ],
       "sourceLine": 50,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Con la sangre y el alma",
@@ -1654,7 +1708,7 @@
         }
       ],
       "sourceLine": 51,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Pintó los colores de mi pabellón",
@@ -1696,7 +1750,8 @@
       "matchedWordRatio": 0.833
     }
   ],
-  "unmatchedLines": [
+  "unmatchedLines": [],
+  "unmatchedBeforeEstimation": [
     {
       "line": 27,
       "text": "Con P de patria",
@@ -1727,5 +1782,13 @@
       "text": "La E del ejemplo",
       "coverage": 0.5
     }
+  ],
+  "estimatedFallbackLines": [
+    27,
+    28,
+    29,
+    36,
+    45,
+    46
   ]
 }

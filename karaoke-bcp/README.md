@@ -1,5 +1,44 @@
 # Hallowow Criollazo
 
+## Estimacion completa autorizada
+
+Las 24 grabaciones con voz tienen ahora una marca para cada frase de su TXT.
+Los huecos se completaron entre entradas vocales cercanas, con ajustes locales
+cuando el reconocedor habia estirado una frase sobre otra. Introducciones y
+cierres se estiman a partir del tramo vocal vecino, no distribuyendo toda la
+letra sobre la duracion de la cancion. Se conserva `reviewRequired: true`.
+Estas marcas son una aproximacion util, no una certificacion de sincronizacion.
+La Bruja, La Llorona y Quien sera conservan marcas mas gruesas sin voz guia.
+
+El generador es `scripts/estimate-pending-cues.cjs`. Las frases que antes no
+tenian marca se conservan en `unmatchedBeforeEstimation`, y cada marca inferida
+incluye `timingMethod: neighbor-estimate` y su motivo. No se cambiaron las
+palabras del repertorio; Carinito conserva unicamente las ediciones confirmadas.
+
+El contador, la barra de progreso y el pintado comparten el reloj audible:
+tiempo del MP3 menos compensacion Bluetooth. Al terminar se deja transcurrir la
+cola positiva de latencia antes de finalizar el contador o pasar a otra cancion.
+No se modifica el tono ni la velocidad, ni se promete eliminar la latencia fisica
+del altavoz o del microfono. El ajuste se guarda localmente en cada pantalla.
+Las descargas offline, verificacion por hash, reintentos y actualizacion en el
+selector se mantienen; los MP3 sin cambios se reutilizan sin descargarlos otra vez.
+
+## Muestra de Carinito revisada con el usuario
+
+`songs/carinito/timing-overrides.json` conserva ajustes puntuales a esta grabacion:
+salidas de palabras antes truncadas, dos entradas estimadas por frases vecinas y
+el cierre con gritos, cuyo texto fue confirmado por el usuario. Tambien confirmo
+una segunda repeticion de No llores, oye; es la unica frase anadida al TXT activo.
+Tambien confirmo omitir Que cosa y el Hey del instrumental, sin quitar los gritos
+del cierre. No se sustituyeron palabras y el texto de practica original no se modifico.
+
+Los tiempos siguen estimados y pendientes de revisar al oido. Las interjecciones
+no confirmadas permanecen separadas en `unmatchedLines`, sin asignarles tiempos.
+El Coro se extiende hasta que termina la ultima palabra, unos 29 s.
+Despues de volver a importar esta misma grabacion, aplicar
+`node karaoke-bcp/scripts/apply-carinito-review.cjs` y reconstruir coros, inventario
+y manifest offline. El script comprueba el hash de audio y el texto antes de aplicar.
+
 ## Estado de las voces y marcas
 
 El inventario actual por cancion esta en

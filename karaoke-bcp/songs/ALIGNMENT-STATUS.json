@@ -34,7 +34,7 @@
       "title": "Quién será"
     }
   ],
-  "unmatchedProvidedPhrases": 102,
+  "unmatchedProvidedPhrases": 0,
   "songs": [
     {
       "id": "carinito",
@@ -42,8 +42,9 @@
       "newVocalRecording": true,
       "vocalRecording": "provided-vocal-guide",
       "method": "local-asr-word-matching",
-      "markedPhrases": 30,
-      "unmatchedLines": 9,
+      "markedPhrases": 38,
+      "neighborOrBeatEstimates": 7,
+      "unmatchedLines": 0,
       "reviewRequired": true
     },
     {
@@ -52,8 +53,9 @@
       "newVocalRecording": true,
       "vocalRecording": "provided-vocal-guide",
       "method": "local-asr-word-matching",
-      "markedPhrases": 36,
-      "unmatchedLines": 4,
+      "markedPhrases": 40,
+      "neighborOrBeatEstimates": 4,
+      "unmatchedLines": 0,
       "reviewRequired": true
     },
     {
@@ -62,8 +64,9 @@
       "newVocalRecording": true,
       "vocalRecording": "provided-vocal-guide",
       "method": "local-asr-word-matching",
-      "markedPhrases": 45,
-      "unmatchedLines": 2,
+      "markedPhrases": 47,
+      "neighborOrBeatEstimates": 2,
+      "unmatchedLines": 0,
       "reviewRequired": true
     },
     {
@@ -73,6 +76,7 @@
       "vocalRecording": "provided-vocal-guide",
       "method": "local-asr-word-matching",
       "markedPhrases": 18,
+      "neighborOrBeatEstimates": 0,
       "unmatchedLines": 0,
       "reviewRequired": true
     },
@@ -82,8 +86,9 @@
       "newVocalRecording": true,
       "vocalRecording": "provided-vocal-guide",
       "method": "local-asr-word-matching",
-      "markedPhrases": 26,
-      "unmatchedLines": 1,
+      "markedPhrases": 27,
+      "neighborOrBeatEstimates": 1,
+      "unmatchedLines": 0,
       "reviewRequired": true
     },
     {
@@ -92,8 +97,9 @@
       "newVocalRecording": true,
       "vocalRecording": "provided-vocal-guide",
       "method": "local-asr-word-matching",
-      "markedPhrases": 27,
-      "unmatchedLines": 6,
+      "markedPhrases": 33,
+      "neighborOrBeatEstimates": 6,
+      "unmatchedLines": 0,
       "reviewRequired": true
     },
     {
@@ -102,8 +108,9 @@
       "newVocalRecording": true,
       "vocalRecording": "provided-vocal-guide",
       "method": "local-asr-word-matching",
-      "markedPhrases": 38,
-      "unmatchedLines": 9,
+      "markedPhrases": 47,
+      "neighborOrBeatEstimates": 9,
+      "unmatchedLines": 0,
       "reviewRequired": true
     },
     {
@@ -112,8 +119,9 @@
       "newVocalRecording": true,
       "vocalRecording": "provided-vocal-guide",
       "method": "local-asr-word-matching",
-      "markedPhrases": 46,
-      "unmatchedLines": 6,
+      "markedPhrases": 52,
+      "neighborOrBeatEstimates": 6,
+      "unmatchedLines": 0,
       "reviewRequired": true
     },
     {
@@ -122,8 +130,9 @@
       "newVocalRecording": true,
       "vocalRecording": "provided-vocal-guide",
       "method": "local-asr-word-matching",
-      "markedPhrases": 38,
-      "unmatchedLines": 8,
+      "markedPhrases": 46,
+      "neighborOrBeatEstimates": 8,
+      "unmatchedLines": 0,
       "reviewRequired": true
     },
     {
@@ -133,6 +142,7 @@
       "vocalRecording": "provided-vocal-guide",
       "method": "local-asr-word-matching",
       "markedPhrases": 20,
+      "neighborOrBeatEstimates": 0,
       "unmatchedLines": 0,
       "reviewRequired": true
     },
@@ -142,8 +152,9 @@
       "newVocalRecording": true,
       "vocalRecording": "provided-vocal-guide",
       "method": "local-asr-word-matching",
-      "markedPhrases": 40,
-      "unmatchedLines": 10,
+      "markedPhrases": 50,
+      "neighborOrBeatEstimates": 10,
+      "unmatchedLines": 0,
       "reviewRequired": true
     },
     {
@@ -152,8 +163,9 @@
       "newVocalRecording": true,
       "vocalRecording": "provided-vocal-guide",
       "method": "local-asr-word-matching",
-      "markedPhrases": 38,
-      "unmatchedLines": 1,
+      "markedPhrases": 39,
+      "neighborOrBeatEstimates": 1,
+      "unmatchedLines": 0,
       "reviewRequired": true
     },
     {
@@ -162,8 +174,9 @@
       "newVocalRecording": true,
       "vocalRecording": "provided-vocal-guide",
       "method": "local-asr-word-matching",
-      "markedPhrases": 21,
-      "unmatchedLines": 3,
+      "markedPhrases": 24,
+      "neighborOrBeatEstimates": 3,
+      "unmatchedLines": 0,
       "reviewRequired": true
     },
     {
@@ -173,6 +186,7 @@
       "vocalRecording": "provided-vocal-guide",
       "method": "local-asr-word-matching",
       "markedPhrases": 26,
+      "neighborOrBeatEstimates": 0,
       "unmatchedLines": 0,
       "reviewRequired": true
     },
@@ -182,8 +196,9 @@
       "newVocalRecording": true,
       "vocalRecording": "provided-vocal-guide",
       "method": "local-asr-word-matching",
-      "markedPhrases": 26,
-      "unmatchedLines": 5,
+      "markedPhrases": 31,
+      "neighborOrBeatEstimates": 5,
+      "unmatchedLines": 0,
       "reviewRequired": true
     },
     {
@@ -193,6 +208,7 @@
       "vocalRecording": "previous-vocal-recording",
       "method": "forced word-to-audio alignment anchored by local speech recognition; review required",
       "markedPhrases": 45,
+      "neighborOrBeatEstimates": 0,
       "unmatchedLines": null,
       "reviewRequired": true
     },
@@ -203,6 +219,7 @@
       "vocalRecording": "previous-karaoke-track",
       "method": "text-length-proportional; not aligned to vocals or instrumental sections",
       "markedPhrases": 24,
+      "neighborOrBeatEstimates": 0,
       "unmatchedLines": null,
       "reviewRequired": true
     },
@@ -213,6 +230,7 @@
       "vocalRecording": "previous-karaoke-track",
       "method": "text-length-proportional; not aligned to vocals or instrumental sections",
       "markedPhrases": 48,
+      "neighborOrBeatEstimates": 0,
       "unmatchedLines": null,
       "reviewRequired": true
     },
@@ -222,8 +240,9 @@
       "newVocalRecording": true,
       "vocalRecording": "provided-vocal-guide",
       "method": "local-asr-word-matching",
-      "markedPhrases": 28,
-      "unmatchedLines": 5,
+      "markedPhrases": 33,
+      "neighborOrBeatEstimates": 5,
+      "unmatchedLines": 0,
       "reviewRequired": true
     },
     {
@@ -232,8 +251,9 @@
       "newVocalRecording": true,
       "vocalRecording": "provided-vocal-guide",
       "method": "local-asr-word-matching",
-      "markedPhrases": 24,
-      "unmatchedLines": 2,
+      "markedPhrases": 26,
+      "neighborOrBeatEstimates": 3,
+      "unmatchedLines": 0,
       "reviewRequired": true
     },
     {
@@ -242,8 +262,9 @@
       "newVocalRecording": true,
       "vocalRecording": "provided-vocal-guide",
       "method": "local-asr-word-matching",
-      "markedPhrases": 33,
-      "unmatchedLines": 2,
+      "markedPhrases": 35,
+      "neighborOrBeatEstimates": 2,
+      "unmatchedLines": 0,
       "reviewRequired": true
     },
     {
@@ -252,8 +273,9 @@
       "newVocalRecording": true,
       "vocalRecording": "provided-vocal-guide",
       "method": "local-asr-word-matching",
-      "markedPhrases": 30,
-      "unmatchedLines": 5,
+      "markedPhrases": 35,
+      "neighborOrBeatEstimates": 5,
+      "unmatchedLines": 0,
       "reviewRequired": true
     },
     {
@@ -263,6 +285,7 @@
       "vocalRecording": "provided-vocal-guide",
       "method": "local-asr-word-matching",
       "markedPhrases": 23,
+      "neighborOrBeatEstimates": 0,
       "unmatchedLines": 0,
       "reviewRequired": true
     },
@@ -273,6 +296,7 @@
       "vocalRecording": "provided-vocal-guide",
       "method": "local-asr-word-matching",
       "markedPhrases": 37,
+      "neighborOrBeatEstimates": 0,
       "unmatchedLines": 0,
       "reviewRequired": true
     },
@@ -283,6 +307,7 @@
       "vocalRecording": "previous-karaoke-track",
       "method": "text-length-proportional; not aligned to vocals or instrumental sections",
       "markedPhrases": 26,
+      "neighborOrBeatEstimates": 0,
       "unmatchedLines": null,
       "reviewRequired": true
     },
@@ -293,6 +318,7 @@
       "vocalRecording": "provided-vocal-guide",
       "method": "local-asr-word-matching",
       "markedPhrases": 24,
+      "neighborOrBeatEstimates": 0,
       "unmatchedLines": 0,
       "reviewRequired": true
     },
@@ -302,8 +328,9 @@
       "newVocalRecording": true,
       "vocalRecording": "provided-vocal-guide",
       "method": "local-asr-word-matching",
-      "markedPhrases": 39,
-      "unmatchedLines": 24,
+      "markedPhrases": 63,
+      "neighborOrBeatEstimates": 25,
+      "unmatchedLines": 0,
       "reviewRequired": true
     },
     {
@@ -313,8 +340,10 @@
       "vocalRecording": "provided-vocal-guide",
       "method": "local-asr-word-matching",
       "markedPhrases": 28,
+      "neighborOrBeatEstimates": 0,
       "unmatchedLines": 0,
       "reviewRequired": true
     }
-  ]
+  ],
+  "neighborOrBeatEstimates": 102
 }

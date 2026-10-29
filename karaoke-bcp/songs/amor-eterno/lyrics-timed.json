@@ -56,12 +56,12 @@
         }
       ],
       "sourceLine": 1,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Que lloran en silencio por tu amor",
       "start": 55.74,
-      "end": 58.0,
+      "end": 58,
       "words": [
         {
           "from": 11,
@@ -91,7 +91,7 @@
           "from": 30,
           "to": 34,
           "start": 57.54,
-          "end": 58.0
+          "end": 58
         }
       ],
       "sourceLine": 2,
@@ -99,13 +99,13 @@
     },
     {
       "text": "Me miro en el espejo y veo en mi rostro",
-      "start": 58.0,
+      "start": 58,
       "end": 62.98,
       "words": [
         {
           "from": 0,
           "to": 2,
-          "start": 58.0,
+          "start": 58,
           "end": 59.68
         },
         {
@@ -164,7 +164,7 @@
     {
       "text": "El tiempo que he sufrido por tu adiós",
       "start": 63.7,
-      "end": 68.0,
+      "end": 68,
       "words": [
         {
           "from": 0,
@@ -212,11 +212,11 @@
           "from": 32,
           "to": 37,
           "start": 66.88,
-          "end": 68.0
+          "end": 68
         }
       ],
       "sourceLine": 4,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Obligo a que te olvide en el pensamiento",
@@ -339,7 +339,7 @@
         }
       ],
       "sourceLine": 7,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "De tanto y tanto que me duele que no estés",
@@ -408,7 +408,7 @@
         }
       ],
       "sourceLine": 8,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Cómo quisiera",
@@ -429,7 +429,7 @@
         }
       ],
       "sourceLine": 9,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Que tú vivieras",
@@ -456,7 +456,7 @@
         }
       ],
       "sourceLine": 10,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Que tus ojitos jamás se hubieran",
@@ -501,7 +501,7 @@
         }
       ],
       "sourceLine": 11,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Cerrado nunca, y estar mirándolos",
@@ -567,7 +567,7 @@
         }
       ],
       "sourceLine": 13,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Pero tarde o temprano",
@@ -600,7 +600,7 @@
         }
       ],
       "sourceLine": 14,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Yo voy a estar contigo",
@@ -639,7 +639,7 @@
         }
       ],
       "sourceLine": 15,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Para seguir amándonos",
@@ -666,7 +666,7 @@
         }
       ],
       "sourceLine": 16,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Yo he sufrido mucho por tu ausencia",
@@ -768,7 +768,7 @@
         }
       ],
       "sourceLine": 18,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Y aunque tengo muy tranquila mi conciencia",
@@ -906,7 +906,7 @@
         }
       ],
       "sourceLine": 20,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Oscura soledad, estoy viendo yo",
@@ -968,12 +968,12 @@
           "from": 19,
           "to": 21,
           "start": 181.52,
-          "end": 182.0
+          "end": 182
         },
         {
           "from": 22,
           "to": 24,
-          "start": 182.0,
+          "start": 182,
           "end": 182.18
         },
         {
@@ -990,7 +990,7 @@
         }
       ],
       "sourceLine": 22,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Y es que tú eres, es que tú eres el amor del cual yo tengo",
@@ -1089,7 +1089,7 @@
         }
       ],
       "sourceLine": 23,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "El más triste recuerdo de Acapulco",
@@ -1134,7 +1134,7 @@
         }
       ],
       "sourceLine": 24,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Pero cómo quisiera",
@@ -1145,12 +1145,12 @@
           "from": 0,
           "to": 4,
           "start": 193.94,
-          "end": 195.0
+          "end": 195
         },
         {
           "from": 5,
           "to": 9,
-          "start": 195.0,
+          "start": 195,
           "end": 195.42
         },
         {
@@ -1161,7 +1161,61 @@
         }
       ],
       "sourceLine": 25,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
+    },
+    {
+      "text": "Que tú vivieras",
+      "sourceLine": 26,
+      "start": 197.08,
+      "end": 201.365,
+      "timingMethod": "neighbor-estimate",
+      "estimateBasis": "between-vocal-anchors",
+      "reviewRequired": true
+    },
+    {
+      "text": "Que tus ojitos jamás se hubieran",
+      "sourceLine": 27,
+      "start": 201.365,
+      "end": 209.935,
+      "timingMethod": "neighbor-estimate",
+      "estimateBasis": "between-vocal-anchors",
+      "reviewRequired": true
+    },
+    {
+      "text": "Cerrado nunca, y estar mirándolos",
+      "sourceLine": 28,
+      "start": 209.935,
+      "end": 217.077,
+      "timingMethod": "neighbor-estimate",
+      "estimateBasis": "between-vocal-anchors",
+      "reviewRequired": true
+    },
+    {
+      "text": "Amor eterno e inolvidable",
+      "sourceLine": 29,
+      "start": 217.077,
+      "end": 222.79,
+      "timingMethod": "neighbor-estimate",
+      "estimateBasis": "between-vocal-anchors",
+      "reviewRequired": true
+    },
+    {
+      "text": "Pero tarde o temprano",
+      "sourceLine": 30,
+      "start": 222.79,
+      "end": 228.503,
+      "timingMethod": "neighbor-estimate",
+      "estimateBasis": "between-vocal-anchors",
+      "reviewRequired": true
+    },
+    {
+      "text": "Estaré contigo",
+      "sourceLine": 31,
+      "start": 228.503,
+      "end": 231.36,
+      "timingMethod": "neighbor-estimate",
+      "estimateBasis": "between-vocal-anchors",
+      "reviewRequired": true
     },
     {
       "text": "Para seguir amándonos",
@@ -1186,6 +1240,15 @@
     },
     {
       "text": "Amor eterno, eterno",
+      "sourceLine": 33,
+      "start": 233.28,
+      "end": 239.707,
+      "timingMethod": "neighbor-estimate",
+      "estimateBasis": "local-voices-with-instrumental-gap",
+      "reviewRequired": true
+    },
+    {
+      "text": "Amor eterno, eterno",
       "start": 268.6,
       "end": 275.94,
       "words": [
@@ -1193,12 +1256,12 @@
           "from": 0,
           "to": 4,
           "start": 268.6,
-          "end": 270.0
+          "end": 270
         },
         {
           "from": 5,
           "to": 11,
-          "start": 270.0,
+          "start": 270,
           "end": 271.4
         },
         {
@@ -1209,7 +1272,7 @@
         }
       ],
       "sourceLine": 34,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Ojos que hayan derramado tantas lágrimas por pena",
@@ -1266,7 +1329,7 @@
         }
       ],
       "sourceLine": 35,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "De dolor, de amor, de tantas despedidas y de esperas",
@@ -1404,7 +1467,7 @@
         }
       ],
       "sourceLine": 37,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Que hacen más triste la angustia de vivir pensando",
@@ -1467,7 +1530,7 @@
         }
       ],
       "sourceLine": 38,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Como siempre, en ti",
@@ -1500,7 +1563,7 @@
         }
       ],
       "sourceLine": 39,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Ojos que te vieron tanto",
@@ -1637,7 +1700,7 @@
         }
       ],
       "sourceLine": 42,
-      "matchedWordRatio": 1.0,
+      "matchedWordRatio": 1,
       "alignment": "acoustic-gap-refinement"
     },
     {
@@ -1689,7 +1752,7 @@
         }
       ],
       "sourceLine": 43,
-      "matchedWordRatio": 1.0,
+      "matchedWordRatio": 1,
       "alignment": "acoustic-gap-refinement"
     },
     {
@@ -1765,12 +1828,12 @@
           "from": 9,
           "to": 13,
           "start": 341.76,
-          "end": 342.0
+          "end": 342
         },
         {
           "from": 14,
           "to": 16,
-          "start": 342.0,
+          "start": 342,
           "end": 342.3
         },
         {
@@ -1937,19 +2000,47 @@
         }
       ],
       "sourceLine": 47,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
+    },
+    {
+      "text": "Amor eterno, eterno",
+      "sourceLine": 48,
+      "start": 353.5,
+      "end": 356.073,
+      "timingMethod": "neighbor-estimate",
+      "estimateBasis": "outro-after-vocal-anchor",
+      "reviewRequired": true
+    },
+    {
+      "text": "Amor eterno, eterno amor",
+      "sourceLine": 49,
+      "start": 356.073,
+      "end": 359.503,
+      "timingMethod": "neighbor-estimate",
+      "estimateBasis": "outro-after-vocal-anchor",
+      "reviewRequired": true
+    },
+    {
+      "text": "Amor, amor, amor, amor, amor, amor",
+      "sourceLine": 50,
+      "start": 359.503,
+      "end": 364.648,
+      "timingMethod": "neighbor-estimate",
+      "estimateBasis": "outro-after-vocal-anchor",
+      "reviewRequired": true
     }
   ],
-  "unmatchedLines": [
+  "unmatchedLines": [],
+  "unmatchedBeforeEstimation": [
     {
       "line": 26,
       "text": "Que tú vivieras",
-      "coverage": 0.0
+      "coverage": 0
     },
     {
       "line": 27,
       "text": "Que tus ojitos jamás se hubieran",
-      "coverage": 0.0
+      "coverage": 0
     },
     {
       "line": 28,
@@ -1964,22 +2055,22 @@
     {
       "line": 30,
       "text": "Pero tarde o temprano",
-      "coverage": 0.0
+      "coverage": 0
     },
     {
       "line": 31,
       "text": "Estaré contigo",
-      "coverage": 0.0
+      "coverage": 0
     },
     {
       "line": 33,
       "text": "Amor eterno, eterno",
-      "coverage": 0.0
+      "coverage": 0
     },
     {
       "line": 48,
       "text": "Amor eterno, eterno",
-      "coverage": 0.0
+      "coverage": 0
     },
     {
       "line": 49,
@@ -1989,7 +2080,19 @@
     {
       "line": 50,
       "text": "Amor, amor, amor, amor, amor, amor",
-      "coverage": 0.0
+      "coverage": 0
     }
+  ],
+  "estimatedFallbackLines": [
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    33,
+    48,
+    49,
+    50
   ]
 }

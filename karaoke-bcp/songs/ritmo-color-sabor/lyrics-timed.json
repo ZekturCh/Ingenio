@@ -38,36 +38,27 @@
         }
       ],
       "sourceLine": 1,
-      "matchedWordRatio": 1.0,
+      "matchedWordRatio": 1,
       "alignment": "phonetic-window-acoustic-refinement",
       "anchorAlias": "ritmo colorizado,"
     },
     {
       "text": "Ritmo para vacilar",
-      "start": 34.18,
-      "end": 36.6,
-      "words": [
-        {
-          "from": 0,
-          "to": 5,
-          "start": 34.18,
-          "end": 34.98
-        },
-        {
-          "from": 6,
-          "to": 10,
-          "start": 34.98,
-          "end": 35.36
-        },
-        {
-          "from": 11,
-          "to": 18,
-          "start": 35.36,
-          "end": 36.6
-        }
-      ],
       "sourceLine": 2,
-      "matchedWordRatio": 1.0
+      "start": 34.18,
+      "end": 35.217,
+      "timingMethod": "neighbor-estimate",
+      "estimateBasis": "local-anchor-reflow",
+      "reviewRequired": true
+    },
+    {
+      "text": "Ritmo, color y sabor",
+      "sourceLine": 3,
+      "start": 35.217,
+      "end": 36.6,
+      "timingMethod": "neighbor-estimate",
+      "estimateBasis": "local-anchor-reflow",
+      "reviewRequired": true
     },
     {
       "text": "Ritmo para vacilar",
@@ -121,7 +112,7 @@
         }
       ],
       "sourceLine": 5,
-      "matchedWordRatio": 1.0,
+      "matchedWordRatio": 1,
       "alignment": "phonetic-window-acoustic-refinement",
       "anchorAlias": "no colorizabó"
     },
@@ -189,7 +180,7 @@
         }
       ],
       "sourceLine": 7,
-      "matchedWordRatio": 1.0,
+      "matchedWordRatio": 1,
       "alignment": "phonetic-window-acoustic-refinement",
       "anchorAlias": "que no colorizabó"
     },
@@ -218,7 +209,7 @@
         }
       ],
       "sourceLine": 8,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Del África llegaron",
@@ -229,12 +220,12 @@
           "from": 4,
           "to": 10,
           "start": 60.42,
-          "end": 61.0
+          "end": 61
         },
         {
           "from": 11,
           "to": 19,
-          "start": 61.0,
+          "start": 61,
           "end": 61.92
         }
       ],
@@ -299,7 +290,7 @@
         }
       ],
       "sourceLine": 11,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Su sabor, su raza y su ritmo tan bueno",
@@ -383,7 +374,7 @@
         }
       ],
       "sourceLine": 13,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Con penas y dolores",
@@ -416,7 +407,7 @@
         }
       ],
       "sourceLine": 14,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Pero ni las cadenas evitaron el sonar",
@@ -427,12 +418,12 @@
           "from": 0,
           "to": 4,
           "start": 78.72,
-          "end": 80.0
+          "end": 80
         },
         {
           "from": 5,
           "to": 7,
-          "start": 80.0,
+          "start": 80,
           "end": 80.36
         },
         {
@@ -467,7 +458,7 @@
         }
       ],
       "sourceLine": 15,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "De los tambores",
@@ -494,7 +485,7 @@
         }
       ],
       "sourceLine": 16,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Tuvieron que trabajar",
@@ -516,6 +507,24 @@
       ],
       "sourceLine": 17,
       "matchedWordRatio": 0.667
+    },
+    {
+      "text": "Con azote, el mayoral",
+      "sourceLine": 18,
+      "start": 87.16,
+      "end": 91,
+      "timingMethod": "neighbor-estimate",
+      "estimateBasis": "between-vocal-anchors",
+      "reviewRequired": true
+    },
+    {
+      "text": "Se les dio la libertad",
+      "sourceLine": 19,
+      "start": 91,
+      "end": 95.8,
+      "timingMethod": "neighbor-estimate",
+      "estimateBasis": "between-vocal-anchors",
+      "reviewRequired": true
     },
     {
       "text": "Y ahora nos hacen gozar",
@@ -554,7 +563,79 @@
         }
       ],
       "sourceLine": 20,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
+    },
+    {
+      "text": "Ritmo, color y sabor",
+      "sourceLine": 21,
+      "start": 99.32,
+      "end": 103.191,
+      "timingMethod": "neighbor-estimate",
+      "estimateBasis": "between-vocal-anchors",
+      "reviewRequired": true
+    },
+    {
+      "text": "Ritmo para vacilar",
+      "sourceLine": 22,
+      "start": 103.191,
+      "end": 106.094,
+      "timingMethod": "neighbor-estimate",
+      "estimateBasis": "between-vocal-anchors",
+      "reviewRequired": true
+    },
+    {
+      "text": "Ritmo, color y sabor",
+      "sourceLine": 23,
+      "start": 106.094,
+      "end": 109.965,
+      "timingMethod": "neighbor-estimate",
+      "estimateBasis": "between-vocal-anchors",
+      "reviewRequired": true
+    },
+    {
+      "text": "Ritmo para vacilar (¿cómo?)",
+      "sourceLine": 24,
+      "start": 109.965,
+      "end": 113.836,
+      "timingMethod": "neighbor-estimate",
+      "estimateBasis": "between-vocal-anchors",
+      "reviewRequired": true
+    },
+    {
+      "text": "Ritmo, color y sabor",
+      "sourceLine": 25,
+      "start": 113.836,
+      "end": 117.707,
+      "timingMethod": "neighbor-estimate",
+      "estimateBasis": "between-vocal-anchors",
+      "reviewRequired": true
+    },
+    {
+      "text": "Ritmo para vacilar (para vacilar)",
+      "sourceLine": 26,
+      "start": 117.707,
+      "end": 122.546,
+      "timingMethod": "neighbor-estimate",
+      "estimateBasis": "between-vocal-anchors",
+      "reviewRequired": true
+    },
+    {
+      "text": "Ritmo, color y sabor",
+      "sourceLine": 27,
+      "start": 122.546,
+      "end": 126.417,
+      "timingMethod": "neighbor-estimate",
+      "estimateBasis": "between-vocal-anchors",
+      "reviewRequired": true
+    },
+    {
+      "text": "Ritmo para vacilar",
+      "sourceLine": 28,
+      "start": 126.417,
+      "end": 129.32,
+      "timingMethod": "neighbor-estimate",
+      "estimateBasis": "between-vocal-anchors",
+      "reviewRequired": true
     },
     {
       "text": "Ay, mira cómo baila",
@@ -587,7 +668,7 @@
         }
       ],
       "sourceLine": 29,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Cómo baila ese moreno",
@@ -620,7 +701,7 @@
         }
       ],
       "sourceLine": 30,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "A mí me gusta mucho",
@@ -659,7 +740,7 @@
         }
       ],
       "sourceLine": 31,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Cómo baila y cómo mueve sus caderas",
@@ -682,12 +763,12 @@
           "from": 11,
           "to": 12,
           "start": 137.9,
-          "end": 138.0
+          "end": 138
         },
         {
           "from": 13,
           "to": 17,
-          "start": 138.0,
+          "start": 138,
           "end": 138.3
         },
         {
@@ -786,7 +867,7 @@
         }
       ],
       "sourceLine": 35,
-      "matchedWordRatio": 1.0,
+      "matchedWordRatio": 1,
       "alignment": "acoustic-gap-refinement"
     },
     {
@@ -809,6 +890,15 @@
       ],
       "sourceLine": 36,
       "matchedWordRatio": 0.667
+    },
+    {
+      "text": "Ritmo, color y sabor (eso es)",
+      "sourceLine": 37,
+      "start": 154.62,
+      "end": 159.26,
+      "timingMethod": "neighbor-estimate",
+      "estimateBasis": "between-vocal-anchors",
+      "reviewRequired": true
     },
     {
       "text": "Ritmo para vacilar (para vacilar)",
@@ -868,7 +958,7 @@
         }
       ],
       "sourceLine": 39,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Ritmo para vacilar",
@@ -879,12 +969,12 @@
           "from": 0,
           "to": 5,
           "start": 166.88,
-          "end": 167.0
+          "end": 167
         },
         {
           "from": 6,
           "to": 10,
-          "start": 167.0,
+          "start": 167,
           "end": 167.38
         },
         {
@@ -895,7 +985,7 @@
         }
       ],
       "sourceLine": 40,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Tiene sabor, ritmo y color",
@@ -923,6 +1013,15 @@
       ],
       "sourceLine": 41,
       "matchedWordRatio": 0.6
+    },
+    {
+      "text": "De chincha a la cuna",
+      "sourceLine": 42,
+      "start": 186.7,
+      "end": 187.98,
+      "timingMethod": "neighbor-estimate",
+      "estimateBasis": "between-vocal-anchors",
+      "reviewRequired": true
     },
     {
       "text": "Como mi tierra, te juro, no hay ninguna",
@@ -1007,6 +1106,15 @@
       ],
       "sourceLine": 44,
       "matchedWordRatio": 0.8
+    },
+    {
+      "text": "Tiene azuquitar, canela",
+      "sourceLine": 45,
+      "start": 193.54,
+      "end": 195.36,
+      "timingMethod": "neighbor-estimate",
+      "estimateBasis": "between-vocal-anchors",
+      "reviewRequired": true
     },
     {
       "text": "Y un poquito de clavo de olor",
@@ -1126,7 +1234,7 @@
         }
       ],
       "sourceLine": 49,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Tiene sabor, ritmo y color",
@@ -1165,7 +1273,7 @@
         }
       ],
       "sourceLine": 50,
-      "matchedWordRatio": 1.0,
+      "matchedWordRatio": 1,
       "alignment": "phonetic-window-acoustic-refinement"
     },
     {
@@ -1199,7 +1307,7 @@
         }
       ],
       "sourceLine": 51,
-      "matchedWordRatio": 1.0,
+      "matchedWordRatio": 1,
       "alignment": "phonetic-window-acoustic-refinement",
       "anchorAlias": "Ritmo colorizado"
     },
@@ -1234,9 +1342,81 @@
         }
       ],
       "sourceLine": 52,
-      "matchedWordRatio": 1.0,
+      "matchedWordRatio": 1,
       "alignment": "phonetic-window-acoustic-refinement",
       "anchorAlias": "Ritmo colorizado"
+    },
+    {
+      "text": "Ritmo para vacilar",
+      "sourceLine": 53,
+      "start": 213.19,
+      "end": 216.482,
+      "timingMethod": "neighbor-estimate",
+      "estimateBasis": "between-vocal-anchors",
+      "reviewRequired": true
+    },
+    {
+      "text": "Ritmo, color y sabor",
+      "sourceLine": 54,
+      "start": 216.482,
+      "end": 220.872,
+      "timingMethod": "neighbor-estimate",
+      "estimateBasis": "between-vocal-anchors",
+      "reviewRequired": true
+    },
+    {
+      "text": "Ritmo para vacilar (dice)",
+      "sourceLine": 55,
+      "start": 220.872,
+      "end": 225.262,
+      "timingMethod": "neighbor-estimate",
+      "estimateBasis": "between-vocal-anchors",
+      "reviewRequired": true
+    },
+    {
+      "text": "Ritmo, color y sabor",
+      "sourceLine": 56,
+      "start": 225.262,
+      "end": 229.651,
+      "timingMethod": "neighbor-estimate",
+      "estimateBasis": "between-vocal-anchors",
+      "reviewRequired": true
+    },
+    {
+      "text": "Ritmo para vacilar (para vacilar)",
+      "sourceLine": 57,
+      "start": 229.651,
+      "end": 235.138,
+      "timingMethod": "neighbor-estimate",
+      "estimateBasis": "between-vocal-anchors",
+      "reviewRequired": true
+    },
+    {
+      "text": "Ritmo, color y sabor",
+      "sourceLine": 58,
+      "start": 235.138,
+      "end": 239.528,
+      "timingMethod": "neighbor-estimate",
+      "estimateBasis": "between-vocal-anchors",
+      "reviewRequired": true
+    },
+    {
+      "text": "Ritmo para vacilar",
+      "sourceLine": 59,
+      "start": 239.528,
+      "end": 242.82,
+      "timingMethod": "neighbor-estimate",
+      "estimateBasis": "between-vocal-anchors",
+      "reviewRequired": true
+    },
+    {
+      "text": "Para vacilar, para vacilar",
+      "sourceLine": 60,
+      "start": 242.82,
+      "end": 247.21,
+      "timingMethod": "neighbor-estimate",
+      "estimateBasis": "between-vocal-anchors",
+      "reviewRequired": true
     },
     {
       "text": "Para vacilar, pa' vacilar",
@@ -1269,15 +1449,34 @@
         }
       ],
       "sourceLine": 61,
-      "matchedWordRatio": 1.0,
+      "matchedWordRatio": 1,
       "alignment": "phonetic-window-acoustic-refinement"
+    },
+    {
+      "text": "Pa' vacilar, para vacilar",
+      "sourceLine": 62,
+      "start": 249.95,
+      "end": 254.177,
+      "timingMethod": "neighbor-estimate",
+      "estimateBasis": "outro-after-vocal-anchor",
+      "reviewRequired": true
+    },
+    {
+      "text": "Pa' vacilar, para vacilar",
+      "sourceLine": 63,
+      "start": 254.177,
+      "end": 258.403,
+      "timingMethod": "neighbor-estimate",
+      "estimateBasis": "outro-after-vocal-anchor",
+      "reviewRequired": true
     }
   ],
-  "unmatchedLines": [
+  "unmatchedLines": [],
+  "unmatchedBeforeEstimation": [
     {
       "line": 3,
       "text": "Ritmo, color y sabor",
-      "coverage": 0.0
+      "coverage": 0
     },
     {
       "line": 18,
@@ -1292,52 +1491,52 @@
     {
       "line": 21,
       "text": "Ritmo, color y sabor",
-      "coverage": 0.0
+      "coverage": 0
     },
     {
       "line": 22,
       "text": "Ritmo para vacilar",
-      "coverage": 0.0
+      "coverage": 0
     },
     {
       "line": 23,
       "text": "Ritmo, color y sabor",
-      "coverage": 0.0
+      "coverage": 0
     },
     {
       "line": 24,
       "text": "Ritmo para vacilar (¿cómo?)",
-      "coverage": 0.0
+      "coverage": 0
     },
     {
       "line": 25,
       "text": "Ritmo, color y sabor",
-      "coverage": 0.0
+      "coverage": 0
     },
     {
       "line": 26,
       "text": "Ritmo para vacilar (para vacilar)",
-      "coverage": 0.0
+      "coverage": 0
     },
     {
       "line": 27,
       "text": "Ritmo, color y sabor",
-      "coverage": 0.0
+      "coverage": 0
     },
     {
       "line": 28,
       "text": "Ritmo para vacilar",
-      "coverage": 0.0
+      "coverage": 0
     },
     {
       "line": 37,
       "text": "Ritmo, color y sabor (eso es)",
-      "coverage": 0.0
+      "coverage": 0
     },
     {
       "line": 42,
       "text": "De chincha a la cuna",
-      "coverage": 0.0
+      "coverage": 0
     },
     {
       "line": 45,
@@ -1347,7 +1546,7 @@
     {
       "line": 53,
       "text": "Ritmo para vacilar",
-      "coverage": 0.0
+      "coverage": 0
     },
     {
       "line": 54,
@@ -1357,7 +1556,7 @@
     {
       "line": 55,
       "text": "Ritmo para vacilar (dice)",
-      "coverage": 0.0
+      "coverage": 0
     },
     {
       "line": 56,
@@ -1367,7 +1566,7 @@
     {
       "line": 57,
       "text": "Ritmo para vacilar (para vacilar)",
-      "coverage": 0.0
+      "coverage": 0
     },
     {
       "line": 58,
@@ -1382,7 +1581,7 @@
     {
       "line": 60,
       "text": "Para vacilar, para vacilar",
-      "coverage": 0.0
+      "coverage": 0
     },
     {
       "line": 62,
@@ -1394,5 +1593,32 @@
       "text": "Pa' vacilar, para vacilar",
       "coverage": 0.25
     }
+  ],
+  "estimatedFallbackLines": [
+    2,
+    3,
+    18,
+    19,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    37,
+    42,
+    45,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    62,
+    63
   ]
 }

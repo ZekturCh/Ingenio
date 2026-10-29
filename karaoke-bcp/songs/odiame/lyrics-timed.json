@@ -89,7 +89,7 @@
         }
       ],
       "sourceLine": 2,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "odio quiero mas que indiferencia por que",
@@ -184,12 +184,12 @@
           "from": 7,
           "to": 10,
           "start": 35.64,
-          "end": 36.0
+          "end": 36
         },
         {
           "from": 11,
           "to": 17,
-          "start": 36.0,
+          "start": 36,
           "end": 36.6
         },
         {
@@ -218,7 +218,7 @@
         }
       ],
       "sourceLine": 5,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "odiame sin medida ni clemencia",
@@ -257,7 +257,7 @@
         }
       ],
       "sourceLine": 6,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "odio quiero mas que indiferencia por que",
@@ -386,7 +386,7 @@
         }
       ],
       "sourceLine": 9,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "de que me amaste mujer con insistencia",
@@ -415,12 +415,12 @@
           "from": 10,
           "to": 16,
           "start": 56.66,
-          "end": 57.0
+          "end": 57
         },
         {
           "from": 17,
           "to": 22,
-          "start": 57.0,
+          "start": 57,
           "end": 57.36
         },
         {
@@ -437,7 +437,7 @@
         }
       ],
       "sourceLine": 10,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "pero ten presente deacuerdo a la experiencia",
@@ -480,13 +480,13 @@
     },
     {
       "text": "que tan solo se odia lo querido",
-      "start": 64.0,
+      "start": 64,
       "end": 67.86,
       "words": [
         {
           "from": 0,
           "to": 3,
-          "start": 64.0,
+          "start": 64,
           "end": 64.44
         },
         {
@@ -527,7 +527,7 @@
         }
       ],
       "sourceLine": 12,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "pero ten presente deacuerdo a la experiencia",
@@ -617,7 +617,7 @@
         }
       ],
       "sourceLine": 14,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "que vale mas yo humilde y tu orgullosa",
@@ -752,7 +752,7 @@
         }
       ],
       "sourceLine": 17,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "llevaremos la misma vestidura",
@@ -785,7 +785,7 @@
         }
       ],
       "sourceLine": 18,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "que vale mas yo humilde y tu orgullosa",
@@ -842,7 +842,7 @@
         }
       ],
       "sourceLine": 19,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "o vale mas tuy devil hermosura",
@@ -892,12 +892,12 @@
           "from": 7,
           "to": 10,
           "start": 121.78,
-          "end": 122.0
+          "end": 122
         },
         {
           "from": 11,
           "to": 13,
-          "start": 122.0,
+          "start": 122,
           "end": 122.12
         },
         {
@@ -932,7 +932,7 @@
         }
       ],
       "sourceLine": 21,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "llevaremos la misma vestidura",
@@ -965,7 +965,7 @@
         }
       ],
       "sourceLine": 22,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "si tu me odias quedare yo convencido",
@@ -1016,7 +1016,7 @@
         }
       ],
       "sourceLine": 23,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "de que me amaste mujer con insistencia",
@@ -1067,7 +1067,7 @@
         }
       ],
       "sourceLine": 24,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "pero ten presente deacuerdo a la experiencia",
@@ -1078,7 +1078,7 @@
           "from": 0,
           "to": 4,
           "start": 137.14,
-          "end": 138.0
+          "end": 138
         },
         {
           "from": 28,
@@ -1151,7 +1151,7 @@
         }
       ],
       "sourceLine": 26,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "pero ten presente deacuerdo a la experiencia",

@@ -26,8 +26,8 @@ function estimatedTrack(id, title, artist, durationSeconds, audioRevision) {
 // BEGIN GENERATED CHORUSES
 const CHORUS_WINDOWS = {
   "carinito": {
-    "startAt": 55.16,
-    "endAt": 83.02
+    "startAt": 55.96,
+    "endAt": 84.34
   },
   "la-flor-de-la-canela": {
     "startAt": 68.56,

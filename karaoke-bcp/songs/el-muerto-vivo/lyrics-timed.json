@@ -181,12 +181,12 @@
           "from": 17,
           "to": 19,
           "start": 31.92,
-          "end": 32.0
+          "end": 32
         },
         {
           "from": 20,
           "to": 24,
-          "start": 32.0,
+          "start": 32,
           "end": 32.34
         },
         {
@@ -270,6 +270,15 @@
       "matchedWordRatio": 0.667
     },
     {
+      "text": "Y no estaba muerto no, no, estaba tomando cañas,lerelele",
+      "sourceLine": 6,
+      "start": 40.84,
+      "end": 42.98,
+      "timingMethod": "neighbor-estimate",
+      "estimateBasis": "between-vocal-anchors",
+      "reviewRequired": true
+    },
+    {
       "text": "Y no estaba muerto no, no y no estaba muerto no, no,",
       "start": 42.98,
       "end": 47.14,
@@ -296,7 +305,7 @@
           "from": 12,
           "to": 18,
           "start": 44.54,
-          "end": 45.0
+          "end": 45
         },
         {
           "from": 26,
@@ -325,6 +334,15 @@
       ],
       "sourceLine": 7,
       "matchedWordRatio": 0.667
+    },
+    {
+      "text": "Y no estaba muerto no, no, chevere, chevere, chévere,",
+      "sourceLine": 8,
+      "start": 47.14,
+      "end": 53.36,
+      "timingMethod": "neighbor-estimate",
+      "estimateBasis": "between-vocal-anchors",
+      "reviewRequired": true
     },
     {
       "text": "Pero al cabo de unos días de haber desaparecido",
@@ -456,6 +474,15 @@
       "matchedWordRatio": 0.667
     },
     {
+      "text": "Le perdonaron sus deudas y lo enterraron con pena,",
+      "sourceLine": 12,
+      "start": 65.54,
+      "end": 69.98,
+      "timingMethod": "neighbor-estimate",
+      "estimateBasis": "between-vocal-anchors",
+      "reviewRequired": true
+    },
+    {
       "text": "Y no estaba muerto no, no y no estaba muerto no, no,",
       "start": 69.98,
       "end": 74.16,
@@ -551,7 +578,7 @@
           "from": 12,
           "to": 18,
           "start": 75.5,
-          "end": 76.0
+          "end": 76
         },
         {
           "from": 19,
@@ -1110,7 +1137,8 @@
       "matchedWordRatio": 0.75
     }
   ],
-  "unmatchedLines": [
+  "unmatchedLines": [],
+  "unmatchedBeforeEstimation": [
     {
       "line": 6,
       "text": "Y no estaba muerto no, no, estaba tomando cañas,lerelele",
@@ -1126,5 +1154,10 @@
       "text": "Le perdonaron sus deudas y lo enterraron con pena,",
       "coverage": 0.444
     }
+  ],
+  "estimatedFallbackLines": [
+    6,
+    8,
+    12
   ]
 }

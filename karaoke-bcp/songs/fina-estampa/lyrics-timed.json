@@ -52,12 +52,12 @@
           "from": 31,
           "to": 35,
           "start": 25.62,
-          "end": 26.0
+          "end": 26
         },
         {
           "from": 36,
           "to": 37,
-          "start": 26.0,
+          "start": 26,
           "end": 26.16
         },
         {
@@ -74,7 +74,7 @@
         }
       ],
       "sourceLine": 1,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Tendida como una cinta con sus lados de arrebol",
@@ -380,7 +380,7 @@
         }
       ],
       "sourceLine": 7,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Cuando por esa vereda tu fina estampa pasea",
@@ -437,7 +437,7 @@
         }
       ],
       "sourceLine": 8,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Fina estampa, caballero",
@@ -464,12 +464,12 @@
         }
       ],
       "sourceLine": 9,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Caballero de fina estampa",
       "start": 70.1,
-      "end": 73.0,
+      "end": 73,
       "words": [
         {
           "from": 0,
@@ -493,11 +493,11 @@
           "from": 18,
           "to": 25,
           "start": 71.9,
-          "end": 73.0
+          "end": 73
         }
       ],
       "sourceLine": 10,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Un lucero que sonriera bajo un sombrero",
@@ -548,7 +548,7 @@
         }
       ],
       "sourceLine": 11,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "No sonriera más hermoso",
@@ -581,7 +581,7 @@
         }
       ],
       "sourceLine": 12,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Ni más luciera caballero",
@@ -609,6 +609,15 @@
       ],
       "sourceLine": 13,
       "matchedWordRatio": 0.75
+    },
+    {
+      "text": "Y en tu andar, andar, reluce la acera al andar, andar",
+      "sourceLine": 14,
+      "start": 85.78,
+      "end": 99.08,
+      "timingMethod": "neighbor-estimate",
+      "estimateBasis": "between-vocal-anchors",
+      "reviewRequired": true
     },
     {
       "text": "Te lleva hacia los zaguanes y a los patios encantados",
@@ -806,17 +815,17 @@
         }
       ],
       "sourceLine": 18,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Es un caminito alegre con luz de luna o de sol",
-      "start": 121.0,
-      "end": 126.0,
+      "start": 121,
+      "end": 126,
       "words": [
         {
           "from": 0,
           "to": 2,
-          "start": 121.0,
+          "start": 121,
           "end": 121.42
         },
         {
@@ -877,11 +886,11 @@
           "from": 43,
           "to": 46,
           "start": 125.54,
-          "end": 126.0
+          "end": 126
         }
       ],
       "sourceLine": 19,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Que he de recorrer cantando por si te puedo alcanzar",
@@ -995,7 +1004,7 @@
         }
       ],
       "sourceLine": 21,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Fina estampa, caballero",
@@ -1022,7 +1031,7 @@
         }
       ],
       "sourceLine": 22,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Caballero de fina estampa",
@@ -1055,7 +1064,7 @@
         }
       ],
       "sourceLine": 23,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Un lucero que sonriera bajo un sombrero",
@@ -1106,7 +1115,7 @@
         }
       ],
       "sourceLine": 24,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "No sonriera más hermoso",
@@ -1139,7 +1148,7 @@
         }
       ],
       "sourceLine": 25,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Ni más luciera caballero",
@@ -1172,7 +1181,7 @@
         }
       ],
       "sourceLine": 26,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Y en tu andar, andar, reluce la acera al andar, andar",
@@ -1233,11 +1242,15 @@
       "alignment": "acoustic-gap-refinement"
     }
   ],
-  "unmatchedLines": [
+  "unmatchedLines": [],
+  "unmatchedBeforeEstimation": [
     {
       "line": 14,
       "text": "Y en tu andar, andar, reluce la acera al andar, andar",
       "coverage": 0.455
     }
+  ],
+  "estimatedFallbackLines": [
+    14
   ]
 }

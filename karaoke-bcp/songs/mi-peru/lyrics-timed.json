@@ -68,7 +68,7 @@
         }
       ],
       "sourceLine": 1,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Y haber nacido en esta hermosa tierra del Sol",
@@ -131,7 +131,7 @@
         }
       ],
       "sourceLine": 2,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Donde el indómito inca, prefiriendo morir",
@@ -273,7 +273,7 @@
         {
           "from": 18,
           "to": 26,
-          "start": 39.0,
+          "start": 39,
           "end": 39.12
         },
         {
@@ -286,6 +286,15 @@
       "sourceLine": 6,
       "matchedWordRatio": 0.75,
       "alignment": "acoustic-gap-refinement"
+    },
+    {
+      "text": "Risueñas playas (ah-ah-ah)",
+      "sourceLine": 7,
+      "start": 39.48,
+      "end": 41.98,
+      "timingMethod": "neighbor-estimate",
+      "estimateBasis": "between-vocal-anchors",
+      "reviewRequired": true
     },
     {
       "text": "Es mi Perú",
@@ -312,7 +321,16 @@
         }
       ],
       "sourceLine": 8,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
+    },
+    {
+      "text": "Fértiles tierras",
+      "sourceLine": 9,
+      "start": 43.18,
+      "end": 45.64,
+      "timingMethod": "neighbor-estimate",
+      "estimateBasis": "between-vocal-anchors",
+      "reviewRequired": true
     },
     {
       "text": "Cumbres nevadas",
@@ -333,7 +351,7 @@
         }
       ],
       "sourceLine": 10,
-      "matchedWordRatio": 1.0,
+      "matchedWordRatio": 1,
       "alignment": "acoustic-gap-refinement"
     },
     {
@@ -355,7 +373,7 @@
         }
       ],
       "sourceLine": 11,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Es mi Perú",
@@ -372,17 +390,17 @@
           "from": 3,
           "to": 5,
           "start": 50.7,
-          "end": 51.0
+          "end": 51
         },
         {
           "from": 6,
           "to": 10,
-          "start": 51.0,
+          "start": 51,
           "end": 51.86
         }
       ],
       "sourceLine": 12,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Así es mi raza, noble y humilde por tradición",
@@ -393,12 +411,12 @@
           "from": 7,
           "to": 9,
           "start": 70.84,
-          "end": 71.0
+          "end": 71
         },
         {
           "from": 10,
           "to": 14,
-          "start": 71.0,
+          "start": 71,
           "end": 71.36
         },
         {
@@ -475,6 +493,15 @@
       "matchedWordRatio": 0.833
     },
     {
+      "text": "Entonces, poniendo alma, mente y corazón",
+      "sourceLine": 15,
+      "start": 78.58,
+      "end": 84.06,
+      "timingMethod": "neighbor-estimate",
+      "estimateBasis": "between-vocal-anchors",
+      "reviewRequired": true
+    },
+    {
       "text": "Rompen cadenas, aunque la muerte vea llegar",
       "start": 84.06,
       "end": 86.5,
@@ -539,7 +566,7 @@
         }
       ],
       "sourceLine": 17,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Hermosas tierras",
@@ -560,7 +587,16 @@
         }
       ],
       "sourceLine": 18,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
+    },
+    {
+      "text": "Risueñas playas",
+      "sourceLine": 19,
+      "start": 91.78,
+      "end": 94.7,
+      "timingMethod": "neighbor-estimate",
+      "estimateBasis": "between-vocal-anchors",
+      "reviewRequired": true
     },
     {
       "text": "Es mi Perú",
@@ -587,7 +623,7 @@
         }
       ],
       "sourceLine": 20,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Fértiles tierras",
@@ -608,7 +644,7 @@
         }
       ],
       "sourceLine": 21,
-      "matchedWordRatio": 1.0,
+      "matchedWordRatio": 1,
       "alignment": "acoustic-gap-refinement"
     },
     {
@@ -630,7 +666,7 @@
         }
       ],
       "sourceLine": 22,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Ríos, quebradas",
@@ -651,7 +687,7 @@
         }
       ],
       "sourceLine": 23,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Es mi Perú",
@@ -678,7 +714,7 @@
         }
       ],
       "sourceLine": 24,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Ricas montañas",
@@ -699,7 +735,25 @@
         }
       ],
       "sourceLine": 25,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
+    },
+    {
+      "text": "Hermosas tierras",
+      "sourceLine": 26,
+      "start": 107.38,
+      "end": 109.73,
+      "timingMethod": "neighbor-estimate",
+      "estimateBasis": "between-vocal-anchors",
+      "reviewRequired": true
+    },
+    {
+      "text": "Risueñas playas",
+      "sourceLine": 27,
+      "start": 109.73,
+      "end": 112.08,
+      "timingMethod": "neighbor-estimate",
+      "estimateBasis": "between-vocal-anchors",
+      "reviewRequired": true
     },
     {
       "text": "Es mi Perú",
@@ -726,7 +780,7 @@
         }
       ],
       "sourceLine": 28,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Fértiles tierras",
@@ -747,7 +801,7 @@
         }
       ],
       "sourceLine": 29,
-      "matchedWordRatio": 1.0,
+      "matchedWordRatio": 1,
       "alignment": "acoustic-gap-refinement"
     },
     {
@@ -769,7 +823,7 @@
         }
       ],
       "sourceLine": 30,
-      "matchedWordRatio": 1.0,
+      "matchedWordRatio": 1,
       "alignment": "acoustic-gap-refinement"
     },
     {
@@ -791,7 +845,7 @@
         }
       ],
       "sourceLine": 31,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Es mi Perú",
@@ -818,7 +872,7 @@
         }
       ],
       "sourceLine": 32,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Es mi Perú",
@@ -845,14 +899,15 @@
         }
       ],
       "sourceLine": 33,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     }
   ],
-  "unmatchedLines": [
+  "unmatchedLines": [],
+  "unmatchedBeforeEstimation": [
     {
       "line": 7,
       "text": "Risueñas playas (ah-ah-ah)",
-      "coverage": 0.0
+      "coverage": 0
     },
     {
       "line": 9,
@@ -877,7 +932,15 @@
     {
       "line": 27,
       "text": "Risueñas playas",
-      "coverage": 0.0
+      "coverage": 0
     }
+  ],
+  "estimatedFallbackLines": [
+    7,
+    9,
+    15,
+    19,
+    26,
+    27
   ]
 }

@@ -33,7 +33,7 @@ async function run() {
     assert.equal(await page.locator('#selectorView').isVisible(), false);
     assert.equal(await page.locator('#stage').isVisible(), true);
     assert.equal(await page.locator('#activate').count(), 0);
-    assert.equal(await page.locator('#remaining').textContent(), '00:27');
+    assert.equal(await page.locator('#remaining').textContent(), '00:28');
     await page.locator('#backBtn').tap();
     await page.waitForFunction(() => !document.querySelector('#selectorView').hidden);
     assert.equal(await page.locator('#audio').evaluate(a => a.paused), true);

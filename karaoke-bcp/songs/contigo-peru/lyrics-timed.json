@@ -50,7 +50,7 @@
         }
       ],
       "sourceLine": 1,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Que sigo viviendo contigo, Perú",
@@ -89,7 +89,7 @@
         }
       ],
       "sourceLine": 2,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Emocionado, doy gracias al cielo",
@@ -128,7 +128,7 @@
         }
       ],
       "sourceLine": 3,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Por darme la vida contigo, Perú",
@@ -173,7 +173,7 @@
         }
       ],
       "sourceLine": 4,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Eres muy grande",
@@ -200,7 +200,16 @@
         }
       ],
       "sourceLine": 5,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
+    },
+    {
+      "text": "Y lo seguirás siendo",
+      "sourceLine": 6,
+      "start": 43.84,
+      "end": 46.64,
+      "timingMethod": "neighbor-estimate",
+      "estimateBasis": "between-vocal-anchors",
+      "reviewRequired": true
     },
     {
       "text": "Pues todos estamos contigo, Perú",
@@ -217,12 +226,12 @@
           "from": 5,
           "to": 10,
           "start": 48.6,
-          "end": 49.0
+          "end": 49
         },
         {
           "from": 11,
           "to": 18,
-          "start": 49.0,
+          "start": 49,
           "end": 49.82
         },
         {
@@ -239,7 +248,7 @@
         }
       ],
       "sourceLine": 7,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Sobre mi pecho, llevo tus colores",
@@ -284,7 +293,7 @@
         }
       ],
       "sourceLine": 8,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Y están mis amores contigo, Perú",
@@ -329,7 +338,7 @@
         }
       ],
       "sourceLine": 9,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Somos tus hijos y nos uniremos",
@@ -374,7 +383,7 @@
         }
       ],
       "sourceLine": 10,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Y así triunfaremos contigo, Perú",
@@ -413,12 +422,12 @@
         }
       ],
       "sourceLine": 11,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Unida la costa (unida la costa)",
       "start": 69.42,
-      "end": 73.0,
+      "end": 73,
       "words": [
         {
           "from": 0,
@@ -454,11 +463,11 @@
           "from": 25,
           "to": 30,
           "start": 72.04,
-          "end": 73.0
+          "end": 73
         }
       ],
       "sourceLine": 12,
-      "matchedWordRatio": 1.0,
+      "matchedWordRatio": 1,
       "alignment": "acoustic-gap-refinement"
     },
     {
@@ -504,7 +513,7 @@
         }
       ],
       "sourceLine": 13,
-      "matchedWordRatio": 1.0,
+      "matchedWordRatio": 1,
       "alignment": "acoustic-gap-refinement"
     },
     {
@@ -544,7 +553,16 @@
         }
       ],
       "sourceLine": 14,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
+    },
+    {
+      "text": "Unido el trabajo (unido el trabajo)",
+      "sourceLine": 15,
+      "start": 80.42,
+      "end": 83.36,
+      "timingMethod": "neighbor-estimate",
+      "estimateBasis": "between-vocal-anchors",
+      "reviewRequired": true
     },
     {
       "text": "Unido el deporte (unido el deporte)",
@@ -589,7 +607,7 @@
         }
       ],
       "sourceLine": 16,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Unidos el norte, el centro y el sur",
@@ -600,12 +618,12 @@
           "from": 0,
           "to": 6,
           "start": 87.24,
-          "end": 88.0
+          "end": 88
         },
         {
           "from": 7,
           "to": 9,
-          "start": 88.0,
+          "start": 88,
           "end": 88.4
         },
         {
@@ -646,7 +664,25 @@
         }
       ],
       "sourceLine": 17,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
+    },
+    {
+      "text": "¡A triunfar, peruanos! (¡A triunfar, peruanos¡)",
+      "sourceLine": 18,
+      "start": 91.68,
+      "end": 95.33,
+      "timingMethod": "neighbor-estimate",
+      "estimateBasis": "between-vocal-anchors",
+      "reviewRequired": true
+    },
+    {
+      "text": "Que somos hermanos (que somos hermanos)",
+      "sourceLine": 19,
+      "start": 95.33,
+      "end": 98.98,
+      "timingMethod": "neighbor-estimate",
+      "estimateBasis": "between-vocal-anchors",
+      "reviewRequired": true
     },
     {
       "text": "Que se haga victoria",
@@ -674,6 +710,15 @@
       ],
       "sourceLine": 20,
       "matchedWordRatio": 0.75
+    },
+    {
+      "text": "Nuestra gran gratitud",
+      "sourceLine": 21,
+      "start": 99.82,
+      "end": 103.62,
+      "timingMethod": "neighbor-estimate",
+      "estimateBasis": "between-vocal-anchors",
+      "reviewRequired": true
     },
     {
       "text": "Te daré la vida",
@@ -733,7 +778,7 @@
         }
       ],
       "sourceLine": 23,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Me uniré en la tierra",
@@ -772,7 +817,7 @@
         }
       ],
       "sourceLine": 24,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Contigo, Perú",
@@ -793,7 +838,7 @@
         }
       ],
       "sourceLine": 25,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Te daré la vida",
@@ -853,7 +898,7 @@
         }
       ],
       "sourceLine": 27,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Me uniré en la tierra",
@@ -892,7 +937,7 @@
         }
       ],
       "sourceLine": 28,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Contigo, Perú",
@@ -913,7 +958,7 @@
         }
       ],
       "sourceLine": 29,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Unida la costa (unida la costa)",
@@ -958,8 +1003,17 @@
         }
       ],
       "sourceLine": 30,
-      "matchedWordRatio": 1.0,
+      "matchedWordRatio": 1,
       "alignment": "phonetic-window-acoustic-refinement"
+    },
+    {
+      "text": "Unida la sierra (unida la sierra)",
+      "sourceLine": 31,
+      "start": 152.91,
+      "end": 154.6,
+      "timingMethod": "neighbor-estimate",
+      "estimateBasis": "between-vocal-anchors",
+      "reviewRequired": true
     },
     {
       "text": "Unida la selva contigo, Perú",
@@ -1118,6 +1172,24 @@
       "matchedWordRatio": 0.875
     },
     {
+      "text": "¡A triunfar, peruanos! (¡A triunfar, peruanos¡)",
+      "sourceLine": 36,
+      "start": 171.04,
+      "end": 174.53,
+      "timingMethod": "neighbor-estimate",
+      "estimateBasis": "between-vocal-anchors",
+      "reviewRequired": true
+    },
+    {
+      "text": "Que somos hermanos (que somos hermanos)",
+      "sourceLine": 37,
+      "start": 174.53,
+      "end": 178.02,
+      "timingMethod": "neighbor-estimate",
+      "estimateBasis": "between-vocal-anchors",
+      "reviewRequired": true
+    },
+    {
       "text": "Que se haga victoria",
       "start": 178.02,
       "end": 179.94,
@@ -1148,8 +1220,17 @@
         }
       ],
       "sourceLine": 38,
-      "matchedWordRatio": 1.0,
+      "matchedWordRatio": 1,
       "alignment": "acoustic-gap-refinement"
+    },
+    {
+      "text": "Nuestra gran gratitud",
+      "sourceLine": 39,
+      "start": 179.94,
+      "end": 182.6,
+      "timingMethod": "neighbor-estimate",
+      "estimateBasis": "between-vocal-anchors",
+      "reviewRequired": true
     },
     {
       "text": "Te daré la vida",
@@ -1182,7 +1263,7 @@
         }
       ],
       "sourceLine": 40,
-      "matchedWordRatio": 1.0,
+      "matchedWordRatio": 1,
       "alignment": "acoustic-gap-refinement"
     },
     {
@@ -1216,7 +1297,7 @@
         }
       ],
       "sourceLine": 41,
-      "matchedWordRatio": 1.0,
+      "matchedWordRatio": 1,
       "alignment": "acoustic-gap-refinement"
     },
     {
@@ -1265,7 +1346,7 @@
         }
       ],
       "sourceLine": 43,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Te daré la vida",
@@ -1298,7 +1379,7 @@
         }
       ],
       "sourceLine": 44,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Y cuando yo muera",
@@ -1373,10 +1454,11 @@
         }
       ],
       "sourceLine": 47,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     }
   ],
-  "unmatchedLines": [
+  "unmatchedLines": [],
+  "unmatchedBeforeEstimation": [
     {
       "line": 6,
       "text": "Y lo seguirás siendo",
@@ -1415,12 +1497,23 @@
     {
       "line": 37,
       "text": "Que somos hermanos (que somos hermanos)",
-      "coverage": 1.0
+      "coverage": 1
     },
     {
       "line": 39,
       "text": "Nuestra gran gratitud",
-      "coverage": 0.0
+      "coverage": 0
     }
+  ],
+  "estimatedFallbackLines": [
+    6,
+    15,
+    18,
+    19,
+    21,
+    31,
+    36,
+    37,
+    39
   ]
 }

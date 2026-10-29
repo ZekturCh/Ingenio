@@ -62,7 +62,7 @@
         }
       ],
       "sourceLine": 1,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Este secreto seguira escondido una eternidad",
@@ -170,7 +170,7 @@
         }
       ],
       "sourceLine": 3,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Y no te preocupes, que todo lo nuestro queda entre tú y yo",
@@ -257,7 +257,7 @@
         }
       ],
       "sourceLine": 4,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Este secreto que tienes conmigo nadie lo sabrá",
@@ -280,12 +280,12 @@
           "from": 13,
           "to": 16,
           "start": 38.84,
-          "end": 39.0
+          "end": 39
         },
         {
           "from": 17,
           "to": 23,
-          "start": 39.0,
+          "start": 39,
           "end": 39.22
         },
         {
@@ -416,7 +416,7 @@
         }
       ],
       "sourceLine": 7,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Y no te preocupes, que todo lo nuestro queda entre tú y yo",
@@ -503,7 +503,7 @@
         }
       ],
       "sourceLine": 8,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Nadie sabrá que tu pecho, juntito al mío ha latido",
@@ -611,7 +611,7 @@
         }
       ],
       "sourceLine": 10,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Nunca diré que hubo noches que te adoré con locura",
@@ -680,7 +680,7 @@
         }
       ],
       "sourceLine": 11,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Nadie sabrá que en tus brazos",
@@ -725,7 +725,7 @@
         }
       ],
       "sourceLine": 12,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Borracho de amor, me quedé dormido",
@@ -770,7 +770,7 @@
         }
       ],
       "sourceLine": 13,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Nadie sabrá que tu pecho, juntitito al mío ha latido",
@@ -929,7 +929,7 @@
         }
       ],
       "sourceLine": 16,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Nadie sabrá que en tus brazos",
@@ -974,7 +974,7 @@
         }
       ],
       "sourceLine": 17,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Borracho de amor, me quedé dormido",
@@ -1019,7 +1019,7 @@
         }
       ],
       "sourceLine": 18,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Nadie sabrá que tu pecho, juntito al mío ha latido",
@@ -1047,7 +1047,7 @@
         {
           "from": 16,
           "to": 18,
-          "start": 124.0,
+          "start": 124,
           "end": 124.16
         },
         {
@@ -1121,7 +1121,7 @@
         }
       ],
       "sourceLine": 20,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Nunca diré que hubo noches que te adoré con locura",
@@ -1132,12 +1132,12 @@
           "from": 0,
           "to": 5,
           "start": 133.16,
-          "end": 134.0
+          "end": 134
         },
         {
           "from": 6,
           "to": 10,
-          "start": 134.0,
+          "start": 134,
           "end": 134.44
         },
         {
@@ -1190,7 +1190,7 @@
         }
       ],
       "sourceLine": 21,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Nadie sabrá que en tus brazos",
@@ -1235,7 +1235,7 @@
         }
       ],
       "sourceLine": 22,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Borracho de amor, me quedé dormido",

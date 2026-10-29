@@ -8,6 +8,15 @@
   "audioSha256": "71ba8c841737014186276425c681fe64a17ef14125141fa063317a10e69db422",
   "lyrics": [
     {
+      "text": "La gente me señala",
+      "sourceLine": 1,
+      "start": 17,
+      "end": 18.8,
+      "timingMethod": "neighbor-estimate",
+      "estimateBasis": "lead-in-before-vocal-anchor",
+      "reviewRequired": true
+    },
+    {
       "text": "Me apuntan con el dedo",
       "start": 18.8,
       "end": 20.8,
@@ -44,7 +53,7 @@
         }
       ],
       "sourceLine": 2,
-      "matchedWordRatio": 1.0,
+      "matchedWordRatio": 1,
       "alignment": "acoustic-gap-refinement"
     },
     {
@@ -111,7 +120,7 @@
     {
       "text": "¿Qué más me da",
       "start": 25.34,
-      "end": 26.0,
+      "end": 26,
       "words": [
         {
           "from": 5,
@@ -129,7 +138,7 @@
           "from": 12,
           "to": 14,
           "start": 25.82,
-          "end": 26.0
+          "end": 26
         }
       ],
       "sourceLine": 5,
@@ -193,7 +202,7 @@
         }
       ],
       "sourceLine": 7,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "No tengo dueño",
@@ -220,7 +229,7 @@
         }
       ],
       "sourceLine": 8,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Yo sé que me critican",
@@ -286,7 +295,7 @@
         }
       ],
       "sourceLine": 10,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "La envidia les corroe",
@@ -319,7 +328,7 @@
         }
       ],
       "sourceLine": 11,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Mi vida les agobia",
@@ -352,7 +361,7 @@
         }
       ],
       "sourceLine": 12,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "¿Por qué será?",
@@ -379,7 +388,7 @@
         }
       ],
       "sourceLine": 13,
-      "matchedWordRatio": 1.0,
+      "matchedWordRatio": 1,
       "alignment": "acoustic-gap-refinement"
     },
     {
@@ -417,13 +426,13 @@
     },
     {
       "text": "Mi circunstancia les insulta",
-      "start": 45.0,
+      "start": 45,
       "end": 49.88,
       "words": [
         {
           "from": 0,
           "to": 2,
-          "start": 45.0,
+          "start": 45,
           "end": 45.44
         },
         {
@@ -632,7 +641,7 @@
         }
       ],
       "sourceLine": 19,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Yo soy así y así seguiré",
@@ -677,7 +686,7 @@
         }
       ],
       "sourceLine": 20,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Nunca cambiaré",
@@ -698,7 +707,7 @@
         }
       ],
       "sourceLine": 21,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "¿A quién le importa lo que yo haga?",
@@ -727,12 +736,12 @@
           "from": 12,
           "to": 19,
           "start": 80.56,
-          "end": 81.0
+          "end": 81
         },
         {
           "from": 20,
           "to": 22,
-          "start": 81.0,
+          "start": 81,
           "end": 81.76
         },
         {
@@ -755,7 +764,7 @@
         }
       ],
       "sourceLine": 22,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "¿A quién le importa lo que yo diga?",
@@ -803,6 +812,15 @@
       "matchedWordRatio": 0.75
     },
     {
+      "text": "Yo soy así y así seguiré",
+      "sourceLine": 24,
+      "start": 86.86,
+      "end": 89.96,
+      "timingMethod": "neighbor-estimate",
+      "estimateBasis": "between-vocal-anchors",
+      "reviewRequired": true
+    },
+    {
       "text": "Nunca cambiaré",
       "start": 89.96,
       "end": 91.92,
@@ -821,7 +839,7 @@
         }
       ],
       "sourceLine": 25,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Quizá la culpa es mía",
@@ -860,7 +878,7 @@
         }
       ],
       "sourceLine": 26,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Por no seguir la norma",
@@ -899,7 +917,7 @@
         }
       ],
       "sourceLine": 27,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Ya es demasiado tarde",
@@ -953,7 +971,7 @@
         }
       ],
       "sourceLine": 29,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Me mantendré",
@@ -974,7 +992,7 @@
         }
       ],
       "sourceLine": 30,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Firme en mis convicciones",
@@ -1187,6 +1205,15 @@
       "matchedWordRatio": 0.875
     },
     {
+      "text": "Yo soy así y así seguiré",
+      "sourceLine": 37,
+      "start": 149.38,
+      "end": 153.18,
+      "timingMethod": "neighbor-estimate",
+      "estimateBasis": "between-vocal-anchors",
+      "reviewRequired": true
+    },
+    {
       "text": "Nunca cambiaré",
       "start": 153.18,
       "end": 154.46,
@@ -1205,7 +1232,7 @@
         }
       ],
       "sourceLine": 38,
-      "matchedWordRatio": 1.0,
+      "matchedWordRatio": 1,
       "alignment": "acoustic-gap-refinement"
     },
     {
@@ -1286,12 +1313,12 @@
           "from": 23,
           "to": 26,
           "start": 162.56,
-          "end": 163.0
+          "end": 163
         },
         {
           "from": 27,
           "to": 29,
-          "start": 163.0,
+          "start": 163,
           "end": 163.38
         },
         {
@@ -1303,6 +1330,15 @@
       ],
       "sourceLine": 40,
       "matchedWordRatio": 0.875
+    },
+    {
+      "text": "Yo soy así y así seguiré",
+      "sourceLine": 41,
+      "start": 164.04,
+      "end": 167.21,
+      "timingMethod": "neighbor-estimate",
+      "estimateBasis": "between-vocal-anchors",
+      "reviewRequired": true
     },
     {
       "text": "Nunca cambiaré",
@@ -1323,15 +1359,52 @@
         }
       ],
       "sourceLine": 42,
-      "matchedWordRatio": 1.0,
+      "matchedWordRatio": 1,
       "alignment": "phonetic-window-acoustic-refinement"
+    },
+    {
+      "text": "¿A quién le importa lo que yo haga?",
+      "sourceLine": 43,
+      "start": 169.07,
+      "end": 175.109,
+      "timingMethod": "neighbor-estimate",
+      "estimateBasis": "outro-after-vocal-anchor",
+      "reviewRequired": true
+    },
+    {
+      "text": "¿A quién le importa lo que yo diga?",
+      "sourceLine": 44,
+      "start": 175.109,
+      "end": 181.149,
+      "timingMethod": "neighbor-estimate",
+      "estimateBasis": "outro-after-vocal-anchor",
+      "reviewRequired": true
+    },
+    {
+      "text": "Yo soy así y así seguiré",
+      "sourceLine": 45,
+      "start": 181.149,
+      "end": 185.678,
+      "timingMethod": "neighbor-estimate",
+      "estimateBasis": "outro-after-vocal-anchor",
+      "reviewRequired": true
+    },
+    {
+      "text": "Nunca cambiaré",
+      "sourceLine": 46,
+      "start": 185.678,
+      "end": 187.188,
+      "timingMethod": "neighbor-estimate",
+      "estimateBasis": "outro-after-vocal-anchor",
+      "reviewRequired": true
     }
   ],
-  "unmatchedLines": [
+  "unmatchedLines": [],
+  "unmatchedBeforeEstimation": [
     {
       "line": 1,
       "text": "La gente me señala",
-      "coverage": 0.0
+      "coverage": 0
     },
     {
       "line": 24,
@@ -1351,7 +1424,7 @@
     {
       "line": 43,
       "text": "¿A quién le importa lo que yo haga?",
-      "coverage": 0.0
+      "coverage": 0
     },
     {
       "line": 44,
@@ -1368,5 +1441,15 @@
       "text": "Nunca cambiaré",
       "coverage": 0.5
     }
+  ],
+  "estimatedFallbackLines": [
+    1,
+    24,
+    37,
+    41,
+    43,
+    44,
+    45,
+    46
   ]
 }

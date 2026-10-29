@@ -269,7 +269,7 @@
         }
       ],
       "sourceLine": 6,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Buscando el camino de tu comprensión",
@@ -314,7 +314,7 @@
         }
       ],
       "sourceLine": 7,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Apiádate de mi",
@@ -341,7 +341,7 @@
         }
       ],
       "sourceLine": 8,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Si tienes corazón",
@@ -368,7 +368,7 @@
         }
       ],
       "sourceLine": 9,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Escucha en sus latidos",
@@ -401,7 +401,7 @@
         }
       ],
       "sourceLine": 10,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "La voz de mi dolor",
@@ -455,7 +455,7 @@
         }
       ],
       "sourceLine": 12,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Para llenar el vació que dejaste al irte regresa",
@@ -518,7 +518,7 @@
         }
       ],
       "sourceLine": 13,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Regresa aunque sea para despedirte no dejes que muera",
@@ -529,12 +529,12 @@
           "from": 0,
           "to": 7,
           "start": 83.94,
-          "end": 85.0
+          "end": 85
         },
         {
           "from": 8,
           "to": 14,
-          "start": 85.0,
+          "start": 85,
           "end": 85.32
         },
         {
@@ -581,7 +581,7 @@
         }
       ],
       "sourceLine": 14,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Sin decirte adiós",
@@ -608,7 +608,7 @@
         }
       ],
       "sourceLine": 15,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Apiádate de mi",
@@ -635,7 +635,7 @@
         }
       ],
       "sourceLine": 16,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Si tienes corazón",
@@ -646,12 +646,12 @@
           "from": 0,
           "to": 2,
           "start": 118.48,
-          "end": 121.0
+          "end": 121
         },
         {
           "from": 3,
           "to": 9,
-          "start": 121.0,
+          "start": 121,
           "end": 121.78
         },
         {
@@ -662,7 +662,7 @@
         }
       ],
       "sourceLine": 17,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Escucha en sus latidos",
@@ -695,12 +695,12 @@
         }
       ],
       "sourceLine": 18,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "La voz de mi dolor",
       "start": 128.88,
-      "end": 133.0,
+      "end": 133,
       "words": [
         {
           "from": 0,
@@ -730,11 +730,11 @@
           "from": 13,
           "to": 18,
           "start": 132.06,
-          "end": 133.0
+          "end": 133
         }
       ],
       "sourceLine": 19,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Pero regresa",
@@ -755,7 +755,7 @@
         }
       ],
       "sourceLine": 20,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Para llenar el vació que dejaste al irte regresa",
@@ -869,7 +869,7 @@
         }
       ],
       "sourceLine": 22,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Sin decirte adiós",
@@ -896,7 +896,7 @@
         }
       ],
       "sourceLine": 23,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Te estoy buscando",
@@ -923,7 +923,7 @@
         }
       ],
       "sourceLine": 24,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     }
   ],
   "unmatchedLines": []

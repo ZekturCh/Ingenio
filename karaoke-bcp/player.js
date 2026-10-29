@@ -1,6 +1,6 @@
-import { SONGS, roomFromUrl, subscribeRoom, sendCommand, getSong, getVersion, controllerUrl } from "./shared.js?v=20261029-4";
+import { SONGS, roomFromUrl, subscribeRoom, sendCommand, getSong, getVersion, controllerUrl } from "./shared.js?v=20261029-5";
 import { icons, loadFavorites, toggleFavorite, toggleFullscreen } from "./ui.js";
-import { getDelay, lyricTime, DELAY_KEY } from "./audio-settings.js";
+import { getDelay, lyricTime, heardPosition, DELAY_KEY } from "./audio-settings.js";
 import { getCalibration, setActiveTrack, calibratedTime } from "./track-timing.js";
 import { cueProgress, lyricParts } from "./lyric-progress.js";
 
@@ -18,6 +18,7 @@ let lineIndex = -2;
 let wordNodes = [];
 let visible = !embedded;
 let delay = getDelay(), timing = null, calibration = null;
+let finishTimer = 0, finishAt = 0, heardEnd = false;
 let paintFrame = 0, lastPaint = 0, lastPercent = -1, lastElapsed = "", lastDuration = "";
 const lyricCache = new Map();
 if (onBack) $("#backBtn").onclick = (event) => { event.preventDefault(); onBack(); };
@@ -32,6 +33,28 @@ function bounds() {
   return { start, end, span: Math.max(0.1, end - start) };
 }
 function setState(message) { $("#playerState").textContent = message; }
+function resetFinish() {
+  clearTimeout(finishTimer); finishTimer = 0; finishAt = 0; heardEnd = false;
+}
+function mediaClock() {
+  const latency = Math.max(0, delay) / 1000;
+  if (heardEnd) return bounds().end + latency;
+  return audio.currentTime + (finishAt ? Math.min(latency, (performance.now() - finishAt) / 1000) : 0);
+}
+function completePlayback() {
+  finishTimer = 0; finishAt = 0; heardEnd = true;
+  updateProgress(); stopPainting(); setState("Finalizado");
+  if (shuffle) nextSong(1);
+}
+function finishPlayback() {
+  if (ended) return;
+  ended = true; audio.pause();
+  if (delay > 0) {
+    finishAt = performance.now();
+    finishTimer = setTimeout(completePlayback, delay);
+    startPainting();
+  } else completePlayback();
+}
 function setSync(mode) {
   $("#syncState").textContent = mode === "online" ? "Sala en línea" : "Sala local";
 }
@@ -85,8 +108,8 @@ function renderLyrics(time) {
   }
   const index = low - 1;
   const candidate = lyricData[index];
-  const line = candidate && time < candidate.end ? candidate : null;
   const { start, end } = bounds();
+  const line = candidate && time >= start && time < end && candidate.start < end && candidate.end > start && time < candidate.end ? candidate : null;
   const contextText = index => {
     const cue = lyricData[index];
     return cue && cue.start >= start && cue.start < end ? cue.text : "";
@@ -128,8 +151,9 @@ function renderLyrics(time) {
 }
 function updateProgress() {
   if (!activeVersion) return;
-  const { start, span } = bounds();
-  const position = Math.min(span, Math.max(0, audio.currentTime - start));
+  const { start, end, span } = bounds();
+  const clock = mediaClock();
+  const position = heardPosition(clock, start, end, delay);
   if (!seeking) {
     const percent = Math.round(position / span * 1000) / 10;
     if (percent !== lastPercent) {
@@ -141,13 +165,14 @@ function updateProgress() {
   const elapsed = mmss(position), duration = mmss(span);
   if (elapsed !== lastElapsed) { $("#elapsed").textContent = elapsed; lastElapsed = elapsed; }
   if (duration !== lastDuration) { $("#remaining").textContent = duration; lastDuration = duration; }
-  renderLyrics(audio.currentTime);
+  renderLyrics(clock);
 }
 function selectState(state) {
   const song = getSong(state.songId), version = getVersion(song, state.versionId);
   if (!song?.enabled || !version) return null;
   const changedSong = activeSong?.id !== song.id;
   const changed = changedSong || activeVersion?.id !== version.id;
+  if (changed) resetFinish();
   activeState = state; activeSong = song; activeVersion = version;
   if (changedSong) {
     audio.pause();
@@ -182,11 +207,14 @@ async function execute(state) {
   if (changed === null || token !== commandToken) return;
   const { start, end } = bounds(), command = state.command || "load";
   if (command === "load" || command === "stop") {
+    resetFinish();
     audio.pause(); audio.currentTime = start; ended = false;
     setState(command === "load" ? "Canción lista" : "Detenido");
   } else if (command === "pause") {
+    resetFinish();
     audio.pause(); setState("Pausa");
   } else if (command === "restart" || command === "play") {
+    resetFinish();
     if (command === "restart" || changed || lastCommand === "stop" || ended || audio.currentTime < start || audio.currentTime >= end - .05) audio.currentTime = start;
     updateProgress();
     await playAudio(token);
@@ -202,23 +230,22 @@ function receive(state) {
 audio.addEventListener("timeupdate", () => {
   if (visible && !document.hidden) updateProgress();
   if (activeVersion && !audio.paused && audio.currentTime >= bounds().end - .04) {
-    audio.pause(); ended = true; setState("Finalizado");
-    if (shuffle) nextSong(1);
+    finishPlayback();
   }
 });
 audio.addEventListener("play", () => { stage.classList.remove("paused"); $("#playBtn").setAttribute("aria-label", "Pausar"); $("#playBtn").title = "Pausar"; startPainting(); });
-audio.addEventListener("pause", () => { stage.classList.add("paused"); $("#playBtn").setAttribute("aria-label", "Reproducir"); $("#playBtn").title = "Reproducir"; stopPainting(); });
-audio.addEventListener("ended", () => { ended = true; setState("Finalizado"); stage.classList.add("paused"); if (shuffle) nextSong(1); });
-audio.addEventListener("error", () => { setState("Audio no disponible"); });
+audio.addEventListener("pause", () => { stage.classList.add("paused"); $("#playBtn").setAttribute("aria-label", "Reproducir"); $("#playBtn").title = "Reproducir"; if (finishAt) startPainting(); else stopPainting(); });
+audio.addEventListener("ended", () => { stage.classList.add("paused"); finishPlayback(); });
+audio.addEventListener("error", () => { resetFinish(); stopPainting(); setState("Audio no disponible"); });
 // No animation loop while paused, hidden or showing the song selector.
 function paint(now) {
   paintFrame = 0;
-  if (!visible || audio.paused || document.hidden) return;
+  if (!visible || (audio.paused && !finishAt) || document.hidden) return;
   if (now - lastPaint >= 1000 / 30) { updateProgress(); lastPaint = now; }
   paintFrame = requestAnimationFrame(paint);
 }
 function startPainting() {
-  if (!paintFrame && visible && !audio.paused && !document.hidden) paintFrame = requestAnimationFrame(paint);
+  if (!paintFrame && visible && (!audio.paused || finishAt) && !document.hidden) paintFrame = requestAnimationFrame(paint);
 }
 function stopPainting() { cancelAnimationFrame(paintFrame); paintFrame = 0; }
 document.addEventListener("visibilitychange", () => {
@@ -295,12 +322,13 @@ $("#shuffleBtn").onclick = () => {
 $("#favoriteBtn").onclick = () => { if (activeSong) { toggleFavorite(activeSong.id); updateFavorite(); } };
 window.addEventListener("storage", updateFavorite);
 $("#seek").oninput = () => {
+  resetFinish();
   seeking = true;
   const { start, span } = bounds();
   const position = Number($("#seek").value) / 100;
   $("#seek").style.setProperty("--progress", `${position * 100}%`);
   audio.currentTime = start + span * position;
-  ended = false; renderLyrics(audio.currentTime); $("#elapsed").textContent = mmss(span * position);
+  ended = false; renderLyrics(audio.currentTime); $("#elapsed").textContent = mmss(heardPosition(audio.currentTime, start, start + span, delay));
 };
 $("#seek").onchange = () => { seeking = false; updateProgress(); };
 $("#playerFullscreenBtn").onclick = () => toggleFullscreen().catch(() => setState("Pantalla completa no disponible"));
@@ -315,7 +343,7 @@ return {
     execute(state).catch(() => setState("No se pudo cargar la canción"));
   },
   hide() {
-    visible = false; ++commandToken; audio.pause(); stopPainting(); lastCommand = "pause";
+    visible = false; ++commandToken; resetFinish(); audio.pause(); stopPainting(); lastCommand = "pause";
     return activeState;
   },
   show() { visible = true; fitLyrics(); updateProgress(); startPainting(); },

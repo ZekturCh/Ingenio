@@ -19,7 +19,7 @@ for (const record of records) {
   assert.equal(data.unmatchedLines.length, record.unmatchedLines.length);
   assert.ok(data.reviewRequired, 'automatic alignment must not be presented as human-verified');
   assert.equal(data.method, 'local-asr-word-matching');
-  assert.ok(data.lyrics.every(line => line.words?.length > 0));
+  assert.ok(data.lyrics.every(line => line.words?.length > 0 || (line.timingMethod === 'neighbor-estimate' && line.reviewRequired === true)));
 }
 assert.equal(fs.readdirSync(path.join(root, 'letras-para-lector')).filter(name => name.endsWith('.txt')).length, 27);
 console.log('23 exact recordings, linked lyric hashes, review status, word timings and 27 untouched practice TXT files passed.');

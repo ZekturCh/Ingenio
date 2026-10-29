@@ -1,0 +1,169 @@
+{
+  "audioSha256": "8f6273f3157d04d02cbf9b8846088fd081724d1cda651899b28cb1d460002cb5",
+  "reviewRequired": true,
+  "textChangesApproved": true,
+  "cues": [
+    {
+      "sourceLine": 6,
+      "text": "Por amarte, por desearte",
+      "start": 42.24,
+      "end": 46.4,
+      "basis": "recognized-phonetic-tail",
+      "note": "Conserva desearte durante el tramo reconocido como desciarte."
+    },
+    {
+      "sourceLine": 9,
+      "text": "Por amarte, por desearte",
+      "start": 51.96,
+      "end": 55.96,
+      "basis": "recognized-phonetic-tail",
+      "note": "La ultima palabra no debe desaparecer antes de su final."
+    },
+    {
+      "sourceLine": 13,
+      "text": "Me abandones cariñito",
+      "start": 70.9,
+      "end": 74.54,
+      "basis": "recognized-phonetic-tail",
+      "note": "Extiende hasta el final del sustantivo reconocido como carino."
+    },
+    {
+      "sourceLine": 15,
+      "text": "Me abandones cariñito",
+      "start": 80.6,
+      "end": 84.04,
+      "basis": "recognized-phonetic-tail",
+      "note": "Incluye la ultima palabra antes de cerrar el coro."
+    },
+    {
+      "sourceLine": 16,
+      "text": "No llores, oye",
+      "start": 89.82,
+      "end": 90.72,
+      "basis": "recognized-spoken-words",
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 89.82,
+          "end": 89.92
+        },
+        {
+          "from": 3,
+          "to": 9,
+          "start": 89.92,
+          "end": 90.3
+        },
+        {
+          "from": 11,
+          "to": 14,
+          "start": 90.52,
+          "end": 90.72
+        }
+      ]
+    },
+    {
+      "sourceLine": 17,
+      "text": "No llores, oye",
+      "start": 96.12,
+      "end": 102.6,
+      "basis": "user-confirmed-repetition",
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 96.12,
+          "end": 97.08
+        },
+        {
+          "from": 3,
+          "to": 9,
+          "start": 97.08,
+          "end": 97.58
+        },
+        {
+          "from": 11,
+          "to": 14,
+          "start": 101.28,
+          "end": 102.6
+        }
+      ]
+    },
+    {
+      "sourceLine": 18,
+      "text": "Lloro",
+      "start": 123.2,
+      "end": 125,
+      "basis": "neighbor-estimate",
+      "note": "Estimacion previa a Por quererte a 125 s; entrada pendiente de confirmar al oido."
+    },
+    {
+      "sourceLine": 20,
+      "text": "Por amarte, por desearte",
+      "start": 127.74,
+      "end": 132.38,
+      "basis": "focused-asr-entry",
+      "note": "Por se reconoce en la pasada del fragmento 119-129 s antes de amarte."
+    },
+    {
+      "sourceLine": 27,
+      "text": "Me abandones cariñito",
+      "start": 156.42,
+      "end": 160.6,
+      "basis": "neighbor-estimate",
+      "note": "Entrada estimada tras Nunca; salida anclada a carinito, reconocida hasta 160.6 s."
+    },
+    {
+      "sourceLine": 34,
+      "text": "Sí",
+      "start": 208.3,
+      "end": 209.5,
+      "basis": "outro-beat-estimate-user-confirmed-text"
+    },
+    {
+      "sourceLine": 35,
+      "text": "Hey hey hey hey",
+      "start": 209.6,
+      "end": 211.9,
+      "basis": "outro-beat-estimate-user-confirmed-text"
+    },
+    {
+      "sourceLine": 36,
+      "text": "Hey hey hey hey",
+      "start": 212,
+      "end": 214.3,
+      "basis": "outro-beat-estimate-user-confirmed-text"
+    },
+    {
+      "sourceLine": 37,
+      "text": "Hey hey hey hey",
+      "start": 214.4,
+      "end": 216.7,
+      "basis": "outro-beat-estimate-user-confirmed-text"
+    },
+    {
+      "sourceLine": 38,
+      "text": "Hey hey hey hey",
+      "start": 216.8,
+      "end": 219.1,
+      "basis": "outro-beat-estimate-user-confirmed-text"
+    }
+  ],
+  "approvedTextChanges": [
+    {
+      "text": "No llores, oye",
+      "sourceLine": 17,
+      "approval": "User confirmed additional repetition in 01:29-01:47 clip"
+    },
+    {
+      "type": "remove",
+      "text": "Qué cosa",
+      "approval": "User confirmed this interjection is not heard in 01:29-01:47"
+    },
+    {
+      "type": "remove",
+      "text": "Hey",
+      "approval": "User confirmed the instrumental interjection is not heard; outro chants retained"
+    }
+  ]
+}

@@ -94,7 +94,7 @@
     {
       "text": "Sé que tendrás que llorar",
       "start": 19.08,
-      "end": 22.0,
+      "end": 22,
       "words": [
         {
           "from": 0,
@@ -124,21 +124,21 @@
           "from": 19,
           "to": 25,
           "start": 21.38,
-          "end": 22.0
+          "end": 22
         }
       ],
       "sourceLine": 3,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Llorar y llorar, llorar y llorar",
-      "start": 22.0,
+      "start": 22,
       "end": 26.98,
       "words": [
         {
           "from": 0,
           "to": 6,
-          "start": 22.0,
+          "start": 22,
           "end": 23.24
         },
         {
@@ -173,7 +173,7 @@
         }
       ],
       "sourceLine": 4,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Dirás que no me quisiste",
@@ -212,7 +212,7 @@
         }
       ],
       "sourceLine": 5,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Pero vas a estar muy triste",
@@ -257,7 +257,7 @@
         }
       ],
       "sourceLine": 6,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "A así te vas a quedar",
@@ -335,7 +335,7 @@
         }
       ],
       "sourceLine": 8,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Hago siempre lo que quiero",
@@ -374,12 +374,12 @@
         }
       ],
       "sourceLine": 9,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Y mi palabra es la ley",
       "start": 45.74,
-      "end": 49.0,
+      "end": 49,
       "words": [
         {
           "from": 0,
@@ -415,11 +415,11 @@
           "from": 19,
           "to": 22,
           "start": 48.26,
-          "end": 49.0
+          "end": 49
         }
       ],
       "sourceLine": 10,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "No tengo trono ni reina",
@@ -458,7 +458,7 @@
         }
       ],
       "sourceLine": 11,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Ni nadie que me comprenda",
@@ -481,12 +481,12 @@
           "from": 9,
           "to": 12,
           "start": 56.62,
-          "end": 57.0
+          "end": 57
         },
         {
           "from": 13,
           "to": 15,
-          "start": 57.0,
+          "start": 57,
           "end": 57.34
         },
         {
@@ -497,7 +497,7 @@
         }
       ],
       "sourceLine": 12,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Pero sigo siendo el rey",
@@ -536,12 +536,12 @@
         }
       ],
       "sourceLine": 13,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Una piedra en el camino",
       "start": 70.9,
-      "end": 79.0,
+      "end": 79,
       "words": [
         {
           "from": 0,
@@ -559,7 +559,7 @@
           "from": 17,
           "to": 23,
           "start": 78.2,
-          "end": 79.0
+          "end": 79
         }
       ],
       "sourceLine": 14,
@@ -602,7 +602,7 @@
         }
       ],
       "sourceLine": 15,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Era rodar y rodar",
@@ -635,7 +635,7 @@
         }
       ],
       "sourceLine": 16,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Rodar y rodar, rodar y rodar",
@@ -658,7 +658,7 @@
           "from": 8,
           "to": 13,
           "start": 86.22,
-          "end": 87.0
+          "end": 87
         },
         {
           "from": 15,
@@ -680,7 +680,7 @@
         }
       ],
       "sourceLine": 17,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "También me dijo un arriero",
@@ -758,7 +758,7 @@
         }
       ],
       "sourceLine": 19,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Pero hay que saber llegar",
@@ -781,12 +781,12 @@
           "from": 9,
           "to": 12,
           "start": 95.8,
-          "end": 96.0
+          "end": 96
         },
         {
           "from": 13,
           "to": 18,
-          "start": 96.0,
+          "start": 96,
           "end": 96.36
         },
         {
@@ -797,7 +797,7 @@
         }
       ],
       "sourceLine": 20,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Con dinero y sin dinero",
@@ -836,7 +836,7 @@
         }
       ],
       "sourceLine": 21,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Hago siempre lo que quiero",
@@ -875,7 +875,7 @@
         }
       ],
       "sourceLine": 22,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Y mi palabra es la ley",
@@ -920,7 +920,7 @@
         }
       ],
       "sourceLine": 23,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "No tengo trono ni reina",
@@ -959,7 +959,7 @@
         }
       ],
       "sourceLine": 24,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Ni nadie que me comprenda",
@@ -976,12 +976,12 @@
           "from": 3,
           "to": 8,
           "start": 118.44,
-          "end": 119.0
+          "end": 119
         },
         {
           "from": 9,
           "to": 12,
-          "start": 119.0,
+          "start": 119,
           "end": 119.38
         },
         {
@@ -998,7 +998,7 @@
         }
       ],
       "sourceLine": 25,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Pero sigo siendo el rey",

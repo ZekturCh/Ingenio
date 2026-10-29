@@ -4,54 +4,14 @@
   "durationSeconds": 226.168163,
   "sha256": "8f6273f3157d04d02cbf9b8846088fd081724d1cda651899b28cb1d460002cb5",
   "bytes": 5428799,
-  "alignedLines": 30,
+  "alignedLines": 38,
   "matchedSourceLines": 30,
-  "totalLines": 39,
-  "unmatchedLines": [
-    {
-      "line": 17,
-      "text": "Qué cosa",
-      "coverage": 0.0
-    },
-    {
-      "line": 18,
-      "text": "Hey",
-      "coverage": 0.0
-    },
-    {
-      "line": 19,
-      "text": "Lloro",
-      "coverage": 0.0
-    },
-    {
-      "line": 28,
-      "text": "Me abandones cariñito",
-      "coverage": 0.333
-    },
-    {
-      "line": 35,
-      "text": "Sí",
-      "coverage": 0.0
-    },
-    {
-      "line": 36,
-      "text": "Hey hey hey hey",
-      "coverage": 0.0
-    },
-    {
-      "line": 37,
-      "text": "Hey hey hey hey",
-      "coverage": 0.0
-    },
-    {
-      "line": 38,
-      "text": "Hey hey hey hey",
-      "coverage": 0.0
-    },
-    {
-      "line": 39,
-      "text": "Hey hey hey hey",
-      "coverage": 0.0
-    }
-  ]
+  "totalLines": 38,
+  "unmatchedLines": [],
+  "markedSourceLines": 38,
+  "estimatedFromNeighbors": [
+    18,
+    27
+  ],
+  "timingReviewFile": "timing-overrides.json"
 }

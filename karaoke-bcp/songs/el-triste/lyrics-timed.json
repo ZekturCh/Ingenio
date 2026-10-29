@@ -28,12 +28,12 @@
           "from": 15,
           "to": 23,
           "start": 14.9,
-          "end": 16.0
+          "end": 16
         },
         {
           "from": 24,
           "to": 29,
-          "start": 16.0,
+          "start": 16,
           "end": 19.1
         }
       ],
@@ -71,7 +71,7 @@
         }
       ],
       "sourceLine": 2,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Hasta la golondrina emigró",
@@ -121,6 +121,15 @@
       ],
       "sourceLine": 4,
       "matchedWordRatio": 0.667
+    },
+    {
+      "text": "Qué triste luce todo sin ti",
+      "sourceLine": 5,
+      "start": 36.56,
+      "end": 45.3,
+      "timingMethod": "neighbor-estimate",
+      "estimateBasis": "between-vocal-anchors",
+      "reviewRequired": true
     },
     {
       "text": "Los mares de las playas se van",
@@ -215,12 +224,12 @@
           "from": 9,
           "to": 11,
           "start": 60.62,
-          "end": 61.0
+          "end": 61
         },
         {
           "from": 12,
           "to": 19,
-          "start": 61.0,
+          "start": 61,
           "end": 62.92
         }
       ],
@@ -276,7 +285,7 @@
         }
       ],
       "sourceLine": 9,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "No sé qué de mi vida será",
@@ -327,7 +336,7 @@
         }
       ],
       "sourceLine": 10,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Sin el lucero azul de tu ser",
@@ -406,7 +415,7 @@
         }
       ],
       "sourceLine": 12,
-      "matchedWordRatio": 1.0,
+      "matchedWordRatio": 1,
       "alignment": "acoustic-gap-refinement"
     },
     {
@@ -526,7 +535,7 @@
         }
       ],
       "sourceLine": 15,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Para la eternidad",
@@ -553,7 +562,16 @@
         }
       ],
       "sourceLine": 16,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
+    },
+    {
+      "text": "Qué triste todos dicen que soy",
+      "sourceLine": 17,
+      "start": 114.08,
+      "end": 124.5,
+      "timingMethod": "neighbor-estimate",
+      "estimateBasis": "between-vocal-anchors",
+      "reviewRequired": true
     },
     {
       "text": "Que siempre estoy hablando de ti",
@@ -598,7 +616,7 @@
         }
       ],
       "sourceLine": 18,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "No saben que pensando en tu amor",
@@ -649,7 +667,7 @@
         }
       ],
       "sourceLine": 19,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "En tu amor, he podido ayudarme a vivir",
@@ -695,6 +713,33 @@
       ],
       "sourceLine": 20,
       "matchedWordRatio": 0.75
+    },
+    {
+      "text": "He podido ayudarme a vivir",
+      "sourceLine": 21,
+      "start": 142.26,
+      "end": 149.01,
+      "timingMethod": "neighbor-estimate",
+      "estimateBasis": "local-voices-with-instrumental-gap",
+      "reviewRequired": true
+    },
+    {
+      "text": "Hoy quiero saborear mi dolor",
+      "sourceLine": 22,
+      "start": 175.52,
+      "end": 182.27,
+      "timingMethod": "neighbor-estimate",
+      "estimateBasis": "local-voices-with-instrumental-gap",
+      "reviewRequired": true
+    },
+    {
+      "text": "No pido compasión ni piedad",
+      "sourceLine": 23,
+      "start": 182.27,
+      "end": 189.02,
+      "timingMethod": "neighbor-estimate",
+      "estimateBasis": "local-voices-with-instrumental-gap",
+      "reviewRequired": true
     },
     {
       "text": "La historia de este amor se escribió",
@@ -745,7 +790,7 @@
         }
       ],
       "sourceLine": 24,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Para la eternidad",
@@ -772,7 +817,7 @@
         }
       ],
       "sourceLine": 25,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Que triste todos dicen que soy",
@@ -817,7 +862,7 @@
         }
       ],
       "sourceLine": 26,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Que siempre estoy hablando de ti",
@@ -862,7 +907,7 @@
         }
       ],
       "sourceLine": 27,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "No saben que pensando en tu amor",
@@ -913,7 +958,7 @@
         }
       ],
       "sourceLine": 28,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "En tu amor, he podido ayudarme a vivir",
@@ -970,7 +1015,7 @@
         }
       ],
       "sourceLine": 29,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "He podido ayudarme a vivir",
@@ -1027,7 +1072,8 @@
       "matchedWordRatio": 0.6
     }
   ],
-  "unmatchedLines": [
+  "unmatchedLines": [],
+  "unmatchedBeforeEstimation": [
     {
       "line": 5,
       "text": "Qué triste luce todo sin ti",
@@ -1046,12 +1092,19 @@
     {
       "line": 22,
       "text": "Hoy quiero saborear mi dolor",
-      "coverage": 0.0
+      "coverage": 0
     },
     {
       "line": 23,
       "text": "No pido compasión ni piedad",
-      "coverage": 0.0
+      "coverage": 0
     }
+  ],
+  "estimatedFallbackLines": [
+    5,
+    17,
+    21,
+    22,
+    23
   ]
 }

@@ -22,7 +22,7 @@
           "from": 7,
           "to": 10,
           "start": 27.7,
-          "end": 28.0
+          "end": 28
         },
         {
           "from": 14,
@@ -83,12 +83,12 @@
         }
       ],
       "sourceLine": 2,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Del ensueño que evoca la memoria",
       "start": 38.32,
-      "end": 41.0,
+      "end": 41,
       "words": [
         {
           "from": 12,
@@ -112,7 +112,7 @@
           "from": 25,
           "to": 32,
           "start": 39.92,
-          "end": 41.0
+          "end": 41
         }
       ],
       "sourceLine": 3,
@@ -205,7 +205,7 @@
     {
       "text": "Ahora que aún perfuma el recuerdo",
       "start": 53.04,
-      "end": 57.0,
+      "end": 57,
       "words": [
         {
           "from": 0,
@@ -235,7 +235,7 @@
           "from": 25,
           "to": 33,
           "start": 56.12,
-          "end": 57.0
+          "end": 57
         }
       ],
       "sourceLine": 6,
@@ -403,12 +403,12 @@
           "from": 19,
           "to": 23,
           "start": 76.62,
-          "end": 77.0
+          "end": 77
         },
         {
           "from": 24,
           "to": 26,
-          "start": 77.0,
+          "start": 77,
           "end": 77.28
         },
         {
@@ -476,7 +476,7 @@
         }
       ],
       "sourceLine": 11,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Aroma de mixtura que en el pecho llevaba",
@@ -551,6 +551,15 @@
       "matchedWordRatio": 0.6
     },
     {
+      "text": "Menudo pie la lleva",
+      "sourceLine": 14,
+      "start": 91.04,
+      "end": 94.12,
+      "timingMethod": "neighbor-estimate",
+      "estimateBasis": "between-vocal-anchors",
+      "reviewRequired": true
+    },
+    {
       "text": "Por la vereda que se estremece",
       "start": 94.12,
       "end": 96.98,
@@ -593,7 +602,7 @@
         }
       ],
       "sourceLine": 15,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Al ritmo de su cadera",
@@ -632,7 +641,7 @@
         }
       ],
       "sourceLine": 16,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Recogía la risa de la brisa del río",
@@ -689,7 +698,7 @@
         }
       ],
       "sourceLine": 17,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Y al viento la lanzaba del puente a la alameda",
@@ -836,7 +845,7 @@
         }
       ],
       "sourceLine": 20,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "A ver si así despiertas del sueño",
@@ -887,17 +896,17 @@
         }
       ],
       "sourceLine": 21,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Del sueño que entretiene, moreno",
-      "start": 127.0,
+      "start": 127,
       "end": 130.04,
       "words": [
         {
           "from": 0,
           "to": 3,
-          "start": 127.0,
+          "start": 127,
           "end": 127.34
         },
         {
@@ -921,6 +930,15 @@
       ],
       "sourceLine": 22,
       "matchedWordRatio": 0.8
+    },
+    {
+      "text": "Tus sentimientos",
+      "sourceLine": 23,
+      "start": 130.04,
+      "end": 135.5,
+      "timingMethod": "neighbor-estimate",
+      "estimateBasis": "between-vocal-anchors",
+      "reviewRequired": true
     },
     {
       "text": "Aspiras de la lisura",
@@ -976,12 +994,12 @@
           "from": 10,
           "to": 14,
           "start": 138.58,
-          "end": 139.0
+          "end": 139
         },
         {
           "from": 15,
           "to": 17,
-          "start": 139.0,
+          "start": 139,
           "end": 139.32
         },
         {
@@ -992,7 +1010,7 @@
         }
       ],
       "sourceLine": 25,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Adornada con jazmines",
@@ -1019,7 +1037,7 @@
         }
       ],
       "sourceLine": 26,
-      "matchedWordRatio": 1.0,
+      "matchedWordRatio": 1,
       "alignment": "acoustic-gap-refinement"
     },
     {
@@ -1077,9 +1095,18 @@
       "matchedWordRatio": 0.8
     },
     {
+      "text": "Y engalanas la alameda",
+      "sourceLine": 29,
+      "start": 151.3,
+      "end": 153.96,
+      "timingMethod": "neighbor-estimate",
+      "estimateBasis": "between-vocal-anchors",
+      "reviewRequired": true
+    },
+    {
       "text": "Que el río acompasara tu paso por la vereda",
       "start": 153.96,
-      "end": 159.0,
+      "end": 159,
       "words": [
         {
           "from": 0,
@@ -1121,13 +1148,13 @@
           "from": 34,
           "to": 36,
           "start": 157.84,
-          "end": 158.0
+          "end": 158
         },
         {
           "from": 37,
           "to": 43,
-          "start": 158.0,
-          "end": 159.0
+          "start": 158,
+          "end": 159
         }
       ],
       "sourceLine": 30,
@@ -1212,7 +1239,7 @@
         }
       ],
       "sourceLine": 31,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Airosa caminaba la flor de la canela",
@@ -1371,6 +1398,15 @@
       "matchedWordRatio": 0.8
     },
     {
+      "text": "Menudo pie la lleva",
+      "sourceLine": 36,
+      "start": 186.96,
+      "end": 190.26,
+      "timingMethod": "neighbor-estimate",
+      "estimateBasis": "between-vocal-anchors",
+      "reviewRequired": true
+    },
+    {
       "text": "Por la vereda que se estremece",
       "start": 190.26,
       "end": 191.82,
@@ -1446,7 +1482,7 @@
         }
       ],
       "sourceLine": 38,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Recogía la risa de la brisa del río",
@@ -1503,7 +1539,7 @@
         }
       ],
       "sourceLine": 39,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Y al viento la lanzaba del puente a la alameda",
@@ -1526,12 +1562,12 @@
           "from": 5,
           "to": 11,
           "start": 201.38,
-          "end": 202.0
+          "end": 202
         },
         {
           "from": 12,
           "to": 14,
-          "start": 202.0,
+          "start": 202,
           "end": 202.42
         },
         {
@@ -1569,7 +1605,8 @@
       "matchedWordRatio": 0.9
     }
   ],
-  "unmatchedLines": [
+  "unmatchedLines": [],
+  "unmatchedBeforeEstimation": [
     {
       "line": 14,
       "text": "Menudo pie la lleva",
@@ -1578,7 +1615,7 @@
     {
       "line": 23,
       "text": "Tus sentimientos",
-      "coverage": 0.0
+      "coverage": 0
     },
     {
       "line": 29,
@@ -1590,5 +1627,11 @@
       "text": "Menudo pie la lleva",
       "coverage": 0.25
     }
+  ],
+  "estimatedFallbackLines": [
+    14,
+    23,
+    29,
+    36
   ]
 }

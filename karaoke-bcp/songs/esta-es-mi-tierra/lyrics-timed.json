@@ -9,13 +9,13 @@
   "lyrics": [
     {
       "text": "Esta es mi tierra",
-      "start": 30.0,
+      "start": 30,
       "end": 32.04,
       "words": [
         {
           "from": 0,
           "to": 4,
-          "start": 30.0,
+          "start": 30,
           "end": 30.94
         },
         {
@@ -38,7 +38,7 @@
         }
       ],
       "sourceLine": 1,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Así es mi Perú",
@@ -71,7 +71,7 @@
         }
       ],
       "sourceLine": 2,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Esta es mi tierra",
@@ -104,7 +104,7 @@
         }
       ],
       "sourceLine": 3,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Así es mi Perú",
@@ -137,7 +137,7 @@
         }
       ],
       "sourceLine": 4,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Raza que al mundo escribiera",
@@ -281,7 +281,7 @@
         }
       ],
       "sourceLine": 8,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Con paz, trabajo y amor",
@@ -347,7 +347,7 @@
         }
       ],
       "sourceLine": 10,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "En el mundo sin igual",
@@ -386,7 +386,7 @@
         }
       ],
       "sourceLine": 11,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Y la sierra generosa",
@@ -467,7 +467,7 @@
         }
       ],
       "sourceLine": 14,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Quien la vaya a conquistar",
@@ -539,7 +539,7 @@
         }
       ],
       "sourceLine": 16,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Es la historia del Perú",
@@ -578,7 +578,7 @@
         }
       ],
       "sourceLine": 17,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Y quiero que este tondero",
@@ -617,7 +617,16 @@
         }
       ],
       "sourceLine": 18,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
+    },
+    {
+      "text": "Con sabor a gratitud",
+      "sourceLine": 19,
+      "start": 78.12,
+      "end": 80.44,
+      "timingMethod": "neighbor-estimate",
+      "estimateBasis": "between-vocal-anchors",
+      "reviewRequired": true
     },
     {
       "text": "Se escuche en los cuatro vientos",
@@ -633,7 +642,7 @@
         {
           "from": 14,
           "to": 17,
-          "start": 82.0,
+          "start": 82,
           "end": 82.26
         },
         {
@@ -651,6 +660,15 @@
       ],
       "sourceLine": 20,
       "matchedWordRatio": 0.667
+    },
+    {
+      "text": "En el norte, centro y sur",
+      "sourceLine": 21,
+      "start": 83.24,
+      "end": 85.7,
+      "timingMethod": "neighbor-estimate",
+      "estimateBasis": "between-vocal-anchors",
+      "reviewRequired": true
     },
     {
       "text": "¿Cómo dice?",
@@ -671,7 +689,7 @@
         }
       ],
       "sourceLine": 22,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Esta es mi tierra",
@@ -703,7 +721,7 @@
     {
       "text": "Así es mi Perú",
       "start": 89.34,
-      "end": 91.0,
+      "end": 91,
       "words": [
         {
           "from": 0,
@@ -727,21 +745,21 @@
           "from": 10,
           "to": 14,
           "start": 90.2,
-          "end": 91.0
+          "end": 91
         }
       ],
       "sourceLine": 24,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Esta es mi tierra",
-      "start": 91.0,
+      "start": 91,
       "end": 93.44,
       "words": [
         {
           "from": 0,
           "to": 4,
-          "start": 91.0,
+          "start": 91,
           "end": 92.28
         },
         {
@@ -764,7 +782,7 @@
         }
       ],
       "sourceLine": 25,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Así es mi Perú",
@@ -797,7 +815,7 @@
         }
       ],
       "sourceLine": 26,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "La riqueza de su costa",
@@ -847,12 +865,12 @@
           "from": 3,
           "to": 5,
           "start": 129.82,
-          "end": 130.0
+          "end": 130
         },
         {
           "from": 6,
           "to": 11,
-          "start": 130.0,
+          "start": 130,
           "end": 130.34
         },
         {
@@ -896,7 +914,7 @@
         }
       ],
       "sourceLine": 29,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Fructifica nuestro pan",
@@ -934,12 +952,12 @@
           "from": 9,
           "to": 11,
           "start": 137.7,
-          "end": 138.0
+          "end": 138
         },
         {
           "from": 12,
           "to": 19,
-          "start": 138.0,
+          "start": 138,
           "end": 138.52
         },
         {
@@ -950,7 +968,7 @@
         }
       ],
       "sourceLine": 31,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Quien la vaya a conquistar",
@@ -989,7 +1007,7 @@
         }
       ],
       "sourceLine": 32,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "El orgullo de mi raza",
@@ -1028,7 +1046,7 @@
         }
       ],
       "sourceLine": 33,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Es la historia del Perú",
@@ -1039,12 +1057,12 @@
           "from": 0,
           "to": 2,
           "start": 144.48,
-          "end": 145.0
+          "end": 145
         },
         {
           "from": 3,
           "to": 5,
-          "start": 145.0,
+          "start": 145,
           "end": 145.12
         },
         {
@@ -1067,7 +1085,7 @@
         }
       ],
       "sourceLine": 34,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Y quiero que este tondero",
@@ -1220,7 +1238,7 @@
         }
       ],
       "sourceLine": 39,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Esta es mi tierra",
@@ -1280,7 +1298,7 @@
         }
       ],
       "sourceLine": 41,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Esta es mi tierra",
@@ -1340,7 +1358,7 @@
         }
       ],
       "sourceLine": 43,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Esta es mi tierra",
@@ -1371,13 +1389,13 @@
     },
     {
       "text": "Así es mi Perú",
-      "start": 171.0,
+      "start": 171,
       "end": 171.88,
       "words": [
         {
           "from": 4,
           "to": 6,
-          "start": 171.0,
+          "start": 171,
           "end": 171.1
         },
         {
@@ -1432,12 +1450,12 @@
           "from": 0,
           "to": 3,
           "start": 175.72,
-          "end": 176.0
+          "end": 176
         },
         {
           "from": 4,
           "to": 6,
-          "start": 176.0,
+          "start": 176,
           "end": 176.08
         },
         {
@@ -1454,10 +1472,11 @@
         }
       ],
       "sourceLine": 47,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     }
   ],
-  "unmatchedLines": [
+  "unmatchedLines": [],
+  "unmatchedBeforeEstimation": [
     {
       "line": 19,
       "text": "Con sabor a gratitud",
@@ -1468,5 +1487,9 @@
       "text": "En el norte, centro y sur",
       "coverage": 0.5
     }
+  ],
+  "estimatedFallbackLines": [
+    19,
+    21
   ]
 }

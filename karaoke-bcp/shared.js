@@ -1,4 +1,4 @@
-import { SONGS } from "./songs/catalog.js?v=20261029-4";
+import { SONGS } from "./songs/catalog.js?v=20261029-5";
 export { SONGS };
 
 const firebaseConfig = {

@@ -216,7 +216,7 @@
         }
       ],
       "sourceLine": 4,
-      "matchedWordRatio": 1.0,
+      "matchedWordRatio": 1,
       "alignment": "acoustic-gap-refinement"
     },
     {
@@ -280,7 +280,7 @@
         }
       ],
       "sourceLine": 5,
-      "matchedWordRatio": 1.0,
+      "matchedWordRatio": 1,
       "alignment": "acoustic-gap-refinement"
     },
     {
@@ -326,7 +326,7 @@
         }
       ],
       "sourceLine": 6,
-      "matchedWordRatio": 1.0,
+      "matchedWordRatio": 1,
       "alignment": "acoustic-gap-refinement"
     },
     {
@@ -384,7 +384,7 @@
         }
       ],
       "sourceLine": 7,
-      "matchedWordRatio": 1.0,
+      "matchedWordRatio": 1,
       "alignment": "acoustic-gap-refinement"
     },
     {
@@ -505,7 +505,7 @@
         }
       ],
       "sourceLine": 9,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Que verte solo mía mi propiedad privada",
@@ -556,7 +556,7 @@
         }
       ],
       "sourceLine": 10,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Que verte solo mía mi propiedad privada",
@@ -579,12 +579,12 @@
           "from": 10,
           "to": 14,
           "start": 71.26,
-          "end": 72.0
+          "end": 72
         },
         {
           "from": 15,
           "to": 18,
-          "start": 72.0,
+          "start": 72,
           "end": 72.62
         },
         {
@@ -607,7 +607,7 @@
         }
       ],
       "sourceLine": 11,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Que no se atreva nadie a mirarte con ansias",
@@ -744,12 +744,12 @@
           "from": 24,
           "to": 32,
           "start": 109.92,
-          "end": 111.0
+          "end": 111
         },
         {
           "from": 33,
           "to": 35,
-          "start": 111.0,
+          "start": 111,
           "end": 111.2
         },
         {
@@ -760,7 +760,7 @@
         }
       ],
       "sourceLine": 14,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Y no quiere que nadie respire de tu aliento.",
@@ -880,12 +880,12 @@
         }
       ],
       "sourceLine": 16,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Que verte solo mía mi propiedad privada",
       "start": 121.94,
-      "end": 127.0,
+      "end": 127,
       "words": [
         {
           "from": 0,
@@ -927,21 +927,21 @@
           "from": 32,
           "to": 39,
           "start": 126.24,
-          "end": 127.0
+          "end": 127
         }
       ],
       "sourceLine": 17,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     },
     {
       "text": "Que verte solo mía mi propiedad privada.",
-      "start": 127.0,
+      "start": 127,
       "end": 132.58,
       "words": [
         {
           "from": 0,
           "to": 3,
-          "start": 127.0,
+          "start": 127,
           "end": 127.7
         },
         {
@@ -982,7 +982,7 @@
         }
       ],
       "sourceLine": 18,
-      "matchedWordRatio": 1.0
+      "matchedWordRatio": 1
     }
   ],
   "unmatchedLines": []
