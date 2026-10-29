@@ -11,7 +11,7 @@ async function main() {
   assert.equal(new Set(SONGS.map(song => song.id)).size, SONGS.length);
   assert.equal(SONGS.length, 28);
   const pending = SONGS.filter(song => !song.enabled);
-  assert.equal(pending.length, 5);
+  assert.equal(pending.length, 0);
   for (const song of SONGS) {
     assert.ok(parseText(fs.readFileSync(path.join(root, song.text), "utf8")).length > 0);
   }
@@ -22,9 +22,9 @@ async function main() {
     assert.deepEqual(song.versions, []);
     assert.deepEqual(JSON.parse(fs.readFileSync(path.join(root, song.lyrics), "utf8")).lyrics, []);
   }
-  assert.equal(SONGS.filter(song => song.lyricsStatus === "estimated").length, 22);
+  assert.equal(SONGS.filter(song => song.lyricsStatus === "estimated").length, 27);
   const enabled = SONGS.filter(song => song.enabled);
-  assert.equal(enabled.length, 23);
+  assert.equal(enabled.length, 28);
   for (const song of enabled) {
     assert.ok(fs.statSync(path.join(root, song.audio)).size > 100000);
     const data = JSON.parse(fs.readFileSync(path.join(root, song.lyrics), 'utf8'));
@@ -34,11 +34,20 @@ async function main() {
       assert.equal(data.status, 'estimated');
       assert.equal(data.reviewRequired, true);
       assert.equal(data.durationSeconds, song.durationSeconds);
-      assert.deepEqual(data.lyrics.map(line => line.text), parseText(fs.readFileSync(path.join(root, song.text), 'utf8')));
+      if (data.method === 'local-asr-word-matching') {
+        assert.match(data.audioSha256, /^[a-f0-9]{64}$/);
+        assert.ok(Array.isArray(data.unmatchedLines));
+        const hash = require('node:crypto').createHash('sha256').update(fs.readFileSync(path.join(root, song.audio))).digest('hex');
+        assert.equal(data.audioSha256, hash, `${song.id}: cues must belong to this exact recording`);
+      } else assert.deepEqual(data.lyrics.map(line => line.text), parseText(fs.readFileSync(path.join(root, song.text), 'utf8')));
       let previousEnd = 0;
       for (const line of data.lyrics) {
         assert.ok(Number.isFinite(line.start) && Number.isFinite(line.end));
         assert.ok(line.start >= previousEnd && line.end > line.start && line.end <= song.durationSeconds);
+        for (const word of line.words || []) {
+          assert.ok(word.start >= line.start && word.end <= line.end && word.end > word.start);
+          assert.ok(word.from >= 0 && word.to > word.from && word.to <= line.text.length);
+        }
         previousEnd = line.end;
       }
     }
@@ -56,6 +65,6 @@ async function main() {
   assert.throws(() => timedLyrics([{text:'A',time:2},{text:'B',time:1}], 5));
   assert.throws(() => timedLyrics([{text:'A',time:2},{text:'B',time:2}], 5));
   assert.throws(() => timedLyrics([{text:'A',time:0}], NaN));
-  console.log('Catalog: all 23 active tracks have nonempty lyrics, 22 estimated cue files and 5 pending tracks passed.');
+  console.log('Catalog: 28 active tracks; exact audio hashes, ordered cues, word clocks and versions passed.');
 }
 main().catch(error => { console.error(error); process.exitCode = 1; });

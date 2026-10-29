@@ -1,175 +1,883 @@
 {
   "songId": "mi-peru",
-  "title": "Mi Perú",
   "status": "estimated",
   "reviewRequired": true,
-  "timingMethod": "text-length-proportional; not aligned to vocals or instrumental sections",
-  "durationSeconds": 87.536,
+  "method": "local-asr-word-matching",
+  "alignmentModel": "faster-whisper-small",
+  "durationSeconds": 138.292245,
+  "audioSha256": "e9fe70f4a0376136f352982b620d32440eaae112c78378a7ab009a84b7306ed6",
   "lyrics": [
     {
       "text": "Tengo el orgullo de ser peruano y soy feliz",
-      "start": 0.0,
-      "end": 4.925659
+      "start": 17.1,
+      "end": 20.9,
+      "words": [
+        {
+          "from": 0,
+          "to": 5,
+          "start": 17.1,
+          "end": 17.98
+        },
+        {
+          "from": 6,
+          "to": 8,
+          "start": 17.98,
+          "end": 18.14
+        },
+        {
+          "from": 9,
+          "to": 16,
+          "start": 18.14,
+          "end": 18.62
+        },
+        {
+          "from": 17,
+          "to": 19,
+          "start": 18.62,
+          "end": 18.78
+        },
+        {
+          "from": 20,
+          "to": 23,
+          "start": 18.78,
+          "end": 19.04
+        },
+        {
+          "from": 24,
+          "to": 31,
+          "start": 19.04,
+          "end": 19.68
+        },
+        {
+          "from": 32,
+          "to": 33,
+          "start": 19.68,
+          "end": 19.94
+        },
+        {
+          "from": 34,
+          "to": 37,
+          "start": 19.94,
+          "end": 20.18
+        },
+        {
+          "from": 38,
+          "to": 43,
+          "start": 20.18,
+          "end": 20.9
+        }
+      ],
+      "sourceLine": 1,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Y haber nacido en esta hermosa tierra del Sol",
-      "start": 4.925659,
-      "end": 10.132785
+      "start": 20.9,
+      "end": 25.66,
+      "words": [
+        {
+          "from": 0,
+          "to": 1,
+          "start": 20.9,
+          "end": 22.26
+        },
+        {
+          "from": 2,
+          "to": 7,
+          "start": 22.26,
+          "end": 22.42
+        },
+        {
+          "from": 8,
+          "to": 14,
+          "start": 22.42,
+          "end": 22.98
+        },
+        {
+          "from": 15,
+          "to": 17,
+          "start": 22.98,
+          "end": 23.26
+        },
+        {
+          "from": 18,
+          "to": 22,
+          "start": 23.26,
+          "end": 23.52
+        },
+        {
+          "from": 23,
+          "to": 30,
+          "start": 23.52,
+          "end": 24.14
+        },
+        {
+          "from": 31,
+          "to": 37,
+          "start": 24.14,
+          "end": 24.54
+        },
+        {
+          "from": 38,
+          "to": 41,
+          "start": 24.54,
+          "end": 25.06
+        },
+        {
+          "from": 42,
+          "to": 45,
+          "start": 25.06,
+          "end": 25.66
+        }
+      ],
+      "sourceLine": 2,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Donde el indómito inca, prefiriendo morir",
-      "start": 10.132785,
-      "end": 15.058444
+      "start": 25.66,
+      "end": 30.66,
+      "words": [
+        {
+          "from": 0,
+          "to": 5,
+          "start": 25.66,
+          "end": 26.78
+        },
+        {
+          "from": 6,
+          "to": 8,
+          "start": 26.78,
+          "end": 26.94
+        },
+        {
+          "from": 9,
+          "to": 17,
+          "start": 26.94,
+          "end": 27.66
+        },
+        {
+          "from": 18,
+          "to": 22,
+          "start": 27.66,
+          "end": 28.14
+        },
+        {
+          "from": 36,
+          "to": 41,
+          "start": 28.84,
+          "end": 30.66
+        }
+      ],
+      "sourceLine": 3,
+      "matchedWordRatio": 0.833,
+      "alignment": "acoustic-gap-refinement"
     },
     {
       "text": "Legó a su raza la gran herencia de su valor",
-      "start": 15.058444,
-      "end": 19.84337
+      "start": 31.22,
+      "end": 33.36,
+      "words": [
+        {
+          "from": 5,
+          "to": 6,
+          "start": 31.22,
+          "end": 31.3
+        },
+        {
+          "from": 7,
+          "to": 9,
+          "start": 31.3,
+          "end": 31.38
+        },
+        {
+          "from": 10,
+          "to": 14,
+          "start": 31.38,
+          "end": 31.8
+        },
+        {
+          "from": 15,
+          "to": 17,
+          "start": 31.8,
+          "end": 31.94
+        },
+        {
+          "from": 18,
+          "to": 22,
+          "start": 31.94,
+          "end": 32.36
+        },
+        {
+          "from": 23,
+          "to": 31,
+          "start": 32.36,
+          "end": 32.9
+        },
+        {
+          "from": 32,
+          "to": 34,
+          "start": 32.9,
+          "end": 33.06
+        },
+        {
+          "from": 35,
+          "to": 37,
+          "start": 33.06,
+          "end": 33.36
+        }
+      ],
+      "sourceLine": 4,
+      "matchedWordRatio": 0.8,
+      "alignment": "acoustic-gap-refinement"
     },
     {
       "text": "Ricas montañas (ricas montañas)",
-      "start": 19.84337,
-      "end": 23.502431
+      "start": 33.88,
+      "end": 37.4,
+      "words": [
+        {
+          "from": 0,
+          "to": 5,
+          "start": 33.88,
+          "end": 35.58
+        },
+        {
+          "from": 6,
+          "to": 14,
+          "start": 35.58,
+          "end": 36.82
+        },
+        {
+          "from": 22,
+          "to": 30,
+          "start": 36.84,
+          "end": 37.4
+        }
+      ],
+      "sourceLine": 5,
+      "matchedWordRatio": 0.75,
+      "alignment": "acoustic-gap-refinement"
     },
     {
       "text": "Hermosas tierras (hermosas tierras)",
-      "start": 23.502431,
-      "end": 27.724424
-    },
-    {
-      "text": "Risueñas playas (ah-ah-ah)",
-      "start": 27.724424,
-      "end": 30.539087
+      "start": 37.46,
+      "end": 39.48,
+      "words": [
+        {
+          "from": 0,
+          "to": 8,
+          "start": 37.46,
+          "end": 38.12
+        },
+        {
+          "from": 18,
+          "to": 26,
+          "start": 39.0,
+          "end": 39.12
+        },
+        {
+          "from": 27,
+          "to": 34,
+          "start": 39.12,
+          "end": 39.48
+        }
+      ],
+      "sourceLine": 6,
+      "matchedWordRatio": 0.75,
+      "alignment": "acoustic-gap-refinement"
     },
     {
       "text": "Es mi Perú",
-      "start": 30.539087,
-      "end": 31.664952
-    },
-    {
-      "text": "Fértiles tierras",
-      "start": 31.664952,
-      "end": 33.775949
+      "start": 41.98,
+      "end": 43.18,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 41.98,
+          "end": 42.16
+        },
+        {
+          "from": 3,
+          "to": 5,
+          "start": 42.16,
+          "end": 42.5
+        },
+        {
+          "from": 6,
+          "to": 10,
+          "start": 42.5,
+          "end": 43.18
+        }
+      ],
+      "sourceLine": 8,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Cumbres nevadas",
-      "start": 33.775949,
-      "end": 35.746212
+      "start": 45.64,
+      "end": 47.52,
+      "words": [
+        {
+          "from": 0,
+          "to": 7,
+          "start": 45.64,
+          "end": 46.68
+        },
+        {
+          "from": 8,
+          "to": 15,
+          "start": 46.68,
+          "end": 47.52
+        }
+      ],
+      "sourceLine": 10,
+      "matchedWordRatio": 1.0,
+      "alignment": "acoustic-gap-refinement"
     },
     {
       "text": "Ríos, quebradas",
-      "start": 35.746212,
-      "end": 37.575743
+      "start": 47.54,
+      "end": 49.62,
+      "words": [
+        {
+          "from": 0,
+          "to": 4,
+          "start": 47.54,
+          "end": 48.84
+        },
+        {
+          "from": 6,
+          "to": 15,
+          "start": 48.84,
+          "end": 49.62
+        }
+      ],
+      "sourceLine": 11,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Es mi Perú",
-      "start": 37.575743,
-      "end": 38.701608
+      "start": 50.12,
+      "end": 51.86,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 50.12,
+          "end": 50.7
+        },
+        {
+          "from": 3,
+          "to": 5,
+          "start": 50.7,
+          "end": 51.0
+        },
+        {
+          "from": 6,
+          "to": 10,
+          "start": 51.0,
+          "end": 51.86
+        }
+      ],
+      "sourceLine": 12,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Así es mi raza, noble y humilde por tradición",
-      "start": 38.701608,
-      "end": 43.768
+      "start": 70.84,
+      "end": 74.18,
+      "words": [
+        {
+          "from": 7,
+          "to": 9,
+          "start": 70.84,
+          "end": 71.0
+        },
+        {
+          "from": 10,
+          "to": 14,
+          "start": 71.0,
+          "end": 71.36
+        },
+        {
+          "from": 16,
+          "to": 21,
+          "start": 71.36,
+          "end": 71.68
+        },
+        {
+          "from": 22,
+          "to": 23,
+          "start": 71.68,
+          "end": 71.92
+        },
+        {
+          "from": 24,
+          "to": 31,
+          "start": 71.92,
+          "end": 72.4
+        },
+        {
+          "from": 32,
+          "to": 35,
+          "start": 72.4,
+          "end": 72.78
+        },
+        {
+          "from": 36,
+          "to": 45,
+          "start": 72.78,
+          "end": 74.18
+        }
+      ],
+      "sourceLine": 13,
+      "matchedWordRatio": 0.778
     },
     {
       "text": "Pero rebelde cuando coartan su libertad",
-      "start": 43.768,
-      "end": 48.552926
-    },
-    {
-      "text": "Entonces, poniendo alma, mente y corazón",
-      "start": 48.552926,
-      "end": 53.197119
+      "start": 74.84,
+      "end": 78.58,
+      "words": [
+        {
+          "from": 0,
+          "to": 4,
+          "start": 74.84,
+          "end": 75.16
+        },
+        {
+          "from": 5,
+          "to": 12,
+          "start": 75.34,
+          "end": 75.76
+        },
+        {
+          "from": 13,
+          "to": 19,
+          "start": 75.76,
+          "end": 75.98
+        },
+        {
+          "from": 28,
+          "to": 30,
+          "start": 76.84,
+          "end": 77.22
+        },
+        {
+          "from": 31,
+          "to": 39,
+          "start": 77.22,
+          "end": 78.58
+        }
+      ],
+      "sourceLine": 14,
+      "matchedWordRatio": 0.833
     },
     {
       "text": "Rompen cadenas, aunque la muerte vea llegar",
-      "start": 53.197119,
-      "end": 58.263511
+      "start": 84.06,
+      "end": 86.5,
+      "words": [
+        {
+          "from": 7,
+          "to": 14,
+          "start": 84.06,
+          "end": 84.62
+        },
+        {
+          "from": 16,
+          "to": 22,
+          "start": 84.76,
+          "end": 84.98
+        },
+        {
+          "from": 23,
+          "to": 25,
+          "start": 84.98,
+          "end": 85.18
+        },
+        {
+          "from": 26,
+          "to": 32,
+          "start": 85.18,
+          "end": 85.64
+        },
+        {
+          "from": 33,
+          "to": 36,
+          "start": 85.64,
+          "end": 86.36
+        },
+        {
+          "from": 37,
+          "to": 43,
+          "start": 86.36,
+          "end": 86.5
+        }
+      ],
+      "sourceLine": 16,
+      "matchedWordRatio": 0.857,
+      "alignment": "acoustic-gap-refinement"
     },
     {
       "text": "Ricas montañas",
-      "start": 58.263511,
-      "end": 60.093042
+      "start": 87.58,
+      "end": 89.72,
+      "words": [
+        {
+          "from": 0,
+          "to": 5,
+          "start": 87.58,
+          "end": 88.38
+        },
+        {
+          "from": 6,
+          "to": 14,
+          "start": 88.38,
+          "end": 89.72
+        }
+      ],
+      "sourceLine": 17,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Hermosas tierras",
-      "start": 60.093042,
-      "end": 62.204039
-    },
-    {
-      "text": "Risueñas playas",
-      "start": 62.204039,
-      "end": 64.174302
+      "start": 90.16,
+      "end": 91.78,
+      "words": [
+        {
+          "from": 0,
+          "to": 8,
+          "start": 90.16,
+          "end": 90.96
+        },
+        {
+          "from": 9,
+          "to": 16,
+          "start": 90.96,
+          "end": 91.78
+        }
+      ],
+      "sourceLine": 18,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Es mi Perú",
-      "start": 64.174302,
-      "end": 65.300167
+      "start": 94.7,
+      "end": 96.08,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 94.7,
+          "end": 94.9
+        },
+        {
+          "from": 3,
+          "to": 5,
+          "start": 94.9,
+          "end": 95.14
+        },
+        {
+          "from": 6,
+          "to": 10,
+          "start": 95.14,
+          "end": 96.08
+        }
+      ],
+      "sourceLine": 20,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Fértiles tierras",
-      "start": 65.300167,
-      "end": 67.411164
+      "start": 96.08,
+      "end": 98.56,
+      "words": [
+        {
+          "from": 0,
+          "to": 8,
+          "start": 96.08,
+          "end": 97.38
+        },
+        {
+          "from": 9,
+          "to": 16,
+          "start": 97.38,
+          "end": 98.56
+        }
+      ],
+      "sourceLine": 21,
+      "matchedWordRatio": 1.0,
+      "alignment": "acoustic-gap-refinement"
     },
     {
       "text": "Cumbres nevadas",
-      "start": 67.411164,
-      "end": 69.381428
+      "start": 98.84,
+      "end": 100.58,
+      "words": [
+        {
+          "from": 0,
+          "to": 7,
+          "start": 98.84,
+          "end": 99.52
+        },
+        {
+          "from": 8,
+          "to": 15,
+          "start": 99.52,
+          "end": 100.58
+        }
+      ],
+      "sourceLine": 22,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Ríos, quebradas",
-      "start": 69.381428,
-      "end": 71.210958
+      "start": 100.58,
+      "end": 102.54,
+      "words": [
+        {
+          "from": 0,
+          "to": 4,
+          "start": 100.58,
+          "end": 101.8
+        },
+        {
+          "from": 6,
+          "to": 15,
+          "start": 101.8,
+          "end": 102.54
+        }
+      ],
+      "sourceLine": 23,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Es mi Perú",
-      "start": 71.210958,
-      "end": 72.336823
+      "start": 103.08,
+      "end": 104.66,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 103.08,
+          "end": 103.66
+        },
+        {
+          "from": 3,
+          "to": 5,
+          "start": 103.66,
+          "end": 103.92
+        },
+        {
+          "from": 6,
+          "to": 10,
+          "start": 103.92,
+          "end": 104.66
+        }
+      ],
+      "sourceLine": 24,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Ricas montañas",
-      "start": 72.336823,
-      "end": 74.166354
-    },
-    {
-      "text": "Hermosas tierras",
-      "start": 74.166354,
-      "end": 76.27735
-    },
-    {
-      "text": "Risueñas playas",
-      "start": 76.27735,
-      "end": 78.247614
+      "start": 104.66,
+      "end": 107.38,
+      "words": [
+        {
+          "from": 0,
+          "to": 5,
+          "start": 104.66,
+          "end": 106.16
+        },
+        {
+          "from": 6,
+          "to": 14,
+          "start": 106.16,
+          "end": 107.38
+        }
+      ],
+      "sourceLine": 25,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Es mi Perú",
-      "start": 78.247614,
-      "end": 79.373479
+      "start": 112.08,
+      "end": 113.44,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 112.08,
+          "end": 112.44
+        },
+        {
+          "from": 3,
+          "to": 5,
+          "start": 112.44,
+          "end": 112.7
+        },
+        {
+          "from": 6,
+          "to": 10,
+          "start": 112.7,
+          "end": 113.44
+        }
+      ],
+      "sourceLine": 28,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Fértiles tierras",
-      "start": 79.373479,
-      "end": 81.484476
+      "start": 113.44,
+      "end": 115.9,
+      "words": [
+        {
+          "from": 0,
+          "to": 8,
+          "start": 113.44,
+          "end": 115.1
+        },
+        {
+          "from": 9,
+          "to": 16,
+          "start": 115.1,
+          "end": 115.9
+        }
+      ],
+      "sourceLine": 29,
+      "matchedWordRatio": 1.0,
+      "alignment": "acoustic-gap-refinement"
     },
     {
       "text": "Cumbres nevadas",
-      "start": 81.484476,
-      "end": 83.45474
+      "start": 115.9,
+      "end": 118.16,
+      "words": [
+        {
+          "from": 0,
+          "to": 7,
+          "start": 115.9,
+          "end": 117.14
+        },
+        {
+          "from": 8,
+          "to": 15,
+          "start": 117.14,
+          "end": 118.16
+        }
+      ],
+      "sourceLine": 30,
+      "matchedWordRatio": 1.0,
+      "alignment": "acoustic-gap-refinement"
     },
     {
       "text": "Ríos, quebradas",
-      "start": 83.45474,
-      "end": 85.28427
+      "start": 118.82,
+      "end": 120.14,
+      "words": [
+        {
+          "from": 0,
+          "to": 4,
+          "start": 118.82,
+          "end": 119.34
+        },
+        {
+          "from": 6,
+          "to": 15,
+          "start": 119.34,
+          "end": 120.14
+        }
+      ],
+      "sourceLine": 31,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Es mi Perú",
-      "start": 85.28427,
-      "end": 86.410135
+      "start": 120.36,
+      "end": 122.22,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 120.36,
+          "end": 121.26
+        },
+        {
+          "from": 3,
+          "to": 5,
+          "start": 121.26,
+          "end": 121.52
+        },
+        {
+          "from": 6,
+          "to": 10,
+          "start": 121.52,
+          "end": 122.22
+        }
+      ],
+      "sourceLine": 32,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Es mi Perú",
-      "start": 86.410135,
-      "end": 87.536
+      "start": 122.22,
+      "end": 126.22,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 122.22,
+          "end": 123.4
+        },
+        {
+          "from": 3,
+          "to": 5,
+          "start": 123.4,
+          "end": 124.32
+        },
+        {
+          "from": 6,
+          "to": 10,
+          "start": 124.32,
+          "end": 126.22
+        }
+      ],
+      "sourceLine": 33,
+      "matchedWordRatio": 1.0
+    }
+  ],
+  "unmatchedLines": [
+    {
+      "line": 7,
+      "text": "Risueñas playas (ah-ah-ah)",
+      "coverage": 0.0
+    },
+    {
+      "line": 9,
+      "text": "Fértiles tierras",
+      "coverage": 0.5
+    },
+    {
+      "line": 15,
+      "text": "Entonces, poniendo alma, mente y corazón",
+      "coverage": 0.5
+    },
+    {
+      "line": 19,
+      "text": "Risueñas playas",
+      "coverage": 0.5
+    },
+    {
+      "line": 26,
+      "text": "Hermosas tierras",
+      "coverage": 0.5
+    },
+    {
+      "line": 27,
+      "text": "Risueñas playas",
+      "coverage": 0.0
     }
   ]
 }

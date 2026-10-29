@@ -1,5 +1,1289 @@
 {
   "songId": "mal-paso",
-  "status": "pending",
-  "lyrics": []
+  "status": "estimated",
+  "reviewRequired": true,
+  "method": "local-asr-word-matching",
+  "alignmentModel": "faster-whisper-small",
+  "durationSeconds": 161.802449,
+  "audioSha256": "1518698ef6653dd005f5608963eb90467cba07afa27eefcaab5151865788fdd6",
+  "lyrics": [
+    {
+      "text": "Argumentando, que tienes mala suerte",
+      "start": 19.56,
+      "end": 22.94,
+      "words": [
+        {
+          "from": 0,
+          "to": 12,
+          "start": 19.56,
+          "end": 20.6
+        },
+        {
+          "from": 14,
+          "to": 17,
+          "start": 21.24,
+          "end": 21.76
+        },
+        {
+          "from": 18,
+          "to": 24,
+          "start": 21.76,
+          "end": 22.12
+        },
+        {
+          "from": 25,
+          "to": 29,
+          "start": 22.12,
+          "end": 22.36
+        },
+        {
+          "from": 30,
+          "to": 36,
+          "start": 22.36,
+          "end": 22.94
+        }
+      ],
+      "sourceLine": 1,
+      "matchedWordRatio": 1.0
+    },
+    {
+      "text": "Vas contandole a la gente, la razon de tu fracaso",
+      "start": 23.42,
+      "end": 27.9,
+      "words": [
+        {
+          "from": 0,
+          "to": 3,
+          "start": 23.42,
+          "end": 24.04
+        },
+        {
+          "from": 4,
+          "to": 14,
+          "start": 24.04,
+          "end": 24.66
+        },
+        {
+          "from": 15,
+          "to": 16,
+          "start": 24.66,
+          "end": 24.76
+        },
+        {
+          "from": 17,
+          "to": 19,
+          "start": 24.76,
+          "end": 24.84
+        },
+        {
+          "from": 20,
+          "to": 25,
+          "start": 24.84,
+          "end": 25.36
+        },
+        {
+          "from": 30,
+          "to": 35,
+          "start": 26.08,
+          "end": 26.46
+        },
+        {
+          "from": 36,
+          "to": 38,
+          "start": 26.46,
+          "end": 26.86
+        },
+        {
+          "from": 39,
+          "to": 41,
+          "start": 26.86,
+          "end": 27.06
+        },
+        {
+          "from": 42,
+          "to": 49,
+          "start": 27.06,
+          "end": 27.9
+        }
+      ],
+      "sourceLine": 2,
+      "matchedWordRatio": 0.9
+    },
+    {
+      "text": "Pero la gente, que es tan cruel y despiadada",
+      "start": 29.14,
+      "end": 32.82,
+      "words": [
+        {
+          "from": 0,
+          "to": 4,
+          "start": 29.14,
+          "end": 29.62
+        },
+        {
+          "from": 5,
+          "to": 7,
+          "start": 29.62,
+          "end": 29.82
+        },
+        {
+          "from": 8,
+          "to": 13,
+          "start": 29.82,
+          "end": 30.3
+        },
+        {
+          "from": 15,
+          "to": 18,
+          "start": 30.86,
+          "end": 31.34
+        },
+        {
+          "from": 19,
+          "to": 21,
+          "start": 31.34,
+          "end": 31.48
+        },
+        {
+          "from": 22,
+          "to": 25,
+          "start": 31.48,
+          "end": 31.56
+        },
+        {
+          "from": 26,
+          "to": 31,
+          "start": 31.56,
+          "end": 31.78
+        },
+        {
+          "from": 32,
+          "to": 33,
+          "start": 31.78,
+          "end": 31.94
+        },
+        {
+          "from": 34,
+          "to": 44,
+          "start": 31.94,
+          "end": 32.82
+        }
+      ],
+      "sourceLine": 3,
+      "matchedWordRatio": 1.0
+    },
+    {
+      "text": "y que no le importa nada, se rie de tu mal paso",
+      "start": 32.82,
+      "end": 37.74,
+      "words": [
+        {
+          "from": 0,
+          "to": 1,
+          "start": 32.82,
+          "end": 33.82
+        },
+        {
+          "from": 2,
+          "to": 5,
+          "start": 33.82,
+          "end": 33.98
+        },
+        {
+          "from": 6,
+          "to": 8,
+          "start": 33.98,
+          "end": 34.12
+        },
+        {
+          "from": 9,
+          "to": 11,
+          "start": 34.12,
+          "end": 34.22
+        },
+        {
+          "from": 12,
+          "to": 19,
+          "start": 34.22,
+          "end": 34.52
+        },
+        {
+          "from": 20,
+          "to": 24,
+          "start": 34.52,
+          "end": 35.18
+        },
+        {
+          "from": 26,
+          "to": 28,
+          "start": 35.38,
+          "end": 35.76
+        },
+        {
+          "from": 29,
+          "to": 32,
+          "start": 35.76,
+          "end": 36.34
+        },
+        {
+          "from": 33,
+          "to": 35,
+          "start": 36.34,
+          "end": 36.62
+        },
+        {
+          "from": 36,
+          "to": 38,
+          "start": 36.62,
+          "end": 36.84
+        },
+        {
+          "from": 39,
+          "to": 42,
+          "start": 36.84,
+          "end": 37.08
+        },
+        {
+          "from": 43,
+          "to": 47,
+          "start": 37.08,
+          "end": 37.74
+        }
+      ],
+      "sourceLine": 4,
+      "matchedWordRatio": 1.0
+    },
+    {
+      "text": "Pero la gente, que es tan cruel y despiadada",
+      "start": 38.96,
+      "end": 42.62,
+      "words": [
+        {
+          "from": 0,
+          "to": 4,
+          "start": 38.96,
+          "end": 39.44
+        },
+        {
+          "from": 5,
+          "to": 7,
+          "start": 39.44,
+          "end": 39.62
+        },
+        {
+          "from": 8,
+          "to": 13,
+          "start": 39.62,
+          "end": 40.1
+        },
+        {
+          "from": 15,
+          "to": 18,
+          "start": 41.08,
+          "end": 41.16
+        },
+        {
+          "from": 19,
+          "to": 21,
+          "start": 41.16,
+          "end": 41.32
+        },
+        {
+          "from": 22,
+          "to": 25,
+          "start": 41.32,
+          "end": 41.38
+        },
+        {
+          "from": 26,
+          "to": 31,
+          "start": 41.38,
+          "end": 41.6
+        },
+        {
+          "from": 32,
+          "to": 33,
+          "start": 41.6,
+          "end": 41.82
+        },
+        {
+          "from": 34,
+          "to": 44,
+          "start": 41.82,
+          "end": 42.62
+        }
+      ],
+      "sourceLine": 5,
+      "matchedWordRatio": 1.0
+    },
+    {
+      "text": "y que no le importa nada, se rie de tu mal paso.",
+      "start": 42.62,
+      "end": 47.56,
+      "words": [
+        {
+          "from": 0,
+          "to": 1,
+          "start": 42.62,
+          "end": 43.62
+        },
+        {
+          "from": 2,
+          "to": 5,
+          "start": 43.62,
+          "end": 43.76
+        },
+        {
+          "from": 6,
+          "to": 8,
+          "start": 43.76,
+          "end": 43.9
+        },
+        {
+          "from": 9,
+          "to": 11,
+          "start": 43.9,
+          "end": 44.02
+        },
+        {
+          "from": 12,
+          "to": 19,
+          "start": 44.02,
+          "end": 44.32
+        },
+        {
+          "from": 20,
+          "to": 24,
+          "start": 44.32,
+          "end": 45.0
+        },
+        {
+          "from": 26,
+          "to": 28,
+          "start": 45.38,
+          "end": 45.56
+        },
+        {
+          "from": 29,
+          "to": 32,
+          "start": 45.56,
+          "end": 46.16
+        },
+        {
+          "from": 33,
+          "to": 35,
+          "start": 46.16,
+          "end": 46.4
+        },
+        {
+          "from": 36,
+          "to": 38,
+          "start": 46.4,
+          "end": 46.62
+        },
+        {
+          "from": 39,
+          "to": 42,
+          "start": 46.62,
+          "end": 46.86
+        },
+        {
+          "from": 43,
+          "to": 47,
+          "start": 46.86,
+          "end": 47.56
+        }
+      ],
+      "sourceLine": 6,
+      "matchedWordRatio": 1.0
+    },
+    {
+      "text": "Ahora sufres, y vives angustiado",
+      "start": 48.76,
+      "end": 51.56,
+      "words": [
+        {
+          "from": 0,
+          "to": 5,
+          "start": 48.76,
+          "end": 49.5
+        },
+        {
+          "from": 6,
+          "to": 12,
+          "start": 49.5,
+          "end": 50.24
+        },
+        {
+          "from": 14,
+          "to": 15,
+          "start": 50.24,
+          "end": 51.28
+        },
+        {
+          "from": 16,
+          "to": 21,
+          "start": 51.28,
+          "end": 51.56
+        }
+      ],
+      "sourceLine": 7,
+      "matchedWordRatio": 0.8
+    },
+    {
+      "text": "Tu veras lo que te toca, siempre fuiste caprichoso",
+      "start": 52.62,
+      "end": 56.46,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 52.62,
+          "end": 53.58
+        },
+        {
+          "from": 3,
+          "to": 8,
+          "start": 53.58,
+          "end": 53.92
+        },
+        {
+          "from": 9,
+          "to": 11,
+          "start": 53.92,
+          "end": 54.14
+        },
+        {
+          "from": 12,
+          "to": 15,
+          "start": 54.14,
+          "end": 54.24
+        },
+        {
+          "from": 16,
+          "to": 18,
+          "start": 54.24,
+          "end": 54.4
+        },
+        {
+          "from": 19,
+          "to": 23,
+          "start": 54.4,
+          "end": 54.88
+        },
+        {
+          "from": 25,
+          "to": 32,
+          "start": 55.54,
+          "end": 55.9
+        },
+        {
+          "from": 33,
+          "to": 39,
+          "start": 55.9,
+          "end": 56.46
+        }
+      ],
+      "sourceLine": 8,
+      "matchedWordRatio": 0.889
+    },
+    {
+      "text": "Dice la gente, que es tan cruel y despiadada",
+      "start": 57.52,
+      "end": 61.4,
+      "words": [
+        {
+          "from": 0,
+          "to": 4,
+          "start": 57.52,
+          "end": 59.1
+        },
+        {
+          "from": 5,
+          "to": 7,
+          "start": 59.1,
+          "end": 59.3
+        },
+        {
+          "from": 8,
+          "to": 13,
+          "start": 59.3,
+          "end": 59.72
+        },
+        {
+          "from": 15,
+          "to": 18,
+          "start": 59.72,
+          "end": 60.8
+        },
+        {
+          "from": 19,
+          "to": 21,
+          "start": 60.8,
+          "end": 60.94
+        },
+        {
+          "from": 22,
+          "to": 25,
+          "start": 60.94,
+          "end": 61.02
+        },
+        {
+          "from": 26,
+          "to": 31,
+          "start": 61.02,
+          "end": 61.26
+        },
+        {
+          "from": 32,
+          "to": 33,
+          "start": 61.26,
+          "end": 61.4
+        }
+      ],
+      "sourceLine": 9,
+      "matchedWordRatio": 0.889
+    },
+    {
+      "text": "Que si estas abandonado, es porque no eres gran cosa",
+      "start": 62.87,
+      "end": 67.16,
+      "words": [
+        {
+          "from": 0,
+          "to": 3,
+          "start": 62.87,
+          "end": 63.24
+        },
+        {
+          "from": 4,
+          "to": 6,
+          "start": 63.24,
+          "end": 63.4
+        },
+        {
+          "from": 7,
+          "to": 12,
+          "start": 63.4,
+          "end": 63.66
+        },
+        {
+          "from": 25,
+          "to": 27,
+          "start": 64.66,
+          "end": 65.32
+        },
+        {
+          "from": 28,
+          "to": 34,
+          "start": 65.32,
+          "end": 65.66
+        },
+        {
+          "from": 35,
+          "to": 37,
+          "start": 65.66,
+          "end": 66.04
+        },
+        {
+          "from": 38,
+          "to": 42,
+          "start": 66.04,
+          "end": 66.3
+        },
+        {
+          "from": 43,
+          "to": 47,
+          "start": 66.3,
+          "end": 66.54
+        },
+        {
+          "from": 48,
+          "to": 52,
+          "start": 66.54,
+          "end": 67.16
+        }
+      ],
+      "sourceLine": 10,
+      "matchedWordRatio": 0.9
+    },
+    {
+      "text": "Dice la gente, que es tan cruel y despiadada",
+      "start": 68.1,
+      "end": 71.14,
+      "words": [
+        {
+          "from": 0,
+          "to": 4,
+          "start": 68.1,
+          "end": 68.84
+        },
+        {
+          "from": 5,
+          "to": 7,
+          "start": 68.84,
+          "end": 69.04
+        },
+        {
+          "from": 8,
+          "to": 13,
+          "start": 69.04,
+          "end": 69.54
+        },
+        {
+          "from": 15,
+          "to": 18,
+          "start": 69.54,
+          "end": 70.54
+        },
+        {
+          "from": 19,
+          "to": 21,
+          "start": 70.54,
+          "end": 70.7
+        },
+        {
+          "from": 22,
+          "to": 25,
+          "start": 70.7,
+          "end": 70.78
+        },
+        {
+          "from": 26,
+          "to": 31,
+          "start": 70.78,
+          "end": 70.98
+        },
+        {
+          "from": 32,
+          "to": 33,
+          "start": 70.98,
+          "end": 71.14
+        }
+      ],
+      "sourceLine": 11,
+      "matchedWordRatio": 0.889
+    },
+    {
+      "text": "Que si estas abandonado, es porque no eres gran cosa",
+      "start": 72.04,
+      "end": 76.96,
+      "words": [
+        {
+          "from": 0,
+          "to": 3,
+          "start": 72.04,
+          "end": 72.98
+        },
+        {
+          "from": 4,
+          "to": 6,
+          "start": 72.98,
+          "end": 73.16
+        },
+        {
+          "from": 7,
+          "to": 12,
+          "start": 73.16,
+          "end": 73.44
+        },
+        {
+          "from": 25,
+          "to": 27,
+          "start": 74.42,
+          "end": 75.06
+        },
+        {
+          "from": 28,
+          "to": 34,
+          "start": 75.06,
+          "end": 75.44
+        },
+        {
+          "from": 35,
+          "to": 37,
+          "start": 75.44,
+          "end": 75.84
+        },
+        {
+          "from": 38,
+          "to": 42,
+          "start": 75.84,
+          "end": 76.0
+        },
+        {
+          "from": 43,
+          "to": 47,
+          "start": 76.0,
+          "end": 76.34
+        },
+        {
+          "from": 48,
+          "to": 52,
+          "start": 76.34,
+          "end": 76.96
+        }
+      ],
+      "sourceLine": 12,
+      "matchedWordRatio": 0.9
+    },
+    {
+      "text": "Y si algun día te acuerdas de mi",
+      "start": 78.09,
+      "end": 82.24,
+      "words": [
+        {
+          "from": 0,
+          "to": 1,
+          "start": 78.09,
+          "end": 78.6
+        },
+        {
+          "from": 2,
+          "to": 4,
+          "start": 78.6,
+          "end": 78.72
+        },
+        {
+          "from": 5,
+          "to": 10,
+          "start": 78.72,
+          "end": 79.0
+        },
+        {
+          "from": 11,
+          "to": 14,
+          "start": 79.0,
+          "end": 79.3
+        },
+        {
+          "from": 15,
+          "to": 17,
+          "start": 79.3,
+          "end": 79.56
+        },
+        {
+          "from": 18,
+          "to": 26,
+          "start": 79.56,
+          "end": 81.06
+        },
+        {
+          "from": 27,
+          "to": 29,
+          "start": 81.06,
+          "end": 81.48
+        },
+        {
+          "from": 30,
+          "to": 32,
+          "start": 81.48,
+          "end": 82.24
+        }
+      ],
+      "sourceLine": 13,
+      "matchedWordRatio": 1.0
+    },
+    {
+      "text": "Recuerda que yo, te quise tanto",
+      "start": 83.26,
+      "end": 87.14,
+      "words": [
+        {
+          "from": 0,
+          "to": 8,
+          "start": 83.26,
+          "end": 84.28
+        },
+        {
+          "from": 9,
+          "to": 12,
+          "start": 84.28,
+          "end": 84.5
+        },
+        {
+          "from": 13,
+          "to": 15,
+          "start": 84.5,
+          "end": 84.96
+        },
+        {
+          "from": 17,
+          "to": 19,
+          "start": 84.96,
+          "end": 85.74
+        },
+        {
+          "from": 20,
+          "to": 25,
+          "start": 85.74,
+          "end": 86.1
+        },
+        {
+          "from": 26,
+          "to": 31,
+          "start": 86.1,
+          "end": 87.14
+        }
+      ],
+      "sourceLine": 14,
+      "matchedWordRatio": 1.0
+    },
+    {
+      "text": "Y tu sin piedad, te fuiste de mi",
+      "start": 88.27,
+      "end": 92.24,
+      "words": [
+        {
+          "from": 0,
+          "to": 1,
+          "start": 88.27,
+          "end": 88.78
+        },
+        {
+          "from": 2,
+          "to": 4,
+          "start": 88.78,
+          "end": 88.94
+        },
+        {
+          "from": 17,
+          "to": 19,
+          "start": 89.9,
+          "end": 91.14
+        },
+        {
+          "from": 20,
+          "to": 26,
+          "start": 91.14,
+          "end": 91.5
+        },
+        {
+          "from": 27,
+          "to": 29,
+          "start": 91.5,
+          "end": 91.76
+        },
+        {
+          "from": 30,
+          "to": 32,
+          "start": 91.76,
+          "end": 92.24
+        }
+      ],
+      "sourceLine": 15,
+      "matchedWordRatio": 0.75
+    },
+    {
+      "text": "Sabiendo que te amaba, me pagaste mal",
+      "start": 92.24,
+      "end": 94.16,
+      "words": [
+        {
+          "from": 0,
+          "to": 8,
+          "start": 92.24,
+          "end": 93.04
+        },
+        {
+          "from": 9,
+          "to": 12,
+          "start": 93.04,
+          "end": 93.36
+        },
+        {
+          "from": 13,
+          "to": 15,
+          "start": 93.36,
+          "end": 93.54
+        },
+        {
+          "from": 16,
+          "to": 21,
+          "start": 93.54,
+          "end": 94.16
+        }
+      ],
+      "sourceLine": 16,
+      "matchedWordRatio": 0.571
+    },
+    {
+      "text": "Y tu sin piedad, te fuiste de mi",
+      "start": 98.01,
+      "end": 102.12,
+      "words": [
+        {
+          "from": 0,
+          "to": 1,
+          "start": 98.01,
+          "end": 98.52
+        },
+        {
+          "from": 2,
+          "to": 4,
+          "start": 98.52,
+          "end": 98.72
+        },
+        {
+          "from": 17,
+          "to": 19,
+          "start": 99.7,
+          "end": 100.24
+        },
+        {
+          "from": 20,
+          "to": 26,
+          "start": 100.24,
+          "end": 101.28
+        },
+        {
+          "from": 27,
+          "to": 29,
+          "start": 101.28,
+          "end": 101.56
+        },
+        {
+          "from": 30,
+          "to": 32,
+          "start": 101.56,
+          "end": 102.12
+        }
+      ],
+      "sourceLine": 17,
+      "matchedWordRatio": 0.75
+    },
+    {
+      "text": "Sabiendo que te amaba, me pagaste mal",
+      "start": 102.12,
+      "end": 115.42,
+      "words": [
+        {
+          "from": 0,
+          "to": 8,
+          "start": 102.12,
+          "end": 102.86
+        },
+        {
+          "from": 9,
+          "to": 12,
+          "start": 102.86,
+          "end": 103.12
+        },
+        {
+          "from": 13,
+          "to": 15,
+          "start": 103.12,
+          "end": 103.3
+        },
+        {
+          "from": 16,
+          "to": 21,
+          "start": 103.3,
+          "end": 104.0
+        },
+        {
+          "from": 34,
+          "to": 37,
+          "start": 115.32,
+          "end": 115.42
+        }
+      ],
+      "sourceLine": 18,
+      "matchedWordRatio": 0.714
+    },
+    {
+      "text": "Y si algun dia te acuerdas de mi",
+      "start": 127.58,
+      "end": 131.12,
+      "words": [
+        {
+          "from": 5,
+          "to": 10,
+          "start": 127.58,
+          "end": 127.88
+        },
+        {
+          "from": 11,
+          "to": 14,
+          "start": 127.88,
+          "end": 128.18
+        },
+        {
+          "from": 15,
+          "to": 17,
+          "start": 128.18,
+          "end": 128.42
+        },
+        {
+          "from": 18,
+          "to": 26,
+          "start": 128.42,
+          "end": 129.86
+        },
+        {
+          "from": 27,
+          "to": 29,
+          "start": 129.86,
+          "end": 130.36
+        },
+        {
+          "from": 30,
+          "to": 32,
+          "start": 130.36,
+          "end": 131.12
+        }
+      ],
+      "sourceLine": 19,
+      "matchedWordRatio": 0.75
+    },
+    {
+      "text": "Recuerda que yo, te quise tanto",
+      "start": 131.12,
+      "end": 135.98,
+      "words": [
+        {
+          "from": 0,
+          "to": 8,
+          "start": 131.12,
+          "end": 133.12
+        },
+        {
+          "from": 9,
+          "to": 12,
+          "start": 133.12,
+          "end": 133.34
+        },
+        {
+          "from": 13,
+          "to": 15,
+          "start": 133.34,
+          "end": 133.82
+        },
+        {
+          "from": 17,
+          "to": 19,
+          "start": 133.82,
+          "end": 134.6
+        },
+        {
+          "from": 20,
+          "to": 25,
+          "start": 134.6,
+          "end": 134.96
+        },
+        {
+          "from": 26,
+          "to": 31,
+          "start": 134.96,
+          "end": 135.98
+        }
+      ],
+      "sourceLine": 20,
+      "matchedWordRatio": 1.0
+    },
+    {
+      "text": "Y tu sin piedad, te fuiste de mi",
+      "start": 135.98,
+      "end": 140.98,
+      "words": [
+        {
+          "from": 0,
+          "to": 1,
+          "start": 135.98,
+          "end": 137.66
+        },
+        {
+          "from": 2,
+          "to": 4,
+          "start": 137.66,
+          "end": 137.8
+        },
+        {
+          "from": 5,
+          "to": 8,
+          "start": 137.8,
+          "end": 138.04
+        },
+        {
+          "from": 9,
+          "to": 15,
+          "start": 138.04,
+          "end": 138.78
+        },
+        {
+          "from": 17,
+          "to": 19,
+          "start": 138.78,
+          "end": 140.0
+        },
+        {
+          "from": 20,
+          "to": 26,
+          "start": 140.0,
+          "end": 140.34
+        },
+        {
+          "from": 27,
+          "to": 29,
+          "start": 140.34,
+          "end": 140.6
+        },
+        {
+          "from": 30,
+          "to": 32,
+          "start": 140.6,
+          "end": 140.98
+        }
+      ],
+      "sourceLine": 21,
+      "matchedWordRatio": 1.0
+    },
+    {
+      "text": "Sabiendo que te amaba, me pagaste mal",
+      "start": 140.98,
+      "end": 145.66,
+      "words": [
+        {
+          "from": 0,
+          "to": 8,
+          "start": 140.98,
+          "end": 141.94
+        },
+        {
+          "from": 9,
+          "to": 12,
+          "start": 141.94,
+          "end": 142.22
+        },
+        {
+          "from": 13,
+          "to": 15,
+          "start": 142.22,
+          "end": 142.4
+        },
+        {
+          "from": 16,
+          "to": 21,
+          "start": 142.4,
+          "end": 143.02
+        },
+        {
+          "from": 26,
+          "to": 33,
+          "start": 144.02,
+          "end": 144.78
+        },
+        {
+          "from": 34,
+          "to": 37,
+          "start": 144.78,
+          "end": 145.66
+        }
+      ],
+      "sourceLine": 22,
+      "matchedWordRatio": 0.857
+    },
+    {
+      "text": "Y tu sin piedad, te fuiste de mi",
+      "start": 145.66,
+      "end": 150.84,
+      "words": [
+        {
+          "from": 0,
+          "to": 1,
+          "start": 145.66,
+          "end": 147.34
+        },
+        {
+          "from": 2,
+          "to": 4,
+          "start": 147.34,
+          "end": 147.5
+        },
+        {
+          "from": 5,
+          "to": 8,
+          "start": 147.5,
+          "end": 147.86
+        },
+        {
+          "from": 9,
+          "to": 15,
+          "start": 147.86,
+          "end": 148.5
+        },
+        {
+          "from": 17,
+          "to": 19,
+          "start": 148.5,
+          "end": 149.1
+        },
+        {
+          "from": 20,
+          "to": 26,
+          "start": 149.1,
+          "end": 150.08
+        },
+        {
+          "from": 27,
+          "to": 29,
+          "start": 150.08,
+          "end": 150.38
+        },
+        {
+          "from": 30,
+          "to": 32,
+          "start": 150.38,
+          "end": 150.84
+        }
+      ],
+      "sourceLine": 23,
+      "matchedWordRatio": 1.0
+    },
+    {
+      "text": "Sabiendo que te amaba, me pagaste mal",
+      "start": 150.84,
+      "end": 152.74,
+      "words": [
+        {
+          "from": 0,
+          "to": 8,
+          "start": 150.84,
+          "end": 151.68
+        },
+        {
+          "from": 9,
+          "to": 12,
+          "start": 151.68,
+          "end": 151.94
+        },
+        {
+          "from": 13,
+          "to": 15,
+          "start": 151.94,
+          "end": 152.12
+        },
+        {
+          "from": 16,
+          "to": 21,
+          "start": 152.12,
+          "end": 152.74
+        }
+      ],
+      "sourceLine": 25,
+      "matchedWordRatio": 0.571
+    }
+  ],
+  "unmatchedLines": [
+    {
+      "line": 24,
+      "text": "Sabiendo que te amaba, me pagaste mal",
+      "coverage": 0.0
+    },
+    {
+      "line": 26,
+      "text": "Sabiendo que te amaba, me pagaste mal",
+      "coverage": 0.429
+    }
+  ]
 }

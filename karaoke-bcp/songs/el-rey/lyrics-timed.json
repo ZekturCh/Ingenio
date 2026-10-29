@@ -1,5 +1,1038 @@
 {
   "songId": "el-rey",
-  "status": "pending",
-  "lyrics": []
+  "status": "estimated",
+  "reviewRequired": true,
+  "method": "local-asr-word-matching",
+  "alignmentModel": "faster-whisper-small",
+  "durationSeconds": 130.011429,
+  "audioSha256": "c3067bc0408a0f66245d4d11f3df5ef30bce4dbd30b0e578cbd638f7c1879a80",
+  "lyrics": [
+    {
+      "text": "Yo sé bien que estoy afuera",
+      "start": 13.94,
+      "end": 16.38,
+      "words": [
+        {
+          "from": 3,
+          "to": 5,
+          "start": 13.94,
+          "end": 14.4
+        },
+        {
+          "from": 6,
+          "to": 10,
+          "start": 14.4,
+          "end": 14.92
+        },
+        {
+          "from": 11,
+          "to": 14,
+          "start": 14.92,
+          "end": 15.22
+        },
+        {
+          "from": 15,
+          "to": 20,
+          "start": 15.22,
+          "end": 15.66
+        },
+        {
+          "from": 21,
+          "to": 27,
+          "start": 15.66,
+          "end": 16.38
+        }
+      ],
+      "sourceLine": 1,
+      "matchedWordRatio": 0.833
+    },
+    {
+      "text": "Pero el día en que yo me muera",
+      "start": 16.38,
+      "end": 19.08,
+      "words": [
+        {
+          "from": 0,
+          "to": 4,
+          "start": 16.38,
+          "end": 17.4
+        },
+        {
+          "from": 5,
+          "to": 7,
+          "start": 17.4,
+          "end": 17.72
+        },
+        {
+          "from": 8,
+          "to": 11,
+          "start": 17.72,
+          "end": 17.94
+        },
+        {
+          "from": 19,
+          "to": 21,
+          "start": 18.16,
+          "end": 18.4
+        },
+        {
+          "from": 22,
+          "to": 24,
+          "start": 18.4,
+          "end": 18.58
+        },
+        {
+          "from": 25,
+          "to": 30,
+          "start": 18.58,
+          "end": 19.08
+        }
+      ],
+      "sourceLine": 2,
+      "matchedWordRatio": 0.75
+    },
+    {
+      "text": "Sé que tendrás que llorar",
+      "start": 19.08,
+      "end": 22.0,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 19.08,
+          "end": 20.2
+        },
+        {
+          "from": 3,
+          "to": 6,
+          "start": 20.2,
+          "end": 20.42
+        },
+        {
+          "from": 7,
+          "to": 14,
+          "start": 20.42,
+          "end": 21.02
+        },
+        {
+          "from": 15,
+          "to": 18,
+          "start": 21.02,
+          "end": 21.38
+        },
+        {
+          "from": 19,
+          "to": 25,
+          "start": 21.38,
+          "end": 22.0
+        }
+      ],
+      "sourceLine": 3,
+      "matchedWordRatio": 1.0
+    },
+    {
+      "text": "Llorar y llorar, llorar y llorar",
+      "start": 22.0,
+      "end": 26.98,
+      "words": [
+        {
+          "from": 0,
+          "to": 6,
+          "start": 22.0,
+          "end": 23.24
+        },
+        {
+          "from": 7,
+          "to": 8,
+          "start": 23.24,
+          "end": 23.76
+        },
+        {
+          "from": 9,
+          "to": 15,
+          "start": 23.76,
+          "end": 24.5
+        },
+        {
+          "from": 17,
+          "to": 23,
+          "start": 24.62,
+          "end": 25.76
+        },
+        {
+          "from": 24,
+          "to": 25,
+          "start": 25.76,
+          "end": 26.38
+        },
+        {
+          "from": 26,
+          "to": 32,
+          "start": 26.38,
+          "end": 26.98
+        }
+      ],
+      "sourceLine": 4,
+      "matchedWordRatio": 1.0
+    },
+    {
+      "text": "Dirás que no me quisiste",
+      "start": 26.98,
+      "end": 29.74,
+      "words": [
+        {
+          "from": 0,
+          "to": 5,
+          "start": 26.98,
+          "end": 28.22
+        },
+        {
+          "from": 6,
+          "to": 9,
+          "start": 28.22,
+          "end": 28.5
+        },
+        {
+          "from": 10,
+          "to": 12,
+          "start": 28.5,
+          "end": 28.7
+        },
+        {
+          "from": 13,
+          "to": 15,
+          "start": 28.7,
+          "end": 28.9
+        },
+        {
+          "from": 16,
+          "to": 24,
+          "start": 28.9,
+          "end": 29.74
+        }
+      ],
+      "sourceLine": 5,
+      "matchedWordRatio": 1.0
+    },
+    {
+      "text": "Pero vas a estar muy triste",
+      "start": 29.74,
+      "end": 32.38,
+      "words": [
+        {
+          "from": 0,
+          "to": 4,
+          "start": 29.74,
+          "end": 30.46
+        },
+        {
+          "from": 5,
+          "to": 8,
+          "start": 30.46,
+          "end": 30.9
+        },
+        {
+          "from": 9,
+          "to": 10,
+          "start": 30.9,
+          "end": 31.06
+        },
+        {
+          "from": 11,
+          "to": 16,
+          "start": 31.06,
+          "end": 31.5
+        },
+        {
+          "from": 17,
+          "to": 20,
+          "start": 31.5,
+          "end": 31.8
+        },
+        {
+          "from": 21,
+          "to": 27,
+          "start": 31.8,
+          "end": 32.38
+        }
+      ],
+      "sourceLine": 6,
+      "matchedWordRatio": 1.0
+    },
+    {
+      "text": "A así te vas a quedar",
+      "start": 33.32,
+      "end": 35.46,
+      "words": [
+        {
+          "from": 2,
+          "to": 5,
+          "start": 33.32,
+          "end": 33.58
+        },
+        {
+          "from": 6,
+          "to": 8,
+          "start": 33.58,
+          "end": 33.82
+        },
+        {
+          "from": 9,
+          "to": 12,
+          "start": 33.82,
+          "end": 34.18
+        },
+        {
+          "from": 13,
+          "to": 14,
+          "start": 34.18,
+          "end": 34.32
+        },
+        {
+          "from": 15,
+          "to": 21,
+          "start": 34.32,
+          "end": 35.46
+        }
+      ],
+      "sourceLine": 7,
+      "matchedWordRatio": 0.833
+    },
+    {
+      "text": "Con dinero y sin dinero",
+      "start": 37.47,
+      "end": 40.88,
+      "words": [
+        {
+          "from": 0,
+          "to": 3,
+          "start": 37.47,
+          "end": 38.06
+        },
+        {
+          "from": 4,
+          "to": 10,
+          "start": 38.06,
+          "end": 38.66
+        },
+        {
+          "from": 11,
+          "to": 12,
+          "start": 38.66,
+          "end": 39.32
+        },
+        {
+          "from": 13,
+          "to": 16,
+          "start": 39.32,
+          "end": 39.92
+        },
+        {
+          "from": 17,
+          "to": 23,
+          "start": 39.92,
+          "end": 40.88
+        }
+      ],
+      "sourceLine": 8,
+      "matchedWordRatio": 1.0
+    },
+    {
+      "text": "Hago siempre lo que quiero",
+      "start": 41.73,
+      "end": 44.88,
+      "words": [
+        {
+          "from": 0,
+          "to": 4,
+          "start": 41.73,
+          "end": 42.32
+        },
+        {
+          "from": 5,
+          "to": 12,
+          "start": 42.32,
+          "end": 43.2
+        },
+        {
+          "from": 13,
+          "to": 15,
+          "start": 43.2,
+          "end": 43.7
+        },
+        {
+          "from": 16,
+          "to": 19,
+          "start": 43.7,
+          "end": 44.02
+        },
+        {
+          "from": 20,
+          "to": 26,
+          "start": 44.02,
+          "end": 44.88
+        }
+      ],
+      "sourceLine": 9,
+      "matchedWordRatio": 1.0
+    },
+    {
+      "text": "Y mi palabra es la ley",
+      "start": 45.74,
+      "end": 49.0,
+      "words": [
+        {
+          "from": 0,
+          "to": 1,
+          "start": 45.74,
+          "end": 46.72
+        },
+        {
+          "from": 2,
+          "to": 4,
+          "start": 46.72,
+          "end": 46.94
+        },
+        {
+          "from": 5,
+          "to": 12,
+          "start": 46.94,
+          "end": 47.46
+        },
+        {
+          "from": 13,
+          "to": 15,
+          "start": 47.46,
+          "end": 47.98
+        },
+        {
+          "from": 16,
+          "to": 18,
+          "start": 47.98,
+          "end": 48.26
+        },
+        {
+          "from": 19,
+          "to": 22,
+          "start": 48.26,
+          "end": 49.0
+        }
+      ],
+      "sourceLine": 10,
+      "matchedWordRatio": 1.0
+    },
+    {
+      "text": "No tengo trono ni reina",
+      "start": 51.74,
+      "end": 54.72,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 51.74,
+          "end": 52.38
+        },
+        {
+          "from": 3,
+          "to": 8,
+          "start": 52.38,
+          "end": 52.96
+        },
+        {
+          "from": 9,
+          "to": 14,
+          "start": 52.96,
+          "end": 53.6
+        },
+        {
+          "from": 15,
+          "to": 17,
+          "start": 53.6,
+          "end": 54.04
+        },
+        {
+          "from": 18,
+          "to": 23,
+          "start": 54.04,
+          "end": 54.72
+        }
+      ],
+      "sourceLine": 11,
+      "matchedWordRatio": 1.0
+    },
+    {
+      "text": "Ni nadie que me comprenda",
+      "start": 54.72,
+      "end": 58.74,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 54.72,
+          "end": 56.02
+        },
+        {
+          "from": 3,
+          "to": 8,
+          "start": 56.02,
+          "end": 56.62
+        },
+        {
+          "from": 9,
+          "to": 12,
+          "start": 56.62,
+          "end": 57.0
+        },
+        {
+          "from": 13,
+          "to": 15,
+          "start": 57.0,
+          "end": 57.34
+        },
+        {
+          "from": 16,
+          "to": 25,
+          "start": 57.34,
+          "end": 58.74
+        }
+      ],
+      "sourceLine": 12,
+      "matchedWordRatio": 1.0
+    },
+    {
+      "text": "Pero sigo siendo el rey",
+      "start": 58.74,
+      "end": 63.74,
+      "words": [
+        {
+          "from": 0,
+          "to": 4,
+          "start": 58.74,
+          "end": 59.88
+        },
+        {
+          "from": 5,
+          "to": 9,
+          "start": 59.88,
+          "end": 60.62
+        },
+        {
+          "from": 10,
+          "to": 16,
+          "start": 60.62,
+          "end": 61.44
+        },
+        {
+          "from": 17,
+          "to": 19,
+          "start": 61.44,
+          "end": 62.04
+        },
+        {
+          "from": 20,
+          "to": 23,
+          "start": 62.04,
+          "end": 63.74
+        }
+      ],
+      "sourceLine": 13,
+      "matchedWordRatio": 1.0
+    },
+    {
+      "text": "Una piedra en el camino",
+      "start": 70.9,
+      "end": 79.0,
+      "words": [
+        {
+          "from": 0,
+          "to": 3,
+          "start": 70.9,
+          "end": 73.06
+        },
+        {
+          "from": 4,
+          "to": 10,
+          "start": 73.06,
+          "end": 77.76
+        },
+        {
+          "from": 17,
+          "to": 23,
+          "start": 78.2,
+          "end": 79.0
+        }
+      ],
+      "sourceLine": 14,
+      "matchedWordRatio": 0.6
+    },
+    {
+      "text": "Me enseñó que mi destino",
+      "start": 79.36,
+      "end": 81.72,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 79.36,
+          "end": 79.98
+        },
+        {
+          "from": 3,
+          "to": 9,
+          "start": 79.98,
+          "end": 80.6
+        },
+        {
+          "from": 10,
+          "to": 13,
+          "start": 80.6,
+          "end": 80.76
+        },
+        {
+          "from": 14,
+          "to": 16,
+          "start": 80.76,
+          "end": 80.92
+        },
+        {
+          "from": 17,
+          "to": 24,
+          "start": 80.92,
+          "end": 81.72
+        }
+      ],
+      "sourceLine": 15,
+      "matchedWordRatio": 1.0
+    },
+    {
+      "text": "Era rodar y rodar",
+      "start": 81.72,
+      "end": 84.94,
+      "words": [
+        {
+          "from": 0,
+          "to": 3,
+          "start": 81.72,
+          "end": 82.84
+        },
+        {
+          "from": 4,
+          "to": 9,
+          "start": 82.84,
+          "end": 83.62
+        },
+        {
+          "from": 10,
+          "to": 11,
+          "start": 83.62,
+          "end": 83.82
+        },
+        {
+          "from": 12,
+          "to": 17,
+          "start": 83.82,
+          "end": 84.94
+        }
+      ],
+      "sourceLine": 16,
+      "matchedWordRatio": 1.0
+    },
+    {
+      "text": "Rodar y rodar, rodar y rodar",
+      "start": 84.94,
+      "end": 89.68,
+      "words": [
+        {
+          "from": 0,
+          "to": 5,
+          "start": 84.94,
+          "end": 85.96
+        },
+        {
+          "from": 6,
+          "to": 7,
+          "start": 85.96,
+          "end": 86.22
+        },
+        {
+          "from": 8,
+          "to": 13,
+          "start": 86.22,
+          "end": 87.0
+        },
+        {
+          "from": 15,
+          "to": 20,
+          "start": 87.12,
+          "end": 88.46
+        },
+        {
+          "from": 21,
+          "to": 22,
+          "start": 88.46,
+          "end": 88.78
+        },
+        {
+          "from": 23,
+          "to": 28,
+          "start": 88.78,
+          "end": 89.68
+        }
+      ],
+      "sourceLine": 17,
+      "matchedWordRatio": 1.0
+    },
+    {
+      "text": "También me dijo un arriero",
+      "start": 90.42,
+      "end": 92.06,
+      "words": [
+        {
+          "from": 8,
+          "to": 10,
+          "start": 90.42,
+          "end": 90.92
+        },
+        {
+          "from": 11,
+          "to": 15,
+          "start": 90.92,
+          "end": 91.26
+        },
+        {
+          "from": 16,
+          "to": 18,
+          "start": 91.26,
+          "end": 91.5
+        },
+        {
+          "from": 19,
+          "to": 26,
+          "start": 91.5,
+          "end": 92.06
+        }
+      ],
+      "sourceLine": 18,
+      "matchedWordRatio": 0.8
+    },
+    {
+      "text": "Que no hay que llegar primero",
+      "start": 92.06,
+      "end": 94.56,
+      "words": [
+        {
+          "from": 0,
+          "to": 3,
+          "start": 92.06,
+          "end": 92.8
+        },
+        {
+          "from": 4,
+          "to": 6,
+          "start": 92.8,
+          "end": 93.04
+        },
+        {
+          "from": 7,
+          "to": 10,
+          "start": 93.04,
+          "end": 93.18
+        },
+        {
+          "from": 11,
+          "to": 14,
+          "start": 93.18,
+          "end": 93.4
+        },
+        {
+          "from": 15,
+          "to": 21,
+          "start": 93.4,
+          "end": 93.8
+        },
+        {
+          "from": 22,
+          "to": 29,
+          "start": 93.8,
+          "end": 94.56
+        }
+      ],
+      "sourceLine": 19,
+      "matchedWordRatio": 1.0
+    },
+    {
+      "text": "Pero hay que saber llegar",
+      "start": 94.56,
+      "end": 97.62,
+      "words": [
+        {
+          "from": 0,
+          "to": 4,
+          "start": 94.56,
+          "end": 95.58
+        },
+        {
+          "from": 5,
+          "to": 8,
+          "start": 95.58,
+          "end": 95.8
+        },
+        {
+          "from": 9,
+          "to": 12,
+          "start": 95.8,
+          "end": 96.0
+        },
+        {
+          "from": 13,
+          "to": 18,
+          "start": 96.0,
+          "end": 96.36
+        },
+        {
+          "from": 19,
+          "to": 25,
+          "start": 96.36,
+          "end": 97.62
+        }
+      ],
+      "sourceLine": 20,
+      "matchedWordRatio": 1.0
+    },
+    {
+      "text": "Con dinero y sin dinero",
+      "start": 99.84,
+      "end": 103.38,
+      "words": [
+        {
+          "from": 0,
+          "to": 3,
+          "start": 99.84,
+          "end": 100.4
+        },
+        {
+          "from": 4,
+          "to": 10,
+          "start": 100.4,
+          "end": 100.98
+        },
+        {
+          "from": 11,
+          "to": 12,
+          "start": 100.98,
+          "end": 101.74
+        },
+        {
+          "from": 13,
+          "to": 16,
+          "start": 101.74,
+          "end": 102.26
+        },
+        {
+          "from": 17,
+          "to": 23,
+          "start": 102.26,
+          "end": 103.38
+        }
+      ],
+      "sourceLine": 21,
+      "matchedWordRatio": 1.0
+    },
+    {
+      "text": "Hago siempre lo que quiero",
+      "start": 103.94,
+      "end": 107.26,
+      "words": [
+        {
+          "from": 0,
+          "to": 4,
+          "start": 103.94,
+          "end": 104.62
+        },
+        {
+          "from": 5,
+          "to": 12,
+          "start": 104.62,
+          "end": 105.6
+        },
+        {
+          "from": 13,
+          "to": 15,
+          "start": 105.6,
+          "end": 106.1
+        },
+        {
+          "from": 16,
+          "to": 19,
+          "start": 106.1,
+          "end": 106.42
+        },
+        {
+          "from": 20,
+          "to": 26,
+          "start": 106.42,
+          "end": 107.26
+        }
+      ],
+      "sourceLine": 22,
+      "matchedWordRatio": 1.0
+    },
+    {
+      "text": "Y mi palabra es la ley",
+      "start": 107.94,
+      "end": 111.36,
+      "words": [
+        {
+          "from": 0,
+          "to": 1,
+          "start": 107.94,
+          "end": 109.02
+        },
+        {
+          "from": 2,
+          "to": 4,
+          "start": 109.02,
+          "end": 109.24
+        },
+        {
+          "from": 5,
+          "to": 12,
+          "start": 109.24,
+          "end": 109.8
+        },
+        {
+          "from": 13,
+          "to": 15,
+          "start": 109.8,
+          "end": 110.34
+        },
+        {
+          "from": 16,
+          "to": 18,
+          "start": 110.34,
+          "end": 110.62
+        },
+        {
+          "from": 19,
+          "to": 22,
+          "start": 110.62,
+          "end": 111.36
+        }
+      ],
+      "sourceLine": 23,
+      "matchedWordRatio": 1.0
+    },
+    {
+      "text": "No tengo trono ni reina",
+      "start": 113.44,
+      "end": 117.3,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 113.44,
+          "end": 114.8
+        },
+        {
+          "from": 3,
+          "to": 8,
+          "start": 114.8,
+          "end": 115.36
+        },
+        {
+          "from": 9,
+          "to": 14,
+          "start": 115.36,
+          "end": 116.18
+        },
+        {
+          "from": 15,
+          "to": 17,
+          "start": 116.18,
+          "end": 116.44
+        },
+        {
+          "from": 18,
+          "to": 23,
+          "start": 116.44,
+          "end": 117.3
+        }
+      ],
+      "sourceLine": 24,
+      "matchedWordRatio": 1.0
+    },
+    {
+      "text": "Ni nadie que me comprenda",
+      "start": 117.58,
+      "end": 121.68,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 117.58,
+          "end": 118.44
+        },
+        {
+          "from": 3,
+          "to": 8,
+          "start": 118.44,
+          "end": 119.0
+        },
+        {
+          "from": 9,
+          "to": 12,
+          "start": 119.0,
+          "end": 119.38
+        },
+        {
+          "from": 13,
+          "to": 15,
+          "start": 119.38,
+          "end": 119.7
+        },
+        {
+          "from": 16,
+          "to": 25,
+          "start": 119.7,
+          "end": 121.68
+        }
+      ],
+      "sourceLine": 25,
+      "matchedWordRatio": 1.0
+    },
+    {
+      "text": "Pero sigo siendo el rey",
+      "start": 121.76,
+      "end": 124.44,
+      "words": [
+        {
+          "from": 0,
+          "to": 4,
+          "start": 121.76,
+          "end": 122.26
+        },
+        {
+          "from": 5,
+          "to": 9,
+          "start": 122.26,
+          "end": 123.02
+        },
+        {
+          "from": 10,
+          "to": 16,
+          "start": 123.02,
+          "end": 123.84
+        },
+        {
+          "from": 17,
+          "to": 19,
+          "start": 123.84,
+          "end": 124.44
+        }
+      ],
+      "sourceLine": 26,
+      "matchedWordRatio": 0.8
+    }
+  ],
+  "unmatchedLines": []
 }

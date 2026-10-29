@@ -1,6 +1,6 @@
 const { chromium } = require('playwright');
 const assert = require('node:assert/strict');
-const imported = require('../songs/AUDIOS-IMPORTADOS.json');
+const imported = require('../songs/VOCAL-IMPORT-20261029.json');
 async function main() {
   const browser = await chromium.launch({channel: process.env.PLAYWRIGHT_CHANNEL || 'chrome', headless: true});
   try {
@@ -15,7 +15,7 @@ async function main() {
     page.on('pageerror', error => errors.push(error.message));
     await page.goto((process.env.KARAOKE_BASE_URL || 'http://127.0.0.1:5181/karaoke-bcp/') + '?room=IMPORT_TEST');
     await page.locator('#audio').waitFor({state:'attached'});
-    assert.equal(await page.locator('.song.enabled').count(), 23);
+    assert.equal(await page.locator('.song.enabled').count(), 28);
     assert.equal(await page.locator('.song.disabled').count(), 0);
     for (const song of imported) {
       await page.locator(`[data-song="${song.id}"]`).click();
@@ -27,7 +27,7 @@ async function main() {
       const duration = await page.locator('#audio').evaluate(audio => audio.duration);
       assert.ok(Math.abs(duration - song.durationSeconds) < 1, `${song.id}: duration mismatch`);
       await page.waitForFunction(() => document.querySelector('#version').textContent.includes('aproximados'));
-      await page.waitForFunction(() => !['', '♪', 'Letra pendiente de sincronizar'].includes(document.querySelector('#currentBase').textContent));
+      await page.waitForFunction(() => ['#currentBase', '#next'].some(selector => !['', '♪', 'Letra pendiente de sincronizar'].includes(document.querySelector(selector).textContent)));
       await page.locator('#seek').evaluate(input => { input.value = 50; input.dispatchEvent(new Event('input')); input.dispatchEvent(new Event('change')); });
       assert.ok(await page.locator('#audio').evaluate(audio => audio.currentTime > audio.duration * .45));
       await page.locator('#backBtn').click();

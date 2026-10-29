@@ -1,5 +1,810 @@
 {
   "songId": "alma-corazon-y-vida",
-  "status": "pending",
-  "lyrics": []
+  "status": "estimated",
+  "reviewRequired": true,
+  "method": "local-asr-word-matching",
+  "alignmentModel": "faster-whisper-small",
+  "durationSeconds": 192.705306,
+  "audioSha256": "38a7ec7e4e1cff5d9fe7264d40642783357e9f4d97ef5f6fcf07512f2ad49ebb",
+  "lyrics": [
+    {
+      "text": "Recuerdo aquella vez que yo te conocí,",
+      "start": 18.52,
+      "end": 23.02,
+      "words": [
+        {
+          "from": 0,
+          "to": 8,
+          "start": 18.52,
+          "end": 19.28
+        },
+        {
+          "from": 9,
+          "to": 16,
+          "start": 19.28,
+          "end": 19.7
+        },
+        {
+          "from": 17,
+          "to": 20,
+          "start": 19.7,
+          "end": 20.58
+        },
+        {
+          "from": 21,
+          "to": 24,
+          "start": 20.58,
+          "end": 21.32
+        },
+        {
+          "from": 25,
+          "to": 27,
+          "start": 21.32,
+          "end": 21.52
+        },
+        {
+          "from": 31,
+          "to": 37,
+          "start": 21.7,
+          "end": 23.02
+        }
+      ],
+      "sourceLine": 1,
+      "matchedWordRatio": 0.857
+    },
+    {
+      "text": "recuerdo aquella tarde pero",
+      "start": 23.2,
+      "end": 25.08,
+      "words": [
+        {
+          "from": 0,
+          "to": 8,
+          "start": 23.2,
+          "end": 23.92
+        },
+        {
+          "from": 9,
+          "to": 16,
+          "start": 23.92,
+          "end": 24.24
+        },
+        {
+          "from": 17,
+          "to": 22,
+          "start": 24.24,
+          "end": 24.76
+        },
+        {
+          "from": 23,
+          "to": 27,
+          "start": 24.76,
+          "end": 25.08
+        }
+      ],
+      "sourceLine": 2,
+      "matchedWordRatio": 1.0
+    },
+    {
+      "text": "ni me acuerdo de como te vi.",
+      "start": 25.28,
+      "end": 27.14,
+      "words": [
+        {
+          "from": 3,
+          "to": 5,
+          "start": 25.28,
+          "end": 25.4
+        },
+        {
+          "from": 6,
+          "to": 13,
+          "start": 25.4,
+          "end": 25.78
+        },
+        {
+          "from": 22,
+          "to": 24,
+          "start": 26.42,
+          "end": 26.84
+        },
+        {
+          "from": 25,
+          "to": 27,
+          "start": 26.84,
+          "end": 27.14
+        }
+      ],
+      "sourceLine": 3,
+      "matchedWordRatio": 0.571
+    },
+    {
+      "text": "Pero si te diré que yo me enamoré",
+      "start": 27.14,
+      "end": 32.56,
+      "words": [
+        {
+          "from": 0,
+          "to": 4,
+          "start": 27.14,
+          "end": 28.36
+        },
+        {
+          "from": 5,
+          "to": 7,
+          "start": 28.36,
+          "end": 28.66
+        },
+        {
+          "from": 8,
+          "to": 10,
+          "start": 28.66,
+          "end": 28.84
+        },
+        {
+          "from": 11,
+          "to": 15,
+          "start": 28.84,
+          "end": 29.9
+        },
+        {
+          "from": 16,
+          "to": 19,
+          "start": 29.9,
+          "end": 30.6
+        },
+        {
+          "from": 20,
+          "to": 22,
+          "start": 30.6,
+          "end": 30.82
+        },
+        {
+          "from": 23,
+          "to": 25,
+          "start": 30.82,
+          "end": 31.02
+        },
+        {
+          "from": 26,
+          "to": 33,
+          "start": 31.02,
+          "end": 32.56
+        }
+      ],
+      "sourceLine": 4,
+      "matchedWordRatio": 1.0
+    },
+    {
+      "text": "Pero si te diré que yo me enamoré",
+      "start": 37.14,
+      "end": 41.64,
+      "words": [
+        {
+          "from": 0,
+          "to": 4,
+          "start": 37.14,
+          "end": 37.66
+        },
+        {
+          "from": 5,
+          "to": 7,
+          "start": 37.66,
+          "end": 37.94
+        },
+        {
+          "from": 8,
+          "to": 10,
+          "start": 37.94,
+          "end": 38.16
+        },
+        {
+          "from": 11,
+          "to": 15,
+          "start": 38.16,
+          "end": 38.94
+        },
+        {
+          "from": 16,
+          "to": 19,
+          "start": 38.94,
+          "end": 39.9
+        },
+        {
+          "from": 20,
+          "to": 22,
+          "start": 39.9,
+          "end": 40.12
+        },
+        {
+          "from": 23,
+          "to": 25,
+          "start": 40.12,
+          "end": 40.3
+        },
+        {
+          "from": 26,
+          "to": 33,
+          "start": 40.3,
+          "end": 41.64
+        }
+      ],
+      "sourceLine": 4,
+      "matchedWordRatio": 1.0,
+      "alignment": "recognized-repetition"
+    },
+    {
+      "text": "de esos tus lindos ojos y tus labios rojos",
+      "start": 42.32,
+      "end": 44.46,
+      "words": [
+        {
+          "from": 8,
+          "to": 11,
+          "start": 42.32,
+          "end": 42.5
+        },
+        {
+          "from": 12,
+          "to": 18,
+          "start": 42.5,
+          "end": 42.9
+        },
+        {
+          "from": 19,
+          "to": 23,
+          "start": 42.9,
+          "end": 43.32
+        },
+        {
+          "from": 24,
+          "to": 25,
+          "start": 43.32,
+          "end": 43.52
+        },
+        {
+          "from": 26,
+          "to": 29,
+          "start": 43.52,
+          "end": 43.66
+        },
+        {
+          "from": 30,
+          "to": 36,
+          "start": 43.66,
+          "end": 44.0
+        },
+        {
+          "from": 37,
+          "to": 42,
+          "start": 44.0,
+          "end": 44.46
+        }
+      ],
+      "sourceLine": 5,
+      "matchedWordRatio": 0.778
+    },
+    {
+      "text": "que no olvidaré.",
+      "start": 44.46,
+      "end": 45.78,
+      "words": [
+        {
+          "from": 0,
+          "to": 3,
+          "start": 44.46,
+          "end": 44.64
+        },
+        {
+          "from": 4,
+          "to": 6,
+          "start": 44.64,
+          "end": 44.8
+        },
+        {
+          "from": 7,
+          "to": 15,
+          "start": 44.8,
+          "end": 45.78
+        }
+      ],
+      "sourceLine": 6,
+      "matchedWordRatio": 1.0
+    },
+    {
+      "text": "Oye esta canción que lleva",
+      "start": 47.92,
+      "end": 49.72,
+      "words": [
+        {
+          "from": 4,
+          "to": 8,
+          "start": 47.92,
+          "end": 48.2
+        },
+        {
+          "from": 9,
+          "to": 16,
+          "start": 48.2,
+          "end": 48.7
+        },
+        {
+          "from": 17,
+          "to": 20,
+          "start": 48.7,
+          "end": 49.04
+        },
+        {
+          "from": 21,
+          "to": 26,
+          "start": 49.04,
+          "end": 49.72
+        }
+      ],
+      "sourceLine": 7,
+      "matchedWordRatio": 0.8
+    },
+    {
+      "text": "alma, corazón y vida",
+      "start": 49.72,
+      "end": 52.12,
+      "words": [
+        {
+          "from": 0,
+          "to": 4,
+          "start": 49.72,
+          "end": 50.36
+        },
+        {
+          "from": 6,
+          "to": 13,
+          "start": 50.5,
+          "end": 51.04
+        },
+        {
+          "from": 14,
+          "to": 15,
+          "start": 51.04,
+          "end": 51.48
+        },
+        {
+          "from": 16,
+          "to": 20,
+          "start": 51.48,
+          "end": 52.12
+        }
+      ],
+      "sourceLine": 8,
+      "matchedWordRatio": 1.0
+    },
+    {
+      "text": "esas tres cositas nada más te doy;",
+      "start": 52.8,
+      "end": 55.6,
+      "words": [
+        {
+          "from": 5,
+          "to": 9,
+          "start": 52.8,
+          "end": 52.96
+        },
+        {
+          "from": 10,
+          "to": 17,
+          "start": 52.96,
+          "end": 53.48
+        },
+        {
+          "from": 18,
+          "to": 22,
+          "start": 53.48,
+          "end": 54.1
+        },
+        {
+          "from": 23,
+          "to": 26,
+          "start": 54.1,
+          "end": 54.7
+        },
+        {
+          "from": 27,
+          "to": 29,
+          "start": 54.7,
+          "end": 54.94
+        },
+        {
+          "from": 30,
+          "to": 33,
+          "start": 54.94,
+          "end": 55.6
+        }
+      ],
+      "sourceLine": 9,
+      "matchedWordRatio": 0.857
+    },
+    {
+      "text": "porque no tengo fortuna",
+      "start": 55.6,
+      "end": 59.12,
+      "words": [
+        {
+          "from": 0,
+          "to": 6,
+          "start": 55.6,
+          "end": 57.42
+        },
+        {
+          "from": 7,
+          "to": 9,
+          "start": 57.42,
+          "end": 57.68
+        },
+        {
+          "from": 10,
+          "to": 15,
+          "start": 57.68,
+          "end": 58.02
+        },
+        {
+          "from": 16,
+          "to": 23,
+          "start": 58.02,
+          "end": 59.12
+        }
+      ],
+      "sourceLine": 10,
+      "matchedWordRatio": 1.0
+    },
+    {
+      "text": "esas tres cosas te ofrezco",
+      "start": 59.24,
+      "end": 61.6,
+      "words": [
+        {
+          "from": 0,
+          "to": 4,
+          "start": 59.24,
+          "end": 59.8
+        },
+        {
+          "from": 10,
+          "to": 15,
+          "start": 60.0,
+          "end": 60.42
+        },
+        {
+          "from": 16,
+          "to": 18,
+          "start": 60.42,
+          "end": 60.78
+        },
+        {
+          "from": 19,
+          "to": 26,
+          "start": 60.78,
+          "end": 61.6
+        }
+      ],
+      "sourceLine": 11,
+      "matchedWordRatio": 0.8
+    },
+    {
+      "text": "alma, corazón y vida y nada más;",
+      "start": 61.86,
+      "end": 64.68,
+      "words": [
+        {
+          "from": 0,
+          "to": 4,
+          "start": 61.86,
+          "end": 62.18
+        },
+        {
+          "from": 6,
+          "to": 13,
+          "start": 62.32,
+          "end": 62.72
+        },
+        {
+          "from": 14,
+          "to": 15,
+          "start": 62.72,
+          "end": 63.04
+        },
+        {
+          "from": 16,
+          "to": 20,
+          "start": 63.04,
+          "end": 63.62
+        },
+        {
+          "from": 21,
+          "to": 22,
+          "start": 63.62,
+          "end": 63.88
+        },
+        {
+          "from": 23,
+          "to": 27,
+          "start": 63.88,
+          "end": 64.14
+        },
+        {
+          "from": 28,
+          "to": 31,
+          "start": 64.14,
+          "end": 64.68
+        }
+      ],
+      "sourceLine": 12,
+      "matchedWordRatio": 1.0
+    },
+    {
+      "text": "alma para conquistarte",
+      "start": 74.38,
+      "end": 77.88,
+      "words": [
+        {
+          "from": 0,
+          "to": 4,
+          "start": 74.38,
+          "end": 76.32
+        },
+        {
+          "from": 5,
+          "to": 9,
+          "start": 76.32,
+          "end": 76.74
+        },
+        {
+          "from": 10,
+          "to": 22,
+          "start": 76.74,
+          "end": 77.88
+        }
+      ],
+      "sourceLine": 13,
+      "matchedWordRatio": 1.0
+    },
+    {
+      "text": "corazón para querete",
+      "start": 78.24,
+      "end": 79.26,
+      "words": [
+        {
+          "from": 0,
+          "to": 7,
+          "start": 78.24,
+          "end": 78.78
+        },
+        {
+          "from": 8,
+          "to": 12,
+          "start": 78.78,
+          "end": 79.26
+        }
+      ],
+      "sourceLine": 14,
+      "matchedWordRatio": 0.667
+    },
+    {
+      "text": "y vida para vivirla junto a ti",
+      "start": 80.06,
+      "end": 84.02,
+      "words": [
+        {
+          "from": 0,
+          "to": 1,
+          "start": 80.06,
+          "end": 80.76
+        },
+        {
+          "from": 2,
+          "to": 6,
+          "start": 80.76,
+          "end": 81.1
+        },
+        {
+          "from": 7,
+          "to": 11,
+          "start": 81.1,
+          "end": 81.46
+        },
+        {
+          "from": 12,
+          "to": 19,
+          "start": 81.46,
+          "end": 82.66
+        },
+        {
+          "from": 20,
+          "to": 25,
+          "start": 82.66,
+          "end": 83.2
+        },
+        {
+          "from": 26,
+          "to": 27,
+          "start": 83.2,
+          "end": 83.66
+        },
+        {
+          "from": 28,
+          "to": 30,
+          "start": 83.66,
+          "end": 84.02
+        }
+      ],
+      "sourceLine": 15,
+      "matchedWordRatio": 1.0,
+      "alignment": "recognized-repetition"
+    },
+    {
+      "text": "recuerdo aquella tarde pero",
+      "start": 125.34,
+      "end": 126.96,
+      "words": [
+        {
+          "from": 0,
+          "to": 8,
+          "start": 125.34,
+          "end": 125.8
+        },
+        {
+          "from": 9,
+          "to": 16,
+          "start": 125.8,
+          "end": 126.1
+        },
+        {
+          "from": 17,
+          "to": 22,
+          "start": 126.1,
+          "end": 126.6
+        },
+        {
+          "from": 23,
+          "to": 27,
+          "start": 126.6,
+          "end": 126.96
+        }
+      ],
+      "sourceLine": 2,
+      "matchedWordRatio": 1.0,
+      "alignment": "recognized-repetition"
+    },
+    {
+      "text": "Pero si te diré que yo me enamoré",
+      "start": 129.66,
+      "end": 133.58,
+      "words": [
+        {
+          "from": 0,
+          "to": 4,
+          "start": 129.66,
+          "end": 130.26
+        },
+        {
+          "from": 5,
+          "to": 7,
+          "start": 130.26,
+          "end": 130.56
+        },
+        {
+          "from": 8,
+          "to": 10,
+          "start": 130.56,
+          "end": 130.74
+        },
+        {
+          "from": 11,
+          "to": 15,
+          "start": 130.74,
+          "end": 131.18
+        },
+        {
+          "from": 16,
+          "to": 19,
+          "start": 131.92,
+          "end": 132.52
+        },
+        {
+          "from": 20,
+          "to": 22,
+          "start": 132.52,
+          "end": 132.68
+        },
+        {
+          "from": 23,
+          "to": 25,
+          "start": 132.68,
+          "end": 132.86
+        },
+        {
+          "from": 26,
+          "to": 33,
+          "start": 132.86,
+          "end": 133.58
+        }
+      ],
+      "sourceLine": 4,
+      "matchedWordRatio": 1.0,
+      "alignment": "recognized-repetition"
+    },
+    {
+      "text": "Oye esta canción que lleva",
+      "start": 139.9,
+      "end": 142.42,
+      "words": [
+        {
+          "from": 0,
+          "to": 3,
+          "start": 139.9,
+          "end": 140.68
+        },
+        {
+          "from": 4,
+          "to": 8,
+          "start": 140.68,
+          "end": 140.88
+        },
+        {
+          "from": 9,
+          "to": 16,
+          "start": 140.88,
+          "end": 141.38
+        },
+        {
+          "from": 17,
+          "to": 20,
+          "start": 141.38,
+          "end": 141.72
+        },
+        {
+          "from": 21,
+          "to": 26,
+          "start": 141.72,
+          "end": 142.42
+        }
+      ],
+      "sourceLine": 7,
+      "matchedWordRatio": 1.0,
+      "alignment": "recognized-repetition"
+    },
+    {
+      "text": "porque no tengo fortuna",
+      "start": 149.26,
+      "end": 151.8,
+      "words": [
+        {
+          "from": 0,
+          "to": 6,
+          "start": 149.26,
+          "end": 150.04
+        },
+        {
+          "from": 7,
+          "to": 9,
+          "start": 150.04,
+          "end": 150.34
+        },
+        {
+          "from": 10,
+          "to": 15,
+          "start": 150.34,
+          "end": 150.68
+        },
+        {
+          "from": 16,
+          "to": 23,
+          "start": 150.68,
+          "end": 151.8
+        }
+      ],
+      "sourceLine": 10,
+      "matchedWordRatio": 1.0,
+      "alignment": "recognized-repetition"
+    }
+  ],
+  "unmatchedLines": []
 }

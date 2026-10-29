@@ -1,205 +1,1880 @@
 {
   "songId": "cuando-pienses",
-  "title": "Cuando pienses en volver",
   "status": "estimated",
   "reviewRequired": true,
-  "timingMethod": "text-length-proportional; not aligned to vocals or instrumental sections",
-  "durationSeconds": 251.506939,
+  "method": "local-asr-word-matching",
+  "alignmentModel": "faster-whisper-small",
+  "durationSeconds": 254.354286,
+  "audioSha256": "a6318ab0a76ebd1fa3c9e6778c0f248fe62a218c2d7eb81bb3ecd0adc8af5d10",
   "lyrics": [
     {
       "text": "Cuando pienses en volver",
-      "start": 0.0,
-      "end": 4.545306
+      "start": 17.54,
+      "end": 30.42,
+      "words": [
+        {
+          "from": 0,
+          "to": 6,
+          "start": 17.54,
+          "end": 18.94
+        },
+        {
+          "from": 7,
+          "to": 14,
+          "start": 18.94,
+          "end": 19.3
+        },
+        {
+          "from": 18,
+          "to": 24,
+          "start": 29.72,
+          "end": 30.42
+        }
+      ],
+      "sourceLine": 1,
+      "matchedWordRatio": 0.75
     },
     {
       "text": "Aquí están tus amigos, tu lugar y tu mujer",
-      "start": 4.545306,
-      "end": 11.68793
+      "start": 30.88,
+      "end": 34.5,
+      "words": [
+        {
+          "from": 0,
+          "to": 4,
+          "start": 30.88,
+          "end": 31.56
+        },
+        {
+          "from": 5,
+          "to": 10,
+          "start": 31.56,
+          "end": 31.96
+        },
+        {
+          "from": 11,
+          "to": 14,
+          "start": 31.96,
+          "end": 32.26
+        },
+        {
+          "from": 15,
+          "to": 21,
+          "start": 32.26,
+          "end": 32.84
+        },
+        {
+          "from": 23,
+          "to": 25,
+          "start": 33.08,
+          "end": 33.32
+        },
+        {
+          "from": 26,
+          "to": 31,
+          "start": 33.32,
+          "end": 33.9
+        },
+        {
+          "from": 32,
+          "to": 33,
+          "start": 33.9,
+          "end": 34.22
+        },
+        {
+          "from": 34,
+          "to": 36,
+          "start": 34.22,
+          "end": 34.5
+        }
+      ],
+      "sourceLine": 2,
+      "matchedWordRatio": 0.889
     },
     {
       "text": "Y te abrazarán, dirán que el tiempo no pasó",
-      "start": 11.68793,
-      "end": 19.046997
+      "start": 35.48,
+      "end": 40.54,
+      "words": [
+        {
+          "from": 0,
+          "to": 1,
+          "start": 35.48,
+          "end": 35.78
+        },
+        {
+          "from": 2,
+          "to": 4,
+          "start": 35.78,
+          "end": 35.98
+        },
+        {
+          "from": 16,
+          "to": 21,
+          "start": 38.06,
+          "end": 38.84
+        },
+        {
+          "from": 22,
+          "to": 25,
+          "start": 38.84,
+          "end": 39.24
+        },
+        {
+          "from": 26,
+          "to": 28,
+          "start": 39.24,
+          "end": 39.56
+        },
+        {
+          "from": 29,
+          "to": 35,
+          "start": 39.56,
+          "end": 39.88
+        },
+        {
+          "from": 36,
+          "to": 38,
+          "start": 39.88,
+          "end": 40.18
+        },
+        {
+          "from": 39,
+          "to": 43,
+          "start": 40.18,
+          "end": 40.54
+        }
+      ],
+      "sourceLine": 3,
+      "matchedWordRatio": 0.889
     },
     {
       "text": "Y te amarán con todo el corazón",
-      "start": 19.046997,
-      "end": 24.458076
+      "start": 41.22,
+      "end": 44.06,
+      "words": [
+        {
+          "from": 0,
+          "to": 1,
+          "start": 41.22,
+          "end": 41.8
+        },
+        {
+          "from": 2,
+          "to": 4,
+          "start": 41.8,
+          "end": 42.02
+        },
+        {
+          "from": 5,
+          "to": 11,
+          "start": 42.02,
+          "end": 42.64
+        },
+        {
+          "from": 12,
+          "to": 15,
+          "start": 42.64,
+          "end": 42.96
+        },
+        {
+          "from": 16,
+          "to": 20,
+          "start": 42.96,
+          "end": 43.32
+        },
+        {
+          "from": 21,
+          "to": 23,
+          "start": 43.32,
+          "end": 43.56
+        },
+        {
+          "from": 24,
+          "to": 31,
+          "start": 43.56,
+          "end": 44.06
+        }
+      ],
+      "sourceLine": 4,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Trabajas hasta muy tarde y no puedes descansar",
-      "start": 24.458076,
-      "end": 32.899359
+      "start": 44.06,
+      "end": 49.18,
+      "words": [
+        {
+          "from": 0,
+          "to": 8,
+          "start": 44.06,
+          "end": 45.76
+        },
+        {
+          "from": 9,
+          "to": 14,
+          "start": 45.76,
+          "end": 46.1
+        },
+        {
+          "from": 15,
+          "to": 18,
+          "start": 46.1,
+          "end": 46.38
+        },
+        {
+          "from": 19,
+          "to": 24,
+          "start": 46.38,
+          "end": 46.96
+        },
+        {
+          "from": 25,
+          "to": 26,
+          "start": 46.96,
+          "end": 47.4
+        },
+        {
+          "from": 27,
+          "to": 29,
+          "start": 47.4,
+          "end": 47.54
+        },
+        {
+          "from": 30,
+          "to": 36,
+          "start": 47.54,
+          "end": 48.08
+        },
+        {
+          "from": 37,
+          "to": 46,
+          "start": 48.08,
+          "end": 49.18
+        }
+      ],
+      "sourceLine": 5,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Las palabras de tu madre empiezan a sonar",
-      "start": 32.899359,
-      "end": 40.258426
+      "start": 49.18,
+      "end": 52.98,
+      "words": [
+        {
+          "from": 0,
+          "to": 3,
+          "start": 49.18,
+          "end": 49.9
+        },
+        {
+          "from": 13,
+          "to": 15,
+          "start": 50.38,
+          "end": 50.72
+        },
+        {
+          "from": 16,
+          "to": 18,
+          "start": 50.72,
+          "end": 51.02
+        },
+        {
+          "from": 19,
+          "to": 24,
+          "start": 51.02,
+          "end": 51.76
+        },
+        {
+          "from": 25,
+          "to": 33,
+          "start": 51.76,
+          "end": 52.7
+        },
+        {
+          "from": 34,
+          "to": 35,
+          "start": 52.7,
+          "end": 52.98
+        }
+      ],
+      "sourceLine": 6,
+      "matchedWordRatio": 0.75
     },
     {
       "text": "Cuando tú te estés muriendo por un poco de amor",
-      "start": 40.258426,
-      "end": 48.483265
-    },
-    {
-      "text": "Hijito, sigue adelante, domina al corazón",
-      "start": 48.483265,
-      "end": 55.842332
+      "start": 53.86,
+      "end": 58.14,
+      "words": [
+        {
+          "from": 0,
+          "to": 6,
+          "start": 53.86,
+          "end": 54.52
+        },
+        {
+          "from": 28,
+          "to": 31,
+          "start": 56.4,
+          "end": 56.96
+        },
+        {
+          "from": 32,
+          "to": 34,
+          "start": 56.96,
+          "end": 57.16
+        },
+        {
+          "from": 35,
+          "to": 39,
+          "start": 57.16,
+          "end": 57.34
+        },
+        {
+          "from": 40,
+          "to": 42,
+          "start": 57.34,
+          "end": 57.72
+        },
+        {
+          "from": 43,
+          "to": 47,
+          "start": 57.72,
+          "end": 58.14
+        }
+      ],
+      "sourceLine": 7,
+      "matchedWordRatio": 0.6
     },
     {
       "text": "Debes sacar los tormentos de tu corazón",
-      "start": 55.842332,
-      "end": 62.984956
+      "start": 62.56,
+      "end": 68.58,
+      "words": [
+        {
+          "from": 0,
+          "to": 5,
+          "start": 62.56,
+          "end": 64.48
+        },
+        {
+          "from": 6,
+          "to": 11,
+          "start": 64.48,
+          "end": 65.08
+        },
+        {
+          "from": 12,
+          "to": 15,
+          "start": 65.08,
+          "end": 65.78
+        },
+        {
+          "from": 26,
+          "to": 28,
+          "start": 66.9,
+          "end": 67.18
+        },
+        {
+          "from": 29,
+          "to": 31,
+          "start": 67.18,
+          "end": 67.56
+        },
+        {
+          "from": 32,
+          "to": 39,
+          "start": 67.56,
+          "end": 68.58
+        }
+      ],
+      "sourceLine": 9,
+      "matchedWordRatio": 0.857
     },
     {
       "text": "Pues el dolor no es eterno y pronto saldrá el Sol",
-      "start": 62.984956,
-      "end": 71.426239
+      "start": 71.18,
+      "end": 75.78,
+      "words": [
+        {
+          "from": 5,
+          "to": 7,
+          "start": 71.18,
+          "end": 71.56
+        },
+        {
+          "from": 8,
+          "to": 13,
+          "start": 71.56,
+          "end": 72.2
+        },
+        {
+          "from": 14,
+          "to": 16,
+          "start": 72.2,
+          "end": 72.46
+        },
+        {
+          "from": 17,
+          "to": 19,
+          "start": 72.46,
+          "end": 72.78
+        },
+        {
+          "from": 20,
+          "to": 26,
+          "start": 72.78,
+          "end": 73.7
+        },
+        {
+          "from": 27,
+          "to": 28,
+          "start": 73.7,
+          "end": 73.86
+        },
+        {
+          "from": 36,
+          "to": 42,
+          "start": 74.5,
+          "end": 75.22
+        },
+        {
+          "from": 43,
+          "to": 45,
+          "start": 75.22,
+          "end": 75.36
+        },
+        {
+          "from": 46,
+          "to": 49,
+          "start": 75.36,
+          "end": 75.78
+        }
+      ],
+      "sourceLine": 10,
+      "matchedWordRatio": 0.818
     },
     {
       "text": "Saldrá el Sol",
-      "start": 71.426239,
-      "end": 73.807114
+      "start": 75.9,
+      "end": 78.16,
+      "words": [
+        {
+          "from": 0,
+          "to": 6,
+          "start": 75.9,
+          "end": 77.56
+        },
+        {
+          "from": 7,
+          "to": 9,
+          "start": 77.56,
+          "end": 77.7
+        },
+        {
+          "from": 10,
+          "to": 13,
+          "start": 77.7,
+          "end": 78.16
+        }
+      ],
+      "sourceLine": 11,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Cuando pienses en volver",
-      "start": 73.807114,
-      "end": 78.35242
+      "start": 78.16,
+      "end": 83.42,
+      "words": [
+        {
+          "from": 0,
+          "to": 6,
+          "start": 78.16,
+          "end": 80.58
+        },
+        {
+          "from": 7,
+          "to": 14,
+          "start": 80.58,
+          "end": 82.16
+        },
+        {
+          "from": 18,
+          "to": 24,
+          "start": 82.84,
+          "end": 83.42
+        }
+      ],
+      "sourceLine": 12,
+      "matchedWordRatio": 0.75,
+      "alignment": "acoustic-gap-refinement"
     },
     {
       "text": "Aquí están tus amigos, tu lugar y tu mujer",
-      "start": 78.35242,
-      "end": 85.495044
+      "start": 83.98,
+      "end": 88.2,
+      "words": [
+        {
+          "from": 0,
+          "to": 4,
+          "start": 83.98,
+          "end": 84.62
+        },
+        {
+          "from": 5,
+          "to": 10,
+          "start": 84.62,
+          "end": 85.04
+        },
+        {
+          "from": 11,
+          "to": 14,
+          "start": 85.04,
+          "end": 85.38
+        },
+        {
+          "from": 15,
+          "to": 21,
+          "start": 85.38,
+          "end": 85.92
+        },
+        {
+          "from": 23,
+          "to": 25,
+          "start": 86.16,
+          "end": 86.34
+        },
+        {
+          "from": 26,
+          "to": 31,
+          "start": 86.34,
+          "end": 86.9
+        },
+        {
+          "from": 32,
+          "to": 33,
+          "start": 86.9,
+          "end": 87.32
+        },
+        {
+          "from": 34,
+          "to": 36,
+          "start": 87.32,
+          "end": 87.52
+        },
+        {
+          "from": 37,
+          "to": 42,
+          "start": 87.52,
+          "end": 88.2
+        }
+      ],
+      "sourceLine": 13,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Y te abrazarán, dirán que el tiempo no pasó",
-      "start": 85.495044,
-      "end": 92.854111
+      "start": 88.74,
+      "end": 93.7,
+      "words": [
+        {
+          "from": 0,
+          "to": 1,
+          "start": 88.74,
+          "end": 88.8
+        },
+        {
+          "from": 2,
+          "to": 4,
+          "start": 88.8,
+          "end": 89.04
+        },
+        {
+          "from": 5,
+          "to": 14,
+          "start": 89.04,
+          "end": 90.9
+        },
+        {
+          "from": 16,
+          "to": 21,
+          "start": 91.14,
+          "end": 91.9
+        },
+        {
+          "from": 22,
+          "to": 25,
+          "start": 91.9,
+          "end": 92.3
+        },
+        {
+          "from": 26,
+          "to": 28,
+          "start": 92.3,
+          "end": 92.64
+        },
+        {
+          "from": 29,
+          "to": 35,
+          "start": 92.64,
+          "end": 92.96
+        },
+        {
+          "from": 36,
+          "to": 38,
+          "start": 92.96,
+          "end": 93.28
+        },
+        {
+          "from": 39,
+          "to": 43,
+          "start": 93.28,
+          "end": 93.7
+        }
+      ],
+      "sourceLine": 14,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Y te amarán con todo el corazón",
-      "start": 92.854111,
-      "end": 98.26519
+      "start": 94.44,
+      "end": 97.08,
+      "words": [
+        {
+          "from": 0,
+          "to": 1,
+          "start": 94.44,
+          "end": 94.9
+        },
+        {
+          "from": 2,
+          "to": 4,
+          "start": 94.9,
+          "end": 95.08
+        },
+        {
+          "from": 5,
+          "to": 11,
+          "start": 95.08,
+          "end": 95.74
+        },
+        {
+          "from": 12,
+          "to": 15,
+          "start": 95.74,
+          "end": 96.02
+        },
+        {
+          "from": 16,
+          "to": 20,
+          "start": 96.02,
+          "end": 96.38
+        },
+        {
+          "from": 21,
+          "to": 23,
+          "start": 96.38,
+          "end": 96.62
+        },
+        {
+          "from": 24,
+          "to": 31,
+          "start": 96.62,
+          "end": 97.08
+        }
+      ],
+      "sourceLine": 15,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Puede ser que, en tu tierra, no había a dónde ir",
-      "start": 98.26519,
-      "end": 106.057143
+      "start": 97.08,
+      "end": 102.22,
+      "words": [
+        {
+          "from": 0,
+          "to": 5,
+          "start": 97.08,
+          "end": 98.74
+        },
+        {
+          "from": 6,
+          "to": 9,
+          "start": 98.74,
+          "end": 99.1
+        },
+        {
+          "from": 10,
+          "to": 13,
+          "start": 99.1,
+          "end": 99.32
+        },
+        {
+          "from": 15,
+          "to": 17,
+          "start": 99.32,
+          "end": 99.48
+        },
+        {
+          "from": 18,
+          "to": 20,
+          "start": 99.48,
+          "end": 99.56
+        },
+        {
+          "from": 21,
+          "to": 27,
+          "start": 99.56,
+          "end": 100.04
+        },
+        {
+          "from": 46,
+          "to": 48,
+          "start": 101.76,
+          "end": 102.22
+        }
+      ],
+      "sourceLine": 16,
+      "matchedWordRatio": 0.636
     },
     {
       "text": "Puede ser que tus sueños no tenían lugar",
-      "start": 106.057143,
-      "end": 113.199767
+      "start": 102.22,
+      "end": 106.48,
+      "words": [
+        {
+          "from": 0,
+          "to": 5,
+          "start": 102.22,
+          "end": 103.32
+        },
+        {
+          "from": 6,
+          "to": 9,
+          "start": 103.32,
+          "end": 103.72
+        },
+        {
+          "from": 10,
+          "to": 13,
+          "start": 103.72,
+          "end": 103.96
+        },
+        {
+          "from": 14,
+          "to": 17,
+          "start": 103.96,
+          "end": 104.18
+        },
+        {
+          "from": 18,
+          "to": 24,
+          "start": 104.18,
+          "end": 104.84
+        },
+        {
+          "from": 25,
+          "to": 27,
+          "start": 104.84,
+          "end": 105.22
+        },
+        {
+          "from": 28,
+          "to": 34,
+          "start": 105.22,
+          "end": 105.84
+        },
+        {
+          "from": 35,
+          "to": 40,
+          "start": 105.84,
+          "end": 106.48
+        }
+      ],
+      "sourceLine": 17,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Pero, solo en tu cuarto, tú tendrás que admitir",
-      "start": 113.199767,
-      "end": 121.208163
+      "start": 107.08,
+      "end": 111.56,
+      "words": [
+        {
+          "from": 0,
+          "to": 4,
+          "start": 107.08,
+          "end": 107.9
+        },
+        {
+          "from": 6,
+          "to": 10,
+          "start": 107.9,
+          "end": 108.28
+        },
+        {
+          "from": 11,
+          "to": 13,
+          "start": 108.28,
+          "end": 108.52
+        },
+        {
+          "from": 14,
+          "to": 16,
+          "start": 108.52,
+          "end": 108.66
+        },
+        {
+          "from": 17,
+          "to": 23,
+          "start": 108.66,
+          "end": 109.24
+        },
+        {
+          "from": 25,
+          "to": 27,
+          "start": 109.24,
+          "end": 109.84
+        },
+        {
+          "from": 28,
+          "to": 35,
+          "start": 109.84,
+          "end": 110.4
+        },
+        {
+          "from": 36,
+          "to": 39,
+          "start": 110.4,
+          "end": 110.54
+        },
+        {
+          "from": 40,
+          "to": 47,
+          "start": 110.54,
+          "end": 111.56
+        }
+      ],
+      "sourceLine": 18,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Que podía haber pobreza, pero nunca soledad",
-      "start": 121.208163,
-      "end": 129.000117
+      "start": 111.56,
+      "end": 116.16,
+      "words": [
+        {
+          "from": 0,
+          "to": 3,
+          "start": 111.56,
+          "end": 112.38
+        },
+        {
+          "from": 10,
+          "to": 15,
+          "start": 112.72,
+          "end": 113.02
+        },
+        {
+          "from": 16,
+          "to": 23,
+          "start": 113.02,
+          "end": 113.86
+        },
+        {
+          "from": 25,
+          "to": 29,
+          "start": 113.86,
+          "end": 114.42
+        },
+        {
+          "from": 30,
+          "to": 35,
+          "start": 114.42,
+          "end": 114.94
+        },
+        {
+          "from": 36,
+          "to": 43,
+          "start": 114.94,
+          "end": 116.16
+        }
+      ],
+      "sourceLine": 19,
+      "matchedWordRatio": 0.857
     },
     {
       "text": "Quieres sacar los tormentos de tu corazón",
-      "start": 129.000117,
-      "end": 136.575627
+      "start": 116.16,
+      "end": 121.6,
+      "words": [
+        {
+          "from": 0,
+          "to": 7,
+          "start": 116.16,
+          "end": 117.74
+        },
+        {
+          "from": 8,
+          "to": 13,
+          "start": 117.74,
+          "end": 118.14
+        },
+        {
+          "from": 14,
+          "to": 17,
+          "start": 118.14,
+          "end": 118.84
+        },
+        {
+          "from": 18,
+          "to": 27,
+          "start": 118.84,
+          "end": 119.94
+        },
+        {
+          "from": 28,
+          "to": 30,
+          "start": 119.94,
+          "end": 120.22
+        },
+        {
+          "from": 31,
+          "to": 33,
+          "start": 120.22,
+          "end": 120.66
+        },
+        {
+          "from": 34,
+          "to": 41,
+          "start": 120.66,
+          "end": 121.6
+        }
+      ],
+      "sourceLine": 20,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Pues el dolor no es eterno y pronto saldrá el Sol",
-      "start": 136.575627,
-      "end": 145.01691
+      "start": 123.18,
+      "end": 128.8,
+      "words": [
+        {
+          "from": 0,
+          "to": 4,
+          "start": 123.18,
+          "end": 124.18
+        },
+        {
+          "from": 5,
+          "to": 7,
+          "start": 124.18,
+          "end": 124.68
+        },
+        {
+          "from": 8,
+          "to": 13,
+          "start": 124.68,
+          "end": 125.18
+        },
+        {
+          "from": 14,
+          "to": 16,
+          "start": 125.18,
+          "end": 125.52
+        },
+        {
+          "from": 17,
+          "to": 19,
+          "start": 125.52,
+          "end": 125.86
+        },
+        {
+          "from": 20,
+          "to": 26,
+          "start": 125.86,
+          "end": 126.72
+        },
+        {
+          "from": 27,
+          "to": 28,
+          "start": 126.72,
+          "end": 126.9
+        },
+        {
+          "from": 29,
+          "to": 35,
+          "start": 126.9,
+          "end": 127.36
+        },
+        {
+          "from": 36,
+          "to": 42,
+          "start": 127.36,
+          "end": 128.3
+        },
+        {
+          "from": 43,
+          "to": 45,
+          "start": 128.3,
+          "end": 128.46
+        },
+        {
+          "from": 46,
+          "to": 49,
+          "start": 128.46,
+          "end": 128.8
+        }
+      ],
+      "sourceLine": 21,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Saldrá el Sol",
-      "start": 145.01691,
-      "end": 147.397784
+      "start": 128.88,
+      "end": 131.54,
+      "words": [
+        {
+          "from": 0,
+          "to": 6,
+          "start": 128.88,
+          "end": 130.64
+        },
+        {
+          "from": 7,
+          "to": 9,
+          "start": 130.64,
+          "end": 130.8
+        },
+        {
+          "from": 10,
+          "to": 13,
+          "start": 130.8,
+          "end": 131.54
+        }
+      ],
+      "sourceLine": 22,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Cuando pienses en volver",
-      "start": 147.397784,
-      "end": 151.943091
+      "start": 132.6,
+      "end": 136.6,
+      "words": [
+        {
+          "from": 0,
+          "to": 6,
+          "start": 132.6,
+          "end": 133.46
+        },
+        {
+          "from": 7,
+          "to": 14,
+          "start": 133.46,
+          "end": 135.16
+        },
+        {
+          "from": 15,
+          "to": 17,
+          "start": 135.16,
+          "end": 135.9
+        },
+        {
+          "from": 18,
+          "to": 24,
+          "start": 135.9,
+          "end": 136.6
+        }
+      ],
+      "sourceLine": 23,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Aquí están tus amigos, tu lugar y tu mujer",
-      "start": 151.943091,
-      "end": 159.085714
+      "start": 136.6,
+      "end": 141.38,
+      "words": [
+        {
+          "from": 0,
+          "to": 4,
+          "start": 136.6,
+          "end": 137.7
+        },
+        {
+          "from": 5,
+          "to": 10,
+          "start": 137.7,
+          "end": 138.12
+        },
+        {
+          "from": 11,
+          "to": 14,
+          "start": 138.12,
+          "end": 138.46
+        },
+        {
+          "from": 15,
+          "to": 21,
+          "start": 138.46,
+          "end": 139.0
+        },
+        {
+          "from": 23,
+          "to": 25,
+          "start": 139.0,
+          "end": 139.46
+        },
+        {
+          "from": 26,
+          "to": 31,
+          "start": 139.46,
+          "end": 139.98
+        },
+        {
+          "from": 32,
+          "to": 33,
+          "start": 139.98,
+          "end": 140.36
+        },
+        {
+          "from": 34,
+          "to": 36,
+          "start": 140.36,
+          "end": 140.56
+        },
+        {
+          "from": 37,
+          "to": 42,
+          "start": 140.56,
+          "end": 141.38
+        }
+      ],
+      "sourceLine": 24,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Y te abrazarán, dirán que el tiempo no pasó",
-      "start": 159.085714,
-      "end": 166.444781
+      "start": 141.38,
+      "end": 146.84,
+      "words": [
+        {
+          "from": 0,
+          "to": 1,
+          "start": 141.38,
+          "end": 141.9
+        },
+        {
+          "from": 2,
+          "to": 4,
+          "start": 141.9,
+          "end": 142.12
+        },
+        {
+          "from": 16,
+          "to": 21,
+          "start": 143.98,
+          "end": 144.98
+        },
+        {
+          "from": 22,
+          "to": 25,
+          "start": 144.98,
+          "end": 145.42
+        },
+        {
+          "from": 29,
+          "to": 35,
+          "start": 145.42,
+          "end": 146.04
+        },
+        {
+          "from": 36,
+          "to": 38,
+          "start": 146.04,
+          "end": 146.34
+        },
+        {
+          "from": 39,
+          "to": 43,
+          "start": 146.34,
+          "end": 146.84
+        }
+      ],
+      "sourceLine": 25,
+      "matchedWordRatio": 0.778
     },
     {
       "text": "Y te amarán con todo el corazón",
-      "start": 166.444781,
-      "end": 171.85586
+      "start": 146.84,
+      "end": 150.2,
+      "words": [
+        {
+          "from": 0,
+          "to": 1,
+          "start": 146.84,
+          "end": 147.98
+        },
+        {
+          "from": 12,
+          "to": 15,
+          "start": 148.84,
+          "end": 149.1
+        },
+        {
+          "from": 16,
+          "to": 20,
+          "start": 149.1,
+          "end": 149.48
+        },
+        {
+          "from": 21,
+          "to": 23,
+          "start": 149.48,
+          "end": 149.7
+        },
+        {
+          "from": 24,
+          "to": 31,
+          "start": 149.7,
+          "end": 150.2
+        }
+      ],
+      "sourceLine": 26,
+      "matchedWordRatio": 0.714
     },
     {
       "text": "Quieres sacar los tormentos de tu corazón",
-      "start": 171.85586,
-      "end": 179.43137
+      "start": 179.12,
+      "end": 183.76,
+      "words": [
+        {
+          "from": 0,
+          "to": 7,
+          "start": 179.12,
+          "end": 180.06
+        },
+        {
+          "from": 8,
+          "to": 13,
+          "start": 180.06,
+          "end": 180.48
+        },
+        {
+          "from": 14,
+          "to": 17,
+          "start": 180.48,
+          "end": 181.18
+        },
+        {
+          "from": 18,
+          "to": 27,
+          "start": 181.18,
+          "end": 182.26
+        },
+        {
+          "from": 28,
+          "to": 30,
+          "start": 182.26,
+          "end": 182.54
+        },
+        {
+          "from": 31,
+          "to": 33,
+          "start": 182.54,
+          "end": 182.9
+        },
+        {
+          "from": 34,
+          "to": 41,
+          "start": 182.9,
+          "end": 183.76
+        }
+      ],
+      "sourceLine": 27,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Pues el dolor no es eterno y pronto saldrá el Sol",
-      "start": 179.43137,
-      "end": 187.872653
+      "start": 186.78,
+      "end": 191.1,
+      "words": [
+        {
+          "from": 8,
+          "to": 13,
+          "start": 186.78,
+          "end": 187.46
+        },
+        {
+          "from": 17,
+          "to": 19,
+          "start": 187.82,
+          "end": 188.16
+        },
+        {
+          "from": 20,
+          "to": 26,
+          "start": 188.16,
+          "end": 189.06
+        },
+        {
+          "from": 27,
+          "to": 28,
+          "start": 189.06,
+          "end": 189.24
+        },
+        {
+          "from": 29,
+          "to": 35,
+          "start": 189.24,
+          "end": 189.66
+        },
+        {
+          "from": 36,
+          "to": 42,
+          "start": 189.66,
+          "end": 190.62
+        },
+        {
+          "from": 43,
+          "to": 45,
+          "start": 190.62,
+          "end": 190.76
+        },
+        {
+          "from": 46,
+          "to": 49,
+          "start": 190.76,
+          "end": 191.1
+        }
+      ],
+      "sourceLine": 28,
+      "matchedWordRatio": 0.727
     },
     {
       "text": "Saldrá el Sol",
-      "start": 187.872653,
-      "end": 190.253528
+      "start": 191.84,
+      "end": 193.46,
+      "words": [
+        {
+          "from": 0,
+          "to": 6,
+          "start": 191.84,
+          "end": 192.94
+        },
+        {
+          "from": 7,
+          "to": 9,
+          "start": 192.94,
+          "end": 193.1
+        },
+        {
+          "from": 10,
+          "to": 13,
+          "start": 193.1,
+          "end": 193.46
+        }
+      ],
+      "sourceLine": 29,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Cuando pienses en volver",
-      "start": 190.253528,
-      "end": 194.798834
+      "start": 195.14,
+      "end": 198.96,
+      "words": [
+        {
+          "from": 0,
+          "to": 6,
+          "start": 195.14,
+          "end": 196.0
+        },
+        {
+          "from": 7,
+          "to": 14,
+          "start": 196.0,
+          "end": 197.48
+        },
+        {
+          "from": 15,
+          "to": 17,
+          "start": 197.48,
+          "end": 198.24
+        },
+        {
+          "from": 18,
+          "to": 24,
+          "start": 198.24,
+          "end": 198.96
+        }
+      ],
+      "sourceLine": 30,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Aquí están tus amigos, tu lugar y tu mujer",
-      "start": 194.798834,
-      "end": 201.941458
+      "start": 199.42,
+      "end": 203.7,
+      "words": [
+        {
+          "from": 0,
+          "to": 4,
+          "start": 199.42,
+          "end": 200.0
+        },
+        {
+          "from": 5,
+          "to": 10,
+          "start": 200.0,
+          "end": 200.42
+        },
+        {
+          "from": 11,
+          "to": 14,
+          "start": 200.42,
+          "end": 200.76
+        },
+        {
+          "from": 15,
+          "to": 21,
+          "start": 200.76,
+          "end": 201.3
+        },
+        {
+          "from": 23,
+          "to": 25,
+          "start": 201.36,
+          "end": 201.76
+        },
+        {
+          "from": 26,
+          "to": 31,
+          "start": 201.76,
+          "end": 202.34
+        },
+        {
+          "from": 32,
+          "to": 33,
+          "start": 202.34,
+          "end": 202.66
+        },
+        {
+          "from": 34,
+          "to": 36,
+          "start": 202.66,
+          "end": 202.9
+        },
+        {
+          "from": 37,
+          "to": 42,
+          "start": 202.9,
+          "end": 203.7
+        }
+      ],
+      "sourceLine": 31,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Y te abrazarán, dirán que el tiempo no pasó",
-      "start": 201.941458,
-      "end": 209.300525
+      "start": 203.7,
+      "end": 209.18,
+      "words": [
+        {
+          "from": 0,
+          "to": 1,
+          "start": 203.7,
+          "end": 204.2
+        },
+        {
+          "from": 2,
+          "to": 4,
+          "start": 204.2,
+          "end": 204.42
+        },
+        {
+          "from": 5,
+          "to": 14,
+          "start": 204.42,
+          "end": 206.14
+        },
+        {
+          "from": 16,
+          "to": 21,
+          "start": 206.14,
+          "end": 207.26
+        },
+        {
+          "from": 22,
+          "to": 25,
+          "start": 207.26,
+          "end": 207.66
+        },
+        {
+          "from": 26,
+          "to": 28,
+          "start": 207.66,
+          "end": 207.96
+        },
+        {
+          "from": 29,
+          "to": 35,
+          "start": 207.96,
+          "end": 208.34
+        },
+        {
+          "from": 36,
+          "to": 38,
+          "start": 208.34,
+          "end": 208.64
+        },
+        {
+          "from": 39,
+          "to": 43,
+          "start": 208.64,
+          "end": 209.18
+        }
+      ],
+      "sourceLine": 32,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Y te amarán con todo el corazón",
-      "start": 209.300525,
-      "end": 214.711604
+      "start": 209.7,
+      "end": 212.6,
+      "words": [
+        {
+          "from": 0,
+          "to": 1,
+          "start": 209.7,
+          "end": 210.28
+        },
+        {
+          "from": 2,
+          "to": 4,
+          "start": 210.28,
+          "end": 210.48
+        },
+        {
+          "from": 5,
+          "to": 11,
+          "start": 210.48,
+          "end": 211.12
+        },
+        {
+          "from": 12,
+          "to": 15,
+          "start": 211.12,
+          "end": 211.4
+        },
+        {
+          "from": 16,
+          "to": 20,
+          "start": 211.4,
+          "end": 211.76
+        },
+        {
+          "from": 21,
+          "to": 23,
+          "start": 211.76,
+          "end": 211.98
+        },
+        {
+          "from": 24,
+          "to": 31,
+          "start": 211.98,
+          "end": 212.6
+        }
+      ],
+      "sourceLine": 33,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Cuando ya tú estés acá",
-      "start": 214.711604,
-      "end": 218.60758
+      "start": 213.7,
+      "end": 217.36,
+      "words": [
+        {
+          "from": 0,
+          "to": 6,
+          "start": 213.7,
+          "end": 214.26
+        },
+        {
+          "from": 7,
+          "to": 9,
+          "start": 214.26,
+          "end": 215.4
+        },
+        {
+          "from": 10,
+          "to": 12,
+          "start": 215.4,
+          "end": 215.96
+        },
+        {
+          "from": 13,
+          "to": 18,
+          "start": 215.96,
+          "end": 216.5
+        },
+        {
+          "from": 19,
+          "to": 22,
+          "start": 216.5,
+          "end": 217.36
+        }
+      ],
+      "sourceLine": 34,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Trabaja hasta las lágrimas, como lo hacías allá",
-      "start": 218.60758,
-      "end": 227.048863
+      "start": 217.36,
+      "end": 221.7,
+      "words": [
+        {
+          "from": 0,
+          "to": 7,
+          "start": 217.36,
+          "end": 218.76
+        },
+        {
+          "from": 8,
+          "to": 13,
+          "start": 218.76,
+          "end": 219.12
+        },
+        {
+          "from": 14,
+          "to": 17,
+          "start": 219.12,
+          "end": 219.52
+        },
+        {
+          "from": 18,
+          "to": 26,
+          "start": 219.52,
+          "end": 220.18
+        },
+        {
+          "from": 33,
+          "to": 35,
+          "start": 220.72,
+          "end": 221.0
+        },
+        {
+          "from": 36,
+          "to": 42,
+          "start": 221.0,
+          "end": 221.46
+        },
+        {
+          "from": 43,
+          "to": 47,
+          "start": 221.46,
+          "end": 221.7
+        }
+      ],
+      "sourceLine": 35,
+      "matchedWordRatio": 0.875,
+      "alignment": "acoustic-gap-refinement"
     },
     {
       "text": "Solo así verás que tu país no fracasó",
-      "start": 227.048863,
-      "end": 233.542158
+      "start": 222.32,
+      "end": 226.9,
+      "words": [
+        {
+          "from": 0,
+          "to": 4,
+          "start": 222.32,
+          "end": 222.82
+        },
+        {
+          "from": 15,
+          "to": 18,
+          "start": 224.8,
+          "end": 225.22
+        },
+        {
+          "from": 19,
+          "to": 21,
+          "start": 225.38,
+          "end": 225.74
+        },
+        {
+          "from": 22,
+          "to": 26,
+          "start": 225.74,
+          "end": 226.56
+        },
+        {
+          "from": 27,
+          "to": 29,
+          "start": 226.56,
+          "end": 226.9
+        }
+      ],
+      "sourceLine": 36,
+      "matchedWordRatio": 0.625
     },
     {
       "text": "Sino que tanto amor te relajó",
-      "start": 233.542158,
-      "end": 238.736793
+      "start": 228.36,
+      "end": 231.2,
+      "words": [
+        {
+          "from": 0,
+          "to": 4,
+          "start": 228.36,
+          "end": 228.86
+        },
+        {
+          "from": 5,
+          "to": 8,
+          "start": 228.86,
+          "end": 229.1
+        },
+        {
+          "from": 9,
+          "to": 14,
+          "start": 229.26,
+          "end": 229.54
+        },
+        {
+          "from": 15,
+          "to": 19,
+          "start": 229.54,
+          "end": 230.16
+        },
+        {
+          "from": 20,
+          "to": 22,
+          "start": 230.16,
+          "end": 230.38
+        },
+        {
+          "from": 23,
+          "to": 29,
+          "start": 230.38,
+          "end": 231.2
+        }
+      ],
+      "sourceLine": 37,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Y te abrazarán, dirán que el tiempo no pasó",
-      "start": 238.736793,
-      "end": 246.09586
+      "start": 231.92,
+      "end": 236.82,
+      "words": [
+        {
+          "from": 2,
+          "to": 4,
+          "start": 231.92,
+          "end": 232.12
+        },
+        {
+          "from": 5,
+          "to": 14,
+          "start": 232.12,
+          "end": 233.96
+        },
+        {
+          "from": 16,
+          "to": 21,
+          "start": 234.22,
+          "end": 234.96
+        },
+        {
+          "from": 22,
+          "to": 25,
+          "start": 234.96,
+          "end": 235.4
+        },
+        {
+          "from": 26,
+          "to": 28,
+          "start": 235.4,
+          "end": 235.72
+        },
+        {
+          "from": 29,
+          "to": 35,
+          "start": 235.72,
+          "end": 236.02
+        },
+        {
+          "from": 36,
+          "to": 38,
+          "start": 236.02,
+          "end": 236.34
+        },
+        {
+          "from": 39,
+          "to": 43,
+          "start": 236.34,
+          "end": 236.82
+        }
+      ],
+      "sourceLine": 38,
+      "matchedWordRatio": 0.889
     },
     {
       "text": "Y te amarán con todo el corazón",
-      "start": 246.09586,
-      "end": 251.506939
+      "start": 236.82,
+      "end": 240.3,
+      "words": [
+        {
+          "from": 0,
+          "to": 1,
+          "start": 236.82,
+          "end": 237.96
+        },
+        {
+          "from": 2,
+          "to": 4,
+          "start": 237.96,
+          "end": 238.18
+        },
+        {
+          "from": 5,
+          "to": 11,
+          "start": 238.18,
+          "end": 238.84
+        },
+        {
+          "from": 12,
+          "to": 15,
+          "start": 238.84,
+          "end": 239.08
+        },
+        {
+          "from": 16,
+          "to": 20,
+          "start": 239.08,
+          "end": 239.46
+        },
+        {
+          "from": 21,
+          "to": 23,
+          "start": 239.46,
+          "end": 239.68
+        },
+        {
+          "from": 24,
+          "to": 31,
+          "start": 239.68,
+          "end": 240.3
+        }
+      ],
+      "sourceLine": 39,
+      "matchedWordRatio": 1.0
+    }
+  ],
+  "unmatchedLines": [
+    {
+      "line": 8,
+      "text": "Hijito, sigue adelante, domina al corazón",
+      "coverage": 0.5
     }
   ]
 }

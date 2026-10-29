@@ -1,10 +1,11 @@
-const VERSION = "c7cfaf1e0a707a55f0e2";
+const VERSION = "601b10f7323516ff2d0d";
 const PREFIX = `samay-karaoke-${self.registration.scope}-`;
 const CACHE = PREFIX + VERSION;
 const manifestURL = new URL("offline-assets.json", self.registration.scope).href;
 let job = null;
 let lastStatus = null;
 const mediaBlobs = new Map();
+let assetIndex;
 
 self.addEventListener("install", event => event.waitUntil(self.skipWaiting()));
 self.addEventListener("activate", event => event.waitUntil(self.clients.claim()));
@@ -116,10 +117,17 @@ function canonical(request) {
 
 async function fromCache(url) {
   const current = await (await caches.open(CACHE)).match(url);
-  if (current) return current;
+  if (url === manifestURL) return current;
+  if (!assetIndex) assetIndex = getManifest().then(manifest => new Map(manifest.assets.map(asset => [assetURL(asset), asset])))
+    .catch(error => { assetIndex = null; throw error; });
+  let expected;
+  try { expected = (await assetIndex).get(url); } catch { return; }
+  if (!expected) return;
+  if (valid(current, expected)) return current;
   for (const name of (await caches.keys()).filter(key => key.startsWith(PREFIX) && key !== CACHE)) {
     const response = await (await caches.open(name)).match(url);
-    if (response) return response;
+    // Never pair a new lyric clock with a cached recording from an older release.
+    if (valid(response, expected)) return response;
   }
 }
 
@@ -151,7 +159,7 @@ self.addEventListener("fetch", event => {
   if (!["GET", "HEAD"].includes(request.method) || new URL(request.url).origin !== self.location.origin) return;
   event.respondWith((async () => {
     const cached = await fromCache(canonical(request));
-    if (!cached) return fetch(request);
+    if (!cached) return fetch(request, { cache: "no-store" });
     if (request.method === "HEAD") return new Response(null, { status: cached.status, headers: cached.headers });
     return request.headers.has("Range") ? partial(cached, request.headers.get("Range"), canonical(request)) : cached;
   })());

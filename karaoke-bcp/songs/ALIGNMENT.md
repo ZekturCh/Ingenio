@@ -1,5 +1,25 @@
 # Marcas revisadas contra audio
 
+## Actualizacion del 29/10/2026
+
+Se reemplazaron 23 grabaciones por los MP3 con voz aportados por el usuario.
+Las marcas se recalcularon contra los archivos nuevos, no se trasladaron desde
+el instrumental anterior. `VOCAL-IMPORT-20261029.json` es el informe vigente
+del lote: incluye hashes, duraciones y frases sin alinear.
+
+El proceso usa faster-whisper-small local, una alineacion global de palabras
+que respeta las repeticiones y refinamiento acustico en huecos de hasta 29 s
+delimitados por entradas reconocidas. No se extrapolan frases a lo largo de
+secciones instrumentales. Las repeticiones recuperadas requieren coincidencias
+de al menos cuatro palabras, sin solaparse con otras frases.
+
+`matchedWordRatio` mide coincidencia textual, no garantiza precision.
+Todas las marcas automaticas conservan `reviewRequired: true`. El pintado por
+palabras y la seleccion de frase usan el mismo reloj corregido por Bluetooth.
+Las calibraciones locales antiguas se invalidan si cambia el hash de grabacion.
+
+Los siguientes apartados son el historial del analisis anterior al reemplazo.
+
 El 25/10/2026 se analizó localmente el audio exacto del repositorio. Los modelos de
 reconocimiento de voz y alineación de palabras permitieron mejorar estas dos pistas;
 los JSON conservan `status: estimated` y `reviewRequired: true` porque todavía

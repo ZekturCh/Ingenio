@@ -301,6 +301,7 @@ svg{width:28px;height:28px;flex:none;stroke-width:2.5}
 .stage .lyrics .current{font-weight:800;width:fit-content;max-width:100%;justify-self:center}
 .stage .currentBase{color:#26211c}
 .stage .currentFill{color:#d94b00}
+.stage .lyricWord{background:linear-gradient(to right,#d94b00 var(--word-fill,0%),#26211c var(--word-fill,0%));background-clip:text;-webkit-background-clip:text;color:transparent}
 .stage .lyricContext{font-weight:600;color:#51483f}
 .stage .lyricContext.previous{font-weight:400;color:#6d6257}
 @media(max-height:1200px){

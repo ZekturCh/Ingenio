@@ -1,252 +1,1594 @@
 {
   "songId": "la-flor-de-la-canela",
-  "title": "La Flor de la Canela",
   "status": "estimated",
   "reviewRequired": true,
-  "timingMethod": "forced word-to-audio alignment anchored by local speech recognition; review required",
-  "durationSeconds": 211.148,
+  "method": "local-asr-word-matching",
+  "alignmentModel": "faster-whisper-small",
+  "durationSeconds": 211.226122,
+  "audioSha256": "be4f055454e0d2201b945663c2b759f49bb18636b247b186a4ab57fedd2eb111",
   "lyrics": [
     {
       "text": "Déjame que te cuente, limeño",
-      "start": 26.84,
+      "start": 26.8,
       "end": 29.98,
-      "probability": 0.511
+      "words": [
+        {
+          "from": 0,
+          "to": 6,
+          "start": 26.8,
+          "end": 27.7
+        },
+        {
+          "from": 7,
+          "to": 10,
+          "start": 27.7,
+          "end": 28.0
+        },
+        {
+          "from": 14,
+          "to": 20,
+          "start": 28.36,
+          "end": 29.28
+        },
+        {
+          "from": 22,
+          "to": 28,
+          "start": 29.44,
+          "end": 29.98
+        }
+      ],
+      "sourceLine": 1,
+      "matchedWordRatio": 0.8
     },
     {
       "text": "Déjame que te diga la gloria",
-      "start": 31.68,
-      "end": 35.64,
-      "probability": 0.895
+      "start": 31.64,
+      "end": 35.62,
+      "words": [
+        {
+          "from": 0,
+          "to": 6,
+          "start": 31.64,
+          "end": 32.96
+        },
+        {
+          "from": 7,
+          "to": 10,
+          "start": 32.96,
+          "end": 33.28
+        },
+        {
+          "from": 11,
+          "to": 13,
+          "start": 33.28,
+          "end": 33.6
+        },
+        {
+          "from": 14,
+          "to": 18,
+          "start": 33.6,
+          "end": 34.56
+        },
+        {
+          "from": 19,
+          "to": 21,
+          "start": 34.56,
+          "end": 34.76
+        },
+        {
+          "from": 22,
+          "to": 28,
+          "start": 34.76,
+          "end": 35.62
+        }
+      ],
+      "sourceLine": 2,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Del ensueño que evoca la memoria",
-      "start": 35.7,
+      "start": 38.32,
       "end": 41.0,
-      "probability": 0.708
+      "words": [
+        {
+          "from": 12,
+          "to": 15,
+          "start": 38.32,
+          "end": 39.02
+        },
+        {
+          "from": 16,
+          "to": 21,
+          "start": 39.02,
+          "end": 39.44
+        },
+        {
+          "from": 22,
+          "to": 24,
+          "start": 39.44,
+          "end": 39.92
+        },
+        {
+          "from": 25,
+          "to": 32,
+          "start": 39.92,
+          "end": 41.0
+        }
+      ],
+      "sourceLine": 3,
+      "matchedWordRatio": 0.667
     },
     {
       "text": "Del viejo puente, del río y la alameda",
       "start": 41.72,
-      "end": 45.1,
-      "probability": 0.642
+      "end": 45.12,
+      "words": [
+        {
+          "from": 0,
+          "to": 3,
+          "start": 41.72,
+          "end": 42.3
+        },
+        {
+          "from": 4,
+          "to": 9,
+          "start": 42.3,
+          "end": 42.84
+        },
+        {
+          "from": 10,
+          "to": 16,
+          "start": 42.84,
+          "end": 43.7
+        },
+        {
+          "from": 18,
+          "to": 21,
+          "start": 43.7,
+          "end": 44.18
+        },
+        {
+          "from": 22,
+          "to": 25,
+          "start": 44.18,
+          "end": 44.64
+        },
+        {
+          "from": 26,
+          "to": 27,
+          "start": 44.64,
+          "end": 44.98
+        },
+        {
+          "from": 28,
+          "to": 30,
+          "start": 44.98,
+          "end": 45.12
+        }
+      ],
+      "sourceLine": 4,
+      "matchedWordRatio": 0.875
     },
     {
       "text": "Déjame que te cuente, limeño",
-      "start": 47.98,
+      "start": 48.28,
       "end": 50.72,
-      "probability": 0.531
+      "words": [
+        {
+          "from": 0,
+          "to": 6,
+          "start": 48.28,
+          "end": 49.26
+        },
+        {
+          "from": 7,
+          "to": 10,
+          "start": 49.26,
+          "end": 49.54
+        },
+        {
+          "from": 11,
+          "to": 13,
+          "start": 49.54,
+          "end": 49.92
+        },
+        {
+          "from": 14,
+          "to": 20,
+          "start": 49.92,
+          "end": 50.72
+        }
+      ],
+      "sourceLine": 5,
+      "matchedWordRatio": 0.8
     },
     {
       "text": "Ahora que aún perfuma el recuerdo",
-      "start": 53.02,
-      "end": 56.98,
-      "probability": 0.693
+      "start": 53.04,
+      "end": 57.0,
+      "words": [
+        {
+          "from": 0,
+          "to": 5,
+          "start": 53.04,
+          "end": 54.1
+        },
+        {
+          "from": 6,
+          "to": 9,
+          "start": 54.1,
+          "end": 54.44
+        },
+        {
+          "from": 10,
+          "to": 13,
+          "start": 54.44,
+          "end": 54.78
+        },
+        {
+          "from": 22,
+          "to": 24,
+          "start": 55.62,
+          "end": 56.12
+        },
+        {
+          "from": 25,
+          "to": 33,
+          "start": 56.12,
+          "end": 57.0
+        }
+      ],
+      "sourceLine": 6,
+      "matchedWordRatio": 0.833
     },
     {
       "text": "Ahora que aún se mece en un sueño",
-      "start": 58.34,
-      "end": 62.74,
-      "probability": 0.878
+      "start": 57.92,
+      "end": 62.76,
+      "words": [
+        {
+          "from": 0,
+          "to": 5,
+          "start": 57.92,
+          "end": 59.42
+        },
+        {
+          "from": 6,
+          "to": 9,
+          "start": 59.42,
+          "end": 59.82
+        },
+        {
+          "from": 10,
+          "to": 13,
+          "start": 59.82,
+          "end": 60.18
+        },
+        {
+          "from": 14,
+          "to": 16,
+          "start": 60.18,
+          "end": 60.56
+        },
+        {
+          "from": 25,
+          "to": 27,
+          "start": 61.44,
+          "end": 61.8
+        },
+        {
+          "from": 28,
+          "to": 33,
+          "start": 61.8,
+          "end": 62.76
+        }
+      ],
+      "sourceLine": 7,
+      "matchedWordRatio": 0.75
     },
     {
       "text": "El viejo puente el río y la alameda",
       "start": 63.44,
-      "end": 67.78,
-      "probability": 0.79
+      "end": 66.78,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 63.44,
+          "end": 63.74
+        },
+        {
+          "from": 3,
+          "to": 8,
+          "start": 63.74,
+          "end": 64.24
+        },
+        {
+          "from": 9,
+          "to": 15,
+          "start": 64.24,
+          "end": 65.24
+        },
+        {
+          "from": 19,
+          "to": 22,
+          "start": 65.86,
+          "end": 66.22
+        },
+        {
+          "from": 23,
+          "to": 24,
+          "start": 66.22,
+          "end": 66.48
+        },
+        {
+          "from": 25,
+          "to": 27,
+          "start": 66.48,
+          "end": 66.78
+        }
+      ],
+      "sourceLine": 8,
+      "matchedWordRatio": 0.75
     },
     {
       "text": "Jazmines en el pelo y rosas en la cara",
-      "start": 68.6,
-      "end": 73.14,
-      "probability": 0.787
+      "start": 69.36,
+      "end": 73.12,
+      "words": [
+        {
+          "from": 9,
+          "to": 11,
+          "start": 69.36,
+          "end": 69.8
+        },
+        {
+          "from": 12,
+          "to": 14,
+          "start": 69.8,
+          "end": 70.1
+        },
+        {
+          "from": 20,
+          "to": 21,
+          "start": 70.86,
+          "end": 71.26
+        },
+        {
+          "from": 22,
+          "to": 27,
+          "start": 71.26,
+          "end": 71.84
+        },
+        {
+          "from": 28,
+          "to": 30,
+          "start": 71.84,
+          "end": 72.28
+        },
+        {
+          "from": 31,
+          "to": 33,
+          "start": 72.28,
+          "end": 72.56
+        },
+        {
+          "from": 34,
+          "to": 38,
+          "start": 72.56,
+          "end": 73.12
+        }
+      ],
+      "sourceLine": 9,
+      "matchedWordRatio": 0.778
     },
     {
       "text": "Airosa caminaba la flor de la canela",
-      "start": 73.14,
-      "end": 78.46,
-      "probability": 0.893
+      "start": 74.86,
+      "end": 78.48,
+      "words": [
+        {
+          "from": 7,
+          "to": 15,
+          "start": 74.86,
+          "end": 76.12
+        },
+        {
+          "from": 16,
+          "to": 18,
+          "start": 76.12,
+          "end": 76.62
+        },
+        {
+          "from": 19,
+          "to": 23,
+          "start": 76.62,
+          "end": 77.0
+        },
+        {
+          "from": 24,
+          "to": 26,
+          "start": 77.0,
+          "end": 77.28
+        },
+        {
+          "from": 27,
+          "to": 29,
+          "start": 77.28,
+          "end": 77.52
+        },
+        {
+          "from": 30,
+          "to": 36,
+          "start": 77.52,
+          "end": 78.48
+        }
+      ],
+      "sourceLine": 10,
+      "matchedWordRatio": 0.857
     },
     {
       "text": "Derramaba lisura y a su paso dejaba",
-      "start": 78.68,
+      "start": 78.74,
       "end": 83.74,
-      "probability": 0.888
+      "words": [
+        {
+          "from": 0,
+          "to": 9,
+          "start": 78.74,
+          "end": 80.28
+        },
+        {
+          "from": 10,
+          "to": 16,
+          "start": 80.28,
+          "end": 81.48
+        },
+        {
+          "from": 17,
+          "to": 18,
+          "start": 81.48,
+          "end": 81.9
+        },
+        {
+          "from": 19,
+          "to": 20,
+          "start": 81.9,
+          "end": 82.06
+        },
+        {
+          "from": 21,
+          "to": 23,
+          "start": 82.06,
+          "end": 82.2
+        },
+        {
+          "from": 24,
+          "to": 28,
+          "start": 82.2,
+          "end": 82.76
+        },
+        {
+          "from": 29,
+          "to": 35,
+          "start": 82.76,
+          "end": 83.74
+        }
+      ],
+      "sourceLine": 11,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Aroma de mixtura que en el pecho llevaba",
-      "start": 83.82,
+      "start": 84.98,
       "end": 89.1,
-      "probability": 0.816
+      "words": [
+        {
+          "from": 6,
+          "to": 8,
+          "start": 84.98,
+          "end": 85.5
+        },
+        {
+          "from": 17,
+          "to": 20,
+          "start": 86.32,
+          "end": 86.58
+        },
+        {
+          "from": 21,
+          "to": 23,
+          "start": 86.58,
+          "end": 86.82
+        },
+        {
+          "from": 24,
+          "to": 26,
+          "start": 86.82,
+          "end": 87.1
+        },
+        {
+          "from": 27,
+          "to": 32,
+          "start": 87.1,
+          "end": 88.14
+        },
+        {
+          "from": 33,
+          "to": 40,
+          "start": 88.14,
+          "end": 89.1
+        }
+      ],
+      "sourceLine": 12,
+      "matchedWordRatio": 0.75
     },
     {
       "text": "Del puente a la alameda",
-      "start": 89.1,
+      "start": 90.4,
       "end": 91.04,
-      "probability": 0.653
-    },
-    {
-      "text": "Menudo pie la lleva",
-      "start": 91.76,
-      "end": 94.3,
-      "probability": 0.606
+      "words": [
+        {
+          "from": 4,
+          "to": 10,
+          "start": 90.4,
+          "end": 90.72
+        },
+        {
+          "from": 11,
+          "to": 12,
+          "start": 90.72,
+          "end": 90.92
+        },
+        {
+          "from": 13,
+          "to": 15,
+          "start": 90.92,
+          "end": 91.04
+        }
+      ],
+      "sourceLine": 13,
+      "matchedWordRatio": 0.6
     },
     {
       "text": "Por la vereda que se estremece",
-      "start": 94.6,
-      "end": 96.96,
-      "probability": 0.904
+      "start": 94.12,
+      "end": 96.98,
+      "words": [
+        {
+          "from": 0,
+          "to": 3,
+          "start": 94.12,
+          "end": 94.8
+        },
+        {
+          "from": 4,
+          "to": 6,
+          "start": 94.8,
+          "end": 95.02
+        },
+        {
+          "from": 7,
+          "to": 13,
+          "start": 95.02,
+          "end": 95.58
+        },
+        {
+          "from": 14,
+          "to": 17,
+          "start": 95.58,
+          "end": 95.82
+        },
+        {
+          "from": 18,
+          "to": 20,
+          "start": 95.82,
+          "end": 96.02
+        },
+        {
+          "from": 21,
+          "to": 30,
+          "start": 96.02,
+          "end": 96.98
+        }
+      ],
+      "sourceLine": 15,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Al ritmo de su cadera",
-      "start": 96.96,
+      "start": 96.98,
       "end": 99.98,
-      "probability": 0.964
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 96.98,
+          "end": 97.88
+        },
+        {
+          "from": 3,
+          "to": 8,
+          "start": 97.88,
+          "end": 98.24
+        },
+        {
+          "from": 9,
+          "to": 11,
+          "start": 98.24,
+          "end": 98.46
+        },
+        {
+          "from": 12,
+          "to": 14,
+          "start": 98.46,
+          "end": 98.66
+        },
+        {
+          "from": 15,
+          "to": 21,
+          "start": 98.66,
+          "end": 99.98
+        }
+      ],
+      "sourceLine": 16,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Recogía la risa de la brisa del río",
-      "start": 100.02,
+      "start": 99.98,
       "end": 104.88,
-      "probability": 0.813
+      "words": [
+        {
+          "from": 0,
+          "to": 7,
+          "start": 99.98,
+          "end": 101.46
+        },
+        {
+          "from": 8,
+          "to": 10,
+          "start": 101.46,
+          "end": 101.76
+        },
+        {
+          "from": 11,
+          "to": 15,
+          "start": 101.76,
+          "end": 102.58
+        },
+        {
+          "from": 16,
+          "to": 18,
+          "start": 102.58,
+          "end": 103.14
+        },
+        {
+          "from": 19,
+          "to": 21,
+          "start": 103.14,
+          "end": 103.36
+        },
+        {
+          "from": 22,
+          "to": 27,
+          "start": 103.36,
+          "end": 103.92
+        },
+        {
+          "from": 28,
+          "to": 31,
+          "start": 103.92,
+          "end": 104.34
+        },
+        {
+          "from": 32,
+          "to": 35,
+          "start": 104.34,
+          "end": 104.88
+        }
+      ],
+      "sourceLine": 17,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Y al viento la lanzaba del puente a la alameda",
       "start": 104.88,
-      "end": 110.7,
-      "probability": 0.895
+      "end": 109.32,
+      "words": [
+        {
+          "from": 0,
+          "to": 1,
+          "start": 104.88,
+          "end": 105.36
+        },
+        {
+          "from": 2,
+          "to": 4,
+          "start": 105.36,
+          "end": 105.62
+        },
+        {
+          "from": 5,
+          "to": 11,
+          "start": 105.62,
+          "end": 106.18
+        },
+        {
+          "from": 12,
+          "to": 14,
+          "start": 106.18,
+          "end": 106.64
+        },
+        {
+          "from": 15,
+          "to": 22,
+          "start": 106.64,
+          "end": 107.46
+        },
+        {
+          "from": 23,
+          "to": 26,
+          "start": 107.46,
+          "end": 107.88
+        },
+        {
+          "from": 27,
+          "to": 33,
+          "start": 107.88,
+          "end": 108.88
+        },
+        {
+          "from": 34,
+          "to": 35,
+          "start": 108.88,
+          "end": 109.18
+        },
+        {
+          "from": 36,
+          "to": 38,
+          "start": 109.18,
+          "end": 109.32
+        }
+      ],
+      "sourceLine": 18,
+      "matchedWordRatio": 0.9
     },
     {
       "text": "Déjame que te cuente, limeño ¡ay!",
-      "start": 112.04,
-      "end": 116.14,
-      "probability": 0.485
+      "start": 112.08,
+      "end": 114.56,
+      "words": [
+        {
+          "from": 0,
+          "to": 6,
+          "start": 112.08,
+          "end": 113.06
+        },
+        {
+          "from": 7,
+          "to": 10,
+          "start": 113.06,
+          "end": 113.36
+        },
+        {
+          "from": 11,
+          "to": 13,
+          "start": 113.36,
+          "end": 113.6
+        },
+        {
+          "from": 14,
+          "to": 20,
+          "start": 113.6,
+          "end": 114.56
+        }
+      ],
+      "sourceLine": 19,
+      "matchedWordRatio": 0.667
     },
     {
       "text": "Deja que te diga moreno mi pensamiento",
       "start": 116.18,
-      "end": 121.04,
-      "probability": 0.695
+      "end": 121.06,
+      "words": [
+        {
+          "from": 0,
+          "to": 4,
+          "start": 116.18,
+          "end": 116.96
+        },
+        {
+          "from": 5,
+          "to": 8,
+          "start": 116.96,
+          "end": 117.32
+        },
+        {
+          "from": 9,
+          "to": 11,
+          "start": 117.32,
+          "end": 117.8
+        },
+        {
+          "from": 12,
+          "to": 16,
+          "start": 117.8,
+          "end": 118.26
+        },
+        {
+          "from": 17,
+          "to": 23,
+          "start": 118.26,
+          "end": 119.1
+        },
+        {
+          "from": 24,
+          "to": 26,
+          "start": 119.1,
+          "end": 119.6
+        },
+        {
+          "from": 27,
+          "to": 38,
+          "start": 119.6,
+          "end": 121.06
+        }
+      ],
+      "sourceLine": 20,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "A ver si así despiertas del sueño",
-      "start": 122.62,
+      "start": 122.66,
       "end": 126.68,
-      "probability": 0.906
+      "words": [
+        {
+          "from": 0,
+          "to": 1,
+          "start": 122.66,
+          "end": 123.64
+        },
+        {
+          "from": 2,
+          "to": 5,
+          "start": 123.64,
+          "end": 123.9
+        },
+        {
+          "from": 6,
+          "to": 8,
+          "start": 123.9,
+          "end": 124.14
+        },
+        {
+          "from": 9,
+          "to": 12,
+          "start": 124.14,
+          "end": 124.44
+        },
+        {
+          "from": 13,
+          "to": 23,
+          "start": 124.44,
+          "end": 125.8
+        },
+        {
+          "from": 24,
+          "to": 27,
+          "start": 125.8,
+          "end": 126.02
+        },
+        {
+          "from": 28,
+          "to": 33,
+          "start": 126.02,
+          "end": 126.68
+        }
+      ],
+      "sourceLine": 21,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Del sueño que entretiene, moreno",
-      "start": 127.02,
-      "end": 130.02,
-      "probability": 0.639
-    },
-    {
-      "text": "Tus sentimientos",
-      "start": 130.02,
-      "end": 131.78,
-      "probability": 0.489
+      "start": 127.0,
+      "end": 130.04,
+      "words": [
+        {
+          "from": 0,
+          "to": 3,
+          "start": 127.0,
+          "end": 127.34
+        },
+        {
+          "from": 4,
+          "to": 9,
+          "start": 127.34,
+          "end": 128.04
+        },
+        {
+          "from": 10,
+          "to": 13,
+          "start": 128.04,
+          "end": 128.38
+        },
+        {
+          "from": 26,
+          "to": 32,
+          "start": 129.3,
+          "end": 130.04
+        }
+      ],
+      "sourceLine": 22,
+      "matchedWordRatio": 0.8
     },
     {
       "text": "Aspiras de la lisura",
-      "start": 134.58,
+      "start": 135.5,
       "end": 137.48,
-      "probability": 0.763
+      "words": [
+        {
+          "from": 8,
+          "to": 10,
+          "start": 135.5,
+          "end": 136.38
+        },
+        {
+          "from": 11,
+          "to": 13,
+          "start": 136.38,
+          "end": 136.62
+        },
+        {
+          "from": 14,
+          "to": 20,
+          "start": 136.62,
+          "end": 137.48
+        }
+      ],
+      "sourceLine": 24,
+      "matchedWordRatio": 0.75
     },
     {
       "text": "Que da la flor de canela",
       "start": 137.48,
       "end": 140.12,
-      "probability": 0.72
+      "words": [
+        {
+          "from": 0,
+          "to": 3,
+          "start": 137.48,
+          "end": 137.94
+        },
+        {
+          "from": 4,
+          "to": 6,
+          "start": 137.94,
+          "end": 138.24
+        },
+        {
+          "from": 7,
+          "to": 9,
+          "start": 138.24,
+          "end": 138.58
+        },
+        {
+          "from": 10,
+          "to": 14,
+          "start": 138.58,
+          "end": 139.0
+        },
+        {
+          "from": 15,
+          "to": 17,
+          "start": 139.0,
+          "end": 139.32
+        },
+        {
+          "from": 18,
+          "to": 24,
+          "start": 139.32,
+          "end": 140.12
+        }
+      ],
+      "sourceLine": 25,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Adornada con jazmines",
-      "start": 140.14,
-      "end": 142.88,
-      "probability": 0.769
+      "start": 140.12,
+      "end": 142.8,
+      "words": [
+        {
+          "from": 0,
+          "to": 8,
+          "start": 140.12,
+          "end": 141.56
+        },
+        {
+          "from": 9,
+          "to": 12,
+          "start": 141.56,
+          "end": 142.04
+        },
+        {
+          "from": 13,
+          "to": 21,
+          "start": 142.04,
+          "end": 142.8
+        }
+      ],
+      "sourceLine": 26,
+      "matchedWordRatio": 1.0,
+      "alignment": "acoustic-gap-refinement"
     },
     {
       "text": "Matizando tu hermosura",
-      "start": 142.88,
-      "end": 145.78,
-      "probability": 0.636
+      "start": 142.82,
+      "end": 145.7,
+      "words": [
+        {
+          "from": 0,
+          "to": 9,
+          "start": 142.82,
+          "end": 144.24
+        },
+        {
+          "from": 13,
+          "to": 22,
+          "start": 144.62,
+          "end": 145.7
+        }
+      ],
+      "sourceLine": 27,
+      "matchedWordRatio": 0.667
     },
     {
       "text": "Alfombras de nuevo el puente",
-      "start": 145.78,
+      "start": 149.36,
       "end": 151.3,
-      "probability": 0.729
-    },
-    {
-      "text": "Y engalanas la alameda",
-      "start": 151.3,
-      "end": 153.96,
-      "probability": 0.425
+      "words": [
+        {
+          "from": 10,
+          "to": 12,
+          "start": 149.36,
+          "end": 150.06
+        },
+        {
+          "from": 13,
+          "to": 18,
+          "start": 150.06,
+          "end": 150.3
+        },
+        {
+          "from": 19,
+          "to": 21,
+          "start": 150.3,
+          "end": 150.7
+        },
+        {
+          "from": 22,
+          "to": 28,
+          "start": 150.7,
+          "end": 151.3
+        }
+      ],
+      "sourceLine": 28,
+      "matchedWordRatio": 0.8
     },
     {
       "text": "Que el río acompasara tu paso por la vereda",
-      "start": 153.98,
-      "end": 158.94,
-      "probability": 0.75
+      "start": 153.96,
+      "end": 159.0,
+      "words": [
+        {
+          "from": 0,
+          "to": 3,
+          "start": 153.96,
+          "end": 154.34
+        },
+        {
+          "from": 4,
+          "to": 6,
+          "start": 154.34,
+          "end": 154.58
+        },
+        {
+          "from": 7,
+          "to": 10,
+          "start": 154.58,
+          "end": 154.84
+        },
+        {
+          "from": 11,
+          "to": 21,
+          "start": 154.84,
+          "end": 156.14
+        },
+        {
+          "from": 25,
+          "to": 29,
+          "start": 156.62,
+          "end": 157.06
+        },
+        {
+          "from": 30,
+          "to": 33,
+          "start": 157.06,
+          "end": 157.68
+        },
+        {
+          "from": 34,
+          "to": 36,
+          "start": 157.84,
+          "end": 158.0
+        },
+        {
+          "from": 37,
+          "to": 43,
+          "start": 158.0,
+          "end": 159.0
+        }
+      ],
+      "sourceLine": 30,
+      "matchedWordRatio": 0.889
     },
     {
       "text": "Y recuerda que, jazmines en el pelo y rosas en la cara",
-      "start": 158.94,
+      "start": 159.26,
       "end": 169.26,
-      "probability": 0.773
+      "words": [
+        {
+          "from": 0,
+          "to": 1,
+          "start": 159.26,
+          "end": 160.6
+        },
+        {
+          "from": 2,
+          "to": 10,
+          "start": 160.6,
+          "end": 161.3
+        },
+        {
+          "from": 11,
+          "to": 14,
+          "start": 161.3,
+          "end": 161.72
+        },
+        {
+          "from": 16,
+          "to": 24,
+          "start": 164.4,
+          "end": 165.22
+        },
+        {
+          "from": 25,
+          "to": 27,
+          "start": 165.22,
+          "end": 165.62
+        },
+        {
+          "from": 28,
+          "to": 30,
+          "start": 165.62,
+          "end": 165.78
+        },
+        {
+          "from": 31,
+          "to": 35,
+          "start": 165.78,
+          "end": 166.14
+        },
+        {
+          "from": 36,
+          "to": 37,
+          "start": 166.14,
+          "end": 166.52
+        },
+        {
+          "from": 38,
+          "to": 43,
+          "start": 166.52,
+          "end": 167.72
+        },
+        {
+          "from": 44,
+          "to": 46,
+          "start": 167.72,
+          "end": 168.12
+        },
+        {
+          "from": 47,
+          "to": 49,
+          "start": 168.12,
+          "end": 168.34
+        },
+        {
+          "from": 50,
+          "to": 54,
+          "start": 168.34,
+          "end": 169.26
+        }
+      ],
+      "sourceLine": 31,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Airosa caminaba la flor de la canela",
-      "start": 169.26,
+      "start": 172.48,
       "end": 174.68,
-      "probability": 0.821
+      "words": [
+        {
+          "from": 16,
+          "to": 18,
+          "start": 172.48,
+          "end": 172.88
+        },
+        {
+          "from": 19,
+          "to": 23,
+          "start": 172.88,
+          "end": 173.12
+        },
+        {
+          "from": 24,
+          "to": 26,
+          "start": 173.12,
+          "end": 173.36
+        },
+        {
+          "from": 27,
+          "to": 29,
+          "start": 173.36,
+          "end": 173.56
+        },
+        {
+          "from": 30,
+          "to": 36,
+          "start": 173.56,
+          "end": 174.68
+        }
+      ],
+      "sourceLine": 32,
+      "matchedWordRatio": 0.714
     },
     {
       "text": "Derramaba lisura y a su paso dejaba",
-      "start": 174.74,
+      "start": 176.94,
       "end": 179.66,
-      "probability": 0.808
+      "words": [
+        {
+          "from": 17,
+          "to": 18,
+          "start": 176.94,
+          "end": 177.3
+        },
+        {
+          "from": 19,
+          "to": 20,
+          "start": 177.3,
+          "end": 177.42
+        },
+        {
+          "from": 21,
+          "to": 23,
+          "start": 177.42,
+          "end": 177.78
+        },
+        {
+          "from": 24,
+          "to": 28,
+          "start": 177.78,
+          "end": 178.64
+        },
+        {
+          "from": 29,
+          "to": 35,
+          "start": 178.64,
+          "end": 179.66
+        }
+      ],
+      "sourceLine": 33,
+      "matchedWordRatio": 0.714
     },
     {
       "text": "Aroma de mixtura que en el pecho llevaba",
-      "start": 179.66,
-      "end": 185.3,
-      "probability": 0.768
+      "start": 180.9,
+      "end": 185.32,
+      "words": [
+        {
+          "from": 6,
+          "to": 8,
+          "start": 180.9,
+          "end": 181.38
+        },
+        {
+          "from": 17,
+          "to": 20,
+          "start": 182.18,
+          "end": 182.46
+        },
+        {
+          "from": 21,
+          "to": 23,
+          "start": 182.46,
+          "end": 182.68
+        },
+        {
+          "from": 24,
+          "to": 26,
+          "start": 182.68,
+          "end": 182.98
+        },
+        {
+          "from": 27,
+          "to": 32,
+          "start": 182.98,
+          "end": 183.92
+        },
+        {
+          "from": 33,
+          "to": 40,
+          "start": 183.92,
+          "end": 185.32
+        }
+      ],
+      "sourceLine": 34,
+      "matchedWordRatio": 0.75
     },
     {
       "text": "Del puente a la alameda",
-      "start": 185.3,
+      "start": 185.32,
       "end": 186.96,
-      "probability": 0.79
-    },
-    {
-      "text": "Menudo pie la lleva",
-      "start": 187.72,
-      "end": 190.1,
-      "probability": 0.372
+      "words": [
+        {
+          "from": 0,
+          "to": 3,
+          "start": 185.32,
+          "end": 186.36
+        },
+        {
+          "from": 4,
+          "to": 10,
+          "start": 186.36,
+          "end": 186.64
+        },
+        {
+          "from": 11,
+          "to": 12,
+          "start": 186.64,
+          "end": 186.82
+        },
+        {
+          "from": 13,
+          "to": 15,
+          "start": 186.82,
+          "end": 186.96
+        }
+      ],
+      "sourceLine": 35,
+      "matchedWordRatio": 0.8
     },
     {
       "text": "Por la vereda que se estremece",
-      "start": 190.16,
+      "start": 190.26,
       "end": 191.82,
-      "probability": 0.881
+      "words": [
+        {
+          "from": 0,
+          "to": 3,
+          "start": 190.26,
+          "end": 190.64
+        },
+        {
+          "from": 4,
+          "to": 6,
+          "start": 190.64,
+          "end": 190.84
+        },
+        {
+          "from": 7,
+          "to": 13,
+          "start": 190.84,
+          "end": 191.4
+        },
+        {
+          "from": 14,
+          "to": 17,
+          "start": 191.4,
+          "end": 191.62
+        },
+        {
+          "from": 18,
+          "to": 20,
+          "start": 191.62,
+          "end": 191.82
+        }
+      ],
+      "sourceLine": 37,
+      "matchedWordRatio": 0.833
     },
     {
       "text": "Al ritmo de su cadera",
       "start": 192.74,
       "end": 195.86,
-      "probability": 0.944
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 192.74,
+          "end": 193.72
+        },
+        {
+          "from": 3,
+          "to": 8,
+          "start": 193.72,
+          "end": 194.08
+        },
+        {
+          "from": 9,
+          "to": 11,
+          "start": 194.08,
+          "end": 194.28
+        },
+        {
+          "from": 12,
+          "to": 14,
+          "start": 194.28,
+          "end": 194.52
+        },
+        {
+          "from": 15,
+          "to": 21,
+          "start": 194.52,
+          "end": 195.86
+        }
+      ],
+      "sourceLine": 38,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Recogía la risa de la brisa del río",
       "start": 195.86,
       "end": 200.7,
-      "probability": 0.862
+      "words": [
+        {
+          "from": 0,
+          "to": 7,
+          "start": 195.86,
+          "end": 197.3
+        },
+        {
+          "from": 8,
+          "to": 10,
+          "start": 197.3,
+          "end": 197.58
+        },
+        {
+          "from": 11,
+          "to": 15,
+          "start": 197.58,
+          "end": 198.36
+        },
+        {
+          "from": 16,
+          "to": 18,
+          "start": 198.36,
+          "end": 198.72
+        },
+        {
+          "from": 19,
+          "to": 21,
+          "start": 198.72,
+          "end": 199.02
+        },
+        {
+          "from": 22,
+          "to": 27,
+          "start": 199.02,
+          "end": 199.72
+        },
+        {
+          "from": 28,
+          "to": 31,
+          "start": 199.72,
+          "end": 200.08
+        },
+        {
+          "from": 32,
+          "to": 35,
+          "start": 200.08,
+          "end": 200.7
+        }
+      ],
+      "sourceLine": 39,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Y al viento la lanzaba del puente a la alameda",
       "start": 200.7,
-      "end": 207.22,
-      "probability": 0.881
+      "end": 205.14,
+      "words": [
+        {
+          "from": 0,
+          "to": 1,
+          "start": 200.7,
+          "end": 201.18
+        },
+        {
+          "from": 2,
+          "to": 4,
+          "start": 201.18,
+          "end": 201.38
+        },
+        {
+          "from": 5,
+          "to": 11,
+          "start": 201.38,
+          "end": 202.0
+        },
+        {
+          "from": 12,
+          "to": 14,
+          "start": 202.0,
+          "end": 202.42
+        },
+        {
+          "from": 15,
+          "to": 22,
+          "start": 202.42,
+          "end": 203.22
+        },
+        {
+          "from": 23,
+          "to": 26,
+          "start": 203.22,
+          "end": 203.5
+        },
+        {
+          "from": 27,
+          "to": 33,
+          "start": 203.5,
+          "end": 204.62
+        },
+        {
+          "from": 34,
+          "to": 35,
+          "start": 204.62,
+          "end": 204.92
+        },
+        {
+          "from": 36,
+          "to": 38,
+          "start": 204.92,
+          "end": 205.14
+        }
+      ],
+      "sourceLine": 40,
+      "matchedWordRatio": 0.9
     }
   ],
-  "timingSource": "Exact repository audio; faster-whisper small INT8, approximate automatic alignment",
-  "audioSha256": "f06d0749d22f769007d137908ae612a19a2b930bb018779f82ad919bee339e25"
+  "unmatchedLines": [
+    {
+      "line": 14,
+      "text": "Menudo pie la lleva",
+      "coverage": 0.5
+    },
+    {
+      "line": 23,
+      "text": "Tus sentimientos",
+      "coverage": 0.0
+    },
+    {
+      "line": 29,
+      "text": "Y engalanas la alameda",
+      "coverage": 0.5
+    },
+    {
+      "line": 36,
+      "text": "Menudo pie la lleva",
+      "coverage": 0.25
+    }
+  ]
 }

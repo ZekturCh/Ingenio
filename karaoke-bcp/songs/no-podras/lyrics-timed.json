@@ -1,185 +1,1040 @@
 {
   "songId": "no-podras",
-  "title": "No podrás",
   "status": "estimated",
   "reviewRequired": true,
-  "timingMethod": "text-length-proportional; not aligned to vocals or instrumental sections",
-  "durationSeconds": 236.094694,
+  "method": "local-asr-word-matching",
+  "alignmentModel": "faster-whisper-small",
+  "durationSeconds": 240.117551,
+  "audioSha256": "28777654c46ef8fd94fcd7a899b95ab6d8c2db51c1711492c164a470d33a959a",
   "lyrics": [
     {
       "text": "Tal vez te olvides de mí",
-      "start": 0.0,
-      "end": 6.408285
+      "start": 18.06,
+      "end": 19.72,
+      "words": [
+        {
+          "from": 4,
+          "to": 7,
+          "start": 18.06,
+          "end": 18.28
+        },
+        {
+          "from": 8,
+          "to": 10,
+          "start": 18.28,
+          "end": 18.52
+        },
+        {
+          "from": 11,
+          "to": 18,
+          "start": 18.52,
+          "end": 19.06
+        },
+        {
+          "from": 19,
+          "to": 21,
+          "start": 19.06,
+          "end": 19.4
+        },
+        {
+          "from": 22,
+          "to": 24,
+          "start": 19.4,
+          "end": 19.72
+        }
+      ],
+      "sourceLine": 1,
+      "matchedWordRatio": 0.833
     },
     {
       "text": "Tal vez me olvide de ti, oh, no",
-      "start": 6.408285,
-      "end": 13.828404
+      "start": 20.12,
+      "end": 23.84,
+      "words": [
+        {
+          "from": 4,
+          "to": 7,
+          "start": 20.12,
+          "end": 20.34
+        },
+        {
+          "from": 8,
+          "to": 10,
+          "start": 20.34,
+          "end": 20.52
+        },
+        {
+          "from": 11,
+          "to": 17,
+          "start": 20.52,
+          "end": 21.22
+        },
+        {
+          "from": 18,
+          "to": 20,
+          "start": 21.22,
+          "end": 21.34
+        },
+        {
+          "from": 25,
+          "to": 27,
+          "start": 22.5,
+          "end": 23.5
+        },
+        {
+          "from": 29,
+          "to": 31,
+          "start": 23.62,
+          "end": 23.84
+        }
+      ],
+      "sourceLine": 2,
+      "matchedWordRatio": 0.75,
+      "alignment": "acoustic-gap-refinement"
     },
     {
       "text": "Pero, esta vez, aprendí",
-      "start": 13.828404,
-      "end": 19.89941
+      "start": 25.9,
+      "end": 27.9,
+      "words": [
+        {
+          "from": 0,
+          "to": 4,
+          "start": 25.9,
+          "end": 26.36
+        },
+        {
+          "from": 6,
+          "to": 10,
+          "start": 26.36,
+          "end": 26.7
+        },
+        {
+          "from": 11,
+          "to": 14,
+          "start": 26.7,
+          "end": 26.98
+        },
+        {
+          "from": 16,
+          "to": 23,
+          "start": 26.98,
+          "end": 27.9
+        }
+      ],
+      "sourceLine": 3,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Que no se debe mentir, no, oh",
-      "start": 19.89941,
-      "end": 26.982251
+      "start": 27.9,
+      "end": 31.68,
+      "words": [
+        {
+          "from": 0,
+          "to": 3,
+          "start": 27.9,
+          "end": 28.24
+        },
+        {
+          "from": 4,
+          "to": 6,
+          "start": 28.24,
+          "end": 28.52
+        },
+        {
+          "from": 7,
+          "to": 9,
+          "start": 28.52,
+          "end": 28.74
+        },
+        {
+          "from": 10,
+          "to": 14,
+          "start": 28.74,
+          "end": 29.18
+        },
+        {
+          "from": 15,
+          "to": 21,
+          "start": 29.18,
+          "end": 30.38
+        },
+        {
+          "from": 23,
+          "to": 25,
+          "start": 30.9,
+          "end": 31.68
+        }
+      ],
+      "sourceLine": 4,
+      "matchedWordRatio": 0.857
     },
     {
       "text": "De una promesa viví",
-      "start": 26.982251,
-      "end": 32.378701
+      "start": 34.36,
+      "end": 36.22,
+      "words": [
+        {
+          "from": 3,
+          "to": 6,
+          "start": 34.36,
+          "end": 34.52
+        },
+        {
+          "from": 7,
+          "to": 14,
+          "start": 34.52,
+          "end": 35.28
+        },
+        {
+          "from": 15,
+          "to": 19,
+          "start": 35.28,
+          "end": 36.22
+        }
+      ],
+      "sourceLine": 5,
+      "matchedWordRatio": 0.75,
+      "alignment": "acoustic-gap-refinement"
     },
     {
       "text": "Hoy ya no puedo seguir",
-      "start": 32.378701,
-      "end": 38.449707
+      "start": 36.42,
+      "end": 38.14,
+      "words": [
+        {
+          "from": 4,
+          "to": 6,
+          "start": 36.42,
+          "end": 36.7
+        },
+        {
+          "from": 7,
+          "to": 9,
+          "start": 36.7,
+          "end": 36.92
+        },
+        {
+          "from": 10,
+          "to": 15,
+          "start": 36.92,
+          "end": 37.24
+        },
+        {
+          "from": 16,
+          "to": 22,
+          "start": 37.24,
+          "end": 38.14
+        }
+      ],
+      "sourceLine": 6,
+      "matchedWordRatio": 0.8
     },
     {
       "text": "Creyendo en ti",
-      "start": 38.449707,
-      "end": 42.497045
+      "start": 40.52,
+      "end": 42.18,
+      "words": [
+        {
+          "from": 9,
+          "to": 11,
+          "start": 40.52,
+          "end": 41.8
+        },
+        {
+          "from": 12,
+          "to": 14,
+          "start": 41.8,
+          "end": 42.18
+        }
+      ],
+      "sourceLine": 7,
+      "matchedWordRatio": 0.667
     },
     {
       "text": "Cada momento",
-      "start": 42.497045,
-      "end": 46.207104
+      "start": 42.38,
+      "end": 52.58,
+      "words": [
+        {
+          "from": 0,
+          "to": 4,
+          "start": 42.38,
+          "end": 51.54
+        },
+        {
+          "from": 5,
+          "to": 12,
+          "start": 51.54,
+          "end": 52.58
+        }
+      ],
+      "sourceLine": 8,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Voy tropezando en desamor",
-      "start": 46.207104,
-      "end": 53.627223
+      "start": 55.5,
+      "end": 58.48,
+      "words": [
+        {
+          "from": 4,
+          "to": 14,
+          "start": 55.5,
+          "end": 56.7
+        },
+        {
+          "from": 15,
+          "to": 17,
+          "start": 56.7,
+          "end": 57.04
+        },
+        {
+          "from": 18,
+          "to": 25,
+          "start": 57.04,
+          "end": 58.48
+        }
+      ],
+      "sourceLine": 9,
+      "matchedWordRatio": 0.75,
+      "alignment": "acoustic-gap-refinement"
     },
     {
       "text": "Y es que no queda nada entre tú y yo",
-      "start": 53.627223,
-      "end": 62.733733
+      "start": 58.68,
+      "end": 64.06,
+      "words": [
+        {
+          "from": 0,
+          "to": 1,
+          "start": 58.68,
+          "end": 59.52
+        },
+        {
+          "from": 2,
+          "to": 4,
+          "start": 59.52,
+          "end": 59.7
+        },
+        {
+          "from": 5,
+          "to": 8,
+          "start": 59.7,
+          "end": 59.86
+        },
+        {
+          "from": 9,
+          "to": 11,
+          "start": 59.86,
+          "end": 60.12
+        },
+        {
+          "from": 29,
+          "to": 31,
+          "start": 62.38,
+          "end": 62.86
+        },
+        {
+          "from": 32,
+          "to": 33,
+          "start": 62.86,
+          "end": 63.06
+        },
+        {
+          "from": 34,
+          "to": 36,
+          "start": 63.06,
+          "end": 64.06
+        }
+      ],
+      "sourceLine": 10,
+      "matchedWordRatio": 0.7
     },
     {
       "text": "Si estoy llorando",
-      "start": 62.733733,
-      "end": 67.792905
+      "start": 66.94,
+      "end": 69.02,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 66.94,
+          "end": 67.64
+        },
+        {
+          "from": 3,
+          "to": 8,
+          "start": 67.64,
+          "end": 68.0
+        },
+        {
+          "from": 9,
+          "to": 17,
+          "start": 68.0,
+          "end": 69.02
+        }
+      ],
+      "sourceLine": 11,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "No es que te extrañe el corazón",
-      "start": 67.792905,
-      "end": 76.224858
+      "start": 71.88,
+      "end": 74.62,
+      "words": [
+        {
+          "from": 6,
+          "to": 9,
+          "start": 71.88,
+          "end": 72.06
+        },
+        {
+          "from": 10,
+          "to": 12,
+          "start": 72.06,
+          "end": 72.26
+        },
+        {
+          "from": 21,
+          "to": 23,
+          "start": 73.04,
+          "end": 73.44
+        },
+        {
+          "from": 24,
+          "to": 31,
+          "start": 73.44,
+          "end": 74.62
+        }
+      ],
+      "sourceLine": 12,
+      "matchedWordRatio": 0.571
     },
     {
       "text": "Es que, a tu lado, aprendí el dolor",
-      "start": 76.224858,
-      "end": 84.99409
+      "start": 74.62,
+      "end": 77.1,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 74.62,
+          "end": 75.98
+        },
+        {
+          "from": 3,
+          "to": 6,
+          "start": 75.98,
+          "end": 76.08
+        },
+        {
+          "from": 8,
+          "to": 9,
+          "start": 76.08,
+          "end": 76.22
+        },
+        {
+          "from": 10,
+          "to": 12,
+          "start": 76.22,
+          "end": 76.36
+        },
+        {
+          "from": 13,
+          "to": 17,
+          "start": 76.36,
+          "end": 77.1
+        }
+      ],
+      "sourceLine": 13,
+      "matchedWordRatio": 0.625
     },
     {
       "text": "No podrás olvidar que te amé",
-      "start": 84.99409,
-      "end": 92.751487
+      "start": 81.02,
+      "end": 87.46,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 81.02,
+          "end": 82.22
+        },
+        {
+          "from": 3,
+          "to": 9,
+          "start": 82.22,
+          "end": 83.72
+        },
+        {
+          "from": 10,
+          "to": 17,
+          "start": 83.72,
+          "end": 85.64
+        },
+        {
+          "from": 18,
+          "to": 21,
+          "start": 85.64,
+          "end": 86.36
+        },
+        {
+          "from": 22,
+          "to": 24,
+          "start": 86.36,
+          "end": 86.6
+        },
+        {
+          "from": 25,
+          "to": 28,
+          "start": 86.6,
+          "end": 87.46
+        }
+      ],
+      "sourceLine": 14,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Como yo nunca imaginé",
-      "start": 92.751487,
-      "end": 98.822493
+      "start": 87.46,
+      "end": 91.76,
+      "words": [
+        {
+          "from": 0,
+          "to": 4,
+          "start": 87.46,
+          "end": 88.32
+        },
+        {
+          "from": 5,
+          "to": 7,
+          "start": 88.32,
+          "end": 88.66
+        },
+        {
+          "from": 8,
+          "to": 13,
+          "start": 88.66,
+          "end": 89.02
+        },
+        {
+          "from": 14,
+          "to": 21,
+          "start": 89.02,
+          "end": 91.76
+        }
+      ],
+      "sourceLine": 15,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Estaré en tu piel",
-      "start": 98.822493,
-      "end": 103.544387
+      "start": 91.76,
+      "end": 95.68,
+      "words": [
+        {
+          "from": 0,
+          "to": 6,
+          "start": 91.76,
+          "end": 93.06
+        },
+        {
+          "from": 7,
+          "to": 9,
+          "start": 93.06,
+          "end": 94.62
+        },
+        {
+          "from": 10,
+          "to": 12,
+          "start": 94.62,
+          "end": 94.84
+        },
+        {
+          "from": 13,
+          "to": 17,
+          "start": 94.84,
+          "end": 95.68
+        }
+      ],
+      "sourceLine": 16,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Cada momento en donde estés",
-      "start": 103.544387,
-      "end": 111.301784
+      "start": 95.68,
+      "end": 99.92,
+      "words": [
+        {
+          "from": 0,
+          "to": 4,
+          "start": 95.68,
+          "end": 96.4
+        },
+        {
+          "from": 5,
+          "to": 12,
+          "start": 96.4,
+          "end": 97.16
+        },
+        {
+          "from": 13,
+          "to": 15,
+          "start": 97.16,
+          "end": 97.94
+        },
+        {
+          "from": 16,
+          "to": 21,
+          "start": 97.94,
+          "end": 98.26
+        },
+        {
+          "from": 22,
+          "to": 27,
+          "start": 98.26,
+          "end": 99.92
+        }
+      ],
+      "sourceLine": 17,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Siempre habrá un lugar",
-      "start": 111.301784,
-      "end": 117.710069
+      "start": 99.92,
+      "end": 103.54,
+      "words": [
+        {
+          "from": 0,
+          "to": 7,
+          "start": 99.92,
+          "end": 100.88
+        },
+        {
+          "from": 8,
+          "to": 13,
+          "start": 100.88,
+          "end": 101.78
+        },
+        {
+          "from": 14,
+          "to": 16,
+          "start": 101.78,
+          "end": 102.6
+        },
+        {
+          "from": 17,
+          "to": 22,
+          "start": 102.6,
+          "end": 103.54
+        }
+      ],
+      "sourceLine": 18,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Algún recuerdo que será",
-      "start": 117.710069,
-      "end": 124.455632
+      "start": 103.54,
+      "end": 107.38,
+      "words": [
+        {
+          "from": 0,
+          "to": 5,
+          "start": 103.54,
+          "end": 104.82
+        },
+        {
+          "from": 6,
+          "to": 14,
+          "start": 104.82,
+          "end": 105.68
+        },
+        {
+          "from": 15,
+          "to": 18,
+          "start": 105.68,
+          "end": 106.42
+        },
+        {
+          "from": 19,
+          "to": 23,
+          "start": 106.42,
+          "end": 107.38
+        }
+      ],
+      "sourceLine": 19,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Un eterno suspirar",
-      "start": 124.455632,
-      "end": 129.852082
+      "start": 107.38,
+      "end": 113.62,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 107.38,
+          "end": 108.94
+        },
+        {
+          "from": 3,
+          "to": 9,
+          "start": 108.94,
+          "end": 110.24
+        },
+        {
+          "from": 10,
+          "to": 18,
+          "start": 112.22,
+          "end": 113.62
+        }
+      ],
+      "sourceLine": 20,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Si estoy llorando",
-      "start": 129.852082,
-      "end": 134.911254
+      "start": 152.1,
+      "end": 153.68,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 152.1,
+          "end": 153.34
+        },
+        {
+          "from": 3,
+          "to": 8,
+          "start": 153.34,
+          "end": 153.68
+        }
+      ],
+      "sourceLine": 21,
+      "matchedWordRatio": 0.667
     },
     {
       "text": "No es que te extrañe el corazón",
-      "start": 134.911254,
-      "end": 143.343207
+      "start": 156.32,
+      "end": 160.2,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 156.32,
+          "end": 157.42
+        },
+        {
+          "from": 3,
+          "to": 5,
+          "start": 157.42,
+          "end": 157.56
+        },
+        {
+          "from": 6,
+          "to": 9,
+          "start": 157.56,
+          "end": 157.7
+        },
+        {
+          "from": 10,
+          "to": 12,
+          "start": 157.7,
+          "end": 157.92
+        },
+        {
+          "from": 13,
+          "to": 20,
+          "start": 157.92,
+          "end": 158.72
+        },
+        {
+          "from": 21,
+          "to": 23,
+          "start": 158.72,
+          "end": 159.02
+        },
+        {
+          "from": 24,
+          "to": 31,
+          "start": 159.02,
+          "end": 160.2
+        }
+      ],
+      "sourceLine": 22,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Es que, a tu lado, aprendí el dolor",
-      "start": 143.343207,
-      "end": 152.112439
+      "start": 160.2,
+      "end": 165.36,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 160.2,
+          "end": 161.62
+        },
+        {
+          "from": 3,
+          "to": 6,
+          "start": 161.62,
+          "end": 161.76
+        },
+        {
+          "from": 8,
+          "to": 9,
+          "start": 161.76,
+          "end": 161.9
+        },
+        {
+          "from": 10,
+          "to": 12,
+          "start": 161.9,
+          "end": 162.06
+        },
+        {
+          "from": 13,
+          "to": 17,
+          "start": 162.06,
+          "end": 162.78
+        },
+        {
+          "from": 27,
+          "to": 29,
+          "start": 164.32,
+          "end": 164.74
+        },
+        {
+          "from": 30,
+          "to": 35,
+          "start": 164.74,
+          "end": 165.36
+        }
+      ],
+      "sourceLine": 23,
+      "matchedWordRatio": 0.875
     },
     {
       "text": "No podrás olvidar que te amé",
-      "start": 152.112439,
-      "end": 159.869836
+      "start": 169.1,
+      "end": 172.82,
+      "words": [
+        {
+          "from": 10,
+          "to": 17,
+          "start": 169.1,
+          "end": 171.1
+        },
+        {
+          "from": 18,
+          "to": 21,
+          "start": 171.1,
+          "end": 172.0
+        },
+        {
+          "from": 22,
+          "to": 24,
+          "start": 172.0,
+          "end": 172.24
+        },
+        {
+          "from": 25,
+          "to": 28,
+          "start": 172.24,
+          "end": 172.82
+        }
+      ],
+      "sourceLine": 24,
+      "matchedWordRatio": 0.667
     },
     {
       "text": "Como yo nunca imaginé",
-      "start": 159.869836,
-      "end": 165.940842
+      "start": 173.38,
+      "end": 177.28,
+      "words": [
+        {
+          "from": 0,
+          "to": 4,
+          "start": 173.38,
+          "end": 174.0
+        },
+        {
+          "from": 5,
+          "to": 7,
+          "start": 174.0,
+          "end": 174.3
+        },
+        {
+          "from": 8,
+          "to": 13,
+          "start": 174.3,
+          "end": 174.92
+        },
+        {
+          "from": 14,
+          "to": 21,
+          "start": 174.92,
+          "end": 177.28
+        }
+      ],
+      "sourceLine": 25,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Estaré en tu piel",
-      "start": 165.940842,
-      "end": 170.662736
+      "start": 177.28,
+      "end": 181.22,
+      "words": [
+        {
+          "from": 0,
+          "to": 6,
+          "start": 177.28,
+          "end": 178.88
+        },
+        {
+          "from": 7,
+          "to": 9,
+          "start": 178.88,
+          "end": 180.22
+        },
+        {
+          "from": 10,
+          "to": 12,
+          "start": 180.22,
+          "end": 180.48
+        },
+        {
+          "from": 13,
+          "to": 17,
+          "start": 180.48,
+          "end": 181.22
+        }
+      ],
+      "sourceLine": 26,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Cada momento en donde estés",
-      "start": 170.662736,
-      "end": 178.420133
-    },
-    {
-      "text": "Siempre habrá un lugar",
-      "start": 178.420133,
-      "end": 184.828418
-    },
-    {
-      "text": "Algún recuerdo que será",
-      "start": 184.828418,
-      "end": 191.57398
-    },
-    {
-      "text": "Un eterno suspirar, uoh-uoh",
-      "start": 191.57398,
-      "end": 198.994099
-    },
-    {
-      "text": "No podrás olvidar que te amé (como yo nunca imaginé)",
-      "start": 198.994099,
-      "end": 212.822503
-    },
-    {
-      "text": "(Cada momento en donde estés)",
-      "start": 212.822503,
-      "end": 220.5799
+      "start": 181.62,
+      "end": 185.52,
+      "words": [
+        {
+          "from": 0,
+          "to": 4,
+          "start": 181.62,
+          "end": 182.12
+        },
+        {
+          "from": 5,
+          "to": 12,
+          "start": 182.12,
+          "end": 182.82
+        },
+        {
+          "from": 13,
+          "to": 15,
+          "start": 182.82,
+          "end": 183.64
+        },
+        {
+          "from": 16,
+          "to": 21,
+          "start": 183.64,
+          "end": 183.96
+        },
+        {
+          "from": 22,
+          "to": 27,
+          "start": 183.96,
+          "end": 185.52
+        }
+      ],
+      "sourceLine": 27,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Como yo nunca imaginé",
-      "start": 220.5799,
-      "end": 226.650906
-    },
-    {
-      "text": "(Algún recuerdo que será)",
-      "start": 226.650906,
-      "end": 233.396469
+      "start": 222.86,
+      "end": 226.16,
+      "words": [
+        {
+          "from": 5,
+          "to": 7,
+          "start": 222.86,
+          "end": 223.24
+        },
+        {
+          "from": 8,
+          "to": 13,
+          "start": 223.24,
+          "end": 223.94
+        },
+        {
+          "from": 14,
+          "to": 21,
+          "start": 223.94,
+          "end": 226.16
+        }
+      ],
+      "sourceLine": 33,
+      "matchedWordRatio": 0.75
     },
     {
       "text": "(Un eterno)",
-      "start": 233.396469,
-      "end": 236.094694
+      "start": 228.2,
+      "end": 238.58,
+      "words": [
+        {
+          "from": 1,
+          "to": 3,
+          "start": 228.2,
+          "end": 232.06
+        },
+        {
+          "from": 4,
+          "to": 10,
+          "start": 232.06,
+          "end": 238.58
+        }
+      ],
+      "sourceLine": 35,
+      "matchedWordRatio": 1.0,
+      "alignment": "acoustic-gap-refinement"
+    }
+  ],
+  "unmatchedLines": [
+    {
+      "line": 28,
+      "text": "Siempre habrá un lugar",
+      "coverage": 0.5
+    },
+    {
+      "line": 29,
+      "text": "Algún recuerdo que será",
+      "coverage": 0.5
+    },
+    {
+      "line": 30,
+      "text": "Un eterno suspirar, uoh-uoh",
+      "coverage": 0.2
+    },
+    {
+      "line": 31,
+      "text": "No podrás olvidar que te amé (como yo nunca imaginé)",
+      "coverage": 0.4
+    },
+    {
+      "line": 32,
+      "text": "(Cada momento en donde estés)",
+      "coverage": 0.0
+    },
+    {
+      "line": 34,
+      "text": "(Algún recuerdo que será)",
+      "coverage": 0.0
     }
   ]
 }

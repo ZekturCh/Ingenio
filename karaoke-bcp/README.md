@@ -1,5 +1,41 @@
 # Hallowow Criollazo
 
+## Grabaciones con voz del 29/10/2026
+
+Se reemplazaron o incorporaron 23 MP3 proporcionados por el usuario, sin convertir
+ni recomprimir los archivos. Las 28 canciones del catalogo tienen ahora audio.
+Carinito, Himno Nacional del Peru, La Bruja, La Llorona y Quien sera conservan las
+grabaciones anteriores. El WAV de voz personal se excluyo por indicacion del usuario.
+
+Las letras de las 23 grabaciones nuevas se contrastan con reconocimiento local de
+voz y alineacion acustica: no se reparten uniformemente sobre la duracion. Los
+JSON conservan `reviewRequired: true` y `status: estimated`: son marcas automaticas,
+no una sincronizacion certificada al oido. Los fragmentos que no se pudieron
+alinear quedan documentados, sin inventarles tiempos. Se muestra una pausa musical
+en los huecos. Las repeticiones recuperadas se apoyan en palabras reconocidas.
+El informe por cancion esta en `songs/VOCAL-IMPORT-20261029.json`.
+
+Cuando hay marcas de palabras, el naranja sigue sus entradas y duraciones, incluso
+en frases partidas en varias lineas. Las canciones antiguas sin marcas de palabras
+conservan el barrido por frase. El retraso Bluetooth global se aplica antes de
+seleccionar la frase y pintar las palabras; no cambia el tono ni la velocidad del MP3.
+Cada pantalla debe calibrarse con su altavoz real desde Audio y descarga.
+Esto compensa la letra respecto del sonido, no elimina la latencia del microfono
+ni sincroniza dos altavoces Bluetooth que tengan retrasos distintos.
+
+Cada grabacion tiene su SHA-256 en el informe y en sus marcas. Un cambio de pista
+invalida los ajustes locales de tiempos de la version anterior. La cache sin
+conexion solo reutiliza archivos cuyo hash coincide con la version actual.
+Despues de actualizar, completar la descarga y aplicar la actualizacion antes
+de desconectar internet; los MP3 anteriores no se mezclan con las letras nuevas.
+
+Herramientas reproducibles: `scripts/import-vocal-tracks.json`,
+`scripts/align-vocal-tracks.py`, `scripts/update-vocal-catalog.cjs` y
+`scripts/build-offline.cjs`. Los TXT de `letras-para-lector/` no se modificaron.
+
+Las secciones siguientes describen tambien etapas previas del proyecto; este
+apartado y el informe fechado indican el estado actual de las grabaciones.
+
 Selector tactil y reproductor de karaoke para Samay BCP. Elegir una cancion y su
 version abre la reproduccion y activa el audio en la misma pestana, sin otro toque.
 La flecha de volver o el boton atras del navegador pausa el audio y devuelve al

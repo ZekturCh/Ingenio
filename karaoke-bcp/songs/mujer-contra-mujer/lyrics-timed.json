@@ -1,185 +1,1397 @@
 {
   "songId": "mujer-contra-mujer",
-  "title": "Mujer contra mujer",
   "status": "estimated",
   "reviewRequired": true,
-  "timingMethod": "text-length-proportional; not aligned to vocals or instrumental sections",
-  "durationSeconds": 247.301224,
+  "method": "local-asr-word-matching",
+  "alignmentModel": "faster-whisper-small",
+  "durationSeconds": 245.368163,
+  "audioSha256": "13e3c782a804a16896ca1973ff5ac08ef05bc0aa46e6d06d3779932df74f0100",
   "lyrics": [
     {
       "text": "Nada tienen de especial",
       "start": 0.0,
-      "end": 5.881123
+      "end": 4.24,
+      "words": [
+        {
+          "from": 0,
+          "to": 4,
+          "start": 0.0,
+          "end": 1.78
+        },
+        {
+          "from": 5,
+          "to": 11,
+          "start": 1.78,
+          "end": 2.7
+        },
+        {
+          "from": 12,
+          "to": 14,
+          "start": 2.7,
+          "end": 3.16
+        },
+        {
+          "from": 15,
+          "to": 23,
+          "start": 3.16,
+          "end": 4.24
+        }
+      ],
+      "sourceLine": 1,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Dos mujeres que se dan la mano",
-      "start": 5.881123,
-      "end": 12.938471
+      "start": 4.24,
+      "end": 12.28,
+      "words": [
+        {
+          "from": 0,
+          "to": 3,
+          "start": 4.24,
+          "end": 8.16
+        },
+        {
+          "from": 4,
+          "to": 11,
+          "start": 8.16,
+          "end": 9.1
+        },
+        {
+          "from": 12,
+          "to": 15,
+          "start": 9.1,
+          "end": 10.02
+        },
+        {
+          "from": 16,
+          "to": 18,
+          "start": 10.02,
+          "end": 10.34
+        },
+        {
+          "from": 19,
+          "to": 22,
+          "start": 10.34,
+          "end": 10.86
+        },
+        {
+          "from": 23,
+          "to": 25,
+          "start": 10.86,
+          "end": 11.3
+        },
+        {
+          "from": 26,
+          "to": 30,
+          "start": 11.3,
+          "end": 12.28
+        }
+      ],
+      "sourceLine": 2,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "El matiz viene después",
-      "start": 12.938471,
-      "end": 18.525538
+      "start": 12.28,
+      "end": 17.2,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 12.28,
+          "end": 14.9
+        },
+        {
+          "from": 3,
+          "to": 8,
+          "start": 14.9,
+          "end": 15.52
+        },
+        {
+          "from": 9,
+          "to": 14,
+          "start": 15.52,
+          "end": 16.2
+        },
+        {
+          "from": 15,
+          "to": 22,
+          "start": 16.2,
+          "end": 17.2
+        }
+      ],
+      "sourceLine": 3,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Cuando lo hacen por debajo del mantel",
-      "start": 18.525538,
-      "end": 27.641278
+      "start": 20.06,
+      "end": 25.18,
+      "words": [
+        {
+          "from": 0,
+          "to": 6,
+          "start": 20.06,
+          "end": 21.34
+        },
+        {
+          "from": 7,
+          "to": 9,
+          "start": 21.34,
+          "end": 21.82
+        },
+        {
+          "from": 10,
+          "to": 15,
+          "start": 21.82,
+          "end": 22.4
+        },
+        {
+          "from": 16,
+          "to": 19,
+          "start": 22.4,
+          "end": 23.02
+        },
+        {
+          "from": 20,
+          "to": 26,
+          "start": 23.02,
+          "end": 23.86
+        },
+        {
+          "from": 27,
+          "to": 30,
+          "start": 23.86,
+          "end": 24.54
+        },
+        {
+          "from": 31,
+          "to": 37,
+          "start": 24.54,
+          "end": 25.18
+        }
+      ],
+      "sourceLine": 4,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Luego a solas sin nada que perder",
-      "start": 27.641278,
-      "end": 35.580794
+      "start": 25.36,
+      "end": 30.54,
+      "words": [
+        {
+          "from": 0,
+          "to": 5,
+          "start": 25.36,
+          "end": 25.86
+        },
+        {
+          "from": 6,
+          "to": 7,
+          "start": 25.86,
+          "end": 26.42
+        },
+        {
+          "from": 8,
+          "to": 13,
+          "start": 26.42,
+          "end": 27.64
+        },
+        {
+          "from": 14,
+          "to": 17,
+          "start": 27.64,
+          "end": 28.24
+        },
+        {
+          "from": 18,
+          "to": 22,
+          "start": 28.24,
+          "end": 28.96
+        },
+        {
+          "from": 23,
+          "to": 26,
+          "start": 28.96,
+          "end": 29.3
+        },
+        {
+          "from": 27,
+          "to": 33,
+          "start": 29.3,
+          "end": 30.54
+        }
+      ],
+      "sourceLine": 5,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Tras las manos va el resto de la piel",
-      "start": 35.580794,
-      "end": 44.108423
+      "start": 31.78,
+      "end": 37.66,
+      "words": [
+        {
+          "from": 0,
+          "to": 4,
+          "start": 31.78,
+          "end": 32.62
+        },
+        {
+          "from": 5,
+          "to": 8,
+          "start": 32.62,
+          "end": 32.9
+        },
+        {
+          "from": 9,
+          "to": 14,
+          "start": 32.9,
+          "end": 33.92
+        },
+        {
+          "from": 21,
+          "to": 26,
+          "start": 34.92,
+          "end": 35.62
+        },
+        {
+          "from": 27,
+          "to": 29,
+          "start": 35.62,
+          "end": 35.94
+        },
+        {
+          "from": 30,
+          "to": 32,
+          "start": 35.94,
+          "end": 36.48
+        },
+        {
+          "from": 33,
+          "to": 37,
+          "start": 36.48,
+          "end": 37.66
+        }
+      ],
+      "sourceLine": 6,
+      "matchedWordRatio": 0.778
     },
     {
       "text": "Un amor por ocultar",
-      "start": 44.108423,
-      "end": 48.813321
+      "start": 38.38,
+      "end": 43.2,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 38.38,
+          "end": 41.38
+        },
+        {
+          "from": 3,
+          "to": 7,
+          "start": 41.38,
+          "end": 41.96
+        },
+        {
+          "from": 8,
+          "to": 11,
+          "start": 41.96,
+          "end": 42.46
+        },
+        {
+          "from": 12,
+          "to": 19,
+          "start": 42.46,
+          "end": 43.2
+        }
+      ],
+      "sourceLine": 7,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Aunque en cueros no hay donde esconderlo",
-      "start": 48.813321,
-      "end": 58.81123
+      "start": 47.2,
+      "end": 51.98,
+      "words": [
+        {
+          "from": 0,
+          "to": 6,
+          "start": 47.2,
+          "end": 47.94
+        },
+        {
+          "from": 7,
+          "to": 9,
+          "start": 47.94,
+          "end": 48.16
+        },
+        {
+          "from": 10,
+          "to": 16,
+          "start": 48.16,
+          "end": 48.74
+        },
+        {
+          "from": 17,
+          "to": 19,
+          "start": 48.74,
+          "end": 49.38
+        },
+        {
+          "from": 20,
+          "to": 23,
+          "start": 49.38,
+          "end": 49.64
+        },
+        {
+          "from": 24,
+          "to": 29,
+          "start": 49.64,
+          "end": 50.0
+        },
+        {
+          "from": 30,
+          "to": 40,
+          "start": 50.0,
+          "end": 51.98
+        }
+      ],
+      "sourceLine": 8,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Lo disfrazan de amistad",
-      "start": 58.81123,
-      "end": 64.692353
+      "start": 53.62,
+      "end": 57.02,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 53.62,
+          "end": 54.26
+        },
+        {
+          "from": 13,
+          "to": 15,
+          "start": 55.4,
+          "end": 55.72
+        },
+        {
+          "from": 16,
+          "to": 23,
+          "start": 55.72,
+          "end": 57.02
+        }
+      ],
+      "sourceLine": 9,
+      "matchedWordRatio": 0.75
     },
     {
       "text": "Cuando sale a pasear por la ciudad",
-      "start": 64.692353,
-      "end": 72.925926
+      "start": 61.18,
+      "end": 64.48,
+      "words": [
+        {
+          "from": 7,
+          "to": 11,
+          "start": 61.18,
+          "end": 61.74
+        },
+        {
+          "from": 12,
+          "to": 13,
+          "start": 61.74,
+          "end": 62.06
+        },
+        {
+          "from": 14,
+          "to": 20,
+          "start": 62.06,
+          "end": 63.24
+        },
+        {
+          "from": 21,
+          "to": 24,
+          "start": 63.24,
+          "end": 63.62
+        },
+        {
+          "from": 25,
+          "to": 27,
+          "start": 63.62,
+          "end": 64.04
+        },
+        {
+          "from": 28,
+          "to": 34,
+          "start": 64.04,
+          "end": 64.48
+        }
+      ],
+      "sourceLine": 10,
+      "matchedWordRatio": 0.857
     },
     {
       "text": "Una opina que aquello no está bien",
-      "start": 72.925926,
-      "end": 81.159498
+      "start": 65.02,
+      "end": 70.56,
+      "words": [
+        {
+          "from": 0,
+          "to": 3,
+          "start": 65.02,
+          "end": 65.66
+        },
+        {
+          "from": 4,
+          "to": 9,
+          "start": 65.66,
+          "end": 66.76
+        },
+        {
+          "from": 10,
+          "to": 13,
+          "start": 66.76,
+          "end": 67.72
+        },
+        {
+          "from": 14,
+          "to": 21,
+          "start": 67.72,
+          "end": 68.56
+        },
+        {
+          "from": 22,
+          "to": 24,
+          "start": 68.56,
+          "end": 68.9
+        },
+        {
+          "from": 25,
+          "to": 29,
+          "start": 68.9,
+          "end": 69.46
+        },
+        {
+          "from": 30,
+          "to": 34,
+          "start": 69.46,
+          "end": 70.56
+        }
+      ],
+      "sourceLine": 11,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "La otra opina que qué se le va a hacer",
-      "start": 81.159498,
-      "end": 89.687126
+      "start": 70.56,
+      "end": 76.8,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 70.56,
+          "end": 72.0
+        },
+        {
+          "from": 3,
+          "to": 7,
+          "start": 72.0,
+          "end": 72.32
+        },
+        {
+          "from": 8,
+          "to": 13,
+          "start": 72.32,
+          "end": 73.32
+        },
+        {
+          "from": 14,
+          "to": 17,
+          "start": 74.1,
+          "end": 74.36
+        },
+        {
+          "from": 18,
+          "to": 21,
+          "start": 74.36,
+          "end": 74.68
+        },
+        {
+          "from": 22,
+          "to": 24,
+          "start": 74.68,
+          "end": 75.18
+        },
+        {
+          "from": 25,
+          "to": 27,
+          "start": 75.18,
+          "end": 75.5
+        },
+        {
+          "from": 28,
+          "to": 30,
+          "start": 75.5,
+          "end": 76.04
+        },
+        {
+          "from": 31,
+          "to": 32,
+          "start": 76.04,
+          "end": 76.38
+        },
+        {
+          "from": 33,
+          "to": 38,
+          "start": 76.38,
+          "end": 76.8
+        }
+      ],
+      "sourceLine": 12,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Y lo que opinen los demás está de más",
-      "start": 89.687126,
-      "end": 98.214755
+      "start": 79.68,
+      "end": 84.48,
+      "words": [
+        {
+          "from": 0,
+          "to": 1,
+          "start": 79.68,
+          "end": 80.44
+        },
+        {
+          "from": 2,
+          "to": 4,
+          "start": 80.44,
+          "end": 80.74
+        },
+        {
+          "from": 5,
+          "to": 8,
+          "start": 80.74,
+          "end": 80.94
+        },
+        {
+          "from": 9,
+          "to": 15,
+          "start": 80.94,
+          "end": 81.7
+        },
+        {
+          "from": 16,
+          "to": 19,
+          "start": 81.7,
+          "end": 82.32
+        },
+        {
+          "from": 20,
+          "to": 25,
+          "start": 82.32,
+          "end": 82.84
+        },
+        {
+          "from": 26,
+          "to": 30,
+          "start": 82.84,
+          "end": 83.62
+        },
+        {
+          "from": 31,
+          "to": 33,
+          "start": 83.62,
+          "end": 84.06
+        },
+        {
+          "from": 34,
+          "to": 37,
+          "start": 84.06,
+          "end": 84.48
+        }
+      ],
+      "sourceLine": 13,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Quien detiene palomas al vuelo",
-      "start": 98.214755,
-      "end": 105.860215
+      "start": 84.48,
+      "end": 89.96,
+      "words": [
+        {
+          "from": 0,
+          "to": 5,
+          "start": 84.48,
+          "end": 85.3
+        },
+        {
+          "from": 6,
+          "to": 13,
+          "start": 85.3,
+          "end": 86.6
+        },
+        {
+          "from": 14,
+          "to": 21,
+          "start": 86.6,
+          "end": 88.3
+        },
+        {
+          "from": 22,
+          "to": 24,
+          "start": 88.3,
+          "end": 88.98
+        },
+        {
+          "from": 25,
+          "to": 30,
+          "start": 88.98,
+          "end": 89.96
+        }
+      ],
+      "sourceLine": 14,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Volando a ras de suelo",
-      "start": 105.860215,
-      "end": 111.153226
-    },
-    {
-      "text": "Mujer contra mujer",
-      "start": 111.153226,
-      "end": 115.858124
+      "start": 90.82,
+      "end": 93.08,
+      "words": [
+        {
+          "from": 0,
+          "to": 7,
+          "start": 90.82,
+          "end": 91.38
+        },
+        {
+          "from": 14,
+          "to": 16,
+          "start": 91.88,
+          "end": 92.24
+        },
+        {
+          "from": 17,
+          "to": 22,
+          "start": 92.24,
+          "end": 93.08
+        }
+      ],
+      "sourceLine": 15,
+      "matchedWordRatio": 0.6
     },
     {
       "text": "No estoy yo por la labor",
-      "start": 115.858124,
-      "end": 121.445191
+      "start": 101.56,
+      "end": 104.64,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 101.56,
+          "end": 102.1
+        },
+        {
+          "from": 3,
+          "to": 8,
+          "start": 102.1,
+          "end": 102.44
+        },
+        {
+          "from": 9,
+          "to": 11,
+          "start": 102.44,
+          "end": 102.96
+        },
+        {
+          "from": 12,
+          "to": 15,
+          "start": 102.96,
+          "end": 103.36
+        },
+        {
+          "from": 16,
+          "to": 18,
+          "start": 103.36,
+          "end": 103.74
+        },
+        {
+          "from": 19,
+          "to": 24,
+          "start": 103.74,
+          "end": 104.64
+        }
+      ],
+      "sourceLine": 17,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "De tirarles la primera piedra",
-      "start": 121.445191,
-      "end": 128.796595
+      "start": 109.78,
+      "end": 112.7,
+      "words": [
+        {
+          "from": 12,
+          "to": 14,
+          "start": 109.78,
+          "end": 110.42
+        },
+        {
+          "from": 15,
+          "to": 22,
+          "start": 110.42,
+          "end": 111.08
+        },
+        {
+          "from": 23,
+          "to": 29,
+          "start": 111.08,
+          "end": 112.7
+        }
+      ],
+      "sourceLine": 18,
+      "matchedWordRatio": 0.6
     },
     {
       "text": "Si equivoco la ocasión",
-      "start": 128.796595,
-      "end": 134.383662
+      "start": 114.22,
+      "end": 118.38,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 114.22,
+          "end": 115.26
+        },
+        {
+          "from": 3,
+          "to": 11,
+          "start": 115.26,
+          "end": 116.3
+        },
+        {
+          "from": 12,
+          "to": 14,
+          "start": 116.3,
+          "end": 116.72
+        },
+        {
+          "from": 15,
+          "to": 22,
+          "start": 116.72,
+          "end": 118.38
+        }
+      ],
+      "sourceLine": 19,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Y las hallo labio a labio en el salón",
-      "start": 134.383662,
-      "end": 142.91129
+      "start": 121.42,
+      "end": 125.84,
+      "words": [
+        {
+          "from": 0,
+          "to": 1,
+          "start": 121.42,
+          "end": 121.94
+        },
+        {
+          "from": 18,
+          "to": 19,
+          "start": 123.78,
+          "end": 123.92
+        },
+        {
+          "from": 26,
+          "to": 28,
+          "start": 124.5,
+          "end": 124.78
+        },
+        {
+          "from": 29,
+          "to": 31,
+          "start": 124.78,
+          "end": 125.06
+        },
+        {
+          "from": 32,
+          "to": 37,
+          "start": 125.06,
+          "end": 125.84
+        }
+      ],
+      "sourceLine": 20,
+      "matchedWordRatio": 0.556
     },
     {
       "text": "Ni siquiera me atrevería a toser",
-      "start": 142.91129,
-      "end": 150.850806
+      "start": 126.46,
+      "end": 131.3,
+      "words": [
+        {
+          "from": 3,
+          "to": 11,
+          "start": 126.46,
+          "end": 127.78
+        },
+        {
+          "from": 12,
+          "to": 14,
+          "start": 127.78,
+          "end": 128.72
+        },
+        {
+          "from": 25,
+          "to": 26,
+          "start": 130.0,
+          "end": 130.32
+        },
+        {
+          "from": 27,
+          "to": 32,
+          "start": 130.32,
+          "end": 131.3
+        }
+      ],
+      "sourceLine": 21,
+      "matchedWordRatio": 0.667
     },
     {
       "text": "Si no gusto ya sé lo que hay que hacer",
-      "start": 150.850806,
-      "end": 159.378434
+      "start": 131.84,
+      "end": 138.42,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 131.84,
+          "end": 133.04
+        },
+        {
+          "from": 3,
+          "to": 5,
+          "start": 133.04,
+          "end": 133.44
+        },
+        {
+          "from": 6,
+          "to": 11,
+          "start": 133.44,
+          "end": 134.32
+        },
+        {
+          "from": 12,
+          "to": 14,
+          "start": 134.96,
+          "end": 135.36
+        },
+        {
+          "from": 15,
+          "to": 17,
+          "start": 135.36,
+          "end": 135.68
+        },
+        {
+          "from": 18,
+          "to": 20,
+          "start": 135.68,
+          "end": 136.18
+        },
+        {
+          "from": 21,
+          "to": 24,
+          "start": 136.18,
+          "end": 136.36
+        },
+        {
+          "from": 25,
+          "to": 28,
+          "start": 136.36,
+          "end": 136.74
+        },
+        {
+          "from": 29,
+          "to": 32,
+          "start": 136.74,
+          "end": 136.94
+        },
+        {
+          "from": 33,
+          "to": 38,
+          "start": 136.94,
+          "end": 138.42
+        }
+      ],
+      "sourceLine": 22,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Que con mis piedras hacen ellas su pared",
-      "start": 159.378434,
-      "end": 169.082288
+      "start": 140.68,
+      "end": 145.4,
+      "words": [
+        {
+          "from": 0,
+          "to": 3,
+          "start": 140.68,
+          "end": 141.34
+        },
+        {
+          "from": 4,
+          "to": 7,
+          "start": 141.34,
+          "end": 141.74
+        },
+        {
+          "from": 8,
+          "to": 11,
+          "start": 141.74,
+          "end": 142.02
+        },
+        {
+          "from": 12,
+          "to": 19,
+          "start": 142.02,
+          "end": 142.72
+        },
+        {
+          "from": 20,
+          "to": 25,
+          "start": 142.72,
+          "end": 143.54
+        },
+        {
+          "from": 26,
+          "to": 31,
+          "start": 143.54,
+          "end": 144.24
+        },
+        {
+          "from": 32,
+          "to": 34,
+          "start": 144.24,
+          "end": 144.9
+        },
+        {
+          "from": 35,
+          "to": 40,
+          "start": 144.9,
+          "end": 145.4
+        }
+      ],
+      "sourceLine": 23,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Quien detiene palomas al vuelo",
-      "start": 169.082288,
-      "end": 176.727747
+      "start": 145.4,
+      "end": 150.84,
+      "words": [
+        {
+          "from": 0,
+          "to": 5,
+          "start": 145.4,
+          "end": 146.2
+        },
+        {
+          "from": 14,
+          "to": 21,
+          "start": 147.64,
+          "end": 149.38
+        },
+        {
+          "from": 22,
+          "to": 24,
+          "start": 149.38,
+          "end": 150.02
+        },
+        {
+          "from": 25,
+          "to": 30,
+          "start": 150.02,
+          "end": 150.84
+        }
+      ],
+      "sourceLine": 24,
+      "matchedWordRatio": 0.8
     },
     {
       "text": "Volando a ras de suelo",
-      "start": 176.727747,
-      "end": 182.020758
-    },
-    {
-      "text": "Mujer contra mujer",
-      "start": 182.020758,
-      "end": 186.725657
+      "start": 150.84,
+      "end": 154.02,
+      "words": [
+        {
+          "from": 0,
+          "to": 7,
+          "start": 150.84,
+          "end": 152.36
+        },
+        {
+          "from": 8,
+          "to": 9,
+          "start": 152.36,
+          "end": 152.56
+        },
+        {
+          "from": 10,
+          "to": 13,
+          "start": 152.56,
+          "end": 152.94
+        },
+        {
+          "from": 14,
+          "to": 16,
+          "start": 152.94,
+          "end": 153.2
+        },
+        {
+          "from": 17,
+          "to": 22,
+          "start": 153.2,
+          "end": 154.02
+        }
+      ],
+      "sourceLine": 25,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Una opina que aquello no está bien",
-      "start": 186.725657,
-      "end": 194.959229
+      "start": 181.66,
+      "end": 187.2,
+      "words": [
+        {
+          "from": 0,
+          "to": 3,
+          "start": 181.66,
+          "end": 182.78
+        },
+        {
+          "from": 4,
+          "to": 9,
+          "start": 182.78,
+          "end": 183.88
+        },
+        {
+          "from": 10,
+          "to": 13,
+          "start": 184.28,
+          "end": 184.8
+        },
+        {
+          "from": 14,
+          "to": 21,
+          "start": 184.8,
+          "end": 185.6
+        },
+        {
+          "from": 22,
+          "to": 24,
+          "start": 185.6,
+          "end": 185.86
+        },
+        {
+          "from": 25,
+          "to": 29,
+          "start": 185.86,
+          "end": 186.42
+        },
+        {
+          "from": 30,
+          "to": 34,
+          "start": 186.42,
+          "end": 187.2
+        }
+      ],
+      "sourceLine": 27,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "La otra opina que qué se le va a hacer",
-      "start": 194.959229,
-      "end": 203.486857
+      "start": 187.84,
+      "end": 194.28,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 187.84,
+          "end": 189.06
+        },
+        {
+          "from": 3,
+          "to": 7,
+          "start": 189.06,
+          "end": 189.36
+        },
+        {
+          "from": 8,
+          "to": 13,
+          "start": 189.36,
+          "end": 190.44
+        },
+        {
+          "from": 14,
+          "to": 17,
+          "start": 191.32,
+          "end": 191.4
+        },
+        {
+          "from": 18,
+          "to": 21,
+          "start": 191.4,
+          "end": 191.72
+        },
+        {
+          "from": 22,
+          "to": 24,
+          "start": 191.72,
+          "end": 192.24
+        },
+        {
+          "from": 25,
+          "to": 27,
+          "start": 192.24,
+          "end": 192.5
+        },
+        {
+          "from": 28,
+          "to": 30,
+          "start": 192.5,
+          "end": 193.06
+        },
+        {
+          "from": 31,
+          "to": 32,
+          "start": 193.06,
+          "end": 194.14
+        },
+        {
+          "from": 33,
+          "to": 38,
+          "start": 194.14,
+          "end": 194.28
+        }
+      ],
+      "sourceLine": 28,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Y lo que opinen los demás está de más",
-      "start": 203.486857,
-      "end": 212.014486
+      "start": 196.84,
+      "end": 200.64,
+      "words": [
+        {
+          "from": 0,
+          "to": 1,
+          "start": 196.84,
+          "end": 197.44
+        },
+        {
+          "from": 2,
+          "to": 4,
+          "start": 197.44,
+          "end": 197.78
+        },
+        {
+          "from": 5,
+          "to": 8,
+          "start": 197.78,
+          "end": 197.98
+        },
+        {
+          "from": 9,
+          "to": 15,
+          "start": 197.98,
+          "end": 198.76
+        },
+        {
+          "from": 16,
+          "to": 19,
+          "start": 198.76,
+          "end": 199.42
+        },
+        {
+          "from": 20,
+          "to": 25,
+          "start": 199.42,
+          "end": 199.98
+        },
+        {
+          "from": 26,
+          "to": 30,
+          "start": 200.3,
+          "end": 200.64
+        }
+      ],
+      "sourceLine": 29,
+      "matchedWordRatio": 0.778
     },
     {
       "text": "Quien detiene palomas al vuelo",
-      "start": 212.014486,
-      "end": 219.659946
-    },
-    {
-      "text": "Volando a ras de suelo",
-      "start": 219.659946,
-      "end": 224.952956
+      "start": 201.46,
+      "end": 206.84,
+      "words": [
+        {
+          "from": 0,
+          "to": 5,
+          "start": 201.46,
+          "end": 202.26
+        },
+        {
+          "from": 22,
+          "to": 24,
+          "start": 205.62,
+          "end": 206.06
+        },
+        {
+          "from": 25,
+          "to": 30,
+          "start": 206.06,
+          "end": 206.84
+        }
+      ],
+      "sourceLine": 30,
+      "matchedWordRatio": 0.6
     },
     {
       "text": "Mujer contra mujer",
-      "start": 224.952956,
-      "end": 229.657855
+      "start": 210.96,
+      "end": 212.92,
+      "words": [
+        {
+          "from": 0,
+          "to": 5,
+          "start": 210.96,
+          "end": 211.52
+        },
+        {
+          "from": 6,
+          "to": 12,
+          "start": 211.52,
+          "end": 212.22
+        },
+        {
+          "from": 13,
+          "to": 18,
+          "start": 212.22,
+          "end": 212.92
+        }
+      ],
+      "sourceLine": 32,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Quien detiene palomas al vuelo",
-      "start": 229.657855,
-      "end": 237.303315
+      "start": 217.42,
+      "end": 223.24,
+      "words": [
+        {
+          "from": 0,
+          "to": 5,
+          "start": 217.42,
+          "end": 218.82
+        },
+        {
+          "from": 22,
+          "to": 24,
+          "start": 222.14,
+          "end": 222.54
+        },
+        {
+          "from": 25,
+          "to": 30,
+          "start": 222.54,
+          "end": 223.24
+        }
+      ],
+      "sourceLine": 33,
+      "matchedWordRatio": 0.6
     },
     {
       "text": "Volando a ras de suelo",
-      "start": 237.303315,
-      "end": 242.596326
+      "start": 223.24,
+      "end": 226.52,
+      "words": [
+        {
+          "from": 0,
+          "to": 7,
+          "start": 223.24,
+          "end": 224.92
+        },
+        {
+          "from": 8,
+          "to": 9,
+          "start": 224.92,
+          "end": 225.08
+        },
+        {
+          "from": 10,
+          "to": 13,
+          "start": 225.08,
+          "end": 225.46
+        },
+        {
+          "from": 14,
+          "to": 16,
+          "start": 225.46,
+          "end": 225.74
+        },
+        {
+          "from": 17,
+          "to": 22,
+          "start": 225.74,
+          "end": 226.52
+        }
+      ],
+      "sourceLine": 34,
+      "matchedWordRatio": 1.0,
+      "alignment": "acoustic-gap-refinement"
     },
     {
       "text": "Mujer contra mujer",
-      "start": 242.596326,
-      "end": 247.301224
+      "start": 227.56,
+      "end": 230.6,
+      "words": [
+        {
+          "from": 0,
+          "to": 5,
+          "start": 227.56,
+          "end": 228.02
+        },
+        {
+          "from": 6,
+          "to": 12,
+          "start": 228.02,
+          "end": 228.9
+        },
+        {
+          "from": 13,
+          "to": 18,
+          "start": 228.9,
+          "end": 230.6
+        }
+      ],
+      "sourceLine": 35,
+      "matchedWordRatio": 1.0
+    }
+  ],
+  "unmatchedLines": [
+    {
+      "line": 16,
+      "text": "Mujer contra mujer",
+      "coverage": 0.333
+    },
+    {
+      "line": 26,
+      "text": "Mujer contra mujer",
+      "coverage": 0.333
+    },
+    {
+      "line": 31,
+      "text": "Volando a ras de suelo",
+      "coverage": 0.2
     }
   ]
 }

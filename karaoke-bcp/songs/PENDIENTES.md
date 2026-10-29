@@ -1,4 +1,23 @@
-# Canciones pendientes de audio
+# Estado del repertorio al 29/10/2026
+
+Las 28 canciones del catalogo tienen audio. Se incorporaron las cinco que faltaban:
+Alma, corazon y vida; El muerto vivo; El rey; Mal paso; y Odiame.
+
+El lote nuevo contiene 23 MP3 con voz aportados por el usuario, sin recompresion.
+`VOCAL-IMPORT-20261029.json` registra los archivos de origen, sus hashes,
+duraciones y las frases que no se pudieron alinear. El WAV personal se excluyo.
+
+Carinito, Himno Nacional del Peru, La Bruja, La Llorona y Quien sera conservan las
+grabaciones anteriores: no tenian reemplazo en este lote. No se afirma que esas
+cinco pistas tengan voz guia ni que sus marcas sean nuevas.
+
+Las marcas nuevas son automaticas, basadas en reconocimiento de palabras y
+alineacion acustica local. `status: estimated` y `reviewRequired: true` indican
+que falta revisarlas al oido. Los intervalos no reconocidos quedan sin marcas,
+en lugar de repartir texto a ojo. Revisar `unmatchedLines` en el informe o en
+el JSON de cada cancion. Los TXT originales siguen en `letras-para-lector/`.
+
+## Historial anterior al reemplazo
 
 Las 28 canciones están en el catálogo: 23 tienen audio y 5 quedan ocultas hasta incorporar su pista. Cada carpeta pendiente contiene la letra TXT y un JSON de tiempos vacío. No se han creado audios ni tiempos ficticios.
 

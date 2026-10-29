@@ -1,145 +1,1243 @@
 {
   "songId": "fina-estampa",
-  "title": "Fina Estampa",
   "status": "estimated",
   "reviewRequired": true,
-  "timingMethod": "text-length-proportional; not aligned to vocals or instrumental sections",
-  "durationSeconds": 161.097,
+  "method": "local-asr-word-matching",
+  "alignmentModel": "faster-whisper-small",
+  "durationSeconds": 174.106122,
+  "audioSha256": "f73d584241c54ed0ee0297007ef762e4b7dde00e8555b4932a89351f4c3018a9",
   "lyrics": [
     {
       "text": "Una veredita alegre con luz de luna o de sol",
-      "start": 0.0,
-      "end": 6.385498
+      "start": 21.78,
+      "end": 26.76,
+      "words": [
+        {
+          "from": 0,
+          "to": 3,
+          "start": 21.78,
+          "end": 22.74
+        },
+        {
+          "from": 4,
+          "to": 12,
+          "start": 22.74,
+          "end": 23.68
+        },
+        {
+          "from": 13,
+          "to": 19,
+          "start": 23.68,
+          "end": 24.6
+        },
+        {
+          "from": 20,
+          "to": 23,
+          "start": 24.6,
+          "end": 25.18
+        },
+        {
+          "from": 24,
+          "to": 27,
+          "start": 25.18,
+          "end": 25.4
+        },
+        {
+          "from": 28,
+          "to": 30,
+          "start": 25.4,
+          "end": 25.62
+        },
+        {
+          "from": 31,
+          "to": 35,
+          "start": 25.62,
+          "end": 26.0
+        },
+        {
+          "from": 36,
+          "to": 37,
+          "start": 26.0,
+          "end": 26.16
+        },
+        {
+          "from": 38,
+          "to": 40,
+          "start": 26.16,
+          "end": 26.34
+        },
+        {
+          "from": 41,
+          "to": 44,
+          "start": 26.34,
+          "end": 26.76
+        }
+      ],
+      "sourceLine": 1,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Tendida como una cinta con sus lados de arrebol",
-      "start": 6.385498,
-      "end": 13.500768
+      "start": 26.76,
+      "end": 31.56,
+      "words": [
+        {
+          "from": 0,
+          "to": 7,
+          "start": 26.76,
+          "end": 28.08
+        },
+        {
+          "from": 8,
+          "to": 12,
+          "start": 28.08,
+          "end": 28.72
+        },
+        {
+          "from": 13,
+          "to": 16,
+          "start": 28.72,
+          "end": 29.2
+        },
+        {
+          "from": 17,
+          "to": 22,
+          "start": 29.2,
+          "end": 29.82
+        },
+        {
+          "from": 23,
+          "to": 26,
+          "start": 29.82,
+          "end": 30.28
+        },
+        {
+          "from": 27,
+          "to": 30,
+          "start": 30.28,
+          "end": 30.58
+        },
+        {
+          "from": 31,
+          "to": 36,
+          "start": 30.58,
+          "end": 31.12
+        },
+        {
+          "from": 37,
+          "to": 39,
+          "start": 31.12,
+          "end": 31.56
+        }
+      ],
+      "sourceLine": 2,
+      "matchedWordRatio": 0.889
     },
     {
       "text": "Arrebol de los geranios y sonrisas con rubor",
-      "start": 13.500768,
-      "end": 20.251152
+      "start": 34.1,
+      "end": 38.1,
+      "words": [
+        {
+          "from": 8,
+          "to": 10,
+          "start": 34.1,
+          "end": 34.32
+        },
+        {
+          "from": 11,
+          "to": 14,
+          "start": 34.32,
+          "end": 34.56
+        },
+        {
+          "from": 15,
+          "to": 23,
+          "start": 34.56,
+          "end": 35.78
+        },
+        {
+          "from": 24,
+          "to": 25,
+          "start": 35.78,
+          "end": 36.24
+        },
+        {
+          "from": 26,
+          "to": 34,
+          "start": 36.24,
+          "end": 36.9
+        },
+        {
+          "from": 35,
+          "to": 38,
+          "start": 36.9,
+          "end": 37.44
+        },
+        {
+          "from": 39,
+          "to": 44,
+          "start": 37.44,
+          "end": 38.1
+        }
+      ],
+      "sourceLine": 3,
+      "matchedWordRatio": 0.875
     },
     {
       "text": "Arrebol de los claveles y las mejillas en flor",
-      "start": 20.251152,
-      "end": 27.183978
+      "start": 39.32,
+      "end": 43.38,
+      "words": [
+        {
+          "from": 8,
+          "to": 10,
+          "start": 39.32,
+          "end": 39.66
+        },
+        {
+          "from": 11,
+          "to": 14,
+          "start": 39.66,
+          "end": 40.06
+        },
+        {
+          "from": 15,
+          "to": 23,
+          "start": 40.06,
+          "end": 40.88
+        },
+        {
+          "from": 24,
+          "to": 25,
+          "start": 40.88,
+          "end": 41.3
+        },
+        {
+          "from": 26,
+          "to": 29,
+          "start": 41.3,
+          "end": 41.66
+        },
+        {
+          "from": 30,
+          "to": 38,
+          "start": 41.66,
+          "end": 42.54
+        },
+        {
+          "from": 42,
+          "to": 46,
+          "start": 42.94,
+          "end": 43.38
+        }
+      ],
+      "sourceLine": 4,
+      "matchedWordRatio": 0.778
     },
     {
       "text": "Perfumada de magnolia rociada de mañanita",
-      "start": 27.183978,
-      "end": 33.75192
+      "start": 43.74,
+      "end": 48.86,
+      "words": [
+        {
+          "from": 0,
+          "to": 9,
+          "start": 43.74,
+          "end": 44.8
+        },
+        {
+          "from": 10,
+          "to": 12,
+          "start": 44.8,
+          "end": 45.18
+        },
+        {
+          "from": 30,
+          "to": 32,
+          "start": 47.46,
+          "end": 47.76
+        },
+        {
+          "from": 33,
+          "to": 41,
+          "start": 47.76,
+          "end": 48.86
+        }
+      ],
+      "sourceLine": 5,
+      "matchedWordRatio": 0.667
     },
     {
       "text": "La veredita sonríe cuando tu piel acaricia",
-      "start": 33.75192,
-      "end": 40.319861
+      "start": 49.24,
+      "end": 52.94,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 49.24,
+          "end": 49.6
+        },
+        {
+          "from": 3,
+          "to": 11,
+          "start": 49.6,
+          "end": 50.6
+        },
+        {
+          "from": 12,
+          "to": 18,
+          "start": 50.6,
+          "end": 51.62
+        },
+        {
+          "from": 19,
+          "to": 25,
+          "start": 51.62,
+          "end": 52.08
+        },
+        {
+          "from": 26,
+          "to": 28,
+          "start": 52.08,
+          "end": 52.48
+        },
+        {
+          "from": 29,
+          "to": 33,
+          "start": 52.48,
+          "end": 52.94
+        }
+      ],
+      "sourceLine": 6,
+      "matchedWordRatio": 0.857
     },
     {
       "text": "Y la cuculí se ríe y la ventana se agita",
-      "start": 40.319861,
-      "end": 45.975588
+      "start": 54.16,
+      "end": 59.48,
+      "words": [
+        {
+          "from": 0,
+          "to": 1,
+          "start": 54.16,
+          "end": 54.72
+        },
+        {
+          "from": 2,
+          "to": 4,
+          "start": 54.72,
+          "end": 54.94
+        },
+        {
+          "from": 5,
+          "to": 11,
+          "start": 54.94,
+          "end": 56.06
+        },
+        {
+          "from": 12,
+          "to": 14,
+          "start": 56.06,
+          "end": 56.22
+        },
+        {
+          "from": 15,
+          "to": 18,
+          "start": 56.22,
+          "end": 57.04
+        },
+        {
+          "from": 19,
+          "to": 20,
+          "start": 57.04,
+          "end": 57.78
+        },
+        {
+          "from": 21,
+          "to": 23,
+          "start": 57.78,
+          "end": 57.98
+        },
+        {
+          "from": 24,
+          "to": 31,
+          "start": 57.98,
+          "end": 58.46
+        },
+        {
+          "from": 32,
+          "to": 34,
+          "start": 58.46,
+          "end": 58.84
+        },
+        {
+          "from": 35,
+          "to": 40,
+          "start": 58.84,
+          "end": 59.48
+        }
+      ],
+      "sourceLine": 7,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Cuando por esa vereda tu fina estampa pasea",
-      "start": 45.975588,
-      "end": 52.543529
+      "start": 59.48,
+      "end": 65.34,
+      "words": [
+        {
+          "from": 0,
+          "to": 6,
+          "start": 59.48,
+          "end": 60.18
+        },
+        {
+          "from": 7,
+          "to": 10,
+          "start": 60.18,
+          "end": 60.76
+        },
+        {
+          "from": 11,
+          "to": 14,
+          "start": 60.76,
+          "end": 61.2
+        },
+        {
+          "from": 15,
+          "to": 21,
+          "start": 61.2,
+          "end": 62.22
+        },
+        {
+          "from": 22,
+          "to": 24,
+          "start": 62.22,
+          "end": 62.6
+        },
+        {
+          "from": 25,
+          "to": 29,
+          "start": 62.6,
+          "end": 63.08
+        },
+        {
+          "from": 30,
+          "to": 37,
+          "start": 63.08,
+          "end": 63.82
+        },
+        {
+          "from": 38,
+          "to": 43,
+          "start": 63.82,
+          "end": 65.34
+        }
+      ],
+      "sourceLine": 8,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Fina estampa, caballero",
-      "start": 52.543529,
-      "end": 56.192385
+      "start": 65.88,
+      "end": 69.94,
+      "words": [
+        {
+          "from": 0,
+          "to": 4,
+          "start": 65.88,
+          "end": 66.58
+        },
+        {
+          "from": 5,
+          "to": 12,
+          "start": 66.58,
+          "end": 67.82
+        },
+        {
+          "from": 14,
+          "to": 23,
+          "start": 68.54,
+          "end": 69.94
+        }
+      ],
+      "sourceLine": 9,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Caballero de fina estampa",
-      "start": 56.192385,
-      "end": 60.206127
+      "start": 70.1,
+      "end": 73.0,
+      "words": [
+        {
+          "from": 0,
+          "to": 9,
+          "start": 70.1,
+          "end": 71.26
+        },
+        {
+          "from": 10,
+          "to": 12,
+          "start": 71.26,
+          "end": 71.44
+        },
+        {
+          "from": 13,
+          "to": 17,
+          "start": 71.44,
+          "end": 71.9
+        },
+        {
+          "from": 18,
+          "to": 25,
+          "start": 71.9,
+          "end": 73.0
+        }
+      ],
+      "sourceLine": 10,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Un lucero que sonriera bajo un sombrero",
-      "start": 60.206127,
-      "end": 66.22674
+      "start": 73.68,
+      "end": 78.28,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 73.68,
+          "end": 74.38
+        },
+        {
+          "from": 3,
+          "to": 9,
+          "start": 74.38,
+          "end": 75.12
+        },
+        {
+          "from": 10,
+          "to": 13,
+          "start": 75.12,
+          "end": 75.58
+        },
+        {
+          "from": 14,
+          "to": 22,
+          "start": 75.58,
+          "end": 76.4
+        },
+        {
+          "from": 23,
+          "to": 27,
+          "start": 76.4,
+          "end": 76.78
+        },
+        {
+          "from": 28,
+          "to": 30,
+          "start": 76.78,
+          "end": 77.14
+        },
+        {
+          "from": 31,
+          "to": 39,
+          "start": 77.14,
+          "end": 78.28
+        }
+      ],
+      "sourceLine": 11,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "No sonriera más hermoso",
-      "start": 66.22674,
-      "end": 69.875596
+      "start": 78.7,
+      "end": 81.92,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 78.7,
+          "end": 79.4
+        },
+        {
+          "from": 3,
+          "to": 11,
+          "start": 79.4,
+          "end": 80.54
+        },
+        {
+          "from": 12,
+          "to": 15,
+          "start": 80.54,
+          "end": 81.04
+        },
+        {
+          "from": 16,
+          "to": 23,
+          "start": 81.04,
+          "end": 81.92
+        }
+      ],
+      "sourceLine": 12,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Ni más luciera caballero",
-      "start": 69.875596,
-      "end": 73.706895
-    },
-    {
-      "text": "Y en tu andar, andar, reluce la acera al andar, andar",
-      "start": 73.706895,
-      "end": 81.004607
+      "start": 81.92,
+      "end": 85.78,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 81.92,
+          "end": 82.1
+        },
+        {
+          "from": 3,
+          "to": 6,
+          "start": 82.1,
+          "end": 82.66
+        },
+        {
+          "from": 15,
+          "to": 24,
+          "start": 85.06,
+          "end": 85.78
+        }
+      ],
+      "sourceLine": 13,
+      "matchedWordRatio": 0.75
     },
     {
       "text": "Te lleva hacia los zaguanes y a los patios encantados",
-      "start": 81.004607,
-      "end": 89.032091
+      "start": 99.08,
+      "end": 104.66,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 99.08,
+          "end": 99.8
+        },
+        {
+          "from": 15,
+          "to": 18,
+          "start": 100.84,
+          "end": 101.12
+        },
+        {
+          "from": 28,
+          "to": 29,
+          "start": 102.42,
+          "end": 102.88
+        },
+        {
+          "from": 30,
+          "to": 31,
+          "start": 102.88,
+          "end": 102.98
+        },
+        {
+          "from": 32,
+          "to": 35,
+          "start": 102.98,
+          "end": 103.16
+        },
+        {
+          "from": 36,
+          "to": 42,
+          "start": 103.16,
+          "end": 103.54
+        },
+        {
+          "from": 43,
+          "to": 53,
+          "start": 103.54,
+          "end": 104.66
+        }
+      ],
+      "sourceLine": 15,
+      "matchedWordRatio": 0.7
     },
     {
       "text": "Te lleva hacia las plazuelas y a los amores soñados",
-      "start": 89.032091,
-      "end": 96.694689
+      "start": 104.84,
+      "end": 110.22,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 104.84,
+          "end": 104.92
+        },
+        {
+          "from": 15,
+          "to": 18,
+          "start": 106.28,
+          "end": 106.7
+        },
+        {
+          "from": 19,
+          "to": 28,
+          "start": 106.7,
+          "end": 107.5
+        },
+        {
+          "from": 29,
+          "to": 30,
+          "start": 107.6,
+          "end": 107.96
+        },
+        {
+          "from": 31,
+          "to": 32,
+          "start": 107.96,
+          "end": 108.08
+        },
+        {
+          "from": 33,
+          "to": 36,
+          "start": 108.08,
+          "end": 108.28
+        },
+        {
+          "from": 37,
+          "to": 43,
+          "start": 108.28,
+          "end": 109.16
+        },
+        {
+          "from": 44,
+          "to": 51,
+          "start": 109.16,
+          "end": 110.22
+        }
+      ],
+      "sourceLine": 16,
+      "matchedWordRatio": 0.8
     },
     {
       "text": "Veredita que se arrulla con tafetanes bordados",
-      "start": 96.694689,
-      "end": 103.992401
+      "start": 110.22,
+      "end": 113.84,
+      "words": [
+        {
+          "from": 0,
+          "to": 8,
+          "start": 110.22,
+          "end": 111.9
+        },
+        {
+          "from": 9,
+          "to": 12,
+          "start": 111.9,
+          "end": 112.14
+        },
+        {
+          "from": 13,
+          "to": 15,
+          "start": 112.14,
+          "end": 112.4
+        },
+        {
+          "from": 24,
+          "to": 27,
+          "start": 113.38,
+          "end": 113.84
+        }
+      ],
+      "sourceLine": 17,
+      "matchedWordRatio": 0.571
     },
     {
       "text": "Tacón de chapín de seda y fustes almidonados",
-      "start": 103.992401,
-      "end": 110.742785
+      "start": 115.64,
+      "end": 120.22,
+      "words": [
+        {
+          "from": 0,
+          "to": 5,
+          "start": 115.64,
+          "end": 116.18
+        },
+        {
+          "from": 6,
+          "to": 8,
+          "start": 116.18,
+          "end": 116.58
+        },
+        {
+          "from": 9,
+          "to": 15,
+          "start": 116.58,
+          "end": 117.6
+        },
+        {
+          "from": 16,
+          "to": 18,
+          "start": 117.6,
+          "end": 117.78
+        },
+        {
+          "from": 19,
+          "to": 23,
+          "start": 117.78,
+          "end": 118.26
+        },
+        {
+          "from": 24,
+          "to": 25,
+          "start": 118.26,
+          "end": 118.7
+        },
+        {
+          "from": 26,
+          "to": 32,
+          "start": 118.7,
+          "end": 119.42
+        },
+        {
+          "from": 33,
+          "to": 44,
+          "start": 119.42,
+          "end": 120.22
+        }
+      ],
+      "sourceLine": 18,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Es un caminito alegre con luz de luna o de sol",
-      "start": 110.742785,
-      "end": 117.310726
+      "start": 121.0,
+      "end": 126.0,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 121.0,
+          "end": 121.42
+        },
+        {
+          "from": 3,
+          "to": 5,
+          "start": 121.42,
+          "end": 121.68
+        },
+        {
+          "from": 6,
+          "to": 14,
+          "start": 121.68,
+          "end": 122.76
+        },
+        {
+          "from": 15,
+          "to": 21,
+          "start": 122.76,
+          "end": 123.96
+        },
+        {
+          "from": 22,
+          "to": 25,
+          "start": 123.96,
+          "end": 124.46
+        },
+        {
+          "from": 26,
+          "to": 29,
+          "start": 124.46,
+          "end": 124.68
+        },
+        {
+          "from": 30,
+          "to": 32,
+          "start": 124.68,
+          "end": 124.9
+        },
+        {
+          "from": 33,
+          "to": 37,
+          "start": 124.9,
+          "end": 125.24
+        },
+        {
+          "from": 38,
+          "to": 39,
+          "start": 125.24,
+          "end": 125.38
+        },
+        {
+          "from": 40,
+          "to": 42,
+          "start": 125.38,
+          "end": 125.54
+        },
+        {
+          "from": 43,
+          "to": 46,
+          "start": 125.54,
+          "end": 126.0
+        }
+      ],
+      "sourceLine": 19,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Que he de recorrer cantando por si te puedo alcanzar",
-      "start": 117.310726,
-      "end": 125.155767
+      "start": 126.24,
+      "end": 131.48,
+      "words": [
+        {
+          "from": 0,
+          "to": 3,
+          "start": 126.24,
+          "end": 126.82
+        },
+        {
+          "from": 7,
+          "to": 9,
+          "start": 126.82,
+          "end": 127.06
+        },
+        {
+          "from": 10,
+          "to": 18,
+          "start": 127.06,
+          "end": 127.96
+        },
+        {
+          "from": 19,
+          "to": 27,
+          "start": 127.96,
+          "end": 128.94
+        },
+        {
+          "from": 28,
+          "to": 31,
+          "start": 128.94,
+          "end": 129.38
+        },
+        {
+          "from": 32,
+          "to": 34,
+          "start": 129.38,
+          "end": 129.62
+        },
+        {
+          "from": 35,
+          "to": 37,
+          "start": 129.62,
+          "end": 129.9
+        },
+        {
+          "from": 38,
+          "to": 43,
+          "start": 129.9,
+          "end": 130.46
+        },
+        {
+          "from": 44,
+          "to": 52,
+          "start": 130.46,
+          "end": 131.48
+        }
+      ],
+      "sourceLine": 20,
+      "matchedWordRatio": 0.9
     },
     {
       "text": "Fina estampa caballero quién te pudiera guardar",
-      "start": 125.155767,
-      "end": 132.635922
+      "start": 131.48,
+      "end": 137.08,
+      "words": [
+        {
+          "from": 0,
+          "to": 4,
+          "start": 131.48,
+          "end": 132.18
+        },
+        {
+          "from": 5,
+          "to": 12,
+          "start": 132.18,
+          "end": 132.9
+        },
+        {
+          "from": 13,
+          "to": 22,
+          "start": 133.16,
+          "end": 134.1
+        },
+        {
+          "from": 23,
+          "to": 28,
+          "start": 134.28,
+          "end": 134.66
+        },
+        {
+          "from": 29,
+          "to": 31,
+          "start": 134.66,
+          "end": 134.96
+        },
+        {
+          "from": 32,
+          "to": 39,
+          "start": 134.96,
+          "end": 135.9
+        },
+        {
+          "from": 40,
+          "to": 47,
+          "start": 135.9,
+          "end": 137.08
+        }
+      ],
+      "sourceLine": 21,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Fina estampa, caballero",
-      "start": 132.635922,
-      "end": 136.284778
+      "start": 138.2,
+      "end": 142.2,
+      "words": [
+        {
+          "from": 0,
+          "to": 4,
+          "start": 138.2,
+          "end": 138.68
+        },
+        {
+          "from": 5,
+          "to": 12,
+          "start": 138.68,
+          "end": 140.02
+        },
+        {
+          "from": 14,
+          "to": 23,
+          "start": 140.74,
+          "end": 142.2
+        }
+      ],
+      "sourceLine": 22,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Caballero de fina estampa",
-      "start": 136.284778,
-      "end": 140.29852
+      "start": 142.36,
+      "end": 145.06,
+      "words": [
+        {
+          "from": 0,
+          "to": 9,
+          "start": 142.36,
+          "end": 143.44
+        },
+        {
+          "from": 10,
+          "to": 12,
+          "start": 143.48,
+          "end": 143.64
+        },
+        {
+          "from": 13,
+          "to": 17,
+          "start": 143.64,
+          "end": 144.06
+        },
+        {
+          "from": 18,
+          "to": 25,
+          "start": 144.06,
+          "end": 145.06
+        }
+      ],
+      "sourceLine": 23,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Un lucero que sonriera bajo un sombrero",
-      "start": 140.29852,
-      "end": 146.319133
+      "start": 145.06,
+      "end": 150.58,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 145.06,
+          "end": 146.56
+        },
+        {
+          "from": 3,
+          "to": 9,
+          "start": 146.56,
+          "end": 147.3
+        },
+        {
+          "from": 10,
+          "to": 13,
+          "start": 147.3,
+          "end": 147.74
+        },
+        {
+          "from": 14,
+          "to": 22,
+          "start": 147.74,
+          "end": 148.54
+        },
+        {
+          "from": 23,
+          "to": 27,
+          "start": 148.54,
+          "end": 148.92
+        },
+        {
+          "from": 28,
+          "to": 30,
+          "start": 148.92,
+          "end": 149.26
+        },
+        {
+          "from": 31,
+          "to": 39,
+          "start": 149.26,
+          "end": 150.58
+        }
+      ],
+      "sourceLine": 24,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "No sonriera más hermoso",
-      "start": 146.319133,
-      "end": 149.967989
+      "start": 150.58,
+      "end": 153.98,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 150.58,
+          "end": 151.5
+        },
+        {
+          "from": 3,
+          "to": 11,
+          "start": 151.5,
+          "end": 152.66
+        },
+        {
+          "from": 12,
+          "to": 15,
+          "start": 152.88,
+          "end": 153.16
+        },
+        {
+          "from": 16,
+          "to": 23,
+          "start": 153.16,
+          "end": 153.98
+        }
+      ],
+      "sourceLine": 25,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Ni más luciera caballero",
-      "start": 149.967989,
-      "end": 153.799288
+      "start": 154.1,
+      "end": 157.88,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 154.1,
+          "end": 154.16
+        },
+        {
+          "from": 3,
+          "to": 6,
+          "start": 154.16,
+          "end": 154.54
+        },
+        {
+          "from": 7,
+          "to": 14,
+          "start": 154.54,
+          "end": 155.74
+        },
+        {
+          "from": 15,
+          "to": 24,
+          "start": 155.74,
+          "end": 157.88
+        }
+      ],
+      "sourceLine": 26,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Y en tu andar, andar, reluce la acera al andar, andar",
-      "start": 153.799288,
-      "end": 161.097
+      "start": 157.88,
+      "end": 165.74,
+      "words": [
+        {
+          "from": 0,
+          "to": 1,
+          "start": 157.88,
+          "end": 158.38
+        },
+        {
+          "from": 8,
+          "to": 13,
+          "start": 158.68,
+          "end": 158.94
+        },
+        {
+          "from": 15,
+          "to": 20,
+          "start": 158.94,
+          "end": 159.58
+        },
+        {
+          "from": 22,
+          "to": 28,
+          "start": 160.1,
+          "end": 160.56
+        },
+        {
+          "from": 29,
+          "to": 31,
+          "start": 160.56,
+          "end": 160.88
+        },
+        {
+          "from": 32,
+          "to": 37,
+          "start": 160.88,
+          "end": 161.9
+        },
+        {
+          "from": 41,
+          "to": 46,
+          "start": 164.72,
+          "end": 165.04
+        },
+        {
+          "from": 48,
+          "to": 53,
+          "start": 165.38,
+          "end": 165.74
+        }
+      ],
+      "sourceLine": 27,
+      "matchedWordRatio": 0.727,
+      "alignment": "acoustic-gap-refinement"
+    }
+  ],
+  "unmatchedLines": [
+    {
+      "line": 14,
+      "text": "Y en tu andar, andar, reluce la acera al andar, andar",
+      "coverage": 0.455
     }
   ]
 }

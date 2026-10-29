@@ -1,175 +1,930 @@
 {
   "songId": "la-malaguena",
-  "title": "La Malagueña",
   "status": "estimated",
   "reviewRequired": true,
-  "timingMethod": "text-length-proportional; not aligned to vocals or instrumental sections",
-  "durationSeconds": 297.691429,
+  "method": "local-asr-word-matching",
+  "alignmentModel": "faster-whisper-small",
+  "durationSeconds": 324.545306,
+  "audioSha256": "76ff3a36d89b9d30198d08c7ee7312ac916cf81407580ebd99e5b17b441a3715",
   "lyrics": [
     {
       "text": "Qué bonitos ojos tienes",
-      "start": 0.0,
-      "end": 9.33202
+      "start": 47.5,
+      "end": 49.82,
+      "words": [
+        {
+          "from": 4,
+          "to": 11,
+          "start": 47.5,
+          "end": 48.4
+        },
+        {
+          "from": 12,
+          "to": 16,
+          "start": 48.4,
+          "end": 48.9
+        },
+        {
+          "from": 17,
+          "to": 23,
+          "start": 48.9,
+          "end": 49.82
+        }
+      ],
+      "sourceLine": 1,
+      "matchedWordRatio": 0.75
     },
     {
       "text": "Debajo de esas dos cejas",
-      "start": 9.33202,
-      "end": 18.664039
+      "start": 49.82,
+      "end": 52.32,
+      "words": [
+        {
+          "from": 0,
+          "to": 6,
+          "start": 49.82,
+          "end": 51.58
+        },
+        {
+          "from": 7,
+          "to": 9,
+          "start": 51.58,
+          "end": 52.06
+        },
+        {
+          "from": 10,
+          "to": 14,
+          "start": 52.06,
+          "end": 52.32
+        }
+      ],
+      "sourceLine": 2,
+      "matchedWordRatio": 0.6
     },
     {
       "text": "Debajo de esas dos cejas",
-      "start": 18.664039,
-      "end": 27.996059
+      "start": 53.82,
+      "end": 56.0,
+      "words": [
+        {
+          "from": 0,
+          "to": 6,
+          "start": 53.82,
+          "end": 55.22
+        },
+        {
+          "from": 7,
+          "to": 9,
+          "start": 55.22,
+          "end": 55.64
+        },
+        {
+          "from": 10,
+          "to": 14,
+          "start": 55.64,
+          "end": 56.0
+        }
+      ],
+      "sourceLine": 3,
+      "matchedWordRatio": 0.6
     },
     {
       "text": "Qué bonitos ojos tienes",
-      "start": 27.996059,
-      "end": 37.328079
+      "start": 57.32,
+      "end": 61.4,
+      "words": [
+        {
+          "from": 0,
+          "to": 3,
+          "start": 57.32,
+          "end": 58.46
+        },
+        {
+          "from": 4,
+          "to": 11,
+          "start": 58.46,
+          "end": 59.18
+        },
+        {
+          "from": 12,
+          "to": 16,
+          "start": 59.18,
+          "end": 60.2
+        },
+        {
+          "from": 17,
+          "to": 23,
+          "start": 60.2,
+          "end": 61.4
+        }
+      ],
+      "sourceLine": 4,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Ellos me quieren mirar",
-      "start": 37.328079,
-      "end": 46.193498
+      "start": 63.32,
+      "end": 66.26,
+      "words": [
+        {
+          "from": 0,
+          "to": 5,
+          "start": 63.32,
+          "end": 64.16
+        },
+        {
+          "from": 6,
+          "to": 8,
+          "start": 64.16,
+          "end": 64.4
+        },
+        {
+          "from": 9,
+          "to": 16,
+          "start": 64.4,
+          "end": 64.9
+        },
+        {
+          "from": 17,
+          "to": 22,
+          "start": 64.9,
+          "end": 66.26
+        }
+      ],
+      "sourceLine": 5,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Pero si tú no los dejas",
-      "start": 46.193498,
-      "end": 54.592315
+      "start": 66.26,
+      "end": 69.66,
+      "words": [
+        {
+          "from": 0,
+          "to": 4,
+          "start": 66.26,
+          "end": 67.64
+        },
+        {
+          "from": 5,
+          "to": 7,
+          "start": 67.64,
+          "end": 68.0
+        },
+        {
+          "from": 8,
+          "to": 10,
+          "start": 68.0,
+          "end": 68.32
+        },
+        {
+          "from": 11,
+          "to": 13,
+          "start": 68.32,
+          "end": 68.62
+        },
+        {
+          "from": 14,
+          "to": 17,
+          "start": 68.62,
+          "end": 68.92
+        },
+        {
+          "from": 18,
+          "to": 23,
+          "start": 68.92,
+          "end": 69.66
+        }
+      ],
+      "sourceLine": 6,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Pero si tú no los dejas",
-      "start": 54.592315,
-      "end": 62.991133
+      "start": 70.32,
+      "end": 73.74,
+      "words": [
+        {
+          "from": 0,
+          "to": 4,
+          "start": 70.32,
+          "end": 71.06
+        },
+        {
+          "from": 5,
+          "to": 7,
+          "start": 71.06,
+          "end": 71.52
+        },
+        {
+          "from": 8,
+          "to": 10,
+          "start": 71.52,
+          "end": 71.84
+        },
+        {
+          "from": 11,
+          "to": 13,
+          "start": 71.84,
+          "end": 72.14
+        },
+        {
+          "from": 14,
+          "to": 17,
+          "start": 72.14,
+          "end": 72.4
+        },
+        {
+          "from": 18,
+          "to": 23,
+          "start": 72.4,
+          "end": 73.74
+        }
+      ],
+      "sourceLine": 7,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Ni siquiera parpadear",
-      "start": 62.991133,
-      "end": 71.856552
-    },
-    {
-      "text": "Malagueña salerosa",
-      "start": 71.856552,
-      "end": 79.788769
+      "start": 73.74,
+      "end": 80.06,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 73.74,
+          "end": 74.62
+        },
+        {
+          "from": 3,
+          "to": 11,
+          "start": 74.62,
+          "end": 75.36
+        },
+        {
+          "from": 12,
+          "to": 21,
+          "start": 75.36,
+          "end": 80.06
+        }
+      ],
+      "sourceLine": 8,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Besar tus labios quisiera",
-      "start": 79.788769,
-      "end": 90.05399
-    },
-    {
-      "text": "Besar tus labios quisiera",
-      "start": 90.05399,
-      "end": 100.319212
+      "start": 98.66,
+      "end": 102.0,
+      "words": [
+        {
+          "from": 0,
+          "to": 5,
+          "start": 98.66,
+          "end": 100.06
+        },
+        {
+          "from": 6,
+          "to": 9,
+          "start": 100.06,
+          "end": 100.34
+        },
+        {
+          "from": 10,
+          "to": 16,
+          "start": 100.34,
+          "end": 101.04
+        },
+        {
+          "from": 17,
+          "to": 25,
+          "start": 101.04,
+          "end": 102.0
+        }
+      ],
+      "sourceLine": 10,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Malagueña salerosa",
-      "start": 100.319212,
-      "end": 108.251429
+      "start": 116.62,
+      "end": 119.78,
+      "words": [
+        {
+          "from": 0,
+          "to": 9,
+          "start": 116.62,
+          "end": 118.46
+        },
+        {
+          "from": 10,
+          "to": 18,
+          "start": 118.46,
+          "end": 119.78
+        }
+      ],
+      "sourceLine": 12,
+      "matchedWordRatio": 1.0,
+      "alignment": "acoustic-gap-refinement"
     },
     {
       "text": "Y decirte, niña hermosa",
-      "start": 108.251429,
-      "end": 117.116847
+      "start": 119.92,
+      "end": 125.32,
+      "words": [
+        {
+          "from": 0,
+          "to": 1,
+          "start": 119.92,
+          "end": 120.8
+        },
+        {
+          "from": 2,
+          "to": 9,
+          "start": 120.8,
+          "end": 122.38
+        },
+        {
+          "from": 11,
+          "to": 15,
+          "start": 122.38,
+          "end": 122.72
+        },
+        {
+          "from": 16,
+          "to": 23,
+          "start": 122.72,
+          "end": 125.32
+        }
+      ],
+      "sourceLine": 13,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Eres linda y hechicera",
-      "start": 117.116847,
-      "end": 125.982266
-    },
-    {
-      "text": "Eres linda y hechicera",
-      "start": 125.982266,
-      "end": 134.847685
+      "start": 146.74,
+      "end": 148.54,
+      "words": [
+        {
+          "from": 5,
+          "to": 10,
+          "start": 146.74,
+          "end": 147.3
+        },
+        {
+          "from": 11,
+          "to": 12,
+          "start": 147.3,
+          "end": 147.64
+        },
+        {
+          "from": 13,
+          "to": 22,
+          "start": 147.64,
+          "end": 148.54
+        }
+      ],
+      "sourceLine": 15,
+      "matchedWordRatio": 0.75
     },
     {
       "text": "Como el candor de una rosa",
-      "start": 134.847685,
-      "end": 144.646306
+      "start": 148.54,
+      "end": 151.86,
+      "words": [
+        {
+          "from": 0,
+          "to": 4,
+          "start": 148.54,
+          "end": 149.44
+        },
+        {
+          "from": 5,
+          "to": 7,
+          "start": 149.44,
+          "end": 149.82
+        },
+        {
+          "from": 15,
+          "to": 17,
+          "start": 150.82,
+          "end": 151.64
+        },
+        {
+          "from": 18,
+          "to": 21,
+          "start": 151.64,
+          "end": 151.86
+        }
+      ],
+      "sourceLine": 16,
+      "matchedWordRatio": 0.667
     },
     {
       "text": "Si por pobre me desprecias",
-      "start": 144.646306,
-      "end": 154.911527
+      "start": 184.88,
+      "end": 189.24,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 184.88,
+          "end": 186.28
+        },
+        {
+          "from": 3,
+          "to": 6,
+          "start": 186.28,
+          "end": 186.64
+        },
+        {
+          "from": 7,
+          "to": 12,
+          "start": 186.64,
+          "end": 187.02
+        },
+        {
+          "from": 13,
+          "to": 15,
+          "start": 187.02,
+          "end": 187.48
+        },
+        {
+          "from": 16,
+          "to": 26,
+          "start": 187.48,
+          "end": 189.24
+        }
+      ],
+      "sourceLine": 17,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Yo te concedo razón",
-      "start": 154.911527,
-      "end": 162.377143
+      "start": 189.24,
+      "end": 191.62,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 189.24,
+          "end": 189.9
+        },
+        {
+          "from": 3,
+          "to": 5,
+          "start": 189.9,
+          "end": 190.2
+        },
+        {
+          "from": 6,
+          "to": 13,
+          "start": 190.2,
+          "end": 191.0
+        },
+        {
+          "from": 14,
+          "to": 19,
+          "start": 191.0,
+          "end": 191.62
+        }
+      ],
+      "sourceLine": 18,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Yo te concedo razón",
-      "start": 162.377143,
-      "end": 169.842759
+      "start": 192.48,
+      "end": 195.66,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 192.48,
+          "end": 193.4
+        },
+        {
+          "from": 3,
+          "to": 5,
+          "start": 193.4,
+          "end": 193.76
+        },
+        {
+          "from": 6,
+          "to": 13,
+          "start": 193.76,
+          "end": 194.58
+        },
+        {
+          "from": 14,
+          "to": 19,
+          "start": 194.58,
+          "end": 195.66
+        }
+      ],
+      "sourceLine": 19,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Si por pobre me desprecias",
-      "start": 169.842759,
-      "end": 180.107981
+      "start": 196.26,
+      "end": 200.8,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 196.26,
+          "end": 196.96
+        },
+        {
+          "from": 3,
+          "to": 6,
+          "start": 196.96,
+          "end": 197.46
+        },
+        {
+          "from": 7,
+          "to": 12,
+          "start": 197.46,
+          "end": 197.84
+        },
+        {
+          "from": 13,
+          "to": 15,
+          "start": 197.84,
+          "end": 198.54
+        },
+        {
+          "from": 16,
+          "to": 26,
+          "start": 198.54,
+          "end": 200.8
+        }
+      ],
+      "sourceLine": 20,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Yo no te ofrezco riquezas",
-      "start": 180.107981,
-      "end": 189.906601
+      "start": 201.48,
+      "end": 204.68,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 201.48,
+          "end": 202.44
+        },
+        {
+          "from": 3,
+          "to": 5,
+          "start": 202.44,
+          "end": 202.8
+        },
+        {
+          "from": 6,
+          "to": 8,
+          "start": 202.8,
+          "end": 202.98
+        },
+        {
+          "from": 9,
+          "to": 16,
+          "start": 202.98,
+          "end": 203.74
+        },
+        {
+          "from": 17,
+          "to": 25,
+          "start": 203.74,
+          "end": 204.68
+        }
+      ],
+      "sourceLine": 21,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Te ofrezco mi corazón",
-      "start": 189.906601,
-      "end": 198.305419
+      "start": 204.68,
+      "end": 207.78,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 204.68,
+          "end": 206.06
+        },
+        {
+          "from": 3,
+          "to": 10,
+          "start": 206.06,
+          "end": 206.74
+        },
+        {
+          "from": 11,
+          "to": 13,
+          "start": 206.74,
+          "end": 207.14
+        },
+        {
+          "from": 14,
+          "to": 21,
+          "start": 207.14,
+          "end": 207.78
+        }
+      ],
+      "sourceLine": 22,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Te ofrezco mi corazón",
-      "start": 198.305419,
-      "end": 206.704237
+      "start": 208.1,
+      "end": 211.42,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 208.1,
+          "end": 209.62
+        },
+        {
+          "from": 3,
+          "to": 10,
+          "start": 209.62,
+          "end": 210.18
+        },
+        {
+          "from": 11,
+          "to": 13,
+          "start": 210.18,
+          "end": 210.54
+        },
+        {
+          "from": 14,
+          "to": 21,
+          "start": 210.54,
+          "end": 211.42
+        }
+      ],
+      "sourceLine": 23,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "A cambio de mi pobreza",
-      "start": 206.704237,
-      "end": 215.103054
-    },
-    {
-      "text": "Malagueña salerosa",
-      "start": 215.103054,
-      "end": 223.035271
+      "start": 213.26,
+      "end": 214.72,
+      "words": [
+        {
+          "from": 2,
+          "to": 8,
+          "start": 213.26,
+          "end": 213.76
+        },
+        {
+          "from": 9,
+          "to": 11,
+          "start": 213.76,
+          "end": 214.14
+        },
+        {
+          "from": 12,
+          "to": 14,
+          "start": 214.14,
+          "end": 214.72
+        }
+      ],
+      "sourceLine": 24,
+      "matchedWordRatio": 0.6
     },
     {
       "text": "Besar tus labios quisiera",
-      "start": 223.035271,
-      "end": 233.300493
-    },
-    {
-      "text": "Besar tus labios quisiera",
-      "start": 233.300493,
-      "end": 243.565715
+      "start": 237.44,
+      "end": 240.74,
+      "words": [
+        {
+          "from": 0,
+          "to": 5,
+          "start": 237.44,
+          "end": 238.72
+        },
+        {
+          "from": 6,
+          "to": 9,
+          "start": 238.72,
+          "end": 239.02
+        },
+        {
+          "from": 10,
+          "to": 16,
+          "start": 239.02,
+          "end": 239.64
+        },
+        {
+          "from": 17,
+          "to": 25,
+          "start": 239.64,
+          "end": 240.74
+        }
+      ],
+      "sourceLine": 26,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Malagueña salerosa",
-      "start": 243.565715,
-      "end": 251.497931
+      "start": 255.16,
+      "end": 258.42,
+      "words": [
+        {
+          "from": 0,
+          "to": 9,
+          "start": 255.16,
+          "end": 257.02
+        },
+        {
+          "from": 10,
+          "to": 18,
+          "start": 257.02,
+          "end": 258.42
+        }
+      ],
+      "sourceLine": 28,
+      "matchedWordRatio": 1.0,
+      "alignment": "acoustic-gap-refinement"
     },
     {
       "text": "Y decirte, niña hermosa",
-      "start": 251.497931,
-      "end": 260.36335
+      "start": 258.58,
+      "end": 264.48,
+      "words": [
+        {
+          "from": 0,
+          "to": 1,
+          "start": 258.58,
+          "end": 259.46
+        },
+        {
+          "from": 2,
+          "to": 9,
+          "start": 259.46,
+          "end": 260.92
+        },
+        {
+          "from": 11,
+          "to": 15,
+          "start": 260.92,
+          "end": 261.46
+        },
+        {
+          "from": 16,
+          "to": 23,
+          "start": 261.46,
+          "end": 264.48
+        }
+      ],
+      "sourceLine": 29,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Eres linda y hechicera",
-      "start": 260.36335,
-      "end": 269.228769
+      "start": 279.24,
+      "end": 283.84,
+      "words": [
+        {
+          "from": 0,
+          "to": 4,
+          "start": 279.24,
+          "end": 280.64
+        },
+        {
+          "from": 5,
+          "to": 10,
+          "start": 280.64,
+          "end": 282.04
+        },
+        {
+          "from": 11,
+          "to": 12,
+          "start": 282.04,
+          "end": 282.74
+        },
+        {
+          "from": 13,
+          "to": 22,
+          "start": 282.74,
+          "end": 283.84
+        }
+      ],
+      "sourceLine": 30,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Eres linda y hechicera",
-      "start": 269.228769,
-      "end": 278.094188
+      "start": 283.98,
+      "end": 287.2,
+      "words": [
+        {
+          "from": 0,
+          "to": 4,
+          "start": 283.98,
+          "end": 285.46
+        },
+        {
+          "from": 5,
+          "to": 10,
+          "start": 285.46,
+          "end": 286.02
+        },
+        {
+          "from": 11,
+          "to": 12,
+          "start": 286.02,
+          "end": 286.32
+        },
+        {
+          "from": 13,
+          "to": 22,
+          "start": 286.32,
+          "end": 287.2
+        }
+      ],
+      "sourceLine": 31,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Como el candor de una rosa",
-      "start": 278.094188,
-      "end": 287.892808
+      "start": 287.2,
+      "end": 291.36,
+      "words": [
+        {
+          "from": 0,
+          "to": 4,
+          "start": 287.2,
+          "end": 288.08
+        },
+        {
+          "from": 5,
+          "to": 7,
+          "start": 288.08,
+          "end": 288.5
+        },
+        {
+          "from": 8,
+          "to": 14,
+          "start": 288.5,
+          "end": 289.68
+        },
+        {
+          "from": 15,
+          "to": 17,
+          "start": 289.68,
+          "end": 290.26
+        },
+        {
+          "from": 18,
+          "to": 21,
+          "start": 290.26,
+          "end": 290.4
+        },
+        {
+          "from": 22,
+          "to": 26,
+          "start": 290.4,
+          "end": 291.36
+        }
+      ],
+      "sourceLine": 32,
+      "matchedWordRatio": 1.0
+    }
+  ],
+  "unmatchedLines": [
+    {
+      "line": 9,
+      "text": "Malagueña salerosa",
+      "coverage": 0.0
     },
     {
+      "line": 11,
+      "text": "Besar tus labios quisiera",
+      "coverage": 0.25
+    },
+    {
+      "line": 14,
+      "text": "Eres linda y hechicera",
+      "coverage": 0.75
+    },
+    {
+      "line": 25,
+      "text": "Malagueña salerosa",
+      "coverage": 0.5
+    },
+    {
+      "line": 27,
+      "text": "Besar tus labios quisiera",
+      "coverage": 0.5
+    },
+    {
+      "line": 33,
       "text": "Como el candor de una rosa",
-      "start": 287.892808,
-      "end": 297.691429
+      "coverage": 0.833
     }
   ]
 }

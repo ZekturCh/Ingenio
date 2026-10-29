@@ -30,7 +30,7 @@ async function main() {
     await context.setOffline(true);
     await page.reload();
     await page.locator('.offline-indicator[data-state="ready"]').waitFor();
-    assert.equal(await page.locator('.song.enabled').count(),23);
+    assert.equal(await page.locator('.song.enabled').count(),28);
     assert.ok(await page.locator('#selectorView .brandWordmark').evaluate(img => img.complete && img.naturalWidth > 0));
     // Cold-load each available track from the cache, including seeks into full MP3 files.
     const songs = await page.evaluate(async () => (await import('./songs/catalog.js')).SONGS.filter(song=>song.enabled));
@@ -40,7 +40,7 @@ async function main() {
       await page.waitForFunction(() => { const a=document.querySelector('#audio');return !a.paused && a.currentTime>0 && a.readyState>=2; });
       await page.locator('#seek').evaluate(input=>{input.value=60;input.dispatchEvent(new Event('input'));input.dispatchEvent(new Event('change'));});
       await page.waitForFunction(() => {const a=document.querySelector('#audio');return a.currentTime > a.duration*.55 && a.readyState>=2;});
-      await page.waitForFunction(() => !['', '♪', 'Letra pendiente de sincronizar', 'Vamos a cantar'].includes(document.querySelector('#currentBase').textContent));
+      await page.waitForFunction(() => ['#currentBase', '#next', '#prev'].some(selector => !['', '♪', 'Letra pendiente de sincronizar', 'Vamos a cantar'].includes(document.querySelector(selector).textContent)));
       await page.locator('#backBtn').click();
       await page.waitForFunction(()=>!document.querySelector('#selectorView').hidden);
     }

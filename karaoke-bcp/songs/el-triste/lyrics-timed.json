@@ -1,165 +1,1057 @@
 {
   "songId": "el-triste",
-  "title": "El triste",
   "status": "estimated",
   "reviewRequired": true,
-  "timingMethod": "text-length-proportional; not aligned to vocals or instrumental sections",
-  "durationSeconds": 238.262857,
+  "method": "local-asr-word-matching",
+  "alignmentModel": "faster-whisper-small",
+  "durationSeconds": 253.272,
+  "audioSha256": "81d7e475989fb5e91340e75521476b697551d1052cf43af43e20c84c8d6ea464",
   "lyrics": [
     {
       "text": "Qué triste fue decirnos adiós",
-      "start": 0.0,
-      "end": 8.261542
+      "start": 13.84,
+      "end": 19.1,
+      "words": [
+        {
+          "from": 4,
+          "to": 10,
+          "start": 13.84,
+          "end": 14.46
+        },
+        {
+          "from": 11,
+          "to": 14,
+          "start": 14.46,
+          "end": 14.9
+        },
+        {
+          "from": 15,
+          "to": 23,
+          "start": 14.9,
+          "end": 16.0
+        },
+        {
+          "from": 24,
+          "to": 29,
+          "start": 16.0,
+          "end": 19.1
+        }
+      ],
+      "sourceLine": 1,
+      "matchedWordRatio": 0.8
     },
     {
       "text": "Cuando nos adorábamos más",
-      "start": 8.261542,
-      "end": 15.531698
+      "start": 19.1,
+      "end": 25.88,
+      "words": [
+        {
+          "from": 0,
+          "to": 6,
+          "start": 19.1,
+          "end": 20.84
+        },
+        {
+          "from": 7,
+          "to": 10,
+          "start": 20.84,
+          "end": 21.46
+        },
+        {
+          "from": 11,
+          "to": 21,
+          "start": 21.46,
+          "end": 22.64
+        },
+        {
+          "from": 22,
+          "to": 25,
+          "start": 22.64,
+          "end": 25.88
+        }
+      ],
+      "sourceLine": 2,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Hasta la golondrina emigró",
-      "start": 15.531698,
-      "end": 23.132316
+      "start": 27.84,
+      "end": 30.42,
+      "words": [
+        {
+          "from": 6,
+          "to": 8,
+          "start": 27.84,
+          "end": 28.14
+        },
+        {
+          "from": 9,
+          "to": 19,
+          "start": 28.14,
+          "end": 28.94
+        },
+        {
+          "from": 20,
+          "to": 26,
+          "start": 28.94,
+          "end": 30.42
+        }
+      ],
+      "sourceLine": 3,
+      "matchedWordRatio": 0.75,
+      "alignment": "acoustic-gap-refinement"
     },
     {
       "text": "Presagiando el final",
-      "start": 23.132316,
-      "end": 29.080626
-    },
-    {
-      "text": "Qué triste luce todo sin ti",
-      "start": 29.080626,
-      "end": 36.350783
+      "start": 35.16,
+      "end": 36.56,
+      "words": [
+        {
+          "from": 12,
+          "to": 14,
+          "start": 35.16,
+          "end": 35.72
+        },
+        {
+          "from": 15,
+          "to": 20,
+          "start": 35.72,
+          "end": 36.56
+        }
+      ],
+      "sourceLine": 4,
+      "matchedWordRatio": 0.667
     },
     {
       "text": "Los mares de las playas se van",
-      "start": 36.350783,
-      "end": 44.281862
+      "start": 45.3,
+      "end": 49.54,
+      "words": [
+        {
+          "from": 0,
+          "to": 3,
+          "start": 45.3,
+          "end": 46.62
+        },
+        {
+          "from": 4,
+          "to": 9,
+          "start": 46.62,
+          "end": 47.92
+        },
+        {
+          "from": 10,
+          "to": 12,
+          "start": 47.92,
+          "end": 48.24
+        },
+        {
+          "from": 13,
+          "to": 16,
+          "start": 48.24,
+          "end": 48.58
+        },
+        {
+          "from": 17,
+          "to": 23,
+          "start": 48.58,
+          "end": 49.54
+        }
+      ],
+      "sourceLine": 6,
+      "matchedWordRatio": 0.714
     },
     {
       "text": "Se tiñen los colores de gris",
-      "start": 44.281862,
-      "end": 51.882481
+      "start": 49.54,
+      "end": 59.5,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 49.54,
+          "end": 49.88
+        },
+        {
+          "from": 9,
+          "to": 12,
+          "start": 53.66,
+          "end": 55.14
+        },
+        {
+          "from": 13,
+          "to": 20,
+          "start": 55.14,
+          "end": 55.86
+        },
+        {
+          "from": 21,
+          "to": 23,
+          "start": 55.86,
+          "end": 56.3
+        },
+        {
+          "from": 24,
+          "to": 28,
+          "start": 56.3,
+          "end": 59.5
+        }
+      ],
+      "sourceLine": 7,
+      "matchedWordRatio": 0.833
     },
     {
       "text": "Hoy todo es soledad",
-      "start": 51.882481,
-      "end": 57.169867
+      "start": 59.5,
+      "end": 62.92,
+      "words": [
+        {
+          "from": 0,
+          "to": 3,
+          "start": 59.5,
+          "end": 60.34
+        },
+        {
+          "from": 9,
+          "to": 11,
+          "start": 60.62,
+          "end": 61.0
+        },
+        {
+          "from": 12,
+          "to": 19,
+          "start": 61.0,
+          "end": 62.92
+        }
+      ],
+      "sourceLine": 8,
+      "matchedWordRatio": 0.75
     },
     {
       "text": "No sé si vuelva a verte después",
-      "start": 57.169867,
-      "end": 65.431409
+      "start": 65.32,
+      "end": 69.5,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 65.32,
+          "end": 66.02
+        },
+        {
+          "from": 3,
+          "to": 5,
+          "start": 66.02,
+          "end": 66.66
+        },
+        {
+          "from": 6,
+          "to": 8,
+          "start": 66.66,
+          "end": 67.74
+        },
+        {
+          "from": 9,
+          "to": 15,
+          "start": 67.74,
+          "end": 68.26
+        },
+        {
+          "from": 16,
+          "to": 17,
+          "start": 68.26,
+          "end": 68.36
+        },
+        {
+          "from": 18,
+          "to": 23,
+          "start": 68.36,
+          "end": 68.72
+        },
+        {
+          "from": 24,
+          "to": 31,
+          "start": 68.72,
+          "end": 69.5
+        }
+      ],
+      "sourceLine": 9,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "No sé qué de mi vida será",
-      "start": 65.431409,
-      "end": 71.71018
+      "start": 70.8,
+      "end": 75.4,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 70.8,
+          "end": 71.76
+        },
+        {
+          "from": 3,
+          "to": 5,
+          "start": 71.76,
+          "end": 73.32
+        },
+        {
+          "from": 6,
+          "to": 9,
+          "start": 73.32,
+          "end": 74.12
+        },
+        {
+          "from": 10,
+          "to": 12,
+          "start": 74.12,
+          "end": 74.34
+        },
+        {
+          "from": 13,
+          "to": 15,
+          "start": 74.34,
+          "end": 74.5
+        },
+        {
+          "from": 16,
+          "to": 20,
+          "start": 74.5,
+          "end": 74.86
+        },
+        {
+          "from": 21,
+          "to": 25,
+          "start": 74.86,
+          "end": 75.4
+        }
+      ],
+      "sourceLine": 10,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Sin el lucero azul de tu ser",
-      "start": 71.71018,
-      "end": 78.980337
+      "start": 78.76,
+      "end": 83.18,
+      "words": [
+        {
+          "from": 4,
+          "to": 6,
+          "start": 78.76,
+          "end": 79.7
+        },
+        {
+          "from": 7,
+          "to": 13,
+          "start": 79.7,
+          "end": 80.28
+        },
+        {
+          "from": 14,
+          "to": 18,
+          "start": 80.28,
+          "end": 80.8
+        },
+        {
+          "from": 19,
+          "to": 21,
+          "start": 80.8,
+          "end": 81.08
+        },
+        {
+          "from": 25,
+          "to": 28,
+          "start": 81.34,
+          "end": 83.18
+        }
+      ],
+      "sourceLine": 11,
+      "matchedWordRatio": 0.714,
+      "alignment": "acoustic-gap-refinement"
     },
     {
       "text": "Que no me alumbra ya",
-      "start": 78.980337,
-      "end": 84.267723
+      "start": 83.18,
+      "end": 87.48,
+      "words": [
+        {
+          "from": 0,
+          "to": 3,
+          "start": 83.18,
+          "end": 85.8
+        },
+        {
+          "from": 4,
+          "to": 6,
+          "start": 85.8,
+          "end": 85.98
+        },
+        {
+          "from": 7,
+          "to": 9,
+          "start": 85.98,
+          "end": 86.2
+        },
+        {
+          "from": 10,
+          "to": 17,
+          "start": 86.2,
+          "end": 86.92
+        },
+        {
+          "from": 18,
+          "to": 20,
+          "start": 86.92,
+          "end": 87.48
+        }
+      ],
+      "sourceLine": 12,
+      "matchedWordRatio": 1.0,
+      "alignment": "acoustic-gap-refinement"
     },
     {
       "text": "Hoy quiero saborear mi dolor",
-      "start": 84.267723,
-      "end": 92.198803
+      "start": 91.62,
+      "end": 95.66,
+      "words": [
+        {
+          "from": 4,
+          "to": 10,
+          "start": 91.62,
+          "end": 92.4
+        },
+        {
+          "from": 11,
+          "to": 19,
+          "start": 92.4,
+          "end": 93.78
+        },
+        {
+          "from": 20,
+          "to": 22,
+          "start": 93.78,
+          "end": 94.06
+        },
+        {
+          "from": 23,
+          "to": 28,
+          "start": 94.06,
+          "end": 95.66
+        }
+      ],
+      "sourceLine": 13,
+      "matchedWordRatio": 0.8,
+      "alignment": "acoustic-gap-refinement"
     },
     {
       "text": "No pido compasión ni piedad",
-      "start": 92.198803,
-      "end": 99.799421
+      "start": 97.04,
+      "end": 102.04,
+      "words": [
+        {
+          "from": 3,
+          "to": 7,
+          "start": 97.04,
+          "end": 99.52
+        },
+        {
+          "from": 8,
+          "to": 17,
+          "start": 99.52,
+          "end": 100.86
+        },
+        {
+          "from": 18,
+          "to": 20,
+          "start": 100.86,
+          "end": 101.16
+        },
+        {
+          "from": 21,
+          "to": 27,
+          "start": 101.16,
+          "end": 102.04
+        }
+      ],
+      "sourceLine": 14,
+      "matchedWordRatio": 0.8,
+      "alignment": "acoustic-gap-refinement"
     },
     {
       "text": "La historia de este amor se escribió",
-      "start": 99.799421,
-      "end": 109.713271
+      "start": 103.52,
+      "end": 109.16,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 103.52,
+          "end": 104.22
+        },
+        {
+          "from": 3,
+          "to": 11,
+          "start": 104.22,
+          "end": 105.08
+        },
+        {
+          "from": 12,
+          "to": 14,
+          "start": 105.08,
+          "end": 106.22
+        },
+        {
+          "from": 15,
+          "to": 19,
+          "start": 106.22,
+          "end": 106.56
+        },
+        {
+          "from": 20,
+          "to": 24,
+          "start": 106.56,
+          "end": 107.1
+        },
+        {
+          "from": 25,
+          "to": 27,
+          "start": 107.1,
+          "end": 107.46
+        },
+        {
+          "from": 28,
+          "to": 36,
+          "start": 107.46,
+          "end": 109.16
+        }
+      ],
+      "sourceLine": 15,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Para la eternidad",
-      "start": 109.713271,
-      "end": 114.670196
-    },
-    {
-      "text": "Qué triste todos dicen que soy",
-      "start": 114.670196,
-      "end": 122.931738
+      "start": 110.92,
+      "end": 114.08,
+      "words": [
+        {
+          "from": 0,
+          "to": 4,
+          "start": 110.92,
+          "end": 111.62
+        },
+        {
+          "from": 5,
+          "to": 7,
+          "start": 111.62,
+          "end": 111.9
+        },
+        {
+          "from": 8,
+          "to": 17,
+          "start": 111.9,
+          "end": 114.08
+        }
+      ],
+      "sourceLine": 16,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Que siempre estoy hablando de ti",
-      "start": 122.931738,
-      "end": 131.854202
+      "start": 124.5,
+      "end": 129.02,
+      "words": [
+        {
+          "from": 0,
+          "to": 3,
+          "start": 124.5,
+          "end": 124.66
+        },
+        {
+          "from": 4,
+          "to": 11,
+          "start": 124.66,
+          "end": 125.36
+        },
+        {
+          "from": 12,
+          "to": 17,
+          "start": 125.36,
+          "end": 126.52
+        },
+        {
+          "from": 18,
+          "to": 26,
+          "start": 126.52,
+          "end": 127.1
+        },
+        {
+          "from": 27,
+          "to": 29,
+          "start": 127.1,
+          "end": 127.96
+        },
+        {
+          "from": 30,
+          "to": 32,
+          "start": 127.96,
+          "end": 129.02
+        }
+      ],
+      "sourceLine": 18,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "No saben que pensando en tu amor",
-      "start": 131.854202,
-      "end": 140.446206
+      "start": 129.02,
+      "end": 134.36,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 129.02,
+          "end": 130.58
+        },
+        {
+          "from": 3,
+          "to": 8,
+          "start": 130.58,
+          "end": 131.34
+        },
+        {
+          "from": 9,
+          "to": 12,
+          "start": 131.34,
+          "end": 132.1
+        },
+        {
+          "from": 13,
+          "to": 21,
+          "start": 132.1,
+          "end": 132.66
+        },
+        {
+          "from": 22,
+          "to": 24,
+          "start": 132.66,
+          "end": 133.1
+        },
+        {
+          "from": 25,
+          "to": 27,
+          "start": 133.1,
+          "end": 133.3
+        },
+        {
+          "from": 28,
+          "to": 32,
+          "start": 133.3,
+          "end": 134.36
+        }
+      ],
+      "sourceLine": 19,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "En tu amor, he podido ayudarme a vivir",
-      "start": 140.446206,
-      "end": 150.360055
-    },
-    {
-      "text": "He podido ayudarme a vivir",
-      "start": 150.360055,
-      "end": 157.630212
-    },
-    {
-      "text": "Hoy quiero saborear mi dolor",
-      "start": 157.630212,
-      "end": 165.561292
-    },
-    {
-      "text": "No pido compasión ni piedad",
-      "start": 165.561292,
-      "end": 173.16191
+      "start": 134.36,
+      "end": 142.26,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 134.36,
+          "end": 135.28
+        },
+        {
+          "from": 3,
+          "to": 5,
+          "start": 135.28,
+          "end": 135.44
+        },
+        {
+          "from": 6,
+          "to": 10,
+          "start": 135.44,
+          "end": 137.34
+        },
+        {
+          "from": 22,
+          "to": 30,
+          "start": 140.24,
+          "end": 141.62
+        },
+        {
+          "from": 31,
+          "to": 32,
+          "start": 141.62,
+          "end": 141.92
+        },
+        {
+          "from": 33,
+          "to": 38,
+          "start": 141.92,
+          "end": 142.26
+        }
+      ],
+      "sourceLine": 20,
+      "matchedWordRatio": 0.75
     },
     {
       "text": "La historia de este amor se escribió",
-      "start": 173.16191,
-      "end": 183.07576
+      "start": 189.02,
+      "end": 193.36,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 189.02,
+          "end": 189.32
+        },
+        {
+          "from": 3,
+          "to": 11,
+          "start": 189.32,
+          "end": 190.08
+        },
+        {
+          "from": 12,
+          "to": 14,
+          "start": 190.08,
+          "end": 190.48
+        },
+        {
+          "from": 15,
+          "to": 19,
+          "start": 190.48,
+          "end": 190.7
+        },
+        {
+          "from": 20,
+          "to": 24,
+          "start": 190.7,
+          "end": 191.08
+        },
+        {
+          "from": 25,
+          "to": 27,
+          "start": 191.08,
+          "end": 191.42
+        },
+        {
+          "from": 28,
+          "to": 36,
+          "start": 191.42,
+          "end": 193.36
+        }
+      ],
+      "sourceLine": 24,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Para la eternidad",
-      "start": 183.07576,
-      "end": 188.032685
+      "start": 195.68,
+      "end": 199.22,
+      "words": [
+        {
+          "from": 0,
+          "to": 4,
+          "start": 195.68,
+          "end": 196.38
+        },
+        {
+          "from": 5,
+          "to": 7,
+          "start": 196.38,
+          "end": 196.66
+        },
+        {
+          "from": 8,
+          "to": 17,
+          "start": 196.66,
+          "end": 199.22
+        }
+      ],
+      "sourceLine": 25,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Que triste todos dicen que soy",
-      "start": 188.032685,
-      "end": 196.294226
+      "start": 201.58,
+      "end": 207.38,
+      "words": [
+        {
+          "from": 0,
+          "to": 3,
+          "start": 201.58,
+          "end": 202.28
+        },
+        {
+          "from": 4,
+          "to": 10,
+          "start": 202.28,
+          "end": 203.1
+        },
+        {
+          "from": 11,
+          "to": 16,
+          "start": 204.64,
+          "end": 205.34
+        },
+        {
+          "from": 17,
+          "to": 22,
+          "start": 205.34,
+          "end": 206.12
+        },
+        {
+          "from": 23,
+          "to": 26,
+          "start": 206.12,
+          "end": 206.54
+        },
+        {
+          "from": 27,
+          "to": 30,
+          "start": 206.54,
+          "end": 207.38
+        }
+      ],
+      "sourceLine": 26,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Que siempre estoy hablando de ti",
-      "start": 196.294226,
-      "end": 205.216691
+      "start": 208.72,
+      "end": 212.94,
+      "words": [
+        {
+          "from": 0,
+          "to": 3,
+          "start": 208.72,
+          "end": 209.42
+        },
+        {
+          "from": 4,
+          "to": 11,
+          "start": 209.42,
+          "end": 210.26
+        },
+        {
+          "from": 12,
+          "to": 17,
+          "start": 210.26,
+          "end": 211.2
+        },
+        {
+          "from": 18,
+          "to": 26,
+          "start": 211.2,
+          "end": 211.82
+        },
+        {
+          "from": 27,
+          "to": 29,
+          "start": 211.82,
+          "end": 212.32
+        },
+        {
+          "from": 30,
+          "to": 32,
+          "start": 212.32,
+          "end": 212.94
+        }
+      ],
+      "sourceLine": 27,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "No saben que pensando en tu amor",
-      "start": 205.216691,
-      "end": 213.808694
+      "start": 212.94,
+      "end": 219.24,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 212.94,
+          "end": 215.32
+        },
+        {
+          "from": 3,
+          "to": 8,
+          "start": 215.32,
+          "end": 216.08
+        },
+        {
+          "from": 9,
+          "to": 12,
+          "start": 216.08,
+          "end": 216.76
+        },
+        {
+          "from": 13,
+          "to": 21,
+          "start": 216.76,
+          "end": 217.3
+        },
+        {
+          "from": 22,
+          "to": 24,
+          "start": 217.3,
+          "end": 217.6
+        },
+        {
+          "from": 25,
+          "to": 27,
+          "start": 217.6,
+          "end": 217.8
+        },
+        {
+          "from": 28,
+          "to": 32,
+          "start": 217.8,
+          "end": 219.24
+        }
+      ],
+      "sourceLine": 28,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "En tu amor, he podido ayudarme a vivir",
-      "start": 213.808694,
-      "end": 223.722544
+      "start": 219.28,
+      "end": 227.16,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 219.28,
+          "end": 220.06
+        },
+        {
+          "from": 3,
+          "to": 5,
+          "start": 220.06,
+          "end": 220.22
+        },
+        {
+          "from": 6,
+          "to": 10,
+          "start": 220.22,
+          "end": 222.12
+        },
+        {
+          "from": 12,
+          "to": 14,
+          "start": 222.62,
+          "end": 223.32
+        },
+        {
+          "from": 15,
+          "to": 21,
+          "start": 223.32,
+          "end": 224.54
+        },
+        {
+          "from": 22,
+          "to": 30,
+          "start": 224.54,
+          "end": 226.46
+        },
+        {
+          "from": 31,
+          "to": 32,
+          "start": 226.46,
+          "end": 226.72
+        },
+        {
+          "from": 33,
+          "to": 38,
+          "start": 226.72,
+          "end": 227.16
+        }
+      ],
+      "sourceLine": 29,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "He podido ayudarme a vivir",
-      "start": 223.722544,
-      "end": 230.9927
+      "start": 230.48,
+      "end": 233.6,
+      "words": [
+        {
+          "from": 10,
+          "to": 18,
+          "start": 230.48,
+          "end": 232.98
+        },
+        {
+          "from": 19,
+          "to": 20,
+          "start": 232.98,
+          "end": 233.22
+        },
+        {
+          "from": 21,
+          "to": 26,
+          "start": 233.22,
+          "end": 233.6
+        }
+      ],
+      "sourceLine": 30,
+      "matchedWordRatio": 0.6
     },
     {
       "text": "He podido ayudarme a vivir",
-      "start": 230.9927,
-      "end": 238.262857
+      "start": 237.12,
+      "end": 240.06,
+      "words": [
+        {
+          "from": 10,
+          "to": 18,
+          "start": 237.12,
+          "end": 239.42
+        },
+        {
+          "from": 19,
+          "to": 20,
+          "start": 239.42,
+          "end": 239.64
+        },
+        {
+          "from": 21,
+          "to": 26,
+          "start": 239.64,
+          "end": 240.06
+        }
+      ],
+      "sourceLine": 31,
+      "matchedWordRatio": 0.6
+    }
+  ],
+  "unmatchedLines": [
+    {
+      "line": 5,
+      "text": "Qué triste luce todo sin ti",
+      "coverage": 0.5
+    },
+    {
+      "line": 17,
+      "text": "Qué triste todos dicen que soy",
+      "coverage": 0.333
+    },
+    {
+      "line": 21,
+      "text": "He podido ayudarme a vivir",
+      "coverage": 0.4
+    },
+    {
+      "line": 22,
+      "text": "Hoy quiero saborear mi dolor",
+      "coverage": 0.0
+    },
+    {
+      "line": 23,
+      "text": "No pido compasión ni piedad",
+      "coverage": 0.0
     }
   ]
 }

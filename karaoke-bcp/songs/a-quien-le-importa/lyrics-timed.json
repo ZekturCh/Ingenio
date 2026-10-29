@@ -1,240 +1,1355 @@
 {
   "songId": "a-quien-le-importa",
-  "title": "A quién le importa",
   "status": "estimated",
   "reviewRequired": true,
-  "timingMethod": "text-length-proportional; not aligned to vocals or instrumental sections",
-  "durationSeconds": 196.806531,
+  "method": "local-asr-word-matching",
+  "alignmentModel": "faster-whisper-small",
+  "durationSeconds": 205.224,
+  "audioSha256": "71ba8c841737014186276425c681fe64a17ef14125141fa063317a10e69db422",
   "lyrics": [
     {
-      "text": "La gente me señala",
-      "start": 0.0,
-      "end": 3.385433
-    },
-    {
       "text": "Me apuntan con el dedo",
-      "start": 3.385433,
-      "end": 7.447954
+      "start": 18.8,
+      "end": 20.8,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 18.8,
+          "end": 19.18
+        },
+        {
+          "from": 3,
+          "to": 10,
+          "start": 19.18,
+          "end": 19.88
+        },
+        {
+          "from": 11,
+          "to": 14,
+          "start": 19.88,
+          "end": 20.12
+        },
+        {
+          "from": 15,
+          "to": 17,
+          "start": 20.12,
+          "end": 20.3
+        },
+        {
+          "from": 18,
+          "to": 22,
+          "start": 20.3,
+          "end": 20.8
+        }
+      ],
+      "sourceLine": 2,
+      "matchedWordRatio": 1.0,
+      "alignment": "acoustic-gap-refinement"
     },
     {
       "text": "Susurra a mis espaldas",
-      "start": 7.447954,
-      "end": 11.736169
+      "start": 20.8,
+      "end": 22.54,
+      "words": [
+        {
+          "from": 0,
+          "to": 7,
+          "start": 20.8,
+          "end": 21.56
+        },
+        {
+          "from": 10,
+          "to": 13,
+          "start": 21.66,
+          "end": 21.84
+        },
+        {
+          "from": 14,
+          "to": 22,
+          "start": 21.84,
+          "end": 22.54
+        }
+      ],
+      "sourceLine": 3,
+      "matchedWordRatio": 0.75,
+      "alignment": "acoustic-gap-refinement"
     },
     {
       "text": "Y a mí me importa un bledo",
-      "start": 11.736169,
-      "end": 16.250081
+      "start": 22.9,
+      "end": 23.94,
+      "words": [
+        {
+          "from": 4,
+          "to": 6,
+          "start": 22.9,
+          "end": 23.16
+        },
+        {
+          "from": 7,
+          "to": 9,
+          "start": 23.16,
+          "end": 23.34
+        },
+        {
+          "from": 10,
+          "to": 17,
+          "start": 23.34,
+          "end": 23.7
+        },
+        {
+          "from": 18,
+          "to": 20,
+          "start": 23.7,
+          "end": 23.94
+        }
+      ],
+      "sourceLine": 4,
+      "matchedWordRatio": 0.571
     },
     {
       "text": "¿Qué más me da",
-      "start": 16.250081,
-      "end": 18.507036
+      "start": 25.34,
+      "end": 26.0,
+      "words": [
+        {
+          "from": 5,
+          "to": 8,
+          "start": 25.34,
+          "end": 25.66
+        },
+        {
+          "from": 9,
+          "to": 11,
+          "start": 25.66,
+          "end": 25.82
+        },
+        {
+          "from": 12,
+          "to": 14,
+          "start": 25.82,
+          "end": 26.0
+        }
+      ],
+      "sourceLine": 5,
+      "matchedWordRatio": 0.75
     },
     {
       "text": "Si soy distinta a ellos?",
-      "start": 18.507036,
-      "end": 22.795252
+      "start": 26.44,
+      "end": 27.44,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 26.44,
+          "end": 26.58
+        },
+        {
+          "from": 3,
+          "to": 6,
+          "start": 26.58,
+          "end": 26.82
+        },
+        {
+          "from": 7,
+          "to": 15,
+          "start": 26.82,
+          "end": 27.44
+        }
+      ],
+      "sourceLine": 6,
+      "matchedWordRatio": 0.6
     },
     {
       "text": "No soy de nadie",
-      "start": 22.795252,
-      "end": 25.503599
+      "start": 28.66,
+      "end": 29.9,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 28.66,
+          "end": 28.86
+        },
+        {
+          "from": 3,
+          "to": 6,
+          "start": 28.86,
+          "end": 29.18
+        },
+        {
+          "from": 7,
+          "to": 9,
+          "start": 29.18,
+          "end": 29.38
+        },
+        {
+          "from": 10,
+          "to": 15,
+          "start": 29.38,
+          "end": 29.9
+        }
+      ],
+      "sourceLine": 7,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "No tengo dueño",
-      "start": 25.503599,
-      "end": 28.211945
+      "start": 30.1,
+      "end": 32.3,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 30.1,
+          "end": 30.28
+        },
+        {
+          "from": 3,
+          "to": 8,
+          "start": 30.28,
+          "end": 30.92
+        },
+        {
+          "from": 9,
+          "to": 14,
+          "start": 30.92,
+          "end": 32.3
+        }
+      ],
+      "sourceLine": 8,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Yo sé que me critican",
-      "start": 28.211945,
-      "end": 32.04877
+      "start": 33.44,
+      "end": 34.64,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 33.44,
+          "end": 33.88
+        },
+        {
+          "from": 3,
+          "to": 5,
+          "start": 33.88,
+          "end": 34.16
+        },
+        {
+          "from": 10,
+          "to": 12,
+          "start": 34.42,
+          "end": 34.64
+        }
+      ],
+      "sourceLine": 9,
+      "matchedWordRatio": 0.6
     },
     {
       "text": "Me consta que me odian",
-      "start": 32.04877,
-      "end": 36.11129
+      "start": 35.46,
+      "end": 37.28,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 35.46,
+          "end": 35.76
+        },
+        {
+          "from": 3,
+          "to": 9,
+          "start": 35.76,
+          "end": 36.38
+        },
+        {
+          "from": 10,
+          "to": 13,
+          "start": 36.38,
+          "end": 36.6
+        },
+        {
+          "from": 14,
+          "to": 16,
+          "start": 36.6,
+          "end": 36.82
+        },
+        {
+          "from": 17,
+          "to": 22,
+          "start": 36.82,
+          "end": 37.28
+        }
+      ],
+      "sourceLine": 10,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "La envidia les corroe",
-      "start": 36.11129,
-      "end": 40.17381
+      "start": 37.28,
+      "end": 39.18,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 37.28,
+          "end": 37.58
+        },
+        {
+          "from": 3,
+          "to": 10,
+          "start": 37.58,
+          "end": 38.08
+        },
+        {
+          "from": 11,
+          "to": 14,
+          "start": 38.08,
+          "end": 38.34
+        },
+        {
+          "from": 15,
+          "to": 21,
+          "start": 38.34,
+          "end": 39.18
+        }
+      ],
+      "sourceLine": 11,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Mi vida les agobia",
-      "start": 40.17381,
-      "end": 43.559244
+      "start": 39.28,
+      "end": 40.78,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 39.28,
+          "end": 39.48
+        },
+        {
+          "from": 3,
+          "to": 7,
+          "start": 39.48,
+          "end": 39.82
+        },
+        {
+          "from": 8,
+          "to": 11,
+          "start": 39.82,
+          "end": 40.16
+        },
+        {
+          "from": 12,
+          "to": 18,
+          "start": 40.16,
+          "end": 40.78
+        }
+      ],
+      "sourceLine": 12,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "¿Por qué será?",
-      "start": 43.559244,
-      "end": 45.816199
+      "start": 40.78,
+      "end": 42.36,
+      "words": [
+        {
+          "from": 1,
+          "to": 4,
+          "start": 40.78,
+          "end": 41.82
+        },
+        {
+          "from": 5,
+          "to": 8,
+          "start": 41.82,
+          "end": 42.14
+        },
+        {
+          "from": 9,
+          "to": 13,
+          "start": 42.14,
+          "end": 42.36
+        }
+      ],
+      "sourceLine": 13,
+      "matchedWordRatio": 1.0,
+      "alignment": "acoustic-gap-refinement"
     },
     {
       "text": "Yo no tengo la culpa",
-      "start": 45.816199,
-      "end": 49.427328
+      "start": 42.44,
+      "end": 44.46,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 42.44,
+          "end": 43.14
+        },
+        {
+          "from": 3,
+          "to": 5,
+          "start": 43.14,
+          "end": 43.36
+        },
+        {
+          "from": 12,
+          "to": 14,
+          "start": 43.82,
+          "end": 44.04
+        },
+        {
+          "from": 15,
+          "to": 20,
+          "start": 44.04,
+          "end": 44.46
+        }
+      ],
+      "sourceLine": 14,
+      "matchedWordRatio": 0.8
     },
     {
       "text": "Mi circunstancia les insulta",
-      "start": 49.427328,
-      "end": 55.069717
+      "start": 45.0,
+      "end": 49.88,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 45.0,
+          "end": 45.44
+        },
+        {
+          "from": 17,
+          "to": 20,
+          "start": 46.6,
+          "end": 47.22
+        },
+        {
+          "from": 21,
+          "to": 28,
+          "start": 47.22,
+          "end": 49.88
+        }
+      ],
+      "sourceLine": 15,
+      "matchedWordRatio": 0.75
     },
     {
       "text": "Mi destino es el que yo decido",
-      "start": 55.069717,
-      "end": 60.486411
+      "start": 52.04,
+      "end": 57.58,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 52.04,
+          "end": 52.92
+        },
+        {
+          "from": 11,
+          "to": 13,
+          "start": 53.8,
+          "end": 54.3
+        },
+        {
+          "from": 14,
+          "to": 16,
+          "start": 54.3,
+          "end": 54.68
+        },
+        {
+          "from": 17,
+          "to": 20,
+          "start": 54.68,
+          "end": 54.92
+        },
+        {
+          "from": 21,
+          "to": 23,
+          "start": 54.92,
+          "end": 55.58
+        },
+        {
+          "from": 24,
+          "to": 30,
+          "start": 55.58,
+          "end": 57.58
+        }
+      ],
+      "sourceLine": 16,
+      "matchedWordRatio": 0.857
     },
     {
       "text": "El que yo elijo para mí",
-      "start": 60.486411,
-      "end": 64.548931
+      "start": 57.58,
+      "end": 63.08,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 57.58,
+          "end": 58.34
+        },
+        {
+          "from": 3,
+          "to": 6,
+          "start": 58.34,
+          "end": 58.62
+        },
+        {
+          "from": 7,
+          "to": 9,
+          "start": 58.62,
+          "end": 59.3
+        },
+        {
+          "from": 16,
+          "to": 20,
+          "start": 61.26,
+          "end": 62.1
+        },
+        {
+          "from": 21,
+          "to": 23,
+          "start": 62.1,
+          "end": 63.08
+        }
+      ],
+      "sourceLine": 17,
+      "matchedWordRatio": 0.833
     },
     {
       "text": "¿A quién le importa lo que yo haga?",
-      "start": 64.548931,
-      "end": 70.417016
+      "start": 65.02,
+      "end": 68.36,
+      "words": [
+        {
+          "from": 3,
+          "to": 8,
+          "start": 65.02,
+          "end": 65.4
+        },
+        {
+          "from": 9,
+          "to": 11,
+          "start": 65.4,
+          "end": 65.88
+        },
+        {
+          "from": 12,
+          "to": 19,
+          "start": 65.88,
+          "end": 66.3
+        },
+        {
+          "from": 20,
+          "to": 22,
+          "start": 66.3,
+          "end": 67.06
+        },
+        {
+          "from": 23,
+          "to": 26,
+          "start": 67.06,
+          "end": 67.48
+        },
+        {
+          "from": 27,
+          "to": 29,
+          "start": 67.48,
+          "end": 67.98
+        },
+        {
+          "from": 30,
+          "to": 34,
+          "start": 67.98,
+          "end": 68.36
+        }
+      ],
+      "sourceLine": 18,
+      "matchedWordRatio": 0.875
     },
     {
       "text": "¿A quién le importa lo que yo diga?",
-      "start": 70.417016,
-      "end": 76.2851
+      "start": 68.36,
+      "end": 72.16,
+      "words": [
+        {
+          "from": 1,
+          "to": 2,
+          "start": 68.36,
+          "end": 69.36
+        },
+        {
+          "from": 3,
+          "to": 8,
+          "start": 69.36,
+          "end": 69.52
+        },
+        {
+          "from": 9,
+          "to": 11,
+          "start": 69.52,
+          "end": 69.72
+        },
+        {
+          "from": 12,
+          "to": 19,
+          "start": 69.72,
+          "end": 70.04
+        },
+        {
+          "from": 20,
+          "to": 22,
+          "start": 70.04,
+          "end": 70.76
+        },
+        {
+          "from": 23,
+          "to": 26,
+          "start": 70.76,
+          "end": 71.16
+        },
+        {
+          "from": 27,
+          "to": 29,
+          "start": 71.16,
+          "end": 71.56
+        },
+        {
+          "from": 30,
+          "to": 34,
+          "start": 71.56,
+          "end": 72.16
+        }
+      ],
+      "sourceLine": 19,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Yo soy así y así seguiré",
-      "start": 76.2851,
-      "end": 80.573316
+      "start": 72.16,
+      "end": 75.44,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 72.16,
+          "end": 72.92
+        },
+        {
+          "from": 3,
+          "to": 6,
+          "start": 72.92,
+          "end": 73.22
+        },
+        {
+          "from": 7,
+          "to": 10,
+          "start": 73.22,
+          "end": 73.78
+        },
+        {
+          "from": 11,
+          "to": 12,
+          "start": 73.78,
+          "end": 74.24
+        },
+        {
+          "from": 13,
+          "to": 16,
+          "start": 74.24,
+          "end": 74.66
+        },
+        {
+          "from": 17,
+          "to": 24,
+          "start": 74.66,
+          "end": 75.44
+        }
+      ],
+      "sourceLine": 20,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Nunca cambiaré",
-      "start": 80.573316,
-      "end": 83.507358
+      "start": 75.44,
+      "end": 77.26,
+      "words": [
+        {
+          "from": 0,
+          "to": 5,
+          "start": 75.44,
+          "end": 76.6
+        },
+        {
+          "from": 6,
+          "to": 14,
+          "start": 76.6,
+          "end": 77.26
+        }
+      ],
+      "sourceLine": 21,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "¿A quién le importa lo que yo haga?",
-      "start": 83.507358,
-      "end": 89.375443
+      "start": 78.1,
+      "end": 83.1,
+      "words": [
+        {
+          "from": 1,
+          "to": 2,
+          "start": 78.1,
+          "end": 78.6
+        },
+        {
+          "from": 3,
+          "to": 8,
+          "start": 78.6,
+          "end": 80.14
+        },
+        {
+          "from": 9,
+          "to": 11,
+          "start": 80.14,
+          "end": 80.56
+        },
+        {
+          "from": 12,
+          "to": 19,
+          "start": 80.56,
+          "end": 81.0
+        },
+        {
+          "from": 20,
+          "to": 22,
+          "start": 81.0,
+          "end": 81.76
+        },
+        {
+          "from": 23,
+          "to": 26,
+          "start": 81.76,
+          "end": 82.2
+        },
+        {
+          "from": 27,
+          "to": 29,
+          "start": 82.2,
+          "end": 82.68
+        },
+        {
+          "from": 30,
+          "to": 34,
+          "start": 82.68,
+          "end": 83.1
+        }
+      ],
+      "sourceLine": 22,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "¿A quién le importa lo que yo diga?",
-      "start": 89.375443,
-      "end": 95.243528
-    },
-    {
-      "text": "Yo soy así y así seguiré",
-      "start": 95.243528,
-      "end": 99.531743
+      "start": 84.18,
+      "end": 86.86,
+      "words": [
+        {
+          "from": 9,
+          "to": 11,
+          "start": 84.18,
+          "end": 84.42
+        },
+        {
+          "from": 12,
+          "to": 19,
+          "start": 84.42,
+          "end": 84.78
+        },
+        {
+          "from": 20,
+          "to": 22,
+          "start": 84.78,
+          "end": 85.46
+        },
+        {
+          "from": 23,
+          "to": 26,
+          "start": 85.46,
+          "end": 85.9
+        },
+        {
+          "from": 27,
+          "to": 29,
+          "start": 85.9,
+          "end": 86.32
+        },
+        {
+          "from": 30,
+          "to": 34,
+          "start": 86.32,
+          "end": 86.86
+        }
+      ],
+      "sourceLine": 23,
+      "matchedWordRatio": 0.75
     },
     {
       "text": "Nunca cambiaré",
-      "start": 99.531743,
-      "end": 102.465786
+      "start": 89.96,
+      "end": 91.92,
+      "words": [
+        {
+          "from": 0,
+          "to": 5,
+          "start": 89.96,
+          "end": 91.04
+        },
+        {
+          "from": 6,
+          "to": 14,
+          "start": 91.04,
+          "end": 91.92
+        }
+      ],
+      "sourceLine": 25,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Quizá la culpa es mía",
-      "start": 102.465786,
-      "end": 106.30261
+      "start": 110.6,
+      "end": 112.44,
+      "words": [
+        {
+          "from": 0,
+          "to": 5,
+          "start": 110.6,
+          "end": 111.32
+        },
+        {
+          "from": 6,
+          "to": 8,
+          "start": 111.32,
+          "end": 111.52
+        },
+        {
+          "from": 9,
+          "to": 14,
+          "start": 111.52,
+          "end": 111.76
+        },
+        {
+          "from": 15,
+          "to": 17,
+          "start": 111.76,
+          "end": 112.12
+        },
+        {
+          "from": 18,
+          "to": 21,
+          "start": 112.12,
+          "end": 112.44
+        }
+      ],
+      "sourceLine": 26,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Por no seguir la norma",
-      "start": 106.30261,
-      "end": 110.36513
+      "start": 112.44,
+      "end": 114.44,
+      "words": [
+        {
+          "from": 0,
+          "to": 3,
+          "start": 112.44,
+          "end": 112.92
+        },
+        {
+          "from": 4,
+          "to": 6,
+          "start": 112.92,
+          "end": 113.1
+        },
+        {
+          "from": 7,
+          "to": 13,
+          "start": 113.1,
+          "end": 113.46
+        },
+        {
+          "from": 14,
+          "to": 16,
+          "start": 113.46,
+          "end": 113.8
+        },
+        {
+          "from": 17,
+          "to": 22,
+          "start": 113.8,
+          "end": 114.44
+        }
+      ],
+      "sourceLine": 27,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Ya es demasiado tarde",
-      "start": 110.36513,
-      "end": 114.42765
+      "start": 114.44,
+      "end": 115.4,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 114.44,
+          "end": 114.72
+        },
+        {
+          "from": 3,
+          "to": 5,
+          "start": 114.72,
+          "end": 114.9
+        },
+        {
+          "from": 6,
+          "to": 15,
+          "start": 114.9,
+          "end": 115.4
+        }
+      ],
+      "sourceLine": 28,
+      "matchedWordRatio": 0.75
     },
     {
       "text": "Para cambiar ahora",
-      "start": 114.42765,
-      "end": 118.038779
+      "start": 116.28,
+      "end": 117.92,
+      "words": [
+        {
+          "from": 0,
+          "to": 4,
+          "start": 116.28,
+          "end": 116.7
+        },
+        {
+          "from": 5,
+          "to": 12,
+          "start": 116.7,
+          "end": 117.22
+        },
+        {
+          "from": 13,
+          "to": 18,
+          "start": 117.22,
+          "end": 117.92
+        }
+      ],
+      "sourceLine": 29,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Me mantendré",
-      "start": 118.038779,
-      "end": 120.521431
+      "start": 117.92,
+      "end": 119.7,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 117.92,
+          "end": 118.98
+        },
+        {
+          "from": 3,
+          "to": 12,
+          "start": 118.98,
+          "end": 119.7
+        }
+      ],
+      "sourceLine": 30,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Firme en mis convicciones",
-      "start": 120.521431,
-      "end": 125.486733
+      "start": 119.7,
+      "end": 121.6,
+      "words": [
+        {
+          "from": 6,
+          "to": 8,
+          "start": 119.7,
+          "end": 120.3
+        },
+        {
+          "from": 9,
+          "to": 12,
+          "start": 120.3,
+          "end": 120.64
+        },
+        {
+          "from": 13,
+          "to": 25,
+          "start": 120.64,
+          "end": 121.6
+        }
+      ],
+      "sourceLine": 31,
+      "matchedWordRatio": 0.75
     },
     {
       "text": "Reforzaré mis posiciones",
-      "start": 125.486733,
-      "end": 130.452035
+      "start": 123.24,
+      "end": 125.38,
+      "words": [
+        {
+          "from": 10,
+          "to": 13,
+          "start": 123.24,
+          "end": 123.86
+        },
+        {
+          "from": 14,
+          "to": 24,
+          "start": 123.86,
+          "end": 125.38
+        }
+      ],
+      "sourceLine": 32,
+      "matchedWordRatio": 0.667
     },
     {
       "text": "Mi destino es el que yo decido",
-      "start": 130.452035,
-      "end": 135.868729
+      "start": 128.4,
+      "end": 132.82,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 128.4,
+          "end": 129.72
+        },
+        {
+          "from": 11,
+          "to": 13,
+          "start": 131.04,
+          "end": 131.38
+        },
+        {
+          "from": 14,
+          "to": 16,
+          "start": 131.38,
+          "end": 131.8
+        },
+        {
+          "from": 21,
+          "to": 23,
+          "start": 132.06,
+          "end": 132.82
+        }
+      ],
+      "sourceLine": 33,
+      "matchedWordRatio": 0.571
     },
     {
       "text": "El que yo elijo para mí",
-      "start": 135.868729,
-      "end": 139.931249
+      "start": 135.08,
+      "end": 140.1,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 135.08,
+          "end": 135.4
+        },
+        {
+          "from": 7,
+          "to": 9,
+          "start": 135.72,
+          "end": 136.24
+        },
+        {
+          "from": 16,
+          "to": 20,
+          "start": 138.34,
+          "end": 139.24
+        },
+        {
+          "from": 21,
+          "to": 23,
+          "start": 139.24,
+          "end": 140.1
+        }
+      ],
+      "sourceLine": 34,
+      "matchedWordRatio": 0.667
     },
     {
       "text": "¿A quién le importa lo que yo haga?",
-      "start": 139.931249,
-      "end": 145.799334
+      "start": 142.2,
+      "end": 145.1,
+      "words": [
+        {
+          "from": 3,
+          "to": 8,
+          "start": 142.2,
+          "end": 142.54
+        },
+        {
+          "from": 9,
+          "to": 11,
+          "start": 142.54,
+          "end": 143.02
+        },
+        {
+          "from": 12,
+          "to": 19,
+          "start": 143.02,
+          "end": 143.4
+        },
+        {
+          "from": 20,
+          "to": 22,
+          "start": 143.4,
+          "end": 144.2
+        },
+        {
+          "from": 23,
+          "to": 26,
+          "start": 144.2,
+          "end": 144.68
+        },
+        {
+          "from": 27,
+          "to": 29,
+          "start": 144.68,
+          "end": 145.1
+        }
+      ],
+      "sourceLine": 35,
+      "matchedWordRatio": 0.75
     },
     {
       "text": "¿A quién le importa lo que yo diga?",
-      "start": 145.799334,
-      "end": 151.667418
-    },
-    {
-      "text": "Yo soy así y así seguiré",
-      "start": 151.667418,
-      "end": 155.955634
+      "start": 145.8,
+      "end": 149.38,
+      "words": [
+        {
+          "from": 1,
+          "to": 2,
+          "start": 145.8,
+          "end": 146.5
+        },
+        {
+          "from": 3,
+          "to": 8,
+          "start": 146.5,
+          "end": 146.68
+        },
+        {
+          "from": 12,
+          "to": 19,
+          "start": 146.86,
+          "end": 147.2
+        },
+        {
+          "from": 20,
+          "to": 22,
+          "start": 147.2,
+          "end": 147.86
+        },
+        {
+          "from": 23,
+          "to": 26,
+          "start": 147.86,
+          "end": 148.28
+        },
+        {
+          "from": 27,
+          "to": 29,
+          "start": 148.28,
+          "end": 148.7
+        },
+        {
+          "from": 30,
+          "to": 34,
+          "start": 148.7,
+          "end": 149.38
+        }
+      ],
+      "sourceLine": 36,
+      "matchedWordRatio": 0.875
     },
     {
       "text": "Nunca cambiaré",
-      "start": 155.955634,
-      "end": 158.889676
+      "start": 153.18,
+      "end": 154.46,
+      "words": [
+        {
+          "from": 0,
+          "to": 5,
+          "start": 153.18,
+          "end": 153.74
+        },
+        {
+          "from": 6,
+          "to": 14,
+          "start": 153.74,
+          "end": 154.46
+        }
+      ],
+      "sourceLine": 38,
+      "matchedWordRatio": 1.0,
+      "alignment": "acoustic-gap-refinement"
     },
     {
       "text": "¿A quién le importa lo que yo haga?",
-      "start": 158.889676,
-      "end": 164.757761
+      "start": 155.8,
+      "end": 159.74,
+      "words": [
+        {
+          "from": 1,
+          "to": 2,
+          "start": 155.8,
+          "end": 156.7
+        },
+        {
+          "from": 3,
+          "to": 8,
+          "start": 156.7,
+          "end": 157.24
+        },
+        {
+          "from": 12,
+          "to": 19,
+          "start": 157.72,
+          "end": 158.16
+        },
+        {
+          "from": 20,
+          "to": 22,
+          "start": 158.16,
+          "end": 158.9
+        },
+        {
+          "from": 23,
+          "to": 26,
+          "start": 158.9,
+          "end": 159.3
+        },
+        {
+          "from": 27,
+          "to": 29,
+          "start": 159.3,
+          "end": 159.74
+        }
+      ],
+      "sourceLine": 39,
+      "matchedWordRatio": 0.75
     },
     {
       "text": "¿A quién le importa lo que yo diga?",
-      "start": 164.757761,
-      "end": 170.625846
+      "start": 160.64,
+      "end": 164.04,
+      "words": [
+        {
+          "from": 1,
+          "to": 2,
+          "start": 160.64,
+          "end": 161.12
+        },
+        {
+          "from": 3,
+          "to": 8,
+          "start": 161.12,
+          "end": 161.34
+        },
+        {
+          "from": 12,
+          "to": 19,
+          "start": 161.58,
+          "end": 161.86
+        },
+        {
+          "from": 20,
+          "to": 22,
+          "start": 161.86,
+          "end": 162.56
+        },
+        {
+          "from": 23,
+          "to": 26,
+          "start": 162.56,
+          "end": 163.0
+        },
+        {
+          "from": 27,
+          "to": 29,
+          "start": 163.0,
+          "end": 163.38
+        },
+        {
+          "from": 30,
+          "to": 34,
+          "start": 163.38,
+          "end": 164.04
+        }
+      ],
+      "sourceLine": 40,
+      "matchedWordRatio": 0.875
+    }
+  ],
+  "unmatchedLines": [
+    {
+      "line": 1,
+      "text": "La gente me señala",
+      "coverage": 0.0
     },
     {
+      "line": 24,
       "text": "Yo soy así y así seguiré",
-      "start": 170.625846,
-      "end": 174.914061
+      "coverage": 0.5
     },
     {
+      "line": 37,
+      "text": "Yo soy así y así seguiré",
+      "coverage": 0.5
+    },
+    {
+      "line": 41,
+      "text": "Yo soy así y así seguiré",
+      "coverage": 0.5
+    },
+    {
+      "line": 42,
       "text": "Nunca cambiaré",
-      "start": 174.914061,
-      "end": 177.848104
+      "coverage": 0.0
     },
     {
+      "line": 43,
       "text": "¿A quién le importa lo que yo haga?",
-      "start": 177.848104,
-      "end": 183.716188
+      "coverage": 0.0
     },
     {
+      "line": 44,
       "text": "¿A quién le importa lo que yo diga?",
-      "start": 183.716188,
-      "end": 189.584273
+      "coverage": 0.125
     },
     {
+      "line": 45,
       "text": "Yo soy así y así seguiré",
-      "start": 189.584273,
-      "end": 193.872489
+      "coverage": 0.167
     },
     {
+      "line": 46,
       "text": "Nunca cambiaré",
-      "start": 193.872489,
-      "end": 196.806531
+      "coverage": 0.5
     }
   ]
 }

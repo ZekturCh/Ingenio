@@ -1,100 +1,989 @@
 {
   "songId": "mi-propiedad-privada",
-  "title": "Mi propiedad privada",
   "status": "estimated",
   "reviewRequired": true,
-  "timingMethod": "text-length-proportional; not aligned to vocals or instrumental sections",
-  "durationSeconds": 204.042,
+  "method": "local-asr-word-matching",
+  "alignmentModel": "faster-whisper-small",
+  "durationSeconds": 140.382041,
+  "audioSha256": "802597d70221f71d754293034112ee9b5487813ad4d7ceaccba1da9fdf975f42",
   "lyrics": [
     {
       "text": "Para que sepan todos a quien tú perteneces",
-      "start": 0.0,
-      "end": 11.426352
+      "start": 20.82,
+      "end": 24.74,
+      "words": [
+        {
+          "from": 5,
+          "to": 8,
+          "start": 20.82,
+          "end": 21.12
+        },
+        {
+          "from": 9,
+          "to": 14,
+          "start": 21.12,
+          "end": 21.56
+        },
+        {
+          "from": 15,
+          "to": 20,
+          "start": 21.56,
+          "end": 22.08
+        },
+        {
+          "from": 21,
+          "to": 22,
+          "start": 22.08,
+          "end": 22.32
+        },
+        {
+          "from": 23,
+          "to": 28,
+          "start": 22.32,
+          "end": 22.56
+        },
+        {
+          "from": 29,
+          "to": 31,
+          "start": 22.56,
+          "end": 23.56
+        },
+        {
+          "from": 32,
+          "to": 42,
+          "start": 23.56,
+          "end": 24.74
+        }
+      ],
+      "sourceLine": 1,
+      "matchedWordRatio": 0.875
     },
     {
       "text": "Con sangre de mis venas te marcaré la frente",
-      "start": 11.426352,
-      "end": 23.179171
+      "start": 24.74,
+      "end": 29.6,
+      "words": [
+        {
+          "from": 0,
+          "to": 3,
+          "start": 24.74,
+          "end": 25.84
+        },
+        {
+          "from": 4,
+          "to": 10,
+          "start": 25.84,
+          "end": 26.3
+        },
+        {
+          "from": 11,
+          "to": 13,
+          "start": 26.3,
+          "end": 26.52
+        },
+        {
+          "from": 14,
+          "to": 17,
+          "start": 26.52,
+          "end": 26.62
+        },
+        {
+          "from": 18,
+          "to": 23,
+          "start": 26.62,
+          "end": 27.6
+        },
+        {
+          "from": 27,
+          "to": 34,
+          "start": 28.08,
+          "end": 29.08
+        },
+        {
+          "from": 35,
+          "to": 37,
+          "start": 29.08,
+          "end": 29.18
+        },
+        {
+          "from": 38,
+          "to": 44,
+          "start": 29.18,
+          "end": 29.6
+        }
+      ],
+      "sourceLine": 2,
+      "matchedWordRatio": 0.889
     },
     {
       "text": "Para que te respeten aun con la mirada",
-      "start": 23.179171,
-      "end": 33.299654
+      "start": 29.6,
+      "end": 34.66,
+      "words": [
+        {
+          "from": 0,
+          "to": 4,
+          "start": 29.6,
+          "end": 31.06
+        },
+        {
+          "from": 5,
+          "to": 8,
+          "start": 31.06,
+          "end": 31.28
+        },
+        {
+          "from": 12,
+          "to": 20,
+          "start": 31.42,
+          "end": 32.22
+        },
+        {
+          "from": 25,
+          "to": 28,
+          "start": 33.16,
+          "end": 33.68
+        },
+        {
+          "from": 29,
+          "to": 31,
+          "start": 33.68,
+          "end": 34.06
+        },
+        {
+          "from": 32,
+          "to": 38,
+          "start": 34.06,
+          "end": 34.66
+        }
+      ],
+      "sourceLine": 3,
+      "matchedWordRatio": 0.75,
+      "alignment": "acoustic-gap-refinement"
     },
     {
       "text": "Y sepan que tú eres mi propiedad privada.",
-      "start": 33.299654,
-      "end": 44.073072
+      "start": 34.66,
+      "end": 39.98,
+      "words": [
+        {
+          "from": 0,
+          "to": 1,
+          "start": 34.66,
+          "end": 35.96
+        },
+        {
+          "from": 2,
+          "to": 7,
+          "start": 35.96,
+          "end": 36.42
+        },
+        {
+          "from": 8,
+          "to": 11,
+          "start": 36.42,
+          "end": 36.7
+        },
+        {
+          "from": 12,
+          "to": 14,
+          "start": 36.7,
+          "end": 36.92
+        },
+        {
+          "from": 15,
+          "to": 19,
+          "start": 36.92,
+          "end": 37.44
+        },
+        {
+          "from": 20,
+          "to": 22,
+          "start": 37.44,
+          "end": 38.04
+        },
+        {
+          "from": 23,
+          "to": 32,
+          "start": 38.04,
+          "end": 39.04
+        },
+        {
+          "from": 33,
+          "to": 40,
+          "start": 39.04,
+          "end": 39.98
+        }
+      ],
+      "sourceLine": 4,
+      "matchedWordRatio": 1.0,
+      "alignment": "acoustic-gap-refinement"
     },
     {
       "text": "Que no se atreva nadie a mirarte con ansias",
-      "start": 44.073072,
-      "end": 55.499424
+      "start": 40.36,
+      "end": 45.22,
+      "words": [
+        {
+          "from": 0,
+          "to": 3,
+          "start": 40.36,
+          "end": 40.96
+        },
+        {
+          "from": 4,
+          "to": 6,
+          "start": 40.96,
+          "end": 41.14
+        },
+        {
+          "from": 7,
+          "to": 9,
+          "start": 41.14,
+          "end": 41.34
+        },
+        {
+          "from": 10,
+          "to": 16,
+          "start": 41.34,
+          "end": 41.74
+        },
+        {
+          "from": 17,
+          "to": 22,
+          "start": 41.74,
+          "end": 42.36
+        },
+        {
+          "from": 23,
+          "to": 24,
+          "start": 42.36,
+          "end": 42.86
+        },
+        {
+          "from": 25,
+          "to": 32,
+          "start": 42.86,
+          "end": 43.9
+        },
+        {
+          "from": 33,
+          "to": 36,
+          "start": 43.9,
+          "end": 44.36
+        },
+        {
+          "from": 37,
+          "to": 43,
+          "start": 44.36,
+          "end": 45.22
+        }
+      ],
+      "sourceLine": 5,
+      "matchedWordRatio": 1.0,
+      "alignment": "acoustic-gap-refinement"
     },
     {
       "text": "Y que conserven todos respetables distancia",
-      "start": 55.499424,
-      "end": 67.905178
+      "start": 45.22,
+      "end": 50.22,
+      "words": [
+        {
+          "from": 0,
+          "to": 1,
+          "start": 45.22,
+          "end": 46.08
+        },
+        {
+          "from": 2,
+          "to": 5,
+          "start": 46.08,
+          "end": 46.24
+        },
+        {
+          "from": 6,
+          "to": 15,
+          "start": 46.24,
+          "end": 46.9
+        },
+        {
+          "from": 16,
+          "to": 21,
+          "start": 46.9,
+          "end": 47.92
+        },
+        {
+          "from": 22,
+          "to": 33,
+          "start": 47.92,
+          "end": 49.28
+        },
+        {
+          "from": 34,
+          "to": 43,
+          "start": 49.28,
+          "end": 50.22
+        }
+      ],
+      "sourceLine": 6,
+      "matchedWordRatio": 1.0,
+      "alignment": "acoustic-gap-refinement"
     },
     {
       "text": "Porque mi pobre alma se retuerce de celos",
-      "start": 67.905178,
-      "end": 79.005062
+      "start": 50.22,
+      "end": 54.94,
+      "words": [
+        {
+          "from": 0,
+          "to": 6,
+          "start": 50.22,
+          "end": 51.3
+        },
+        {
+          "from": 7,
+          "to": 9,
+          "start": 51.3,
+          "end": 51.58
+        },
+        {
+          "from": 10,
+          "to": 15,
+          "start": 51.58,
+          "end": 51.84
+        },
+        {
+          "from": 16,
+          "to": 20,
+          "start": 51.84,
+          "end": 52.32
+        },
+        {
+          "from": 21,
+          "to": 23,
+          "start": 52.32,
+          "end": 53.08
+        },
+        {
+          "from": 24,
+          "to": 32,
+          "start": 53.08,
+          "end": 54.08
+        },
+        {
+          "from": 33,
+          "to": 35,
+          "start": 54.08,
+          "end": 54.28
+        },
+        {
+          "from": 36,
+          "to": 41,
+          "start": 54.28,
+          "end": 54.94
+        }
+      ],
+      "sourceLine": 7,
+      "matchedWordRatio": 1.0,
+      "alignment": "acoustic-gap-refinement"
     },
     {
       "text": "Y no quiere que nadie respire de tu aliento.",
-      "start": 79.005062,
-      "end": 90.431414
+      "start": 55.18,
+      "end": 60.06,
+      "words": [
+        {
+          "from": 0,
+          "to": 1,
+          "start": 55.18,
+          "end": 56.2
+        },
+        {
+          "from": 2,
+          "to": 4,
+          "start": 56.2,
+          "end": 56.36
+        },
+        {
+          "from": 12,
+          "to": 15,
+          "start": 56.76,
+          "end": 56.96
+        },
+        {
+          "from": 16,
+          "to": 21,
+          "start": 56.96,
+          "end": 57.38
+        },
+        {
+          "from": 22,
+          "to": 29,
+          "start": 57.38,
+          "end": 58.8
+        },
+        {
+          "from": 30,
+          "to": 32,
+          "start": 58.8,
+          "end": 59.16
+        },
+        {
+          "from": 33,
+          "to": 35,
+          "start": 59.16,
+          "end": 59.44
+        },
+        {
+          "from": 36,
+          "to": 43,
+          "start": 59.44,
+          "end": 60.06
+        }
+      ],
+      "sourceLine": 8,
+      "matchedWordRatio": 0.889
     },
     {
       "text": "Porque siendo tu dueño no me importa mas nada",
-      "start": 90.431414,
-      "end": 102.510701
+      "start": 60.06,
+      "end": 65.22,
+      "words": [
+        {
+          "from": 0,
+          "to": 6,
+          "start": 60.06,
+          "end": 61.36
+        },
+        {
+          "from": 7,
+          "to": 13,
+          "start": 61.36,
+          "end": 61.78
+        },
+        {
+          "from": 14,
+          "to": 16,
+          "start": 61.78,
+          "end": 62.06
+        },
+        {
+          "from": 17,
+          "to": 22,
+          "start": 62.06,
+          "end": 62.54
+        },
+        {
+          "from": 23,
+          "to": 25,
+          "start": 62.54,
+          "end": 62.94
+        },
+        {
+          "from": 26,
+          "to": 28,
+          "start": 62.94,
+          "end": 63.1
+        },
+        {
+          "from": 29,
+          "to": 36,
+          "start": 63.1,
+          "end": 63.76
+        },
+        {
+          "from": 37,
+          "to": 40,
+          "start": 63.76,
+          "end": 64.38
+        },
+        {
+          "from": 41,
+          "to": 45,
+          "start": 64.38,
+          "end": 65.22
+        }
+      ],
+      "sourceLine": 9,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Que verte solo mía mi propiedad privada",
-      "start": 102.510701,
-      "end": 113.284118
+      "start": 65.22,
+      "end": 70.02,
+      "words": [
+        {
+          "from": 0,
+          "to": 3,
+          "start": 65.22,
+          "end": 65.56
+        },
+        {
+          "from": 4,
+          "to": 9,
+          "start": 65.56,
+          "end": 66.2
+        },
+        {
+          "from": 10,
+          "to": 14,
+          "start": 66.2,
+          "end": 66.9
+        },
+        {
+          "from": 15,
+          "to": 18,
+          "start": 66.9,
+          "end": 67.56
+        },
+        {
+          "from": 19,
+          "to": 21,
+          "start": 68.02,
+          "end": 68.32
+        },
+        {
+          "from": 22,
+          "to": 31,
+          "start": 68.32,
+          "end": 69.28
+        },
+        {
+          "from": 32,
+          "to": 39,
+          "start": 69.28,
+          "end": 70.02
+        }
+      ],
+      "sourceLine": 10,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Que verte solo mía mi propiedad privada",
-      "start": 113.284118,
-      "end": 124.057536
+      "start": 70.02,
+      "end": 75.6,
+      "words": [
+        {
+          "from": 0,
+          "to": 3,
+          "start": 70.02,
+          "end": 70.66
+        },
+        {
+          "from": 4,
+          "to": 9,
+          "start": 70.66,
+          "end": 71.26
+        },
+        {
+          "from": 10,
+          "to": 14,
+          "start": 71.26,
+          "end": 72.0
+        },
+        {
+          "from": 15,
+          "to": 18,
+          "start": 72.0,
+          "end": 72.62
+        },
+        {
+          "from": 19,
+          "to": 21,
+          "start": 73.2,
+          "end": 73.38
+        },
+        {
+          "from": 22,
+          "to": 31,
+          "start": 73.38,
+          "end": 74.3
+        },
+        {
+          "from": 32,
+          "to": 39,
+          "start": 74.3,
+          "end": 75.6
+        }
+      ],
+      "sourceLine": 11,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Que no se atreva nadie a mirarte con ansias",
-      "start": 124.057536,
-      "end": 135.483888
+      "start": 97.8,
+      "end": 102.06,
+      "words": [
+        {
+          "from": 4,
+          "to": 6,
+          "start": 97.8,
+          "end": 98.02
+        },
+        {
+          "from": 7,
+          "to": 9,
+          "start": 98.02,
+          "end": 98.22
+        },
+        {
+          "from": 10,
+          "to": 16,
+          "start": 98.22,
+          "end": 98.58
+        },
+        {
+          "from": 17,
+          "to": 22,
+          "start": 98.58,
+          "end": 99.22
+        },
+        {
+          "from": 23,
+          "to": 24,
+          "start": 99.22,
+          "end": 99.72
+        },
+        {
+          "from": 25,
+          "to": 32,
+          "start": 99.72,
+          "end": 100.66
+        },
+        {
+          "from": 33,
+          "to": 36,
+          "start": 100.66,
+          "end": 101.18
+        },
+        {
+          "from": 37,
+          "to": 43,
+          "start": 101.18,
+          "end": 102.06
+        }
+      ],
+      "sourceLine": 12,
+      "matchedWordRatio": 0.889
     },
     {
       "text": "Y que conserven todos respetables distancia",
-      "start": 135.483888,
-      "end": 147.889642
+      "start": 102.06,
+      "end": 106.94,
+      "words": [
+        {
+          "from": 0,
+          "to": 1,
+          "start": 102.06,
+          "end": 103.02
+        },
+        {
+          "from": 2,
+          "to": 5,
+          "start": 103.02,
+          "end": 103.14
+        },
+        {
+          "from": 6,
+          "to": 15,
+          "start": 103.14,
+          "end": 103.74
+        },
+        {
+          "from": 16,
+          "to": 21,
+          "start": 103.74,
+          "end": 104.38
+        },
+        {
+          "from": 34,
+          "to": 43,
+          "start": 106.16,
+          "end": 106.94
+        }
+      ],
+      "sourceLine": 13,
+      "matchedWordRatio": 0.833
     },
     {
       "text": "Porque mi pobre alma se retuerce de celos",
-      "start": 147.889642,
-      "end": 158.989526
+      "start": 106.94,
+      "end": 112.16,
+      "words": [
+        {
+          "from": 0,
+          "to": 6,
+          "start": 106.94,
+          "end": 108.18
+        },
+        {
+          "from": 7,
+          "to": 9,
+          "start": 108.18,
+          "end": 108.5
+        },
+        {
+          "from": 10,
+          "to": 15,
+          "start": 108.5,
+          "end": 108.76
+        },
+        {
+          "from": 16,
+          "to": 20,
+          "start": 108.76,
+          "end": 109.24
+        },
+        {
+          "from": 21,
+          "to": 23,
+          "start": 109.24,
+          "end": 109.92
+        },
+        {
+          "from": 24,
+          "to": 32,
+          "start": 109.92,
+          "end": 111.0
+        },
+        {
+          "from": 33,
+          "to": 35,
+          "start": 111.0,
+          "end": 111.2
+        },
+        {
+          "from": 36,
+          "to": 41,
+          "start": 111.2,
+          "end": 112.16
+        }
+      ],
+      "sourceLine": 14,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Y no quiere que nadie respire de tu aliento.",
-      "start": 158.989526,
-      "end": 170.415878
+      "start": 112.16,
+      "end": 117.08,
+      "words": [
+        {
+          "from": 0,
+          "to": 1,
+          "start": 112.16,
+          "end": 113.14
+        },
+        {
+          "from": 2,
+          "to": 4,
+          "start": 113.14,
+          "end": 113.32
+        },
+        {
+          "from": 12,
+          "to": 15,
+          "start": 113.66,
+          "end": 113.9
+        },
+        {
+          "from": 16,
+          "to": 21,
+          "start": 113.9,
+          "end": 114.4
+        },
+        {
+          "from": 22,
+          "to": 29,
+          "start": 114.4,
+          "end": 115.78
+        },
+        {
+          "from": 30,
+          "to": 32,
+          "start": 115.78,
+          "end": 116.12
+        },
+        {
+          "from": 33,
+          "to": 35,
+          "start": 116.12,
+          "end": 116.42
+        },
+        {
+          "from": 36,
+          "to": 43,
+          "start": 116.42,
+          "end": 117.08
+        }
+      ],
+      "sourceLine": 15,
+      "matchedWordRatio": 0.889
     },
     {
       "text": "Porque siendo tu dueño no me importa mas nada",
-      "start": 170.415878,
-      "end": 182.495165
+      "start": 117.08,
+      "end": 121.94,
+      "words": [
+        {
+          "from": 0,
+          "to": 6,
+          "start": 117.08,
+          "end": 118.34
+        },
+        {
+          "from": 7,
+          "to": 13,
+          "start": 118.34,
+          "end": 118.7
+        },
+        {
+          "from": 14,
+          "to": 16,
+          "start": 118.7,
+          "end": 119.06
+        },
+        {
+          "from": 17,
+          "to": 22,
+          "start": 119.06,
+          "end": 119.52
+        },
+        {
+          "from": 23,
+          "to": 25,
+          "start": 119.52,
+          "end": 119.98
+        },
+        {
+          "from": 26,
+          "to": 28,
+          "start": 119.98,
+          "end": 120.12
+        },
+        {
+          "from": 29,
+          "to": 36,
+          "start": 120.12,
+          "end": 120.7
+        },
+        {
+          "from": 37,
+          "to": 40,
+          "start": 120.7,
+          "end": 121.38
+        },
+        {
+          "from": 41,
+          "to": 45,
+          "start": 121.38,
+          "end": 121.94
+        }
+      ],
+      "sourceLine": 16,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Que verte solo mía mi propiedad privada",
-      "start": 182.495165,
-      "end": 193.268582
+      "start": 121.94,
+      "end": 127.0,
+      "words": [
+        {
+          "from": 0,
+          "to": 3,
+          "start": 121.94,
+          "end": 122.58
+        },
+        {
+          "from": 4,
+          "to": 9,
+          "start": 122.58,
+          "end": 123.28
+        },
+        {
+          "from": 10,
+          "to": 14,
+          "start": 123.28,
+          "end": 123.94
+        },
+        {
+          "from": 15,
+          "to": 18,
+          "start": 123.94,
+          "end": 124.6
+        },
+        {
+          "from": 19,
+          "to": 21,
+          "start": 124.6,
+          "end": 125.32
+        },
+        {
+          "from": 22,
+          "to": 31,
+          "start": 125.32,
+          "end": 126.24
+        },
+        {
+          "from": 32,
+          "to": 39,
+          "start": 126.24,
+          "end": 127.0
+        }
+      ],
+      "sourceLine": 17,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Que verte solo mía mi propiedad privada.",
-      "start": 193.268582,
-      "end": 204.042
+      "start": 127.0,
+      "end": 132.58,
+      "words": [
+        {
+          "from": 0,
+          "to": 3,
+          "start": 127.0,
+          "end": 127.7
+        },
+        {
+          "from": 4,
+          "to": 9,
+          "start": 127.7,
+          "end": 128.28
+        },
+        {
+          "from": 10,
+          "to": 14,
+          "start": 128.28,
+          "end": 128.96
+        },
+        {
+          "from": 15,
+          "to": 18,
+          "start": 128.96,
+          "end": 129.6
+        },
+        {
+          "from": 19,
+          "to": 21,
+          "start": 129.6,
+          "end": 130.4
+        },
+        {
+          "from": 22,
+          "to": 31,
+          "start": 130.4,
+          "end": 131.32
+        },
+        {
+          "from": 32,
+          "to": 39,
+          "start": 131.32,
+          "end": 132.58
+        }
+      ],
+      "sourceLine": 18,
+      "matchedWordRatio": 1.0
     }
-  ]
+  ],
+  "unmatchedLines": []
 }

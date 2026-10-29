@@ -1,130 +1,930 @@
 {
   "songId": "regresa",
-  "title": "Regresa",
   "status": "estimated",
   "reviewRequired": true,
-  "timingMethod": "text-length-proportional; not aligned to vocals or instrumental sections",
-  "durationSeconds": 247.118367,
+  "method": "local-asr-word-matching",
+  "alignmentModel": "faster-whisper-small",
+  "durationSeconds": 173.662041,
+  "audioSha256": "d207aec76b5f945877444061fd4ac2822fa5d43b73b994e4b1290e777c0a69e7",
   "lyrics": [
     {
       "text": "Te estoy buscando",
-      "start": 0.0,
-      "end": 6.480377
+      "start": 22.36,
+      "end": 24.34,
+      "words": [
+        {
+          "from": 3,
+          "to": 8,
+          "start": 22.36,
+          "end": 23.24
+        },
+        {
+          "from": 9,
+          "to": 17,
+          "start": 23.24,
+          "end": 24.34
+        }
+      ],
+      "sourceLine": 1,
+      "matchedWordRatio": 0.667
     },
     {
       "text": "Porque mis labios extrañan tus besos de fuego",
-      "start": 6.480377,
-      "end": 22.897331
+      "start": 24.34,
+      "end": 29.1,
+      "words": [
+        {
+          "from": 0,
+          "to": 6,
+          "start": 24.34,
+          "end": 26.54
+        },
+        {
+          "from": 7,
+          "to": 10,
+          "start": 26.54,
+          "end": 26.96
+        },
+        {
+          "from": 11,
+          "to": 17,
+          "start": 26.96,
+          "end": 27.4
+        },
+        {
+          "from": 18,
+          "to": 26,
+          "start": 27.4,
+          "end": 28.18
+        },
+        {
+          "from": 27,
+          "to": 30,
+          "start": 28.18,
+          "end": 28.46
+        },
+        {
+          "from": 31,
+          "to": 36,
+          "start": 28.46,
+          "end": 28.88
+        },
+        {
+          "from": 37,
+          "to": 39,
+          "start": 28.88,
+          "end": 29.1
+        }
+      ],
+      "sourceLine": 2,
+      "matchedWordRatio": 0.875
     },
     {
       "text": "Te estoy llamando",
-      "start": 22.897331,
-      "end": 29.377708
+      "start": 31.02,
+      "end": 32.62,
+      "words": [
+        {
+          "from": 3,
+          "to": 8,
+          "start": 31.02,
+          "end": 31.54
+        },
+        {
+          "from": 9,
+          "to": 17,
+          "start": 31.54,
+          "end": 32.62
+        }
+      ],
+      "sourceLine": 3,
+      "matchedWordRatio": 0.667
     },
     {
       "text": "Y en mis palabras tan tristes mi voz es un ruego",
-      "start": 29.377708,
-      "end": 45.794662
+      "start": 34.7,
+      "end": 37.4,
+      "words": [
+        {
+          "from": 2,
+          "to": 4,
+          "start": 34.7,
+          "end": 34.98
+        },
+        {
+          "from": 5,
+          "to": 8,
+          "start": 34.98,
+          "end": 35.22
+        },
+        {
+          "from": 9,
+          "to": 17,
+          "start": 35.22,
+          "end": 35.48
+        },
+        {
+          "from": 30,
+          "to": 32,
+          "start": 36.42,
+          "end": 36.76
+        },
+        {
+          "from": 33,
+          "to": 36,
+          "start": 36.76,
+          "end": 36.98
+        },
+        {
+          "from": 37,
+          "to": 39,
+          "start": 36.98,
+          "end": 37.16
+        },
+        {
+          "from": 40,
+          "to": 42,
+          "start": 37.16,
+          "end": 37.4
+        }
+      ],
+      "sourceLine": 4,
+      "matchedWordRatio": 0.636
     },
     {
       "text": "Te necesito porque sin verte mi vida no tiene sentido y van",
-      "start": 45.794662,
-      "end": 66.531868
+      "start": 38.34,
+      "end": 47.02,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 38.34,
+          "end": 39.54
+        },
+        {
+          "from": 3,
+          "to": 11,
+          "start": 39.54,
+          "end": 41.12
+        },
+        {
+          "from": 12,
+          "to": 18,
+          "start": 42.52,
+          "end": 43.32
+        },
+        {
+          "from": 19,
+          "to": 22,
+          "start": 43.32,
+          "end": 43.66
+        },
+        {
+          "from": 29,
+          "to": 31,
+          "start": 44.22,
+          "end": 44.3
+        },
+        {
+          "from": 32,
+          "to": 36,
+          "start": 44.3,
+          "end": 44.64
+        },
+        {
+          "from": 46,
+          "to": 53,
+          "start": 45.58,
+          "end": 46.22
+        },
+        {
+          "from": 54,
+          "to": 55,
+          "start": 46.22,
+          "end": 46.64
+        },
+        {
+          "from": 56,
+          "to": 59,
+          "start": 46.64,
+          "end": 47.02
+        }
+      ],
+      "sourceLine": 5,
+      "matchedWordRatio": 0.75
     },
     {
       "text": "Y van por el mundo mis pasos perdidos",
-      "start": 66.531868,
-      "end": 79.492622
+      "start": 47.02,
+      "end": 50.94,
+      "words": [
+        {
+          "from": 0,
+          "to": 1,
+          "start": 47.02,
+          "end": 47.68
+        },
+        {
+          "from": 2,
+          "to": 5,
+          "start": 47.68,
+          "end": 48.06
+        },
+        {
+          "from": 6,
+          "to": 9,
+          "start": 48.06,
+          "end": 48.4
+        },
+        {
+          "from": 10,
+          "to": 12,
+          "start": 48.4,
+          "end": 48.56
+        },
+        {
+          "from": 13,
+          "to": 18,
+          "start": 48.56,
+          "end": 48.96
+        },
+        {
+          "from": 19,
+          "to": 22,
+          "start": 48.96,
+          "end": 49.36
+        },
+        {
+          "from": 23,
+          "to": 28,
+          "start": 49.36,
+          "end": 49.88
+        },
+        {
+          "from": 29,
+          "to": 37,
+          "start": 49.88,
+          "end": 50.94
+        }
+      ],
+      "sourceLine": 6,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Buscando el camino de tu comprensión",
-      "start": 79.492622,
-      "end": 92.8854
+      "start": 50.94,
+      "end": 56.48,
+      "words": [
+        {
+          "from": 0,
+          "to": 8,
+          "start": 50.94,
+          "end": 52.3
+        },
+        {
+          "from": 9,
+          "to": 11,
+          "start": 52.3,
+          "end": 52.6
+        },
+        {
+          "from": 12,
+          "to": 18,
+          "start": 52.6,
+          "end": 53.48
+        },
+        {
+          "from": 19,
+          "to": 21,
+          "start": 53.48,
+          "end": 54.7
+        },
+        {
+          "from": 22,
+          "to": 24,
+          "start": 54.7,
+          "end": 54.92
+        },
+        {
+          "from": 25,
+          "to": 36,
+          "start": 54.92,
+          "end": 56.48
+        }
+      ],
+      "sourceLine": 7,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Apiádate de mi",
-      "start": 92.8854,
-      "end": 98.069702
+      "start": 56.48,
+      "end": 59.38,
+      "words": [
+        {
+          "from": 0,
+          "to": 8,
+          "start": 56.48,
+          "end": 58.58
+        },
+        {
+          "from": 9,
+          "to": 11,
+          "start": 58.58,
+          "end": 58.88
+        },
+        {
+          "from": 12,
+          "to": 14,
+          "start": 58.88,
+          "end": 59.38
+        }
+      ],
+      "sourceLine": 8,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Si tienes corazón",
-      "start": 98.069702,
-      "end": 104.550078
+      "start": 59.82,
+      "end": 63.82,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 59.82,
+          "end": 61.94
+        },
+        {
+          "from": 3,
+          "to": 9,
+          "start": 61.94,
+          "end": 62.64
+        },
+        {
+          "from": 10,
+          "to": 17,
+          "start": 62.64,
+          "end": 63.82
+        }
+      ],
+      "sourceLine": 9,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Escucha en sus latidos",
-      "start": 104.550078,
-      "end": 112.758556
+      "start": 64.7,
+      "end": 69.3,
+      "words": [
+        {
+          "from": 0,
+          "to": 7,
+          "start": 64.7,
+          "end": 67.58
+        },
+        {
+          "from": 8,
+          "to": 10,
+          "start": 67.58,
+          "end": 67.84
+        },
+        {
+          "from": 11,
+          "to": 14,
+          "start": 67.84,
+          "end": 68.06
+        },
+        {
+          "from": 15,
+          "to": 22,
+          "start": 68.06,
+          "end": 69.3
+        }
+      ],
+      "sourceLine": 10,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "La voz de mi dolor",
-      "start": 112.758556,
-      "end": 118.806907
+      "start": 69.3,
+      "end": 72.44,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 69.3,
+          "end": 71.34
+        },
+        {
+          "from": 3,
+          "to": 6,
+          "start": 71.34,
+          "end": 71.84
+        },
+        {
+          "from": 7,
+          "to": 9,
+          "start": 71.84,
+          "end": 72.24
+        },
+        {
+          "from": 10,
+          "to": 12,
+          "start": 72.24,
+          "end": 72.44
+        }
+      ],
+      "sourceLine": 11,
+      "matchedWordRatio": 0.8
     },
     {
       "text": "Pero regresa",
-      "start": 118.806907,
-      "end": 123.559184
+      "start": 74.96,
+      "end": 77.86,
+      "words": [
+        {
+          "from": 0,
+          "to": 4,
+          "start": 74.96,
+          "end": 76.14
+        },
+        {
+          "from": 5,
+          "to": 12,
+          "start": 76.14,
+          "end": 77.86
+        }
+      ],
+      "sourceLine": 12,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Para llenar el vació que dejaste al irte regresa",
-      "start": 123.559184,
-      "end": 140.840188
+      "start": 78.72,
+      "end": 83.94,
+      "words": [
+        {
+          "from": 0,
+          "to": 4,
+          "start": 78.72,
+          "end": 80.06
+        },
+        {
+          "from": 5,
+          "to": 11,
+          "start": 80.06,
+          "end": 80.7
+        },
+        {
+          "from": 12,
+          "to": 14,
+          "start": 80.7,
+          "end": 80.9
+        },
+        {
+          "from": 15,
+          "to": 20,
+          "start": 80.9,
+          "end": 81.58
+        },
+        {
+          "from": 21,
+          "to": 24,
+          "start": 81.8,
+          "end": 82.02
+        },
+        {
+          "from": 25,
+          "to": 32,
+          "start": 82.02,
+          "end": 82.6
+        },
+        {
+          "from": 33,
+          "to": 35,
+          "start": 82.6,
+          "end": 82.88
+        },
+        {
+          "from": 36,
+          "to": 40,
+          "start": 82.88,
+          "end": 83.26
+        },
+        {
+          "from": 41,
+          "to": 48,
+          "start": 83.26,
+          "end": 83.94
+        }
+      ],
+      "sourceLine": 13,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Regresa aunque sea para despedirte no dejes que muera",
-      "start": 140.840188,
-      "end": 160.281318
+      "start": 83.94,
+      "end": 90.04,
+      "words": [
+        {
+          "from": 0,
+          "to": 7,
+          "start": 83.94,
+          "end": 85.0
+        },
+        {
+          "from": 8,
+          "to": 14,
+          "start": 85.0,
+          "end": 85.32
+        },
+        {
+          "from": 15,
+          "to": 18,
+          "start": 85.32,
+          "end": 85.74
+        },
+        {
+          "from": 19,
+          "to": 23,
+          "start": 85.74,
+          "end": 85.98
+        },
+        {
+          "from": 24,
+          "to": 34,
+          "start": 85.98,
+          "end": 87.5
+        },
+        {
+          "from": 35,
+          "to": 37,
+          "start": 87.5,
+          "end": 88.66
+        },
+        {
+          "from": 38,
+          "to": 43,
+          "start": 88.66,
+          "end": 89.12
+        },
+        {
+          "from": 44,
+          "to": 47,
+          "start": 89.12,
+          "end": 89.52
+        },
+        {
+          "from": 48,
+          "to": 53,
+          "start": 89.52,
+          "end": 90.04
+        }
+      ],
+      "sourceLine": 14,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Sin decirte adiós",
-      "start": 160.281318,
-      "end": 166.761695
+      "start": 90.04,
+      "end": 94.2,
+      "words": [
+        {
+          "from": 0,
+          "to": 3,
+          "start": 90.04,
+          "end": 91.54
+        },
+        {
+          "from": 4,
+          "to": 11,
+          "start": 91.54,
+          "end": 92.32
+        },
+        {
+          "from": 12,
+          "to": 17,
+          "start": 92.32,
+          "end": 94.2
+        }
+      ],
+      "sourceLine": 15,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Apiádate de mi",
-      "start": 166.761695,
-      "end": 171.945997
+      "start": 115.72,
+      "end": 117.78,
+      "words": [
+        {
+          "from": 0,
+          "to": 8,
+          "start": 115.72,
+          "end": 116.92
+        },
+        {
+          "from": 9,
+          "to": 11,
+          "start": 116.92,
+          "end": 117.22
+        },
+        {
+          "from": 12,
+          "to": 14,
+          "start": 117.22,
+          "end": 117.78
+        }
+      ],
+      "sourceLine": 16,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Si tienes corazón",
-      "start": 171.945997,
-      "end": 178.426373
+      "start": 118.48,
+      "end": 123.32,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 118.48,
+          "end": 121.0
+        },
+        {
+          "from": 3,
+          "to": 9,
+          "start": 121.0,
+          "end": 121.78
+        },
+        {
+          "from": 10,
+          "to": 17,
+          "start": 121.78,
+          "end": 123.32
+        }
+      ],
+      "sourceLine": 17,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Escucha en sus latidos",
-      "start": 178.426373,
-      "end": 186.634851
+      "start": 125.78,
+      "end": 128.88,
+      "words": [
+        {
+          "from": 0,
+          "to": 7,
+          "start": 125.78,
+          "end": 126.98
+        },
+        {
+          "from": 8,
+          "to": 10,
+          "start": 126.98,
+          "end": 127.26
+        },
+        {
+          "from": 11,
+          "to": 14,
+          "start": 127.26,
+          "end": 127.56
+        },
+        {
+          "from": 15,
+          "to": 22,
+          "start": 127.56,
+          "end": 128.88
+        }
+      ],
+      "sourceLine": 18,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "La voz de mi dolor",
-      "start": 186.634851,
-      "end": 192.683202
+      "start": 128.88,
+      "end": 133.0,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 128.88,
+          "end": 130.88
+        },
+        {
+          "from": 3,
+          "to": 6,
+          "start": 130.88,
+          "end": 131.44
+        },
+        {
+          "from": 7,
+          "to": 9,
+          "start": 131.44,
+          "end": 131.84
+        },
+        {
+          "from": 10,
+          "to": 12,
+          "start": 131.84,
+          "end": 132.06
+        },
+        {
+          "from": 13,
+          "to": 18,
+          "start": 132.06,
+          "end": 133.0
+        }
+      ],
+      "sourceLine": 19,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Pero regresa",
-      "start": 192.683202,
-      "end": 197.435479
+      "start": 135.16,
+      "end": 137.56,
+      "words": [
+        {
+          "from": 0,
+          "to": 4,
+          "start": 135.16,
+          "end": 136.36
+        },
+        {
+          "from": 5,
+          "to": 12,
+          "start": 136.36,
+          "end": 137.56
+        }
+      ],
+      "sourceLine": 20,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Para llenar el vació que dejaste al irte regresa",
-      "start": 197.435479,
-      "end": 214.716483
+      "start": 137.56,
+      "end": 143.66,
+      "words": [
+        {
+          "from": 0,
+          "to": 4,
+          "start": 137.56,
+          "end": 139.96
+        },
+        {
+          "from": 5,
+          "to": 11,
+          "start": 139.96,
+          "end": 140.44
+        },
+        {
+          "from": 12,
+          "to": 14,
+          "start": 140.44,
+          "end": 140.64
+        },
+        {
+          "from": 15,
+          "to": 20,
+          "start": 140.64,
+          "end": 141.32
+        },
+        {
+          "from": 21,
+          "to": 24,
+          "start": 141.32,
+          "end": 141.76
+        },
+        {
+          "from": 25,
+          "to": 32,
+          "start": 141.76,
+          "end": 142.36
+        },
+        {
+          "from": 41,
+          "to": 48,
+          "start": 142.72,
+          "end": 143.66
+        }
+      ],
+      "sourceLine": 21,
+      "matchedWordRatio": 0.778
     },
     {
       "text": "Regresa aunque sea para despedirte no dejes que muera",
-      "start": 214.716483,
-      "end": 234.157613
+      "start": 143.94,
+      "end": 149.8,
+      "words": [
+        {
+          "from": 0,
+          "to": 7,
+          "start": 143.94,
+          "end": 144.78
+        },
+        {
+          "from": 8,
+          "to": 14,
+          "start": 144.86,
+          "end": 145.14
+        },
+        {
+          "from": 15,
+          "to": 18,
+          "start": 145.14,
+          "end": 145.5
+        },
+        {
+          "from": 19,
+          "to": 23,
+          "start": 145.5,
+          "end": 145.78
+        },
+        {
+          "from": 24,
+          "to": 34,
+          "start": 145.78,
+          "end": 147.4
+        },
+        {
+          "from": 35,
+          "to": 37,
+          "start": 147.4,
+          "end": 148.46
+        },
+        {
+          "from": 38,
+          "to": 43,
+          "start": 148.46,
+          "end": 148.88
+        },
+        {
+          "from": 44,
+          "to": 47,
+          "start": 148.88,
+          "end": 149.3
+        },
+        {
+          "from": 48,
+          "to": 53,
+          "start": 149.3,
+          "end": 149.8
+        }
+      ],
+      "sourceLine": 22,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Sin decirte adiós",
-      "start": 234.157613,
-      "end": 240.63799
+      "start": 150.67,
+      "end": 153.72,
+      "words": [
+        {
+          "from": 0,
+          "to": 3,
+          "start": 150.67,
+          "end": 151.32
+        },
+        {
+          "from": 4,
+          "to": 11,
+          "start": 151.32,
+          "end": 152.22
+        },
+        {
+          "from": 12,
+          "to": 17,
+          "start": 152.22,
+          "end": 153.72
+        }
+      ],
+      "sourceLine": 23,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Te estoy buscando",
-      "start": 240.63799,
-      "end": 247.118367
+      "start": 154.6,
+      "end": 158.08,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 154.6,
+          "end": 154.96
+        },
+        {
+          "from": 3,
+          "to": 8,
+          "start": 154.96,
+          "end": 155.76
+        },
+        {
+          "from": 9,
+          "to": 17,
+          "start": 155.76,
+          "end": 158.08
+        }
+      ],
+      "sourceLine": 24,
+      "matchedWordRatio": 1.0
     }
-  ]
+  ],
+  "unmatchedLines": []
 }

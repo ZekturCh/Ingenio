@@ -1,7 +1,8 @@
-import { SONGS, roomFromUrl, subscribeRoom, sendCommand, getSong, getVersion, controllerUrl } from "./shared.js?v=20261025-3";
+import { SONGS, roomFromUrl, subscribeRoom, sendCommand, getSong, getVersion, controllerUrl } from "./shared.js?v=20261029-1";
 import { icons, loadFavorites, toggleFavorite, toggleFullscreen } from "./ui.js";
 import { getDelay, lyricTime, DELAY_KEY } from "./audio-settings.js";
 import { getCalibration, setActiveTrack, calibratedTime } from "./track-timing.js";
+import { cueProgress, lyricParts } from "./lyric-progress.js";
 
 export function mountPlayer(root = document, { embedded = false, onBack } = {}) {
 const nodes = new Map();
@@ -15,6 +16,7 @@ $("#backBtn").href = controllerUrl(room);
 let unlocked = false, pending = null, activeState = null, activeSong = null, activeVersion = null;
 let lyricData = [], lastCommand = "stop", commandToken = 0, shuffle = false, seeking = false, ended = false;
 let lineIndex = -2;
+let wordNodes = [];
 let visible = !embedded;
 let delay = getDelay(), timing = null, calibration = null;
 let paintFrame = 0, lastPaint = 0, lastPercent = -1, lastElapsed = "", lastDuration = "";
@@ -43,7 +45,9 @@ async function fetchLyrics(song) {
   const urls = song.lyrics ? [song.lyrics] : [`songs/${song.id}/lyrics-timed.json`, `songs/${song.id}/lyrics-template.json`];
   for (const url of urls) {
     try {
-      const response = await fetch(url);
+      const source = new URL(url, location.href);
+      if (song.audioRevision) source.searchParams.set("recording", song.audioRevision);
+      const response = await fetch(source);
       if (!response.ok) continue;
       const data = await response.json();
       const lines = (Array.isArray(data) ? data : data.lyrics || []).filter((line) =>
@@ -90,13 +94,33 @@ function renderLyrics(time) {
     const text = line?.text || (lyricData.length ? "♪" : "Letra pendiente de sincronizar");
     $("#currentBase").textContent = text;
     $("#currentFill").textContent = text;
+    wordNodes = [];
+    const parts = lyricParts(line);
+    $("#currentFill").hidden = parts.length > 0;
+    if (parts.length) {
+      const fragment = document.createDocumentFragment();
+      for (const part of parts) {
+        if (part.start == null) { fragment.append(document.createTextNode(part.text)); continue; }
+        const span = document.createElement("span");
+        span.className = "lyricWord"; span.textContent = part.text;
+        fragment.append(span); wordNodes.push({ node: span, start: part.start, end: part.end });
+      }
+      $("#currentBase").replaceChildren(fragment);
+    }
     $("#prev").textContent = lyricData[index - 1]?.text || "";
     $("#next").textContent = lyricData[index + 1]?.text || "";
     $("#next2").textContent = lyricData[index + 2]?.text || "";
     $("#next3").textContent = lyricData[index + 3]?.text || "";
     fitLyrics();
   }
-  const fraction = line ? Math.max(0, Math.min(1, (time - line.start) / Math.max(.2, line.end - line.start))) : 0;
+  for (const word of wordNodes) {
+    const progress = (cueProgress(time, word.start, word.end) * 100).toFixed(1);
+    if (word.progress !== progress) {
+      word.progress = progress;
+      word.node.style.setProperty("--word-fill", `${progress}%`);
+    }
+  }
+  const fraction = line ? cueProgress(time, line.start, line.end) : 0;
   $("#currentFill").style.clipPath = `inset(0 ${((1 - fraction) * 100).toFixed(1)}% 0 0)`;
 }
 function updateProgress() {
@@ -124,13 +148,15 @@ function selectState(state) {
   activeState = state; activeSong = song; activeVersion = version;
   if (changedSong) {
     audio.pause();
-    if (audio.src !== new URL(song.audio, location.href).href) audio.src = song.audio;
+    const source = new URL(song.audio, location.href);
+    if (song.audioRevision) source.searchParams.set("recording", song.audioRevision);
+    if (audio.src !== source.href) audio.src = source.href;
     lyricData = []; lineIndex = -2; timing = null; calibration = null;
     setActiveTrack(null);
     loadLyrics(song).then((lines) => {
       if (activeSong?.id === song.id) {
         lyricData = lines; lineIndex = -2;
-        timing = lines.length ? { id: song.id, title: song.title, duration: song.durationSeconds,
+        timing = lines.length ? { id: song.id, title: song.title, duration: song.durationSeconds, revision: song.audioRevision,
           first: lines[0].start, last: lines[lines.length - 1].end } : null;
         calibration = getCalibration(timing); setActiveTrack(timing); updateProgress();
       }

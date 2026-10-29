@@ -1,270 +1,1731 @@
 {
   "songId": "y-se-llama-peru",
-  "title": "Y se llama Perú",
   "status": "estimated",
   "reviewRequired": true,
-  "timingMethod": "text-length-proportional; not aligned to vocals or instrumental sections",
-  "durationSeconds": 185.365,
+  "method": "local-asr-word-matching",
+  "alignmentModel": "faster-whisper-small",
+  "durationSeconds": 187.480816,
+  "audioSha256": "559e846efeb7c4485920fd5cfa81668070b605e4c87b0fdf895d2351f4d42da7",
   "lyrics": [
     {
       "text": "Cosechando mis mares, sembrando mis tierras",
       "start": 0.0,
-      "end": 7.250005
+      "end": 10.24,
+      "words": [
+        {
+          "from": 0,
+          "to": 10,
+          "start": 0.0,
+          "end": 7.58
+        },
+        {
+          "from": 11,
+          "to": 14,
+          "start": 7.58,
+          "end": 7.8
+        },
+        {
+          "from": 15,
+          "to": 20,
+          "start": 7.8,
+          "end": 8.38
+        },
+        {
+          "from": 22,
+          "to": 31,
+          "start": 8.8,
+          "end": 9.38
+        },
+        {
+          "from": 32,
+          "to": 35,
+          "start": 9.38,
+          "end": 9.64
+        },
+        {
+          "from": 36,
+          "to": 43,
+          "start": 9.64,
+          "end": 10.24
+        }
+      ],
+      "sourceLine": 1,
+      "matchedWordRatio": 1.0,
+      "alignment": "acoustic-gap-refinement"
     },
     {
       "text": "Quiero más a mi patria",
-      "start": 7.250005,
-      "end": 10.777035
+      "start": 10.24,
+      "end": 11.9,
+      "words": [
+        {
+          "from": 0,
+          "to": 6,
+          "start": 10.24,
+          "end": 10.7
+        },
+        {
+          "from": 7,
+          "to": 10,
+          "start": 10.7,
+          "end": 10.98
+        },
+        {
+          "from": 11,
+          "to": 12,
+          "start": 10.98,
+          "end": 11.3
+        },
+        {
+          "from": 13,
+          "to": 15,
+          "start": 11.3,
+          "end": 11.4
+        },
+        {
+          "from": 16,
+          "to": 22,
+          "start": 11.4,
+          "end": 11.9
+        }
+      ],
+      "sourceLine": 2,
+      "matchedWordRatio": 1.0,
+      "alignment": "acoustic-gap-refinement"
     },
     {
       "text": "Mi nación que luchando",
-      "start": 10.777035,
-      "end": 14.500011
+      "start": 12.68,
+      "end": 14.46,
+      "words": [
+        {
+          "from": 3,
+          "to": 9,
+          "start": 12.68,
+          "end": 13.64
+        },
+        {
+          "from": 10,
+          "to": 13,
+          "start": 13.64,
+          "end": 13.94
+        },
+        {
+          "from": 14,
+          "to": 22,
+          "start": 13.94,
+          "end": 14.46
+        }
+      ],
+      "sourceLine": 3,
+      "matchedWordRatio": 0.75
     },
     {
       "text": "Rompió las cadenas de la esclavitud",
-      "start": 14.500011,
-      "end": 20.378393
+      "start": 14.46,
+      "end": 17.22,
+      "words": [
+        {
+          "from": 0,
+          "to": 6,
+          "start": 14.46,
+          "end": 15.06
+        },
+        {
+          "from": 7,
+          "to": 10,
+          "start": 15.06,
+          "end": 15.28
+        },
+        {
+          "from": 11,
+          "to": 18,
+          "start": 15.28,
+          "end": 15.76
+        },
+        {
+          "from": 22,
+          "to": 24,
+          "start": 16.34,
+          "end": 16.46
+        },
+        {
+          "from": 25,
+          "to": 35,
+          "start": 16.46,
+          "end": 17.22
+        }
+      ],
+      "sourceLine": 4,
+      "matchedWordRatio": 0.833
     },
     {
       "text": "Es la tierra del inca",
-      "start": 20.378393,
-      "end": 23.709477
+      "start": 17.22,
+      "end": 20.16,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 17.22,
+          "end": 18.88
+        },
+        {
+          "from": 3,
+          "to": 5,
+          "start": 18.88,
+          "end": 19.1
+        },
+        {
+          "from": 6,
+          "to": 12,
+          "start": 19.1,
+          "end": 19.44
+        },
+        {
+          "from": 13,
+          "to": 16,
+          "start": 19.44,
+          "end": 19.7
+        },
+        {
+          "from": 17,
+          "to": 21,
+          "start": 19.7,
+          "end": 20.16
+        }
+      ],
+      "sourceLine": 5,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Que el Sol ilumina porque Dios lo manda",
-      "start": 23.709477,
-      "end": 29.979752
+      "start": 20.16,
+      "end": 23.74,
+      "words": [
+        {
+          "from": 0,
+          "to": 3,
+          "start": 20.16,
+          "end": 21.02
+        },
+        {
+          "from": 4,
+          "to": 6,
+          "start": 21.02,
+          "end": 21.12
+        },
+        {
+          "from": 7,
+          "to": 10,
+          "start": 21.12,
+          "end": 21.28
+        },
+        {
+          "from": 11,
+          "to": 18,
+          "start": 21.28,
+          "end": 21.78
+        },
+        {
+          "from": 19,
+          "to": 25,
+          "start": 21.78,
+          "end": 22.44
+        },
+        {
+          "from": 26,
+          "to": 30,
+          "start": 22.44,
+          "end": 22.8
+        },
+        {
+          "from": 31,
+          "to": 33,
+          "start": 22.8,
+          "end": 23.0
+        },
+        {
+          "from": 34,
+          "to": 39,
+          "start": 23.0,
+          "end": 23.74
+        }
+      ],
+      "sourceLine": 6,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Y es que Dios a la gloria le cambió de nombre",
-      "start": 29.979752,
-      "end": 36.837865
+      "start": 23.74,
+      "end": 27.64,
+      "words": [
+        {
+          "from": 0,
+          "to": 1,
+          "start": 23.74,
+          "end": 24.84
+        },
+        {
+          "from": 2,
+          "to": 4,
+          "start": 24.84,
+          "end": 25.04
+        },
+        {
+          "from": 5,
+          "to": 8,
+          "start": 25.04,
+          "end": 25.16
+        },
+        {
+          "from": 9,
+          "to": 13,
+          "start": 25.16,
+          "end": 25.44
+        },
+        {
+          "from": 14,
+          "to": 15,
+          "start": 25.44,
+          "end": 25.7
+        },
+        {
+          "from": 16,
+          "to": 18,
+          "start": 25.7,
+          "end": 25.82
+        },
+        {
+          "from": 19,
+          "to": 25,
+          "start": 25.82,
+          "end": 26.12
+        },
+        {
+          "from": 26,
+          "to": 28,
+          "start": 26.12,
+          "end": 26.34
+        },
+        {
+          "from": 29,
+          "to": 35,
+          "start": 26.34,
+          "end": 27.06
+        },
+        {
+          "from": 36,
+          "to": 38,
+          "start": 27.06,
+          "end": 27.24
+        },
+        {
+          "from": 39,
+          "to": 45,
+          "start": 27.24,
+          "end": 27.64
+        }
+      ],
+      "sourceLine": 7,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Y le puso Perú",
-      "start": 36.837865,
-      "end": 38.993272
+      "start": 27.64,
+      "end": 29.6,
+      "words": [
+        {
+          "from": 0,
+          "to": 1,
+          "start": 27.64,
+          "end": 28.38
+        },
+        {
+          "from": 2,
+          "to": 4,
+          "start": 28.38,
+          "end": 28.52
+        },
+        {
+          "from": 5,
+          "to": 9,
+          "start": 28.52,
+          "end": 28.78
+        },
+        {
+          "from": 10,
+          "to": 14,
+          "start": 28.78,
+          "end": 29.6
+        }
+      ],
+      "sourceLine": 8,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Atesoran sus playas",
-      "start": 38.993272,
-      "end": 42.324355
+      "start": 31.54,
+      "end": 32.48,
+      "words": [
+        {
+          "from": 9,
+          "to": 12,
+          "start": 31.54,
+          "end": 31.8
+        },
+        {
+          "from": 13,
+          "to": 19,
+          "start": 31.8,
+          "end": 32.48
+        }
+      ],
+      "sourceLine": 9,
+      "matchedWordRatio": 0.667
     },
     {
       "text": "La riqueza pesquera de mi mar soberano",
-      "start": 42.324355,
-      "end": 48.59463
+      "start": 32.48,
+      "end": 35.44,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 32.48,
+          "end": 32.88
+        },
+        {
+          "from": 3,
+          "to": 10,
+          "start": 32.88,
+          "end": 33.28
+        },
+        {
+          "from": 11,
+          "to": 19,
+          "start": 33.28,
+          "end": 33.76
+        },
+        {
+          "from": 20,
+          "to": 22,
+          "start": 33.76,
+          "end": 33.94
+        },
+        {
+          "from": 23,
+          "to": 25,
+          "start": 33.94,
+          "end": 34.08
+        },
+        {
+          "from": 26,
+          "to": 29,
+          "start": 34.08,
+          "end": 34.42
+        },
+        {
+          "from": 30,
+          "to": 38,
+          "start": 34.42,
+          "end": 35.44
+        }
+      ],
+      "sourceLine": 10,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Y en la sierra bravía",
-      "start": 48.59463,
-      "end": 51.925714
+      "start": 36.5,
+      "end": 37.74,
+      "words": [
+        {
+          "from": 0,
+          "to": 1,
+          "start": 36.5,
+          "end": 36.9
+        },
+        {
+          "from": 2,
+          "to": 4,
+          "start": 36.9,
+          "end": 37.08
+        },
+        {
+          "from": 5,
+          "to": 7,
+          "start": 37.08,
+          "end": 37.28
+        },
+        {
+          "from": 8,
+          "to": 14,
+          "start": 37.28,
+          "end": 37.74
+        }
+      ],
+      "sourceLine": 11,
+      "matchedWordRatio": 0.8
     },
     {
       "text": "La nieve perpetua, bandera de paz",
-      "start": 51.925714,
-      "end": 57.216258
+      "start": 38.5,
+      "end": 41.44,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 38.5,
+          "end": 39.08
+        },
+        {
+          "from": 3,
+          "to": 8,
+          "start": 39.08,
+          "end": 39.34
+        },
+        {
+          "from": 9,
+          "to": 17,
+          "start": 39.34,
+          "end": 40.1
+        },
+        {
+          "from": 19,
+          "to": 26,
+          "start": 40.28,
+          "end": 40.82
+        },
+        {
+          "from": 27,
+          "to": 29,
+          "start": 40.82,
+          "end": 41.04
+        },
+        {
+          "from": 30,
+          "to": 33,
+          "start": 41.04,
+          "end": 41.44
+        }
+      ],
+      "sourceLine": 12,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "La montaña en sus venas",
-      "start": 57.216258,
-      "end": 60.939234
+      "start": 42.38,
+      "end": 44.62,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 42.38,
+          "end": 43.18
+        },
+        {
+          "from": 3,
+          "to": 10,
+          "start": 43.18,
+          "end": 43.7
+        },
+        {
+          "from": 11,
+          "to": 13,
+          "start": 43.7,
+          "end": 43.86
+        },
+        {
+          "from": 14,
+          "to": 17,
+          "start": 43.86,
+          "end": 44.02
+        },
+        {
+          "from": 18,
+          "to": 23,
+          "start": 44.02,
+          "end": 44.62
+        }
+      ],
+      "sourceLine": 13,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Guardado el petróleo de nuestro mañana",
-      "start": 60.939234,
-      "end": 67.405455
+      "start": 45.66,
+      "end": 47.62,
+      "words": [
+        {
+          "from": 12,
+          "to": 20,
+          "start": 45.66,
+          "end": 46.16
+        },
+        {
+          "from": 21,
+          "to": 23,
+          "start": 46.16,
+          "end": 46.36
+        },
+        {
+          "from": 24,
+          "to": 31,
+          "start": 46.36,
+          "end": 46.68
+        },
+        {
+          "from": 32,
+          "to": 38,
+          "start": 46.68,
+          "end": 47.62
+        }
+      ],
+      "sourceLine": 14,
+      "matchedWordRatio": 0.667
     },
     {
       "text": "Y la tierra serrana",
-      "start": 67.405455,
-      "end": 70.540592
+      "start": 49.34,
+      "end": 50.6,
+      "words": [
+        {
+          "from": 2,
+          "to": 4,
+          "start": 49.34,
+          "end": 49.46
+        },
+        {
+          "from": 5,
+          "to": 11,
+          "start": 49.46,
+          "end": 49.82
+        },
+        {
+          "from": 12,
+          "to": 19,
+          "start": 49.82,
+          "end": 50.6
+        }
+      ],
+      "sourceLine": 15,
+      "matchedWordRatio": 0.75,
+      "alignment": "acoustic-gap-refinement"
     },
     {
       "text": "Nos da a manos llenas, el acero y el pan",
-      "start": 70.540592,
-      "end": 76.418975
+      "start": 51.8,
+      "end": 53.82,
+      "words": [
+        {
+          "from": 15,
+          "to": 21,
+          "start": 51.8,
+          "end": 52.12
+        },
+        {
+          "from": 23,
+          "to": 25,
+          "start": 52.12,
+          "end": 52.8
+        },
+        {
+          "from": 26,
+          "to": 31,
+          "start": 52.8,
+          "end": 53.14
+        },
+        {
+          "from": 32,
+          "to": 33,
+          "start": 53.14,
+          "end": 53.3
+        },
+        {
+          "from": 34,
+          "to": 36,
+          "start": 53.3,
+          "end": 53.44
+        },
+        {
+          "from": 37,
+          "to": 40,
+          "start": 53.44,
+          "end": 53.82
+        }
+      ],
+      "sourceLine": 16,
+      "matchedWordRatio": 0.6
     },
     {
       "text": "Y se llama Perú",
-      "start": 76.418975,
-      "end": 78.770328
+      "start": 54.96,
+      "end": 56.76,
+      "words": [
+        {
+          "from": 0,
+          "to": 1,
+          "start": 54.96,
+          "end": 55.5
+        },
+        {
+          "from": 2,
+          "to": 4,
+          "start": 55.5,
+          "end": 55.62
+        },
+        {
+          "from": 5,
+          "to": 10,
+          "start": 55.62,
+          "end": 56.14
+        },
+        {
+          "from": 11,
+          "to": 15,
+          "start": 56.14,
+          "end": 56.76
+        }
+      ],
+      "sourceLine": 17,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Con P de patria",
-      "start": 78.770328,
-      "end": 81.121681
+      "start": 57.88,
+      "end": 60.4,
+      "words": [
+        {
+          "from": 0,
+          "to": 3,
+          "start": 57.88,
+          "end": 58.68
+        },
+        {
+          "from": 6,
+          "to": 8,
+          "start": 59.12,
+          "end": 59.66
+        },
+        {
+          "from": 9,
+          "to": 15,
+          "start": 59.66,
+          "end": 60.4
+        }
+      ],
+      "sourceLine": 18,
+      "matchedWordRatio": 0.75
     },
     {
       "text": "La E del ejemplo",
-      "start": 81.121681,
-      "end": 83.66898
+      "start": 60.76,
+      "end": 62.34,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 60.76,
+          "end": 61.64
+        },
+        {
+          "from": 3,
+          "to": 4,
+          "start": 61.64,
+          "end": 62.02
+        },
+        {
+          "from": 5,
+          "to": 8,
+          "start": 62.02,
+          "end": 62.34
+        }
+      ],
+      "sourceLine": 19,
+      "matchedWordRatio": 0.75
     },
     {
       "text": "La R del rifle",
-      "start": 83.66898,
-      "end": 85.824387
+      "start": 63.46,
+      "end": 64.66,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 63.46,
+          "end": 63.8
+        },
+        {
+          "from": 3,
+          "to": 4,
+          "start": 63.8,
+          "end": 64.0
+        },
+        {
+          "from": 5,
+          "to": 8,
+          "start": 64.0,
+          "end": 64.22
+        },
+        {
+          "from": 9,
+          "to": 14,
+          "start": 64.22,
+          "end": 64.66
+        }
+      ],
+      "sourceLine": 20,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "La U de la unión",
-      "start": 85.824387,
-      "end": 88.17574
+      "start": 64.66,
+      "end": 66.12,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 64.66,
+          "end": 65.36
+        },
+        {
+          "from": 5,
+          "to": 7,
+          "start": 65.54,
+          "end": 65.68
+        },
+        {
+          "from": 8,
+          "to": 10,
+          "start": 65.68,
+          "end": 65.82
+        },
+        {
+          "from": 11,
+          "to": 16,
+          "start": 65.82,
+          "end": 66.12
+        }
+      ],
+      "sourceLine": 21,
+      "matchedWordRatio": 0.8,
+      "alignment": "acoustic-gap-refinement"
     },
     {
       "text": "Yo me llamo Perú",
-      "start": 88.17574,
-      "end": 90.723039
+      "start": 66.62,
+      "end": 69.88,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 66.62,
+          "end": 67.34
+        },
+        {
+          "from": 3,
+          "to": 5,
+          "start": 67.34,
+          "end": 68.02
+        },
+        {
+          "from": 6,
+          "to": 11,
+          "start": 68.02,
+          "end": 68.6
+        },
+        {
+          "from": 12,
+          "to": 16,
+          "start": 68.6,
+          "end": 69.88
+        }
+      ],
+      "sourceLine": 22,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Pues mi raza peruana",
-      "start": 90.723039,
-      "end": 94.054123
+      "start": 70.1,
+      "end": 72.22,
+      "words": [
+        {
+          "from": 0,
+          "to": 4,
+          "start": 70.1,
+          "end": 70.54
+        },
+        {
+          "from": 5,
+          "to": 7,
+          "start": 70.54,
+          "end": 70.94
+        },
+        {
+          "from": 8,
+          "to": 12,
+          "start": 70.94,
+          "end": 71.6
+        },
+        {
+          "from": 13,
+          "to": 20,
+          "start": 71.6,
+          "end": 72.22
+        }
+      ],
+      "sourceLine": 23,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Con la sangre y el alma",
-      "start": 94.054123,
-      "end": 97.581152
+      "start": 73.72,
+      "end": 75.3,
+      "words": [
+        {
+          "from": 4,
+          "to": 6,
+          "start": 73.72,
+          "end": 74.14
+        },
+        {
+          "from": 7,
+          "to": 13,
+          "start": 74.14,
+          "end": 74.64
+        },
+        {
+          "from": 14,
+          "to": 15,
+          "start": 74.64,
+          "end": 74.88
+        },
+        {
+          "from": 16,
+          "to": 18,
+          "start": 74.88,
+          "end": 75.02
+        },
+        {
+          "from": 19,
+          "to": 23,
+          "start": 75.02,
+          "end": 75.3
+        }
+      ],
+      "sourceLine": 24,
+      "matchedWordRatio": 0.833
     },
     {
       "text": "Pintó los colores de mi pabellón",
-      "start": 97.581152,
-      "end": 102.871697
+      "start": 76.32,
+      "end": 77.34,
+      "words": [
+        {
+          "from": 6,
+          "to": 9,
+          "start": 76.32,
+          "end": 76.62
+        },
+        {
+          "from": 10,
+          "to": 17,
+          "start": 76.62,
+          "end": 76.76
+        },
+        {
+          "from": 18,
+          "to": 20,
+          "start": 76.76,
+          "end": 77.0
+        },
+        {
+          "from": 21,
+          "to": 23,
+          "start": 77.0,
+          "end": 77.34
+        }
+      ],
+      "sourceLine": 25,
+      "matchedWordRatio": 0.667
     },
     {
       "text": "Yo también me llamo Perú",
-      "start": 102.871697,
-      "end": 106.790618
-    },
-    {
-      "text": "Con P de patria",
-      "start": 106.790618,
-      "end": 109.141971
-    },
-    {
-      "text": "La E del ejemplo",
-      "start": 109.141971,
-      "end": 111.689271
-    },
-    {
-      "text": "La R del rifle",
-      "start": 111.689271,
-      "end": 113.844678
+      "start": 78.52,
+      "end": 82.0,
+      "words": [
+        {
+          "from": 3,
+          "to": 10,
+          "start": 78.52,
+          "end": 79.38
+        },
+        {
+          "from": 11,
+          "to": 13,
+          "start": 79.38,
+          "end": 80.16
+        },
+        {
+          "from": 14,
+          "to": 19,
+          "start": 80.16,
+          "end": 80.7
+        },
+        {
+          "from": 20,
+          "to": 24,
+          "start": 80.7,
+          "end": 82.0
+        }
+      ],
+      "sourceLine": 26,
+      "matchedWordRatio": 0.8
     },
     {
       "text": "La U de la unión",
-      "start": 113.844678,
-      "end": 116.196031
+      "start": 89.14,
+      "end": 90.66,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 89.14,
+          "end": 89.4
+        },
+        {
+          "from": 3,
+          "to": 4,
+          "start": 89.4,
+          "end": 89.68
+        },
+        {
+          "from": 5,
+          "to": 7,
+          "start": 89.68,
+          "end": 90.12
+        },
+        {
+          "from": 8,
+          "to": 10,
+          "start": 90.12,
+          "end": 90.32
+        },
+        {
+          "from": 11,
+          "to": 16,
+          "start": 90.32,
+          "end": 90.66
+        }
+      ],
+      "sourceLine": 30,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Yo me llamo Perú",
-      "start": 116.196031,
-      "end": 118.74333
+      "start": 90.66,
+      "end": 92.88,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 90.66,
+          "end": 91.18
+        },
+        {
+          "from": 3,
+          "to": 5,
+          "start": 91.18,
+          "end": 91.62
+        },
+        {
+          "from": 6,
+          "to": 11,
+          "start": 91.62,
+          "end": 92.88
+        }
+      ],
+      "sourceLine": 31,
+      "matchedWordRatio": 0.75
     },
     {
       "text": "Pues mi raza peruana",
-      "start": 118.74333,
-      "end": 122.074413
+      "start": 95.16,
+      "end": 96.46,
+      "words": [
+        {
+          "from": 0,
+          "to": 4,
+          "start": 95.16,
+          "end": 95.64
+        },
+        {
+          "from": 5,
+          "to": 7,
+          "start": 95.64,
+          "end": 95.9
+        },
+        {
+          "from": 8,
+          "to": 12,
+          "start": 95.9,
+          "end": 96.46
+        }
+      ],
+      "sourceLine": 32,
+      "matchedWordRatio": 0.75
     },
     {
       "text": "Con la sangre y el alma",
-      "start": 122.074413,
-      "end": 125.601443
+      "start": 97.08,
+      "end": 99.84,
+      "words": [
+        {
+          "from": 0,
+          "to": 3,
+          "start": 97.08,
+          "end": 98.42
+        },
+        {
+          "from": 4,
+          "to": 6,
+          "start": 98.42,
+          "end": 98.68
+        },
+        {
+          "from": 7,
+          "to": 13,
+          "start": 98.68,
+          "end": 99.16
+        },
+        {
+          "from": 14,
+          "to": 15,
+          "start": 99.16,
+          "end": 99.38
+        },
+        {
+          "from": 16,
+          "to": 18,
+          "start": 99.38,
+          "end": 99.54
+        },
+        {
+          "from": 19,
+          "to": 23,
+          "start": 99.54,
+          "end": 99.84
+        }
+      ],
+      "sourceLine": 33,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Pintó los colores de mi pabellón",
-      "start": 125.601443,
-      "end": 130.891987
+      "start": 99.84,
+      "end": 103.38,
+      "words": [
+        {
+          "from": 0,
+          "to": 5,
+          "start": 99.84,
+          "end": 100.72
+        },
+        {
+          "from": 6,
+          "to": 9,
+          "start": 100.72,
+          "end": 100.94
+        },
+        {
+          "from": 10,
+          "to": 17,
+          "start": 100.94,
+          "end": 101.36
+        },
+        {
+          "from": 18,
+          "to": 20,
+          "start": 101.36,
+          "end": 101.74
+        },
+        {
+          "from": 21,
+          "to": 23,
+          "start": 101.74,
+          "end": 102.16
+        },
+        {
+          "from": 24,
+          "to": 32,
+          "start": 102.16,
+          "end": 103.38
+        }
+      ],
+      "sourceLine": 34,
+      "matchedWordRatio": 1.0,
+      "alignment": "acoustic-gap-refinement"
     },
     {
       "text": "Y se llama Perú",
-      "start": 130.891987,
-      "end": 133.24334
-    },
-    {
-      "text": "Con P de patria",
-      "start": 133.24334,
-      "end": 135.594693
+      "start": 125.64,
+      "end": 130.08,
+      "words": [
+        {
+          "from": 0,
+          "to": 1,
+          "start": 125.64,
+          "end": 127.04
+        },
+        {
+          "from": 2,
+          "to": 4,
+          "start": 127.04,
+          "end": 127.2
+        },
+        {
+          "from": 5,
+          "to": 10,
+          "start": 127.2,
+          "end": 127.8
+        },
+        {
+          "from": 11,
+          "to": 15,
+          "start": 127.8,
+          "end": 130.08
+        }
+      ],
+      "sourceLine": 35,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "La E del ejemplo",
-      "start": 135.594693,
-      "end": 138.141993
+      "start": 132.98,
+      "end": 135.78,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 132.98,
+          "end": 134.26
+        },
+        {
+          "from": 3,
+          "to": 4,
+          "start": 134.26,
+          "end": 134.68
+        },
+        {
+          "from": 5,
+          "to": 8,
+          "start": 134.68,
+          "end": 135.0
+        },
+        {
+          "from": 9,
+          "to": 16,
+          "start": 135.0,
+          "end": 135.78
+        }
+      ],
+      "sourceLine": 37,
+      "matchedWordRatio": 1.0,
+      "alignment": "acoustic-gap-refinement"
     },
     {
       "text": "La R del rifle",
-      "start": 138.141993,
-      "end": 140.2974
+      "start": 136.14,
+      "end": 137.14,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 136.14,
+          "end": 136.26
+        },
+        {
+          "from": 3,
+          "to": 4,
+          "start": 136.26,
+          "end": 136.46
+        },
+        {
+          "from": 5,
+          "to": 8,
+          "start": 136.6,
+          "end": 136.74
+        },
+        {
+          "from": 9,
+          "to": 14,
+          "start": 136.74,
+          "end": 137.14
+        }
+      ],
+      "sourceLine": 38,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "La U de la unión",
-      "start": 140.2974,
-      "end": 142.648753
+      "start": 137.28,
+      "end": 138.9,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 137.28,
+          "end": 137.86
+        },
+        {
+          "from": 3,
+          "to": 4,
+          "start": 137.86,
+          "end": 138.06
+        },
+        {
+          "from": 5,
+          "to": 7,
+          "start": 138.2,
+          "end": 138.28
+        },
+        {
+          "from": 8,
+          "to": 10,
+          "start": 138.28,
+          "end": 138.4
+        },
+        {
+          "from": 11,
+          "to": 16,
+          "start": 138.4,
+          "end": 138.9
+        }
+      ],
+      "sourceLine": 39,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Yo me llamo Perú",
-      "start": 142.648753,
-      "end": 145.196052
+      "start": 138.9,
+      "end": 142.28,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 138.9,
+          "end": 139.86
+        },
+        {
+          "from": 3,
+          "to": 5,
+          "start": 139.86,
+          "end": 140.38
+        },
+        {
+          "from": 6,
+          "to": 11,
+          "start": 140.38,
+          "end": 141.18
+        },
+        {
+          "from": 12,
+          "to": 16,
+          "start": 141.18,
+          "end": 142.28
+        }
+      ],
+      "sourceLine": 40,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Pues mi raza peruana",
-      "start": 145.196052,
-      "end": 148.527135
+      "start": 143.22,
+      "end": 144.82,
+      "words": [
+        {
+          "from": 5,
+          "to": 7,
+          "start": 143.22,
+          "end": 143.68
+        },
+        {
+          "from": 8,
+          "to": 12,
+          "start": 143.68,
+          "end": 144.34
+        },
+        {
+          "from": 13,
+          "to": 20,
+          "start": 144.34,
+          "end": 144.82
+        }
+      ],
+      "sourceLine": 41,
+      "matchedWordRatio": 0.75,
+      "alignment": "acoustic-gap-refinement"
     },
     {
       "text": "Con la sangre y el alma",
-      "start": 148.527135,
-      "end": 152.054165
+      "start": 145.7,
+      "end": 147.58,
+      "words": [
+        {
+          "from": 0,
+          "to": 3,
+          "start": 145.7,
+          "end": 146.38
+        },
+        {
+          "from": 4,
+          "to": 6,
+          "start": 146.38,
+          "end": 146.58
+        },
+        {
+          "from": 7,
+          "to": 13,
+          "start": 146.58,
+          "end": 147.16
+        },
+        {
+          "from": 14,
+          "to": 15,
+          "start": 147.16,
+          "end": 147.42
+        },
+        {
+          "from": 16,
+          "to": 18,
+          "start": 147.42,
+          "end": 147.58
+        }
+      ],
+      "sourceLine": 42,
+      "matchedWordRatio": 0.833
     },
     {
       "text": "Pintó los colores de mi pabellón",
-      "start": 152.054165,
-      "end": 157.344709
+      "start": 148.76,
+      "end": 149.86,
+      "words": [
+        {
+          "from": 6,
+          "to": 9,
+          "start": 148.76,
+          "end": 149.04
+        },
+        {
+          "from": 10,
+          "to": 17,
+          "start": 149.04,
+          "end": 149.32
+        },
+        {
+          "from": 18,
+          "to": 20,
+          "start": 149.32,
+          "end": 149.52
+        },
+        {
+          "from": 21,
+          "to": 23,
+          "start": 149.52,
+          "end": 149.86
+        }
+      ],
+      "sourceLine": 43,
+      "matchedWordRatio": 0.667
     },
     {
       "text": "Yo también me llamo Perú",
-      "start": 157.344709,
-      "end": 161.263631
-    },
-    {
-      "text": "Con P de patria",
-      "start": 161.263631,
-      "end": 163.614984
-    },
-    {
-      "text": "La E del ejemplo",
-      "start": 163.614984,
-      "end": 166.162283
+      "start": 150.52,
+      "end": 154.3,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 150.52,
+          "end": 150.86
+        },
+        {
+          "from": 3,
+          "to": 10,
+          "start": 150.86,
+          "end": 151.62
+        },
+        {
+          "from": 11,
+          "to": 13,
+          "start": 151.62,
+          "end": 152.62
+        },
+        {
+          "from": 14,
+          "to": 19,
+          "start": 152.62,
+          "end": 153.14
+        },
+        {
+          "from": 20,
+          "to": 24,
+          "start": 153.14,
+          "end": 154.3
+        }
+      ],
+      "sourceLine": 44,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "La R del rifle",
-      "start": 166.162283,
-      "end": 168.31769
+      "start": 160.24,
+      "end": 161.24,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 160.24,
+          "end": 160.32
+        },
+        {
+          "from": 3,
+          "to": 4,
+          "start": 160.32,
+          "end": 160.52
+        },
+        {
+          "from": 5,
+          "to": 8,
+          "start": 160.64,
+          "end": 160.78
+        },
+        {
+          "from": 9,
+          "to": 14,
+          "start": 160.78,
+          "end": 161.24
+        }
+      ],
+      "sourceLine": 47,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "La U de la unión",
-      "start": 168.31769,
-      "end": 170.669043
+      "start": 161.54,
+      "end": 162.9,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 161.54,
+          "end": 161.6
+        },
+        {
+          "from": 3,
+          "to": 4,
+          "start": 161.6,
+          "end": 162.06
+        },
+        {
+          "from": 5,
+          "to": 7,
+          "start": 162.06,
+          "end": 162.36
+        },
+        {
+          "from": 8,
+          "to": 10,
+          "start": 162.36,
+          "end": 162.6
+        },
+        {
+          "from": 11,
+          "to": 16,
+          "start": 162.6,
+          "end": 162.9
+        }
+      ],
+      "sourceLine": 48,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Yo me llamo Perú",
-      "start": 170.669043,
-      "end": 173.216342
+      "start": 163.44,
+      "end": 166.64,
+      "words": [
+        {
+          "from": 3,
+          "to": 5,
+          "start": 163.44,
+          "end": 163.94
+        },
+        {
+          "from": 6,
+          "to": 11,
+          "start": 163.94,
+          "end": 165.2
+        },
+        {
+          "from": 12,
+          "to": 16,
+          "start": 165.2,
+          "end": 166.64
+        }
+      ],
+      "sourceLine": 49,
+      "matchedWordRatio": 0.75,
+      "alignment": "acoustic-gap-refinement"
     },
     {
       "text": "Pues mi raza peruana",
-      "start": 173.216342,
-      "end": 176.547426
+      "start": 167.24,
+      "end": 169.34,
+      "words": [
+        {
+          "from": 0,
+          "to": 4,
+          "start": 167.24,
+          "end": 167.8
+        },
+        {
+          "from": 5,
+          "to": 7,
+          "start": 167.8,
+          "end": 168.1
+        },
+        {
+          "from": 8,
+          "to": 12,
+          "start": 168.1,
+          "end": 168.66
+        },
+        {
+          "from": 13,
+          "to": 20,
+          "start": 168.66,
+          "end": 169.34
+        }
+      ],
+      "sourceLine": 50,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Con la sangre y el alma",
-      "start": 176.547426,
-      "end": 180.074456
+      "start": 169.9,
+      "end": 171.84,
+      "words": [
+        {
+          "from": 0,
+          "to": 3,
+          "start": 169.9,
+          "end": 170.52
+        },
+        {
+          "from": 4,
+          "to": 6,
+          "start": 170.52,
+          "end": 170.78
+        },
+        {
+          "from": 7,
+          "to": 13,
+          "start": 170.78,
+          "end": 171.22
+        },
+        {
+          "from": 14,
+          "to": 15,
+          "start": 171.22,
+          "end": 171.46
+        },
+        {
+          "from": 16,
+          "to": 18,
+          "start": 171.46,
+          "end": 171.6
+        },
+        {
+          "from": 19,
+          "to": 23,
+          "start": 171.6,
+          "end": 171.84
+        }
+      ],
+      "sourceLine": 51,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Pintó los colores de mi pabellón",
-      "start": 180.074456,
-      "end": 185.365
+      "start": 171.84,
+      "end": 174.3,
+      "words": [
+        {
+          "from": 0,
+          "to": 5,
+          "start": 171.84,
+          "end": 172.64
+        },
+        {
+          "from": 6,
+          "to": 9,
+          "start": 172.64,
+          "end": 172.8
+        },
+        {
+          "from": 10,
+          "to": 17,
+          "start": 172.8,
+          "end": 173.12
+        },
+        {
+          "from": 18,
+          "to": 20,
+          "start": 173.12,
+          "end": 173.92
+        },
+        {
+          "from": 21,
+          "to": 23,
+          "start": 173.92,
+          "end": 174.3
+        }
+      ],
+      "sourceLine": 52,
+      "matchedWordRatio": 0.833
+    }
+  ],
+  "unmatchedLines": [
+    {
+      "line": 27,
+      "text": "Con P de patria",
+      "coverage": 0.25
+    },
+    {
+      "line": 28,
+      "text": "La E del ejemplo",
+      "coverage": 0.25
+    },
+    {
+      "line": 29,
+      "text": "La R del rifle",
+      "coverage": 0.25
+    },
+    {
+      "line": 36,
+      "text": "Con P de patria",
+      "coverage": 0.5
+    },
+    {
+      "line": 45,
+      "text": "Con P de patria",
+      "coverage": 0.25
+    },
+    {
+      "line": 46,
+      "text": "La E del ejemplo",
+      "coverage": 0.5
     }
   ]
 }

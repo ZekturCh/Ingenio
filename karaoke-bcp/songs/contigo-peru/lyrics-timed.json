@@ -1,245 +1,1385 @@
 {
   "songId": "contigo-peru",
-  "title": "Contigo Perú",
   "status": "estimated",
   "reviewRequired": true,
-  "timingMethod": "text-length-proportional; not aligned to vocals or instrumental sections",
-  "durationSeconds": 237.087,
+  "method": "local-asr-word-matching",
+  "alignmentModel": "faster-whisper-small",
+  "durationSeconds": 210.050612,
+  "audioSha256": "8439d3d662ce46ff0ac293b3767fd31f58f3b0c47cdafce86090ef63c989ed29",
   "lyrics": [
     {
       "text": "Cuando despiertan mis ojos y veo",
-      "start": 0.0,
-      "end": 6.407757
+      "start": 15.5,
+      "end": 20.5,
+      "words": [
+        {
+          "from": 0,
+          "to": 6,
+          "start": 15.5,
+          "end": 16.9
+        },
+        {
+          "from": 7,
+          "to": 17,
+          "start": 16.9,
+          "end": 18.3
+        },
+        {
+          "from": 18,
+          "to": 21,
+          "start": 18.3,
+          "end": 19.4
+        },
+        {
+          "from": 22,
+          "to": 26,
+          "start": 19.4,
+          "end": 19.74
+        },
+        {
+          "from": 27,
+          "to": 28,
+          "start": 19.74,
+          "end": 20.02
+        },
+        {
+          "from": 29,
+          "to": 32,
+          "start": 20.02,
+          "end": 20.5
+        }
+      ],
+      "sourceLine": 1,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Que sigo viviendo contigo, Perú",
-      "start": 6.407757,
-      "end": 12.578189
+      "start": 20.5,
+      "end": 26.66,
+      "words": [
+        {
+          "from": 0,
+          "to": 3,
+          "start": 20.5,
+          "end": 21.98
+        },
+        {
+          "from": 4,
+          "to": 8,
+          "start": 21.98,
+          "end": 22.34
+        },
+        {
+          "from": 9,
+          "to": 17,
+          "start": 22.34,
+          "end": 23.28
+        },
+        {
+          "from": 18,
+          "to": 25,
+          "start": 23.28,
+          "end": 25.44
+        },
+        {
+          "from": 27,
+          "to": 31,
+          "start": 25.56,
+          "end": 26.66
+        }
+      ],
+      "sourceLine": 2,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Emocionado, doy gracias al cielo",
-      "start": 12.578189,
-      "end": 18.985946
+      "start": 29.2,
+      "end": 33.34,
+      "words": [
+        {
+          "from": 0,
+          "to": 10,
+          "start": 29.2,
+          "end": 30.6
+        },
+        {
+          "from": 12,
+          "to": 15,
+          "start": 31.4,
+          "end": 31.84
+        },
+        {
+          "from": 16,
+          "to": 23,
+          "start": 31.84,
+          "end": 32.38
+        },
+        {
+          "from": 24,
+          "to": 26,
+          "start": 32.38,
+          "end": 32.86
+        },
+        {
+          "from": 27,
+          "to": 32,
+          "start": 32.86,
+          "end": 33.34
+        }
+      ],
+      "sourceLine": 3,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Por darme la vida contigo, Perú",
-      "start": 18.985946,
-      "end": 24.919054
+      "start": 33.34,
+      "end": 40.36,
+      "words": [
+        {
+          "from": 0,
+          "to": 3,
+          "start": 33.34,
+          "end": 35.28
+        },
+        {
+          "from": 4,
+          "to": 9,
+          "start": 35.28,
+          "end": 36.5
+        },
+        {
+          "from": 10,
+          "to": 12,
+          "start": 36.5,
+          "end": 36.68
+        },
+        {
+          "from": 13,
+          "to": 17,
+          "start": 36.68,
+          "end": 37.16
+        },
+        {
+          "from": 18,
+          "to": 25,
+          "start": 37.16,
+          "end": 39.24
+        },
+        {
+          "from": 27,
+          "to": 31,
+          "start": 39.24,
+          "end": 40.36
+        }
+      ],
+      "sourceLine": 4,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Eres muy grande",
-      "start": 24.919054,
-      "end": 28.00427
-    },
-    {
-      "text": "Y lo seguirás siendo",
-      "start": 28.00427,
-      "end": 32.038784
+      "start": 42.26,
+      "end": 43.84,
+      "words": [
+        {
+          "from": 0,
+          "to": 4,
+          "start": 42.26,
+          "end": 42.96
+        },
+        {
+          "from": 5,
+          "to": 8,
+          "start": 42.96,
+          "end": 43.22
+        },
+        {
+          "from": 9,
+          "to": 15,
+          "start": 43.22,
+          "end": 43.84
+        }
+      ],
+      "sourceLine": 5,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Pues todos estamos contigo, Perú",
-      "start": 32.038784,
-      "end": 38.446541
+      "start": 46.64,
+      "end": 53.22,
+      "words": [
+        {
+          "from": 0,
+          "to": 4,
+          "start": 46.64,
+          "end": 48.6
+        },
+        {
+          "from": 5,
+          "to": 10,
+          "start": 48.6,
+          "end": 49.0
+        },
+        {
+          "from": 11,
+          "to": 18,
+          "start": 49.0,
+          "end": 49.82
+        },
+        {
+          "from": 19,
+          "to": 26,
+          "start": 49.82,
+          "end": 52.14
+        },
+        {
+          "from": 28,
+          "to": 32,
+          "start": 52.14,
+          "end": 53.22
+        }
+      ],
+      "sourceLine": 7,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Sobre mi pecho, llevo tus colores",
-      "start": 38.446541,
-      "end": 44.854297
+      "start": 54.52,
+      "end": 57.8,
+      "words": [
+        {
+          "from": 0,
+          "to": 5,
+          "start": 54.52,
+          "end": 55.5
+        },
+        {
+          "from": 6,
+          "to": 8,
+          "start": 55.5,
+          "end": 55.72
+        },
+        {
+          "from": 9,
+          "to": 14,
+          "start": 55.72,
+          "end": 56.24
+        },
+        {
+          "from": 16,
+          "to": 21,
+          "start": 56.24,
+          "end": 56.76
+        },
+        {
+          "from": 22,
+          "to": 25,
+          "start": 56.76,
+          "end": 57.06
+        },
+        {
+          "from": 26,
+          "to": 33,
+          "start": 57.06,
+          "end": 57.8
+        }
+      ],
+      "sourceLine": 8,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Y están mis amores contigo, Perú",
-      "start": 44.854297,
-      "end": 51.02473
+      "start": 57.8,
+      "end": 61.36,
+      "words": [
+        {
+          "from": 0,
+          "to": 1,
+          "start": 57.8,
+          "end": 58.38
+        },
+        {
+          "from": 2,
+          "to": 7,
+          "start": 58.38,
+          "end": 58.86
+        },
+        {
+          "from": 8,
+          "to": 11,
+          "start": 58.86,
+          "end": 59.32
+        },
+        {
+          "from": 12,
+          "to": 18,
+          "start": 59.32,
+          "end": 59.7
+        },
+        {
+          "from": 19,
+          "to": 26,
+          "start": 59.7,
+          "end": 60.68
+        },
+        {
+          "from": 28,
+          "to": 32,
+          "start": 60.88,
+          "end": 61.36
+        }
+      ],
+      "sourceLine": 9,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Somos tus hijos y nos uniremos",
-      "start": 51.02473,
-      "end": 56.957838
+      "start": 62.22,
+      "end": 65.38,
+      "words": [
+        {
+          "from": 0,
+          "to": 5,
+          "start": 62.22,
+          "end": 63.32
+        },
+        {
+          "from": 6,
+          "to": 9,
+          "start": 63.32,
+          "end": 63.64
+        },
+        {
+          "from": 10,
+          "to": 15,
+          "start": 63.64,
+          "end": 64.06
+        },
+        {
+          "from": 16,
+          "to": 17,
+          "start": 64.06,
+          "end": 64.62
+        },
+        {
+          "from": 18,
+          "to": 21,
+          "start": 64.62,
+          "end": 64.8
+        },
+        {
+          "from": 22,
+          "to": 30,
+          "start": 64.8,
+          "end": 65.38
+        }
+      ],
+      "sourceLine": 10,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Y así triunfaremos contigo, Perú",
-      "start": 56.957838,
-      "end": 63.365595
+      "start": 65.38,
+      "end": 69.42,
+      "words": [
+        {
+          "from": 0,
+          "to": 1,
+          "start": 65.38,
+          "end": 65.88
+        },
+        {
+          "from": 2,
+          "to": 5,
+          "start": 65.88,
+          "end": 66.06
+        },
+        {
+          "from": 6,
+          "to": 18,
+          "start": 66.06,
+          "end": 66.74
+        },
+        {
+          "from": 19,
+          "to": 26,
+          "start": 66.74,
+          "end": 67.98
+        },
+        {
+          "from": 28,
+          "to": 32,
+          "start": 68.24,
+          "end": 69.42
+        }
+      ],
+      "sourceLine": 11,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Unida la costa (unida la costa)",
-      "start": 63.365595,
-      "end": 69.061378
+      "start": 69.42,
+      "end": 73.0,
+      "words": [
+        {
+          "from": 0,
+          "to": 5,
+          "start": 69.42,
+          "end": 70.24
+        },
+        {
+          "from": 6,
+          "to": 8,
+          "start": 70.24,
+          "end": 70.54
+        },
+        {
+          "from": 9,
+          "to": 14,
+          "start": 70.54,
+          "end": 71.42
+        },
+        {
+          "from": 16,
+          "to": 21,
+          "start": 71.42,
+          "end": 71.84
+        },
+        {
+          "from": 22,
+          "to": 24,
+          "start": 71.84,
+          "end": 72.04
+        },
+        {
+          "from": 25,
+          "to": 30,
+          "start": 72.04,
+          "end": 73.0
+        }
+      ],
+      "sourceLine": 12,
+      "matchedWordRatio": 1.0,
+      "alignment": "acoustic-gap-refinement"
     },
     {
       "text": "Unida la sierra (unida la sierra)",
-      "start": 69.061378,
-      "end": 75.231811
+      "start": 73.08,
+      "end": 75.7,
+      "words": [
+        {
+          "from": 0,
+          "to": 5,
+          "start": 73.08,
+          "end": 73.36
+        },
+        {
+          "from": 6,
+          "to": 8,
+          "start": 73.36,
+          "end": 73.66
+        },
+        {
+          "from": 9,
+          "to": 15,
+          "start": 73.66,
+          "end": 74.28
+        },
+        {
+          "from": 17,
+          "to": 22,
+          "start": 74.28,
+          "end": 74.82
+        },
+        {
+          "from": 23,
+          "to": 25,
+          "start": 74.82,
+          "end": 75.04
+        },
+        {
+          "from": 26,
+          "to": 32,
+          "start": 75.04,
+          "end": 75.7
+        }
+      ],
+      "sourceLine": 13,
+      "matchedWordRatio": 1.0,
+      "alignment": "acoustic-gap-refinement"
     },
     {
       "text": "Unida la selva contigo, Perú",
-      "start": 75.231811,
-      "end": 80.69027
-    },
-    {
-      "text": "Unido el trabajo (unido el trabajo)",
-      "start": 80.69027,
-      "end": 87.335351
+      "start": 75.96,
+      "end": 80.42,
+      "words": [
+        {
+          "from": 0,
+          "to": 5,
+          "start": 75.96,
+          "end": 76.34
+        },
+        {
+          "from": 6,
+          "to": 8,
+          "start": 76.34,
+          "end": 76.7
+        },
+        {
+          "from": 9,
+          "to": 14,
+          "start": 76.7,
+          "end": 77.82
+        },
+        {
+          "from": 15,
+          "to": 22,
+          "start": 77.82,
+          "end": 79.28
+        },
+        {
+          "from": 24,
+          "to": 28,
+          "start": 79.66,
+          "end": 80.42
+        }
+      ],
+      "sourceLine": 14,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Unido el deporte (unido el deporte)",
-      "start": 87.335351,
-      "end": 93.980432
+      "start": 83.36,
+      "end": 87.24,
+      "words": [
+        {
+          "from": 0,
+          "to": 5,
+          "start": 83.36,
+          "end": 85.02
+        },
+        {
+          "from": 6,
+          "to": 8,
+          "start": 85.02,
+          "end": 85.24
+        },
+        {
+          "from": 9,
+          "to": 16,
+          "start": 85.24,
+          "end": 86.08
+        },
+        {
+          "from": 18,
+          "to": 23,
+          "start": 86.08,
+          "end": 86.48
+        },
+        {
+          "from": 24,
+          "to": 26,
+          "start": 86.48,
+          "end": 86.66
+        },
+        {
+          "from": 27,
+          "to": 34,
+          "start": 86.66,
+          "end": 87.24
+        }
+      ],
+      "sourceLine": 16,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Unidos el norte, el centro y el sur",
-      "start": 93.980432,
-      "end": 100.388189
-    },
-    {
-      "text": "¡A triunfar, peruanos! (¡A triunfar, peruanos¡)",
-      "start": 100.388189,
-      "end": 108.457216
-    },
-    {
-      "text": "Que somos hermanos (que somos hermanos)",
-      "start": 108.457216,
-      "end": 116.051595
+      "start": 87.24,
+      "end": 91.68,
+      "words": [
+        {
+          "from": 0,
+          "to": 6,
+          "start": 87.24,
+          "end": 88.0
+        },
+        {
+          "from": 7,
+          "to": 9,
+          "start": 88.0,
+          "end": 88.4
+        },
+        {
+          "from": 10,
+          "to": 15,
+          "start": 88.4,
+          "end": 89.12
+        },
+        {
+          "from": 17,
+          "to": 19,
+          "start": 89.12,
+          "end": 89.9
+        },
+        {
+          "from": 20,
+          "to": 26,
+          "start": 89.9,
+          "end": 90.8
+        },
+        {
+          "from": 27,
+          "to": 28,
+          "start": 90.8,
+          "end": 91.14
+        },
+        {
+          "from": 29,
+          "to": 31,
+          "start": 91.14,
+          "end": 91.32
+        },
+        {
+          "from": 32,
+          "to": 35,
+          "start": 91.32,
+          "end": 91.68
+        }
+      ],
+      "sourceLine": 17,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Que se haga victoria",
-      "start": 116.051595,
-      "end": 120.086108
+      "start": 98.98,
+      "end": 99.82,
+      "words": [
+        {
+          "from": 0,
+          "to": 3,
+          "start": 98.98,
+          "end": 99.14
+        },
+        {
+          "from": 4,
+          "to": 6,
+          "start": 99.14,
+          "end": 99.42
+        },
+        {
+          "from": 7,
+          "to": 11,
+          "start": 99.42,
+          "end": 99.82
+        }
+      ],
+      "sourceLine": 20,
+      "matchedWordRatio": 0.75
     },
     {
+      "text": "Te daré la vida",
+      "start": 103.62,
+      "end": 105.9,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 103.62,
+          "end": 105.24
+        },
+        {
+          "from": 3,
+          "to": 7,
+          "start": 105.24,
+          "end": 105.72
+        },
+        {
+          "from": 8,
+          "to": 10,
+          "start": 105.72,
+          "end": 105.9
+        }
+      ],
+      "sourceLine": 22,
+      "matchedWordRatio": 0.75
+    },
+    {
+      "text": "Y cuando yo muera",
+      "start": 106.88,
+      "end": 109.68,
+      "words": [
+        {
+          "from": 0,
+          "to": 1,
+          "start": 106.88,
+          "end": 107.26
+        },
+        {
+          "from": 2,
+          "to": 8,
+          "start": 107.26,
+          "end": 107.88
+        },
+        {
+          "from": 9,
+          "to": 11,
+          "start": 107.88,
+          "end": 109.06
+        },
+        {
+          "from": 12,
+          "to": 17,
+          "start": 109.06,
+          "end": 109.68
+        }
+      ],
+      "sourceLine": 23,
+      "matchedWordRatio": 1.0
+    },
+    {
+      "text": "Me uniré en la tierra",
+      "start": 109.68,
+      "end": 112.78,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 109.68,
+          "end": 111.7
+        },
+        {
+          "from": 3,
+          "to": 8,
+          "start": 111.7,
+          "end": 112.1
+        },
+        {
+          "from": 9,
+          "to": 11,
+          "start": 112.1,
+          "end": 112.2
+        },
+        {
+          "from": 12,
+          "to": 14,
+          "start": 112.2,
+          "end": 112.38
+        },
+        {
+          "from": 15,
+          "to": 21,
+          "start": 112.38,
+          "end": 112.78
+        }
+      ],
+      "sourceLine": 24,
+      "matchedWordRatio": 1.0
+    },
+    {
+      "text": "Contigo, Perú",
+      "start": 112.78,
+      "end": 115.74,
+      "words": [
+        {
+          "from": 0,
+          "to": 7,
+          "start": 112.78,
+          "end": 114.9
+        },
+        {
+          "from": 9,
+          "to": 13,
+          "start": 114.9,
+          "end": 115.74
+        }
+      ],
+      "sourceLine": 25,
+      "matchedWordRatio": 1.0
+    },
+    {
+      "text": "Te daré la vida",
+      "start": 115.74,
+      "end": 117.56,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 115.74,
+          "end": 117.08
+        },
+        {
+          "from": 3,
+          "to": 7,
+          "start": 117.08,
+          "end": 117.44
+        },
+        {
+          "from": 8,
+          "to": 10,
+          "start": 117.44,
+          "end": 117.56
+        }
+      ],
+      "sourceLine": 26,
+      "matchedWordRatio": 0.75
+    },
+    {
+      "text": "Y cuando yo muera",
+      "start": 118.32,
+      "end": 121.02,
+      "words": [
+        {
+          "from": 0,
+          "to": 1,
+          "start": 118.32,
+          "end": 118.74
+        },
+        {
+          "from": 2,
+          "to": 8,
+          "start": 118.74,
+          "end": 119.48
+        },
+        {
+          "from": 9,
+          "to": 11,
+          "start": 119.48,
+          "end": 120.26
+        },
+        {
+          "from": 12,
+          "to": 17,
+          "start": 120.26,
+          "end": 121.02
+        }
+      ],
+      "sourceLine": 27,
+      "matchedWordRatio": 1.0
+    },
+    {
+      "text": "Me uniré en la tierra",
+      "start": 121.02,
+      "end": 123.94,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 121.02,
+          "end": 122.12
+        },
+        {
+          "from": 3,
+          "to": 8,
+          "start": 122.12,
+          "end": 122.84
+        },
+        {
+          "from": 9,
+          "to": 11,
+          "start": 122.84,
+          "end": 123.04
+        },
+        {
+          "from": 12,
+          "to": 14,
+          "start": 123.04,
+          "end": 123.22
+        },
+        {
+          "from": 15,
+          "to": 21,
+          "start": 123.22,
+          "end": 123.94
+        }
+      ],
+      "sourceLine": 28,
+      "matchedWordRatio": 1.0
+    },
+    {
+      "text": "Contigo, Perú",
+      "start": 123.94,
+      "end": 126.94,
+      "words": [
+        {
+          "from": 0,
+          "to": 7,
+          "start": 123.94,
+          "end": 125.74
+        },
+        {
+          "from": 9,
+          "to": 13,
+          "start": 125.74,
+          "end": 126.94
+        }
+      ],
+      "sourceLine": 29,
+      "matchedWordRatio": 1.0
+    },
+    {
+      "text": "Unida la selva contigo, Perú",
+      "start": 154.6,
+      "end": 160.56,
+      "words": [
+        {
+          "from": 0,
+          "to": 5,
+          "start": 154.6,
+          "end": 156.1
+        },
+        {
+          "from": 15,
+          "to": 22,
+          "start": 157.58,
+          "end": 158.98
+        },
+        {
+          "from": 24,
+          "to": 28,
+          "start": 158.98,
+          "end": 160.56
+        }
+      ],
+      "sourceLine": 32,
+      "matchedWordRatio": 0.6
+    },
+    {
+      "text": "Unido el trabajo (unido el trabajo)",
+      "start": 160.56,
+      "end": 163.3,
+      "words": [
+        {
+          "from": 0,
+          "to": 5,
+          "start": 160.56,
+          "end": 161.72
+        },
+        {
+          "from": 6,
+          "to": 8,
+          "start": 161.72,
+          "end": 161.92
+        },
+        {
+          "from": 9,
+          "to": 16,
+          "start": 161.92,
+          "end": 162.64
+        },
+        {
+          "from": 18,
+          "to": 23,
+          "start": 162.64,
+          "end": 163.08
+        },
+        {
+          "from": 24,
+          "to": 26,
+          "start": 163.08,
+          "end": 163.3
+        }
+      ],
+      "sourceLine": 33,
+      "matchedWordRatio": 0.833
+    },
+    {
+      "text": "Unido el deporte (unido el deporte)",
+      "start": 164.22,
+      "end": 166.68,
+      "words": [
+        {
+          "from": 0,
+          "to": 5,
+          "start": 164.22,
+          "end": 164.54
+        },
+        {
+          "from": 6,
+          "to": 8,
+          "start": 164.54,
+          "end": 164.74
+        },
+        {
+          "from": 9,
+          "to": 16,
+          "start": 164.74,
+          "end": 165.64
+        },
+        {
+          "from": 18,
+          "to": 23,
+          "start": 165.7,
+          "end": 166.26
+        },
+        {
+          "from": 27,
+          "to": 34,
+          "start": 166.26,
+          "end": 166.68
+        }
+      ],
+      "sourceLine": 34,
+      "matchedWordRatio": 0.833
+    },
+    {
+      "text": "Unidos el norte, el centro y el sur",
+      "start": 167.4,
+      "end": 171.04,
+      "words": [
+        {
+          "from": 7,
+          "to": 9,
+          "start": 167.4,
+          "end": 167.7
+        },
+        {
+          "from": 10,
+          "to": 15,
+          "start": 167.7,
+          "end": 168.4
+        },
+        {
+          "from": 17,
+          "to": 19,
+          "start": 169.14,
+          "end": 169.34
+        },
+        {
+          "from": 20,
+          "to": 26,
+          "start": 169.34,
+          "end": 170.22
+        },
+        {
+          "from": 27,
+          "to": 28,
+          "start": 170.22,
+          "end": 170.52
+        },
+        {
+          "from": 29,
+          "to": 31,
+          "start": 170.52,
+          "end": 170.7
+        },
+        {
+          "from": 32,
+          "to": 35,
+          "start": 170.7,
+          "end": 171.04
+        }
+      ],
+      "sourceLine": 35,
+      "matchedWordRatio": 0.875
+    },
+    {
+      "text": "Que se haga victoria",
+      "start": 178.02,
+      "end": 179.94,
+      "words": [
+        {
+          "from": 0,
+          "to": 3,
+          "start": 178.02,
+          "end": 178.18
+        },
+        {
+          "from": 4,
+          "to": 6,
+          "start": 178.18,
+          "end": 178.48
+        },
+        {
+          "from": 7,
+          "to": 11,
+          "start": 178.48,
+          "end": 178.84
+        },
+        {
+          "from": 12,
+          "to": 20,
+          "start": 178.84,
+          "end": 179.94
+        }
+      ],
+      "sourceLine": 38,
+      "matchedWordRatio": 1.0,
+      "alignment": "acoustic-gap-refinement"
+    },
+    {
+      "text": "Te daré la vida",
+      "start": 182.6,
+      "end": 185.96,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 182.6,
+          "end": 184.1
+        },
+        {
+          "from": 3,
+          "to": 7,
+          "start": 184.1,
+          "end": 184.6
+        },
+        {
+          "from": 8,
+          "to": 10,
+          "start": 184.6,
+          "end": 184.72
+        },
+        {
+          "from": 11,
+          "to": 15,
+          "start": 184.72,
+          "end": 185.96
+        }
+      ],
+      "sourceLine": 40,
+      "matchedWordRatio": 1.0,
+      "alignment": "acoustic-gap-refinement"
+    },
+    {
+      "text": "Y cuando yo muera",
+      "start": 185.96,
+      "end": 188.6,
+      "words": [
+        {
+          "from": 0,
+          "to": 1,
+          "start": 185.96,
+          "end": 186.24
+        },
+        {
+          "from": 2,
+          "to": 8,
+          "start": 186.24,
+          "end": 187.14
+        },
+        {
+          "from": 9,
+          "to": 11,
+          "start": 187.14,
+          "end": 187.78
+        },
+        {
+          "from": 12,
+          "to": 17,
+          "start": 187.78,
+          "end": 188.6
+        }
+      ],
+      "sourceLine": 41,
+      "matchedWordRatio": 1.0,
+      "alignment": "acoustic-gap-refinement"
+    },
+    {
+      "text": "Me uniré en la tierra",
+      "start": 190.54,
+      "end": 191.44,
+      "words": [
+        {
+          "from": 9,
+          "to": 11,
+          "start": 190.54,
+          "end": 190.72
+        },
+        {
+          "from": 12,
+          "to": 14,
+          "start": 190.72,
+          "end": 190.9
+        },
+        {
+          "from": 15,
+          "to": 21,
+          "start": 190.9,
+          "end": 191.44
+        }
+      ],
+      "sourceLine": 42,
+      "matchedWordRatio": 0.6
+    },
+    {
+      "text": "Contigo, Perú",
+      "start": 192.74,
+      "end": 194.2,
+      "words": [
+        {
+          "from": 0,
+          "to": 7,
+          "start": 192.74,
+          "end": 193.5
+        },
+        {
+          "from": 9,
+          "to": 13,
+          "start": 193.72,
+          "end": 194.2
+        }
+      ],
+      "sourceLine": 43,
+      "matchedWordRatio": 1.0
+    },
+    {
+      "text": "Te daré la vida",
+      "start": 195.08,
+      "end": 196.9,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 195.08,
+          "end": 195.62
+        },
+        {
+          "from": 3,
+          "to": 7,
+          "start": 195.62,
+          "end": 195.92
+        },
+        {
+          "from": 8,
+          "to": 10,
+          "start": 195.92,
+          "end": 196.06
+        },
+        {
+          "from": 11,
+          "to": 15,
+          "start": 196.06,
+          "end": 196.9
+        }
+      ],
+      "sourceLine": 44,
+      "matchedWordRatio": 1.0
+    },
+    {
+      "text": "Y cuando yo muera",
+      "start": 196.9,
+      "end": 198.7,
+      "words": [
+        {
+          "from": 0,
+          "to": 1,
+          "start": 196.9,
+          "end": 197.28
+        },
+        {
+          "from": 2,
+          "to": 8,
+          "start": 197.28,
+          "end": 197.9
+        },
+        {
+          "from": 9,
+          "to": 11,
+          "start": 197.9,
+          "end": 198.7
+        }
+      ],
+      "sourceLine": 45,
+      "matchedWordRatio": 0.75
+    },
+    {
+      "text": "Me uniré en la tierra",
+      "start": 201.1,
+      "end": 202.22,
+      "words": [
+        {
+          "from": 9,
+          "to": 11,
+          "start": 201.1,
+          "end": 201.36
+        },
+        {
+          "from": 12,
+          "to": 14,
+          "start": 201.36,
+          "end": 201.58
+        },
+        {
+          "from": 15,
+          "to": 21,
+          "start": 201.58,
+          "end": 202.22
+        }
+      ],
+      "sourceLine": 46,
+      "matchedWordRatio": 0.6
+    },
+    {
+      "text": "Contigo, Perú",
+      "start": 202.76,
+      "end": 205.38,
+      "words": [
+        {
+          "from": 0,
+          "to": 7,
+          "start": 202.76,
+          "end": 204.04
+        },
+        {
+          "from": 9,
+          "to": 13,
+          "start": 204.26,
+          "end": 205.38
+        }
+      ],
+      "sourceLine": 47,
+      "matchedWordRatio": 1.0
+    }
+  ],
+  "unmatchedLines": [
+    {
+      "line": 6,
+      "text": "Y lo seguirás siendo",
+      "coverage": 0.25
+    },
+    {
+      "line": 15,
+      "text": "Unido el trabajo (unido el trabajo)",
+      "coverage": 0.5
+    },
+    {
+      "line": 18,
+      "text": "¡A triunfar, peruanos! (¡A triunfar, peruanos¡)",
+      "coverage": 0.333
+    },
+    {
+      "line": 19,
+      "text": "Que somos hermanos (que somos hermanos)",
+      "coverage": 0.5
+    },
+    {
+      "line": 21,
       "text": "Nuestra gran gratitud",
-      "start": 120.086108,
-      "end": 124.59527
+      "coverage": 0.333
     },
     {
-      "text": "Te daré la vida",
-      "start": 124.59527,
-      "end": 127.443162
-    },
-    {
-      "text": "Y cuando yo muera",
-      "start": 127.443162,
-      "end": 130.765703
-    },
-    {
-      "text": "Me uniré en la tierra",
-      "start": 130.765703,
-      "end": 134.800216
-    },
-    {
-      "text": "Contigo, Perú",
-      "start": 134.800216,
-      "end": 137.410784
-    },
-    {
-      "text": "Te daré la vida",
-      "start": 137.410784,
-      "end": 140.258676
-    },
-    {
-      "text": "Y cuando yo muera",
-      "start": 140.258676,
-      "end": 143.581216
-    },
-    {
-      "text": "Me uniré en la tierra",
-      "start": 143.581216,
-      "end": 147.61573
-    },
-    {
-      "text": "Contigo, Perú",
-      "start": 147.61573,
-      "end": 150.226297
-    },
-    {
+      "line": 30,
       "text": "Unida la costa (unida la costa)",
-      "start": 150.226297,
-      "end": 155.922081
+      "coverage": 0.5
     },
     {
+      "line": 31,
       "text": "Unida la sierra (unida la sierra)",
-      "start": 155.922081,
-      "end": 162.092514
+      "coverage": 0.5
     },
     {
-      "text": "Unida la selva contigo, Perú",
-      "start": 162.092514,
-      "end": 167.550973
-    },
-    {
-      "text": "Unido el trabajo (unido el trabajo)",
-      "start": 167.550973,
-      "end": 174.196054
-    },
-    {
-      "text": "Unido el deporte (unido el deporte)",
-      "start": 174.196054,
-      "end": 180.841135
-    },
-    {
-      "text": "Unidos el norte, el centro y el sur",
-      "start": 180.841135,
-      "end": 187.248892
-    },
-    {
+      "line": 36,
       "text": "¡A triunfar, peruanos! (¡A triunfar, peruanos¡)",
-      "start": 187.248892,
-      "end": 195.317919
+      "coverage": 0.5
     },
     {
+      "line": 37,
       "text": "Que somos hermanos (que somos hermanos)",
-      "start": 195.317919,
-      "end": 202.912297
+      "coverage": 1.0
     },
     {
-      "text": "Que se haga victoria",
-      "start": 202.912297,
-      "end": 206.946811
-    },
-    {
+      "line": 39,
       "text": "Nuestra gran gratitud",
-      "start": 206.946811,
-      "end": 211.455973
-    },
-    {
-      "text": "Te daré la vida",
-      "start": 211.455973,
-      "end": 214.303865
-    },
-    {
-      "text": "Y cuando yo muera",
-      "start": 214.303865,
-      "end": 217.626405
-    },
-    {
-      "text": "Me uniré en la tierra",
-      "start": 217.626405,
-      "end": 221.660919
-    },
-    {
-      "text": "Contigo, Perú",
-      "start": 221.660919,
-      "end": 224.271486
-    },
-    {
-      "text": "Te daré la vida",
-      "start": 224.271486,
-      "end": 227.119378
-    },
-    {
-      "text": "Y cuando yo muera",
-      "start": 227.119378,
-      "end": 230.441919
-    },
-    {
-      "text": "Me uniré en la tierra",
-      "start": 230.441919,
-      "end": 234.476432
-    },
-    {
-      "text": "Contigo, Perú",
-      "start": 234.476432,
-      "end": 237.087
+      "coverage": 0.0
     }
   ]
 }

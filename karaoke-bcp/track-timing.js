@@ -1,6 +1,6 @@
 const KEY = "samay-karaoke-track-timing-v1";
 let activeTrack = null;
-const signature = track => `${track.duration}|${track.first}|${track.last}`;
+const signature = track => `${track.duration}|${track.first}|${track.last}${track.revision ? `|${track.revision}` : ""}`;
 const read = () => {
   try { const value = JSON.parse(localStorage.getItem(KEY) || "{}"); return value && typeof value === "object" && !Array.isArray(value) ? value : {}; }
   catch { return {}; }

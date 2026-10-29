@@ -1,5 +1,1130 @@
 {
   "songId": "el-muerto-vivo",
-  "status": "pending",
-  "lyrics": []
+  "status": "estimated",
+  "reviewRequired": true,
+  "method": "local-asr-word-matching",
+  "alignmentModel": "faster-whisper-small",
+  "durationSeconds": 139.128163,
+  "audioSha256": "caa1cf2ee123a0e80e7091bf9f717c4ad1c9015806459c810c98c7e3630318be",
+  "lyrics": [
+    {
+      "text": "A mi amigo blanco herrera le pagaron su salario",
+      "start": 17.54,
+      "end": 22.08,
+      "words": [
+        {
+          "from": 2,
+          "to": 4,
+          "start": 17.54,
+          "end": 18.44
+        },
+        {
+          "from": 5,
+          "to": 10,
+          "start": 18.44,
+          "end": 18.9
+        },
+        {
+          "from": 11,
+          "to": 17,
+          "start": 18.9,
+          "end": 19.32
+        },
+        {
+          "from": 18,
+          "to": 25,
+          "start": 19.32,
+          "end": 19.96
+        },
+        {
+          "from": 26,
+          "to": 28,
+          "start": 19.96,
+          "end": 20.56
+        },
+        {
+          "from": 29,
+          "to": 36,
+          "start": 20.56,
+          "end": 21.22
+        },
+        {
+          "from": 37,
+          "to": 39,
+          "start": 21.22,
+          "end": 21.42
+        },
+        {
+          "from": 40,
+          "to": 47,
+          "start": 21.42,
+          "end": 22.08
+        }
+      ],
+      "sourceLine": 1,
+      "matchedWordRatio": 0.889
+    },
+    {
+      "text": "Y sin pensarlo dos veces salió para malgastarlo,",
+      "start": 23.52,
+      "end": 26.34,
+      "words": [
+        {
+          "from": 15,
+          "to": 18,
+          "start": 23.52,
+          "end": 23.72
+        },
+        {
+          "from": 19,
+          "to": 24,
+          "start": 23.72,
+          "end": 24.16
+        },
+        {
+          "from": 25,
+          "to": 30,
+          "start": 24.7,
+          "end": 25.06
+        },
+        {
+          "from": 31,
+          "to": 35,
+          "start": 25.06,
+          "end": 25.36
+        },
+        {
+          "from": 36,
+          "to": 47,
+          "start": 25.36,
+          "end": 26.34
+        }
+      ],
+      "sourceLine": 2,
+      "matchedWordRatio": 0.625
+    },
+    {
+      "text": "Una semana de juerga y perdió el conocimiento",
+      "start": 26.68,
+      "end": 29.98,
+      "words": [
+        {
+          "from": 0,
+          "to": 3,
+          "start": 26.68,
+          "end": 26.98
+        },
+        {
+          "from": 4,
+          "to": 10,
+          "start": 26.98,
+          "end": 27.56
+        },
+        {
+          "from": 11,
+          "to": 13,
+          "start": 27.56,
+          "end": 27.88
+        },
+        {
+          "from": 21,
+          "to": 22,
+          "start": 28.32,
+          "end": 28.9
+        },
+        {
+          "from": 23,
+          "to": 29,
+          "start": 28.9,
+          "end": 29.4
+        },
+        {
+          "from": 30,
+          "to": 32,
+          "start": 29.4,
+          "end": 29.52
+        },
+        {
+          "from": 33,
+          "to": 45,
+          "start": 29.52,
+          "end": 29.98
+        }
+      ],
+      "sourceLine": 3,
+      "matchedWordRatio": 0.875
+    },
+    {
+      "text": "Como no volvía a su casa todos le daban por muerto,",
+      "start": 31.18,
+      "end": 34.68,
+      "words": [
+        {
+          "from": 5,
+          "to": 7,
+          "start": 31.18,
+          "end": 31.44
+        },
+        {
+          "from": 8,
+          "to": 14,
+          "start": 31.44,
+          "end": 31.84
+        },
+        {
+          "from": 15,
+          "to": 16,
+          "start": 31.84,
+          "end": 31.92
+        },
+        {
+          "from": 17,
+          "to": 19,
+          "start": 31.92,
+          "end": 32.0
+        },
+        {
+          "from": 20,
+          "to": 24,
+          "start": 32.0,
+          "end": 32.34
+        },
+        {
+          "from": 34,
+          "to": 39,
+          "start": 33.72,
+          "end": 34.06
+        },
+        {
+          "from": 40,
+          "to": 43,
+          "start": 34.06,
+          "end": 34.34
+        },
+        {
+          "from": 44,
+          "to": 50,
+          "start": 34.34,
+          "end": 34.68
+        }
+      ],
+      "sourceLine": 4,
+      "matchedWordRatio": 0.727,
+      "alignment": "acoustic-gap-refinement"
+    },
+    {
+      "text": "Y no estaba muerto no, no y no estaba muerto no, no,",
+      "start": 34.74,
+      "end": 40.84,
+      "words": [
+        {
+          "from": 0,
+          "to": 1,
+          "start": 34.74,
+          "end": 35.64
+        },
+        {
+          "from": 2,
+          "to": 4,
+          "start": 35.64,
+          "end": 35.78
+        },
+        {
+          "from": 5,
+          "to": 11,
+          "start": 35.78,
+          "end": 36.08
+        },
+        {
+          "from": 12,
+          "to": 18,
+          "start": 36.08,
+          "end": 36.58
+        },
+        {
+          "from": 26,
+          "to": 27,
+          "start": 37.58,
+          "end": 37.82
+        },
+        {
+          "from": 28,
+          "to": 30,
+          "start": 37.82,
+          "end": 37.96
+        },
+        {
+          "from": 31,
+          "to": 37,
+          "start": 37.96,
+          "end": 38.22
+        },
+        {
+          "from": 38,
+          "to": 44,
+          "start": 38.22,
+          "end": 40.84
+        }
+      ],
+      "sourceLine": 5,
+      "matchedWordRatio": 0.667
+    },
+    {
+      "text": "Y no estaba muerto no, no y no estaba muerto no, no,",
+      "start": 42.98,
+      "end": 47.14,
+      "words": [
+        {
+          "from": 0,
+          "to": 1,
+          "start": 42.98,
+          "end": 43.2
+        },
+        {
+          "from": 2,
+          "to": 4,
+          "start": 43.2,
+          "end": 44.24
+        },
+        {
+          "from": 5,
+          "to": 11,
+          "start": 44.24,
+          "end": 44.54
+        },
+        {
+          "from": 12,
+          "to": 18,
+          "start": 44.54,
+          "end": 45.0
+        },
+        {
+          "from": 26,
+          "to": 27,
+          "start": 46.04,
+          "end": 46.26
+        },
+        {
+          "from": 28,
+          "to": 30,
+          "start": 46.26,
+          "end": 46.42
+        },
+        {
+          "from": 31,
+          "to": 37,
+          "start": 46.42,
+          "end": 46.68
+        },
+        {
+          "from": 38,
+          "to": 44,
+          "start": 46.68,
+          "end": 47.14
+        }
+      ],
+      "sourceLine": 7,
+      "matchedWordRatio": 0.667
+    },
+    {
+      "text": "Pero al cabo de unos días de haber desaparecido",
+      "start": 53.36,
+      "end": 57.06,
+      "words": [
+        {
+          "from": 5,
+          "to": 7,
+          "start": 53.36,
+          "end": 53.58
+        },
+        {
+          "from": 8,
+          "to": 12,
+          "start": 53.58,
+          "end": 53.88
+        },
+        {
+          "from": 13,
+          "to": 15,
+          "start": 53.88,
+          "end": 54.14
+        },
+        {
+          "from": 29,
+          "to": 34,
+          "start": 55.5,
+          "end": 55.7
+        },
+        {
+          "from": 35,
+          "to": 47,
+          "start": 55.7,
+          "end": 57.06
+        }
+      ],
+      "sourceLine": 9,
+      "matchedWordRatio": 0.556
+    },
+    {
+      "text": "Encontraron uno muerto, un muerto muy parecido,",
+      "start": 57.9,
+      "end": 61.26,
+      "words": [
+        {
+          "from": 0,
+          "to": 11,
+          "start": 57.9,
+          "end": 58.46
+        },
+        {
+          "from": 12,
+          "to": 15,
+          "start": 58.46,
+          "end": 58.66
+        },
+        {
+          "from": 16,
+          "to": 22,
+          "start": 58.66,
+          "end": 59.16
+        },
+        {
+          "from": 27,
+          "to": 33,
+          "start": 59.58,
+          "end": 60.24
+        },
+        {
+          "from": 34,
+          "to": 37,
+          "start": 60.24,
+          "end": 60.48
+        },
+        {
+          "from": 38,
+          "to": 46,
+          "start": 60.48,
+          "end": 61.26
+        }
+      ],
+      "sourceLine": 10,
+      "matchedWordRatio": 0.857
+    },
+    {
+      "text": "Le montaron un velorio y le rezaron la novena,",
+      "start": 61.26,
+      "end": 65.54,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 61.26,
+          "end": 61.86
+        },
+        {
+          "from": 12,
+          "to": 14,
+          "start": 62.38,
+          "end": 62.64
+        },
+        {
+          "from": 25,
+          "to": 27,
+          "start": 63.7,
+          "end": 63.94
+        },
+        {
+          "from": 28,
+          "to": 35,
+          "start": 63.94,
+          "end": 64.62
+        },
+        {
+          "from": 36,
+          "to": 38,
+          "start": 64.62,
+          "end": 64.84
+        },
+        {
+          "from": 39,
+          "to": 45,
+          "start": 64.84,
+          "end": 65.54
+        }
+      ],
+      "sourceLine": 11,
+      "matchedWordRatio": 0.667
+    },
+    {
+      "text": "Y no estaba muerto no, no y no estaba muerto no, no,",
+      "start": 69.98,
+      "end": 74.16,
+      "words": [
+        {
+          "from": 0,
+          "to": 1,
+          "start": 69.98,
+          "end": 70.76
+        },
+        {
+          "from": 2,
+          "to": 4,
+          "start": 70.76,
+          "end": 70.92
+        },
+        {
+          "from": 5,
+          "to": 11,
+          "start": 70.92,
+          "end": 71.18
+        },
+        {
+          "from": 12,
+          "to": 18,
+          "start": 71.18,
+          "end": 71.74
+        },
+        {
+          "from": 19,
+          "to": 21,
+          "start": 71.92,
+          "end": 72.04
+        },
+        {
+          "from": 26,
+          "to": 27,
+          "start": 72.6,
+          "end": 72.98
+        },
+        {
+          "from": 28,
+          "to": 30,
+          "start": 72.98,
+          "end": 73.1
+        },
+        {
+          "from": 31,
+          "to": 37,
+          "start": 73.1,
+          "end": 73.38
+        },
+        {
+          "from": 38,
+          "to": 44,
+          "start": 73.38,
+          "end": 73.9
+        },
+        {
+          "from": 45,
+          "to": 47,
+          "start": 74.06,
+          "end": 74.16
+        }
+      ],
+      "sourceLine": 13,
+      "matchedWordRatio": 0.833
+    },
+    {
+      "text": "Y no estaba muerto no, no, estaba tomando cañas,lerelele",
+      "start": 74.74,
+      "end": 77.64,
+      "words": [
+        {
+          "from": 0,
+          "to": 1,
+          "start": 74.74,
+          "end": 75.08
+        },
+        {
+          "from": 2,
+          "to": 4,
+          "start": 75.08,
+          "end": 75.22
+        },
+        {
+          "from": 5,
+          "to": 11,
+          "start": 75.22,
+          "end": 75.5
+        },
+        {
+          "from": 12,
+          "to": 18,
+          "start": 75.5,
+          "end": 76.0
+        },
+        {
+          "from": 19,
+          "to": 21,
+          "start": 76.18,
+          "end": 76.28
+        },
+        {
+          "from": 27,
+          "to": 33,
+          "start": 76.68,
+          "end": 77.1
+        },
+        {
+          "from": 34,
+          "to": 41,
+          "start": 77.1,
+          "end": 77.64
+        }
+      ],
+      "sourceLine": 14,
+      "matchedWordRatio": 0.7
+    },
+    {
+      "text": "Y no estaba muerto no, no y no estaba muerto no, no,",
+      "start": 79.1,
+      "end": 82.72,
+      "words": [
+        {
+          "from": 0,
+          "to": 1,
+          "start": 79.1,
+          "end": 79.32
+        },
+        {
+          "from": 2,
+          "to": 4,
+          "start": 79.32,
+          "end": 79.48
+        },
+        {
+          "from": 5,
+          "to": 11,
+          "start": 79.48,
+          "end": 79.76
+        },
+        {
+          "from": 12,
+          "to": 18,
+          "start": 79.76,
+          "end": 80.24
+        },
+        {
+          "from": 19,
+          "to": 21,
+          "start": 80.48,
+          "end": 80.6
+        },
+        {
+          "from": 26,
+          "to": 27,
+          "start": 81.1,
+          "end": 81.48
+        },
+        {
+          "from": 28,
+          "to": 30,
+          "start": 81.48,
+          "end": 81.62
+        },
+        {
+          "from": 31,
+          "to": 37,
+          "start": 81.62,
+          "end": 81.88
+        },
+        {
+          "from": 38,
+          "to": 44,
+          "start": 81.88,
+          "end": 82.34
+        },
+        {
+          "from": 45,
+          "to": 47,
+          "start": 82.5,
+          "end": 82.72
+        }
+      ],
+      "sourceLine": 15,
+      "matchedWordRatio": 0.833
+    },
+    {
+      "text": "Y no estaba muerto no, no, chevere, chevere, chévere,",
+      "start": 83.2,
+      "end": 84.88,
+      "words": [
+        {
+          "from": 0,
+          "to": 1,
+          "start": 83.2,
+          "end": 83.58
+        },
+        {
+          "from": 2,
+          "to": 4,
+          "start": 83.58,
+          "end": 83.72
+        },
+        {
+          "from": 5,
+          "to": 11,
+          "start": 83.72,
+          "end": 83.96
+        },
+        {
+          "from": 12,
+          "to": 18,
+          "start": 83.96,
+          "end": 84.5
+        },
+        {
+          "from": 23,
+          "to": 25,
+          "start": 84.7,
+          "end": 84.88
+        }
+      ],
+      "sourceLine": 16,
+      "matchedWordRatio": 0.556
+    },
+    {
+      "text": "Pero un día se apareció lleno de vida y contento,",
+      "start": 88.32,
+      "end": 91.46,
+      "words": [
+        {
+          "from": 5,
+          "to": 7,
+          "start": 88.32,
+          "end": 88.6
+        },
+        {
+          "from": 8,
+          "to": 11,
+          "start": 88.6,
+          "end": 88.82
+        },
+        {
+          "from": 12,
+          "to": 14,
+          "start": 88.82,
+          "end": 89.12
+        },
+        {
+          "from": 15,
+          "to": 23,
+          "start": 89.12,
+          "end": 89.96
+        },
+        {
+          "from": 24,
+          "to": 29,
+          "start": 89.96,
+          "end": 91.14
+        },
+        {
+          "from": 30,
+          "to": 32,
+          "start": 91.14,
+          "end": 91.32
+        },
+        {
+          "from": 33,
+          "to": 37,
+          "start": 91.32,
+          "end": 91.46
+        }
+      ],
+      "sourceLine": 17,
+      "matchedWordRatio": 0.7
+    },
+    {
+      "text": "Diciéndole a todo el mundo eh! se equivocaron de muerto,",
+      "start": 93.38,
+      "end": 96.4,
+      "words": [
+        {
+          "from": 11,
+          "to": 12,
+          "start": 93.38,
+          "end": 93.46
+        },
+        {
+          "from": 13,
+          "to": 17,
+          "start": 93.46,
+          "end": 93.64
+        },
+        {
+          "from": 18,
+          "to": 20,
+          "start": 93.64,
+          "end": 93.86
+        },
+        {
+          "from": 21,
+          "to": 26,
+          "start": 93.86,
+          "end": 94.18
+        },
+        {
+          "from": 27,
+          "to": 29,
+          "start": 94.18,
+          "end": 94.68
+        },
+        {
+          "from": 31,
+          "to": 33,
+          "start": 95.12,
+          "end": 95.3
+        },
+        {
+          "from": 34,
+          "to": 45,
+          "start": 95.3,
+          "end": 95.78
+        },
+        {
+          "from": 46,
+          "to": 48,
+          "start": 95.78,
+          "end": 95.96
+        },
+        {
+          "from": 49,
+          "to": 55,
+          "start": 95.96,
+          "end": 96.4
+        }
+      ],
+      "sourceLine": 18,
+      "matchedWordRatio": 0.9
+    },
+    {
+      "text": "El lío que se formó eso sí que es puro cuento,",
+      "start": 97.48,
+      "end": 100.62,
+      "words": [
+        {
+          "from": 7,
+          "to": 10,
+          "start": 97.48,
+          "end": 97.66
+        },
+        {
+          "from": 11,
+          "to": 13,
+          "start": 97.66,
+          "end": 97.82
+        },
+        {
+          "from": 14,
+          "to": 19,
+          "start": 97.82,
+          "end": 98.42
+        },
+        {
+          "from": 24,
+          "to": 26,
+          "start": 99.24,
+          "end": 99.62
+        },
+        {
+          "from": 27,
+          "to": 30,
+          "start": 99.62,
+          "end": 99.8
+        },
+        {
+          "from": 31,
+          "to": 33,
+          "start": 99.8,
+          "end": 99.92
+        },
+        {
+          "from": 34,
+          "to": 38,
+          "start": 99.92,
+          "end": 100.08
+        },
+        {
+          "from": 39,
+          "to": 45,
+          "start": 100.08,
+          "end": 100.62
+        }
+      ],
+      "sourceLine": 19,
+      "matchedWordRatio": 0.727
+    },
+    {
+      "text": "Su mujer ya no lo quiere,no quiere dormir con muertos,",
+      "start": 100.62,
+      "end": 103.76,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 100.62,
+          "end": 101.38
+        },
+        {
+          "from": 3,
+          "to": 8,
+          "start": 101.38,
+          "end": 101.68
+        },
+        {
+          "from": 9,
+          "to": 11,
+          "start": 101.68,
+          "end": 101.92
+        },
+        {
+          "from": 12,
+          "to": 14,
+          "start": 101.92,
+          "end": 102.06
+        },
+        {
+          "from": 15,
+          "to": 17,
+          "start": 102.06,
+          "end": 102.22
+        },
+        {
+          "from": 18,
+          "to": 24,
+          "start": 102.22,
+          "end": 102.54
+        },
+        {
+          "from": 25,
+          "to": 27,
+          "start": 103.3,
+          "end": 103.5
+        },
+        {
+          "from": 28,
+          "to": 34,
+          "start": 103.5,
+          "end": 103.76
+        }
+      ],
+      "sourceLine": 20,
+      "matchedWordRatio": 0.727
+    },
+    {
+      "text": "No estaba muerto estaba de parranda",
+      "start": 109.4,
+      "end": 112.78,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 109.4,
+          "end": 110.32
+        },
+        {
+          "from": 3,
+          "to": 9,
+          "start": 110.32,
+          "end": 110.78
+        },
+        {
+          "from": 10,
+          "to": 16,
+          "start": 110.78,
+          "end": 111.58
+        },
+        {
+          "from": 17,
+          "to": 23,
+          "start": 111.8,
+          "end": 112.24
+        },
+        {
+          "from": 24,
+          "to": 26,
+          "start": 112.24,
+          "end": 112.78
+        }
+      ],
+      "sourceLine": 21,
+      "matchedWordRatio": 0.833
+    },
+    {
+      "text": "A mi papa el chocolate,le pagaron su salario",
+      "start": 113.7,
+      "end": 117.64,
+      "words": [
+        {
+          "from": 0,
+          "to": 1,
+          "start": 113.7,
+          "end": 114.08
+        },
+        {
+          "from": 2,
+          "to": 4,
+          "start": 114.08,
+          "end": 114.22
+        },
+        {
+          "from": 26,
+          "to": 33,
+          "start": 116.16,
+          "end": 116.82
+        },
+        {
+          "from": 34,
+          "to": 36,
+          "start": 116.82,
+          "end": 117.06
+        },
+        {
+          "from": 37,
+          "to": 44,
+          "start": 117.06,
+          "end": 117.64
+        }
+      ],
+      "sourceLine": 22,
+      "matchedWordRatio": 0.556
+    },
+    {
+      "text": "Y no estaba muerto no, no y no estaba muerto no, no,",
+      "start": 126.42,
+      "end": 131.03,
+      "words": [
+        {
+          "from": 0,
+          "to": 1,
+          "start": 126.42,
+          "end": 127.26
+        },
+        {
+          "from": 2,
+          "to": 4,
+          "start": 127.26,
+          "end": 127.4
+        },
+        {
+          "from": 5,
+          "to": 11,
+          "start": 127.4,
+          "end": 127.68
+        },
+        {
+          "from": 12,
+          "to": 18,
+          "start": 127.68,
+          "end": 128.2
+        },
+        {
+          "from": 19,
+          "to": 21,
+          "start": 128.4,
+          "end": 128.52
+        },
+        {
+          "from": 23,
+          "to": 25,
+          "start": 128.52,
+          "end": 129.04
+        },
+        {
+          "from": 28,
+          "to": 30,
+          "start": 129.4,
+          "end": 129.56
+        },
+        {
+          "from": 31,
+          "to": 37,
+          "start": 129.56,
+          "end": 129.84
+        },
+        {
+          "from": 38,
+          "to": 44,
+          "start": 129.84,
+          "end": 130.36
+        },
+        {
+          "from": 45,
+          "to": 47,
+          "start": 130.54,
+          "end": 130.66
+        },
+        {
+          "from": 49,
+          "to": 51,
+          "start": 130.66,
+          "end": 131.03
+        }
+      ],
+      "sourceLine": 23,
+      "matchedWordRatio": 0.917
+    },
+    {
+      "text": "Y no estaba muerto no, no,lerelele lerelé",
+      "start": 131.3,
+      "end": 133.22,
+      "words": [
+        {
+          "from": 0,
+          "to": 1,
+          "start": 131.3,
+          "end": 131.54
+        },
+        {
+          "from": 2,
+          "to": 4,
+          "start": 131.54,
+          "end": 131.72
+        },
+        {
+          "from": 5,
+          "to": 11,
+          "start": 131.72,
+          "end": 131.98
+        },
+        {
+          "from": 12,
+          "to": 18,
+          "start": 131.98,
+          "end": 132.46
+        },
+        {
+          "from": 19,
+          "to": 21,
+          "start": 132.62,
+          "end": 132.78
+        },
+        {
+          "from": 23,
+          "to": 25,
+          "start": 132.78,
+          "end": 133.22
+        }
+      ],
+      "sourceLine": 24,
+      "matchedWordRatio": 0.75
+    }
+  ],
+  "unmatchedLines": [
+    {
+      "line": 6,
+      "text": "Y no estaba muerto no, no, estaba tomando cañas,lerelele",
+      "coverage": 0.2
+    },
+    {
+      "line": 8,
+      "text": "Y no estaba muerto no, no, chevere, chevere, chévere,",
+      "coverage": 0.444
+    },
+    {
+      "line": 12,
+      "text": "Le perdonaron sus deudas y lo enterraron con pena,",
+      "coverage": 0.444
+    }
+  ]
 }

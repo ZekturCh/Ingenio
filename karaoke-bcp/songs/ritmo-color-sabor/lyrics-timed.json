@@ -1,325 +1,1248 @@
 {
   "songId": "ritmo-color-sabor",
-  "title": "Ritmo, color y sabor",
   "status": "estimated",
   "reviewRequired": true,
-  "timingMethod": "text-length-proportional; not aligned to vocals or instrumental sections",
-  "durationSeconds": 257.07102,
+  "method": "local-asr-word-matching",
+  "alignmentModel": "faster-whisper-small",
+  "durationSeconds": 258.403265,
+  "audioSha256": "ee95ce5da0f1dbe3ca7b7e5c3fcd683341327f985b8bc718289c36b8e1c9e0bc",
   "lyrics": [
     {
-      "text": "Ritmo, color y sabor",
-      "start": 0.0,
-      "end": 3.456417
+      "text": "Ritmo para vacilar",
+      "start": 34.18,
+      "end": 36.6,
+      "words": [
+        {
+          "from": 0,
+          "to": 5,
+          "start": 34.18,
+          "end": 34.98
+        },
+        {
+          "from": 6,
+          "to": 10,
+          "start": 34.98,
+          "end": 35.36
+        },
+        {
+          "from": 11,
+          "to": 18,
+          "start": 35.36,
+          "end": 36.6
+        }
+      ],
+      "sourceLine": 2,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Ritmo para vacilar",
-      "start": 3.456417,
-      "end": 6.912834
-    },
-    {
-      "text": "Ritmo, color y sabor",
-      "start": 6.912834,
-      "end": 10.369251
-    },
-    {
-      "text": "Ritmo para vacilar",
-      "start": 10.369251,
-      "end": 13.825668
-    },
-    {
-      "text": "Ritmo, color y sabor",
-      "start": 13.825668,
-      "end": 17.282085
+      "start": 36.6,
+      "end": 43.7,
+      "words": [
+        {
+          "from": 0,
+          "to": 5,
+          "start": 36.6,
+          "end": 38.64
+        },
+        {
+          "from": 11,
+          "to": 18,
+          "start": 39.18,
+          "end": 43.7
+        }
+      ],
+      "sourceLine": 4,
+      "matchedWordRatio": 0.667
     },
     {
       "text": "Ritmo para vacilar (pa' vacilar)",
-      "start": 17.282085,
-      "end": 22.682737
-    },
-    {
-      "text": "Ritmo, color y sabor",
-      "start": 22.682737,
-      "end": 26.139154
+      "start": 47.9,
+      "end": 51.66,
+      "words": [
+        {
+          "from": 0,
+          "to": 5,
+          "start": 47.9,
+          "end": 49.22
+        },
+        {
+          "from": 6,
+          "to": 10,
+          "start": 49.22,
+          "end": 49.66
+        },
+        {
+          "from": 11,
+          "to": 18,
+          "start": 49.66,
+          "end": 50.9
+        },
+        {
+          "from": 24,
+          "to": 31,
+          "start": 51.16,
+          "end": 51.66
+        }
+      ],
+      "sourceLine": 6,
+      "matchedWordRatio": 0.8
     },
     {
       "text": "Ritmo para vacilar",
-      "start": 26.139154,
-      "end": 29.595571
+      "start": 56.2,
+      "end": 58.2,
+      "words": [
+        {
+          "from": 0,
+          "to": 5,
+          "start": 56.2,
+          "end": 56.32
+        },
+        {
+          "from": 6,
+          "to": 10,
+          "start": 56.32,
+          "end": 56.74
+        },
+        {
+          "from": 11,
+          "to": 18,
+          "start": 56.74,
+          "end": 58.2
+        }
+      ],
+      "sourceLine": 8,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Del África llegaron",
-      "start": 29.595571,
-      "end": 33.268014
+      "start": 60.42,
+      "end": 61.92,
+      "words": [
+        {
+          "from": 4,
+          "to": 10,
+          "start": 60.42,
+          "end": 61.0
+        },
+        {
+          "from": 11,
+          "to": 19,
+          "start": 61.0,
+          "end": 61.92
+        }
+      ],
+      "sourceLine": 9,
+      "matchedWordRatio": 0.667
     },
     {
       "text": "Gran cantidad de negros",
-      "start": 33.268014,
-      "end": 37.588536
+      "start": 61.92,
+      "end": 64.86,
+      "words": [
+        {
+          "from": 0,
+          "to": 4,
+          "start": 61.92,
+          "end": 63.58
+        },
+        {
+          "from": 5,
+          "to": 13,
+          "start": 63.58,
+          "end": 64.36
+        },
+        {
+          "from": 14,
+          "to": 16,
+          "start": 64.36,
+          "end": 64.86
+        }
+      ],
+      "sourceLine": 10,
+      "matchedWordRatio": 0.75
     },
     {
       "text": "Trajeron a esta tierra",
-      "start": 37.588536,
-      "end": 41.693031
+      "start": 65.48,
+      "end": 67.76,
+      "words": [
+        {
+          "from": 0,
+          "to": 8,
+          "start": 65.48,
+          "end": 67.06
+        },
+        {
+          "from": 9,
+          "to": 10,
+          "start": 67.06,
+          "end": 67.22
+        },
+        {
+          "from": 11,
+          "to": 15,
+          "start": 67.22,
+          "end": 67.38
+        },
+        {
+          "from": 16,
+          "to": 22,
+          "start": 67.38,
+          "end": 67.76
+        }
+      ],
+      "sourceLine": 11,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Su sabor, su raza y su ritmo tan bueno",
-      "start": 41.693031,
-      "end": 47.957787
+      "start": 67.76,
+      "end": 71.66,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 67.76,
+          "end": 68.1
+        },
+        {
+          "from": 3,
+          "to": 8,
+          "start": 68.1,
+          "end": 68.48
+        },
+        {
+          "from": 10,
+          "to": 12,
+          "start": 68.64,
+          "end": 68.8
+        },
+        {
+          "from": 13,
+          "to": 17,
+          "start": 68.8,
+          "end": 69.2
+        },
+        {
+          "from": 20,
+          "to": 22,
+          "start": 69.34,
+          "end": 69.9
+        },
+        {
+          "from": 23,
+          "to": 28,
+          "start": 69.9,
+          "end": 70.88
+        },
+        {
+          "from": 29,
+          "to": 32,
+          "start": 70.88,
+          "end": 71.12
+        },
+        {
+          "from": 33,
+          "to": 38,
+          "start": 71.12,
+          "end": 71.66
+        }
+      ],
+      "sourceLine": 12,
+      "matchedWordRatio": 0.889
     },
     {
       "text": "Pasaron muchos años",
-      "start": 47.957787,
-      "end": 51.63023
+      "start": 72.96,
+      "end": 75.2,
+      "words": [
+        {
+          "from": 0,
+          "to": 7,
+          "start": 72.96,
+          "end": 74.2
+        },
+        {
+          "from": 8,
+          "to": 14,
+          "start": 74.2,
+          "end": 74.58
+        },
+        {
+          "from": 15,
+          "to": 19,
+          "start": 74.58,
+          "end": 75.2
+        }
+      ],
+      "sourceLine": 13,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Con penas y dolores",
-      "start": 51.63023,
-      "end": 55.086647
+      "start": 75.2,
+      "end": 78.72,
+      "words": [
+        {
+          "from": 0,
+          "to": 3,
+          "start": 75.2,
+          "end": 77.02
+        },
+        {
+          "from": 4,
+          "to": 9,
+          "start": 77.02,
+          "end": 77.9
+        },
+        {
+          "from": 10,
+          "to": 11,
+          "start": 77.9,
+          "end": 78.12
+        },
+        {
+          "from": 12,
+          "to": 19,
+          "start": 78.12,
+          "end": 78.72
+        }
+      ],
+      "sourceLine": 14,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Pero ni las cadenas evitaron el sonar",
-      "start": 55.086647,
-      "end": 61.783455
+      "start": 78.72,
+      "end": 83.34,
+      "words": [
+        {
+          "from": 0,
+          "to": 4,
+          "start": 78.72,
+          "end": 80.0
+        },
+        {
+          "from": 5,
+          "to": 7,
+          "start": 80.0,
+          "end": 80.36
+        },
+        {
+          "from": 8,
+          "to": 11,
+          "start": 80.36,
+          "end": 80.64
+        },
+        {
+          "from": 12,
+          "to": 19,
+          "start": 80.64,
+          "end": 81.26
+        },
+        {
+          "from": 20,
+          "to": 28,
+          "start": 81.26,
+          "end": 82.24
+        },
+        {
+          "from": 29,
+          "to": 31,
+          "start": 82.24,
+          "end": 82.52
+        },
+        {
+          "from": 32,
+          "to": 37,
+          "start": 82.52,
+          "end": 83.34
+        }
+      ],
+      "sourceLine": 15,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "De los tambores",
-      "start": 61.783455,
-      "end": 64.591794
+      "start": 83.34,
+      "end": 85.18,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 83.34,
+          "end": 84.08
+        },
+        {
+          "from": 3,
+          "to": 6,
+          "start": 84.08,
+          "end": 84.34
+        },
+        {
+          "from": 7,
+          "to": 15,
+          "start": 84.34,
+          "end": 85.18
+        }
+      ],
+      "sourceLine": 16,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Tuvieron que trabajar",
-      "start": 64.591794,
-      "end": 68.696289
-    },
-    {
-      "text": "Con azote, el mayoral",
-      "start": 68.696289,
-      "end": 72.368733
-    },
-    {
-      "text": "Se les dio la libertad",
-      "start": 72.368733,
-      "end": 76.257202
+      "start": 85.18,
+      "end": 87.16,
+      "words": [
+        {
+          "from": 0,
+          "to": 8,
+          "start": 85.18,
+          "end": 86.88
+        },
+        {
+          "from": 9,
+          "to": 12,
+          "start": 86.88,
+          "end": 87.16
+        }
+      ],
+      "sourceLine": 17,
+      "matchedWordRatio": 0.667
     },
     {
       "text": "Y ahora nos hacen gozar",
-      "start": 76.257202,
-      "end": 80.361697
-    },
-    {
-      "text": "Ritmo, color y sabor",
-      "start": 80.361697,
-      "end": 83.818114
-    },
-    {
-      "text": "Ritmo para vacilar",
-      "start": 83.818114,
-      "end": 87.274531
-    },
-    {
-      "text": "Ritmo, color y sabor",
-      "start": 87.274531,
-      "end": 90.730948
-    },
-    {
-      "text": "Ritmo para vacilar (¿cómo?)",
-      "start": 90.730948,
-      "end": 95.05147
-    },
-    {
-      "text": "Ritmo, color y sabor",
-      "start": 95.05147,
-      "end": 98.507887
-    },
-    {
-      "text": "Ritmo para vacilar (para vacilar)",
-      "start": 98.507887,
-      "end": 104.34059
-    },
-    {
-      "text": "Ritmo, color y sabor",
-      "start": 104.34059,
-      "end": 107.797008
-    },
-    {
-      "text": "Ritmo para vacilar",
-      "start": 107.797008,
-      "end": 111.253425
+      "start": 95.8,
+      "end": 99.32,
+      "words": [
+        {
+          "from": 0,
+          "to": 1,
+          "start": 95.8,
+          "end": 97.08
+        },
+        {
+          "from": 2,
+          "to": 7,
+          "start": 97.08,
+          "end": 97.26
+        },
+        {
+          "from": 8,
+          "to": 11,
+          "start": 97.26,
+          "end": 97.62
+        },
+        {
+          "from": 12,
+          "to": 17,
+          "start": 97.62,
+          "end": 98.16
+        },
+        {
+          "from": 18,
+          "to": 23,
+          "start": 98.16,
+          "end": 99.32
+        }
+      ],
+      "sourceLine": 20,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Ay, mira cómo baila",
-      "start": 111.253425,
-      "end": 114.493816
+      "start": 129.32,
+      "end": 130.92,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 129.32,
+          "end": 129.62
+        },
+        {
+          "from": 4,
+          "to": 8,
+          "start": 129.78,
+          "end": 129.92
+        },
+        {
+          "from": 9,
+          "to": 13,
+          "start": 129.92,
+          "end": 130.22
+        },
+        {
+          "from": 14,
+          "to": 19,
+          "start": 130.22,
+          "end": 130.92
+        }
+      ],
+      "sourceLine": 29,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Cómo baila ese moreno",
-      "start": 114.493816,
-      "end": 118.382285
+      "start": 132.46,
+      "end": 134.4,
+      "words": [
+        {
+          "from": 0,
+          "to": 4,
+          "start": 132.46,
+          "end": 133.08
+        },
+        {
+          "from": 5,
+          "to": 10,
+          "start": 133.08,
+          "end": 133.48
+        },
+        {
+          "from": 11,
+          "to": 14,
+          "start": 133.48,
+          "end": 133.78
+        },
+        {
+          "from": 15,
+          "to": 21,
+          "start": 133.78,
+          "end": 134.4
+        }
+      ],
+      "sourceLine": 30,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "A mí me gusta mucho",
-      "start": 118.382285,
-      "end": 121.622676
+      "start": 135.02,
+      "end": 136.94,
+      "words": [
+        {
+          "from": 0,
+          "to": 1,
+          "start": 135.02,
+          "end": 135.64
+        },
+        {
+          "from": 2,
+          "to": 4,
+          "start": 135.64,
+          "end": 135.88
+        },
+        {
+          "from": 5,
+          "to": 7,
+          "start": 135.88,
+          "end": 136.14
+        },
+        {
+          "from": 8,
+          "to": 13,
+          "start": 136.14,
+          "end": 136.42
+        },
+        {
+          "from": 14,
+          "to": 19,
+          "start": 136.42,
+          "end": 136.94
+        }
+      ],
+      "sourceLine": 31,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Cómo baila y cómo mueve sus caderas",
-      "start": 121.622676,
-      "end": 127.887432
+      "start": 136.94,
+      "end": 140.04,
+      "words": [
+        {
+          "from": 0,
+          "to": 4,
+          "start": 136.94,
+          "end": 137.42
+        },
+        {
+          "from": 5,
+          "to": 10,
+          "start": 137.42,
+          "end": 137.9
+        },
+        {
+          "from": 11,
+          "to": 12,
+          "start": 137.9,
+          "end": 138.0
+        },
+        {
+          "from": 13,
+          "to": 17,
+          "start": 138.0,
+          "end": 138.3
+        },
+        {
+          "from": 18,
+          "to": 23,
+          "start": 138.3,
+          "end": 139.26
+        },
+        {
+          "from": 24,
+          "to": 27,
+          "start": 139.26,
+          "end": 140.04
+        }
+      ],
+      "sourceLine": 32,
+      "matchedWordRatio": 0.857
     },
     {
       "text": "Ritmo, color y sabor",
-      "start": 127.887432,
-      "end": 131.343849
+      "start": 140.04,
+      "end": 143.96,
+      "words": [
+        {
+          "from": 0,
+          "to": 5,
+          "start": 140.04,
+          "end": 142.42
+        },
+        {
+          "from": 13,
+          "to": 14,
+          "start": 142.84,
+          "end": 143.22
+        },
+        {
+          "from": 15,
+          "to": 20,
+          "start": 143.22,
+          "end": 143.96
+        }
+      ],
+      "sourceLine": 33,
+      "matchedWordRatio": 0.75,
+      "alignment": "acoustic-gap-refinement"
     },
     {
       "text": "Ritmo para vacilar",
-      "start": 131.343849,
-      "end": 134.800266
+      "start": 145.92,
+      "end": 147.6,
+      "words": [
+        {
+          "from": 6,
+          "to": 10,
+          "start": 145.92,
+          "end": 146.4
+        },
+        {
+          "from": 11,
+          "to": 18,
+          "start": 146.4,
+          "end": 147.6
+        }
+      ],
+      "sourceLine": 34,
+      "matchedWordRatio": 0.667
     },
     {
       "text": "Ritmo, color y sabor",
-      "start": 134.800266,
-      "end": 138.256683
+      "start": 147.6,
+      "end": 151.06,
+      "words": [
+        {
+          "from": 0,
+          "to": 5,
+          "start": 147.6,
+          "end": 149.66
+        },
+        {
+          "from": 7,
+          "to": 12,
+          "start": 149.76,
+          "end": 150.14
+        },
+        {
+          "from": 13,
+          "to": 14,
+          "start": 150.14,
+          "end": 150.66
+        },
+        {
+          "from": 15,
+          "to": 20,
+          "start": 150.66,
+          "end": 151.06
+        }
+      ],
+      "sourceLine": 35,
+      "matchedWordRatio": 1.0,
+      "alignment": "acoustic-gap-refinement"
     },
     {
       "text": "Ritmo para vacilar",
-      "start": 138.256683,
-      "end": 141.7131
-    },
-    {
-      "text": "Ritmo, color y sabor (eso es)",
-      "start": 141.7131,
-      "end": 146.249648
+      "start": 152.96,
+      "end": 154.62,
+      "words": [
+        {
+          "from": 6,
+          "to": 10,
+          "start": 152.96,
+          "end": 153.38
+        },
+        {
+          "from": 11,
+          "to": 18,
+          "start": 153.38,
+          "end": 154.62
+        }
+      ],
+      "sourceLine": 36,
+      "matchedWordRatio": 0.667
     },
     {
       "text": "Ritmo para vacilar (para vacilar)",
-      "start": 146.249648,
-      "end": 152.082351
+      "start": 159.26,
+      "end": 161.52,
+      "words": [
+        {
+          "from": 0,
+          "to": 5,
+          "start": 159.26,
+          "end": 159.98
+        },
+        {
+          "from": 20,
+          "to": 24,
+          "start": 159.98,
+          "end": 160.42
+        },
+        {
+          "from": 25,
+          "to": 32,
+          "start": 160.42,
+          "end": 161.52
+        }
+      ],
+      "sourceLine": 38,
+      "matchedWordRatio": 0.6
     },
     {
       "text": "Ritmo, color y sabor",
-      "start": 152.082351,
-      "end": 155.538768
+      "start": 161.52,
+      "end": 165.1,
+      "words": [
+        {
+          "from": 0,
+          "to": 5,
+          "start": 161.52,
+          "end": 163.62
+        },
+        {
+          "from": 7,
+          "to": 12,
+          "start": 163.62,
+          "end": 164.16
+        },
+        {
+          "from": 13,
+          "to": 14,
+          "start": 164.16,
+          "end": 164.62
+        },
+        {
+          "from": 15,
+          "to": 20,
+          "start": 164.62,
+          "end": 165.1
+        }
+      ],
+      "sourceLine": 39,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Ritmo para vacilar",
-      "start": 155.538768,
-      "end": 158.995185
+      "start": 166.88,
+      "end": 168.9,
+      "words": [
+        {
+          "from": 0,
+          "to": 5,
+          "start": 166.88,
+          "end": 167.0
+        },
+        {
+          "from": 6,
+          "to": 10,
+          "start": 167.0,
+          "end": 167.38
+        },
+        {
+          "from": 11,
+          "to": 18,
+          "start": 167.38,
+          "end": 168.9
+        }
+      ],
+      "sourceLine": 40,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Tiene sabor, ritmo y color",
-      "start": 158.995185,
-      "end": 163.531733
-    },
-    {
-      "text": "De chincha a la cuna",
-      "start": 163.531733,
-      "end": 166.98815
+      "start": 184.26,
+      "end": 186.7,
+      "words": [
+        {
+          "from": 13,
+          "to": 18,
+          "start": 184.26,
+          "end": 184.88
+        },
+        {
+          "from": 19,
+          "to": 20,
+          "start": 184.88,
+          "end": 186.26
+        },
+        {
+          "from": 21,
+          "to": 26,
+          "start": 186.26,
+          "end": 186.7
+        }
+      ],
+      "sourceLine": 41,
+      "matchedWordRatio": 0.6
     },
     {
       "text": "Como mi tierra, te juro, no hay ninguna",
-      "start": 166.98815,
-      "end": 173.468932
+      "start": 187.98,
+      "end": 190.3,
+      "words": [
+        {
+          "from": 0,
+          "to": 4,
+          "start": 187.98,
+          "end": 188.3
+        },
+        {
+          "from": 5,
+          "to": 7,
+          "start": 188.3,
+          "end": 188.54
+        },
+        {
+          "from": 8,
+          "to": 14,
+          "start": 188.54,
+          "end": 188.82
+        },
+        {
+          "from": 19,
+          "to": 23,
+          "start": 189.06,
+          "end": 189.38
+        },
+        {
+          "from": 25,
+          "to": 27,
+          "start": 189.38,
+          "end": 189.56
+        },
+        {
+          "from": 28,
+          "to": 31,
+          "start": 189.56,
+          "end": 189.68
+        },
+        {
+          "from": 32,
+          "to": 39,
+          "start": 189.68,
+          "end": 190.3
+        }
+      ],
+      "sourceLine": 43,
+      "matchedWordRatio": 0.875
     },
     {
       "text": "Tiene sabor, ritmo y color",
-      "start": 173.468932,
-      "end": 178.005479
-    },
-    {
-      "text": "Tiene azuquitar, canela",
-      "start": 178.005479,
-      "end": 182.326001
+      "start": 191.46,
+      "end": 193.54,
+      "words": [
+        {
+          "from": 6,
+          "to": 11,
+          "start": 191.46,
+          "end": 191.92
+        },
+        {
+          "from": 13,
+          "to": 18,
+          "start": 192.78,
+          "end": 193.02
+        },
+        {
+          "from": 19,
+          "to": 20,
+          "start": 193.02,
+          "end": 193.16
+        },
+        {
+          "from": 21,
+          "to": 26,
+          "start": 193.16,
+          "end": 193.54
+        }
+      ],
+      "sourceLine": 44,
+      "matchedWordRatio": 0.8
     },
     {
       "text": "Y un poquito de clavo de olor",
-      "start": 182.326001,
-      "end": 187.2946
+      "start": 195.36,
+      "end": 196.4,
+      "words": [
+        {
+          "from": 0,
+          "to": 1,
+          "start": 195.36,
+          "end": 195.62
+        },
+        {
+          "from": 2,
+          "to": 4,
+          "start": 195.62,
+          "end": 195.76
+        },
+        {
+          "from": 5,
+          "to": 12,
+          "start": 195.76,
+          "end": 196.08
+        },
+        {
+          "from": 22,
+          "to": 24,
+          "start": 196.08,
+          "end": 196.4
+        }
+      ],
+      "sourceLine": 46,
+      "matchedWordRatio": 0.571
     },
     {
       "text": "Tiene sabor, ritmo y color",
-      "start": 187.2946,
-      "end": 191.831148
+      "start": 198.36,
+      "end": 200.46,
+      "words": [
+        {
+          "from": 6,
+          "to": 11,
+          "start": 198.36,
+          "end": 198.82
+        },
+        {
+          "from": 13,
+          "to": 18,
+          "start": 199.58,
+          "end": 199.9
+        },
+        {
+          "from": 19,
+          "to": 20,
+          "start": 199.9,
+          "end": 200.04
+        },
+        {
+          "from": 21,
+          "to": 26,
+          "start": 200.04,
+          "end": 200.46
+        }
+      ],
+      "sourceLine": 47,
+      "matchedWordRatio": 0.8
     },
     {
       "text": "Del Perú para el mundo",
-      "start": 191.831148,
-      "end": 195.719617
+      "start": 201.14,
+      "end": 201.8,
+      "words": [
+        {
+          "from": 9,
+          "to": 13,
+          "start": 201.14,
+          "end": 201.38
+        },
+        {
+          "from": 14,
+          "to": 16,
+          "start": 201.38,
+          "end": 201.52
+        },
+        {
+          "from": 17,
+          "to": 22,
+          "start": 201.52,
+          "end": 201.8
+        }
+      ],
+      "sourceLine": 48,
+      "matchedWordRatio": 0.6
     },
     {
       "text": "Con sentimiento profundo",
-      "start": 195.719617,
-      "end": 200.47219
+      "start": 201.8,
+      "end": 203.74,
+      "words": [
+        {
+          "from": 0,
+          "to": 3,
+          "start": 201.8,
+          "end": 202.14
+        },
+        {
+          "from": 4,
+          "to": 15,
+          "start": 202.14,
+          "end": 202.94
+        },
+        {
+          "from": 16,
+          "to": 24,
+          "start": 202.94,
+          "end": 203.74
+        }
+      ],
+      "sourceLine": 49,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Tiene sabor, ritmo y color",
-      "start": 200.47219,
-      "end": 205.008738
-    },
-    {
-      "text": "Ritmo, color y sabor",
-      "start": 205.008738,
-      "end": 208.465155
-    },
-    {
-      "text": "Ritmo, color y sabor",
-      "start": 208.465155,
-      "end": 211.921572
-    },
-    {
-      "text": "Ritmo para vacilar",
-      "start": 211.921572,
-      "end": 215.377989
-    },
-    {
-      "text": "Ritmo, color y sabor",
-      "start": 215.377989,
-      "end": 218.834406
-    },
-    {
-      "text": "Ritmo para vacilar (dice)",
-      "start": 218.834406,
-      "end": 223.154927
-    },
-    {
-      "text": "Ritmo, color y sabor",
-      "start": 223.154927,
-      "end": 226.611345
-    },
-    {
-      "text": "Ritmo para vacilar (para vacilar)",
-      "start": 226.611345,
-      "end": 232.444048
-    },
-    {
-      "text": "Ritmo, color y sabor",
-      "start": 232.444048,
-      "end": 235.900465
-    },
-    {
-      "text": "Ritmo para vacilar",
-      "start": 235.900465,
-      "end": 239.356882
-    },
-    {
-      "text": "Para vacilar, para vacilar",
-      "start": 239.356882,
-      "end": 244.109456
+      "start": 204.37,
+      "end": 207.31,
+      "words": [
+        {
+          "from": 0,
+          "to": 5,
+          "start": 204.37,
+          "end": 205.05
+        },
+        {
+          "from": 6,
+          "to": 11,
+          "start": 205.05,
+          "end": 205.69
+        },
+        {
+          "from": 13,
+          "to": 18,
+          "start": 206.31,
+          "end": 206.87
+        },
+        {
+          "from": 19,
+          "to": 20,
+          "start": 206.87,
+          "end": 206.95
+        },
+        {
+          "from": 21,
+          "to": 26,
+          "start": 206.95,
+          "end": 207.31
+        }
+      ],
+      "sourceLine": 50,
+      "matchedWordRatio": 1.0,
+      "alignment": "phonetic-window-acoustic-refinement"
     },
     {
       "text": "Para vacilar, pa' vacilar",
-      "start": 244.109456,
-      "end": 248.429977
+      "start": 247.21,
+      "end": 249.95,
+      "words": [
+        {
+          "from": 0,
+          "to": 4,
+          "start": 247.21,
+          "end": 247.57
+        },
+        {
+          "from": 5,
+          "to": 12,
+          "start": 247.57,
+          "end": 248.29
+        },
+        {
+          "from": 14,
+          "to": 16,
+          "start": 248.59,
+          "end": 249.27
+        },
+        {
+          "from": 18,
+          "to": 25,
+          "start": 249.37,
+          "end": 249.95
+        }
+      ],
+      "sourceLine": 61,
+      "matchedWordRatio": 1.0,
+      "alignment": "phonetic-window-acoustic-refinement"
+    }
+  ],
+  "unmatchedLines": [
+    {
+      "line": 1,
+      "text": "Ritmo, color y sabor",
+      "coverage": 0.25
     },
     {
-      "text": "Pa' vacilar, para vacilar",
-      "start": 248.429977,
-      "end": 252.750499
+      "line": 3,
+      "text": "Ritmo, color y sabor",
+      "coverage": 0.0
     },
     {
+      "line": 5,
+      "text": "Ritmo, color y sabor",
+      "coverage": 0.0
+    },
+    {
+      "line": 7,
+      "text": "Ritmo, color y sabor",
+      "coverage": 0.0
+    },
+    {
+      "line": 18,
+      "text": "Con azote, el mayoral",
+      "coverage": 0.25
+    },
+    {
+      "line": 19,
+      "text": "Se les dio la libertad",
+      "coverage": 0.2
+    },
+    {
+      "line": 21,
+      "text": "Ritmo, color y sabor",
+      "coverage": 0.0
+    },
+    {
+      "line": 22,
+      "text": "Ritmo para vacilar",
+      "coverage": 0.0
+    },
+    {
+      "line": 23,
+      "text": "Ritmo, color y sabor",
+      "coverage": 0.0
+    },
+    {
+      "line": 24,
+      "text": "Ritmo para vacilar (¿cómo?)",
+      "coverage": 0.0
+    },
+    {
+      "line": 25,
+      "text": "Ritmo, color y sabor",
+      "coverage": 0.0
+    },
+    {
+      "line": 26,
+      "text": "Ritmo para vacilar (para vacilar)",
+      "coverage": 0.0
+    },
+    {
+      "line": 27,
+      "text": "Ritmo, color y sabor",
+      "coverage": 0.0
+    },
+    {
+      "line": 28,
+      "text": "Ritmo para vacilar",
+      "coverage": 0.0
+    },
+    {
+      "line": 37,
+      "text": "Ritmo, color y sabor (eso es)",
+      "coverage": 0.0
+    },
+    {
+      "line": 42,
+      "text": "De chincha a la cuna",
+      "coverage": 0.0
+    },
+    {
+      "line": 45,
+      "text": "Tiene azuquitar, canela",
+      "coverage": 0.333
+    },
+    {
+      "line": 51,
+      "text": "Ritmo, color y sabor",
+      "coverage": 0.0
+    },
+    {
+      "line": 52,
+      "text": "Ritmo, color y sabor",
+      "coverage": 0.25
+    },
+    {
+      "line": 53,
+      "text": "Ritmo para vacilar",
+      "coverage": 0.0
+    },
+    {
+      "line": 54,
+      "text": "Ritmo, color y sabor",
+      "coverage": 0.5
+    },
+    {
+      "line": 55,
+      "text": "Ritmo para vacilar (dice)",
+      "coverage": 0.0
+    },
+    {
+      "line": 56,
+      "text": "Ritmo, color y sabor",
+      "coverage": 0.25
+    },
+    {
+      "line": 57,
+      "text": "Ritmo para vacilar (para vacilar)",
+      "coverage": 0.0
+    },
+    {
+      "line": 58,
+      "text": "Ritmo, color y sabor",
+      "coverage": 0.25
+    },
+    {
+      "line": 59,
+      "text": "Ritmo para vacilar",
+      "coverage": 0.333
+    },
+    {
+      "line": 60,
+      "text": "Para vacilar, para vacilar",
+      "coverage": 0.0
+    },
+    {
+      "line": 62,
       "text": "Pa' vacilar, para vacilar",
-      "start": 252.750499,
-      "end": 257.07102
+      "coverage": 0.25
+    },
+    {
+      "line": 63,
+      "text": "Pa' vacilar, para vacilar",
+      "coverage": 0.25
     }
   ]
 }

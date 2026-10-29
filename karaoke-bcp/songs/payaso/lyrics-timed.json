@@ -1,195 +1,1503 @@
 {
   "songId": "payaso",
-  "title": "Payaso",
   "status": "estimated",
   "reviewRequired": true,
-  "timingMethod": "text-length-proportional; not aligned to vocals or instrumental sections",
-  "durationSeconds": 178.155102,
+  "method": "local-asr-word-matching",
+  "alignmentModel": "faster-whisper-small",
+  "durationSeconds": 179.591837,
+  "audioSha256": "9ef6837559c97aada034b1fe727b2dee21d217a7f4b1e73a40f8413de274773f",
   "lyrics": [
     {
       "text": "Dicen que soy un payaso",
-      "start": 0.0,
-      "end": 4.821862
+      "start": 20.2,
+      "end": 22.78,
+      "words": [
+        {
+          "from": 0,
+          "to": 5,
+          "start": 20.2,
+          "end": 21.08
+        },
+        {
+          "from": 6,
+          "to": 9,
+          "start": 21.08,
+          "end": 21.32
+        },
+        {
+          "from": 10,
+          "to": 13,
+          "start": 21.32,
+          "end": 21.54
+        },
+        {
+          "from": 14,
+          "to": 16,
+          "start": 21.54,
+          "end": 21.96
+        },
+        {
+          "from": 17,
+          "to": 23,
+          "start": 21.96,
+          "end": 22.78
+        }
+      ],
+      "sourceLine": 1,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Que estoy muriendo por ti",
-      "start": 4.821862,
-      "end": 10.151288
+      "start": 22.78,
+      "end": 25.04,
+      "words": [
+        {
+          "from": 0,
+          "to": 3,
+          "start": 22.78,
+          "end": 23.58
+        },
+        {
+          "from": 4,
+          "to": 9,
+          "start": 23.58,
+          "end": 23.84
+        },
+        {
+          "from": 10,
+          "to": 18,
+          "start": 23.84,
+          "end": 24.3
+        },
+        {
+          "from": 19,
+          "to": 22,
+          "start": 24.3,
+          "end": 24.58
+        },
+        {
+          "from": 23,
+          "to": 25,
+          "start": 24.58,
+          "end": 25.04
+        }
+      ],
+      "sourceLine": 2,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Y tú no me haces ni caso",
-      "start": 10.151288,
-      "end": 14.719367
+      "start": 25.04,
+      "end": 28.42,
+      "words": [
+        {
+          "from": 0,
+          "to": 1,
+          "start": 25.04,
+          "end": 25.82
+        },
+        {
+          "from": 2,
+          "to": 4,
+          "start": 25.82,
+          "end": 25.98
+        },
+        {
+          "from": 5,
+          "to": 7,
+          "start": 25.98,
+          "end": 26.18
+        },
+        {
+          "from": 8,
+          "to": 10,
+          "start": 26.18,
+          "end": 26.38
+        },
+        {
+          "from": 11,
+          "to": 16,
+          "start": 26.38,
+          "end": 26.72
+        },
+        {
+          "from": 17,
+          "to": 19,
+          "start": 26.72,
+          "end": 27.04
+        },
+        {
+          "from": 20,
+          "to": 24,
+          "start": 27.04,
+          "end": 28.42
+        }
+      ],
+      "sourceLine": 3,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Dicen que soy un payaso",
-      "start": 14.719367,
-      "end": 19.541229
+      "start": 29.86,
+      "end": 32.44,
+      "words": [
+        {
+          "from": 0,
+          "to": 5,
+          "start": 29.86,
+          "end": 30.74
+        },
+        {
+          "from": 6,
+          "to": 9,
+          "start": 30.74,
+          "end": 30.96
+        },
+        {
+          "from": 10,
+          "to": 13,
+          "start": 30.96,
+          "end": 31.2
+        },
+        {
+          "from": 14,
+          "to": 16,
+          "start": 31.2,
+          "end": 31.7
+        },
+        {
+          "from": 17,
+          "to": 23,
+          "start": 31.7,
+          "end": 32.44
+        }
+      ],
+      "sourceLine": 4,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Porque toda mi ilusión",
-      "start": 19.541229,
-      "end": 24.363091
+      "start": 32.96,
+      "end": 34.68,
+      "words": [
+        {
+          "from": 0,
+          "to": 6,
+          "start": 32.96,
+          "end": 33.4
+        },
+        {
+          "from": 7,
+          "to": 11,
+          "start": 33.4,
+          "end": 33.68
+        },
+        {
+          "from": 12,
+          "to": 14,
+          "start": 33.68,
+          "end": 33.94
+        },
+        {
+          "from": 15,
+          "to": 22,
+          "start": 33.94,
+          "end": 34.68
+        }
+      ],
+      "sourceLine": 5,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Es tenerte entre mis brazos",
-      "start": 24.363091,
-      "end": 30.200081
+      "start": 34.68,
+      "end": 38.14,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 34.68,
+          "end": 35.5
+        },
+        {
+          "from": 3,
+          "to": 10,
+          "start": 35.5,
+          "end": 35.84
+        },
+        {
+          "from": 11,
+          "to": 16,
+          "start": 35.84,
+          "end": 36.3
+        },
+        {
+          "from": 17,
+          "to": 20,
+          "start": 36.3,
+          "end": 36.62
+        },
+        {
+          "from": 21,
+          "to": 27,
+          "start": 36.62,
+          "end": 38.14
+        }
+      ],
+      "sourceLine": 6,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Dicen que soy un payaso",
-      "start": 30.200081,
-      "end": 35.021943
+      "start": 39.42,
+      "end": 42.1,
+      "words": [
+        {
+          "from": 0,
+          "to": 5,
+          "start": 39.42,
+          "end": 40.3
+        },
+        {
+          "from": 6,
+          "to": 9,
+          "start": 40.3,
+          "end": 40.58
+        },
+        {
+          "from": 10,
+          "to": 13,
+          "start": 40.58,
+          "end": 40.84
+        },
+        {
+          "from": 14,
+          "to": 16,
+          "start": 40.84,
+          "end": 41.26
+        },
+        {
+          "from": 17,
+          "to": 23,
+          "start": 41.26,
+          "end": 42.1
+        }
+      ],
+      "sourceLine": 7,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Que por culpa de tu amor",
-      "start": 35.021943,
-      "end": 39.843805
+      "start": 42.1,
+      "end": 44.22,
+      "words": [
+        {
+          "from": 0,
+          "to": 3,
+          "start": 42.1,
+          "end": 42.66
+        },
+        {
+          "from": 4,
+          "to": 7,
+          "start": 42.66,
+          "end": 42.92
+        },
+        {
+          "from": 8,
+          "to": 13,
+          "start": 42.92,
+          "end": 43.3
+        },
+        {
+          "from": 14,
+          "to": 16,
+          "start": 43.3,
+          "end": 43.58
+        },
+        {
+          "from": 17,
+          "to": 19,
+          "start": 43.58,
+          "end": 43.72
+        },
+        {
+          "from": 20,
+          "to": 24,
+          "start": 43.72,
+          "end": 44.22
+        }
+      ],
+      "sourceLine": 8,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Voy de fracaso en fracaso",
-      "start": 39.843805,
-      "end": 45.173231
+      "start": 44.22,
+      "end": 47.78,
+      "words": [
+        {
+          "from": 0,
+          "to": 3,
+          "start": 44.22,
+          "end": 45.16
+        },
+        {
+          "from": 4,
+          "to": 6,
+          "start": 45.16,
+          "end": 45.36
+        },
+        {
+          "from": 7,
+          "to": 14,
+          "start": 45.36,
+          "end": 45.96
+        },
+        {
+          "from": 15,
+          "to": 17,
+          "start": 45.96,
+          "end": 46.1
+        },
+        {
+          "from": 18,
+          "to": 25,
+          "start": 46.1,
+          "end": 47.78
+        }
+      ],
+      "sourceLine": 9,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Dicen que soy un payaso",
-      "start": 45.173231,
-      "end": 49.995093
+      "start": 48.96,
+      "end": 51.72,
+      "words": [
+        {
+          "from": 0,
+          "to": 5,
+          "start": 48.96,
+          "end": 49.84
+        },
+        {
+          "from": 6,
+          "to": 9,
+          "start": 49.84,
+          "end": 50.06
+        },
+        {
+          "from": 10,
+          "to": 13,
+          "start": 50.06,
+          "end": 50.32
+        },
+        {
+          "from": 14,
+          "to": 16,
+          "start": 50.32,
+          "end": 50.84
+        },
+        {
+          "from": 17,
+          "to": 23,
+          "start": 50.84,
+          "end": 51.72
+        }
+      ],
+      "sourceLine": 10,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Que va buscando valor",
-      "start": 49.995093,
-      "end": 54.563172
+      "start": 51.72,
+      "end": 54.0,
+      "words": [
+        {
+          "from": 0,
+          "to": 3,
+          "start": 51.72,
+          "end": 52.48
+        },
+        {
+          "from": 4,
+          "to": 6,
+          "start": 52.48,
+          "end": 52.66
+        },
+        {
+          "from": 7,
+          "to": 15,
+          "start": 52.66,
+          "end": 53.18
+        },
+        {
+          "from": 16,
+          "to": 21,
+          "start": 53.18,
+          "end": 54.0
+        }
+      ],
+      "sourceLine": 11,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "En el fondo de los vasos",
-      "start": 54.563172,
-      "end": 59.385034
+      "start": 54.0,
+      "end": 55.84,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 54.0,
+          "end": 54.58
+        },
+        {
+          "from": 3,
+          "to": 5,
+          "start": 54.58,
+          "end": 54.74
+        },
+        {
+          "from": 6,
+          "to": 11,
+          "start": 54.74,
+          "end": 55.3
+        },
+        {
+          "from": 12,
+          "to": 14,
+          "start": 55.3,
+          "end": 55.58
+        },
+        {
+          "from": 15,
+          "to": 18,
+          "start": 55.58,
+          "end": 55.84
+        }
+      ],
+      "sourceLine": 12,
+      "matchedWordRatio": 0.833
     },
     {
       "text": "Y es verdad soy un payaso",
-      "start": 59.385034,
-      "end": 64.460678
+      "start": 58.96,
+      "end": 62.16,
+      "words": [
+        {
+          "from": 2,
+          "to": 4,
+          "start": 58.96,
+          "end": 59.26
+        },
+        {
+          "from": 5,
+          "to": 11,
+          "start": 59.26,
+          "end": 59.74
+        },
+        {
+          "from": 12,
+          "to": 15,
+          "start": 59.74,
+          "end": 60.22
+        },
+        {
+          "from": 16,
+          "to": 18,
+          "start": 60.22,
+          "end": 60.48
+        },
+        {
+          "from": 19,
+          "to": 25,
+          "start": 60.48,
+          "end": 62.16
+        }
+      ],
+      "sourceLine": 13,
+      "matchedWordRatio": 0.833
     },
     {
       "text": "Pero que le voy a hacer",
-      "start": 64.460678,
-      "end": 69.028757
+      "start": 63.26,
+      "end": 66.42,
+      "words": [
+        {
+          "from": 0,
+          "to": 4,
+          "start": 63.26,
+          "end": 64.26
+        },
+        {
+          "from": 5,
+          "to": 8,
+          "start": 64.26,
+          "end": 64.58
+        },
+        {
+          "from": 9,
+          "to": 11,
+          "start": 64.58,
+          "end": 64.78
+        },
+        {
+          "from": 12,
+          "to": 15,
+          "start": 64.78,
+          "end": 65.32
+        },
+        {
+          "from": 16,
+          "to": 17,
+          "start": 65.32,
+          "end": 65.84
+        },
+        {
+          "from": 18,
+          "to": 23,
+          "start": 65.84,
+          "end": 66.42
+        }
+      ],
+      "sourceLine": 14,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Uno no es lo que quiere",
-      "start": 69.028757,
-      "end": 73.596837
+      "start": 67.88,
+      "end": 71.04,
+      "words": [
+        {
+          "from": 0,
+          "to": 3,
+          "start": 67.88,
+          "end": 68.88
+        },
+        {
+          "from": 4,
+          "to": 6,
+          "start": 68.88,
+          "end": 69.2
+        },
+        {
+          "from": 7,
+          "to": 9,
+          "start": 69.2,
+          "end": 69.76
+        },
+        {
+          "from": 10,
+          "to": 12,
+          "start": 69.76,
+          "end": 70.22
+        },
+        {
+          "from": 13,
+          "to": 16,
+          "start": 70.22,
+          "end": 70.4
+        },
+        {
+          "from": 17,
+          "to": 23,
+          "start": 70.4,
+          "end": 71.04
+        }
+      ],
+      "sourceLine": 15,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Sino lo que puede ser",
-      "start": 73.596837,
-      "end": 77.911134
+      "start": 73.38,
+      "end": 75.64,
+      "words": [
+        {
+          "from": 5,
+          "to": 7,
+          "start": 73.38,
+          "end": 73.56
+        },
+        {
+          "from": 8,
+          "to": 11,
+          "start": 73.56,
+          "end": 73.74
+        },
+        {
+          "from": 12,
+          "to": 17,
+          "start": 73.74,
+          "end": 74.28
+        },
+        {
+          "from": 18,
+          "to": 21,
+          "start": 74.28,
+          "end": 75.64
+        }
+      ],
+      "sourceLine": 16,
+      "matchedWordRatio": 0.8
     },
     {
       "text": "Dicen que soy payaso",
-      "start": 77.911134,
-      "end": 82.225432
+      "start": 75.64,
+      "end": 79.38,
+      "words": [
+        {
+          "from": 0,
+          "to": 5,
+          "start": 75.64,
+          "end": 76.72
+        },
+        {
+          "from": 6,
+          "to": 9,
+          "start": 76.72,
+          "end": 76.98
+        },
+        {
+          "from": 10,
+          "to": 13,
+          "start": 76.98,
+          "end": 77.22
+        },
+        {
+          "from": 14,
+          "to": 20,
+          "start": 78.06,
+          "end": 79.38
+        }
+      ],
+      "sourceLine": 17,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Que estoy muriendo por ti",
-      "start": 82.225432,
-      "end": 87.554858
+      "start": 79.82,
+      "end": 81.94,
+      "words": [
+        {
+          "from": 0,
+          "to": 3,
+          "start": 79.82,
+          "end": 80.32
+        },
+        {
+          "from": 4,
+          "to": 9,
+          "start": 80.32,
+          "end": 80.62
+        },
+        {
+          "from": 10,
+          "to": 18,
+          "start": 80.62,
+          "end": 81.16
+        },
+        {
+          "from": 19,
+          "to": 22,
+          "start": 81.16,
+          "end": 81.46
+        },
+        {
+          "from": 23,
+          "to": 25,
+          "start": 81.46,
+          "end": 81.94
+        }
+      ],
+      "sourceLine": 18,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Y tú no me haces ni caso",
-      "start": 87.554858,
-      "end": 92.122937
+      "start": 81.94,
+      "end": 84.96,
+      "words": [
+        {
+          "from": 0,
+          "to": 1,
+          "start": 81.94,
+          "end": 82.9
+        },
+        {
+          "from": 2,
+          "to": 4,
+          "start": 82.9,
+          "end": 83.04
+        },
+        {
+          "from": 5,
+          "to": 7,
+          "start": 83.04,
+          "end": 83.2
+        },
+        {
+          "from": 8,
+          "to": 10,
+          "start": 83.2,
+          "end": 83.36
+        },
+        {
+          "from": 11,
+          "to": 16,
+          "start": 83.36,
+          "end": 83.6
+        },
+        {
+          "from": 17,
+          "to": 19,
+          "start": 83.6,
+          "end": 83.88
+        },
+        {
+          "from": 20,
+          "to": 24,
+          "start": 83.88,
+          "end": 84.96
+        }
+      ],
+      "sourceLine": 19,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Dicen que soy un payaso",
-      "start": 92.122937,
-      "end": 96.944799
+      "start": 86.64,
+      "end": 88.9,
+      "words": [
+        {
+          "from": 0,
+          "to": 5,
+          "start": 86.64,
+          "end": 87.44
+        },
+        {
+          "from": 6,
+          "to": 9,
+          "start": 87.44,
+          "end": 87.64
+        },
+        {
+          "from": 10,
+          "to": 13,
+          "start": 87.64,
+          "end": 87.84
+        },
+        {
+          "from": 14,
+          "to": 16,
+          "start": 87.84,
+          "end": 88.22
+        },
+        {
+          "from": 17,
+          "to": 23,
+          "start": 88.22,
+          "end": 88.9
+        }
+      ],
+      "sourceLine": 20,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Que te sigue por ahí",
-      "start": 96.944799,
-      "end": 101.005314
+      "start": 88.9,
+      "end": 91.14,
+      "words": [
+        {
+          "from": 0,
+          "to": 3,
+          "start": 88.9,
+          "end": 89.74
+        },
+        {
+          "from": 4,
+          "to": 6,
+          "start": 89.74,
+          "end": 89.92
+        },
+        {
+          "from": 7,
+          "to": 12,
+          "start": 89.92,
+          "end": 90.34
+        },
+        {
+          "from": 13,
+          "to": 16,
+          "start": 90.34,
+          "end": 90.66
+        },
+        {
+          "from": 17,
+          "to": 20,
+          "start": 90.66,
+          "end": 91.14
+        }
+      ],
+      "sourceLine": 21,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Con el alma hecha pedazos",
-      "start": 101.005314,
-      "end": 106.33474
+      "start": 91.14,
+      "end": 94.84,
+      "words": [
+        {
+          "from": 0,
+          "to": 3,
+          "start": 91.14,
+          "end": 91.98
+        },
+        {
+          "from": 4,
+          "to": 6,
+          "start": 91.98,
+          "end": 92.14
+        },
+        {
+          "from": 7,
+          "to": 11,
+          "start": 92.14,
+          "end": 92.44
+        },
+        {
+          "from": 12,
+          "to": 17,
+          "start": 92.44,
+          "end": 92.98
+        },
+        {
+          "from": 18,
+          "to": 25,
+          "start": 92.98,
+          "end": 94.84
+        }
+      ],
+      "sourceLine": 22,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Dicen que soy un payaso",
-      "start": 106.33474,
-      "end": 111.156602
+      "start": 95.98,
+      "end": 98.1,
+      "words": [
+        {
+          "from": 0,
+          "to": 5,
+          "start": 95.98,
+          "end": 96.78
+        },
+        {
+          "from": 6,
+          "to": 9,
+          "start": 96.78,
+          "end": 97.0
+        },
+        {
+          "from": 10,
+          "to": 13,
+          "start": 97.0,
+          "end": 97.24
+        },
+        {
+          "from": 14,
+          "to": 16,
+          "start": 97.24,
+          "end": 97.7
+        },
+        {
+          "from": 17,
+          "to": 23,
+          "start": 97.7,
+          "end": 98.1
+        }
+      ],
+      "sourceLine": 23,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Que querría hasta el amor",
-      "start": 111.156602,
-      "end": 116.486028
+      "start": 98.64,
+      "end": 100.8,
+      "words": [
+        {
+          "from": 0,
+          "to": 3,
+          "start": 98.64,
+          "end": 99.38
+        },
+        {
+          "from": 4,
+          "to": 11,
+          "start": 99.38,
+          "end": 99.94
+        },
+        {
+          "from": 12,
+          "to": 17,
+          "start": 99.94,
+          "end": 100.22
+        },
+        {
+          "from": 18,
+          "to": 20,
+          "start": 100.22,
+          "end": 100.4
+        },
+        {
+          "from": 21,
+          "to": 25,
+          "start": 100.4,
+          "end": 100.8
+        }
+      ],
+      "sourceLine": 24,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Que vas tirando a tu paso",
-      "start": 116.486028,
-      "end": 121.561672
+      "start": 100.8,
+      "end": 104.04,
+      "words": [
+        {
+          "from": 0,
+          "to": 3,
+          "start": 100.8,
+          "end": 101.5
+        },
+        {
+          "from": 4,
+          "to": 7,
+          "start": 101.5,
+          "end": 101.7
+        },
+        {
+          "from": 8,
+          "to": 15,
+          "start": 101.7,
+          "end": 102.38
+        },
+        {
+          "from": 16,
+          "to": 17,
+          "start": 102.38,
+          "end": 102.58
+        },
+        {
+          "from": 18,
+          "to": 20,
+          "start": 102.58,
+          "end": 102.68
+        },
+        {
+          "from": 21,
+          "to": 25,
+          "start": 102.68,
+          "end": 104.04
+        }
+      ],
+      "sourceLine": 25,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Dicen que soy un payaso",
-      "start": 121.561672,
-      "end": 126.383534
+      "start": 105.58,
+      "end": 108.28,
+      "words": [
+        {
+          "from": 0,
+          "to": 5,
+          "start": 105.58,
+          "end": 106.38
+        },
+        {
+          "from": 6,
+          "to": 9,
+          "start": 106.38,
+          "end": 106.62
+        },
+        {
+          "from": 10,
+          "to": 13,
+          "start": 106.62,
+          "end": 106.9
+        },
+        {
+          "from": 14,
+          "to": 16,
+          "start": 106.9,
+          "end": 107.38
+        },
+        {
+          "from": 17,
+          "to": 23,
+          "start": 107.38,
+          "end": 108.28
+        }
+      ],
+      "sourceLine": 26,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Que no tengo ni valor",
-      "start": 126.383534,
-      "end": 130.697831
+      "start": 108.28,
+      "end": 109.8,
+      "words": [
+        {
+          "from": 0,
+          "to": 3,
+          "start": 108.28,
+          "end": 108.98
+        },
+        {
+          "from": 4,
+          "to": 6,
+          "start": 108.98,
+          "end": 109.14
+        },
+        {
+          "from": 7,
+          "to": 12,
+          "start": 109.14,
+          "end": 109.6
+        },
+        {
+          "from": 13,
+          "to": 15,
+          "start": 109.6,
+          "end": 109.8
+        }
+      ],
+      "sourceLine": 27,
+      "matchedWordRatio": 0.8
     },
     {
       "text": "Para pegarme ni un balazo",
-      "start": 130.697831,
-      "end": 136.027257
+      "start": 110.2,
+      "end": 113.82,
+      "words": [
+        {
+          "from": 0,
+          "to": 4,
+          "start": 110.2,
+          "end": 111.3
+        },
+        {
+          "from": 5,
+          "to": 12,
+          "start": 111.3,
+          "end": 112.1
+        },
+        {
+          "from": 16,
+          "to": 18,
+          "start": 112.1,
+          "end": 112.32
+        },
+        {
+          "from": 19,
+          "to": 25,
+          "start": 112.32,
+          "end": 113.82
+        }
+      ],
+      "sourceLine": 28,
+      "matchedWordRatio": 0.8
     },
     {
       "text": "Y es verdad soy un payaso",
-      "start": 136.027257,
-      "end": 141.102901
+      "start": 113.82,
+      "end": 118.64,
+      "words": [
+        {
+          "from": 0,
+          "to": 1,
+          "start": 113.82,
+          "end": 115.44
+        },
+        {
+          "from": 2,
+          "to": 4,
+          "start": 115.44,
+          "end": 115.72
+        },
+        {
+          "from": 5,
+          "to": 11,
+          "start": 115.72,
+          "end": 116.14
+        },
+        {
+          "from": 12,
+          "to": 15,
+          "start": 116.5,
+          "end": 116.74
+        },
+        {
+          "from": 16,
+          "to": 18,
+          "start": 116.74,
+          "end": 117.02
+        },
+        {
+          "from": 19,
+          "to": 25,
+          "start": 117.02,
+          "end": 118.64
+        }
+      ],
+      "sourceLine": 29,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Pero que le voy a hacer",
-      "start": 141.102901,
-      "end": 145.670981
+      "start": 119.92,
+      "end": 123.24,
+      "words": [
+        {
+          "from": 0,
+          "to": 4,
+          "start": 119.92,
+          "end": 120.74
+        },
+        {
+          "from": 5,
+          "to": 8,
+          "start": 120.74,
+          "end": 121.04
+        },
+        {
+          "from": 9,
+          "to": 11,
+          "start": 121.04,
+          "end": 121.24
+        },
+        {
+          "from": 12,
+          "to": 15,
+          "start": 121.24,
+          "end": 121.64
+        },
+        {
+          "from": 16,
+          "to": 17,
+          "start": 121.64,
+          "end": 122.34
+        },
+        {
+          "from": 18,
+          "to": 23,
+          "start": 122.34,
+          "end": 123.24
+        }
+      ],
+      "sourceLine": 30,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Uno no es lo que quiere",
-      "start": 145.670981,
-      "end": 150.23906
+      "start": 124.56,
+      "end": 127.44,
+      "words": [
+        {
+          "from": 0,
+          "to": 3,
+          "start": 124.56,
+          "end": 125.38
+        },
+        {
+          "from": 4,
+          "to": 6,
+          "start": 125.38,
+          "end": 125.66
+        },
+        {
+          "from": 7,
+          "to": 9,
+          "start": 125.66,
+          "end": 126.44
+        },
+        {
+          "from": 10,
+          "to": 12,
+          "start": 126.44,
+          "end": 126.64
+        },
+        {
+          "from": 13,
+          "to": 16,
+          "start": 126.64,
+          "end": 126.82
+        },
+        {
+          "from": 17,
+          "to": 23,
+          "start": 126.82,
+          "end": 127.44
+        }
+      ],
+      "sourceLine": 31,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Sino lo que puede ser",
-      "start": 150.23906,
-      "end": 154.553358
+      "start": 129.92,
+      "end": 132.42,
+      "words": [
+        {
+          "from": 5,
+          "to": 7,
+          "start": 129.92,
+          "end": 130.08
+        },
+        {
+          "from": 8,
+          "to": 11,
+          "start": 130.08,
+          "end": 130.28
+        },
+        {
+          "from": 12,
+          "to": 17,
+          "start": 130.28,
+          "end": 130.78
+        },
+        {
+          "from": 18,
+          "to": 21,
+          "start": 130.78,
+          "end": 132.42
+        }
+      ],
+      "sourceLine": 32,
+      "matchedWordRatio": 0.8
     },
     {
       "text": "Y es verdad soy un payaso",
-      "start": 154.553358,
-      "end": 159.629002
+      "start": 133.86,
+      "end": 137.84,
+      "words": [
+        {
+          "from": 0,
+          "to": 1,
+          "start": 133.86,
+          "end": 134.68
+        },
+        {
+          "from": 2,
+          "to": 4,
+          "start": 134.68,
+          "end": 134.96
+        },
+        {
+          "from": 5,
+          "to": 11,
+          "start": 134.96,
+          "end": 135.32
+        },
+        {
+          "from": 12,
+          "to": 15,
+          "start": 135.84,
+          "end": 135.98
+        },
+        {
+          "from": 16,
+          "to": 18,
+          "start": 135.98,
+          "end": 136.24
+        },
+        {
+          "from": 19,
+          "to": 25,
+          "start": 136.24,
+          "end": 137.84
+        }
+      ],
+      "sourceLine": 33,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Pero que le voy a hacer",
-      "start": 159.629002,
-      "end": 164.197081
+      "start": 138.92,
+      "end": 142.04,
+      "words": [
+        {
+          "from": 0,
+          "to": 4,
+          "start": 138.92,
+          "end": 139.92
+        },
+        {
+          "from": 5,
+          "to": 8,
+          "start": 139.92,
+          "end": 140.38
+        },
+        {
+          "from": 9,
+          "to": 11,
+          "start": 140.38,
+          "end": 140.9
+        },
+        {
+          "from": 12,
+          "to": 15,
+          "start": 140.9,
+          "end": 141.14
+        },
+        {
+          "from": 16,
+          "to": 17,
+          "start": 141.14,
+          "end": 141.38
+        },
+        {
+          "from": 18,
+          "to": 23,
+          "start": 141.38,
+          "end": 142.04
+        }
+      ],
+      "sourceLine": 34,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Uno no es lo que quiere",
-      "start": 164.197081,
-      "end": 168.765161
+      "start": 144.24,
+      "end": 146.72,
+      "words": [
+        {
+          "from": 0,
+          "to": 3,
+          "start": 144.24,
+          "end": 144.56
+        },
+        {
+          "from": 4,
+          "to": 6,
+          "start": 144.56,
+          "end": 144.82
+        },
+        {
+          "from": 7,
+          "to": 9,
+          "start": 144.82,
+          "end": 145.64
+        },
+        {
+          "from": 10,
+          "to": 12,
+          "start": 145.64,
+          "end": 145.84
+        },
+        {
+          "from": 13,
+          "to": 16,
+          "start": 145.84,
+          "end": 146.02
+        },
+        {
+          "from": 17,
+          "to": 23,
+          "start": 146.02,
+          "end": 146.72
+        }
+      ],
+      "sourceLine": 35,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Sino lo que puede ser",
-      "start": 168.765161,
-      "end": 173.079458
+      "start": 148.54,
+      "end": 151.46,
+      "words": [
+        {
+          "from": 0,
+          "to": 4,
+          "start": 148.54,
+          "end": 149.08
+        },
+        {
+          "from": 5,
+          "to": 7,
+          "start": 149.08,
+          "end": 149.3
+        },
+        {
+          "from": 8,
+          "to": 11,
+          "start": 149.3,
+          "end": 149.48
+        },
+        {
+          "from": 12,
+          "to": 17,
+          "start": 149.48,
+          "end": 149.98
+        },
+        {
+          "from": 18,
+          "to": 21,
+          "start": 149.98,
+          "end": 151.46
+        }
+      ],
+      "sourceLine": 36,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Y es verdad, soy un payaso",
-      "start": 173.079458,
-      "end": 178.155102
+      "start": 151.46,
+      "end": 157.3,
+      "words": [
+        {
+          "from": 0,
+          "to": 1,
+          "start": 151.46,
+          "end": 152.08
+        },
+        {
+          "from": 2,
+          "to": 4,
+          "start": 152.08,
+          "end": 152.28
+        },
+        {
+          "from": 5,
+          "to": 11,
+          "start": 152.28,
+          "end": 152.76
+        },
+        {
+          "from": 13,
+          "to": 16,
+          "start": 154.04,
+          "end": 154.54
+        },
+        {
+          "from": 17,
+          "to": 19,
+          "start": 154.54,
+          "end": 155.04
+        },
+        {
+          "from": 20,
+          "to": 26,
+          "start": 155.04,
+          "end": 157.3
+        }
+      ],
+      "sourceLine": 37,
+      "matchedWordRatio": 1.0
     }
-  ]
+  ],
+  "unmatchedLines": []
 }

@@ -1,260 +1,1995 @@
 {
   "songId": "amor-eterno",
-  "title": "Amor eterno",
   "status": "estimated",
   "reviewRequired": true,
-  "timingMethod": "text-length-proportional; not aligned to vocals or instrumental sections",
-  "durationSeconds": 281.312653,
+  "method": "local-asr-word-matching",
+  "alignmentModel": "faster-whisper-small",
+  "durationSeconds": 417.933061,
+  "audioSha256": "d7d57175123d31876ac25a6fc573b3054bc495aa173709597d6dadbb2e8e3da3",
   "lyrics": [
     {
       "text": "Tú eres la tristeza de mis ojos",
-      "start": 0.0,
-      "end": 5.182621
+      "start": 48.94,
+      "end": 53.42,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 48.94,
+          "end": 49.74
+        },
+        {
+          "from": 3,
+          "to": 7,
+          "start": 49.74,
+          "end": 50.54
+        },
+        {
+          "from": 8,
+          "to": 10,
+          "start": 50.54,
+          "end": 51.72
+        },
+        {
+          "from": 11,
+          "to": 19,
+          "start": 51.72,
+          "end": 52.48
+        },
+        {
+          "from": 20,
+          "to": 22,
+          "start": 52.6,
+          "end": 52.72
+        },
+        {
+          "from": 23,
+          "to": 26,
+          "start": 52.72,
+          "end": 52.86
+        },
+        {
+          "from": 27,
+          "to": 31,
+          "start": 52.86,
+          "end": 53.42
+        }
+      ],
+      "sourceLine": 1,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Que lloran en silencio por tu amor",
-      "start": 5.182621,
-      "end": 10.987156
+      "start": 55.74,
+      "end": 58.0,
+      "words": [
+        {
+          "from": 11,
+          "to": 13,
+          "start": 55.74,
+          "end": 56.52
+        },
+        {
+          "from": 14,
+          "to": 22,
+          "start": 56.52,
+          "end": 57.1
+        },
+        {
+          "from": 23,
+          "to": 26,
+          "start": 57.1,
+          "end": 57.38
+        },
+        {
+          "from": 27,
+          "to": 29,
+          "start": 57.38,
+          "end": 57.54
+        },
+        {
+          "from": 30,
+          "to": 34,
+          "start": 57.54,
+          "end": 58.0
+        }
+      ],
+      "sourceLine": 2,
+      "matchedWordRatio": 0.714
     },
     {
       "text": "Me miro en el espejo y veo en mi rostro",
-      "start": 10.987156,
-      "end": 17.206301
+      "start": 58.0,
+      "end": 62.98,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 58.0,
+          "end": 59.68
+        },
+        {
+          "from": 3,
+          "to": 7,
+          "start": 59.68,
+          "end": 60.82
+        },
+        {
+          "from": 8,
+          "to": 10,
+          "start": 60.82,
+          "end": 61.18
+        },
+        {
+          "from": 11,
+          "to": 13,
+          "start": 61.18,
+          "end": 61.3
+        },
+        {
+          "from": 14,
+          "to": 20,
+          "start": 61.3,
+          "end": 61.82
+        },
+        {
+          "from": 21,
+          "to": 22,
+          "start": 61.82,
+          "end": 61.9
+        },
+        {
+          "from": 27,
+          "to": 29,
+          "start": 62.04,
+          "end": 62.16
+        },
+        {
+          "from": 30,
+          "to": 32,
+          "start": 62.16,
+          "end": 62.26
+        },
+        {
+          "from": 33,
+          "to": 39,
+          "start": 62.26,
+          "end": 62.98
+        }
+      ],
+      "sourceLine": 3,
+      "matchedWordRatio": 0.9,
+      "alignment": "acoustic-gap-refinement"
     },
     {
       "text": "El tiempo que he sufrido por tu adiós",
-      "start": 17.206301,
-      "end": 23.425446
+      "start": 63.7,
+      "end": 68.0,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 63.7,
+          "end": 64.48
+        },
+        {
+          "from": 3,
+          "to": 9,
+          "start": 64.48,
+          "end": 65.12
+        },
+        {
+          "from": 10,
+          "to": 13,
+          "start": 65.12,
+          "end": 65.48
+        },
+        {
+          "from": 14,
+          "to": 16,
+          "start": 65.48,
+          "end": 65.64
+        },
+        {
+          "from": 17,
+          "to": 24,
+          "start": 65.64,
+          "end": 66.2
+        },
+        {
+          "from": 25,
+          "to": 28,
+          "start": 66.2,
+          "end": 66.74
+        },
+        {
+          "from": 29,
+          "to": 31,
+          "start": 66.74,
+          "end": 66.88
+        },
+        {
+          "from": 32,
+          "to": 37,
+          "start": 66.88,
+          "end": 68.0
+        }
+      ],
+      "sourceLine": 4,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Obligo a que te olvide en el pensamiento",
-      "start": 23.425446,
-      "end": 30.266505
+      "start": 71.74,
+      "end": 75.46,
+      "words": [
+        {
+          "from": 0,
+          "to": 6,
+          "start": 71.74,
+          "end": 72.7
+        },
+        {
+          "from": 7,
+          "to": 8,
+          "start": 72.7,
+          "end": 72.88
+        },
+        {
+          "from": 9,
+          "to": 12,
+          "start": 72.88,
+          "end": 73.02
+        },
+        {
+          "from": 26,
+          "to": 28,
+          "start": 73.9,
+          "end": 74.34
+        },
+        {
+          "from": 29,
+          "to": 40,
+          "start": 74.34,
+          "end": 75.46
+        }
+      ],
+      "sourceLine": 5,
+      "matchedWordRatio": 0.625
     },
     {
       "text": "Pues siempre estoy pensando en el ayer",
-      "start": 30.266505,
-      "end": 36.90026
+      "start": 76.16,
+      "end": 79.4,
+      "words": [
+        {
+          "from": 0,
+          "to": 4,
+          "start": 76.16,
+          "end": 76.54
+        },
+        {
+          "from": 5,
+          "to": 12,
+          "start": 76.54,
+          "end": 76.94
+        },
+        {
+          "from": 13,
+          "to": 18,
+          "start": 76.94,
+          "end": 77.64
+        },
+        {
+          "from": 28,
+          "to": 30,
+          "start": 78.58,
+          "end": 78.74
+        },
+        {
+          "from": 31,
+          "to": 33,
+          "start": 78.74,
+          "end": 78.88
+        },
+        {
+          "from": 34,
+          "to": 38,
+          "start": 78.88,
+          "end": 79.4
+        }
+      ],
+      "sourceLine": 6,
+      "matchedWordRatio": 0.857
     },
     {
       "text": "Prefiero estar dormido que despierto",
-      "start": 36.90026,
-      "end": 43.534014
+      "start": 79.4,
+      "end": 85.02,
+      "words": [
+        {
+          "from": 0,
+          "to": 8,
+          "start": 79.4,
+          "end": 81.84
+        },
+        {
+          "from": 9,
+          "to": 14,
+          "start": 81.84,
+          "end": 83.04
+        },
+        {
+          "from": 15,
+          "to": 22,
+          "start": 83.04,
+          "end": 83.74
+        },
+        {
+          "from": 23,
+          "to": 26,
+          "start": 83.74,
+          "end": 84.12
+        },
+        {
+          "from": 27,
+          "to": 36,
+          "start": 84.12,
+          "end": 85.02
+        }
+      ],
+      "sourceLine": 7,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "De tanto y tanto que me duele que no estés",
-      "start": 43.534014,
-      "end": 50.375073
+      "start": 85.02,
+      "end": 90.42,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 85.02,
+          "end": 85.86
+        },
+        {
+          "from": 3,
+          "to": 8,
+          "start": 85.86,
+          "end": 86.5
+        },
+        {
+          "from": 9,
+          "to": 10,
+          "start": 86.5,
+          "end": 86.72
+        },
+        {
+          "from": 11,
+          "to": 16,
+          "start": 86.72,
+          "end": 87.3
+        },
+        {
+          "from": 17,
+          "to": 20,
+          "start": 87.3,
+          "end": 87.62
+        },
+        {
+          "from": 21,
+          "to": 23,
+          "start": 87.62,
+          "end": 87.8
+        },
+        {
+          "from": 24,
+          "to": 29,
+          "start": 87.8,
+          "end": 88.16
+        },
+        {
+          "from": 30,
+          "to": 33,
+          "start": 88.16,
+          "end": 88.38
+        },
+        {
+          "from": 34,
+          "to": 36,
+          "start": 88.38,
+          "end": 88.62
+        },
+        {
+          "from": 37,
+          "to": 42,
+          "start": 88.62,
+          "end": 90.42
+        }
+      ],
+      "sourceLine": 8,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Cómo quisiera",
-      "start": 50.375073,
-      "end": 52.862731
+      "start": 90.42,
+      "end": 93.86,
+      "words": [
+        {
+          "from": 0,
+          "to": 4,
+          "start": 90.42,
+          "end": 92.08
+        },
+        {
+          "from": 5,
+          "to": 13,
+          "start": 92.08,
+          "end": 93.86
+        }
+      ],
+      "sourceLine": 9,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Que tú vivieras",
-      "start": 52.862731,
-      "end": 55.557694
+      "start": 93.86,
+      "end": 100.04,
+      "words": [
+        {
+          "from": 0,
+          "to": 3,
+          "start": 93.86,
+          "end": 97.84
+        },
+        {
+          "from": 4,
+          "to": 6,
+          "start": 97.84,
+          "end": 98.08
+        },
+        {
+          "from": 7,
+          "to": 15,
+          "start": 98.08,
+          "end": 100.04
+        }
+      ],
+      "sourceLine": 10,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Que tus ojitos jamás se hubieran",
-      "start": 55.557694,
-      "end": 61.154925
+      "start": 100.04,
+      "end": 105.74,
+      "words": [
+        {
+          "from": 0,
+          "to": 3,
+          "start": 100.04,
+          "end": 101.94
+        },
+        {
+          "from": 4,
+          "to": 7,
+          "start": 101.94,
+          "end": 102.42
+        },
+        {
+          "from": 8,
+          "to": 14,
+          "start": 102.42,
+          "end": 103.42
+        },
+        {
+          "from": 15,
+          "to": 20,
+          "start": 103.42,
+          "end": 104.72
+        },
+        {
+          "from": 21,
+          "to": 23,
+          "start": 104.72,
+          "end": 105.02
+        },
+        {
+          "from": 24,
+          "to": 32,
+          "start": 105.02,
+          "end": 105.74
+        }
+      ],
+      "sourceLine": 11,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Cerrado nunca, y estar mirándolos",
-      "start": 61.154925,
-      "end": 66.95946
+      "start": 105.74,
+      "end": 113.86,
+      "words": [
+        {
+          "from": 0,
+          "to": 7,
+          "start": 105.74,
+          "end": 107.38
+        },
+        {
+          "from": 8,
+          "to": 13,
+          "start": 107.38,
+          "end": 108.24
+        },
+        {
+          "from": 15,
+          "to": 16,
+          "start": 108.88,
+          "end": 109.58
+        },
+        {
+          "from": 23,
+          "to": 33,
+          "start": 110.14,
+          "end": 113.86
+        }
+      ],
+      "sourceLine": 12,
+      "matchedWordRatio": 0.8
     },
     {
       "text": "Amor eterno e inolvidable",
-      "start": 66.95946,
-      "end": 71.520166
+      "start": 113.86,
+      "end": 121.18,
+      "words": [
+        {
+          "from": 0,
+          "to": 4,
+          "start": 113.86,
+          "end": 114.88
+        },
+        {
+          "from": 5,
+          "to": 11,
+          "start": 114.88,
+          "end": 117.66
+        },
+        {
+          "from": 12,
+          "to": 13,
+          "start": 117.66,
+          "end": 119.28
+        },
+        {
+          "from": 14,
+          "to": 25,
+          "start": 119.28,
+          "end": 121.18
+        }
+      ],
+      "sourceLine": 13,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Pero tarde o temprano",
-      "start": 71.520166,
-      "end": 75.251653
+      "start": 123.46,
+      "end": 125.56,
+      "words": [
+        {
+          "from": 0,
+          "to": 4,
+          "start": 123.46,
+          "end": 123.96
+        },
+        {
+          "from": 5,
+          "to": 10,
+          "start": 123.96,
+          "end": 124.4
+        },
+        {
+          "from": 11,
+          "to": 12,
+          "start": 124.4,
+          "end": 124.76
+        },
+        {
+          "from": 13,
+          "to": 21,
+          "start": 124.76,
+          "end": 125.56
+        }
+      ],
+      "sourceLine": 14,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Yo voy a estar contigo",
-      "start": 75.251653,
-      "end": 78.98314
+      "start": 125.56,
+      "end": 127.8,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 125.56,
+          "end": 126.18
+        },
+        {
+          "from": 3,
+          "to": 6,
+          "start": 126.18,
+          "end": 126.36
+        },
+        {
+          "from": 7,
+          "to": 8,
+          "start": 126.36,
+          "end": 126.54
+        },
+        {
+          "from": 9,
+          "to": 14,
+          "start": 126.54,
+          "end": 126.72
+        },
+        {
+          "from": 15,
+          "to": 22,
+          "start": 126.72,
+          "end": 127.8
+        }
+      ],
+      "sourceLine": 15,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Para seguir amándonos",
-      "start": 78.98314,
-      "end": 82.921932
+      "start": 127.8,
+      "end": 135.52,
+      "words": [
+        {
+          "from": 0,
+          "to": 4,
+          "start": 127.8,
+          "end": 128.96
+        },
+        {
+          "from": 5,
+          "to": 11,
+          "start": 128.96,
+          "end": 130.44
+        },
+        {
+          "from": 12,
+          "to": 21,
+          "start": 130.44,
+          "end": 135.52
+        }
+      ],
+      "sourceLine": 16,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Yo he sufrido mucho por tu ausencia",
-      "start": 82.921932,
-      "end": 88.933772
+      "start": 154.14,
+      "end": 157.44,
+      "words": [
+        {
+          "from": 3,
+          "to": 5,
+          "start": 154.14,
+          "end": 155.06
+        },
+        {
+          "from": 6,
+          "to": 13,
+          "start": 155.06,
+          "end": 156.1
+        },
+        {
+          "from": 14,
+          "to": 19,
+          "start": 156.1,
+          "end": 156.4
+        },
+        {
+          "from": 20,
+          "to": 23,
+          "start": 156.4,
+          "end": 156.68
+        },
+        {
+          "from": 24,
+          "to": 26,
+          "start": 156.68,
+          "end": 156.8
+        },
+        {
+          "from": 27,
+          "to": 35,
+          "start": 156.8,
+          "end": 157.44
+        }
+      ],
+      "sourceLine": 17,
+      "matchedWordRatio": 0.857
     },
     {
       "text": "Desde ese día hasta hoy, no soy feliz",
-      "start": 88.933772,
-      "end": 94.945612
+      "start": 158.52,
+      "end": 161.38,
+      "words": [
+        {
+          "from": 0,
+          "to": 5,
+          "start": 158.52,
+          "end": 158.98
+        },
+        {
+          "from": 6,
+          "to": 9,
+          "start": 158.98,
+          "end": 159.4
+        },
+        {
+          "from": 10,
+          "to": 13,
+          "start": 159.4,
+          "end": 159.56
+        },
+        {
+          "from": 14,
+          "to": 19,
+          "start": 159.56,
+          "end": 159.84
+        },
+        {
+          "from": 20,
+          "to": 23,
+          "start": 159.84,
+          "end": 160.24
+        },
+        {
+          "from": 25,
+          "to": 27,
+          "start": 160.24,
+          "end": 160.62
+        },
+        {
+          "from": 28,
+          "to": 31,
+          "start": 160.62,
+          "end": 160.88
+        },
+        {
+          "from": 32,
+          "to": 37,
+          "start": 160.88,
+          "end": 161.38
+        }
+      ],
+      "sourceLine": 18,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Y aunque tengo muy tranquila mi conciencia",
-      "start": 94.945612,
-      "end": 102.408586
+      "start": 162.84,
+      "end": 166.84,
+      "words": [
+        {
+          "from": 2,
+          "to": 8,
+          "start": 162.84,
+          "end": 163.12
+        },
+        {
+          "from": 9,
+          "to": 14,
+          "start": 163.12,
+          "end": 163.84
+        },
+        {
+          "from": 15,
+          "to": 18,
+          "start": 164.62,
+          "end": 164.8
+        },
+        {
+          "from": 19,
+          "to": 28,
+          "start": 164.8,
+          "end": 165.46
+        },
+        {
+          "from": 29,
+          "to": 31,
+          "start": 165.46,
+          "end": 165.66
+        },
+        {
+          "from": 32,
+          "to": 42,
+          "start": 165.66,
+          "end": 166.84
+        }
+      ],
+      "sourceLine": 19,
+      "matchedWordRatio": 0.857
     },
     {
       "text": "Yo sé qué pude y sé que pude haber yo hecho más por ti",
-      "start": 102.408586,
-      "end": 110.908084
+      "start": 166.84,
+      "end": 171.7,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 166.84,
+          "end": 167.58
+        },
+        {
+          "from": 3,
+          "to": 5,
+          "start": 167.58,
+          "end": 167.88
+        },
+        {
+          "from": 6,
+          "to": 9,
+          "start": 167.88,
+          "end": 168.1
+        },
+        {
+          "from": 10,
+          "to": 14,
+          "start": 168.1,
+          "end": 168.64
+        },
+        {
+          "from": 15,
+          "to": 16,
+          "start": 168.64,
+          "end": 168.82
+        },
+        {
+          "from": 17,
+          "to": 19,
+          "start": 168.82,
+          "end": 169.06
+        },
+        {
+          "from": 20,
+          "to": 23,
+          "start": 169.06,
+          "end": 169.24
+        },
+        {
+          "from": 24,
+          "to": 28,
+          "start": 169.24,
+          "end": 169.64
+        },
+        {
+          "from": 29,
+          "to": 34,
+          "start": 169.64,
+          "end": 169.9
+        },
+        {
+          "from": 35,
+          "to": 37,
+          "start": 169.9,
+          "end": 170.22
+        },
+        {
+          "from": 38,
+          "to": 43,
+          "start": 170.22,
+          "end": 170.72
+        },
+        {
+          "from": 44,
+          "to": 47,
+          "start": 170.72,
+          "end": 170.96
+        },
+        {
+          "from": 48,
+          "to": 51,
+          "start": 170.96,
+          "end": 171.26
+        },
+        {
+          "from": 52,
+          "to": 54,
+          "start": 171.26,
+          "end": 171.7
+        }
+      ],
+      "sourceLine": 20,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Oscura soledad, estoy viendo yo",
-      "start": 110.908084,
-      "end": 116.298009
+      "start": 175.28,
+      "end": 177.58,
+      "words": [
+        {
+          "from": 0,
+          "to": 6,
+          "start": 175.28,
+          "end": 175.98
+        },
+        {
+          "from": 7,
+          "to": 14,
+          "start": 175.98,
+          "end": 176.68
+        },
+        {
+          "from": 16,
+          "to": 21,
+          "start": 177.04,
+          "end": 177.58
+        }
+      ],
+      "sourceLine": 21,
+      "matchedWordRatio": 0.6
     },
     {
       "text": "Y la misma soledad de tu sepulcro, mamá",
-      "start": 116.298009,
-      "end": 122.724459
+      "start": 179.02,
+      "end": 183.41,
+      "words": [
+        {
+          "from": 0,
+          "to": 1,
+          "start": 179.02,
+          "end": 179.74
+        },
+        {
+          "from": 2,
+          "to": 4,
+          "start": 179.74,
+          "end": 179.88
+        },
+        {
+          "from": 5,
+          "to": 10,
+          "start": 179.88,
+          "end": 180.38
+        },
+        {
+          "from": 11,
+          "to": 18,
+          "start": 180.38,
+          "end": 181.52
+        },
+        {
+          "from": 19,
+          "to": 21,
+          "start": 181.52,
+          "end": 182.0
+        },
+        {
+          "from": 22,
+          "to": 24,
+          "start": 182.0,
+          "end": 182.18
+        },
+        {
+          "from": 25,
+          "to": 33,
+          "start": 182.18,
+          "end": 183.06
+        },
+        {
+          "from": 35,
+          "to": 39,
+          "start": 183.06,
+          "end": 183.41
+        }
+      ],
+      "sourceLine": 22,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Y es que tú eres, es que tú eres el amor del cual yo tengo",
-      "start": 122.724459,
-      "end": 131.638566
+      "start": 184.04,
+      "end": 188.94,
+      "words": [
+        {
+          "from": 0,
+          "to": 1,
+          "start": 184.04,
+          "end": 184.38
+        },
+        {
+          "from": 2,
+          "to": 4,
+          "start": 184.38,
+          "end": 184.58
+        },
+        {
+          "from": 5,
+          "to": 8,
+          "start": 184.58,
+          "end": 184.74
+        },
+        {
+          "from": 9,
+          "to": 11,
+          "start": 184.74,
+          "end": 184.96
+        },
+        {
+          "from": 12,
+          "to": 16,
+          "start": 184.96,
+          "end": 185.48
+        },
+        {
+          "from": 18,
+          "to": 20,
+          "start": 185.8,
+          "end": 186.28
+        },
+        {
+          "from": 21,
+          "to": 24,
+          "start": 186.28,
+          "end": 186.44
+        },
+        {
+          "from": 25,
+          "to": 27,
+          "start": 186.44,
+          "end": 186.62
+        },
+        {
+          "from": 28,
+          "to": 32,
+          "start": 186.62,
+          "end": 186.84
+        },
+        {
+          "from": 33,
+          "to": 35,
+          "start": 186.84,
+          "end": 187.1
+        },
+        {
+          "from": 36,
+          "to": 40,
+          "start": 187.1,
+          "end": 187.46
+        },
+        {
+          "from": 41,
+          "to": 44,
+          "start": 187.46,
+          "end": 187.8
+        },
+        {
+          "from": 45,
+          "to": 49,
+          "start": 187.8,
+          "end": 188.12
+        },
+        {
+          "from": 50,
+          "to": 52,
+          "start": 188.12,
+          "end": 188.38
+        },
+        {
+          "from": 53,
+          "to": 58,
+          "start": 188.38,
+          "end": 188.94
+        }
+      ],
+      "sourceLine": 23,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "El más triste recuerdo de Acapulco",
-      "start": 131.638566,
-      "end": 137.650406
+      "start": 188.94,
+      "end": 192.8,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 188.94,
+          "end": 189.82
+        },
+        {
+          "from": 3,
+          "to": 6,
+          "start": 189.82,
+          "end": 190.14
+        },
+        {
+          "from": 7,
+          "to": 13,
+          "start": 190.14,
+          "end": 190.62
+        },
+        {
+          "from": 14,
+          "to": 22,
+          "start": 190.62,
+          "end": 191.54
+        },
+        {
+          "from": 23,
+          "to": 25,
+          "start": 191.54,
+          "end": 191.84
+        },
+        {
+          "from": 26,
+          "to": 34,
+          "start": 191.84,
+          "end": 192.8
+        }
+      ],
+      "sourceLine": 24,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Pero cómo quisiera",
-      "start": 137.650406,
-      "end": 140.967284
-    },
-    {
-      "text": "Que tú vivieras",
-      "start": 140.967284,
-      "end": 143.662247
-    },
-    {
-      "text": "Que tus ojitos jamás se hubieran",
-      "start": 143.662247,
-      "end": 149.259477
-    },
-    {
-      "text": "Cerrado nunca, y estar mirándolos",
-      "start": 149.259477,
-      "end": 155.064012
-    },
-    {
-      "text": "Amor eterno e inolvidable",
-      "start": 155.064012,
-      "end": 159.624718
-    },
-    {
-      "text": "Pero tarde o temprano",
-      "start": 159.624718,
-      "end": 163.356205
-    },
-    {
-      "text": "Estaré contigo",
-      "start": 163.356205,
-      "end": 166.051168
+      "start": 193.94,
+      "end": 197.08,
+      "words": [
+        {
+          "from": 0,
+          "to": 4,
+          "start": 193.94,
+          "end": 195.0
+        },
+        {
+          "from": 5,
+          "to": 9,
+          "start": 195.0,
+          "end": 195.42
+        },
+        {
+          "from": 10,
+          "to": 18,
+          "start": 195.42,
+          "end": 197.08
+        }
+      ],
+      "sourceLine": 25,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Para seguir amándonos",
-      "start": 166.051168,
-      "end": 169.98996
+      "start": 231.36,
+      "end": 233.28,
+      "words": [
+        {
+          "from": 0,
+          "to": 4,
+          "start": 231.36,
+          "end": 232.2
+        },
+        {
+          "from": 5,
+          "to": 11,
+          "start": 232.2,
+          "end": 233.28
+        }
+      ],
+      "sourceLine": 32,
+      "matchedWordRatio": 0.667
     },
     {
       "text": "Amor eterno, eterno",
-      "start": 169.98996,
-      "end": 173.306837
-    },
-    {
-      "text": "Amor eterno, eterno",
-      "start": 173.306837,
-      "end": 176.623714
+      "start": 268.6,
+      "end": 275.94,
+      "words": [
+        {
+          "from": 0,
+          "to": 4,
+          "start": 268.6,
+          "end": 270.0
+        },
+        {
+          "from": 5,
+          "to": 11,
+          "start": 270.0,
+          "end": 271.4
+        },
+        {
+          "from": 13,
+          "to": 19,
+          "start": 274.54,
+          "end": 275.94
+        }
+      ],
+      "sourceLine": 34,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Ojos que hayan derramado tantas lágrimas por pena",
-      "start": 176.623714,
-      "end": 185.330517
+      "start": 278.24,
+      "end": 285.34,
+      "words": [
+        {
+          "from": 0,
+          "to": 4,
+          "start": 278.24,
+          "end": 279.44
+        },
+        {
+          "from": 5,
+          "to": 8,
+          "start": 279.44,
+          "end": 279.94
+        },
+        {
+          "from": 9,
+          "to": 14,
+          "start": 279.94,
+          "end": 281.62
+        },
+        {
+          "from": 15,
+          "to": 24,
+          "start": 281.62,
+          "end": 282.82
+        },
+        {
+          "from": 25,
+          "to": 31,
+          "start": 282.82,
+          "end": 283.5
+        },
+        {
+          "from": 32,
+          "to": 40,
+          "start": 283.5,
+          "end": 284.24
+        },
+        {
+          "from": 41,
+          "to": 44,
+          "start": 284.24,
+          "end": 284.7
+        },
+        {
+          "from": 45,
+          "to": 49,
+          "start": 284.7,
+          "end": 285.34
+        }
+      ],
+      "sourceLine": 35,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "De dolor, de amor, de tantas despedidas y de esperas",
-      "start": 185.330517,
-      "end": 193.830015
+      "start": 288.42,
+      "end": 295.74,
+      "words": [
+        {
+          "from": 3,
+          "to": 8,
+          "start": 288.42,
+          "end": 288.96
+        },
+        {
+          "from": 10,
+          "to": 12,
+          "start": 290.42,
+          "end": 290.74
+        },
+        {
+          "from": 13,
+          "to": 17,
+          "start": 290.74,
+          "end": 291.02
+        },
+        {
+          "from": 19,
+          "to": 21,
+          "start": 291.02,
+          "end": 291.32
+        },
+        {
+          "from": 22,
+          "to": 28,
+          "start": 291.32,
+          "end": 292.38
+        },
+        {
+          "from": 29,
+          "to": 39,
+          "start": 292.38,
+          "end": 293.4
+        },
+        {
+          "from": 40,
+          "to": 41,
+          "start": 293.4,
+          "end": 293.76
+        },
+        {
+          "from": 42,
+          "to": 44,
+          "start": 293.76,
+          "end": 293.94
+        },
+        {
+          "from": 45,
+          "to": 52,
+          "start": 293.94,
+          "end": 295.74
+        }
+      ],
+      "sourceLine": 36,
+      "matchedWordRatio": 0.9
     },
     {
       "text": "Soledad, eso es todo lo que tengo ahora y tus recuerdos",
-      "start": 193.830015,
-      "end": 202.951428
+      "start": 298.16,
+      "end": 305.08,
+      "words": [
+        {
+          "from": 0,
+          "to": 7,
+          "start": 298.16,
+          "end": 299.08
+        },
+        {
+          "from": 9,
+          "to": 12,
+          "start": 299.78,
+          "end": 300.68
+        },
+        {
+          "from": 13,
+          "to": 15,
+          "start": 300.68,
+          "end": 300.96
+        },
+        {
+          "from": 16,
+          "to": 20,
+          "start": 300.96,
+          "end": 301.34
+        },
+        {
+          "from": 21,
+          "to": 23,
+          "start": 301.34,
+          "end": 301.72
+        },
+        {
+          "from": 24,
+          "to": 27,
+          "start": 301.72,
+          "end": 301.9
+        },
+        {
+          "from": 28,
+          "to": 33,
+          "start": 301.9,
+          "end": 302.36
+        },
+        {
+          "from": 34,
+          "to": 39,
+          "start": 302.36,
+          "end": 302.76
+        },
+        {
+          "from": 40,
+          "to": 41,
+          "start": 302.76,
+          "end": 302.9
+        },
+        {
+          "from": 42,
+          "to": 45,
+          "start": 302.9,
+          "end": 303.26
+        },
+        {
+          "from": 46,
+          "to": 55,
+          "start": 303.26,
+          "end": 305.08
+        }
+      ],
+      "sourceLine": 37,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Que hacen más triste la angustia de vivir pensando",
-      "start": 202.951428,
-      "end": 211.65823
+      "start": 306.6,
+      "end": 312.32,
+      "words": [
+        {
+          "from": 0,
+          "to": 3,
+          "start": 306.6,
+          "end": 307.52
+        },
+        {
+          "from": 4,
+          "to": 9,
+          "start": 307.52,
+          "end": 308.04
+        },
+        {
+          "from": 10,
+          "to": 13,
+          "start": 308.04,
+          "end": 308.82
+        },
+        {
+          "from": 14,
+          "to": 20,
+          "start": 308.82,
+          "end": 309.78
+        },
+        {
+          "from": 21,
+          "to": 23,
+          "start": 309.78,
+          "end": 310.24
+        },
+        {
+          "from": 24,
+          "to": 32,
+          "start": 310.24,
+          "end": 311.12
+        },
+        {
+          "from": 33,
+          "to": 35,
+          "start": 311.12,
+          "end": 311.26
+        },
+        {
+          "from": 36,
+          "to": 41,
+          "start": 311.26,
+          "end": 311.5
+        },
+        {
+          "from": 42,
+          "to": 50,
+          "start": 311.5,
+          "end": 312.32
+        }
+      ],
+      "sourceLine": 38,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Como siempre, en ti",
-      "start": 211.65823,
-      "end": 214.767803
+      "start": 312.32,
+      "end": 314.16,
+      "words": [
+        {
+          "from": 0,
+          "to": 4,
+          "start": 312.32,
+          "end": 312.74
+        },
+        {
+          "from": 5,
+          "to": 12,
+          "start": 312.74,
+          "end": 313.34
+        },
+        {
+          "from": 14,
+          "to": 16,
+          "start": 313.34,
+          "end": 313.7
+        },
+        {
+          "from": 17,
+          "to": 19,
+          "start": 313.7,
+          "end": 314.16
+        }
+      ],
+      "sourceLine": 39,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Ojos que te vieron tanto",
-      "start": 214.767803,
-      "end": 218.913899
+      "start": 314.16,
+      "end": 320.58,
+      "words": [
+        {
+          "from": 0,
+          "to": 4,
+          "start": 314.16,
+          "end": 318.22
+        },
+        {
+          "from": 5,
+          "to": 8,
+          "start": 318.22,
+          "end": 319.28
+        },
+        {
+          "from": 12,
+          "to": 18,
+          "start": 319.44,
+          "end": 319.68
+        },
+        {
+          "from": 19,
+          "to": 24,
+          "start": 319.68,
+          "end": 320.58
+        }
+      ],
+      "sourceLine": 40,
+      "matchedWordRatio": 0.8,
+      "alignment": "acoustic-gap-refinement"
     },
     {
       "text": "Y que no han vuelto a verte hasta el Sol de hoy",
-      "start": 218.913899,
-      "end": 226.376873
+      "start": 320.78,
+      "end": 323.86,
+      "words": [
+        {
+          "from": 2,
+          "to": 5,
+          "start": 320.78,
+          "end": 320.94
+        },
+        {
+          "from": 6,
+          "to": 8,
+          "start": 320.94,
+          "end": 321.12
+        },
+        {
+          "from": 9,
+          "to": 12,
+          "start": 321.12,
+          "end": 321.26
+        },
+        {
+          "from": 13,
+          "to": 19,
+          "start": 321.26,
+          "end": 321.64
+        },
+        {
+          "from": 20,
+          "to": 21,
+          "start": 321.64,
+          "end": 321.76
+        },
+        {
+          "from": 22,
+          "to": 27,
+          "start": 321.76,
+          "end": 322.04
+        },
+        {
+          "from": 28,
+          "to": 33,
+          "start": 322.04,
+          "end": 322.56
+        },
+        {
+          "from": 34,
+          "to": 36,
+          "start": 322.56,
+          "end": 322.84
+        },
+        {
+          "from": 41,
+          "to": 43,
+          "start": 323.1,
+          "end": 323.46
+        },
+        {
+          "from": 44,
+          "to": 47,
+          "start": 323.46,
+          "end": 323.86
+        }
+      ],
+      "sourceLine": 41,
+      "matchedWordRatio": 0.833,
+      "alignment": "acoustic-gap-refinement"
     },
     {
       "text": "Tristes, de tanto extrañarte",
-      "start": 226.376873,
-      "end": 231.352189
+      "start": 323.86,
+      "end": 329.98,
+      "words": [
+        {
+          "from": 0,
+          "to": 7,
+          "start": 323.86,
+          "end": 327.44
+        },
+        {
+          "from": 9,
+          "to": 11,
+          "start": 328.18,
+          "end": 328.56
+        },
+        {
+          "from": 12,
+          "to": 17,
+          "start": 328.56,
+          "end": 328.96
+        },
+        {
+          "from": 18,
+          "to": 28,
+          "start": 328.96,
+          "end": 329.98
+        }
+      ],
+      "sourceLine": 42,
+      "matchedWordRatio": 1.0,
+      "alignment": "acoustic-gap-refinement"
     },
     {
       "text": "Y de tanto esperarte desde aquel adiós",
-      "start": 231.352189,
-      "end": 237.985944
+      "start": 329.98,
+      "end": 335.56,
+      "words": [
+        {
+          "from": 0,
+          "to": 1,
+          "start": 329.98,
+          "end": 330.86
+        },
+        {
+          "from": 2,
+          "to": 4,
+          "start": 330.86,
+          "end": 331.02
+        },
+        {
+          "from": 5,
+          "to": 10,
+          "start": 331.02,
+          "end": 331.42
+        },
+        {
+          "from": 11,
+          "to": 20,
+          "start": 331.42,
+          "end": 332.46
+        },
+        {
+          "from": 21,
+          "to": 26,
+          "start": 332.46,
+          "end": 332.94
+        },
+        {
+          "from": 27,
+          "to": 32,
+          "start": 332.94,
+          "end": 333.38
+        },
+        {
+          "from": 33,
+          "to": 38,
+          "start": 333.38,
+          "end": 335.56
+        }
+      ],
+      "sourceLine": 43,
+      "matchedWordRatio": 1.0,
+      "alignment": "acoustic-gap-refinement"
     },
     {
       "text": "Soledad, eso es todo lo que tengo ahora",
-      "start": 237.985944,
-      "end": 244.412393
+      "start": 335.56,
+      "end": 340.3,
+      "words": [
+        {
+          "from": 0,
+          "to": 7,
+          "start": 335.56,
+          "end": 337.92
+        },
+        {
+          "from": 9,
+          "to": 12,
+          "start": 338.28,
+          "end": 338.84
+        },
+        {
+          "from": 13,
+          "to": 15,
+          "start": 338.84,
+          "end": 339.1
+        },
+        {
+          "from": 16,
+          "to": 20,
+          "start": 339.1,
+          "end": 339.44
+        },
+        {
+          "from": 21,
+          "to": 23,
+          "start": 339.44,
+          "end": 339.68
+        },
+        {
+          "from": 24,
+          "to": 27,
+          "start": 339.68,
+          "end": 339.88
+        },
+        {
+          "from": 28,
+          "to": 33,
+          "start": 339.88,
+          "end": 340.3
+        }
+      ],
+      "sourceLine": 44,
+      "matchedWordRatio": 0.875,
+      "alignment": "acoustic-gap-refinement"
     },
     {
       "text": "Y eso es todo lo que tengo ahora y tus recuerdos",
-      "start": 244.412393,
-      "end": 252.289977
+      "start": 340.36,
+      "end": 344.98,
+      "words": [
+        {
+          "from": 0,
+          "to": 1,
+          "start": 340.36,
+          "end": 341.14
+        },
+        {
+          "from": 6,
+          "to": 8,
+          "start": 341.5,
+          "end": 341.76
+        },
+        {
+          "from": 9,
+          "to": 13,
+          "start": 341.76,
+          "end": 342.0
+        },
+        {
+          "from": 14,
+          "to": 16,
+          "start": 342.0,
+          "end": 342.3
+        },
+        {
+          "from": 17,
+          "to": 20,
+          "start": 342.3,
+          "end": 342.48
+        },
+        {
+          "from": 21,
+          "to": 26,
+          "start": 342.48,
+          "end": 342.9
+        },
+        {
+          "from": 27,
+          "to": 32,
+          "start": 342.9,
+          "end": 343.22
+        },
+        {
+          "from": 33,
+          "to": 34,
+          "start": 343.22,
+          "end": 343.38
+        },
+        {
+          "from": 35,
+          "to": 38,
+          "start": 343.38,
+          "end": 343.62
+        },
+        {
+          "from": 39,
+          "to": 48,
+          "start": 343.62,
+          "end": 344.98
+        }
+      ],
+      "sourceLine": 45,
+      "matchedWordRatio": 0.909
     },
     {
       "text": "Que hacen más triste la angustia de vivir pensando",
-      "start": 252.289977,
-      "end": 260.99678
+      "start": 344.98,
+      "end": 350.32,
+      "words": [
+        {
+          "from": 0,
+          "to": 3,
+          "start": 344.98,
+          "end": 345.74
+        },
+        {
+          "from": 4,
+          "to": 9,
+          "start": 345.74,
+          "end": 346.16
+        },
+        {
+          "from": 10,
+          "to": 13,
+          "start": 346.16,
+          "end": 347.12
+        },
+        {
+          "from": 21,
+          "to": 23,
+          "start": 348.08,
+          "end": 348.26
+        },
+        {
+          "from": 24,
+          "to": 32,
+          "start": 348.26,
+          "end": 349.2
+        },
+        {
+          "from": 33,
+          "to": 35,
+          "start": 349.2,
+          "end": 349.36
+        },
+        {
+          "from": 36,
+          "to": 41,
+          "start": 349.36,
+          "end": 349.64
+        },
+        {
+          "from": 42,
+          "to": 50,
+          "start": 349.64,
+          "end": 350.32
+        }
+      ],
+      "sourceLine": 46,
+      "matchedWordRatio": 0.889
     },
     {
       "text": "Como siempre y para siempre y por siempre en ti",
-      "start": 260.99678,
-      "end": 268.874363
+      "start": 350.32,
+      "end": 353.5,
+      "words": [
+        {
+          "from": 0,
+          "to": 4,
+          "start": 350.32,
+          "end": 350.66
+        },
+        {
+          "from": 5,
+          "to": 12,
+          "start": 350.66,
+          "end": 351.1
+        },
+        {
+          "from": 13,
+          "to": 14,
+          "start": 351.1,
+          "end": 351.3
+        },
+        {
+          "from": 15,
+          "to": 19,
+          "start": 351.3,
+          "end": 351.42
+        },
+        {
+          "from": 20,
+          "to": 27,
+          "start": 351.42,
+          "end": 351.86
+        },
+        {
+          "from": 28,
+          "to": 29,
+          "start": 351.86,
+          "end": 352.06
+        },
+        {
+          "from": 30,
+          "to": 33,
+          "start": 352.06,
+          "end": 352.26
+        },
+        {
+          "from": 34,
+          "to": 41,
+          "start": 352.26,
+          "end": 352.5
+        },
+        {
+          "from": 42,
+          "to": 44,
+          "start": 352.5,
+          "end": 353.22
+        },
+        {
+          "from": 45,
+          "to": 47,
+          "start": 353.22,
+          "end": 353.5
+        }
+      ],
+      "sourceLine": 47,
+      "matchedWordRatio": 1.0
+    }
+  ],
+  "unmatchedLines": [
+    {
+      "line": 26,
+      "text": "Que tú vivieras",
+      "coverage": 0.0
     },
     {
+      "line": 27,
+      "text": "Que tus ojitos jamás se hubieran",
+      "coverage": 0.0
+    },
+    {
+      "line": 28,
+      "text": "Cerrado nunca, y estar mirándolos",
+      "coverage": 0.2
+    },
+    {
+      "line": 29,
+      "text": "Amor eterno e inolvidable",
+      "coverage": 0.25
+    },
+    {
+      "line": 30,
+      "text": "Pero tarde o temprano",
+      "coverage": 0.0
+    },
+    {
+      "line": 31,
+      "text": "Estaré contigo",
+      "coverage": 0.0
+    },
+    {
+      "line": 33,
       "text": "Amor eterno, eterno",
-      "start": 268.874363,
-      "end": 272.191241
+      "coverage": 0.0
     },
     {
+      "line": 48,
+      "text": "Amor eterno, eterno",
+      "coverage": 0.0
+    },
+    {
+      "line": 49,
       "text": "Amor eterno, eterno amor",
-      "start": 272.191241,
-      "end": 276.337337
+      "coverage": 0.5
     },
     {
+      "line": 50,
       "text": "Amor, amor, amor, amor, amor, amor",
-      "start": 276.337337,
-      "end": 281.312653
+      "coverage": 0.0
     }
   ]
 }

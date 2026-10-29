@@ -1,125 +1,1281 @@
 {
   "songId": "nuestro-secreto",
-  "title": "Nuestro secreto",
   "status": "estimated",
   "reviewRequired": true,
-  "timingMethod": "text-length-proportional; not aligned to vocals or instrumental sections",
-  "durationSeconds": 159.425306,
+  "method": "local-asr-word-matching",
+  "alignmentModel": "faster-whisper-small",
+  "durationSeconds": 153.652245,
+  "audioSha256": "be8d5ec295d425f1ff47e4ad2c114909414bd336f659c8c12e8b6addb38f8d8c",
   "lyrics": [
     {
       "text": "Este secreto que tienes conmigo nadie lo sabrá",
-      "start": 0.0,
-      "end": 7.375548
+      "start": 17.8,
+      "end": 22.02,
+      "words": [
+        {
+          "from": 0,
+          "to": 4,
+          "start": 17.8,
+          "end": 19.06
+        },
+        {
+          "from": 5,
+          "to": 12,
+          "start": 19.06,
+          "end": 19.7
+        },
+        {
+          "from": 13,
+          "to": 16,
+          "start": 19.7,
+          "end": 19.84
+        },
+        {
+          "from": 17,
+          "to": 23,
+          "start": 19.84,
+          "end": 20.02
+        },
+        {
+          "from": 24,
+          "to": 31,
+          "start": 20.02,
+          "end": 20.64
+        },
+        {
+          "from": 32,
+          "to": 37,
+          "start": 20.64,
+          "end": 21.04
+        },
+        {
+          "from": 38,
+          "to": 40,
+          "start": 21.04,
+          "end": 21.34
+        },
+        {
+          "from": 41,
+          "to": 46,
+          "start": 21.34,
+          "end": 22.02
+        }
+      ],
+      "sourceLine": 1,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Este secreto seguira escondido una eternidad",
-      "start": 7.375548,
-      "end": 14.751096
+      "start": 22.02,
+      "end": 26.96,
+      "words": [
+        {
+          "from": 0,
+          "to": 4,
+          "start": 22.02,
+          "end": 23.76
+        },
+        {
+          "from": 5,
+          "to": 12,
+          "start": 23.76,
+          "end": 24.42
+        },
+        {
+          "from": 21,
+          "to": 30,
+          "start": 24.84,
+          "end": 25.74
+        },
+        {
+          "from": 31,
+          "to": 34,
+          "start": 25.74,
+          "end": 26.14
+        },
+        {
+          "from": 35,
+          "to": 44,
+          "start": 26.14,
+          "end": 26.96
+        }
+      ],
+      "sourceLine": 2,
+      "matchedWordRatio": 0.833
     },
     {
       "text": "Yo te aseguro nunca diré nada de lo que pasó",
-      "start": 14.751096,
-      "end": 21.370177
+      "start": 26.96,
+      "end": 31.54,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 26.96,
+          "end": 28.36
+        },
+        {
+          "from": 3,
+          "to": 5,
+          "start": 28.36,
+          "end": 28.52
+        },
+        {
+          "from": 6,
+          "to": 13,
+          "start": 28.52,
+          "end": 28.92
+        },
+        {
+          "from": 14,
+          "to": 19,
+          "start": 28.92,
+          "end": 29.26
+        },
+        {
+          "from": 20,
+          "to": 24,
+          "start": 29.26,
+          "end": 29.74
+        },
+        {
+          "from": 25,
+          "to": 29,
+          "start": 29.74,
+          "end": 30.26
+        },
+        {
+          "from": 30,
+          "to": 32,
+          "start": 30.26,
+          "end": 30.78
+        },
+        {
+          "from": 33,
+          "to": 35,
+          "start": 30.78,
+          "end": 30.94
+        },
+        {
+          "from": 36,
+          "to": 39,
+          "start": 30.94,
+          "end": 31.12
+        },
+        {
+          "from": 40,
+          "to": 44,
+          "start": 31.12,
+          "end": 31.54
+        }
+      ],
+      "sourceLine": 3,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Y no te preocupes, que todo lo nuestro queda entre tú y yo",
-      "start": 21.370177,
-      "end": 29.880425
+      "start": 31.54,
+      "end": 36.62,
+      "words": [
+        {
+          "from": 0,
+          "to": 1,
+          "start": 31.54,
+          "end": 32.82
+        },
+        {
+          "from": 2,
+          "to": 4,
+          "start": 32.82,
+          "end": 32.96
+        },
+        {
+          "from": 5,
+          "to": 7,
+          "start": 32.96,
+          "end": 33.12
+        },
+        {
+          "from": 8,
+          "to": 17,
+          "start": 33.12,
+          "end": 33.88
+        },
+        {
+          "from": 19,
+          "to": 22,
+          "start": 33.88,
+          "end": 34.06
+        },
+        {
+          "from": 23,
+          "to": 27,
+          "start": 34.06,
+          "end": 34.26
+        },
+        {
+          "from": 28,
+          "to": 30,
+          "start": 34.26,
+          "end": 34.46
+        },
+        {
+          "from": 31,
+          "to": 38,
+          "start": 34.46,
+          "end": 34.78
+        },
+        {
+          "from": 39,
+          "to": 44,
+          "start": 34.78,
+          "end": 35.4
+        },
+        {
+          "from": 45,
+          "to": 50,
+          "start": 35.4,
+          "end": 35.88
+        },
+        {
+          "from": 51,
+          "to": 53,
+          "start": 35.88,
+          "end": 36.12
+        },
+        {
+          "from": 54,
+          "to": 55,
+          "start": 36.12,
+          "end": 36.24
+        },
+        {
+          "from": 56,
+          "to": 58,
+          "start": 36.24,
+          "end": 36.62
+        }
+      ],
+      "sourceLine": 4,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Este secreto que tienes conmigo nadie lo sabrá",
-      "start": 29.880425,
-      "end": 37.255973
+      "start": 36.62,
+      "end": 40.76,
+      "words": [
+        {
+          "from": 0,
+          "to": 4,
+          "start": 36.62,
+          "end": 38.16
+        },
+        {
+          "from": 5,
+          "to": 12,
+          "start": 38.16,
+          "end": 38.84
+        },
+        {
+          "from": 13,
+          "to": 16,
+          "start": 38.84,
+          "end": 39.0
+        },
+        {
+          "from": 17,
+          "to": 23,
+          "start": 39.0,
+          "end": 39.22
+        },
+        {
+          "from": 24,
+          "to": 31,
+          "start": 39.22,
+          "end": 39.78
+        },
+        {
+          "from": 32,
+          "to": 37,
+          "start": 39.78,
+          "end": 40.4
+        },
+        {
+          "from": 38,
+          "to": 40,
+          "start": 40.4,
+          "end": 40.76
+        }
+      ],
+      "sourceLine": 5,
+      "matchedWordRatio": 0.875
     },
     {
       "text": "Este secreto seguira escondido una eternidad",
-      "start": 37.255973,
-      "end": 44.631521
+      "start": 41.64,
+      "end": 46.08,
+      "words": [
+        {
+          "from": 0,
+          "to": 4,
+          "start": 41.64,
+          "end": 42.94
+        },
+        {
+          "from": 5,
+          "to": 12,
+          "start": 42.94,
+          "end": 43.62
+        },
+        {
+          "from": 13,
+          "to": 20,
+          "start": 43.62,
+          "end": 44.2
+        },
+        {
+          "from": 21,
+          "to": 30,
+          "start": 44.2,
+          "end": 44.96
+        },
+        {
+          "from": 35,
+          "to": 44,
+          "start": 45.38,
+          "end": 46.08
+        }
+      ],
+      "sourceLine": 6,
+      "matchedWordRatio": 0.833
     },
     {
       "text": "Yo te aseguro nunca diré nada de lo que pasó",
-      "start": 44.631521,
-      "end": 51.250603
+      "start": 46.96,
+      "end": 50.9,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 46.96,
+          "end": 47.54
+        },
+        {
+          "from": 3,
+          "to": 5,
+          "start": 47.54,
+          "end": 47.68
+        },
+        {
+          "from": 6,
+          "to": 13,
+          "start": 47.68,
+          "end": 48.04
+        },
+        {
+          "from": 14,
+          "to": 19,
+          "start": 48.04,
+          "end": 48.44
+        },
+        {
+          "from": 20,
+          "to": 24,
+          "start": 48.44,
+          "end": 48.96
+        },
+        {
+          "from": 25,
+          "to": 29,
+          "start": 48.96,
+          "end": 49.48
+        },
+        {
+          "from": 30,
+          "to": 32,
+          "start": 49.48,
+          "end": 50.02
+        },
+        {
+          "from": 33,
+          "to": 35,
+          "start": 50.02,
+          "end": 50.2
+        },
+        {
+          "from": 36,
+          "to": 39,
+          "start": 50.2,
+          "end": 50.4
+        },
+        {
+          "from": 40,
+          "to": 44,
+          "start": 50.4,
+          "end": 50.9
+        }
+      ],
+      "sourceLine": 7,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Y no te preocupes, que todo lo nuestro queda entre tú y yo",
-      "start": 51.250603,
-      "end": 59.76085
+      "start": 50.9,
+      "end": 55.98,
+      "words": [
+        {
+          "from": 0,
+          "to": 1,
+          "start": 50.9,
+          "end": 52.28
+        },
+        {
+          "from": 2,
+          "to": 4,
+          "start": 52.28,
+          "end": 52.4
+        },
+        {
+          "from": 5,
+          "to": 7,
+          "start": 52.4,
+          "end": 52.54
+        },
+        {
+          "from": 8,
+          "to": 17,
+          "start": 52.54,
+          "end": 53.22
+        },
+        {
+          "from": 19,
+          "to": 22,
+          "start": 53.22,
+          "end": 53.68
+        },
+        {
+          "from": 23,
+          "to": 27,
+          "start": 53.68,
+          "end": 53.92
+        },
+        {
+          "from": 28,
+          "to": 30,
+          "start": 53.92,
+          "end": 54.12
+        },
+        {
+          "from": 31,
+          "to": 38,
+          "start": 54.12,
+          "end": 54.48
+        },
+        {
+          "from": 39,
+          "to": 44,
+          "start": 54.48,
+          "end": 55.02
+        },
+        {
+          "from": 45,
+          "to": 50,
+          "start": 55.02,
+          "end": 55.34
+        },
+        {
+          "from": 51,
+          "to": 53,
+          "start": 55.34,
+          "end": 55.54
+        },
+        {
+          "from": 54,
+          "to": 55,
+          "start": 55.54,
+          "end": 55.64
+        },
+        {
+          "from": 56,
+          "to": 58,
+          "start": 55.64,
+          "end": 55.98
+        }
+      ],
+      "sourceLine": 8,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Nadie sabrá que tu pecho, juntito al mío ha latido",
-      "start": 59.76085,
-      "end": 67.325515
+      "start": 57.16,
+      "end": 62.08,
+      "words": [
+        {
+          "from": 0,
+          "to": 5,
+          "start": 57.16,
+          "end": 58.04
+        },
+        {
+          "from": 6,
+          "to": 11,
+          "start": 58.04,
+          "end": 58.58
+        },
+        {
+          "from": 12,
+          "to": 15,
+          "start": 58.58,
+          "end": 58.9
+        },
+        {
+          "from": 16,
+          "to": 18,
+          "start": 58.9,
+          "end": 59.14
+        },
+        {
+          "from": 19,
+          "to": 24,
+          "start": 59.14,
+          "end": 59.64
+        },
+        {
+          "from": 26,
+          "to": 33,
+          "start": 59.64,
+          "end": 60.64
+        },
+        {
+          "from": 34,
+          "to": 36,
+          "start": 60.64,
+          "end": 61.08
+        },
+        {
+          "from": 41,
+          "to": 43,
+          "start": 61.26,
+          "end": 61.46
+        },
+        {
+          "from": 44,
+          "to": 50,
+          "start": 61.46,
+          "end": 62.08
+        }
+      ],
+      "sourceLine": 9,
+      "matchedWordRatio": 0.9
     },
     {
       "text": "Que disfrutamos instantes, de fascinante dulzura",
-      "start": 67.325515,
-      "end": 75.268413
+      "start": 62.08,
+      "end": 67.52,
+      "words": [
+        {
+          "from": 0,
+          "to": 3,
+          "start": 62.08,
+          "end": 62.96
+        },
+        {
+          "from": 4,
+          "to": 15,
+          "start": 62.96,
+          "end": 63.48
+        },
+        {
+          "from": 16,
+          "to": 25,
+          "start": 63.48,
+          "end": 64.34
+        },
+        {
+          "from": 27,
+          "to": 29,
+          "start": 64.34,
+          "end": 65.38
+        },
+        {
+          "from": 30,
+          "to": 40,
+          "start": 65.38,
+          "end": 66.08
+        },
+        {
+          "from": 41,
+          "to": 48,
+          "start": 66.08,
+          "end": 67.52
+        }
+      ],
+      "sourceLine": 10,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Nunca diré que hubo noches que te adoré con locura",
-      "start": 75.268413,
-      "end": 83.022194
+      "start": 67.52,
+      "end": 72.66,
+      "words": [
+        {
+          "from": 0,
+          "to": 5,
+          "start": 67.52,
+          "end": 69.12
+        },
+        {
+          "from": 6,
+          "to": 10,
+          "start": 69.12,
+          "end": 69.66
+        },
+        {
+          "from": 11,
+          "to": 14,
+          "start": 69.66,
+          "end": 69.86
+        },
+        {
+          "from": 15,
+          "to": 19,
+          "start": 69.86,
+          "end": 70.18
+        },
+        {
+          "from": 20,
+          "to": 26,
+          "start": 70.18,
+          "end": 70.66
+        },
+        {
+          "from": 27,
+          "to": 30,
+          "start": 70.66,
+          "end": 71.18
+        },
+        {
+          "from": 31,
+          "to": 33,
+          "start": 71.18,
+          "end": 71.4
+        },
+        {
+          "from": 34,
+          "to": 39,
+          "start": 71.4,
+          "end": 71.82
+        },
+        {
+          "from": 40,
+          "to": 43,
+          "start": 71.82,
+          "end": 72.02
+        },
+        {
+          "from": 44,
+          "to": 50,
+          "start": 72.02,
+          "end": 72.66
+        }
+      ],
+      "sourceLine": 11,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Nadie sabrá que en tus brazos",
-      "start": 83.022194,
-      "end": 87.560993
+      "start": 72.66,
+      "end": 75.22,
+      "words": [
+        {
+          "from": 0,
+          "to": 5,
+          "start": 72.66,
+          "end": 73.92
+        },
+        {
+          "from": 6,
+          "to": 11,
+          "start": 73.92,
+          "end": 74.42
+        },
+        {
+          "from": 12,
+          "to": 15,
+          "start": 74.42,
+          "end": 74.6
+        },
+        {
+          "from": 16,
+          "to": 18,
+          "start": 74.6,
+          "end": 74.74
+        },
+        {
+          "from": 19,
+          "to": 22,
+          "start": 74.74,
+          "end": 74.86
+        },
+        {
+          "from": 23,
+          "to": 29,
+          "start": 74.86,
+          "end": 75.22
+        }
+      ],
+      "sourceLine": 12,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Borracho de amor, me quedé dormido",
-      "start": 87.560993,
-      "end": 92.856258
+      "start": 75.22,
+      "end": 79.88,
+      "words": [
+        {
+          "from": 0,
+          "to": 8,
+          "start": 75.22,
+          "end": 75.74
+        },
+        {
+          "from": 9,
+          "to": 11,
+          "start": 75.74,
+          "end": 75.9
+        },
+        {
+          "from": 12,
+          "to": 16,
+          "start": 75.9,
+          "end": 76.34
+        },
+        {
+          "from": 18,
+          "to": 20,
+          "start": 76.34,
+          "end": 77.66
+        },
+        {
+          "from": 21,
+          "to": 26,
+          "start": 77.66,
+          "end": 78.08
+        },
+        {
+          "from": 27,
+          "to": 34,
+          "start": 78.08,
+          "end": 79.88
+        }
+      ],
+      "sourceLine": 13,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Nadie sabrá que tu pecho, juntitito al mío ha latido",
-      "start": 92.856258,
-      "end": 100.799156
+      "start": 98.98,
+      "end": 103.06,
+      "words": [
+        {
+          "from": 0,
+          "to": 5,
+          "start": 98.98,
+          "end": 100.06
+        },
+        {
+          "from": 6,
+          "to": 11,
+          "start": 100.06,
+          "end": 100.6
+        },
+        {
+          "from": 12,
+          "to": 15,
+          "start": 100.6,
+          "end": 100.86
+        },
+        {
+          "from": 16,
+          "to": 18,
+          "start": 100.86,
+          "end": 101.14
+        },
+        {
+          "from": 19,
+          "to": 24,
+          "start": 101.14,
+          "end": 101.68
+        },
+        {
+          "from": 36,
+          "to": 38,
+          "start": 102.58,
+          "end": 102.78
+        },
+        {
+          "from": 39,
+          "to": 42,
+          "start": 102.78,
+          "end": 103.06
+        }
+      ],
+      "sourceLine": 14,
+      "matchedWordRatio": 0.7
     },
     {
       "text": "Que disfrutamos instantes, de fascinante dulzura",
-      "start": 100.799156,
-      "end": 108.742053
+      "start": 104.56,
+      "end": 109.44,
+      "words": [
+        {
+          "from": 4,
+          "to": 15,
+          "start": 104.56,
+          "end": 105.22
+        },
+        {
+          "from": 16,
+          "to": 25,
+          "start": 105.22,
+          "end": 106.46
+        },
+        {
+          "from": 27,
+          "to": 29,
+          "start": 106.46,
+          "end": 107.26
+        },
+        {
+          "from": 30,
+          "to": 40,
+          "start": 107.26,
+          "end": 107.86
+        },
+        {
+          "from": 41,
+          "to": 48,
+          "start": 107.86,
+          "end": 109.44
+        }
+      ],
+      "sourceLine": 15,
+      "matchedWordRatio": 0.833
     },
     {
       "text": "Nunca diré que hubo noches que te adoré con locura",
-      "start": 108.742053,
-      "end": 116.495835
+      "start": 109.44,
+      "end": 114.6,
+      "words": [
+        {
+          "from": 0,
+          "to": 5,
+          "start": 109.44,
+          "end": 111.02
+        },
+        {
+          "from": 6,
+          "to": 10,
+          "start": 111.02,
+          "end": 111.5
+        },
+        {
+          "from": 11,
+          "to": 14,
+          "start": 111.5,
+          "end": 111.7
+        },
+        {
+          "from": 15,
+          "to": 19,
+          "start": 111.7,
+          "end": 112.02
+        },
+        {
+          "from": 20,
+          "to": 26,
+          "start": 112.02,
+          "end": 112.54
+        },
+        {
+          "from": 27,
+          "to": 30,
+          "start": 112.54,
+          "end": 113.08
+        },
+        {
+          "from": 31,
+          "to": 33,
+          "start": 113.08,
+          "end": 113.32
+        },
+        {
+          "from": 34,
+          "to": 39,
+          "start": 113.32,
+          "end": 113.76
+        },
+        {
+          "from": 40,
+          "to": 43,
+          "start": 113.76,
+          "end": 113.92
+        },
+        {
+          "from": 44,
+          "to": 50,
+          "start": 113.92,
+          "end": 114.6
+        }
+      ],
+      "sourceLine": 16,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Nadie sabrá que en tus brazos",
-      "start": 116.495835,
-      "end": 121.034633
+      "start": 114.6,
+      "end": 116.98,
+      "words": [
+        {
+          "from": 0,
+          "to": 5,
+          "start": 114.6,
+          "end": 115.72
+        },
+        {
+          "from": 6,
+          "to": 11,
+          "start": 115.72,
+          "end": 116.14
+        },
+        {
+          "from": 12,
+          "to": 15,
+          "start": 116.14,
+          "end": 116.28
+        },
+        {
+          "from": 16,
+          "to": 18,
+          "start": 116.28,
+          "end": 116.38
+        },
+        {
+          "from": 19,
+          "to": 22,
+          "start": 116.38,
+          "end": 116.48
+        },
+        {
+          "from": 23,
+          "to": 29,
+          "start": 116.48,
+          "end": 116.98
+        }
+      ],
+      "sourceLine": 17,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Borracho de amor, me quedé dormido",
-      "start": 121.034633,
-      "end": 126.329898
+      "start": 116.98,
+      "end": 121.48,
+      "words": [
+        {
+          "from": 0,
+          "to": 8,
+          "start": 116.98,
+          "end": 117.96
+        },
+        {
+          "from": 9,
+          "to": 11,
+          "start": 117.96,
+          "end": 118.18
+        },
+        {
+          "from": 12,
+          "to": 16,
+          "start": 118.18,
+          "end": 118.62
+        },
+        {
+          "from": 18,
+          "to": 20,
+          "start": 118.62,
+          "end": 119.54
+        },
+        {
+          "from": 21,
+          "to": 26,
+          "start": 119.54,
+          "end": 119.96
+        },
+        {
+          "from": 27,
+          "to": 34,
+          "start": 119.96,
+          "end": 121.48
+        }
+      ],
+      "sourceLine": 18,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Nadie sabrá que tu pecho, juntito al mío ha latido",
-      "start": 126.329898,
-      "end": 133.894563
+      "start": 121.48,
+      "end": 126.34,
+      "words": [
+        {
+          "from": 0,
+          "to": 5,
+          "start": 121.48,
+          "end": 123.14
+        },
+        {
+          "from": 6,
+          "to": 11,
+          "start": 123.14,
+          "end": 123.64
+        },
+        {
+          "from": 12,
+          "to": 15,
+          "start": 123.64,
+          "end": 123.88
+        },
+        {
+          "from": 16,
+          "to": 18,
+          "start": 124.0,
+          "end": 124.16
+        },
+        {
+          "from": 19,
+          "to": 24,
+          "start": 124.16,
+          "end": 124.62
+        },
+        {
+          "from": 26,
+          "to": 33,
+          "start": 124.62,
+          "end": 125.58
+        },
+        {
+          "from": 34,
+          "to": 36,
+          "start": 125.58,
+          "end": 125.98
+        },
+        {
+          "from": 37,
+          "to": 40,
+          "start": 125.98,
+          "end": 126.34
+        }
+      ],
+      "sourceLine": 19,
+      "matchedWordRatio": 0.8
     },
     {
       "text": "Que disfrutamos instantes, de fascinante dulzura",
-      "start": 133.894563,
-      "end": 141.837461
+      "start": 126.92,
+      "end": 132.24,
+      "words": [
+        {
+          "from": 0,
+          "to": 3,
+          "start": 126.92,
+          "end": 127.56
+        },
+        {
+          "from": 4,
+          "to": 15,
+          "start": 127.56,
+          "end": 128.22
+        },
+        {
+          "from": 16,
+          "to": 25,
+          "start": 128.22,
+          "end": 129.12
+        },
+        {
+          "from": 27,
+          "to": 29,
+          "start": 129.12,
+          "end": 129.92
+        },
+        {
+          "from": 30,
+          "to": 40,
+          "start": 129.92,
+          "end": 130.62
+        },
+        {
+          "from": 41,
+          "to": 48,
+          "start": 130.62,
+          "end": 132.24
+        }
+      ],
+      "sourceLine": 20,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Nunca diré que hubo noches que te adoré con locura",
-      "start": 141.837461,
-      "end": 149.591242
+      "start": 133.16,
+      "end": 137.78,
+      "words": [
+        {
+          "from": 0,
+          "to": 5,
+          "start": 133.16,
+          "end": 134.0
+        },
+        {
+          "from": 6,
+          "to": 10,
+          "start": 134.0,
+          "end": 134.44
+        },
+        {
+          "from": 11,
+          "to": 14,
+          "start": 134.44,
+          "end": 134.64
+        },
+        {
+          "from": 15,
+          "to": 19,
+          "start": 134.64,
+          "end": 134.96
+        },
+        {
+          "from": 20,
+          "to": 26,
+          "start": 134.96,
+          "end": 135.48
+        },
+        {
+          "from": 27,
+          "to": 30,
+          "start": 135.48,
+          "end": 135.98
+        },
+        {
+          "from": 31,
+          "to": 33,
+          "start": 135.98,
+          "end": 136.22
+        },
+        {
+          "from": 34,
+          "to": 39,
+          "start": 136.22,
+          "end": 136.94
+        },
+        {
+          "from": 40,
+          "to": 43,
+          "start": 136.94,
+          "end": 137.24
+        },
+        {
+          "from": 44,
+          "to": 50,
+          "start": 137.24,
+          "end": 137.78
+        }
+      ],
+      "sourceLine": 21,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Nadie sabrá que en tus brazos",
-      "start": 149.591242,
-      "end": 154.130041
+      "start": 137.78,
+      "end": 139.8,
+      "words": [
+        {
+          "from": 0,
+          "to": 5,
+          "start": 137.78,
+          "end": 138.64
+        },
+        {
+          "from": 6,
+          "to": 11,
+          "start": 138.64,
+          "end": 139.04
+        },
+        {
+          "from": 12,
+          "to": 15,
+          "start": 139.04,
+          "end": 139.2
+        },
+        {
+          "from": 16,
+          "to": 18,
+          "start": 139.2,
+          "end": 139.32
+        },
+        {
+          "from": 19,
+          "to": 22,
+          "start": 139.32,
+          "end": 139.42
+        },
+        {
+          "from": 23,
+          "to": 29,
+          "start": 139.42,
+          "end": 139.8
+        }
+      ],
+      "sourceLine": 22,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Borracho de amor, me quedé dormido",
-      "start": 154.130041,
-      "end": 159.425306
+      "start": 139.8,
+      "end": 144.6,
+      "words": [
+        {
+          "from": 0,
+          "to": 8,
+          "start": 139.8,
+          "end": 140.72
+        },
+        {
+          "from": 9,
+          "to": 11,
+          "start": 140.72,
+          "end": 140.92
+        },
+        {
+          "from": 18,
+          "to": 20,
+          "start": 141.46,
+          "end": 142.66
+        },
+        {
+          "from": 21,
+          "to": 26,
+          "start": 142.66,
+          "end": 142.9
+        },
+        {
+          "from": 27,
+          "to": 34,
+          "start": 142.9,
+          "end": 144.6
+        }
+      ],
+      "sourceLine": 23,
+      "matchedWordRatio": 0.833
     }
-  ]
+  ],
+  "unmatchedLines": []
 }

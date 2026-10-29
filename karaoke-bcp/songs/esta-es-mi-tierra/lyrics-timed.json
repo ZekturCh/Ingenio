@@ -1,245 +1,1472 @@
 {
   "songId": "esta-es-mi-tierra",
-  "title": "Esta es mi tierra",
   "status": "estimated",
   "reviewRequired": true,
-  "timingMethod": "text-length-proportional; not aligned to vocals or instrumental sections",
-  "durationSeconds": 213.603,
+  "method": "local-asr-word-matching",
+  "alignmentModel": "faster-whisper-small",
+  "durationSeconds": 179.565714,
+  "audioSha256": "544ebc13ac88a28471e9ea56da5a3bb58b6f85ba75edd0fe7ebf20e061d5fb69",
   "lyrics": [
     {
       "text": "Esta es mi tierra",
-      "start": 0.0,
-      "end": 3.664757
+      "start": 30.0,
+      "end": 32.04,
+      "words": [
+        {
+          "from": 0,
+          "to": 4,
+          "start": 30.0,
+          "end": 30.94
+        },
+        {
+          "from": 5,
+          "to": 7,
+          "start": 30.94,
+          "end": 31.26
+        },
+        {
+          "from": 8,
+          "to": 10,
+          "start": 31.26,
+          "end": 31.46
+        },
+        {
+          "from": 11,
+          "to": 17,
+          "start": 31.46,
+          "end": 32.04
+        }
+      ],
+      "sourceLine": 1,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Así es mi Perú",
-      "start": 3.664757,
-      "end": 6.54421
+      "start": 33.04,
+      "end": 34.72,
+      "words": [
+        {
+          "from": 0,
+          "to": 3,
+          "start": 33.04,
+          "end": 33.52
+        },
+        {
+          "from": 4,
+          "to": 6,
+          "start": 33.52,
+          "end": 33.68
+        },
+        {
+          "from": 7,
+          "to": 9,
+          "start": 33.68,
+          "end": 33.94
+        },
+        {
+          "from": 10,
+          "to": 14,
+          "start": 33.94,
+          "end": 34.72
+        }
+      ],
+      "sourceLine": 2,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Esta es mi tierra",
-      "start": 6.54421,
-      "end": 10.208967
+      "start": 34.72,
+      "end": 37.2,
+      "words": [
+        {
+          "from": 0,
+          "to": 4,
+          "start": 34.72,
+          "end": 35.86
+        },
+        {
+          "from": 5,
+          "to": 7,
+          "start": 35.86,
+          "end": 36.4
+        },
+        {
+          "from": 8,
+          "to": 10,
+          "start": 36.4,
+          "end": 36.62
+        },
+        {
+          "from": 11,
+          "to": 17,
+          "start": 36.62,
+          "end": 37.2
+        }
+      ],
+      "sourceLine": 3,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Así es mi Perú",
-      "start": 10.208967,
-      "end": 13.088419
+      "start": 37.8,
+      "end": 40.12,
+      "words": [
+        {
+          "from": 0,
+          "to": 3,
+          "start": 37.8,
+          "end": 38.64
+        },
+        {
+          "from": 4,
+          "to": 6,
+          "start": 38.64,
+          "end": 38.82
+        },
+        {
+          "from": 7,
+          "to": 9,
+          "start": 38.82,
+          "end": 39.06
+        },
+        {
+          "from": 10,
+          "to": 14,
+          "start": 39.06,
+          "end": 40.12
+        }
+      ],
+      "sourceLine": 4,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Raza que al mundo escribiera",
-      "start": 13.088419,
-      "end": 19.37086
+      "start": 41.04,
+      "end": 42.32,
+      "words": [
+        {
+          "from": 5,
+          "to": 8,
+          "start": 41.04,
+          "end": 41.28
+        },
+        {
+          "from": 9,
+          "to": 11,
+          "start": 41.28,
+          "end": 41.4
+        },
+        {
+          "from": 12,
+          "to": 17,
+          "start": 41.4,
+          "end": 41.6
+        },
+        {
+          "from": 18,
+          "to": 28,
+          "start": 41.6,
+          "end": 42.32
+        }
+      ],
+      "sourceLine": 5,
+      "matchedWordRatio": 0.8
     },
     {
       "text": "La historia viril del Imperio del Sol",
-      "start": 19.37086,
-      "end": 27.48568
+      "start": 42.32,
+      "end": 45.02,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 42.32,
+          "end": 42.56
+        },
+        {
+          "from": 3,
+          "to": 11,
+          "start": 42.56,
+          "end": 42.86
+        },
+        {
+          "from": 18,
+          "to": 21,
+          "start": 43.32,
+          "end": 43.74
+        },
+        {
+          "from": 22,
+          "to": 29,
+          "start": 43.74,
+          "end": 44.36
+        },
+        {
+          "from": 30,
+          "to": 33,
+          "start": 44.36,
+          "end": 44.56
+        },
+        {
+          "from": 34,
+          "to": 37,
+          "start": 44.56,
+          "end": 45.02
+        }
+      ],
+      "sourceLine": 6,
+      "matchedWordRatio": 0.857
     },
     {
       "text": "Enarbolada flamea mi bandera bicolor",
-      "start": 27.48568,
-      "end": 35.862268
+      "start": 46.74,
+      "end": 48.9,
+      "words": [
+        {
+          "from": 11,
+          "to": 17,
+          "start": 46.74,
+          "end": 47.8
+        },
+        {
+          "from": 18,
+          "to": 20,
+          "start": 47.84,
+          "end": 48.24
+        },
+        {
+          "from": 21,
+          "to": 28,
+          "start": 48.24,
+          "end": 48.9
+        }
+      ],
+      "sourceLine": 7,
+      "matchedWordRatio": 0.6
     },
     {
       "text": "En costa, montaña y sierra",
-      "start": 35.862268,
-      "end": 41.359404
+      "start": 49.74,
+      "end": 52.58,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 49.74,
+          "end": 50.96
+        },
+        {
+          "from": 3,
+          "to": 8,
+          "start": 50.96,
+          "end": 51.38
+        },
+        {
+          "from": 10,
+          "to": 17,
+          "start": 51.38,
+          "end": 51.96
+        },
+        {
+          "from": 18,
+          "to": 19,
+          "start": 51.96,
+          "end": 52.08
+        },
+        {
+          "from": 20,
+          "to": 26,
+          "start": 52.08,
+          "end": 52.58
+        }
+      ],
+      "sourceLine": 8,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Con paz, trabajo y amor",
-      "start": 41.359404,
-      "end": 46.071235
+      "start": 53.78,
+      "end": 55.14,
+      "words": [
+        {
+          "from": 9,
+          "to": 16,
+          "start": 53.78,
+          "end": 54.42
+        },
+        {
+          "from": 17,
+          "to": 18,
+          "start": 54.42,
+          "end": 54.72
+        },
+        {
+          "from": 19,
+          "to": 23,
+          "start": 54.72,
+          "end": 55.14
+        }
+      ],
+      "sourceLine": 9,
+      "matchedWordRatio": 0.6
     },
     {
       "text": "La riqueza de su costa",
-      "start": 46.071235,
-      "end": 50.783066
+      "start": 55.14,
+      "end": 58.26,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 55.14,
+          "end": 55.88
+        },
+        {
+          "from": 3,
+          "to": 10,
+          "start": 55.88,
+          "end": 56.6
+        },
+        {
+          "from": 11,
+          "to": 13,
+          "start": 56.6,
+          "end": 56.92
+        },
+        {
+          "from": 14,
+          "to": 16,
+          "start": 56.92,
+          "end": 57.2
+        },
+        {
+          "from": 17,
+          "to": 22,
+          "start": 57.2,
+          "end": 58.26
+        }
+      ],
+      "sourceLine": 10,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "En el mundo sin igual",
-      "start": 50.783066,
-      "end": 55.233129
+      "start": 58.26,
+      "end": 60.06,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 58.26,
+          "end": 58.54
+        },
+        {
+          "from": 3,
+          "to": 5,
+          "start": 58.54,
+          "end": 58.7
+        },
+        {
+          "from": 6,
+          "to": 11,
+          "start": 58.7,
+          "end": 59.02
+        },
+        {
+          "from": 12,
+          "to": 15,
+          "start": 59.02,
+          "end": 59.6
+        },
+        {
+          "from": 16,
+          "to": 21,
+          "start": 59.6,
+          "end": 60.06
+        }
+      ],
+      "sourceLine": 11,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Y la sierra generosa",
-      "start": 55.233129,
-      "end": 59.683191
+      "start": 60.06,
+      "end": 61.6,
+      "words": [
+        {
+          "from": 0,
+          "to": 1,
+          "start": 60.06,
+          "end": 60.72
+        },
+        {
+          "from": 2,
+          "to": 4,
+          "start": 60.72,
+          "end": 61.14
+        },
+        {
+          "from": 5,
+          "to": 11,
+          "start": 61.14,
+          "end": 61.6
+        }
+      ],
+      "sourceLine": 12,
+      "matchedWordRatio": 0.75
     },
     {
       "text": "Fructifica nuestro pan",
-      "start": 59.683191,
-      "end": 64.918559
+      "start": 64.4,
+      "end": 65.3,
+      "words": [
+        {
+          "from": 11,
+          "to": 18,
+          "start": 64.4,
+          "end": 64.72
+        },
+        {
+          "from": 19,
+          "to": 22,
+          "start": 64.72,
+          "end": 65.3
+        }
+      ],
+      "sourceLine": 13,
+      "matchedWordRatio": 0.667
     },
     {
       "text": "Mientras la montaña espera",
-      "start": 64.918559,
-      "end": 70.939232
+      "start": 65.3,
+      "end": 67.98,
+      "words": [
+        {
+          "from": 0,
+          "to": 8,
+          "start": 65.3,
+          "end": 66.48
+        },
+        {
+          "from": 9,
+          "to": 11,
+          "start": 66.48,
+          "end": 66.8
+        },
+        {
+          "from": 12,
+          "to": 19,
+          "start": 66.8,
+          "end": 67.34
+        },
+        {
+          "from": 20,
+          "to": 26,
+          "start": 67.34,
+          "end": 67.98
+        }
+      ],
+      "sourceLine": 14,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Quien la vaya a conquistar",
-      "start": 70.939232,
-      "end": 76.698136
+      "start": 68.72,
+      "end": 70.44,
+      "words": [
+        {
+          "from": 6,
+          "to": 8,
+          "start": 68.72,
+          "end": 68.92
+        },
+        {
+          "from": 9,
+          "to": 13,
+          "start": 68.92,
+          "end": 69.28
+        },
+        {
+          "from": 14,
+          "to": 15,
+          "start": 69.28,
+          "end": 69.64
+        },
+        {
+          "from": 16,
+          "to": 26,
+          "start": 69.64,
+          "end": 70.44
+        }
+      ],
+      "sourceLine": 15,
+      "matchedWordRatio": 0.8
     },
     {
       "text": "El orgullo de mi raza",
-      "start": 76.698136,
-      "end": 81.148199
+      "start": 70.44,
+      "end": 73.32,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 70.44,
+          "end": 71.28
+        },
+        {
+          "from": 3,
+          "to": 10,
+          "start": 71.28,
+          "end": 72.02
+        },
+        {
+          "from": 11,
+          "to": 13,
+          "start": 72.02,
+          "end": 72.28
+        },
+        {
+          "from": 14,
+          "to": 16,
+          "start": 72.28,
+          "end": 72.46
+        },
+        {
+          "from": 17,
+          "to": 21,
+          "start": 72.46,
+          "end": 73.32
+        }
+      ],
+      "sourceLine": 16,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Es la historia del Perú",
-      "start": 81.148199,
-      "end": 86.121798
+      "start": 73.32,
+      "end": 75.48,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 73.32,
+          "end": 73.8
+        },
+        {
+          "from": 3,
+          "to": 5,
+          "start": 73.8,
+          "end": 73.92
+        },
+        {
+          "from": 6,
+          "to": 14,
+          "start": 73.92,
+          "end": 74.4
+        },
+        {
+          "from": 15,
+          "to": 18,
+          "start": 74.4,
+          "end": 74.98
+        },
+        {
+          "from": 19,
+          "to": 23,
+          "start": 74.98,
+          "end": 75.48
+        }
+      ],
+      "sourceLine": 17,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Y quiero que este tondero",
-      "start": 86.121798,
-      "end": 91.618934
-    },
-    {
-      "text": "Con sabor a gratitud",
-      "start": 91.618934,
-      "end": 96.068996
+      "start": 75.48,
+      "end": 78.12,
+      "words": [
+        {
+          "from": 0,
+          "to": 1,
+          "start": 75.48,
+          "end": 75.94
+        },
+        {
+          "from": 2,
+          "to": 8,
+          "start": 75.94,
+          "end": 76.88
+        },
+        {
+          "from": 9,
+          "to": 12,
+          "start": 76.88,
+          "end": 77.12
+        },
+        {
+          "from": 13,
+          "to": 17,
+          "start": 77.12,
+          "end": 77.32
+        },
+        {
+          "from": 18,
+          "to": 25,
+          "start": 77.32,
+          "end": 78.12
+        }
+      ],
+      "sourceLine": 18,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Se escuche en los cuatro vientos",
-      "start": 96.068996,
-      "end": 103.136743
-    },
-    {
-      "text": "En el norte, centro y sur",
-      "start": 103.136743,
-      "end": 108.110342
+      "start": 80.44,
+      "end": 83.24,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 80.44,
+          "end": 81.56
+        },
+        {
+          "from": 14,
+          "to": 17,
+          "start": 82.0,
+          "end": 82.26
+        },
+        {
+          "from": 18,
+          "to": 24,
+          "start": 82.26,
+          "end": 82.54
+        },
+        {
+          "from": 25,
+          "to": 32,
+          "start": 82.54,
+          "end": 83.24
+        }
+      ],
+      "sourceLine": 20,
+      "matchedWordRatio": 0.667
     },
     {
       "text": "¿Cómo dice?",
-      "start": 108.110342,
-      "end": 110.204489
+      "start": 85.7,
+      "end": 86.24,
+      "words": [
+        {
+          "from": 1,
+          "to": 5,
+          "start": 85.7,
+          "end": 85.9
+        },
+        {
+          "from": 6,
+          "to": 10,
+          "start": 85.9,
+          "end": 86.24
+        }
+      ],
+      "sourceLine": 22,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Esta es mi tierra",
-      "start": 110.204489,
-      "end": 113.869246
+      "start": 87.24,
+      "end": 88.28,
+      "words": [
+        {
+          "from": 5,
+          "to": 7,
+          "start": 87.24,
+          "end": 87.54
+        },
+        {
+          "from": 8,
+          "to": 10,
+          "start": 87.54,
+          "end": 87.74
+        },
+        {
+          "from": 11,
+          "to": 17,
+          "start": 87.74,
+          "end": 88.28
+        }
+      ],
+      "sourceLine": 23,
+      "matchedWordRatio": 0.75
     },
     {
       "text": "Así es mi Perú",
-      "start": 113.869246,
-      "end": 116.748699
+      "start": 89.34,
+      "end": 91.0,
+      "words": [
+        {
+          "from": 0,
+          "to": 3,
+          "start": 89.34,
+          "end": 89.76
+        },
+        {
+          "from": 4,
+          "to": 6,
+          "start": 89.76,
+          "end": 89.94
+        },
+        {
+          "from": 7,
+          "to": 9,
+          "start": 89.94,
+          "end": 90.2
+        },
+        {
+          "from": 10,
+          "to": 14,
+          "start": 90.2,
+          "end": 91.0
+        }
+      ],
+      "sourceLine": 24,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Esta es mi tierra",
-      "start": 116.748699,
-      "end": 120.413456
+      "start": 91.0,
+      "end": 93.44,
+      "words": [
+        {
+          "from": 0,
+          "to": 4,
+          "start": 91.0,
+          "end": 92.28
+        },
+        {
+          "from": 5,
+          "to": 7,
+          "start": 92.28,
+          "end": 92.64
+        },
+        {
+          "from": 8,
+          "to": 10,
+          "start": 92.64,
+          "end": 92.84
+        },
+        {
+          "from": 11,
+          "to": 17,
+          "start": 92.84,
+          "end": 93.44
+        }
+      ],
+      "sourceLine": 25,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Así es mi Perú",
-      "start": 120.413456,
-      "end": 123.292908
+      "start": 94.02,
+      "end": 96.32,
+      "words": [
+        {
+          "from": 0,
+          "to": 3,
+          "start": 94.02,
+          "end": 94.88
+        },
+        {
+          "from": 4,
+          "to": 6,
+          "start": 94.88,
+          "end": 95.06
+        },
+        {
+          "from": 7,
+          "to": 9,
+          "start": 95.06,
+          "end": 95.3
+        },
+        {
+          "from": 10,
+          "to": 14,
+          "start": 95.3,
+          "end": 96.32
+        }
+      ],
+      "sourceLine": 26,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "La riqueza de su costa",
-      "start": 123.292908,
-      "end": 128.004739
+      "start": 127.2,
+      "end": 129.56,
+      "words": [
+        {
+          "from": 3,
+          "to": 10,
+          "start": 127.2,
+          "end": 127.92
+        },
+        {
+          "from": 11,
+          "to": 13,
+          "start": 127.92,
+          "end": 128.24
+        },
+        {
+          "from": 14,
+          "to": 16,
+          "start": 128.24,
+          "end": 128.46
+        },
+        {
+          "from": 17,
+          "to": 22,
+          "start": 128.46,
+          "end": 129.56
+        }
+      ],
+      "sourceLine": 27,
+      "matchedWordRatio": 0.8
     },
     {
       "text": "En el mundo sin igual",
-      "start": 128.004739,
-      "end": 132.454801
+      "start": 129.56,
+      "end": 131.48,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 129.56,
+          "end": 129.82
+        },
+        {
+          "from": 3,
+          "to": 5,
+          "start": 129.82,
+          "end": 130.0
+        },
+        {
+          "from": 6,
+          "to": 11,
+          "start": 130.0,
+          "end": 130.34
+        },
+        {
+          "from": 16,
+          "to": 21,
+          "start": 130.82,
+          "end": 131.48
+        }
+      ],
+      "sourceLine": 28,
+      "matchedWordRatio": 0.8
     },
     {
       "text": "Y la sierra generosa",
-      "start": 132.454801,
-      "end": 136.904864
+      "start": 131.48,
+      "end": 134.14,
+      "words": [
+        {
+          "from": 0,
+          "to": 1,
+          "start": 131.48,
+          "end": 131.94
+        },
+        {
+          "from": 2,
+          "to": 4,
+          "start": 131.94,
+          "end": 132.38
+        },
+        {
+          "from": 5,
+          "to": 11,
+          "start": 132.38,
+          "end": 132.82
+        },
+        {
+          "from": 12,
+          "to": 20,
+          "start": 132.82,
+          "end": 134.14
+        }
+      ],
+      "sourceLine": 29,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Fructifica nuestro pan",
-      "start": 136.904864,
-      "end": 142.140232
+      "start": 135.62,
+      "end": 136.56,
+      "words": [
+        {
+          "from": 11,
+          "to": 18,
+          "start": 135.62,
+          "end": 135.96
+        },
+        {
+          "from": 19,
+          "to": 22,
+          "start": 135.96,
+          "end": 136.56
+        }
+      ],
+      "sourceLine": 30,
+      "matchedWordRatio": 0.667
     },
     {
       "text": "Mientras la montaña espera",
-      "start": 142.140232,
-      "end": 148.160904
+      "start": 136.56,
+      "end": 139.14,
+      "words": [
+        {
+          "from": 0,
+          "to": 8,
+          "start": 136.56,
+          "end": 137.7
+        },
+        {
+          "from": 9,
+          "to": 11,
+          "start": 137.7,
+          "end": 138.0
+        },
+        {
+          "from": 12,
+          "to": 19,
+          "start": 138.0,
+          "end": 138.52
+        },
+        {
+          "from": 20,
+          "to": 26,
+          "start": 138.52,
+          "end": 139.14
+        }
+      ],
+      "sourceLine": 31,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Quien la vaya a conquistar",
-      "start": 148.160904,
-      "end": 153.919809
+      "start": 139.14,
+      "end": 141.64,
+      "words": [
+        {
+          "from": 0,
+          "to": 5,
+          "start": 139.14,
+          "end": 139.88
+        },
+        {
+          "from": 6,
+          "to": 8,
+          "start": 139.88,
+          "end": 140.14
+        },
+        {
+          "from": 9,
+          "to": 13,
+          "start": 140.14,
+          "end": 140.48
+        },
+        {
+          "from": 14,
+          "to": 15,
+          "start": 140.48,
+          "end": 140.84
+        },
+        {
+          "from": 16,
+          "to": 26,
+          "start": 140.84,
+          "end": 141.64
+        }
+      ],
+      "sourceLine": 32,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "El orgullo de mi raza",
-      "start": 153.919809,
-      "end": 158.369871
+      "start": 141.64,
+      "end": 144.48,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 141.64,
+          "end": 142.48
+        },
+        {
+          "from": 3,
+          "to": 10,
+          "start": 142.48,
+          "end": 143.22
+        },
+        {
+          "from": 11,
+          "to": 13,
+          "start": 143.22,
+          "end": 143.42
+        },
+        {
+          "from": 14,
+          "to": 16,
+          "start": 143.42,
+          "end": 143.64
+        },
+        {
+          "from": 17,
+          "to": 21,
+          "start": 143.64,
+          "end": 144.48
+        }
+      ],
+      "sourceLine": 33,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Es la historia del Perú",
-      "start": 158.369871,
-      "end": 163.343471
+      "start": 144.48,
+      "end": 146.58,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 144.48,
+          "end": 145.0
+        },
+        {
+          "from": 3,
+          "to": 5,
+          "start": 145.0,
+          "end": 145.12
+        },
+        {
+          "from": 6,
+          "to": 14,
+          "start": 145.12,
+          "end": 145.54
+        },
+        {
+          "from": 15,
+          "to": 18,
+          "start": 145.54,
+          "end": 146.14
+        },
+        {
+          "from": 19,
+          "to": 23,
+          "start": 146.14,
+          "end": 146.58
+        }
+      ],
+      "sourceLine": 34,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Y quiero que este tondero",
-      "start": 163.343471,
-      "end": 168.840607
+      "start": 146.66,
+      "end": 148.5,
+      "words": [
+        {
+          "from": 0,
+          "to": 1,
+          "start": 146.66,
+          "end": 147.1
+        },
+        {
+          "from": 2,
+          "to": 8,
+          "start": 147.1,
+          "end": 148.04
+        },
+        {
+          "from": 9,
+          "to": 12,
+          "start": 148.04,
+          "end": 148.3
+        },
+        {
+          "from": 13,
+          "to": 17,
+          "start": 148.3,
+          "end": 148.5
+        }
+      ],
+      "sourceLine": 35,
+      "matchedWordRatio": 0.8
     },
     {
       "text": "Con sabor a gratitud",
-      "start": 168.840607,
-      "end": 173.290669
+      "start": 150.16,
+      "end": 151.56,
+      "words": [
+        {
+          "from": 4,
+          "to": 9,
+          "start": 150.16,
+          "end": 150.56
+        },
+        {
+          "from": 10,
+          "to": 11,
+          "start": 150.56,
+          "end": 150.9
+        },
+        {
+          "from": 12,
+          "to": 20,
+          "start": 150.9,
+          "end": 151.56
+        }
+      ],
+      "sourceLine": 36,
+      "matchedWordRatio": 0.75
     },
     {
       "text": "Se escuche en los cuatro vientos",
-      "start": 173.290669,
-      "end": 180.358415
+      "start": 152.14,
+      "end": 154.4,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 152.14,
+          "end": 152.74
+        },
+        {
+          "from": 14,
+          "to": 17,
+          "start": 153.12,
+          "end": 153.42
+        },
+        {
+          "from": 18,
+          "to": 24,
+          "start": 153.42,
+          "end": 153.74
+        },
+        {
+          "from": 25,
+          "to": 32,
+          "start": 153.74,
+          "end": 154.4
+        }
+      ],
+      "sourceLine": 37,
+      "matchedWordRatio": 0.667
     },
     {
       "text": "En el norte, centro y sur",
-      "start": 180.358415,
-      "end": 185.332015
+      "start": 154.4,
+      "end": 156.64,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 154.4,
+          "end": 155.4
+        },
+        {
+          "from": 3,
+          "to": 5,
+          "start": 155.4,
+          "end": 155.58
+        },
+        {
+          "from": 6,
+          "to": 11,
+          "start": 155.58,
+          "end": 155.78
+        },
+        {
+          "from": 13,
+          "to": 19,
+          "start": 155.78,
+          "end": 156.32
+        },
+        {
+          "from": 20,
+          "to": 21,
+          "start": 156.32,
+          "end": 156.64
+        }
+      ],
+      "sourceLine": 38,
+      "matchedWordRatio": 0.833
     },
     {
       "text": "¿Cómo dice?",
-      "start": 185.332015,
-      "end": 187.426162
+      "start": 156.76,
+      "end": 157.46,
+      "words": [
+        {
+          "from": 1,
+          "to": 5,
+          "start": 156.76,
+          "end": 157.04
+        },
+        {
+          "from": 6,
+          "to": 10,
+          "start": 157.04,
+          "end": 157.46
+        }
+      ],
+      "sourceLine": 39,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Esta es mi tierra",
-      "start": 187.426162,
-      "end": 191.090919
+      "start": 158.38,
+      "end": 159.46,
+      "words": [
+        {
+          "from": 5,
+          "to": 7,
+          "start": 158.38,
+          "end": 158.74
+        },
+        {
+          "from": 8,
+          "to": 10,
+          "start": 158.74,
+          "end": 158.9
+        },
+        {
+          "from": 11,
+          "to": 17,
+          "start": 158.9,
+          "end": 159.46
+        }
+      ],
+      "sourceLine": 40,
+      "matchedWordRatio": 0.75
     },
     {
       "text": "Así es mi Perú",
-      "start": 191.090919,
-      "end": 193.970371
+      "start": 160.14,
+      "end": 162.06,
+      "words": [
+        {
+          "from": 0,
+          "to": 3,
+          "start": 160.14,
+          "end": 160.88
+        },
+        {
+          "from": 4,
+          "to": 6,
+          "start": 160.88,
+          "end": 161.06
+        },
+        {
+          "from": 7,
+          "to": 9,
+          "start": 161.06,
+          "end": 161.3
+        },
+        {
+          "from": 10,
+          "to": 14,
+          "start": 161.3,
+          "end": 162.06
+        }
+      ],
+      "sourceLine": 41,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Esta es mi tierra",
-      "start": 193.970371,
-      "end": 197.635129
+      "start": 163.42,
+      "end": 164.42,
+      "words": [
+        {
+          "from": 5,
+          "to": 7,
+          "start": 163.42,
+          "end": 163.7
+        },
+        {
+          "from": 8,
+          "to": 10,
+          "start": 163.7,
+          "end": 163.9
+        },
+        {
+          "from": 11,
+          "to": 17,
+          "start": 163.9,
+          "end": 164.42
+        }
+      ],
+      "sourceLine": 42,
+      "matchedWordRatio": 0.75
     },
     {
       "text": "Así es mi Perú",
-      "start": 197.635129,
-      "end": 200.514581
+      "start": 165.54,
+      "end": 167.04,
+      "words": [
+        {
+          "from": 0,
+          "to": 3,
+          "start": 165.54,
+          "end": 165.94
+        },
+        {
+          "from": 4,
+          "to": 6,
+          "start": 165.94,
+          "end": 166.04
+        },
+        {
+          "from": 7,
+          "to": 9,
+          "start": 166.04,
+          "end": 166.28
+        },
+        {
+          "from": 10,
+          "to": 14,
+          "start": 166.28,
+          "end": 167.04
+        }
+      ],
+      "sourceLine": 43,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Esta es mi tierra",
-      "start": 200.514581,
-      "end": 204.179338
+      "start": 168.48,
+      "end": 169.46,
+      "words": [
+        {
+          "from": 5,
+          "to": 7,
+          "start": 168.48,
+          "end": 168.74
+        },
+        {
+          "from": 8,
+          "to": 10,
+          "start": 168.74,
+          "end": 168.94
+        },
+        {
+          "from": 11,
+          "to": 17,
+          "start": 168.94,
+          "end": 169.46
+        }
+      ],
+      "sourceLine": 44,
+      "matchedWordRatio": 0.75
     },
     {
       "text": "Así es mi Perú",
-      "start": 204.179338,
-      "end": 207.05879
+      "start": 171.0,
+      "end": 171.88,
+      "words": [
+        {
+          "from": 4,
+          "to": 6,
+          "start": 171.0,
+          "end": 171.1
+        },
+        {
+          "from": 7,
+          "to": 9,
+          "start": 171.1,
+          "end": 171.32
+        },
+        {
+          "from": 10,
+          "to": 14,
+          "start": 171.32,
+          "end": 171.88
+        }
+      ],
+      "sourceLine": 45,
+      "matchedWordRatio": 0.75
     },
     {
       "text": "Esta es mi tierra",
-      "start": 207.05879,
-      "end": 210.723548
+      "start": 173.48,
+      "end": 174.5,
+      "words": [
+        {
+          "from": 5,
+          "to": 7,
+          "start": 173.48,
+          "end": 173.74
+        },
+        {
+          "from": 8,
+          "to": 10,
+          "start": 173.74,
+          "end": 173.94
+        },
+        {
+          "from": 11,
+          "to": 17,
+          "start": 173.94,
+          "end": 174.5
+        }
+      ],
+      "sourceLine": 46,
+      "matchedWordRatio": 0.75
     },
     {
       "text": "Así es mi Perú",
-      "start": 210.723548,
-      "end": 213.603
+      "start": 175.72,
+      "end": 177.18,
+      "words": [
+        {
+          "from": 0,
+          "to": 3,
+          "start": 175.72,
+          "end": 176.0
+        },
+        {
+          "from": 4,
+          "to": 6,
+          "start": 176.0,
+          "end": 176.08
+        },
+        {
+          "from": 7,
+          "to": 9,
+          "start": 176.08,
+          "end": 176.32
+        },
+        {
+          "from": 10,
+          "to": 14,
+          "start": 176.32,
+          "end": 177.18
+        }
+      ],
+      "sourceLine": 47,
+      "matchedWordRatio": 1.0
+    }
+  ],
+  "unmatchedLines": [
+    {
+      "line": 19,
+      "text": "Con sabor a gratitud",
+      "coverage": 0.25
+    },
+    {
+      "line": 21,
+      "text": "En el norte, centro y sur",
+      "coverage": 0.5
     }
   ]
 }
