@@ -1,7 +1,8 @@
 .device-controls{position:fixed;z-index:60;right:max(6px,env(safe-area-inset-right));bottom:max(4px,env(safe-area-inset-bottom));display:flex;flex-direction:column;align-items:center;gap:2px;font-family:Flexo,Verdana,sans-serif}
 .device-controls button{font:inherit;cursor:pointer}
 .device-open{position:fixed;left:max(8px,env(safe-area-inset-left));bottom:max(8px,env(safe-area-inset-bottom));display:grid;place-items:center;width:44px;height:44px;padding:0;border:0;border-radius:50%;background:#fff0d7e8;color:#46230e;font-size:24px!important;box-shadow:0 1px 5px #0003}
-.offline-indicator{width:36px;height:30px;display:grid;place-items:center;padding:0;border:0;background:transparent}
+.device-open.device-open-discreet{background:transparent;color:transparent;box-shadow:none}
+.offline-indicator{width:44px;height:44px;display:grid;place-items:center;padding:0;border:0;background:transparent;border-radius:50%;touch-action:manipulation}
 .offline-indicator span{width:9px;height:9px;border-radius:50%;background:#d92020;box-shadow:0 0 0 1px #fff8}
 .offline-indicator[data-state="ready"] span{background:#14a34a}
 .offline-indicator[data-state="downloading"] span{animation:offline-pulse 1s ease-in-out infinite alternate}

@@ -1,6 +1,6 @@
 {
-  "version": "aee33066a6c0f2014f89",
-  "totalBytes": 124888102,
+  "version": "77bbc59ff26d73051d71",
+  "totalBytes": 124888471,
   "assets": [
     {
       "url": "../Logo%20Samay.png",
@@ -10,7 +10,7 @@
     {
       "url": "admin.html",
       "size": 5605,
-      "sha256": "fbfd24ef69be2d6613058a0565767c3e92f2dadbc98525b79d0408a7d5268d39"
+      "sha256": "b6ad61d0fc94e6995ff348849bd43eaf4f5e1beec537012069987801482b8a6a"
     },
     {
       "url": "assets/audio/bluetooth-calibration.wav",
@@ -184,18 +184,18 @@
     },
     {
       "url": "device-menu.css",
-      "size": 3987,
-      "sha256": "ca3a39aaf41071a15efe16f5a5726725da74e4b04117ea0469b43d8bae232010"
+      "size": 4123,
+      "sha256": "02a6bcafa4574d8bb578d552119a3604cc6d2bdc414ad8c44064dd9878c81210"
     },
     {
       "url": "device-menu.js",
-      "size": 11777,
-      "sha256": "3a02faffe2f806fa5cdad78b39e1e2fede99aea5093edad632c43e01c94b1e44"
+      "size": 12010,
+      "sha256": "704646d70b94dc69ab3fa0fc395f98e0f952e88f254ff188be73eb041aedb8b3"
     },
     {
       "url": "index.html",
       "size": 3099,
-      "sha256": "d9f0bb1ccb9972675bdfeb386c912fcad3dbc9b0f065e22b4390fc9106d94dca"
+      "sha256": "d960b910f4117c1a2422af8a63142a7ce893c5f11e0a1aaab0cb9ae7969f20b4"
     },
     {
       "url": "karaoke.css",
@@ -225,7 +225,7 @@
     {
       "url": "player.html",
       "size": 4765,
-      "sha256": "983f8463e5b8133d85dc87e815c1f1034af703dbb30c80ca0ed88e9006e26aec"
+      "sha256": "bf3264183d23dd93a914800766abb0246e7587100024f0942512f14105c6792c"
     },
     {
       "url": "player.js",
@@ -670,7 +670,7 @@
     {
       "url": "timing-editor.html",
       "size": 3355,
-      "sha256": "90967222141e02f8e4a3a20d12047527e11ec0f526cb040bc264346541b6607f"
+      "sha256": "dcb74d1e4801d1150989a7ef06de9f4deed4172d3edc4068e148c1f569684bad"
     },
     {
       "url": "timing-editor.js",

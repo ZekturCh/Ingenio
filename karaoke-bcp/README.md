@@ -1,5 +1,10 @@
 # Hallowow Criollazo
 
+Los ajustes de Bluetooth, sincronización y descarga se abren tocando el punto
+de estado de la esquina inferior derecha o la zona transparente de 44 × 44 px
+de la esquina inferior izquierda. Ambos accesos funcionan en inicio y reproducción,
+con ratón, touch y teclado. `?settings=1` muestra además el icono de configuración.
+
 Todos los coros reproducen los cinco segundos anteriores al fragmento para preparar
 al cantante. Se muestra 5, 4, 3, 2, 1 en Flexo y la primera frase debajo desde el
 inicio. La cuenta usa el mismo reloj compensado por Bluetooth que el pintado.

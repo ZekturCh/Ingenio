@@ -21,7 +21,14 @@ async function run() {
     await page.goto(url.href);
     await page.locator('#audio').waitFor({ state: 'attached' });
     assert.equal(await page.locator('#menu,.roomPill').count(), 0);
-    assert.equal(await page.locator('.device-open').isVisible(), false);
+    assert.equal(await page.locator('.device-open').isVisible(), true);
+    assert.equal(await page.locator('.device-open').evaluate(el=>getComputedStyle(el).backgroundColor), 'rgba(0, 0, 0, 0)');
+    await page.locator('.device-open').tap();
+    assert.equal(await page.locator('.device-dialog').isVisible(), true);
+    await page.locator('.device-close').tap();
+    await page.locator('.offline-indicator').tap();
+    assert.equal(await page.locator('.device-dialog').isVisible(), true);
+    await page.locator('.device-close').tap();
     assert.equal(await page.locator('#fullscreenBtn').isVisible(), true);
     assert.equal(await page.locator('#songs').evaluate(el => getComputedStyle(el).scrollbarWidth), 'none');
     assert.equal(await page.locator('#songs').getAttribute('tabindex'), '0');
