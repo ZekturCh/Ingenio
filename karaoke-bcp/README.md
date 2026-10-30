@@ -8,6 +8,10 @@ mostrada corresponde al coro. Pausar conserva la cuenta y reiniciar la repite.
 Las versiones completas mantienen su inicio original. El módulo de preparación
 se incluye automáticamente en la descarga offline.
 
+La frase siguiente permanece visible también en pantallas horizontales de poca
+altura. Se reduce el espacio del logo antes de ocultar contexto necesario para
+cantar; la letra conserva Flexo, el fondo original y el pintado naranja.
+
 ## Estimacion completa autorizada
 
 Las 24 grabaciones con voz tienen ahora una marca para cada frase de su TXT.

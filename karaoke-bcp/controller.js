@@ -1,6 +1,6 @@
 import { SONGS, roomFromUrl, sendCommand } from "./shared.js?v=20261029-6";
 import { $, icons, loadFavorites, toggleFavorite, toggleFullscreen, normalizeSearch, escapeHtml } from "./ui.js";
-import { mountPlayer } from "./player.js?v=20261029-6";
+import { mountPlayer } from "./player.js?v=20261030-1";
 
 const room = roomFromUrl();
 const categories = {
@@ -19,7 +19,7 @@ async function preparePlayer() {
   preparingPlayer = true;
   try {
     // Reuse the standalone screen's markup so both playback modes stay visually identical.
-    const response = await fetch("./player.html?v=20261029-6");
+    const response = await fetch("./player.html?v=20261030-1");
     if (!response.ok) throw new Error("Player unavailable");
     const page = new DOMParser().parseFromString(await response.text(), "text/html");
     const stage = page.querySelector("#stage"), audio = page.querySelector("#audio");

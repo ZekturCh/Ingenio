@@ -1,3 +1,3 @@
-import { mountPlayer } from "./player.js?v=20261029-6";
+import { mountPlayer } from "./player.js?v=20261030-1";
 
 mountPlayer();

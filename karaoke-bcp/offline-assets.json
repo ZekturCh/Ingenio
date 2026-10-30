@@ -1,6 +1,6 @@
 {
-  "version": "a24a21b7a791a2201b6d",
-  "totalBytes": 124887680,
+  "version": "aee33066a6c0f2014f89",
+  "totalBytes": 124888102,
   "assets": [
     {
       "url": "../Logo%20Samay.png",
@@ -10,7 +10,7 @@
     {
       "url": "admin.html",
       "size": 5605,
-      "sha256": "41de589e670221858d14815327dd6ca496f3de97fa4d91f71db501842b97e013"
+      "sha256": "fbfd24ef69be2d6613058a0565767c3e92f2dadbc98525b79d0408a7d5268d39"
     },
     {
       "url": "assets/audio/bluetooth-calibration.wav",
@@ -180,7 +180,7 @@
     {
       "url": "controller.js",
       "size": 7103,
-      "sha256": "86d2b18eb81f6263c5bf89ccc723a364c0fa8edcfd099d04c960db95597ff6e1"
+      "sha256": "5be7ef74faacaf6dc0bcfe6c81ed40fb0fdac22a596e7e24704aafadfdeb4e52"
     },
     {
       "url": "device-menu.css",
@@ -195,12 +195,12 @@
     {
       "url": "index.html",
       "size": 3099,
-      "sha256": "60f3ac281e119ed0cbc3e10c295610865c61c8a5df2cb99064236d31b49fd4b9"
+      "sha256": "d9f0bb1ccb9972675bdfeb386c912fcad3dbc9b0f065e22b4390fc9106d94dca"
     },
     {
       "url": "karaoke.css",
-      "size": 29386,
-      "sha256": "bbbb68ff7d5e59ae1d95267f34b4c58ba63be3459d04ea34897aeee909a0f925"
+      "size": 29765,
+      "sha256": "2b9f2312a322c31084aa27c6e6d5dd6fef7c968b59c0161a7171b67fec13b595"
     },
     {
       "url": "lyric-progress.js",
@@ -220,17 +220,17 @@
     {
       "url": "player-entry.js",
       "size": 72,
-      "sha256": "e2ca1eb6148bd4d0f21167a9318da8399762f0f792cf322950b3a3cc5fff23a4"
+      "sha256": "8066673d52937b876fce5e41869f79cde784aceed53a63fe954e0022a0e864ba"
     },
     {
       "url": "player.html",
       "size": 4765,
-      "sha256": "bc7beacf728f97857db5b9399f4a5ba7c1600cda3b1cd4c336f35be940499601"
+      "sha256": "983f8463e5b8133d85dc87e815c1f1034af703dbb30c80ca0ed88e9006e26aec"
     },
     {
       "url": "player.js",
-      "size": 17581,
-      "sha256": "ea8b2e815e44146d1e52ec2f5c0d2667ac1bfe45c3a91f5a36ad2868dea261c2"
+      "size": 17624,
+      "sha256": "6102fb107030383f8b20eaaa9a02c44734f44fcd781c59963935164cf3aa6b79"
     },
     {
       "url": "shared.js",
@@ -670,7 +670,7 @@
     {
       "url": "timing-editor.html",
       "size": 3355,
-      "sha256": "97652711c42a160197d8b5b39773acabb0545886c43ae788533620696593c04e"
+      "sha256": "90967222141e02f8e4a3a20d12047527e11ec0f526cb040bc264346541b6607f"
     },
     {
       "url": "timing-editor.js",

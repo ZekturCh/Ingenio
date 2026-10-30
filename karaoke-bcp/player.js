@@ -280,7 +280,8 @@ function fitLyrics() {
   const available = panel.clientHeight - parseFloat(style.paddingTop) - parseFloat(style.paddingBottom);
   if (available <= 0) return;
   // Keep the current line readable before spending space on additional context.
-  lyrics.dataset.context = available < 110 ? "single" : available < 240 ? "short" : "full";
+  // The next phrase must stay visible even on short desktop viewports.
+  lyrics.dataset.context = available < 240 ? "short" : "full";
   lyrics.style.setProperty("--lyric-scale", 1);
   let scale = 1;
   while (lyrics.scrollHeight > available && scale > .45) {
