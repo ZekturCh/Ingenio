@@ -235,7 +235,9 @@ def main():
     manifest = json.loads((ROOT / 'scripts/import-vocal-tracks.json').read_text(encoding='utf-8'))
     aliases = json.loads((ROOT / 'songs/alignment-aliases.json').read_text(encoding='utf-8'))
     # Validate the complete batch before replacing any recording.
-    for _, filename, _ in manifest:
+    for track_id, filename, _artist in manifest:
+        if args.only and track_id != args.only:
+            continue
         if not (args.source / filename).is_file():
             raise FileNotFoundError(filename)
     args.cache.mkdir(parents=True, exist_ok=True)
@@ -270,11 +272,37 @@ def main():
                               'probability': round(w.probability, 4)} for w in segment.words or []
                              if w.end > w.start and w.probability >= .15)
             cache_file.write_text(json.dumps(words, ensure_ascii=False), encoding='utf-8')
-        cues, missing = align(lines, words)
+        sections_file = folder / 'alignment-sections.json'
+        if sections_file.exists():
+            plan = json.loads(sections_file.read_text(encoding='utf-8'))
+            if plan['audioSha256'] != digest:
+                raise RuntimeError('Vocal section plan belongs to a different recording')
+            covered = []
+            cues, missing = [], []
+            for section in plan['sections']:
+                first, last = section['firstLine'] - 1, section['lastLine']
+                covered.extend(range(first, last))
+                group = [word for word in words if word['start'] >= section['start'] and word['end'] <= section['end']]
+                marked, absent = align(lines[first:last], group)
+                for cue in marked:
+                    cue['sourceLine'] += first
+                for line in absent:
+                    line['line'] += first
+                cues.extend(marked)
+                missing.extend(absent)
+            if covered != list(range(len(lines))):
+                raise RuntimeError('Vocal sections must cover the arranged TXT exactly once, in order')
+        else:
+            cues, missing = align(lines, words)
         if args.refine:
             cues = refine_missing(model, source, lines, cues, duration)
             cues = refine_phonetic_gaps(model, source, lines, words, cues, duration, aliases.get(song_id))
             cues = recover_repeats(lines, words, cues)
+            if sections_file.exists():
+                cues = [cue for cue in cues if any(
+                    section['firstLine'] <= cue['sourceLine'] <= section['lastLine'] and
+                    cue['start'] >= section['start'] and cue['end'] <= section['end']
+                    for section in plan['sections'])]
             present = {cue['sourceLine'] for cue in cues}
             missing = [line for line in missing if line['line'] not in present]
         for i, cue in enumerate(cues):

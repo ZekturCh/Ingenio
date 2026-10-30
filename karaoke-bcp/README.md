@@ -1,5 +1,15 @@
 # Hallowow Criollazo
 
+## Quién será: grabación con voz del 30/10/2026
+
+Se usa el MP3 de Julio Iglesias proporcionado por el usuario, sin recomprimir.
+La letra activa sigue el orden de esta versión: estribillo, He querido,
+estribillo, intermedio, Yo no sé y estribillo final. Se conserva íntegro el
+TXT anterior en `songs/quien-sera/letra-aportada.txt`. Las secciones vocales,
+ajustes de texto y hash de audio están en `alignment-sections.json`; las
+interjecciones dudosas del intermedio no se convierten en frases inventadas.
+Las marcas son automáticas y conservan `reviewRequired: true`.
+
 Los ajustes de Bluetooth, sincronización y descarga se abren tocando el punto
 de estado de la esquina inferior derecha o la zona transparente de 44 × 44 px
 de la esquina inferior izquierda. Ambos accesos funcionan en inicio y reproducción,
@@ -19,13 +29,13 @@ cantar; la letra conserva Flexo, el fondo original y el pintado naranja.
 
 ## Estimacion completa autorizada
 
-Las 24 grabaciones con voz tienen ahora una marca para cada frase de su TXT.
+Las 25 grabaciones con voz tienen ahora una marca para cada frase de su TXT.
 Los huecos se completaron entre entradas vocales cercanas, con ajustes locales
 cuando el reconocedor habia estirado una frase sobre otra. Introducciones y
 cierres se estiman a partir del tramo vocal vecino, no distribuyendo toda la
 letra sobre la duracion de la cancion. Se conserva `reviewRequired: true`.
 Estas marcas son una aproximacion util, no una certificacion de sincronizacion.
-La Bruja, La Llorona y Quien sera conservan marcas mas gruesas sin voz guia.
+La Bruja y La Llorona conservan marcas mas gruesas sin voz guia.
 
 El generador es `scripts/estimate-pending-cues.cjs`. Las frases que antes no
 tenian marca se conservan en `unmatchedBeforeEstimation`, y cada marca inferida
@@ -60,8 +70,8 @@ y manifest offline. El script comprueba el hash de audio y el texto antes de apl
 
 El inventario actual por cancion esta en
 [`songs/ESTADO-SINCRONIZACION.md`](songs/ESTADO-SINCRONIZACION.md).
-Se recibieron 24 grabaciones con voz (las 23 del lote y Carinito).
-La Bruja, La Llorona y Quien sera todavia necesitan una grabacion con voz guia.
+Se recibieron 25 grabaciones con voz (las 24 del lote ampliado y Carinito).
+La Bruja y La Llorona todavia necesitan una grabacion con voz guia.
 El himno no venia en el lote nuevo, pero su pista anterior ya contiene voces.
 Todas las canciones tienen texto y audio; eso no implica que sus tiempos esten
 verificados. El informe diferencia frases sin alinear de marcas automaticas.

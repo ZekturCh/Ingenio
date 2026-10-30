@@ -11,7 +11,7 @@
 </style>
   <link rel="stylesheet" href="./device-menu.css?v=20261030-2">
   <script type="module" src="./device-menu.js?v=20261030-2"></script>
-  <meta name="karaoke-build" content="77bbc59ff26d73051d71">
+  <meta name="karaoke-build" content="c1bb021343e565d900cf">
 </head>
 <body>
 <div class="wrap">
@@ -38,7 +38,7 @@
   <div class="hint">En la PC conectada a la TV abre el Player y pulsa “Activar audio” una vez. Después este panel o el celular pueden enviar órdenes a la misma sala.</div>
 </div>
 <script type="module">
-import { roomFromUrl, subscribeRoom, sendCommand, getSong, getVersion, controllerUrl, playerUrl } from "./shared.js?v=20261025-3";
+import { roomFromUrl, subscribeRoom, sendCommand, getSong, getVersion, controllerUrl, playerUrl } from "./shared.js?v=20261030-3";
 const room=roomFromUrl(),$=s=>document.querySelector(s);
 $("#room").textContent=room;
 $("#openController").href=controllerUrl(room);

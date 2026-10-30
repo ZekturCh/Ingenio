@@ -12,5 +12,5 @@ for(const song of songs){
  for(const cue of data.lyrics) if(cue.timingMethod==='neighbor-estimate'){assert.equal(cue.reviewRequired,true);estimates++;}
  assert.equal(data.status,'estimated');
 }
-assert.equal(tracks,24);
+assert.equal(tracks,25);
 console.log(`${tracks} vocal guides cover every supplied TXT phrase; ${estimates} local estimates explicitly labelled.`);

@@ -15,16 +15,16 @@ const rows = songs.map(song=>{
     reviewRequired:data.reviewRequired === true};
 });
 const summary = {
-  updated:'2026-10-29',totalSongs:songs.length,newVocalRecordings:incoming.size,
+  updated:'2026-10-30',totalSongs:songs.length,newVocalRecordings:incoming.size,
   notInNewVocalBatch:rows.filter(row=>!row.newVocalRecording).map(row=>({id:row.id,title:row.title})),
   needVocalGuide:rows.filter(row=>row.vocalRecording === 'previous-karaoke-track').map(row=>({id:row.id,title:row.title})),
   unmatchedProvidedPhrases:rows.reduce((sum,row)=>sum+(row.unmatchedLines || 0),0),songs:rows,
   neighborOrBeatEstimates:rows.reduce((sum,row)=>sum+row.neighborOrBeatEstimates,0),
 };
 fs.writeFileSync(path.join(root,'songs/ALIGNMENT-STATUS.json'),JSON.stringify(summary,null,2)+'\n');
-const lines = ['# Voces y sincronizacion: 29/10/2026','',
-  'Hay 28 canciones con audio y texto. Se recibieron 24 MP3 con voz guia, contando Carinito.',
-  'El himno conserva una grabacion anterior con voces. La Bruja, La Llorona y Quien sera siguen con las pistas karaoke anteriores: falta su version con voz guia.',
+const lines = ['# Voces y sincronizacion: 30/10/2026','',
+  `Hay ${songs.length} canciones con audio y texto. Se recibieron ${incoming.size} MP3 con voz guia, contando Carinito.`,
+  `El himno conserva una grabacion anterior con voces. Faltan versiones con voz guia de: ${summary.needVocalGuide.map(song=>song.title).join(', ')}.`,
   '',`Quedan ${summary.unmatchedProvidedPhrases} frases aportadas sin ninguna marca en las grabaciones analizadas. Otras ${summary.neighborOrBeatEstimates} tienen estimaciones por frases vecinas o ritmo. Las marcas automaticas restantes tambien requieren revision al oido; cero frases sin marcas no significa verificacion humana.`,
   'Las pistas sin voz guia no se pueden sincronizar con precision repartiendo las palabras sobre su duracion.',
   '', '| Cancion | Audio | Frases con marcas | Sin marcas | Estimadas por vecinos/ritmo |', '| --- | --- | ---: | ---: | ---: |',

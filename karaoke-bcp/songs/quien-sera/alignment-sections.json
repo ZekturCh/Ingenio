@@ -1,0 +1,17 @@
+{
+  "audioSha256": "b2647e8238d76274a43284c578cb1c4bb2cbccc9c72a0e9862306f098e26e717",
+  "reviewRequired": true,
+  "basis": "Vocal section order supported by full-track and independent windowed recognition. Original supplied TXT retained in letra-aportada.txt.",
+  "textChanges": [
+    "Move Yo no sé verse after the instrumental, matching this recording.",
+    "Keep one He querido verse, omit its unrecognized como ayer lo fui tail and repetitions absent from this recording.",
+    "Leave uncertain instrumental interjections without invented lyrics."
+  ],
+  "sections": [
+    {"firstLine":1,"lastLine":4,"start":28,"end":46},
+    {"firstLine":5,"lastLine":8,"start":46,"end":61},
+    {"firstLine":9,"lastLine":12,"start":61,"end":77},
+    {"firstLine":13,"lastLine":16,"start":125,"end":141.4},
+    {"firstLine":17,"lastLine":20,"start":141.4,"end":158}
+  ]
+}

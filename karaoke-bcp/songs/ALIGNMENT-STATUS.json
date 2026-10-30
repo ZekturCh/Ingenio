@@ -1,7 +1,7 @@
 {
-  "updated": "2026-10-29",
+  "updated": "2026-10-30",
   "totalSongs": 28,
-  "newVocalRecordings": 24,
+  "newVocalRecordings": 25,
   "notInNewVocalBatch": [
     {
       "id": "himno-peru",
@@ -14,10 +14,6 @@
     {
       "id": "la-llorona",
       "title": "La Llorona"
-    },
-    {
-      "id": "quien-sera",
-      "title": "Quién será"
     }
   ],
   "needVocalGuide": [
@@ -28,10 +24,6 @@
     {
       "id": "la-llorona",
       "title": "La Llorona"
-    },
-    {
-      "id": "quien-sera",
-      "title": "Quién será"
     }
   ],
   "unmatchedProvidedPhrases": 0,
@@ -303,12 +295,12 @@
     {
       "id": "quien-sera",
       "title": "Quién será",
-      "newVocalRecording": false,
-      "vocalRecording": "previous-karaoke-track",
-      "method": "text-length-proportional; not aligned to vocals or instrumental sections",
-      "markedPhrases": 26,
+      "newVocalRecording": true,
+      "vocalRecording": "provided-vocal-guide",
+      "method": "local-asr-word-matching",
+      "markedPhrases": 20,
       "neighborOrBeatEstimates": 0,
-      "unmatchedLines": null,
+      "unmatchedLines": 0,
       "reviewRequired": true
     },
     {

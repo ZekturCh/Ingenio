@@ -3,6 +3,11 @@
     "ritmo color y sabor": ["ritmo colorizado", "ritmo colorizabo", "primo colorizabo", "no colorizabo", "que no colorizabo"],
     "ritmo para vacilar": ["primo para vacilar"]
   },
+  "quien-sera": {
+    "quien sera quien sera": ["quien sea quien sea"],
+    "quien sera la que me quiere a mi": ["quien sea la que me quiera mi"],
+    "quien sera la que me de su amor": ["quien sea la que me des amor"]
+  },
   "carinito": {
     "lloro": ["yo no", "yo voy"]
   }

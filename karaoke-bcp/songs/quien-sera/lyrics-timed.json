@@ -1,140 +1,855 @@
 {
   "songId": "quien-sera",
-  "title": "Quién será",
   "status": "estimated",
   "reviewRequired": true,
-  "timingMethod": "text-length-proportional; not aligned to vocals or instrumental sections",
-  "durationSeconds": 166.321633,
+  "method": "local-asr-word-matching",
+  "alignmentModel": "faster-whisper-small",
+  "durationSeconds": 167.053061,
+  "audioSha256": "b2647e8238d76274a43284c578cb1c4bb2cbccc9c72a0e9862306f098e26e717",
   "lyrics": [
     {
       "text": "Quién será la que me quiere a mí",
-      "start": 0.0,
-      "end": 7.282033
+      "start": 29.86,
+      "end": 33.9,
+      "words": [
+        {
+          "from": 0,
+          "to": 5,
+          "start": 29.86,
+          "end": 31.56
+        },
+        {
+          "from": 6,
+          "to": 10,
+          "start": 31.56,
+          "end": 32.14
+        },
+        {
+          "from": 11,
+          "to": 13,
+          "start": 32.14,
+          "end": 32.4
+        },
+        {
+          "from": 14,
+          "to": 17,
+          "start": 32.4,
+          "end": 32.7
+        },
+        {
+          "from": 18,
+          "to": 20,
+          "start": 32.7,
+          "end": 32.92
+        },
+        {
+          "from": 28,
+          "to": 29,
+          "start": 33.46,
+          "end": 33.7
+        },
+        {
+          "from": 30,
+          "to": 32,
+          "start": 33.7,
+          "end": 33.9
+        }
+      ],
+      "sourceLine": 1,
+      "matchedWordRatio": 0.875
     },
     {
       "text": "Quién será, quién será",
-      "start": 7.282033,
-      "end": 12.525097
+      "start": 34.8,
+      "end": 37.64,
+      "words": [
+        {
+          "from": 0,
+          "to": 5,
+          "start": 34.8,
+          "end": 35.44
+        },
+        {
+          "from": 6,
+          "to": 10,
+          "start": 35.44,
+          "end": 35.96
+        },
+        {
+          "from": 12,
+          "to": 17,
+          "start": 36.6,
+          "end": 37.18
+        },
+        {
+          "from": 18,
+          "to": 22,
+          "start": 37.18,
+          "end": 37.64
+        }
+      ],
+      "sourceLine": 2,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Quién será la que me dé su amor",
-      "start": 12.525097,
-      "end": 19.515848
+      "start": 38.6,
+      "end": 41.66,
+      "words": [
+        {
+          "from": 0,
+          "to": 5,
+          "start": 38.6,
+          "end": 39.44
+        },
+        {
+          "from": 6,
+          "to": 10,
+          "start": 39.44,
+          "end": 39.82
+        },
+        {
+          "from": 11,
+          "to": 13,
+          "start": 39.82,
+          "end": 40.1
+        },
+        {
+          "from": 14,
+          "to": 17,
+          "start": 40.1,
+          "end": 40.26
+        },
+        {
+          "from": 18,
+          "to": 20,
+          "start": 40.26,
+          "end": 40.44
+        },
+        {
+          "from": 21,
+          "to": 23,
+          "start": 40.44,
+          "end": 40.7
+        },
+        {
+          "from": 24,
+          "to": 26,
+          "start": 40.7,
+          "end": 41.18
+        },
+        {
+          "from": 27,
+          "to": 31,
+          "start": 41.18,
+          "end": 41.66
+        }
+      ],
+      "sourceLine": 3,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Quién será, quién será",
-      "start": 19.515848,
-      "end": 24.758912
-    },
-    {
-      "text": "Yo no sé si la podré encontrar",
-      "start": 24.758912,
-      "end": 31.749664
-    },
-    {
-      "text": "Yo no sé, yo no sé",
-      "start": 31.749664,
-      "end": 35.24504
-    },
-    {
-      "text": "Yo no sé si volveré a querer",
-      "start": 35.24504,
-      "end": 41.653229
-    },
-    {
-      "text": "Yo no sé, yo no sé",
-      "start": 41.653229,
-      "end": 45.148604
+      "start": 42.36,
+      "end": 45.38,
+      "words": [
+        {
+          "from": 0,
+          "to": 5,
+          "start": 42.36,
+          "end": 42.86
+        },
+        {
+          "from": 6,
+          "to": 10,
+          "start": 42.86,
+          "end": 43.38
+        },
+        {
+          "from": 12,
+          "to": 17,
+          "start": 44.26,
+          "end": 44.94
+        },
+        {
+          "from": 18,
+          "to": 22,
+          "start": 44.94,
+          "end": 45.38
+        }
+      ],
+      "sourceLine": 4,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "He querido volver a vivir",
-      "start": 45.148604,
-      "end": 51.265512
+      "start": 46.8,
+      "end": 49.32,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 46.8,
+          "end": 47.04
+        },
+        {
+          "from": 3,
+          "to": 10,
+          "start": 47.04,
+          "end": 47.58
+        },
+        {
+          "from": 11,
+          "to": 17,
+          "start": 47.58,
+          "end": 48.38
+        },
+        {
+          "from": 18,
+          "to": 19,
+          "start": 48.38,
+          "end": 48.9
+        },
+        {
+          "from": 20,
+          "to": 25,
+          "start": 48.9,
+          "end": 49.32
+        }
+      ],
+      "sourceLine": 5,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "La pasión y el calor de otro amor",
-      "start": 51.265512,
-      "end": 58.838826
+      "start": 49.86,
+      "end": 53.56,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 49.86,
+          "end": 50.68
+        },
+        {
+          "from": 3,
+          "to": 9,
+          "start": 50.68,
+          "end": 51.42
+        },
+        {
+          "from": 10,
+          "to": 11,
+          "start": 51.42,
+          "end": 51.62
+        },
+        {
+          "from": 12,
+          "to": 14,
+          "start": 51.62,
+          "end": 51.84
+        },
+        {
+          "from": 15,
+          "to": 20,
+          "start": 51.84,
+          "end": 52.34
+        },
+        {
+          "from": 21,
+          "to": 23,
+          "start": 52.34,
+          "end": 52.66
+        },
+        {
+          "from": 24,
+          "to": 28,
+          "start": 52.66,
+          "end": 52.98
+        },
+        {
+          "from": 29,
+          "to": 33,
+          "start": 52.98,
+          "end": 53.56
+        }
+      ],
+      "sourceLine": 6,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "De otro amor que me hiciera sentir",
-      "start": 58.838826,
-      "end": 66.994703
+      "start": 53.56,
+      "end": 57.0,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 53.56,
+          "end": 54.5
+        },
+        {
+          "from": 3,
+          "to": 7,
+          "start": 54.5,
+          "end": 54.8
+        },
+        {
+          "from": 8,
+          "to": 12,
+          "start": 54.8,
+          "end": 55.22
+        },
+        {
+          "from": 13,
+          "to": 16,
+          "start": 55.22,
+          "end": 55.58
+        },
+        {
+          "from": 17,
+          "to": 19,
+          "start": 55.58,
+          "end": 55.76
+        },
+        {
+          "from": 20,
+          "to": 27,
+          "start": 55.76,
+          "end": 56.3
+        },
+        {
+          "from": 28,
+          "to": 34,
+          "start": 56.3,
+          "end": 57.0
+        }
+      ],
+      "sourceLine": 7,
+      "matchedWordRatio": 1.0
     },
     {
-      "text": "Que me hiciera feliz, como ayer lo fui",
-      "start": 66.994703,
-      "end": 75.733143
+      "text": "Que me hiciera feliz",
+      "start": 57.0,
+      "end": 60.04,
+      "words": [
+        {
+          "from": 4,
+          "to": 6,
+          "start": 57.0,
+          "end": 58.64
+        },
+        {
+          "from": 7,
+          "to": 14,
+          "start": 58.64,
+          "end": 59.24
+        },
+        {
+          "from": 15,
+          "to": 20,
+          "start": 59.24,
+          "end": 60.04
+        }
+      ],
+      "sourceLine": 8,
+      "matchedWordRatio": 0.75
     },
     {
       "text": "Quién será la que me quiere a mí",
-      "start": 75.733143,
-      "end": 83.015176
+      "start": 61.0,
+      "end": 64.6,
+      "words": [
+        {
+          "from": 0,
+          "to": 5,
+          "start": 61.0,
+          "end": 62.04
+        },
+        {
+          "from": 11,
+          "to": 13,
+          "start": 62.62,
+          "end": 62.96
+        },
+        {
+          "from": 14,
+          "to": 17,
+          "start": 62.96,
+          "end": 63.26
+        },
+        {
+          "from": 18,
+          "to": 20,
+          "start": 63.26,
+          "end": 63.48
+        },
+        {
+          "from": 30,
+          "to": 32,
+          "start": 64.02,
+          "end": 64.6
+        }
+      ],
+      "sourceLine": 9,
+      "matchedWordRatio": 0.625
     },
     {
       "text": "Quién será, quién será",
-      "start": 83.015176,
-      "end": 88.25824
+      "start": 64.6,
+      "end": 68.2,
+      "words": [
+        {
+          "from": 0,
+          "to": 5,
+          "start": 64.6,
+          "end": 66.0
+        },
+        {
+          "from": 6,
+          "to": 10,
+          "start": 66.0,
+          "end": 66.3
+        },
+        {
+          "from": 12,
+          "to": 17,
+          "start": 67.18,
+          "end": 67.62
+        },
+        {
+          "from": 18,
+          "to": 22,
+          "start": 67.62,
+          "end": 68.2
+        }
+      ],
+      "sourceLine": 10,
+      "matchedWordRatio": 1.0,
+      "alignment": "acoustic-gap-refinement"
     },
     {
       "text": "Quién será la que me dé su amor",
-      "start": 88.25824,
-      "end": 95.248991
+      "start": 69.0,
+      "end": 71.98,
+      "words": [
+        {
+          "from": 0,
+          "to": 5,
+          "start": 69.0,
+          "end": 69.7
+        },
+        {
+          "from": 11,
+          "to": 13,
+          "start": 70.36,
+          "end": 70.64
+        },
+        {
+          "from": 14,
+          "to": 17,
+          "start": 70.64,
+          "end": 70.84
+        },
+        {
+          "from": 18,
+          "to": 20,
+          "start": 70.84,
+          "end": 71.0
+        },
+        {
+          "from": 27,
+          "to": 31,
+          "start": 71.4,
+          "end": 71.98
+        }
+      ],
+      "sourceLine": 11,
+      "matchedWordRatio": 0.625
     },
     {
       "text": "Quién será, quién será",
-      "start": 95.248991,
-      "end": 100.492055
+      "start": 72.57,
+      "end": 75.93,
+      "words": [
+        {
+          "from": 0,
+          "to": 5,
+          "start": 72.57,
+          "end": 73.43
+        },
+        {
+          "from": 6,
+          "to": 10,
+          "start": 73.43,
+          "end": 73.91
+        },
+        {
+          "from": 12,
+          "to": 17,
+          "start": 74.73,
+          "end": 75.25
+        },
+        {
+          "from": 18,
+          "to": 22,
+          "start": 75.25,
+          "end": 75.93
+        }
+      ],
+      "sourceLine": 12,
+      "matchedWordRatio": 1.0,
+      "alignment": "phonetic-window-acoustic-refinement",
+      "anchorAlias": "Quien sea, quien sea"
     },
     {
-      "text": "He querido de nuevo vivir",
-      "start": 100.492055,
-      "end": 106.608963
+      "text": "Yo no sé si la podré encontrar",
+      "start": 126.64,
+      "end": 129.64,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 126.64,
+          "end": 127.26
+        },
+        {
+          "from": 3,
+          "to": 5,
+          "start": 127.26,
+          "end": 127.72
+        },
+        {
+          "from": 6,
+          "to": 8,
+          "start": 127.72,
+          "end": 128.0
+        },
+        {
+          "from": 9,
+          "to": 11,
+          "start": 128.0,
+          "end": 128.24
+        },
+        {
+          "from": 12,
+          "to": 14,
+          "start": 128.24,
+          "end": 128.52
+        },
+        {
+          "from": 15,
+          "to": 20,
+          "start": 128.52,
+          "end": 129.1
+        },
+        {
+          "from": 21,
+          "to": 30,
+          "start": 129.1,
+          "end": 129.64
+        }
+      ],
+      "sourceLine": 13,
+      "matchedWordRatio": 1.0
     },
     {
-      "text": "La pasión y el calor de otro amor",
-      "start": 106.608963,
-      "end": 114.182277
+      "text": "Yo no sé, yo no sé",
+      "start": 130.82,
+      "end": 134.0,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 130.82,
+          "end": 131.08
+        },
+        {
+          "from": 3,
+          "to": 5,
+          "start": 131.08,
+          "end": 131.34
+        },
+        {
+          "from": 6,
+          "to": 8,
+          "start": 131.34,
+          "end": 131.94
+        },
+        {
+          "from": 10,
+          "to": 12,
+          "start": 132.8,
+          "end": 133.02
+        },
+        {
+          "from": 13,
+          "to": 15,
+          "start": 133.02,
+          "end": 133.28
+        },
+        {
+          "from": 16,
+          "to": 18,
+          "start": 133.28,
+          "end": 134.0
+        }
+      ],
+      "sourceLine": 14,
+      "matchedWordRatio": 1.0
     },
     {
-      "text": "De otro amor que me hiciera sentir",
-      "start": 114.182277,
-      "end": 122.338154
+      "text": "Yo no sé si volveré a querer",
+      "start": 135.06,
+      "end": 137.54,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 135.06,
+          "end": 135.24
+        },
+        {
+          "from": 3,
+          "to": 5,
+          "start": 135.24,
+          "end": 135.38
+        },
+        {
+          "from": 6,
+          "to": 8,
+          "start": 135.38,
+          "end": 135.66
+        },
+        {
+          "from": 9,
+          "to": 11,
+          "start": 135.66,
+          "end": 135.88
+        },
+        {
+          "from": 12,
+          "to": 19,
+          "start": 135.88,
+          "end": 136.78
+        },
+        {
+          "from": 20,
+          "to": 21,
+          "start": 136.78,
+          "end": 136.9
+        },
+        {
+          "from": 22,
+          "to": 28,
+          "start": 136.9,
+          "end": 137.54
+        }
+      ],
+      "sourceLine": 15,
+      "matchedWordRatio": 1.0
     },
     {
-      "text": "Que me hiciera feliz, como ayer lo fui",
-      "start": 122.338154,
-      "end": 131.076593
+      "text": "Yo no sé, yo no sé",
+      "start": 138.48,
+      "end": 141.4,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 138.48,
+          "end": 138.8
+        },
+        {
+          "from": 3,
+          "to": 5,
+          "start": 138.8,
+          "end": 139.12
+        },
+        {
+          "from": 6,
+          "to": 8,
+          "start": 139.12,
+          "end": 139.64
+        },
+        {
+          "from": 10,
+          "to": 12,
+          "start": 140.4,
+          "end": 140.66
+        },
+        {
+          "from": 13,
+          "to": 15,
+          "start": 140.66,
+          "end": 140.96
+        },
+        {
+          "from": 16,
+          "to": 18,
+          "start": 140.96,
+          "end": 141.4
+        }
+      ],
+      "sourceLine": 16,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Quién será la que me quiere a mí",
-      "start": 131.076593,
-      "end": 138.358626
+      "start": 141.4,
+      "end": 145.32,
+      "words": [
+        {
+          "from": 0,
+          "to": 5,
+          "start": 141.4,
+          "end": 142.76
+        },
+        {
+          "from": 6,
+          "to": 10,
+          "start": 142.76,
+          "end": 143.38
+        },
+        {
+          "from": 11,
+          "to": 13,
+          "start": 143.38,
+          "end": 143.62
+        },
+        {
+          "from": 14,
+          "to": 17,
+          "start": 143.62,
+          "end": 143.92
+        },
+        {
+          "from": 18,
+          "to": 20,
+          "start": 143.92,
+          "end": 144.12
+        },
+        {
+          "from": 28,
+          "to": 29,
+          "start": 144.8,
+          "end": 145.08
+        },
+        {
+          "from": 30,
+          "to": 32,
+          "start": 145.08,
+          "end": 145.32
+        }
+      ],
+      "sourceLine": 17,
+      "matchedWordRatio": 0.875
     },
     {
       "text": "Quién será, quién será",
-      "start": 138.358626,
-      "end": 143.60169
+      "start": 145.96,
+      "end": 148.88,
+      "words": [
+        {
+          "from": 0,
+          "to": 5,
+          "start": 145.96,
+          "end": 146.5
+        },
+        {
+          "from": 6,
+          "to": 10,
+          "start": 146.5,
+          "end": 147.06
+        },
+        {
+          "from": 12,
+          "to": 17,
+          "start": 147.84,
+          "end": 148.38
+        },
+        {
+          "from": 18,
+          "to": 22,
+          "start": 148.38,
+          "end": 148.88
+        }
+      ],
+      "sourceLine": 18,
+      "matchedWordRatio": 1.0
     },
     {
       "text": "Quién será la que me dé su amor",
-      "start": 143.60169,
-      "end": 150.592442
+      "start": 150.02,
+      "end": 151.8,
+      "words": [
+        {
+          "from": 0,
+          "to": 5,
+          "start": 150.02,
+          "end": 150.76
+        },
+        {
+          "from": 6,
+          "to": 10,
+          "start": 150.76,
+          "end": 151.06
+        },
+        {
+          "from": 11,
+          "to": 13,
+          "start": 151.06,
+          "end": 151.34
+        },
+        {
+          "from": 14,
+          "to": 17,
+          "start": 151.34,
+          "end": 151.62
+        },
+        {
+          "from": 18,
+          "to": 20,
+          "start": 151.62,
+          "end": 151.8
+        }
+      ],
+      "sourceLine": 19,
+      "matchedWordRatio": 0.625
     },
     {
       "text": "Quién será, quién será",
-      "start": 150.592442,
-      "end": 155.835506
-    },
-    {
-      "text": "Quién será, quién será",
-      "start": 155.835506,
-      "end": 161.078569
-    },
-    {
-      "text": "Quién será, quién será",
-      "start": 161.078569,
-      "end": 166.321633
+      "start": 153.48,
+      "end": 156.82,
+      "words": [
+        {
+          "from": 0,
+          "to": 5,
+          "start": 153.48,
+          "end": 154.22
+        },
+        {
+          "from": 6,
+          "to": 10,
+          "start": 154.22,
+          "end": 154.74
+        },
+        {
+          "from": 12,
+          "to": 17,
+          "start": 155.74,
+          "end": 156.1
+        },
+        {
+          "from": 18,
+          "to": 22,
+          "start": 156.1,
+          "end": 156.82
+        }
+      ],
+      "sourceLine": 20,
+      "matchedWordRatio": 1.0
     }
-  ]
+  ],
+  "unmatchedLines": []
 }

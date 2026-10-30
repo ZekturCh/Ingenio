@@ -5,7 +5,9 @@ const catalogPath = path.join(root, 'songs/catalog.js');
 const source = fs.readFileSync(catalogPath, 'utf8');
 const songs = vm.runInNewContext(source.replace(/^export /gm, '') + '\nSONGS;');
 const report = JSON.parse(fs.readFileSync(path.join(root, 'songs/VOCAL-IMPORT-20261029.json'), 'utf8'));
-if (report.length !== 23 || new Set(report.map(track => track.id)).size !== 23) throw Error('Incomplete vocal import');
+const inputs = require('./import-vocal-tracks.json');
+if (report.length !== inputs.length || new Set(report.map(track => track.id)).size !== inputs.length ||
+    inputs.some(([id]) => !report.some(track => track.id === id))) throw Error('Incomplete vocal import');
 const incoming = new Map(report.map(track => [track.id, track]));
 const rows = songs.map(song => {
   if (song.id === 'carinito') return '  carinito,';

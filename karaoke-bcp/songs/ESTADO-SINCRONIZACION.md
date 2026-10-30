@@ -1,7 +1,7 @@
-# Voces y sincronizacion: 29/10/2026
+# Voces y sincronizacion: 30/10/2026
 
-Hay 28 canciones con audio y texto. Se recibieron 24 MP3 con voz guia, contando Carinito.
-El himno conserva una grabacion anterior con voces. La Bruja, La Llorona y Quien sera siguen con las pistas karaoke anteriores: falta su version con voz guia.
+Hay 28 canciones con audio y texto. Se recibieron 25 MP3 con voz guia, contando Carinito.
+El himno conserva una grabacion anterior con voces. Faltan versiones con voz guia de: La Bruja, La Llorona.
 
 Quedan 0 frases aportadas sin ninguna marca en las grabaciones analizadas. Otras 102 tienen estimaciones por frases vecinas o ritmo. Las marcas automaticas restantes tambien requieren revision al oido; cero frases sin marcas no significa verificacion humana.
 Las pistas sin voz guia no se pueden sincronizar con precision repartiendo las palabras sobre su duracion.
@@ -32,7 +32,7 @@ Las pistas sin voz guia no se pueden sincronizar con precision repartiendo las p
 | No podrás | Voz guia nueva | 35 | 0 | 5 |
 | Nuestro secreto | Voz guia nueva | 23 | 0 | 0 |
 | Payaso | Voz guia nueva | 37 | 0 | 0 |
-| Quién será | Karaoke anterior; falta guia | 26 | No evaluable con estas marcas | 0 |
+| Quién será | Voz guia nueva | 20 | 0 | 0 |
 | Regresa | Voz guia nueva | 24 | 0 | 0 |
 | Ritmo, color y sabor | Voz guia nueva | 63 | 0 | 25 |
 | Ódiame | Voz guia nueva | 28 | 0 | 0 |

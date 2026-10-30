@@ -4,8 +4,11 @@ const root = path.resolve(__dirname, '..'), file = path.join(root, 'songs/catalo
 let source = fs.readFileSync(file, 'utf8');
 const songs = vm.runInNewContext(source.replace(/^export /gm, '') + '\nSONGS;');
 const selections = require('../songs/chorus-selections.json');
-const windows = {};
+const only = process.argv.includes('--only') ? process.argv[process.argv.indexOf('--only')+1] : null;
+if (process.argv.includes('--only') && !selections[only]) throw Error('Unknown chorus selection');
+const windows = only ? JSON.parse(source.match(/const CHORUS_WINDOWS = ([\s\S]*?);\nfunction withChorus/)[1]) : {};
 for (const [id, [start, end]] of Object.entries(selections)) {
+  if (only && id !== only) continue;
   const song = songs.find(song => song.id === id);
   if (!song) throw Error(`Unknown song ${id}`);
   const lines = JSON.parse(fs.readFileSync(path.join(root, song.lyrics), 'utf8')).lyrics;

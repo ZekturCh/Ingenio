@@ -122,8 +122,8 @@ const CHORUS_WINDOWS = {
     "endAt": 75.64
   },
   "quien-sera": {
-    "startAt": 75.733,
-    "endAt": 100.492
+    "startAt": 60.2,
+    "endAt": 76.23
   },
   "regresa": {
     "startAt": 56.48,
@@ -174,7 +174,7 @@ export const SONGS = [
   estimatedTrack("no-podras", "No podrás", "Cristian Castro", 240.117551, "28777654c46ef8fd94fcd7a899b95ab6d8c2db51c1711492c164a470d33a959a"),
   estimatedTrack("nuestro-secreto", "Nuestro secreto", "Óscar Avilés y Arturo Zambo Cavero", 153.652245, "be8d5ec295d425f1ff47e4ad2c114909414bd336f659c8c12e8b6addb38f8d8c"),
   estimatedTrack("payaso", "Payaso", "José José", 179.591837, "9ef6837559c97aada034b1fe727b2dee21d217a7f4b1e73a40f8413de274773f"),
-  estimatedTrack("quien-sera", "Quién será", "Julio Iglesias", 166.321633),
+  estimatedTrack("quien-sera", "Quién será", "Julio Iglesias", 167.053061, "b2647e8238d76274a43284c578cb1c4bb2cbccc9c72a0e9862306f098e26e717"),
   estimatedTrack("regresa", "Regresa", "Lucha Reyes", 173.662041, "d207aec76b5f945877444061fd4ac2822fa5d43b73b994e4b1290e777c0a69e7"),
   estimatedTrack("ritmo-color-sabor", "Ritmo, color y sabor", "Eva Ayllón", 258.403265, "ee95ce5da0f1dbe3ca7b7e5c3fcd683341327f985b8bc718289c36b8e1c9e0bc"),
   estimatedTrack("odiame", "Ódiame", "Julio Jaramillo", 168.568163, "ce44d14fabfeb9fe4e3b2fcd882ec4ba8d8863da3adc93d4946ce61254e2313b"),
