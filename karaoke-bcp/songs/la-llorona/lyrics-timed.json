@@ -1,250 +1,1746 @@
 {
   "songId": "la-llorona",
-  "title": "La Llorona",
   "status": "estimated",
   "reviewRequired": true,
-  "timingMethod": "text-length-proportional; not aligned to vocals or instrumental sections",
-  "durationSeconds": 337.057959,
+  "method": "local-asr-word-matching",
+  "alignmentModel": "faster-whisper-small",
+  "durationSeconds": 324.623673,
+  "audioSha256": "976b179021f3c2b5d24873dafc653043339a1fb7ff10cd52a6f66163f46b172a",
   "lyrics": [
     {
       "text": "No sé qué tienen las flores, llorona",
-      "start": 0.0,
-      "end": 9.30922
+      "start": 24.8,
+      "end": 29.42,
+      "words": [
+        {
+          "from": 3,
+          "to": 5,
+          "start": 24.8,
+          "end": 25.48
+        },
+        {
+          "from": 6,
+          "to": 9,
+          "start": 25.48,
+          "end": 25.74
+        },
+        {
+          "from": 17,
+          "to": 20,
+          "start": 26.3,
+          "end": 27.06
+        },
+        {
+          "from": 21,
+          "to": 27,
+          "start": 27.06,
+          "end": 27.92
+        },
+        {
+          "from": 29,
+          "to": 36,
+          "start": 28.6,
+          "end": 29.42
+        }
+      ],
+      "sourceLine": 1,
+      "matchedWordRatio": 0.714
     },
     {
       "text": "Las flores del campo santo",
-      "start": 9.30922,
-      "end": 16.371387
+      "start": 29.42,
+      "end": 33.74,
+      "words": [
+        {
+          "from": 0,
+          "to": 3,
+          "start": 29.42,
+          "end": 30.12
+        },
+        {
+          "from": 4,
+          "to": 10,
+          "start": 30.12,
+          "end": 30.7
+        },
+        {
+          "from": 11,
+          "to": 14,
+          "start": 30.7,
+          "end": 32.02
+        },
+        {
+          "from": 15,
+          "to": 20,
+          "start": 32.02,
+          "end": 32.4
+        },
+        {
+          "from": 21,
+          "to": 26,
+          "start": 32.4,
+          "end": 33.74
+        }
+      ],
+      "sourceLine": 2,
+      "matchedWordRatio": 1
     },
     {
       "text": "No sé qué tienen las flores, llorona",
-      "start": 16.371387,
-      "end": 25.680606
+      "start": 34.42,
+      "end": 40.12,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 34.42,
+          "end": 35.82
+        },
+        {
+          "from": 3,
+          "to": 5,
+          "start": 35.82,
+          "end": 36.32
+        },
+        {
+          "from": 6,
+          "to": 9,
+          "start": 36.32,
+          "end": 36.5
+        },
+        {
+          "from": 17,
+          "to": 20,
+          "start": 37.36,
+          "end": 37.94
+        },
+        {
+          "from": 21,
+          "to": 27,
+          "start": 37.94,
+          "end": 38.8
+        },
+        {
+          "from": 29,
+          "to": 36,
+          "start": 38.8,
+          "end": 40.12
+        }
+      ],
+      "sourceLine": 3,
+      "matchedWordRatio": 0.857
     },
     {
       "text": "Las flores del campo santo",
-      "start": 25.680606,
-      "end": 32.742773
+      "start": 40.12,
+      "end": 44.5,
+      "words": [
+        {
+          "from": 0,
+          "to": 3,
+          "start": 40.12,
+          "end": 40.82
+        },
+        {
+          "from": 4,
+          "to": 10,
+          "start": 40.82,
+          "end": 41.5
+        },
+        {
+          "from": 11,
+          "to": 14,
+          "start": 41.5,
+          "end": 42.8
+        },
+        {
+          "from": 15,
+          "to": 20,
+          "start": 42.8,
+          "end": 43.44
+        },
+        {
+          "from": 21,
+          "to": 26,
+          "start": 43.44,
+          "end": 44.5
+        }
+      ],
+      "sourceLine": 4,
+      "matchedWordRatio": 1
     },
     {
       "text": "Que cuando las mueve el viento, llorona",
-      "start": 32.742773,
-      "end": 43.015016
+      "start": 45.32,
+      "end": 50.66,
+      "words": [
+        {
+          "from": 0,
+          "to": 3,
+          "start": 45.32,
+          "end": 46.02
+        },
+        {
+          "from": 4,
+          "to": 10,
+          "start": 46.02,
+          "end": 46.68
+        },
+        {
+          "from": 11,
+          "to": 14,
+          "start": 46.68,
+          "end": 47.3
+        },
+        {
+          "from": 15,
+          "to": 20,
+          "start": 47.3,
+          "end": 48.44
+        },
+        {
+          "from": 21,
+          "to": 23,
+          "start": 48.44,
+          "end": 48.68
+        },
+        {
+          "from": 24,
+          "to": 30,
+          "start": 48.68,
+          "end": 49.58
+        },
+        {
+          "from": 32,
+          "to": 39,
+          "start": 49.58,
+          "end": 50.66
+        }
+      ],
+      "sourceLine": 5,
+      "matchedWordRatio": 1
     },
     {
       "text": "Parece que están llorando",
-      "start": 43.015016,
-      "end": 50.077182
+      "start": 50.66,
+      "end": 54.7,
+      "words": [
+        {
+          "from": 0,
+          "to": 6,
+          "start": 50.66,
+          "end": 51.88
+        },
+        {
+          "from": 7,
+          "to": 10,
+          "start": 51.88,
+          "end": 52.88
+        },
+        {
+          "from": 11,
+          "to": 16,
+          "start": 52.88,
+          "end": 53.56
+        },
+        {
+          "from": 17,
+          "to": 25,
+          "start": 53.56,
+          "end": 54.7
+        }
+      ],
+      "sourceLine": 6,
+      "matchedWordRatio": 1
     },
     {
       "text": "Que cuando las mueve el viento, llorona",
-      "start": 50.077182,
-      "end": 60.349425
+      "start": 54.7,
+      "end": 59.76,
+      "words": [
+        {
+          "from": 0,
+          "to": 3,
+          "start": 54.7,
+          "end": 56.44
+        },
+        {
+          "from": 4,
+          "to": 10,
+          "start": 56.44,
+          "end": 57.04
+        },
+        {
+          "from": 11,
+          "to": 14,
+          "start": 57.04,
+          "end": 57.68
+        },
+        {
+          "from": 15,
+          "to": 20,
+          "start": 57.68,
+          "end": 58.68
+        },
+        {
+          "from": 21,
+          "to": 23,
+          "start": 58.68,
+          "end": 58.96
+        },
+        {
+          "from": 24,
+          "to": 30,
+          "start": 58.96,
+          "end": 59.76
+        }
+      ],
+      "sourceLine": 7,
+      "matchedWordRatio": 0.857
     },
     {
       "text": "Parece que están llorando",
-      "start": 60.349425,
-      "end": 67.411592
+      "start": 60.94,
+      "end": 65,
+      "words": [
+        {
+          "from": 0,
+          "to": 6,
+          "start": 60.94,
+          "end": 61.74
+        },
+        {
+          "from": 7,
+          "to": 10,
+          "start": 61.74,
+          "end": 63.02
+        },
+        {
+          "from": 11,
+          "to": 16,
+          "start": 63.02,
+          "end": 63.68
+        },
+        {
+          "from": 17,
+          "to": 25,
+          "start": 63.68,
+          "end": 65
+        }
+      ],
+      "sourceLine": 8,
+      "matchedWordRatio": 1
     },
     {
       "text": "Ay de mí, llorona",
-      "start": 67.411592,
-      "end": 71.58469
+      "start": 66.68,
+      "end": 68.72,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 66.68,
+          "end": 67.26
+        },
+        {
+          "from": 3,
+          "to": 5,
+          "start": 68.2,
+          "end": 68.4
+        },
+        {
+          "from": 6,
+          "to": 8,
+          "start": 68.4,
+          "end": 68.72
+        }
+      ],
+      "sourceLine": 9,
+      "matchedWordRatio": 0.75
     },
     {
       "text": "Llorona, tú eres mi chunca",
-      "start": 71.58469,
-      "end": 78.32585
+      "start": 71.4,
+      "end": 74.14,
+      "words": [
+        {
+          "from": 0,
+          "to": 7,
+          "start": 71.4,
+          "end": 72.24
+        },
+        {
+          "from": 9,
+          "to": 11,
+          "start": 72.9,
+          "end": 73.18
+        },
+        {
+          "from": 12,
+          "to": 16,
+          "start": 73.18,
+          "end": 73.72
+        },
+        {
+          "from": 17,
+          "to": 19,
+          "start": 73.72,
+          "end": 74.14
+        }
+      ],
+      "sourceLine": 10,
+      "matchedWordRatio": 0.8
     },
     {
       "text": "Ay de mí, llorona",
-      "start": 78.32585,
-      "end": 82.498948
+      "start": 75.22,
+      "end": 79.94,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 75.22,
+          "end": 77.18
+        },
+        {
+          "from": 3,
+          "to": 5,
+          "start": 78.1,
+          "end": 78.2
+        },
+        {
+          "from": 6,
+          "to": 8,
+          "start": 78.2,
+          "end": 78.62
+        },
+        {
+          "from": 10,
+          "to": 17,
+          "start": 78.62,
+          "end": 79.94
+        }
+      ],
+      "sourceLine": 11,
+      "matchedWordRatio": 1
     },
     {
       "text": "Llorona, tú eres mi chunca",
-      "start": 82.498948,
-      "end": 89.240107
+      "start": 80.72,
+      "end": 84.1,
+      "words": [
+        {
+          "from": 0,
+          "to": 7,
+          "start": 80.72,
+          "end": 82.36
+        },
+        {
+          "from": 9,
+          "to": 11,
+          "start": 82.36,
+          "end": 83.22
+        },
+        {
+          "from": 12,
+          "to": 16,
+          "start": 83.22,
+          "end": 83.66
+        },
+        {
+          "from": 17,
+          "to": 19,
+          "start": 83.66,
+          "end": 84.1
+        }
+      ],
+      "sourceLine": 12,
+      "matchedWordRatio": 0.8
     },
     {
       "text": "Me quitarán de quererte, llorona",
-      "start": 89.240107,
-      "end": 97.907312
+      "start": 85.04,
+      "end": 90.9,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 85.04,
+          "end": 86.58
+        },
+        {
+          "from": 3,
+          "to": 11,
+          "start": 86.58,
+          "end": 87.82
+        },
+        {
+          "from": 12,
+          "to": 14,
+          "start": 87.82,
+          "end": 88.7
+        },
+        {
+          "from": 15,
+          "to": 23,
+          "start": 88.7,
+          "end": 89.82
+        },
+        {
+          "from": 25,
+          "to": 32,
+          "start": 90.12,
+          "end": 90.9
+        }
+      ],
+      "sourceLine": 13,
+      "matchedWordRatio": 1
     },
     {
       "text": "Pero, de olvidarte, nunca",
-      "start": 97.907312,
-      "end": 104.327463
+      "start": 91.22,
+      "end": 94.62,
+      "words": [
+        {
+          "from": 0,
+          "to": 4,
+          "start": 91.22,
+          "end": 91.66
+        },
+        {
+          "from": 6,
+          "to": 8,
+          "start": 91.66,
+          "end": 92.86
+        },
+        {
+          "from": 9,
+          "to": 18,
+          "start": 92.86,
+          "end": 93.94
+        },
+        {
+          "from": 20,
+          "to": 25,
+          "start": 93.94,
+          "end": 94.62
+        }
+      ],
+      "sourceLine": 14,
+      "matchedWordRatio": 1
     },
     {
       "text": "Me quitarán de quererte, llorona",
-      "start": 104.327463,
-      "end": 112.994668
+      "start": 94.62,
+      "end": 99.7,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 94.62,
+          "end": 96.56
+        },
+        {
+          "from": 3,
+          "to": 11,
+          "start": 96.56,
+          "end": 97.84
+        },
+        {
+          "from": 12,
+          "to": 14,
+          "start": 97.84,
+          "end": 98.42
+        },
+        {
+          "from": 15,
+          "to": 23,
+          "start": 98.42,
+          "end": 99.7
+        }
+      ],
+      "sourceLine": 15,
+      "matchedWordRatio": 0.8
     },
     {
       "text": "Pero, de olvidarte, nunca",
-      "start": 112.994668,
-      "end": 119.41482
+      "start": 101.26,
+      "end": 104.58,
+      "words": [
+        {
+          "from": 0,
+          "to": 4,
+          "start": 101.26,
+          "end": 101.68
+        },
+        {
+          "from": 6,
+          "to": 8,
+          "start": 101.68,
+          "end": 102.18
+        },
+        {
+          "from": 9,
+          "to": 18,
+          "start": 102.18,
+          "end": 103.98
+        },
+        {
+          "from": 20,
+          "to": 25,
+          "start": 103.98,
+          "end": 104.58
+        }
+      ],
+      "sourceLine": 16,
+      "matchedWordRatio": 1
     },
     {
       "text": "A un Santo Cristo de fierro, llorona",
-      "start": 119.41482,
-      "end": 128.72404
+      "start": 129.44,
+      "end": 134.18,
+      "words": [
+        {
+          "from": 0,
+          "to": 1,
+          "start": 129.44,
+          "end": 130.8
+        },
+        {
+          "from": 2,
+          "to": 4,
+          "start": 130.8,
+          "end": 131.14
+        },
+        {
+          "from": 5,
+          "to": 10,
+          "start": 131.14,
+          "end": 131.78
+        },
+        {
+          "from": 11,
+          "to": 17,
+          "start": 131.78,
+          "end": 132.4
+        },
+        {
+          "from": 18,
+          "to": 20,
+          "start": 132.4,
+          "end": 133.12
+        },
+        {
+          "from": 21,
+          "to": 27,
+          "start": 133.12,
+          "end": 134.18
+        }
+      ],
+      "sourceLine": 17,
+      "matchedWordRatio": 0.857
     },
     {
       "text": "Mis penas, le conté yo",
-      "start": 128.72404,
-      "end": 134.181168
+      "start": 135.34,
+      "end": 138.92,
+      "words": [
+        {
+          "from": 0,
+          "to": 3,
+          "start": 135.34,
+          "end": 135.78
+        },
+        {
+          "from": 4,
+          "to": 9,
+          "start": 135.78,
+          "end": 136.64
+        },
+        {
+          "from": 11,
+          "to": 13,
+          "start": 136.64,
+          "end": 137.76
+        },
+        {
+          "from": 14,
+          "to": 19,
+          "start": 137.76,
+          "end": 138.44
+        },
+        {
+          "from": 20,
+          "to": 22,
+          "start": 138.44,
+          "end": 138.92
+        }
+      ],
+      "sourceLine": 18,
+      "matchedWordRatio": 1
     },
     {
       "text": "A un Santo Cristo de fierro, llorona",
-      "start": 134.181168,
-      "end": 143.490388
+      "start": 138.92,
+      "end": 144.44,
+      "words": [
+        {
+          "from": 0,
+          "to": 1,
+          "start": 138.92,
+          "end": 141.22
+        },
+        {
+          "from": 2,
+          "to": 4,
+          "start": 141.22,
+          "end": 141.56
+        },
+        {
+          "from": 5,
+          "to": 10,
+          "start": 141.56,
+          "end": 142.12
+        },
+        {
+          "from": 11,
+          "to": 17,
+          "start": 142.12,
+          "end": 142.82
+        },
+        {
+          "from": 18,
+          "to": 20,
+          "start": 142.82,
+          "end": 143.34
+        },
+        {
+          "from": 21,
+          "to": 27,
+          "start": 143.34,
+          "end": 144.44
+        }
+      ],
+      "sourceLine": 19,
+      "matchedWordRatio": 0.857
     },
     {
       "text": "Mis penas, le conté yo",
-      "start": 143.490388,
-      "end": 148.947517
+      "start": 145.52,
+      "end": 149.06,
+      "words": [
+        {
+          "from": 0,
+          "to": 3,
+          "start": 145.52,
+          "end": 145.96
+        },
+        {
+          "from": 4,
+          "to": 9,
+          "start": 145.96,
+          "end": 146.84
+        },
+        {
+          "from": 11,
+          "to": 13,
+          "start": 146.84,
+          "end": 147.96
+        },
+        {
+          "from": 14,
+          "to": 19,
+          "start": 147.96,
+          "end": 148.66
+        },
+        {
+          "from": 20,
+          "to": 22,
+          "start": 148.66,
+          "end": 149.06
+        }
+      ],
+      "sourceLine": 20,
+      "matchedWordRatio": 1
     },
     {
       "text": "Cuáles no serían mis penas, llorona",
-      "start": 148.947517,
-      "end": 158.256737
+      "start": 150.34,
+      "end": 155.58,
+      "words": [
+        {
+          "from": 0,
+          "to": 6,
+          "start": 150.34,
+          "end": 151.7
+        },
+        {
+          "from": 7,
+          "to": 9,
+          "start": 151.7,
+          "end": 152.12
+        },
+        {
+          "from": 10,
+          "to": 16,
+          "start": 152.12,
+          "end": 153.02
+        },
+        {
+          "from": 17,
+          "to": 20,
+          "start": 153.02,
+          "end": 153.6
+        },
+        {
+          "from": 21,
+          "to": 26,
+          "start": 153.6,
+          "end": 154.68
+        },
+        {
+          "from": 28,
+          "to": 35,
+          "start": 154.88,
+          "end": 155.58
+        }
+      ],
+      "sourceLine": 21,
+      "matchedWordRatio": 1
     },
     {
       "text": "Que el Santo Cristo lloró",
-      "start": 158.256737,
-      "end": 164.997896
+      "start": 156.08,
+      "end": 159.44,
+      "words": [
+        {
+          "from": 0,
+          "to": 3,
+          "start": 156.08,
+          "end": 156.12
+        },
+        {
+          "from": 4,
+          "to": 6,
+          "start": 156.12,
+          "end": 156.3
+        },
+        {
+          "from": 7,
+          "to": 12,
+          "start": 156.3,
+          "end": 157
+        },
+        {
+          "from": 13,
+          "to": 19,
+          "start": 157,
+          "end": 158.2
+        },
+        {
+          "from": 20,
+          "to": 25,
+          "start": 158.2,
+          "end": 159.44
+        }
+      ],
+      "sourceLine": 22,
+      "matchedWordRatio": 1
     },
     {
       "text": "Cuáles no serían mis penas, llorona",
-      "start": 164.997896,
-      "end": 174.307116
+      "sourceLine": 23,
+      "start": 160.64,
+      "end": 165.88,
+      "timingMethod": "neighbor-estimate",
+      "estimateBasis": "Repeat of the adjacent two-line verse, +10.3 seconds, bounded by the following chorus.",
+      "reviewRequired": true
     },
     {
       "text": "Que el Santo Cristo lloró",
-      "start": 174.307116,
-      "end": 181.048275
+      "sourceLine": 24,
+      "start": 166.38,
+      "end": 169.74,
+      "timingMethod": "neighbor-estimate",
+      "estimateBasis": "Repeat of the adjacent two-line verse, +10.3 seconds, bounded by the following chorus.",
+      "reviewRequired": true
     },
     {
       "text": "Ay de mí, llorona",
-      "start": 181.048275,
-      "end": 185.221374
+      "start": 172.86,
+      "end": 174.4,
+      "words": [
+        {
+          "from": 3,
+          "to": 5,
+          "start": 172.86,
+          "end": 173
+        },
+        {
+          "from": 6,
+          "to": 8,
+          "start": 173,
+          "end": 173.26
+        },
+        {
+          "from": 10,
+          "to": 17,
+          "start": 173.26,
+          "end": 174.4
+        }
+      ],
+      "sourceLine": 25,
+      "matchedWordRatio": 0.75
     },
     {
       "text": "Llorona de un campo lirio",
-      "start": 185.221374,
-      "end": 191.962533
+      "start": 174.92,
+      "end": 177.9,
+      "words": [
+        {
+          "from": 0,
+          "to": 7,
+          "start": 174.92,
+          "end": 176.74
+        },
+        {
+          "from": 8,
+          "to": 10,
+          "start": 176.74,
+          "end": 177.64
+        },
+        {
+          "from": 11,
+          "to": 13,
+          "start": 177.64,
+          "end": 177.9
+        }
+      ],
+      "sourceLine": 26,
+      "matchedWordRatio": 0.6
     },
     {
       "text": "Ay de mí, llorona",
-      "start": 191.962533,
-      "end": 196.135631
+      "start": 179.56,
+      "end": 184.3,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 179.56,
+          "end": 181.48
+        },
+        {
+          "from": 3,
+          "to": 5,
+          "start": 182.64,
+          "end": 182.92
+        },
+        {
+          "from": 6,
+          "to": 8,
+          "start": 182.92,
+          "end": 183.16
+        },
+        {
+          "from": 10,
+          "to": 17,
+          "start": 183.16,
+          "end": 184.3
+        }
+      ],
+      "sourceLine": 27,
+      "matchedWordRatio": 1
     },
     {
       "text": "Llorona de un campo lirio",
-      "start": 196.135631,
-      "end": 202.876791
+      "start": 185.28,
+      "end": 187.82,
+      "words": [
+        {
+          "from": 0,
+          "to": 7,
+          "start": 185.28,
+          "end": 186.64
+        },
+        {
+          "from": 8,
+          "to": 10,
+          "start": 186.64,
+          "end": 187.52
+        },
+        {
+          "from": 11,
+          "to": 13,
+          "start": 187.52,
+          "end": 187.82
+        }
+      ],
+      "sourceLine": 28,
+      "matchedWordRatio": 0.6
     },
     {
       "text": "El que no sabe de amores, llorona",
-      "start": 202.876791,
-      "end": 211.222988
+      "start": 190.46,
+      "end": 194.18,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 190.46,
+          "end": 190.92
+        },
+        {
+          "from": 3,
+          "to": 6,
+          "start": 190.92,
+          "end": 191.22
+        },
+        {
+          "from": 7,
+          "to": 9,
+          "start": 191.22,
+          "end": 191.76
+        },
+        {
+          "from": 10,
+          "to": 14,
+          "start": 191.76,
+          "end": 192.82
+        },
+        {
+          "from": 15,
+          "to": 17,
+          "start": 192.82,
+          "end": 193.36
+        },
+        {
+          "from": 18,
+          "to": 24,
+          "start": 193.36,
+          "end": 194.18
+        }
+      ],
+      "sourceLine": 29,
+      "matchedWordRatio": 0.857
     },
     {
       "text": "No sabe lo que es martirio",
-      "start": 211.222988,
-      "end": 217.964147
+      "start": 195.42,
+      "end": 198.24,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 195.42,
+          "end": 195.9
+        },
+        {
+          "from": 3,
+          "to": 7,
+          "start": 195.9,
+          "end": 196.5
+        },
+        {
+          "from": 8,
+          "to": 10,
+          "start": 196.5,
+          "end": 197.52
+        },
+        {
+          "from": 11,
+          "to": 14,
+          "start": 197.52,
+          "end": 197.88
+        },
+        {
+          "from": 15,
+          "to": 17,
+          "start": 197.88,
+          "end": 198.24
+        }
+      ],
+      "sourceLine": 30,
+      "matchedWordRatio": 0.833
     },
     {
       "text": "El que no sabe de amores, llorona",
-      "start": 217.964147,
-      "end": 226.310344
+      "sourceLine": 31,
+      "start": 200.26,
+      "end": 203.98,
+      "timingMethod": "neighbor-estimate",
+      "estimateBasis": "Repeat of the adjacent two-line refrain, +9.8 seconds; leave the subsequent instrumental blank.",
+      "reviewRequired": true
     },
     {
       "text": "No sabe lo que es martirio",
-      "start": 226.310344,
-      "end": 233.051503
+      "sourceLine": 32,
+      "start": 205.22,
+      "end": 208.04,
+      "timingMethod": "neighbor-estimate",
+      "estimateBasis": "Repeat of the adjacent two-line refrain, +9.8 seconds; leave the subsequent instrumental blank.",
+      "reviewRequired": true
     },
     {
       "text": "Dos besos llevo en el alma, llorona",
-      "start": 233.051503,
-      "end": 242.039715
+      "start": 234.5,
+      "end": 240,
+      "words": [
+        {
+          "from": 0,
+          "to": 3,
+          "start": 234.5,
+          "end": 235.62
+        },
+        {
+          "from": 4,
+          "to": 9,
+          "start": 235.62,
+          "end": 236.36
+        },
+        {
+          "from": 10,
+          "to": 15,
+          "start": 236.36,
+          "end": 237.22
+        },
+        {
+          "from": 16,
+          "to": 18,
+          "start": 237.22,
+          "end": 237.6
+        },
+        {
+          "from": 19,
+          "to": 21,
+          "start": 237.6,
+          "end": 238.1
+        },
+        {
+          "from": 22,
+          "to": 26,
+          "start": 238.1,
+          "end": 238.64
+        },
+        {
+          "from": 28,
+          "to": 35,
+          "start": 238.64,
+          "end": 240
+        }
+      ],
+      "sourceLine": 33,
+      "matchedWordRatio": 1
     },
     {
       "text": "Que no se apartan de mí",
-      "start": 242.039715,
-      "end": 247.817852
+      "start": 240.18,
+      "end": 243.76,
+      "words": [
+        {
+          "from": 0,
+          "to": 3,
+          "start": 240.18,
+          "end": 240.74
+        },
+        {
+          "from": 4,
+          "to": 6,
+          "start": 240.74,
+          "end": 241.16
+        },
+        {
+          "from": 7,
+          "to": 9,
+          "start": 241.16,
+          "end": 242.04
+        },
+        {
+          "from": 10,
+          "to": 17,
+          "start": 242.04,
+          "end": 243.18
+        },
+        {
+          "from": 18,
+          "to": 20,
+          "start": 243.18,
+          "end": 243.5
+        },
+        {
+          "from": 21,
+          "to": 23,
+          "start": 243.5,
+          "end": 243.76
+        }
+      ],
+      "sourceLine": 34,
+      "matchedWordRatio": 1
     },
     {
       "text": "Dos besos llevo en el alma, llorona",
-      "start": 247.817852,
-      "end": 256.806064
+      "start": 245.34,
+      "end": 251,
+      "words": [
+        {
+          "from": 0,
+          "to": 3,
+          "start": 245.34,
+          "end": 246.74
+        },
+        {
+          "from": 4,
+          "to": 9,
+          "start": 246.74,
+          "end": 247.5
+        },
+        {
+          "from": 10,
+          "to": 15,
+          "start": 247.5,
+          "end": 248.4
+        },
+        {
+          "from": 16,
+          "to": 18,
+          "start": 248.4,
+          "end": 248.76
+        },
+        {
+          "from": 19,
+          "to": 21,
+          "start": 248.76,
+          "end": 249.14
+        },
+        {
+          "from": 22,
+          "to": 26,
+          "start": 249.14,
+          "end": 249.98
+        },
+        {
+          "from": 28,
+          "to": 35,
+          "start": 249.98,
+          "end": 251
+        }
+      ],
+      "sourceLine": 35,
+      "matchedWordRatio": 1
     },
     {
       "text": "Que no se apartan de mí",
-      "start": 256.806064,
-      "end": 262.5842
+      "start": 251,
+      "end": 255.04,
+      "words": [
+        {
+          "from": 0,
+          "to": 3,
+          "start": 251,
+          "end": 251.68
+        },
+        {
+          "from": 4,
+          "to": 6,
+          "start": 251.68,
+          "end": 252.08
+        },
+        {
+          "from": 7,
+          "to": 9,
+          "start": 252.08,
+          "end": 253.02
+        },
+        {
+          "from": 10,
+          "to": 17,
+          "start": 253.02,
+          "end": 253.92
+        },
+        {
+          "from": 18,
+          "to": 20,
+          "start": 253.92,
+          "end": 254.4
+        },
+        {
+          "from": 21,
+          "to": 23,
+          "start": 254.4,
+          "end": 255.04
+        }
+      ],
+      "sourceLine": 36,
+      "matchedWordRatio": 1
     },
     {
       "text": "El último de mi madre, llorona",
-      "start": 262.5842,
-      "end": 270.288382
+      "start": 255.04,
+      "end": 261.7,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 255.04,
+          "end": 257.08
+        },
+        {
+          "from": 3,
+          "to": 9,
+          "start": 257.08,
+          "end": 257.96
+        },
+        {
+          "from": 10,
+          "to": 12,
+          "start": 257.96,
+          "end": 259.16
+        },
+        {
+          "from": 13,
+          "to": 15,
+          "start": 259.16,
+          "end": 259.6
+        },
+        {
+          "from": 16,
+          "to": 21,
+          "start": 259.6,
+          "end": 260.4
+        },
+        {
+          "from": 23,
+          "to": 30,
+          "start": 260.78,
+          "end": 261.7
+        }
+      ],
+      "sourceLine": 37,
+      "matchedWordRatio": 1
     },
     {
       "text": "Y el primero que te di",
-      "start": 270.288382,
-      "end": 275.745511
+      "start": 261.7,
+      "end": 265.58,
+      "words": [
+        {
+          "from": 0,
+          "to": 1,
+          "start": 261.7,
+          "end": 262.24
+        },
+        {
+          "from": 2,
+          "to": 4,
+          "start": 262.24,
+          "end": 262.48
+        },
+        {
+          "from": 5,
+          "to": 12,
+          "start": 262.48,
+          "end": 263.24
+        },
+        {
+          "from": 13,
+          "to": 16,
+          "start": 263.24,
+          "end": 264.48
+        },
+        {
+          "from": 17,
+          "to": 19,
+          "start": 264.48,
+          "end": 265
+        },
+        {
+          "from": 20,
+          "to": 22,
+          "start": 265,
+          "end": 265.58
+        }
+      ],
+      "sourceLine": 38,
+      "matchedWordRatio": 1
     },
     {
       "text": "El último de mi madre, llorona",
-      "start": 275.745511,
-      "end": 283.449693
+      "start": 267.68,
+      "end": 272.06,
+      "words": [
+        {
+          "from": 3,
+          "to": 9,
+          "start": 267.68,
+          "end": 268.4
+        },
+        {
+          "from": 10,
+          "to": 12,
+          "start": 269.66,
+          "end": 269.86
+        },
+        {
+          "from": 13,
+          "to": 15,
+          "start": 269.86,
+          "end": 270.22
+        },
+        {
+          "from": 16,
+          "to": 21,
+          "start": 270.22,
+          "end": 270.82
+        },
+        {
+          "from": 23,
+          "to": 30,
+          "start": 271.24,
+          "end": 272.06
+        }
+      ],
+      "sourceLine": 39,
+      "matchedWordRatio": 0.833
     },
     {
       "text": "Y el primero que te di",
-      "start": 283.449693,
-      "end": 288.906822
+      "start": 272.06,
+      "end": 275.86,
+      "words": [
+        {
+          "from": 0,
+          "to": 1,
+          "start": 272.06,
+          "end": 272.6
+        },
+        {
+          "from": 2,
+          "to": 4,
+          "start": 272.6,
+          "end": 272.86
+        },
+        {
+          "from": 13,
+          "to": 16,
+          "start": 273.72,
+          "end": 274.94
+        },
+        {
+          "from": 17,
+          "to": 19,
+          "start": 274.94,
+          "end": 275.32
+        },
+        {
+          "from": 20,
+          "to": 22,
+          "start": 275.32,
+          "end": 275.86
+        }
+      ],
+      "sourceLine": 40,
+      "matchedWordRatio": 0.833
     },
     {
       "text": "Ay de mí, llorona",
-      "start": 288.906822,
-      "end": 293.079921
+      "start": 277.78,
+      "end": 281.18,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 277.78,
+          "end": 278.44
+        },
+        {
+          "from": 3,
+          "to": 5,
+          "start": 279.14,
+          "end": 279.52
+        },
+        {
+          "from": 6,
+          "to": 8,
+          "start": 279.52,
+          "end": 279.94
+        },
+        {
+          "from": 10,
+          "to": 17,
+          "start": 279.94,
+          "end": 281.18
+        }
+      ],
+      "sourceLine": 41,
+      "matchedWordRatio": 1
     },
     {
       "text": "Llorona, llévame al río",
-      "start": 293.079921,
-      "end": 299.179065
+      "start": 282.14,
+      "end": 286.58,
+      "words": [
+        {
+          "from": 0,
+          "to": 7,
+          "start": 282.14,
+          "end": 283.5
+        },
+        {
+          "from": 9,
+          "to": 16,
+          "start": 284.06,
+          "end": 285
+        },
+        {
+          "from": 17,
+          "to": 19,
+          "start": 285,
+          "end": 285.32
+        },
+        {
+          "from": 20,
+          "to": 23,
+          "start": 285.32,
+          "end": 286.58
+        }
+      ],
+      "sourceLine": 42,
+      "matchedWordRatio": 1
     },
     {
       "text": "Ay de mí, llorona",
-      "start": 299.179065,
-      "end": 303.352163
+      "start": 286.58,
+      "end": 291.48,
+      "words": [
+        {
+          "from": 0,
+          "to": 2,
+          "start": 286.58,
+          "end": 288.6
+        },
+        {
+          "from": 3,
+          "to": 5,
+          "start": 289.4,
+          "end": 289.66
+        },
+        {
+          "from": 6,
+          "to": 8,
+          "start": 289.66,
+          "end": 290
+        },
+        {
+          "from": 10,
+          "to": 17,
+          "start": 290,
+          "end": 291.48
+        }
+      ],
+      "sourceLine": 43,
+      "matchedWordRatio": 1
     },
     {
       "text": "Llorona, llévame al río",
-      "start": 303.352163,
-      "end": 309.451307
+      "start": 291.92,
+      "end": 296.28,
+      "words": [
+        {
+          "from": 0,
+          "to": 7,
+          "start": 291.92,
+          "end": 293.7
+        },
+        {
+          "from": 9,
+          "to": 16,
+          "start": 294.24,
+          "end": 295.02
+        },
+        {
+          "from": 17,
+          "to": 19,
+          "start": 295.02,
+          "end": 295.34
+        },
+        {
+          "from": 20,
+          "to": 23,
+          "start": 295.34,
+          "end": 296.28
+        }
+      ],
+      "sourceLine": 44,
+      "matchedWordRatio": 1
     },
     {
       "text": "Tápame con tu rebozo, llorona",
-      "start": 309.451307,
-      "end": 317.155489
+      "start": 297.7,
+      "end": 302.42,
+      "words": [
+        {
+          "from": 0,
+          "to": 6,
+          "start": 297.7,
+          "end": 298.62
+        },
+        {
+          "from": 7,
+          "to": 10,
+          "start": 298.62,
+          "end": 299.16
+        },
+        {
+          "from": 11,
+          "to": 13,
+          "start": 299.16,
+          "end": 300.1
+        },
+        {
+          "from": 22,
+          "to": 29,
+          "start": 301.6,
+          "end": 302.42
+        }
+      ],
+      "sourceLine": 45,
+      "matchedWordRatio": 0.8
     },
     {
       "text": "Porque me muero de frío",
-      "start": 317.155489,
-      "end": 323.254633
+      "start": 302.64,
+      "end": 306.42,
+      "words": [
+        {
+          "from": 0,
+          "to": 6,
+          "start": 302.64,
+          "end": 303.34
+        },
+        {
+          "from": 7,
+          "to": 9,
+          "start": 303.34,
+          "end": 304.34
+        },
+        {
+          "from": 10,
+          "to": 15,
+          "start": 304.34,
+          "end": 305.1
+        },
+        {
+          "from": 16,
+          "to": 18,
+          "start": 305.1,
+          "end": 305.58
+        },
+        {
+          "from": 19,
+          "to": 23,
+          "start": 305.58,
+          "end": 306.42
+        }
+      ],
+      "sourceLine": 46,
+      "matchedWordRatio": 1
     },
     {
       "text": "Tápame con tu rebozo, llorona",
-      "start": 323.254633,
-      "end": 330.958815
+      "start": 306.42,
+      "end": 310.32,
+      "words": [
+        {
+          "from": 0,
+          "to": 6,
+          "start": 306.42,
+          "end": 308.86
+        },
+        {
+          "from": 7,
+          "to": 10,
+          "start": 308.86,
+          "end": 309.5
+        },
+        {
+          "from": 11,
+          "to": 13,
+          "start": 309.5,
+          "end": 310.32
+        }
+      ],
+      "sourceLine": 47,
+      "matchedWordRatio": 0.6
     },
     {
       "text": "Porque me muero de frío",
-      "start": 330.958815,
-      "end": 337.057959
+      "start": 312.72,
+      "end": 317.02,
+      "words": [
+        {
+          "from": 0,
+          "to": 6,
+          "start": 312.72,
+          "end": 313.52
+        },
+        {
+          "from": 7,
+          "to": 9,
+          "start": 313.52,
+          "end": 314.48
+        },
+        {
+          "from": 10,
+          "to": 15,
+          "start": 314.48,
+          "end": 315.32
+        },
+        {
+          "from": 16,
+          "to": 18,
+          "start": 315.32,
+          "end": 315.92
+        },
+        {
+          "from": 19,
+          "to": 23,
+          "start": 315.92,
+          "end": 317.02
+        }
+      ],
+      "sourceLine": 48,
+      "matchedWordRatio": 1
     }
-  ]
+  ],
+  "unmatchedLines": [],
+  "unmatchedBeforeEstimation": [
+    {
+      "line": 21,
+      "text": "Cuáles no serían mis penas, llorona",
+      "coverage": 0
+    },
+    {
+      "line": 22,
+      "text": "Que el Santo Cristo lloró",
+      "coverage": 0
+    },
+    {
+      "line": 30,
+      "text": "No sabe lo que es martirio",
+      "coverage": 0
+    },
+    {
+      "line": 31,
+      "text": "El que no sabe de amores, llorona",
+      "coverage": 0
+    }
+  ],
+  "estimatedFallbackLines": [
+    23,
+    24,
+    31,
+    32
+  ],
+  "appliedRecordingReviewHash": "c92297fa529d49a25e7acaa9447db8b2147164a68782583be82ebfb003762661",
+  "timingReviewFile": "timing-overrides.json"
 }

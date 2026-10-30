@@ -1,6 +1,6 @@
 {
-  "version": "c1bb021343e565d900cf",
-  "totalBytes": 126200928,
+  "version": "5b4fb02d0203f8e160c5",
+  "totalBytes": 122064840,
   "assets": [
     {
       "url": "../Logo%20Samay.png",
@@ -10,7 +10,7 @@
     {
       "url": "admin.html",
       "size": 5605,
-      "sha256": "58e3090fd2b03a0e67617b1e68daac73845516b768a15b228037911a42f186b2"
+      "sha256": "781afe70a26cb0415d1de64b0f50177cd9a3539b2826ebeaea8feb8e3d26eb45"
     },
     {
       "url": "assets/audio/bluetooth-calibration.wav",
@@ -180,7 +180,7 @@
     {
       "url": "controller.js",
       "size": 7103,
-      "sha256": "83584652b38a5aaffbfb08e26d8eccbbb8eb9bd5a06faf380b3a46fec85e2d40"
+      "sha256": "329be393f78a2b0d78231e06536a369f801976f86e5d41e45507229cc76542a3"
     },
     {
       "url": "device-menu.css",
@@ -195,7 +195,7 @@
     {
       "url": "index.html",
       "size": 3099,
-      "sha256": "d75b70b72c3955a6362d5103e18c038f924ef820dc00bca7b04087bf85089cf7"
+      "sha256": "1afc96de3f7bc494244bcb6b6bd40d92c3a710552b6918c38fe5bcde89ad8806"
     },
     {
       "url": "karaoke.css",
@@ -220,22 +220,22 @@
     {
       "url": "player-entry.js",
       "size": 72,
-      "sha256": "2dda690d15ae3676f8191ee61cf4d2f6e772a6ca83735f59d8030b985de3fbab"
+      "sha256": "d6ec4c346a4156eb2e84389979651f001729d988fde2f4d03bc3eceafe9af75e"
     },
     {
       "url": "player.html",
       "size": 4765,
-      "sha256": "14c268d2d6c591e21c02acbe21ac689edeca1092feea3d7e8bde55a7ca699935"
+      "sha256": "9c85fd339a066f0342dd0b545bbcb391f242018b768aa3aa9b2056ad4a7e12c0"
     },
     {
       "url": "player.js",
       "size": 17624,
-      "sha256": "90d1d1abfa68a231535ba861ee7c4f73504b6b82ede6ac67f8a3c3f6af7a5c24"
+      "sha256": "cbd12ef96df5595dece2e52792eea7eba532f6b91c707d0c96605cf27f702edb"
     },
     {
       "url": "shared.js",
       "size": 5369,
-      "sha256": "2baf9520dbefd895d6aea4fedd8b13141a8a152185b12e00705c6117e368a557"
+      "sha256": "fbec64d8dcdfe99f572211ac0426811a33130f7621416eae1d9eb851a8a321dd"
     },
     {
       "url": "songs/a-quien-le-importa/audio.mp3",
@@ -299,8 +299,8 @@
     },
     {
       "url": "songs/catalog.js",
-      "size": 7556,
-      "sha256": "3cfbfaa65b23d07f938696df41a9be79b91db72722a4fec873fb93b38129f14e"
+      "size": 7686,
+      "sha256": "338e427e03ac24031a5bbfaab526bfb2a0fcd2dae9afc20c5571a9fa18b6611a"
     },
     {
       "url": "songs/contigo-peru/audio.mp3",
@@ -424,18 +424,18 @@
     },
     {
       "url": "songs/la-bruja/audio.mp3",
-      "size": 5606850,
-      "sha256": "06d8bab3c5965df473ef7ced2b20a652dc486a39eed8d5075fbb21ea19ebdab7"
+      "size": 1730211,
+      "sha256": "a1d732b7b9c6b6abe6d0d2bea7d607cb0153503fe0b14d0513d86f094ecac445"
     },
     {
       "url": "songs/la-bruja/letra.txt",
-      "size": 1054,
-      "sha256": "696b60f9edb9cdbb1bcba728dd17ba6bc9be453506db9d3e36960f13e6724fcf"
+      "size": 518,
+      "sha256": "b57b0f7141ae5515e87b6749b1864217519a4e81b0637cf62a17ce0033520711"
     },
     {
       "url": "songs/la-bruja/lyrics-timed.json",
-      "size": 3210,
-      "sha256": "92d092cb44573a0b968347c9f059a9281b2135065adf0f608be9755ca3ad96ad"
+      "size": 14204,
+      "sha256": "1d4e6c8ce2606dbc43d3a56b3c44945612f851081cd521f28a33334274a4c54a"
     },
     {
       "url": "songs/la-flor-de-la-canela/audio.mp3",
@@ -454,8 +454,8 @@
     },
     {
       "url": "songs/la-llorona/audio.mp3",
-      "size": 8090155,
-      "sha256": "a154b0ca560ff945d4734d1f79ee2ed2f57169ea035f7dbf3e4b034234caaf99"
+      "size": 7791732,
+      "sha256": "976b179021f3c2b5d24873dafc653043339a1fb7ff10cd52a6f66163f46b172a"
     },
     {
       "url": "songs/la-llorona/letra.txt",
@@ -464,8 +464,8 @@
     },
     {
       "url": "songs/la-llorona/lyrics-timed.json",
-      "size": 5467,
-      "sha256": "81961ecad992bae4fdf7fa43788fe981ee6ee8481a7636d9dac2a29154479d88"
+      "size": 33853,
+      "sha256": "8cd51e05ac6798c03d29296867d91819f246a4c6f5cc6fe1d7375c7f9125c21e"
     },
     {
       "url": "songs/la-malaguena/audio.mp3",
@@ -670,12 +670,12 @@
     {
       "url": "timing-editor.html",
       "size": 3355,
-      "sha256": "93d03ec211c60b8a77c245a4a935d982ee1cb724a34fe367ecb6f1d8eb3bfc24"
+      "sha256": "8c111b224f201abff4cdf5d5a69fb35b05b95550233fc145a36db0ad033207d0"
     },
     {
       "url": "timing-editor.js",
       "size": 11040,
-      "sha256": "6a7fb89f783fa49ee5aecb687e162d7b5589e785949d63bd5d39fd786c7e8c35"
+      "sha256": "d0ec5b27b71b9ebc8a9fc346811e7cbfa23f26f23d6f706fe72007328133235c"
     },
     {
       "url": "track-timing.js",

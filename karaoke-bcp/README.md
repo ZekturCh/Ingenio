@@ -1,5 +1,20 @@
 # Hallowow Criollazo
 
+## La Bruja y La Llorona: voces del 30/10/2026
+
+La Bruja usa la grabación de Rosy Arango con los primeros 70 segundos quitados
+mediante copia de frames MP3, sin recomprimir: 2:43 en lugar de 3:53. El original
+del usuario se conserva. `songs/la-bruja/trim-recording.json` registra ambos hashes
+y duraciones. La letra se adaptó al estribillo de flores/racimo de esta versión;
+el TXT anterior se conserva en `letra-aportada.txt`.
+
+La Llorona usa el nuevo MP3 completo de 5:24. Sus cuatro frases repetidas no
+reconocidas y el grito inicial de La Bruja tienen estimaciones explícitas en
+`timing-overrides.json`; aplicar con `scripts/apply-recording-review.cjs ID`
+después de reimportar cualquiera de estas grabaciones. Se mantienen los coros,
+cinco segundos de preparación, la compensación Bluetooth y la caché por hash.
+Las 28 canciones tienen ahora grabaciones con voz, incluido el himno anterior.
+
 ## Quién será: grabación con voz del 30/10/2026
 
 Se usa el MP3 de Julio Iglesias proporcionado por el usuario, sin recomprimir.
@@ -29,18 +44,19 @@ cantar; la letra conserva Flexo, el fondo original y el pintado naranja.
 
 ## Estimacion completa autorizada
 
-Las 25 grabaciones con voz tienen ahora una marca para cada frase de su TXT.
+Las 27 grabaciones nuevas con voz tienen ahora una marca para cada frase de su TXT.
 Los huecos se completaron entre entradas vocales cercanas, con ajustes locales
 cuando el reconocedor habia estirado una frase sobre otra. Introducciones y
 cierres se estiman a partir del tramo vocal vecino, no distribuyendo toda la
 letra sobre la duracion de la cancion. Se conserva `reviewRequired: true`.
 Estas marcas son una aproximacion util, no una certificacion de sincronizacion.
-La Bruja y La Llorona conservan marcas mas gruesas sin voz guia.
+Ya no quedan canciones pendientes de grabación con voz guía.
 
 El generador es `scripts/estimate-pending-cues.cjs`. Las frases que antes no
 tenian marca se conservan en `unmatchedBeforeEstimation`, y cada marca inferida
-incluye `timingMethod: neighbor-estimate` y su motivo. No se cambiaron las
-palabras del repertorio; Carinito conserva unicamente las ediciones confirmadas.
+incluye `timingMethod: neighbor-estimate` y su motivo. Los TXT aportados se
+conservan como base; las adaptaciones a grabaciones distintas se documentan por
+canción y guardan el texto anterior como respaldo.
 
 El contador, la barra de progreso y el pintado comparten el reloj audible:
 tiempo del MP3 menos compensacion Bluetooth. Al terminar se deja transcurrir la
@@ -70,8 +86,8 @@ y manifest offline. El script comprueba el hash de audio y el texto antes de apl
 
 El inventario actual por cancion esta en
 [`songs/ESTADO-SINCRONIZACION.md`](songs/ESTADO-SINCRONIZACION.md).
-Se recibieron 25 grabaciones con voz (las 24 del lote ampliado y Carinito).
-La Bruja y La Llorona todavia necesitan una grabacion con voz guia.
+Se recibieron 27 grabaciones con voz (las 26 del lote ampliado y Carinito).
+Todas las canciones cuentan con grabación con voz guía.
 El himno no venia en el lote nuevo, pero su pista anterior ya contiene voces.
 Todas las canciones tienen texto y audio; eso no implica que sus tiempos esten
 verificados. El informe diferencia frases sin alinear de marcas automaticas.

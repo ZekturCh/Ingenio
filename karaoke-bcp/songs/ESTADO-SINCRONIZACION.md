@@ -1,9 +1,9 @@
 # Voces y sincronizacion: 30/10/2026
 
-Hay 28 canciones con audio y texto. Se recibieron 25 MP3 con voz guia, contando Carinito.
-El himno conserva una grabacion anterior con voces. Faltan versiones con voz guia de: La Bruja, La Llorona.
+Hay 28 canciones con audio y texto. Se recibieron 27 MP3 con voz guia, contando Carinito.
+Todas las canciones tienen grabacion con voz. El himno conserva su grabacion anterior con voces.
 
-Quedan 0 frases aportadas sin ninguna marca en las grabaciones analizadas. Otras 102 tienen estimaciones por frases vecinas o ritmo. Las marcas automaticas restantes tambien requieren revision al oido; cero frases sin marcas no significa verificacion humana.
+Quedan 0 frases aportadas sin ninguna marca en las grabaciones analizadas. Otras 107 tienen estimaciones por frases vecinas o ritmo. Las marcas automaticas restantes tambien requieren revision al oido; cero frases sin marcas no significa verificacion humana.
 Las pistas sin voz guia no se pueden sincronizar con precision repartiendo las palabras sobre su duracion.
 
 | Cancion | Audio | Frases con marcas | Sin marcas | Estimadas por vecinos/ritmo |
@@ -24,8 +24,8 @@ Las pistas sin voz guia no se pueden sincronizar con precision repartiendo las p
 | El rey | Voz guia nueva | 26 | 0 | 0 |
 | El triste | Voz guia nueva | 31 | 0 | 5 |
 | Himno Nacional del Perú | Voz anterior | 45 | No evaluable con estas marcas | 0 |
-| La Bruja | Karaoke anterior; falta guia | 24 | No evaluable con estas marcas | 0 |
-| La Llorona | Karaoke anterior; falta guia | 48 | No evaluable con estas marcas | 0 |
+| La Bruja | Voz guia nueva | 17 | 0 | 1 |
+| La Llorona | Voz guia nueva | 48 | 0 | 4 |
 | La Malagueña | Voz guia nueva | 33 | 0 | 5 |
 | Mal paso | Voz guia nueva | 26 | 0 | 3 |
 | Mujer contra mujer | Voz guia nueva | 35 | 0 | 2 |

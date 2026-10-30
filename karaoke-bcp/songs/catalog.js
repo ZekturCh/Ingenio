@@ -90,12 +90,12 @@ const CHORUS_WINDOWS = {
     "endAt": 151.88
   },
   "la-bruja": {
-    "startAt": 46.484,
-    "endAt": 116.355
+    "startAt": 56.26,
+    "endAt": 99.22
   },
   "la-llorona": {
-    "startAt": 67.412,
-    "endAt": 119.415
+    "startAt": 65.88,
+    "endAt": 104.88
   },
   "la-malaguena": {
     "startAt": 236.64,
@@ -166,8 +166,8 @@ export const SONGS = [
   estimatedTrack("el-rey", "El rey", "José Alfredo Jiménez", 130.011429, "c3067bc0408a0f66245d4d11f3df5ef30bce4dbd30b0e578cbd638f7c1879a80"),
   estimatedTrack("el-triste", "El triste", "José José", 253.272, "81d7e475989fb5e91340e75521476b697551d1052cf43af43e20c84c8d6ea464"),
   estimatedTrack("himno-peru", "Himno Nacional del Perú", "Perú", 161.593469),
-  estimatedTrack("la-bruja", "La Bruja", "Rosy Arango", 233.586939),
-  estimatedTrack("la-llorona", "La Llorona", "Chavela Vargas", 337.057959),
+  estimatedTrack("la-bruja", "La Bruja", "Rosy Arango", 163.63102, "a1d732b7b9c6b6abe6d0d2bea7d607cb0153503fe0b14d0513d86f094ecac445"),
+  estimatedTrack("la-llorona", "La Llorona", "Chavela Vargas", 324.623673, "976b179021f3c2b5d24873dafc653043339a1fb7ff10cd52a6f66163f46b172a"),
   estimatedTrack("la-malaguena", "La Malagueña", "Ángela Aguilar", 324.545306, "76ff3a36d89b9d30198d08c7ee7312ac916cf81407580ebd99e5b17b441a3715"),
   estimatedTrack("mal-paso", "Mal paso", "Los Kipus y Eva Ayllón", 161.802449, "1518698ef6653dd005f5608963eb90467cba07afa27eefcaab5151865788fdd6"),
   estimatedTrack("mujer-contra-mujer", "Mujer contra mujer", "Mecano", 245.368163, "13e3c782a804a16896ca1973ff5ac08ef05bc0aa46e6d06d3779932df74f0100"),

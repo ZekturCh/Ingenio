@@ -24,7 +24,7 @@ const summary = {
 fs.writeFileSync(path.join(root,'songs/ALIGNMENT-STATUS.json'),JSON.stringify(summary,null,2)+'\n');
 const lines = ['# Voces y sincronizacion: 30/10/2026','',
   `Hay ${songs.length} canciones con audio y texto. Se recibieron ${incoming.size} MP3 con voz guia, contando Carinito.`,
-  `El himno conserva una grabacion anterior con voces. Faltan versiones con voz guia de: ${summary.needVocalGuide.map(song=>song.title).join(', ')}.`,
+  summary.needVocalGuide.length ? `El himno conserva una grabacion anterior con voces. Faltan versiones con voz guia de: ${summary.needVocalGuide.map(song=>song.title).join(', ')}.` : 'Todas las canciones tienen grabacion con voz. El himno conserva su grabacion anterior con voces.',
   '',`Quedan ${summary.unmatchedProvidedPhrases} frases aportadas sin ninguna marca en las grabaciones analizadas. Otras ${summary.neighborOrBeatEstimates} tienen estimaciones por frases vecinas o ritmo. Las marcas automaticas restantes tambien requieren revision al oido; cero frases sin marcas no significa verificacion humana.`,
   'Las pistas sin voz guia no se pueden sincronizar con precision repartiendo las palabras sobre su duracion.',
   '', '| Cancion | Audio | Frases con marcas | Sin marcas | Estimadas por vecinos/ritmo |', '| --- | --- | ---: | ---: | ---: |',

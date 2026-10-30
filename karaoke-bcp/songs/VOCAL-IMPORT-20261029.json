@@ -947,5 +947,69 @@
     "matchedSourceLines": 20,
     "totalLines": 20,
     "unmatchedLines": []
+  },
+  {
+    "id": "la-llorona",
+    "source": "La Llorona.mp3",
+    "artist": "Chavela Vargas",
+    "durationSeconds": 324.623673,
+    "sha256": "976b179021f3c2b5d24873dafc653043339a1fb7ff10cd52a6f66163f46b172a",
+    "bytes": 7791732,
+    "alignedLines": 48,
+    "matchedSourceLines": 44,
+    "totalLines": 48,
+    "unmatchedLines": [],
+    "markedSourceLines": 48,
+    "unmatchedBeforeEstimation": [
+      {
+        "line": 21,
+        "text": "Cuáles no serían mis penas, llorona",
+        "coverage": 0
+      },
+      {
+        "line": 22,
+        "text": "Que el Santo Cristo lloró",
+        "coverage": 0
+      },
+      {
+        "line": 30,
+        "text": "No sabe lo que es martirio",
+        "coverage": 0
+      },
+      {
+        "line": 31,
+        "text": "El que no sabe de amores, llorona",
+        "coverage": 0
+      }
+    ],
+    "estimatedFallbackLines": [
+      23,
+      24,
+      31,
+      32
+    ]
+  },
+  {
+    "id": "la-bruja",
+    "source": "La Bruja - Rosy Arango (sin intro 70s).mp3",
+    "artist": "Rosy Arango",
+    "durationSeconds": 163.63102,
+    "sha256": "a1d732b7b9c6b6abe6d0d2bea7d607cb0153503fe0b14d0513d86f094ecac445",
+    "bytes": 1730211,
+    "alignedLines": 17,
+    "matchedSourceLines": 16,
+    "totalLines": 17,
+    "unmatchedLines": [],
+    "markedSourceLines": 17,
+    "unmatchedBeforeEstimation": [
+      {
+        "line": 1,
+        "text": "Ay",
+        "coverage": 0
+      }
+    ],
+    "estimatedFallbackLines": [
+      1
+    ]
   }
 ]

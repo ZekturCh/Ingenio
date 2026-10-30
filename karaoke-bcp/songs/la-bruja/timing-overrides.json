@@ -1,0 +1,5 @@
+{
+  "audioSha256":"a1d732b7b9c6b6abe6d0d2bea7d607cb0153503fe0b14d0513d86f094ecac445",
+  "reviewRequired":true,
+  "estimates":[{"sourceLine":1,"start":0,"end":9.8,"basis":"Held opening vocalization after the user-requested 70-second lossless cut; independent recognition has ah vocalizations at 0-9.8 seconds."}]
+}

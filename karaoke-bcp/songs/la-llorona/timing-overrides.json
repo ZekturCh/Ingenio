@@ -1,0 +1,15 @@
+{
+  "audioSha256":"976b179021f3c2b5d24873dafc653043339a1fb7ff10cd52a6f66163f46b172a",
+  "reviewRequired":true,
+  "remap":[
+    {"sourceLine":23,"matchStart":150.34,"targetLine":21},
+    {"sourceLine":24,"matchStart":156.08,"targetLine":22},
+    {"sourceLine":32,"matchStart":195.42,"targetLine":30}
+  ],
+  "estimates":[
+    {"sourceLine":23,"start":160.64,"end":165.88,"basis":"Repeat of the adjacent two-line verse, +10.3 seconds, bounded by the following chorus."},
+    {"sourceLine":24,"start":166.38,"end":169.74,"basis":"Repeat of the adjacent two-line verse, +10.3 seconds, bounded by the following chorus."},
+    {"sourceLine":31,"start":200.26,"end":203.98,"basis":"Repeat of the adjacent two-line refrain, +9.8 seconds; leave the subsequent instrumental blank."},
+    {"sourceLine":32,"start":205.22,"end":208.04,"basis":"Repeat of the adjacent two-line refrain, +9.8 seconds; leave the subsequent instrumental blank."}
+  ]
+}

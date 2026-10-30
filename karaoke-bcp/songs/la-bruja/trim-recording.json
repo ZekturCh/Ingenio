@@ -1,0 +1,10 @@
+{
+  "source": "Rosy Arango - La Bruja (MV) English Translation + Lyrics Letra.mp3",
+  "originalSha256": "a4175de4a740faaeda4c6de4060166ed4030dedc803321c9be2fac49f5652446",
+  "originalDurationSeconds": 233.63918367346938,
+  "requestedTrimSeconds": 70,
+  "trimmedDurationSeconds": 163.63102040816327,
+  "trimmedSha256": "a1d732b7b9c6b6abe6d0d2bea7d607cb0153503fe0b14d0513d86f094ecac445",
+  "method": "ffmpeg MP3 stream copy, first 70 seconds removed at frame boundary, no re-encoding",
+  "originalPreserved": true
+}
