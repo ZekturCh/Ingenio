@@ -35,3 +35,11 @@
 .song-adjustment button,#applyUpdate{min-height:44px;margin:0 4px 10px 0;border:1px solid #a56c3c;border-radius:8px;padding:8px 12px;color:#42230c;background:#ffdc9e;font-weight:700}
 .device-controls button:focus-visible,.device-dialog input:focus-visible{outline:3px solid #0068ac;outline-offset:2px}
 @media(prefers-reduced-motion:reduce){.offline-indicator[data-state="downloading"] span{animation:none}}
+.music-volume{position:fixed;z-index:59;left:50%;bottom:max(6px,env(safe-area-inset-bottom));transform:translateX(-50%);display:flex;align-items:center;gap:8px;width:min(340px,calc(100% - 116px));height:48px;padding:2px 12px 2px 2px;border:1px solid #ffbd65;border-radius:28px;background:#fff0d7f2;color:#46230e;font-family:"Flexo Karaoke",Flexo,Arial,sans-serif}
+.music-volume-mute{display:grid;place-items:center;flex:0 0 44px;width:44px;height:44px;padding:0;border:0;border-radius:50%;background:transparent;color:inherit;cursor:pointer;touch-action:manipulation}
+.music-volume input{flex:1;min-width:0;width:100%;height:44px;margin:0;accent-color:#ed590e;cursor:pointer}
+.music-volume output{flex:0 0 40px;text-align:right;font-size:13px;font-weight:700;font-variant-numeric:tabular-nums}
+.music-volume-cross,.music-volume.muted .music-volume-waves{display:none}
+.music-volume.muted .music-volume-cross{display:block}
+.music-volume :focus-visible{outline:3px solid #0068ac;outline-offset:1px}
+@media(max-height:600px){.has-music-volume .stage{padding-bottom:62px}}

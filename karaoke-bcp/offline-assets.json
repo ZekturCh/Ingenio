@@ -1,6 +1,6 @@
 {
-  "version": "5b4fb02d0203f8e160c5",
-  "totalBytes": 122064840,
+  "version": "ca877c95f6cf047c8dc9",
+  "totalBytes": 122069372,
   "assets": [
     {
       "url": "../Logo%20Samay.png",
@@ -10,7 +10,7 @@
     {
       "url": "admin.html",
       "size": 5605,
-      "sha256": "781afe70a26cb0415d1de64b0f50177cd9a3539b2826ebeaea8feb8e3d26eb45"
+      "sha256": "bd35e60fe0522c02df17bb8e857dd29cff7812d3a244a69b2f5f6fca7c609a3e"
     },
     {
       "url": "assets/audio/bluetooth-calibration.wav",
@@ -180,22 +180,22 @@
     {
       "url": "controller.js",
       "size": 7103,
-      "sha256": "329be393f78a2b0d78231e06536a369f801976f86e5d41e45507229cc76542a3"
+      "sha256": "25b76a1adf995d25cd56e51a525050f8c1f411d31f1fe8e0941d4f7c69c9fce3"
     },
     {
       "url": "device-menu.css",
-      "size": 4123,
-      "sha256": "02a6bcafa4574d8bb578d552119a3604cc6d2bdc414ad8c44064dd9878c81210"
+      "size": 5193,
+      "sha256": "fed361dfe3c0ee5b235b25b84449c998ff765f58767bc77663e9d9b231d6d31e"
     },
     {
       "url": "device-menu.js",
-      "size": 12010,
-      "sha256": "704646d70b94dc69ab3fa0fc395f98e0f952e88f254ff188be73eb041aedb8b3"
+      "size": 12144,
+      "sha256": "3d753287ddc05f91946200d4f58558ec924f7bbb6232d17a54180fabbb3c7c7f"
     },
     {
       "url": "index.html",
       "size": 3099,
-      "sha256": "1afc96de3f7bc494244bcb6b6bd40d92c3a710552b6918c38fe5bcde89ad8806"
+      "sha256": "5d6edfe2fda4184129459890dda360bd2126966781518452b93714eb7905516f"
     },
     {
       "url": "karaoke.css",
@@ -213,6 +213,11 @@
       "sha256": "8ea60f05731229677cce7f6f218a019548e8aa6cbcdd739c6e26f164a493a74f"
     },
     {
+      "url": "music-volume.js",
+      "size": 3013,
+      "sha256": "66d2fe20b01ef887809e5fb3a7b0e8b37da58bec2665df570df67c1d761bfff4"
+    },
+    {
       "url": "offline.js",
       "size": 1920,
       "sha256": "97c110c180d24acb1e26246af5bdb7fc7a747773673d66b5fe13593ab64b1f60"
@@ -220,17 +225,17 @@
     {
       "url": "player-entry.js",
       "size": 72,
-      "sha256": "d6ec4c346a4156eb2e84389979651f001729d988fde2f4d03bc3eceafe9af75e"
+      "sha256": "eaaf132fe96b5fc86e582e6dfd9cb7b21aed1ce3f12bdf1486f30905585af90c"
     },
     {
       "url": "player.html",
       "size": 4765,
-      "sha256": "9c85fd339a066f0342dd0b545bbcb391f242018b768aa3aa9b2056ad4a7e12c0"
+      "sha256": "83b29e5660dd80978a09b46c9dbb8dea1a6539557a9bf98f66f8fe621e96763d"
     },
     {
       "url": "player.js",
-      "size": 17624,
-      "sha256": "cbd12ef96df5595dece2e52792eea7eba532f6b91c707d0c96605cf27f702edb"
+      "size": 17939,
+      "sha256": "e7abef4d28522972862cd307deb63353a713252d68ca28322141735c82f3713f"
     },
     {
       "url": "shared.js",
@@ -670,7 +675,7 @@
     {
       "url": "timing-editor.html",
       "size": 3355,
-      "sha256": "8c111b224f201abff4cdf5d5a69fb35b05b95550233fc145a36db0ad033207d0"
+      "sha256": "a35dbdcdfdcffbb6d5f9b4f03f267bfe7981eb325bd3c0eb34935537ed04e8b7"
     },
     {
       "url": "timing-editor.js",

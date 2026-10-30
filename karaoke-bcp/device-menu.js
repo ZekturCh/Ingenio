@@ -1,6 +1,7 @@
 import { getDelay, setDelay, lyricTime, MIN_DELAY, MAX_DELAY, DELAY_KEY } from "./audio-settings.js";
 import { onOfflineStatus, downloadOffline } from "./offline.js";
 import { getActiveTrack, getCalibration, saveCalibration, resetCalibration } from "./track-timing.js";
+import { mountMusicVolume } from "./music-volume.js";
 
 const controls = document.createElement("div");
 const publicView = document.body.matches('.controller-page,.player-page') && new URLSearchParams(location.search).get('settings') !== '1';
@@ -45,6 +46,7 @@ controls.innerHTML = `
     </section>
   </dialog>`;
 document.body.append(controls);
+if (document.body.matches('.controller-page,.player-page')) mountMusicVolume();
 const dialog = controls.querySelector("dialog");
 const slider = controls.querySelector("#bluetoothDelay");
 const output = controls.querySelector("#delayValue");

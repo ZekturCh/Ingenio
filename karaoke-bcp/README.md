@@ -1,5 +1,10 @@
 # Hallowow Criollazo
 
+El volumen de la música se controla en vivo desde la barra inferior central,
+tanto en el selector como durante la reproducción. Incluye silenciar/restaurar,
+guarda el nivel en este navegador y funciona offline. Solo afecta al audio de
+la canción: no modifica el volumen de Windows, del micrófono ni de otros programas.
+
 ## La Bruja y La Llorona: voces del 30/10/2026
 
 La Bruja usa la grabación de Rosy Arango con los primeros 70 segundos quitados

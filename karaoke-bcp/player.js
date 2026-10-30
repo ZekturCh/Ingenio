@@ -4,6 +4,7 @@ import { getDelay, lyricTime, heardPosition, DELAY_KEY } from "./audio-settings.
 import { getCalibration, setActiveTrack, calibratedTime } from "./track-timing.js";
 import { cueProgress, lyricParts } from "./lyric-progress.js";
 import { preparationStart, preparationCount } from "./chorus-preparation.js";
+import { getMusicVolume, VOLUME_KEY } from "./music-volume.js";
 
 export function mountPlayer(root = document, { embedded = false, onBack } = {}) {
 const nodes = new Map();
@@ -12,6 +13,9 @@ const $ = (selector) => {
   return nodes.get(selector);
 };
 const room = roomFromUrl(), audio = $("#audio"), stage = $("#stage");
+audio.volume = getMusicVolume();
+window.addEventListener("samay-music-volume", event => { audio.volume = event.detail; });
+window.addEventListener("storage", event => { if (event.key === VOLUME_KEY) audio.volume = getMusicVolume(); });
 $("#backBtn").href = controllerUrl(room);
 let unlocked = false, pending = null, activeState = null, activeSong = null, activeVersion = null;
 let lyricData = [], lastCommand = "stop", commandToken = 0, shuffle = false, seeking = false, ended = false;
@@ -302,7 +306,7 @@ document.fonts.addEventListener("loadingdone", fitLyrics);
 if (!embedded) {
 $("#activateBtn").onclick = async () => {
   $("#activateBtn").disabled = true;
-  audio.volume = 1;
+  audio.volume = getMusicVolume();
   try { await audio.play(); audio.pause(); }
   catch {
     $("#activationState").textContent = "No se pudo activar el audio. Intenta nuevamente.";
